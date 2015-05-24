@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  24 MAY 2015 18:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  24 MAY 2015 18:46
 entering extended mode
-**NTT*Functional*Specification.tex
+**NTT*Architectural*Requirements.tex
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\NTT Functional Specification.tex"
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\NTT Architectural Requirements.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -35,7 +35,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \@indexfile=\write3
 
-Writing index file NTT*Functional*Specification.idx
+Writing index file NTT*Architectural*Requirements.idx
 (C:\Users\Duran\Documents\MikTex2.9\tex\latex\tools\longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip43
@@ -214,8 +214,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\NTT Functional Specification.aux")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\NTT Architectural Requirements.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
@@ -268,10 +268,10 @@ LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\NTT Functional Specification.out")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\NTT Functional Specification.out")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\NTT Architectural Requirements.out")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\NTT Architectural Requirements.out")
 \@outlinefile=\write4
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 49.
@@ -288,59 +288,70 @@ te ignored
                    \relax 
 l.120 \tableofcontents
                       {} [1]
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\NTT Functional Specification.toc")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\NTT Architectural Requirements.toc")
 \tf@toc=\write5
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\Introduction/Introduction.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\UseCasePrioritization/UseCasePrioritization.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\ServiceContracts/ServiceContracts.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\RequiredFunctionality/RequiredFunctionality.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\ProcessSpecification/ProcessSpecification.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\DomainModel/DomainModel.tex") [2
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\QualityRequirements/QualityRequirements.tex" [2
+
+])
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\AccessRequirements/AccessRequirements.tex")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\ArchitecturalConstraints/ArchitectureConstraints.tex"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+)
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\ArchitecturalPatterns/ArchitecturalPatternsOrStyles.t
+ex")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\ArchitecturalTactics/ArchitecturalTacticsOrStrategies
+.tex" [3])
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\ReferenceArchitectures/UseOfReferenceArchitecturesAnd
+Frameworks.tex")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\Technologies/Technologies.tex") [4]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 144.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+[5
 
 ]
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\Bibliography/Bibliography.tex")
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 135.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
-[3
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
-
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\NTT Functional Specification.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
-Package rerunfilecheck Info: File `NTT*Functional*Specification.out' has not ch
-anged.
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\NTT Architectural Requirements.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package rerunfilecheck Info: File `NTT*Architectural*Requirements.out' has not 
+changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
  ) 
 Here is how much of TeX's memory you used:
- 5211 strings out of 493921
- 81005 string characters out of 3144475
- 155247 words of memory out of 3000000
- 8434 multiletter control sequences out of 15000+200000
- 9136 words of font info for 32 fonts, out of 3000000 for 9000
+ 5257 strings out of 493921
+ 82058 string characters out of 3144475
+ 158247 words of memory out of 3000000
+ 8454 multiletter control sequences out of 15000+200000
+ 9750 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,28p,260b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,5n,28p,262b,377s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Functional Specification.pdf" (4 pages, 59655 bytes).
+C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "NTT Architectural Requirements.pdf" (6 pages, 79326 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
