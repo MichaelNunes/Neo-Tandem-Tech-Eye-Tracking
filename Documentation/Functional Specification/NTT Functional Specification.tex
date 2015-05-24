@@ -1,0 +1,52 @@
+\documentclass[12pt, oneside]{book}
+ 
+\usepackage{graphicx}
+\usepackage{hyperref}
+% define the title
+\author{Neo Tandem Technology}
+\title{ Eye Tracking - Functional Specification}
+\begin{document}
+
+% generates the title
+\begin{titlepage}
+	\begin{center}      
+	
+		\begin{minipage}{0.75\linewidth}
+    		\centering
+			%\includegraphics[width=1\textwidth]{}\%\[0.4cm]    
+    		{\uppercase{\Large Neo Tandem Technologies\par}}
+    		\vspace{1cm}
+   			{\uppercase{\Large Eye Tracking \par}}
+    		\vspace{1cm}
+    		{\uppercase{\Large Functional Specification \par}}
+    		\vspace{1cm}
+
+    		{\normalsize Duran Cole (13329414)\par}
+    		{\normalsize Michael Nunes ()\par}
+    		{\normalsize Molefe Molefe ()\par}
+    		{\normalsize Timothy Snayers ()\par}
+    		{\normalsize Tebogo Seshibe ()\par}
+    		\vspace{1cm}
+		\end{minipage}
+	\vfill
+	{\large \today}
+	\end{center}
+\end{titlepage}
+\normalsize
+\newpage
+\section{Introduction}
+	\input{Introduction/Introduction.tex}
+\section{Use Case Prioritization}
+	\input{UseCasePrioritization/UseCasePrioritization.tex}
+\section{Use case/Service Contracts}
+	\input{ServiceContracts/ServiceContracts.tex}
+\section{Required Functionality}
+	\input{RequiredFunctionality/RequiredFunctionality.tex}
+\section{Process Specification}
+	\input{ProcessSpecification/ProcessSpecification.tex}
+\section{Domain Model}
+	\input{DomainModel/DomainModel.tex}
+\begin{thebibliography}{9}
+	\input{Bibliography/Bibliography.tex}
+\end{thebibliography}
+\end{document}
