@@ -1,0 +1,17 @@
+To do by: 2015/05/26
+	Functional Spec
+	- Intro & Conclusion
+	- Use Case Prioritization
+	- Service Contracts
+	- Required Functionality
+	- Process Spec
+	- Domain Model
+	
+	Architectural Spec basic stuffs
+	- Access Requirements
+	- Architectural Constraints
+	- Architectural Patterns
+	- Architectural Tactics
+	- Quality Requirements
+	- Reference Architectures
+	- Technology
