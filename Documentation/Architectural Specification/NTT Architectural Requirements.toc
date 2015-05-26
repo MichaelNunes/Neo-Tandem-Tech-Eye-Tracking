@@ -1,22 +1,22 @@
 \contentsline {section}{\numberline {1}Architecture requirements}{2}{section.0.1}
 \contentsline {subsection}{\numberline {1.1}Quality Requirements}{2}{subsection.0.1.1}
-\contentsline {subsubsection}{Scalability}{2}{section*.2}
-\contentsline {subsubsection}{Performance}{2}{section*.3}
-\contentsline {subsubsection}{Maintanability}{2}{section*.4}
-\contentsline {subsubsection}{Reliability and Availability}{2}{section*.5}
-\contentsline {subsubsection}{Security}{3}{section*.6}
-\contentsline {subsubsection}{Usability}{3}{section*.7}
-\contentsline {subsubsection}{Testablity and Integrability}{3}{section*.8}
+\contentsline {subsubsection}{\numberline {1.1.1}Scalability}{2}{subsubsection.0.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Performance}{2}{subsubsection.0.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Maintanability}{2}{subsubsection.0.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.4}Reliability and Availability}{2}{subsubsection.0.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.5}Security}{3}{subsubsection.0.1.1.5}
+\contentsline {subsubsection}{\numberline {1.1.6}Usability}{3}{subsubsection.0.1.1.6}
+\contentsline {subsubsection}{\numberline {1.1.7}Testablity and Integrability}{3}{subsubsection.0.1.1.7}
 \contentsline {subsection}{\numberline {1.2}Integration and access channel requirements}{3}{subsection.0.1.2}
-\contentsline {subsubsection}{Access channel requirements}{3}{section*.9}
-\contentsline {subsubsection}{Channels}{3}{section*.10}
-\contentsline {subsubsection}{Protocols}{3}{section*.11}
-\contentsline {subsubsection}{API Specifications}{3}{section*.12}
+\contentsline {subsubsection}{\numberline {1.2.1}Access channel requirements}{3}{subsubsection.0.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Channels}{3}{subsubsection.0.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Protocols}{3}{subsubsection.0.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}API Specifications}{3}{subsubsection.0.1.2.4}
 \contentsline {subsection}{\numberline {1.3}Architecture constraints}{3}{subsection.0.1.3}
 \contentsline {section}{\numberline {2}Architectural patterns or styles}{3}{section.0.2}
 \contentsline {subsection}{\numberline {2.1}Name of pattern or Style}{3}{subsection.0.2.1}
 \contentsline {section}{\numberline {3}Architectural tactics or strategies}{4}{section.0.3}
 \contentsline {subsection}{\numberline {3.1}Name of Tactic or Strategy}{4}{subsection.0.3.1}
 \contentsline {section}{\numberline {4}Use of reference architectures and frameworks}{4}{section.0.4}
-\contentsline {subsubsection}{Reference Architecture}{4}{section*.13}
+\contentsline {subsubsection}{\numberline {4.0.1}Reference Architecture}{4}{subsubsection.0.4.0.1}
 \contentsline {section}{\numberline {5}Technologies}{4}{section.0.5}

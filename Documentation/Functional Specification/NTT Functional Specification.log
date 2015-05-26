@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  26 MAY 2015 11:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  26 MAY 2015 19:57
 entering extended mode
 **NTT*Functional*Specification.tex
 
@@ -216,20 +216,20 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 (C:\Users\Duran\Documents\MikTex2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -254,7 +254,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 31.
 
 (C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -264,29 +264,45 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count111
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.out")
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.out")
 \@outlinefile=\write4
+
+<../GeneralImages/up-logo.jpg, id=91, 287.1528pt x 78.7743pt>
+File: ../GeneralImages/up-logo.jpg Graphic file (type jpg)
+
+<use ../GeneralImages/up-logo.jpg>
+Package pdftex.def Info: ../GeneralImages/up-logo.jpg used on input line 39.
+(pdftex.def)             Requested size: 287.15208pt x 78.77411pt.
+
+<../GeneralImages/NTT.jpg, id=92, 963.6pt x 722.7pt>
+File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
+
+<use ../GeneralImages/NTT.jpg>
+Package pdftex.def Info: ../GeneralImages/NTT.jpg used on input line 46.
+(pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 49.
+(Font)              <12> on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 49.
+(Font)              <8> on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 49.
+(Font)              <6> on input line 57.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX warning (ext4): des
-tination with the same identifier (name{page.1}) has been already used, duplica
-te ignored
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Duran/Documents/
+GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C
+:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Gener
+alImages/NTT.jpg>]pdfTeX warning (ext4): destination with the same identifier (
+name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.120 \tableofcontents
+l.128 \tableofcontents
                       {} [1]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.toc")
@@ -298,138 +314,342 @@ nctional Specification\NTT Functional Specification.toc")
 nctional Specification\Introduction/Introduction.tex")
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\UseCaseServiceContracts/UseCaseServiceContracts.tex"
-<Diagrams/Use_Case_Diagram__HeatMap.png, id=75, 456.70625pt x 281.05pt>
+<Diagrams/Use_Case_Diagram__HeatMap.png, id=132, 456.70625pt x 281.05pt>
 File: Diagrams/Use_Case_Diagram__HeatMap.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__HeatMap.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__HeatMap.png used on input l
-ine 2.
+ine 4.
 (pdftex.def)             Requested size: 228.35255pt x 140.52464pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
 
-<Diagrams/Use_Case_Diagram__SaveHeatMap.png, id=76, 556.0775pt x 492.84125pt>
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+ [3 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/Functional Specification/Diagrams/Use_Case_Diagram__HeatMap.png (PNG copy)>]
+<Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png, id=138, 738.76pt 
+x 169.63374pt>
+File: Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png Graphic file 
+(type png)
+
+<use Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMa
+p.png used on input line 15.
+(pdftex.def)             Requested size: 369.37909pt x 84.81665pt.
+
+<Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png, id=139, 320.19624pt x
+ 327.2225pt>
+File: Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png Graphic file (typ
+e png)
+ <use Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.pn
+g used on input line 26.
+(pdftex.def)             Requested size: 160.09772pt x 163.61084pt.
+
+[4 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/
+Functional Specification/Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMa
+p.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking
+/Documentation/Functional Specification/Diagrams/Activity_Diagram__ReadHeatMap_
+_ReadHeatMap.png (PNG copy)>]
+<Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png, id=147, 549.05125pt x
+ 513.92pt>
+File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
+e png)
+ <use Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
+g used on input line 36.
+(pdftex.def)             Requested size: 274.52495pt x 256.95937pt.
+
+<Diagrams/Use_Case_Diagram__SaveHeatMap.png, id=148, 556.0775pt x 492.84125pt>
 File: Diagrams/Use_Case_Diagram__SaveHeatMap.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__SaveHeatMap.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__SaveHeatMap.png used on inp
-ut line 6.
+ut line 42.
 (pdftex.def)             Requested size: 278.03807pt x 246.42001pt.
 
-<Diagrams/Use_Case_Diagram__Models.png, id=77, 590.205pt x 252.945pt>
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
+
+ []
+
+[5 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/
+Functional Specification/Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
+g (PNG copy)>]
+File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
+e png)
+ <use Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
+g used on input line 44.
+(pdftex.def)             Requested size: 274.52495pt x 256.95937pt.
+
+[6 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/
+Functional Specification/Diagrams/Use_Case_Diagram__SaveHeatMap.png (PNG copy)>
+] <Diagrams/Use_Case_Diagram__Models.png, id=159, 590.205pt x 252.945pt>
 File: Diagrams/Use_Case_Diagram__Models.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Models.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__Models.png used on input li
-ne 10.
+ne 78.
 (pdftex.def)             Requested size: 295.10178pt x 126.47218pt.
- [3 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
-/Functional Specification/Diagrams/Use_Case_Diagram__HeatMap.png (PNG copy)> <C
-:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Funct
-ional Specification/Diagrams/Use_Case_Diagram__SaveHeatMap.png (PNG copy)>]
-<Diagrams/Use_Case_Diagram__3DModels.png, id=83, 618.31pt x 323.2075pt>
+
+<Diagrams/Use_Case_Diagram__3DModels.png, id=160, 618.31pt x 323.2075pt>
 File: Diagrams/Use_Case_Diagram__3DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__3DModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__3DModels.png used on input 
-line 14.
+line 84.
 (pdftex.def)             Requested size: 309.15424pt x 161.60335pt.
+ [7 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/Functional Specification/Diagrams/Use_Case_Diagram__Models.png (PNG copy)>]
+<Diagrams/Activity_Diagram__ImportModel__ImportModel.png, id=167, 542.025pt x 2
+04.765pt>
+File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
+e png)
+ <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
+g used on input line 96.
+(pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
 
-<Diagrams/Use_Case_Diagram__2DModels.png, id=84, 681.54625pt x 288.07625pt>
+<Diagrams/Activity_Diagram__ViewModel__ViewModel.png, id=168, 373.395pt x 169.6
+3374pt>
+File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
+g)
+ <use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
+ed on input line 107.
+(pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
+ [8 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/Functional Specification/Diagrams/Use_Case_Diagram__3DModels.png (PNG copy)> <
+C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Func
+tional Specification/Diagrams/Activity_Diagram__ImportModel__ImportModel.png (P
+NG copy)>]
+Overfull \hbox (50.75185pt too wide) in paragraph at lines 114--115
+[]\OT1/cmr/m/n/12 Request Data Struc-ture: HeatMap.ExportHeatMap3DModel(heatmap
+ID,3DModelID). 
+ []
+
+
+<Diagrams/Activity_Diagram__ExportModel__ExportModel.png, id=176, 513.92pt x 18
+3.68625pt>
+File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
+e png)
+ <use Diagrams/Activity_Diagram__ExportModel__ExportModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ExportModel__ExportModel.pn
+g used on input line 118.
+(pdftex.def)             Requested size: 256.95937pt x 91.84288pt.
+
+<Diagrams/Use_Case_Diagram__2DModels.png, id=177, 681.54625pt x 288.07625pt>
 File: Diagrams/Use_Case_Diagram__2DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__2DModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__2DModels.png used on input 
-line 18.
+line 124.
 (pdftex.def)             Requested size: 340.7723pt x 144.03777pt.
+ [9 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/Functional Specification/Diagrams/Activity_Diagram__ViewModel__ViewModel.png (
+PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Docume
+ntation/Functional Specification/Diagrams/Activity_Diagram__ExportModel__Export
+Model.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Trac
+king/Documentation/Functional Specification/Diagrams/Use_Case_Diagram__2DModels
+.png (PNG copy)>]
+File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
+e png)
 
-<Diagrams/Use_Case_Diagram__VideoModels.png, id=85, 681.54625pt x 302.12875pt>
+<use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
+g used on input line 137.
+(pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
+File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
+g)
+
+<use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
+ed on input line 148.
+(pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
+File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
+e png)
+
+<use Diagrams/Activity_Diagram__ExportModel__ExportModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ExportModel__ExportModel.pn
+g used on input line 159.
+(pdftex.def)             Requested size: 256.95937pt x 91.84288pt.
+
+<Diagrams/Use_Case_Diagram__VideoModels.png, id=185, 681.54625pt x 302.12875pt>
 File: Diagrams/Use_Case_Diagram__VideoModels.png Graphic file (type png)
-
 <use Diagrams/Use_Case_Diagram__VideoModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__VideoModels.png used on inp
-ut line 22.
+ut line 167.
 (pdftex.def)             Requested size: 340.7723pt x 151.064pt.
- [4 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
-/Functional Specification/Diagrams/Use_Case_Diagram__Models.png (PNG copy)> <C:
-/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functi
-onal Specification/Diagrams/Use_Case_Diagram__3DModels.png (PNG copy)> <C:/User
-s/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional 
-Specification/Diagrams/Use_Case_Diagram__2DModels.png (PNG copy)>]
-<Diagrams/Use_Case_Diagram__RawInformation.png, id=92, 696.6025pt x 478.78876pt
->
+ [10]
+File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
+e png)
+
+<use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
+g used on input line 180.
+(pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
+File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
+g)
+
+<use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
+ed on input line 191.
+(pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
+ [11 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentatio
+n/Functional Specification/Diagrams/Use_Case_Diagram__VideoModels.png (PNG copy
+)>]
+File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
+e png)
+
+<use Diagrams/Activity_Diagram__ExportModel__ExportModel.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ExportModel__ExportModel.pn
+g used on input line 202.
+(pdftex.def)             Requested size: 256.95937pt x 91.84288pt.
+
+<Diagrams/Use_Case_Diagram__RawInformation.png, id=199, 696.6025pt x 478.78876p
+t>
 File: Diagrams/Use_Case_Diagram__RawInformation.png Graphic file (type png)
  <use Diagrams/Use_Case_Diagram__RawInformation.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__RawInformation.png used on 
-input line 26.
+input line 210.
 (pdftex.def)             Requested size: 348.3004pt x 239.39378pt.
+ [12 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentatio
+n/Functional Specification/Diagrams/Use_Case_Diagram__RawInformation.png (PNG c
+opy)>]
+<Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png, id=207,
+ 612.2875pt x 148.555pt>
+File: Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png Gra
+phic file (type png)
 
-<Diagrams/Use_Case_Diagram__Statistics.png, id=93, 442.65375pt x 281.05pt>
+<use Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__SaveRawInformation__SaveRaw
+Information.png used on input line 220.
+(pdftex.def)             Requested size: 306.143pt x 74.27731pt.
+
+<Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png, id=208,
+ 872.25874pt x 246.9225pt>
+File: Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png Gra
+phic file (type png)
+
+<use Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__ReadRawInformation__ReadRaw
+Information.png used on input line 232.
+(pdftex.def)             Requested size: 436.1283pt x 123.46094pt.
+
+Overfull \hbox (6.84761pt too wide) in paragraph at lines 232--233
+[][] 
+ []
+
+<Diagrams/Use_Case_Diagram__Statistics.png, id=209, 442.65375pt x 281.05pt>
 File: Diagrams/Use_Case_Diagram__Statistics.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Statistics.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__Statistics.png used on inpu
-t line 30.
+t line 242.
 (pdftex.def)             Requested size: 221.32632pt x 140.52464pt.
+ [13 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentatio
+n/Functional Specification/Diagrams/Activity_Diagram__SaveRawInformation__SaveR
+awInformation.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-
+Eye-Tracking/Documentation/Functional Specification/Diagrams/Activity_Diagram__
+ReadRawInformation__ReadRawInformation.png (PNG copy)>]
+<Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png, id=216, 506
+.89375pt x 176.66pt>
+File: Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png Graphic
+ file (type png)
 
-<Diagrams/Use_Case_Diagram__RecordEye.png, id=94, 505.89pt x 414.54875pt>
+<use Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__CreateStatistics__CreateSta
+tistics.png used on input line 253.
+(pdftex.def)             Requested size: 253.44626pt x 88.32977pt.
+
+<Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png, id=217, 633.366
+26pt x 183.68625pt>
+File: Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png Graphic fil
+e (type png)
+
+<use Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__SaveStatistics__SaveStatist
+ics.png used on input line 264.
+(pdftex.def)             Requested size: 316.68236pt x 91.84288pt.
+
+<Diagrams/Use_Case_Diagram__RecordEye.png, id=218, 505.89pt x 414.54875pt>
 File: Diagrams/Use_Case_Diagram__RecordEye.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__RecordEye.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__RecordEye.png used on input
- line 34.
+ line 270.
 (pdftex.def)             Requested size: 252.94437pt x 207.27386pt.
-) [5 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentatio
-n/Functional Specification/Diagrams/Use_Case_Diagram__VideoModels.png (PNG copy
-)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/
-Functional Specification/Diagrams/Use_Case_Diagram__RawInformation.png (PNG cop
-y)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
-/Functional Specification/Diagrams/Use_Case_Diagram__Statistics.png (PNG copy)>
-]
+ [14 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentatio
+n/Functional Specification/Diagrams/Use_Case_Diagram__Statistics.png (PNG copy)
+> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/F
+unctional Specification/Diagrams/Activity_Diagram__CreateStatistics__CreateStat
+istics.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tra
+cking/Documentation/Functional Specification/Diagrams/Activity_Diagram__SaveSta
+tistics__SaveStatistics.png (PNG copy)>]
+<Diagrams/Activity_Diagram__RecordEye__RecordEye.png, id=225, 950.55125pt x 194
+.7275pt>
+File: Diagrams/Activity_Diagram__RecordEye__RecordEye.png Graphic file (type pn
+g)
+ <use Diagrams/Activity_Diagram__RecordEye__RecordEye.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__RecordEye__RecordEye.png us
+ed on input line 282.
+(pdftex.def)             Requested size: 475.27446pt x 97.3635pt.
+
+Overfull \hbox (45.99377pt too wide) in paragraph at lines 282--283
+[][] 
+ []
+
+)
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\RequiredFunctionality/RequiredFunctionality.tex")
+nctional Specification\RequiredFunctionality/RequiredFunctionality.tex"
+[15 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/Functional Specification/Diagrams/Use_Case_Diagram__RecordEye.png (PNG copy)> 
+<C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Fun
+ctional Specification/Diagrams/Activity_Diagram__RecordEye__RecordEye.png (PNG 
+copy)>] [16] [17])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\ProcessSpecification/ProcessSpecification.tex")
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\DomainModel/DomainModel.tex") [6 <C:/Users/Duran/Documen
-ts/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/D
-iagrams/Use_Case_Diagram__RecordEye.png (PNG copy)>]
+nctional Specification\DomainModel/DomainModel.tex") [18]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\Bibliography/Bibliography.tex")
 
-LaTeX Warning: Empty `thebibliography' environment on input line 135.
+LaTeX Warning: Empty `thebibliography' environment on input line 143.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
-[7
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
+[19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `NTT*Functional*Specification.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
  ) 
 Here is how much of TeX's memory you used:
- 5273 strings out of 493921
- 82779 string characters out of 3144475
- 156226 words of memory out of 3000000
- 8477 multiletter control sequences out of 15000+200000
+ 5411 strings out of 493921
+ 87496 string characters out of 3144475
+ 158227 words of memory out of 3000000
+ 8554 multiletter control sequences out of 15000+200000
  9750 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,28p,260b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.0.6} has been referenced but does not exi
-st, replaced by a fixed one
-
-<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
-C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Functional Specification.pdf" (8 pages, 246625 bytes).
+ 29i,5n,28p,599b,462s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "NTT Functional Specification.pdf" (20 pages, 476859 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 287 words of extra memory for PDF output out of 10000 (max. 10000000)
 
