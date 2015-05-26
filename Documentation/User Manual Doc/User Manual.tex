@@ -1,0 +1,123 @@
+\documentclass[a4paper,12pt]{report}
+\addtolength{\oddsidemargin}{-1.cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textheight}{3.5cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\makeindex
+
+\usepackage{longtable}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{float}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+% define the title
+\begin{document}
+\setlength{\parskip}{6pt}
+
+% generates the title
+\begin{titlepage}
+
+\begin{center}
+% Upper part of the page          
+\textsc{\LARGE Neo Tandem Technologies}\\[1.5cm]
+
+
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries User Manual}\\[0.4cm]
+{ \huge \bfseries V0.1}\\[0.4cm]
+\HRule \\[0.4cm]
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Duran {Cole}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Student number:} \\
+u13329414
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Michael {Nunes}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u12104592
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Molefe {Molefe}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u00000000
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Tebogo {Seshibe}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u00000000
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Timothy {Snayers}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{} \\
+u00000000
+\end{flushright}
+\end{minipage}
+\vfill
+% Bottom of the page
+{\large \today}
+\end{center}
+\end{titlepage}
+\footnotesize
+\normalsize
+
+\renewcommand{\thesection}{\arabic{section}}
+\newpage
+\tableofcontents{}
+\newpage
+\begin{center}
+\textsc{\LARGE Document Revisions}\\[1.5cm]
+Version: Version 0.0:Initial creation of document 
+\today
+\end{center}
+\newpage
+\section{Introduction}
+	\input{Introduction/Introduction.tex}
+\section{Processes}
+	\input{Processes/Processes.tex}
+\section{3 Appendices}
+	\input{Appendicies/Appendices.tex}
+\section{Index}
+	\input{Index/Index.tex}
+\end{document}
