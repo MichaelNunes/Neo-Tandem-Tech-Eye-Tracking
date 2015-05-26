@@ -13,6 +13,7 @@
     Have OGAMA and eye-tracking equipment setup and running.\newline
     \textbf{Post-condition: }
     Captured information into a file.
+    
 \subsection{Create heat-mapped texture}
     \textbf{Priority: Critical}\newline
     From the eye-tracking information a heat map in the form of a texture map must be produced. The format of the texture will depend on the 3D software used.\newline
@@ -20,6 +21,7 @@
     Have captured information from OGAMA and eye-tracking equipment.\newline
     \textbf{Post-condition: }
     Captured information made into a heat map image.
+    
 \subsection{Map heat-mapped texture back onto scene}
     \textbf{Priority: Critical}\newline
     The heat-mapped texture of the object must be able to be mapped correctly back onto the scene, that is the placement must be as was the original texture.\newline
@@ -27,6 +29,7 @@
     Have heat-mapped texture..\newline
     \textbf{Post-condition: }
     3D scene now has new heat-mapped texture applied.
+    
 \subsection{Real-time heat-mapping}
     \textbf{Priority: Nice-to-have}\newline
     As the scene is being viewed it will also be coloured according to the eye-trackers information.\newline
@@ -34,24 +37,28 @@
     Have OGAMA and eye-tracking equipment setup and running.\newline
     \textbf{Post-condition: }
     Captured information used to colour the scene.
+    
 \subsection{Interactive Maps}
-Description: This function involves overlaying a map with data captured by the Eye tribe eye tracking technology and stored using the OGAMA freeware. The data will be retrieved from a database which has already been integrated into the OGAMA freeware that will be used for this project. Through the use of the analytical features provided by OGAMA, its functionality will be extended into the visualization of the information it has stored. This includes the attention maps, scan paths and replay functions.
-Priority: Important
-Preconditions: Have the Eye tribe eye tracking technology running during the activity.     
-Post Conditions: Output a 2D representation on the interactive map with the necessary data overlaying it. 
+    \textbf{Priority: Important}\newline
+    This function involves overlaying a map with data captured by the Eye tribe eye tracking technology and stored using the OGAMA freeware. The data will be retrieved from a database which has already been integrated into the OGAMA freeware that will be used for this project. Through the use of the analytical features provided by OGAMA, its functionality will be extended into the visualization of the information it has stored. This includes the attention maps, scan paths and replay functions.\newline
+    \textbf{Pre-condition: } Have the Eye tribe eye tracking technology running during the activity.\newline   
+    \textbf{Post-condition: }Output a 2D representation on the interactive map with the necessary data overlaying it. 
+    
 \subsection{In-Video Eye Tracking}
-Description:  This function overlays video frames with eye tracking attention maps while watching a video. This is an especially tricky function due to the fact that OGAMA analytical feature is able to run in parallel with data being viewed, but not render the attention map or scan path at run time.
-Priority: Nice to have.
-Preconditions: Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.
-Post Conditions: Run time editing of video frames overlaid with attention maps and scan paths.
+    \textbf{Priority: Nice-to-have}\newline
+    This function overlays video frames with eye tracking attention maps while watching a video. This is an especially tricky function due to the fact that OGAMA analytical feature is able to run in parallel with data being viewed, but not render the attention map or scan path at run time.\newline
+    \textbf{Pre-condition: }Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.\newline
+    \textbf{Post-condition: }Run time editing of video frames overlaid with attention maps and scan paths.
+
 \subsection{Post-video Eye Tracking}
-Description: This function involves rendering a video with an attention map and scan path overlaid after it has been watched. This function is more achievable than the In-video eye tracking because the OGAMA software is able to record eye gaze and movement on image slideshows thus it can be used on a slideshow of frames from the video to render a video coupled with this analyzed data overlaying it.  
-Priority: Nice to have
-Preconditions: Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.    
-Post Conditions: Output a video with its frames overlaid with attention maps and scan paths.
+    \textbf{Priority: Nice-to-have}\newline
+    This function involves rendering a video with an attention map and scan path overlaid after it has been watched. This function is more achievable than the In-video eye tracking because the OGAMA software is able to record eye gaze and movement on image slideshows thus it can be used on a slideshow of frames from the video to render a video coupled with this analyzed data overlaying it.\newline
+\textbf{Pre-condition: }Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.\newline   
+\textbf{Post-condition: }Output a video with its frames overlaid with attention maps and scan paths.
+
 \subsection{Suitable Video Output Formats} 
-Description: This function aims allow the post-video eye tracking video to be outputted in more than one video format. The default video output provided by OGAMA is avi, but through this function it would be possible to output videos in more popular formats such as mp4, wmv, mkv etc. This allows the product to be used by many more devices, some of which have limited memory or only support specific video formats. 
-Priority: Nice to have
-Preconditions: Same as the Post-video Eye Tracking function. 
-Post Conditions: Output a video in the format that the user has selected.
+    \textbf{Priority: Nice-to-have}\newline
+    This function aims allow the post-video eye tracking video to be outputted in more than one video format. The default video output provided by OGAMA is avi, but through this function it would be possible to output videos in more popular formats such as mp4, wmv, mkv etc. This allows the product to be used by many more devices, some of which have limited memory or only support specific video formats.\newline
+    \textbf{Pre-condition: }Same as the Post-video Eye Tracking function.\newline 
+    \textbf{Post-condition: }Output a video in the format that the user has selected.
 
