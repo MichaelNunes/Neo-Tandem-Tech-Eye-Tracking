@@ -7,3 +7,4 @@ Documentation/Functional Specification/NTT Functional Specification.pdf
 *.gz
 *.log
 Documentation/Functional Specification/NTT Functional Specification.pdf
+*.aux
