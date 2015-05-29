@@ -1,37 +1,36 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.0.1}
-\contentsline {subsection}{\numberline {1.1}Project Background}{3}{subsection.0.1.1}
-\contentsline {subsection}{\numberline {1.2}Project Vision}{3}{subsection.0.1.2}
-\contentsline {section}{\numberline {2}Use Case/Service Contracts}{3}{section.0.2}
-\contentsline {subsection}{\numberline {2.1}Heat Maps}{3}{subsection.0.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}CreateHeatMap}{4}{subsubsection.0.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}ReadHeatMap}{4}{subsubsection.0.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}SaveHeatMap}{4}{subsubsection.0.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Save Heat Maps}{5}{subsection.0.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}SaveOn2DModel}{6}{subsubsection.0.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}SaveOnVideo}{6}{subsubsection.0.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}SaveOn3DModel}{8}{subsubsection.0.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Models}{8}{subsection.0.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}3D Models}{8}{subsubsection.0.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}2D Models}{10}{subsubsection.0.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Video Models}{12}{subsubsection.0.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Raw Information}{13}{subsection.0.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}SaveRawInformation}{14}{subsubsection.0.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}ReadRawInformation}{15}{subsubsection.0.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}CreateStatistics}{15}{subsubsection.0.2.4.3}
-\contentsline {subsection}{\numberline {2.5}Statistics}{15}{subsection.0.2.5}
-\contentsline {subsubsection}{\numberline {2.5.1}CreateStatistics}{16}{subsubsection.0.2.5.1}
-\contentsline {subsubsection}{\numberline {2.5.2}SaveStatistics}{16}{subsubsection.0.2.5.2}
-\contentsline {subsection}{\numberline {2.6}Record Eyes}{17}{subsection.0.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}RecordInformation}{17}{subsubsection.0.2.6.1}
-\contentsline {section}{\numberline {3}Required Functionality}{18}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Render 3D scene}{18}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Eye-tracking on a 3D scene}{18}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Create heat-mapped texture}{18}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Map heat-mapped texture back onto scene}{19}{subsection.0.3.4}
-\contentsline {subsection}{\numberline {3.5}Real-time heat-mapping}{19}{subsection.0.3.5}
-\contentsline {subsection}{\numberline {3.6}Interactive Maps}{19}{subsection.0.3.6}
-\contentsline {subsection}{\numberline {3.7}In-Video Eye Tracking}{19}{subsection.0.3.7}
-\contentsline {subsection}{\numberline {3.8}Post-video Eye Tracking}{20}{subsection.0.3.8}
-\contentsline {subsection}{\numberline {3.9}Suitable Video Output Formats}{20}{subsection.0.3.9}
-\contentsline {section}{\numberline {4}Process Specification}{20}{section.0.4}
-\contentsline {section}{\numberline {5}Domain Model}{20}{section.0.5}
+\contentsline {section}{\numberline {1}Introduction}{5}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Project Background}{5}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Project Vision}{5}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}Use Case/Service Contracts}{6}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Heat Maps}{6}{subsection.0.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}CreateHeatMap}{6}{subsubsection.0.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}ReadHeatMap}{7}{subsubsection.0.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}SaveHeatMap}{7}{subsubsection.0.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Save Heat Maps}{8}{subsection.0.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}SaveOn2DModel}{8}{subsubsection.0.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}SaveOnVideo}{9}{subsubsection.0.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}SaveOn3DModel}{10}{subsubsection.0.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Models}{11}{subsection.0.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}3D Models}{11}{subsubsection.0.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}2D Models}{13}{subsubsection.0.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Video Models}{15}{subsubsection.0.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Raw Information}{16}{subsection.0.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}SaveRawInformation}{17}{subsubsection.0.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}ReadRawInformation}{17}{subsubsection.0.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}CreateStatistics}{18}{subsubsection.0.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Statistics}{18}{subsection.0.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}CreateStatistics}{19}{subsubsection.0.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}SaveStatistics}{19}{subsubsection.0.2.5.2}
+\contentsline {subsection}{\numberline {2.6}Record Eyes}{20}{subsection.0.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}RecordInformation}{20}{subsubsection.0.2.6.1}
+\contentsline {section}{\numberline {3}Required Functionality}{21}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Render 3D scene}{21}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Eye-tracking on a 3D scene}{21}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Create heat-mapped texture}{21}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Map heat-mapped texture back onto scene}{21}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Real-time heat-mapping}{22}{subsection.0.3.5}
+\contentsline {subsection}{\numberline {3.6}Interactive Maps}{22}{subsection.0.3.6}
+\contentsline {subsection}{\numberline {3.7}In-Video Eye Tracking}{22}{subsection.0.3.7}
+\contentsline {subsection}{\numberline {3.8}Post-video Eye Tracking}{22}{subsection.0.3.8}
+\contentsline {subsection}{\numberline {3.9}Suitable Video Output Formats}{23}{subsection.0.3.9}
+\contentsline {section}{\numberline {4}Domain Model}{24}{section.0.4}
