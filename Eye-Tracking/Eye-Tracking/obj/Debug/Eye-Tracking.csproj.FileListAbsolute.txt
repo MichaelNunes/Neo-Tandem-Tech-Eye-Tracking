@@ -1,0 +1,8 @@
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\bin\Debug\Eye-Tracking.exe.config
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\obj\Debug\Eye-Tracking.csprojResolveAssemblyReference.cache
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\obj\Debug\Eye_Tracking.Properties.Resources.resources
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\obj\Debug\Eye-Tracking.csproj.GenerateResource.Cache
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\bin\Debug\Eye-Tracking.exe
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\bin\Debug\Eye-Tracking.pdb
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\obj\Debug\Eye-Tracking.exe
+C:\Users\m\Desktop\Eye-Tracking\Eye-Tracking\obj\Debug\Eye-Tracking.pdb
