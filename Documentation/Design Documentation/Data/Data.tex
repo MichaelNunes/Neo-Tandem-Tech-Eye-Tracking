@@ -1,0 +1,15 @@
+The data structures used throughout this program are C sharp classes and a external referance to the OGAMA project that will be used to process the data.The data structures all interact with each other in some way and there is no solitary class that is stand alone.Communication between the Data Objects is crucial in this program as raw and process data is dealt throughout the program and Objects communication is important to start processes.
+
+\subsection{Models class}
+The models classes store all the information about the media that is being used and analysed.The models interact with the heat map class and the recording class.The models will initiate the recording.The data gathered from this will then be sent to the relevant heat map class so that it can create a heatmap and then apply it to the media.The Model classes are seperated into three child classes
+\begin{itemize}
+\item 3D Model
+\item 2D Model
+\item Video Model
+\end{itemize}
+\subsection{Heat map}
+The heat map object allows the creation of a heat map for a specific media type.The heat map uses the information collected from the eye tracking and then generates a heat map that is based on the media type that it is linked to.The heat map will safe the raw information that is used to create the heat map and will also be allowed to create a heat map from the raw data.
+\subsection{Statistics class}
+The statistics class uses the heat map data to create a statistical analysis on the heat map and gives the user the statistics that they need.This class also contains a reference to a specific heat map object so that it can directly access all the data that it needs.
+\subsection{Recorder class}
+This class initiates the recording.This class is called in the Models classed and thus is appart of it.This will open up the media to full screen to ensure there are no distractions.

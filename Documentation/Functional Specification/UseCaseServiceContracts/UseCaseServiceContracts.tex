@@ -132,7 +132,7 @@ This section details all the different types of media or models that heat maps c
 		\begin{itemize}
 			\item Pre-condition: 3D model must exist.
 			\item Post-condition: Recording can be done on the model.
-			\item Request Data Structure: HeatMap.3DModeImport(3DModelID).
+			\item Request Data Structure: 3DModel.3DModeImport(3DModelID).
 			\item Return Data Structure: Rendered data model is imported.
 		\end{itemize}
 		
@@ -147,7 +147,7 @@ This section details all the different types of media or models that heat maps c
 		\begin{itemize}
 			\item Pre-condition: 3D model must have been imported .
 			\item Post-condition: 3D model is viewable and can be recorded on.
-			\item Request Data Structure: HeatMap.View3DModel(3DModelID).
+			\item Request Data Structure: 3DModel.View3DModel(3DModelID).
 			\item Return Data Structure: Viewable 3D model
 		\end{itemize}
 		\begin{figure}[!ht]
@@ -161,7 +161,7 @@ This section details all the different types of media or models that heat maps c
 		\begin{itemize}
 			\item Pre-condition: Heat Map must be created and Model Imported.
 			\item Post-condition: Exported Model With heatmap on it to be viewed.
-			\item Request Data Structure: HeatMap.ExportHeatMap3DModel(heatmapID,3DModelID).
+			\item Request Data Structure: 3DModel.ExportHeatMap3DModel(heatmapID,3DModelID).
 			\item Return Data Structure: Model with heat map.
 		\end{itemize}
 		
@@ -187,7 +187,7 @@ This section details all the different types of media or models that heat maps c
 		\begin{itemize}
 			\item Pre-condition: 2D model must exist, a image preferable.
 			\item Post-condition: Recording can be done on the model.
-			\item Request Data Structure: HeatMap.2DModeImport(2DModelID).
+			\item Request Data Structure: 2DModel.2DModeImport(2DModelID).
 			\item Return Data Structure: Rendered image is imported.
 		\end{itemize}
 		
@@ -202,7 +202,7 @@ This section details all the different types of media or models that heat maps c
 		\begin{itemize}
 			\item Pre-condition: 2D model (image) must have been imported.
 			\item Post-condition: Image is viewable and can be recorded on.
-			\item Request Data Structure: HeatMap.View2DModel(2DModelID)
+			\item Request Data Structure: 2DModel.View2DModel(2DModelID)
 			\item Return Data Structure: Viewable image.
 		\end{itemize}
 		
@@ -217,7 +217,7 @@ This section details all the different types of media or models that heat maps c
 		\begin{itemize}
 			\item Pre-condition: Heat Map must be created and Model Imported.
 			\item Post-condition: Exported Model With heatmap on it to be viewed.
-			\item Request Data Structure: HeatMap.Export2Dmodel(2DModelID).
+			\item Request Data Structure: 2DModel.Export2Dmodel(heatMapID,2DModelID).
 			\item Return Data Structure: Model with heat map.
 		\end{itemize}
 		
@@ -247,7 +247,7 @@ This section details all the different types of media or models that heat maps c
 			\begin{itemize}
 				\item Pre-condition: video must exist.
 				\item Post-condition: Recording can be done on the video.
-				\item Request Data Structure: HeatMap.VideoImport(videoID).
+				\item Request Data Structure: VideoModel.VideoImport(videoID).
 				\item Return Data Structure: Rendered video is imported.
 			\end{itemize}
 			
@@ -272,7 +272,7 @@ Once the model is imported the users can view the model and eye tracking can the
 			\begin{itemize}
 				\item Pre-condition: Heat map must be created and video imported.
 				\item Post-condition: Exported video With heat map on it to be viewed.
-				\item Request Data Structure: HeatMap.SaveOnvideo(videolID).
+				\item Request Data Structure: VideoModel.Exportvideo(heatmapID,videolID).
 				\item Return Data Structure: Video with heat map.
 			\end{itemize}
 		\begin{figure}[!ht]
