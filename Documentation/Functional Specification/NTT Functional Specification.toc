@@ -26,9 +26,9 @@
 \contentsline {section}{\numberline {3}Required Functionality}{21}{section.0.3}
 \contentsline {subsection}{\numberline {3.1}Render 3D scene}{21}{subsection.0.3.1}
 \contentsline {subsection}{\numberline {3.2}Eye-tracking on a 3D scene}{21}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Create heat-mapped texture}{21}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Map heat-mapped texture back onto scene}{21}{subsection.0.3.4}
-\contentsline {subsection}{\numberline {3.5}Real-time heat-mapping}{22}{subsection.0.3.5}
+\contentsline {subsection}{\numberline {3.3}Create heat mapped texture}{21}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Map heat mapped texture back onto scene}{21}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Real-time heat mapping}{22}{subsection.0.3.5}
 \contentsline {subsection}{\numberline {3.6}Interactive Maps}{22}{subsection.0.3.6}
 \contentsline {subsection}{\numberline {3.7}In-Video Eye Tracking}{22}{subsection.0.3.7}
 \contentsline {subsection}{\numberline {3.8}Post-video Eye Tracking}{22}{subsection.0.3.8}

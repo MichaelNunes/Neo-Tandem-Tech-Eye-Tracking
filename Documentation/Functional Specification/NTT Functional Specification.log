@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  29 MAY 2015 11:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  29 MAY 2015 13:18
 entering extended mode
 **NTT*Functional*Specification.tex
 
@@ -302,7 +302,7 @@ alImages/NTT.jpg>]pdfTeX warning (ext4): destination with the same identifier (
 name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124 \tableofcontents
+l.125 \tableofcontents
                       {} [1]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.toc")
@@ -320,7 +320,7 @@ nctional Specification\NTT Functional Specification.lof" [3
 nctional Specification\Introduction/Introduction.tex") [5]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\UseCaseServiceContracts/UseCaseServiceContracts.tex"
-<Diagrams/Use_Case_Diagram__HeatMap.png, id=201, 456.70625pt x 281.05pt>
+<Diagrams/Use_Case_Diagram__HeatMap.png, id=202, 456.70625pt x 281.05pt>
 File: Diagrams/Use_Case_Diagram__HeatMap.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__HeatMap.png>
@@ -335,7 +335,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
 
-<Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png, id=202, 738.76pt 
+<Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png, id=203, 738.76pt 
 x 169.63374pt>
 File: Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png Graphic file 
 (type png)
@@ -362,7 +362,7 @@ cuments/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specificat
 ion/Diagrams/Use_Case_Diagram__HeatMap.png (PNG copy)> <C:/Users/Duran/Document
 s/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Di
 agrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png (PNG copy)>]
-<Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png, id=210, 320.19624pt x
+<Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png, id=211, 320.19624pt x
  327.2225pt>
 File: Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png Graphic file (typ
 e png)
@@ -371,7 +371,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.pn
 g used on input line 38.
 (pdftex.def)             Requested size: 160.09772pt x 163.61084pt.
 
-<Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png, id=211, 549.05125pt x
+<Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png, id=212, 549.05125pt x
  513.92pt>
 File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
 e png)
@@ -385,7 +385,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
  []
 
 
-<Diagrams/Use_Case_Diagram__SaveHeatMap.png, id=212, 556.0775pt x 492.84125pt>
+<Diagrams/Use_Case_Diagram__SaveHeatMap.png, id=213, 556.0775pt x 492.84125pt>
 File: Diagrams/Use_Case_Diagram__SaveHeatMap.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__SaveHeatMap.png>
@@ -447,7 +447,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
 g used on input line 106.
 (pdftex.def)             Requested size: 274.52495pt x 256.95937pt.
 
-<Diagrams/Use_Case_Diagram__Models.png, id=229, 590.205pt x 252.945pt>
+<Diagrams/Use_Case_Diagram__Models.png, id=230, 590.205pt x 252.945pt>
 File: Diagrams/Use_Case_Diagram__Models.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Models.png>
@@ -461,7 +461,7 @@ ne 115.
                                                   \fi \fi 
 l.118 
       ]
-<Diagrams/Use_Case_Diagram__3DModels.png, id=235, 618.31pt x 323.2075pt>
+<Diagrams/Use_Case_Diagram__3DModels.png, id=236, 618.31pt x 323.2075pt>
 File: Diagrams/Use_Case_Diagram__3DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__3DModels.png>
@@ -483,7 +483,7 @@ l.132 		\begin{itemize}
                         <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tr
 acking/Documentation/Functional Specification/Diagrams/Use_Case_Diagram__Models
 .png (PNG copy)>]
-<Diagrams/Activity_Diagram__ImportModel__ImportModel.png, id=241, 542.025pt x 2
+<Diagrams/Activity_Diagram__ImportModel__ImportModel.png, id=242, 542.025pt x 2
 04.765pt>
 File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
@@ -492,7 +492,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
 g used on input line 141.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
 
-<Diagrams/Activity_Diagram__ViewModel__ViewModel.png, id=242, 373.395pt x 169.6
+<Diagrams/Activity_Diagram__ViewModel__ViewModel.png, id=243, 373.395pt x 169.6
 3374pt>
 File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
 g)
@@ -525,7 +525,7 @@ ID,3DModelID).
  []
 
 
-<Diagrams/Activity_Diagram__ExportModel__ExportModel.png, id=251, 513.92pt x 18
+<Diagrams/Activity_Diagram__ExportModel__ExportModel.png, id=252, 513.92pt x 18
 3.68625pt>
 File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
 e png)
@@ -534,7 +534,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ExportModel__ExportModel.pn
 g used on input line 170.
 (pdftex.def)             Requested size: 256.95937pt x 91.84288pt.
 
-<Diagrams/Use_Case_Diagram__2DModels.png, id=252, 681.54625pt x 288.07625pt>
+<Diagrams/Use_Case_Diagram__2DModels.png, id=253, 681.54625pt x 288.07625pt>
 File: Diagrams/Use_Case_Diagram__2DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__2DModels.png>
@@ -612,7 +612,7 @@ l.236
                                                   \fi \fi 
 l.236 
       ]
-<Diagrams/Use_Case_Diagram__VideoModels.png, id=265, 681.54625pt x 302.12875pt>
+<Diagrams/Use_Case_Diagram__VideoModels.png, id=266, 681.54625pt x 302.12875pt>
 File: Diagrams/Use_Case_Diagram__VideoModels.png Graphic file (type png)
 <use Diagrams/Use_Case_Diagram__VideoModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__VideoModels.png used on inp
@@ -661,7 +661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--290
  []
 
 
-<Diagrams/Use_Case_Diagram__RawInformation.png, id=274, 696.6025pt x 478.78876p
+<Diagrams/Use_Case_Diagram__RawInformation.png, id=275, 696.6025pt x 478.78876p
 t>
 File: Diagrams/Use_Case_Diagram__RawInformation.png Graphic file (type png)
  <use Diagrams/Use_Case_Diagram__RawInformation.png>
@@ -687,7 +687,7 @@ r (name{figure.0.21}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.299 \begin{itemize}
                      ]
-<Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png, id=279,
+<Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png, id=280,
  612.2875pt x 148.555pt>
 File: Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png Gra
 phic file (type png)
@@ -716,7 +716,7 @@ pecification/Diagrams/Use_Case_Diagram__RawInformation.png (PNG copy)> <C:/User
 s/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional 
 Specification/Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation
 .png (PNG copy)>]
-<Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png, id=286,
+<Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png, id=287,
  872.25874pt x 246.9225pt>
 File: Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png Gra
 phic file (type png)
@@ -726,7 +726,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ReadRawInformation__ReadRaw
 Information.png used on input line 323.
 (pdftex.def)             Requested size: 436.1283pt x 123.46094pt.
 
-<Diagrams/Use_Case_Diagram__Statistics.png, id=287, 442.65375pt x 281.05pt>
+<Diagrams/Use_Case_Diagram__Statistics.png, id=288, 442.65375pt x 281.05pt>
 File: Diagrams/Use_Case_Diagram__Statistics.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Statistics.png>
@@ -751,7 +751,7 @@ GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Diag
 rams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png (PNG copy)> <
 C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Func
 tional Specification/Diagrams/Use_Case_Diagram__Statistics.png (PNG copy)>]
-<Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png, id=294, 506
+<Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png, id=295, 506
 .89375pt x 176.66pt>
 File: Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png Graphic
  file (type png)
@@ -761,7 +761,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__CreateStatistics__CreateSta
 tistics.png used on input line 352.
 (pdftex.def)             Requested size: 253.44626pt x 88.32977pt.
 
-<Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png, id=295, 633.366
+<Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png, id=296, 633.366
 26pt x 183.68625pt>
 File: Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png Graphic fil
 e (type png)
@@ -792,7 +792,7 @@ ion/Functional Specification/Diagrams/Activity_Diagram__CreateStatistics__Creat
 eStatistics.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Ey
 e-Tracking/Documentation/Functional Specification/Diagrams/Activity_Diagram__Sa
 veStatistics__SaveStatistics.png (PNG copy)>]
-<Diagrams/Use_Case_Diagram__RecordEye.png, id=303, 505.89pt x 414.54875pt>
+<Diagrams/Use_Case_Diagram__RecordEye.png, id=304, 505.89pt x 414.54875pt>
 File: Diagrams/Use_Case_Diagram__RecordEye.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__RecordEye.png>
@@ -800,7 +800,7 @@ Package pdftex.def Info: Diagrams/Use_Case_Diagram__RecordEye.png used on input
  line 377.
 (pdftex.def)             Requested size: 252.94437pt x 207.27386pt.
 
-<Diagrams/Activity_Diagram__RecordEye__RecordEye.png, id=304, 950.55125pt x 194
+<Diagrams/Activity_Diagram__RecordEye__RecordEye.png, id=305, 950.55125pt x 194
 .7275pt>
 File: Diagrams/Activity_Diagram__RecordEye__RecordEye.png Graphic file (type pn
 g)
@@ -818,7 +818,7 @@ Overfull \hbox (28.36896pt too wide) in paragraph at lines 394--395
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.132 	\newpage
+l.133 	\newpage
                 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/D
 ocumentation/Functional Specification/Diagrams/Use_Case_Diagram__RecordEye.png 
 (PNG copy)>]
@@ -835,45 +835,38 @@ on/Functional Specification/Diagrams/Activity_Diagram__RecordEye__RecordEye.png
  (PNG copy)>] [22]) [23]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\DomainModel/DomainModel.tex"
-<Diagrams/Class_Diagram__DomainModel.png, id=322, 794.97pt x 591.20876pt>
+<Diagrams/Class_Diagram__DomainModel.png, id=323, 794.97pt x 591.20876pt>
 File: Diagrams/Class_Diagram__DomainModel.png Graphic file (type png)
 
 <use Diagrams/Class_Diagram__DomainModel.png>
 Package pdftex.def Info: Diagrams/Class_Diagram__DomainModel.png used on input 
 line 3.
 (pdftex.def)             Requested size: 397.48402pt x 295.60365pt.
-) [24pdfTeX warning (ext4): destination with the same identifier (name{figure.0
-.30}) has been already used, duplicate ignored
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
+ [24pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
+30}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.138 	\newpage
-                <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/D
-ocumentation/Functional Specification/Diagrams/Class_Diagram__DomainModel.png (
-PNG copy)>]
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
-nctional Specification\Bibliography/Bibliography.tex")
-
-LaTeX Warning: Empty `thebibliography' environment on input line 141.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
-[25
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+l.139 \end{document}
+                     <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Track
+ing/Documentation/Functional Specification/Diagrams/Class_Diagram__DomainModel.
+png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\NTT Functional Specification.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `NTT*Functional*Specification.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 5455 strings out of 493921
- 87939 string characters out of 3144475
+ 5448 strings out of 493921
+ 87526 string characters out of 3144475
  160354 words of memory out of 3000000
  8563 multiletter control sequences out of 15000+200000
  9750 words of font info for 34 fonts, out of 3000000 for 9000
@@ -884,9 +877,9 @@ Here is how much of TeX's memory you used:
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Functional Specification.pdf" (26 pages, 550756 bytes).
+Output written on "NTT Functional Specification.pdf" (25 pages, 550725 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
+ 369 PDF objects out of 1000 (max. 8388607)
+ 102 named destinations out of 1000 (max. 500000)
  284 words of extra memory for PDF output out of 10000 (max. 10000000)
 
