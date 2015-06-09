@@ -1,5 +1,33 @@
-\subsection{Name of Tactic or Strategy} 
-\begin{flushleft}
-Say what you want to say and repeat for each one:)
+\subsection{Availability}
+This refers to whether the user will have constant access to the program and methods to avoid interruptions.
 
-\end{flushleft}
+Because of the way in which the system will work, all aspects of the systems will be working as long as it is running. Therefore, an exception based fault detection system. Unless it is the user interface that fails, the exception will be handle in the background, and a connection between the sections of the systems will be re-attempted.
+
+Checkpoints will be saved in order to roll back in the event of errors.
+
+\subsection{Modifiablity}
+This refers to time and cost relating to development, changes, and testing of the system.
+
+The MVC pattern allows us to separate concerns of the system allowing for finer grain implementation and changes to its inner working. This will also allow for potential changes to be "plugged in" if required.
+
+This is also means that testing will be easy as each section simply needs to test whether they are able to do their own required task. All related task will simply be using the abstraction of the subsystem.
+
+\subsection{Performance}
+This refers to the speed of execution, the time between a request and a response between modules within the system.
+
+In order to simplify the subsystems, any optimised, pre-made algorithms that can help with their executions will be used. As few as possible intermediaries will be used.
+
+\subsection{Security}
+This refers to the safety of the data that the system will be used.
+
+The system is to be designed in such a way that no users can interfere with the inner workings of the subsystems. The overall purpose of this systems is provide extra functionality to a device and so, changes to how it works are not required.
+
+\subsection{Testability}
+This refers to the ease of testing of the system, during successive build releases.
+
+During each build release, all test cases used in the subsystems unit tests, will be combined into a series of big test cases in order to make sure that the expected input provides the same expected output.
+
+\subsection{Usability}
+This refers to the ease of use the user will have with regards to the system.
+
+Since the system will be doing most of the work, the user will only be provided with a very simple interface to interact with the basic functions i.e record screen, print to texture.
