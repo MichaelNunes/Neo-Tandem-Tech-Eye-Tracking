@@ -1,0 +1,5 @@
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibration Class\Calibration Class\bin\Debug\Calibration Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibration Class\Calibration Class\bin\Debug\Calibration Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibration Class\Calibration Class\obj\Debug\Calibration Class.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibration Class\Calibration Class\obj\Debug\Calibration Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibration Class\Calibration Class\obj\Debug\Calibration Class.pdb
