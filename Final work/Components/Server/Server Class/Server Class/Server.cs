@@ -1,10 +1,4 @@
-﻿using Newtonsoft;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System;
 using TETCSharpClient;
 using TETCSharpClient.Data;
 
@@ -16,7 +10,6 @@ namespace Server_Class
 
         public Server()
         {
-            Console.WriteLine("Weeee");
             GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
 
             GazeManager.Instance.AddGazeListener(this);
@@ -24,7 +17,8 @@ namespace Server_Class
 
         public void OnGazeUpdate(GazeData gazeData)
         {
-            if (!recording) return;
+            Console.WriteLine(gazeData.SmoothedCoordinates);
+            //if (!recording) return;
 
             /*// start or stop tracking lost animation
             if ((gazeData.State & GazeData.STATE_TRACKING_GAZE) == 0 &&
