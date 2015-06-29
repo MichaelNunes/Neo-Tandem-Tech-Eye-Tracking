@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calibration", "Calibration\Calibration.csproj", "{2EB3F84D-2C86-4C70-A688-9F3306C02A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calibrator", "Calibrator\Calibrator.csproj", "{BD2B5BEA-564B-4990-A104-5C458197B1DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2EB3F84D-2C86-4C70-A688-9F3306C02A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2EB3F84D-2C86-4C70-A688-9F3306C02A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2EB3F84D-2C86-4C70-A688-9F3306C02A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2EB3F84D-2C86-4C70-A688-9F3306C02A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2B5BEA-564B-4990-A104-5C458197B1DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2B5BEA-564B-4990-A104-5C458197B1DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2B5BEA-564B-4990-A104-5C458197B1DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2B5BEA-564B-4990-A104-5C458197B1DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

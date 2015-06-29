@@ -1,0 +1,12 @@
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\obj\Debug\Calibrator.Form1.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\obj\Debug\Calibrator.Properties.Resources.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\obj\Debug\Calibrator.csproj.GenerateResource.Cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\obj\Debug\Calibrator.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\bin\Debug\Calibrator.exe.config
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\bin\Debug\Calibrator.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\bin\Debug\Calibrator.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\bin\Debug\TETControls.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\bin\Debug\TETCSharpClient.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\obj\Debug\Calibrator.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Calibration\Calibrator\Calibrator\obj\Debug\Calibrator.pdb
