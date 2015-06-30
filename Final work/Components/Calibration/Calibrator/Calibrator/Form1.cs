@@ -15,6 +15,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using MessageBox = System.Windows.Forms.MessageBox;
+using System.Windows.Interop;
 
 namespace Calibrator
 {
@@ -57,5 +58,38 @@ namespace Calibrator
                     break;
             }
         }
+
+
+        public class ListenToMe : ICalibrationResultListener
+        {
+            public ListenToMe()
+            {
+                GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
+                GazeManager.Instance.AddCalibrationResultListener(this);
+            }
+
+            private void Calibrate()
+            {
+                ////Run the calibration on 'this' monitor
+                //var ActiveScreen = Screen.FromHandle(new WindowInteropHelper(this).Handle);
+
+                //// Initialize and start the calibration
+                //CalibrationRunner calRunner = new CalibrationRunner(ActiveScreen, ActiveScreen.Bounds.Size, 9);
+
+                //bool isCalibrated = calRunner.Start();
+                //if (!isCalibrated) return;
+
+                //// Show overall accuracy (in degrees) of last calibration (wait here for it)
+                //Console.Out.WriteLine(GazeManager.Instance.LastCalibrationResult.AverageErrorDegree);
+            }
+
+            // Interface method (callback)
+            public void OnCalibrationChanged(bool isCalibrated, CalibrationResult calibResult)
+            {
+                Console.Out.WriteLine(calibResult.AverageErrorDegree);
+            }
+        }
+
+
     }
 }
