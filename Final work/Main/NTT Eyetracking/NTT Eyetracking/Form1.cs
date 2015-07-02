@@ -8,13 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Settings_Class;
 
 namespace NTT_Eyetracking
 {
+    
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
+            
             InitializeComponent();
         }
 
@@ -55,6 +59,7 @@ namespace NTT_Eyetracking
                 save[2] = textBox2.Text + ".set";
                 save[3] = "3DModel.set";
                 File.WriteAllLines(Saver.FileName, save);
+                globals.m = new ProjectSolution(textBox2.Text,dir);
             }
             catch(DirectoryNotFoundException m)
             {
@@ -71,8 +76,21 @@ namespace NTT_Eyetracking
         {
             openFileDialog1.ShowDialog();
             string path = openFileDialog1.FileName;
-            //MessageBox.Show(m);
+            MessageBox.Show(path);
             string[] settings = File.ReadAllLines(path);
+            globals.m.ProjectName = settings[0];
+            string[] array = settings[1].Split('\\');
+            string dir = "";
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                dir += array[i] + "\\";
+            }
+            globals.m.Directory = dir;
+            Settings_Class.ProjectSettings ps = new ProjectSettings(settings[0], settings[1]);
+            string[] settingsss = File.ReadAllLines(dir +"\\"+ settings[3]);
+            Settings_Class.ModelSettings3D ms = new ModelSettings3D(settingsss[0],Convert.ToInt32( settingsss[1]),Convert.ToBoolean( settingsss[2]),Convert.ToBoolean( settingsss[3]));
+            globals.m.SettingsProject = ps;
+            globals.m.SettingsModel = ms;
         }
     }
 }
