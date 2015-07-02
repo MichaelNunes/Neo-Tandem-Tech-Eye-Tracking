@@ -9,3 +9,4 @@ C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csproj.GenerateResource.Cache
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.exe
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Main.resources
