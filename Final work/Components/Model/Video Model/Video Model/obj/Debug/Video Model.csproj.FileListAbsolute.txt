@@ -1,0 +1,7 @@
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\Debug\Video Model.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\Debug\Video Model.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\Debug\DirectShowLib-2005.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\Debug\Splicer.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\obj\Debug\Video Model.csprojResolveAssemblyReference.cache
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\obj\Debug\Video Model.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\obj\Debug\Video Model.pdb
