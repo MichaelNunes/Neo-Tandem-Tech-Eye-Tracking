@@ -3,3 +3,8 @@ C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Compone
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\obj\Debug\Settings Class.csprojResolveAssemblyReference.cache
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\obj\Debug\Settings Class.dll
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\obj\Debug\Settings Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\obj\Debug\Settings Class.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\obj\Debug\Settings Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Settings\Settings Class\Settings Class\obj\Debug\Settings Class.pdb

@@ -13,7 +13,7 @@ namespace Settings_Class
 
     public class ProjectSettings
     {
-        string ProjectLocation;
+        public string ProjectLocation;
         string ProjectName;
 
         public string _ProjectLocation
@@ -37,12 +37,12 @@ namespace Settings_Class
         public void SaveSettings()
         {
             string[] settings = { ProjectName, ProjectLocation };
-            System.IO.File.WriteAllLines(ProjectLocation + "\\Settings\\" + ProjectName + ".set", settings);
+            System.IO.File.WriteAllLines(ProjectLocation + "\\" + ProjectName + ".set", settings);
         }
 
         public void ReadSettings()
         {
-            string[] lines = System.IO.File.ReadAllLines(ProjectLocation + "\\Settings\\" + ProjectName + ".set");
+            string[] lines = System.IO.File.ReadAllLines(ProjectLocation + "\\" + ProjectName + ".set");
             ProjectLocation = lines[1];
             ProjectName = lines[0];
         }
@@ -51,7 +51,6 @@ namespace Settings_Class
     public class ModelSettings3D
     {
         string ModelLocation;
-        string ModelName;
         int FPS;
         bool Textures;
         bool Lighting;
@@ -61,13 +60,7 @@ namespace Settings_Class
             set;
             get;
         }
-
-        public string _ModelName
-        {
-            set;
-            get;
-        }
-
+        
         public int _FPS
         {
             set;
@@ -93,10 +86,9 @@ namespace Settings_Class
             Lighting = true;
         }
 
-        public ModelSettings3D(string modelLocation, string modelName, int fps, bool textures, bool lighting)
+        public ModelSettings3D(string modelLocation, int fps, bool textures, bool lighting)
         {
             ModelLocation = modelLocation;
-            ModelName = modelName;
             FPS = fps;
             Textures = textures;
             Lighting = lighting;
@@ -104,18 +96,17 @@ namespace Settings_Class
 
         public void SaveSettings()
         {
-            string[] settings = { ModelName, ModelLocation, FPS.ToString(), Textures.ToString(), Lighting.ToString() };
-            System.IO.File.WriteAllLines(ModelLocation + "\\Settings\\" + ModelName + ".set", settings);
+            string[] settings = { ModelLocation, FPS.ToString(), Textures.ToString(), Lighting.ToString() };
+            System.IO.File.WriteAllLines(ModelLocation + "\\" + "3DModel.set", settings);
         }
 
         public void ReadSettings()
         {
-            string[] lines = System.IO.File.ReadAllLines(ModelLocation + "\\Settings\\" + ModelName + ".set");
-            ModelName = lines[0];
-            ModelLocation = lines[1];
-            FPS = Convert.ToInt32(lines[2]);
-            Textures = Convert.ToBoolean(lines[3]);
-            Lighting = Convert.ToBoolean(lines[4]);
+            string[] lines = System.IO.File.ReadAllLines(ModelLocation + "\\" + "3DModel.set");
+            ModelLocation = lines[0];
+            FPS = Convert.ToInt32(lines[1]);
+            Textures = Convert.ToBoolean(lines[2]);
+            Lighting = Convert.ToBoolean(lines[3]);
         }
     }   
 }
