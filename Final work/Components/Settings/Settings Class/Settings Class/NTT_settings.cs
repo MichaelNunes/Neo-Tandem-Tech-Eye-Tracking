@@ -86,6 +86,14 @@ namespace Settings_Class
             Lighting = true;
         }
 
+        public ModelSettings3D(string modelLocation)
+        {
+            ModelLocation = modelLocation;
+            FPS = 30;
+            Textures = false;
+            Lighting = true;
+        }
+
         public ModelSettings3D(string modelLocation, int fps, bool textures, bool lighting)
         {
             ModelLocation = modelLocation;
