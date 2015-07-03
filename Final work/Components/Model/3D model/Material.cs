@@ -50,7 +50,7 @@ namespace DisplayModel
 		public Material(Color4 _color)
 		{
             colour = _color;
-			filepath = null;
+			filepath = "";
 		}
 
 		/// <summary>
@@ -79,6 +79,13 @@ namespace DisplayModel
         public Color4 Colour
         {
             get { return colour; }
+            set { colour = value; }
+        }
+
+        public string FilePath
+        {
+            get { return filepath; }
+            set { filepath = value; }
         }
         #endregion
     }
