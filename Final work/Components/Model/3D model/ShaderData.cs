@@ -67,11 +67,13 @@ namespace DisplayModel
         #endregion
 
         private float degrees;
+
         #region Matrices
         private Matrix4 ModelViewMatrix;
         private Matrix4 ProjectionMatrix;
         #endregion
 
+        #region Setup
         /// <summary>
         /// 
         /// </summary>
@@ -81,8 +83,8 @@ namespace DisplayModel
             ProgramId = GL.CreateProgram();
 
             // SHADERS
-            loadShader("../../Shaders/VertexShader.glsl", ShaderType.VertexShader, ProgramId, out VertexShaderId);
-            loadShader("../../Shaders/FragmentShader.glsl", ShaderType.FragmentShader, ProgramId, out FragmentShaderId);
+            loadShader("Shaders/VertexShader.glsl", ShaderType.VertexShader, ProgramId, out VertexShaderId);
+            loadShader("Shaders/FragmentShader.glsl", ShaderType.FragmentShader, ProgramId, out FragmentShaderId);
             GL.LinkProgram(ProgramId);
 
             // ATTRIBUTES
@@ -158,6 +160,7 @@ namespace DisplayModel
             GL.AttachShader(program, address);
             Console.WriteLine(GL.GetShaderInfoLog(address));
         }
+        #endregion
 
         #region Model Rendering
         /// <summary>
@@ -173,7 +176,6 @@ namespace DisplayModel
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref ModelViewMatrix);
 
-            Console.WriteLine(bufferData.Vertex.Length);
             //Vertices
             GL.BindBuffer(BufferTarget.ArrayBuffer, positionBuffer);
             GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Vertex.Length * Vector3.SizeInBytes), bufferData.Vertex, BufferUsageHint.StaticDraw);

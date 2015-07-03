@@ -69,5 +69,28 @@ namespace DisplayModel
 
             GL.LoadMatrix(ref PMatrix);
         }
+
+        public int Length
+        {
+            get { return objects.Count; }
+        }
+
+        public BufferData this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= objects.Count)
+                    throw new IndexOutOfRangeException("You tried to access this object at index: " + index);
+
+                return objects[index];
+            }
+            set
+            {
+                if (index < 0 || index >= objects.Count)
+                    throw new IndexOutOfRangeException("You tried to access this object at index: " + index);
+
+                objects[index] = value;
+            }
+        }
     }
 }

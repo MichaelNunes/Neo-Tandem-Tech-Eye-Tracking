@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 
 using OpenTK;
+using OpenTK.Graphics;
 
 using DisplayModel;
 
@@ -50,8 +51,8 @@ namespace DisplayModel
         {
             keyframes = new List<Keyframe>();
 
-            transform = new Transform();
-            material = new Material();
+            transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
+            material = new Material(Color4.LightGray);
             gameWindow = new Model3DWindow();
         }
         #endregion
