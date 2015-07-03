@@ -10,19 +10,32 @@ namespace Record_Class
 {
     public class Record : IGazeListener 
     {
- bool recording = false;
+        string path;
+        public string _path
+        {
+            get { return path; }
+            set { path = value; }
+        }
+
+        string modelName;
+        public string _modelName
+        {
+            get { return modelName; }
+            set { modelName = value; }
+        }
+
+        bool recording = false;
         public bool _recording
         {
             get; set;
         }
 
-        string path;
+        public List<string> arrayData = new List<string>();
 
-        List<string> arrayData = new List<string>();
-
-        public Record()
+        public Record(string FilePath, string ModelName)
         {
-            test();
+            path = FilePath;
+            modelName = ModelName;
             GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
 
             GazeManager.Instance.AddGazeListener(this);
@@ -53,7 +66,8 @@ namespace Record_Class
         public void saveToFile()
         {
             // tester path
-            path = @"C:\Users\Public\WriteLines.txt";
+            //path = @"C:\Users\Public\WriteLines.txt";
+            path = path + "RecordedData_" + modelName + ".txt";
             try
             {
                 if (!File.Exists(path))
@@ -70,6 +84,7 @@ namespace Record_Class
                 MessageBox.Show("Error:" + f); 
             }
         }
+
 
         public void close()
         {

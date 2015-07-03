@@ -1,2 +1,16 @@
 C:\Users\user\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record.exe.config
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record.exe.config
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record.exe.config
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\obj\Debug\Record.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\obj\Debug\Record.Properties.Resources.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\obj\Debug\Record.csproj.GenerateResource.Cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record_Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\TETCSharpClient.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\nunit.framework.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\Record_Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\bin\Debug\nunit.framework.xml
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\obj\Debug\Record.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record\Record\Record\obj\Debug\Record.pdb

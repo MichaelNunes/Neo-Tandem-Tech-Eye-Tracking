@@ -7,3 +7,5 @@ C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Compone
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.csprojResolveAssemblyReference.cache
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.exe
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.pdb
