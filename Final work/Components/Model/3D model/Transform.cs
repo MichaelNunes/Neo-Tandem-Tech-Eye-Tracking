@@ -22,7 +22,7 @@
 #endregion
 
 using System;
-using OpenTK;
+using OpenTK.Math;
 
 namespace DisplayModel
 {

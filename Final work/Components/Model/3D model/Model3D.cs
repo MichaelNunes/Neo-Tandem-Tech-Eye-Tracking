@@ -50,7 +50,7 @@ namespace DisplayModel
         {
             keyframes = new List<Keyframe>();
 
-            transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
+            transform = new Transform();
             material = new Material();
             gameWindow = new Model3DWindow();
         }

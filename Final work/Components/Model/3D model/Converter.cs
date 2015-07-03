@@ -24,9 +24,9 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+
 using OpenTK;
 using DisplayModel;
-using System.Windows.Forms;
 
 namespace DisplayModel
 {
@@ -61,15 +61,10 @@ namespace DisplayModel
             {
 			    filereader = new StreamReader(obj);
             }
-            catch (FileNotFoundException e)
+            catch(Exception e)
             {
-                MessageBox.Show(e);
-               // throw new FileNotFoundException("File: { "+obj+" } does not exist.");
-            }
-            catch (Exception f)
-            {
-                MessageBox.Show();
-                // throw new FileNotFoundException("File: { "+obj+" } does not exist.");
+                Console.WriteLine(e.Message);
+                return null;
             }
 
             int line_number = 0;
