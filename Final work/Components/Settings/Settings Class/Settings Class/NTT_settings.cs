@@ -13,20 +13,23 @@ namespace Settings_Class
 
     public class ProjectSettings
     {
-        public string ProjectLocation;
+        string ProjectLocation;
+
+        public string ProjectLocation1
+        {
+            get { return ProjectLocation; }
+            set { ProjectLocation = value; }
+        }
         string ProjectName;
 
-        public string _ProjectLocation
+        public string ProjectName1
         {
-            set;
-            get;
+            get { return ProjectName; }
+            set { ProjectName = value; }
         }
 
-        public string _ProjectName
-        {
-            set;
-            get;
-        }
+
+        
 
         public ProjectSettings(string projectName, string projectLocation)
         {
@@ -51,36 +54,39 @@ namespace Settings_Class
     public class ModelSettings3D
     {
         string ModelLocation;
+
+        public string ModelLocation1
+        {
+            get { return ModelLocation; }
+            set { ModelLocation = value; }
+        }
         int FPS;
+
+        public int FPS1
+        {
+            get { return FPS; }
+            set { FPS = value; }
+        }
         bool Textures;
+
+        public bool Textures1
+        {
+            get { return Textures; }
+            set { Textures = value; }
+        }
         bool Lighting;
 
-        public string _ModelLocation
+        public bool Lighting1
         {
-            set;
-            get;
+            get { return Lighting; }
+            set { Lighting = value; }
         }
+
         
-        public int _FPS
-        {
-            set;
-            get;
-        }
-
-        public bool _Textures
-        {
-            set;
-            get;
-        }
-
-        public bool _Lighting
-        {
-            set;
-            get;
-        }
 
         public ModelSettings3D()
         {
+            ModelLocation = "";
             FPS = 30;
             Textures = false;
             Lighting = true;
