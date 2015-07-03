@@ -162,17 +162,21 @@ namespace DisplayModel
             count = 0;
             for (int i = 0; i < vi.Count; i++)
                 vertex[count++] = vp[vi[i]-1];
-            Console.WriteLine(count);
+            Console.WriteLine("Vertices: "+count);
+
             for (int i = 0; i < colour.Length; i++)
                 colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);
+            Console.WriteLine("Colors: "+colour.Length);
 
             count = 0;
             for (int i = 0; i < ti.Count; i++)
                 texture[count++] = tp[ti[i]-1];
+            Console.WriteLine("Texels: "+texture.Length);
 
             count = 0;
             for (int i = 0; i < ni.Count; i++)
                 normal[count++] = np[ni[i]-1];
+            Console.WriteLine("Normals: "+normal.Length);
 		}
 		#endregion
 

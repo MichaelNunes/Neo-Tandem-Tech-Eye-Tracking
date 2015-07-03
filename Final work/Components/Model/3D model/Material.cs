@@ -26,7 +26,6 @@ using System.IO;
 
 using OpenTK;
 using OpenTK.Graphics;
-using OpenTK.Math;
 
 namespace DisplayModel
 {
@@ -50,7 +49,7 @@ namespace DisplayModel
 		public Material(Color4 _color)
 		{
             colour = _color;
-			filepath = null;
+			filepath = string.Empty;
 		}
 
 		/// <summary>
@@ -79,6 +78,11 @@ namespace DisplayModel
         public Color4 Colour
         {
             get { return colour; }
+        }
+
+        public string FilePath
+        {
+            get { return filepath; }
         }
         #endregion
     }

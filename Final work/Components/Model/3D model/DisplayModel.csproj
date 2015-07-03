@@ -35,8 +35,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.core">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="OpenTK">
-      <HintPath>..\..\Programs\Open TK\1.1\Binaries\OpenTK\Release\OpenTK.dll</HintPath>
+      <HintPath>..\..\External Packages\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK.Compatibility">
       <HintPath>..\..\Programs\Open TK\1.1\Binaries\OpenTK\Release\OpenTK.Compatibility.dll</HintPath>
@@ -49,22 +68,29 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BufferData.cs" />
     <Compile Include="Model3DWindow.cs" />
-    <Compile Include="Tester.cs" />
+    <Compile Include="Test Classes\Test Model3D.cs" />
+    <Compile Include="Test Classes\Test_Converter.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Keyframe.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Model.cs" />
-    <Compile Include="Model2D.cs" />
     <Compile Include="Model3D.cs" />
-    <Compile Include="ModelVideo.cs" />
     <Compile Include="ShaderData.cs" />
     <Compile Include="Transform.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

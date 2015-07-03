@@ -81,8 +81,8 @@ namespace DisplayModel
             ProgramId = GL.CreateProgram();
 
             // SHADERS
-            loadShader("../../Shaders/VertexShader.glsl", ShaderType.VertexShader, ProgramId, out VertexShaderId);
-            loadShader("../../Shaders/FragmentShader.glsl", ShaderType.FragmentShader, ProgramId, out FragmentShaderId);
+            loadShader("Shaders/VertexShader.glsl", ShaderType.VertexShader, ProgramId, out VertexShaderId);
+            loadShader("Shaders/FragmentShader.glsl", ShaderType.FragmentShader, ProgramId, out FragmentShaderId);
             GL.LinkProgram(ProgramId);
 
             // ATTRIBUTES
@@ -173,7 +173,6 @@ namespace DisplayModel
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref ModelViewMatrix);
 
-            Console.WriteLine(bufferData.Vertex.Length);
             //Vertices
             GL.BindBuffer(BufferTarget.ArrayBuffer, positionBuffer);
             GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Vertex.Length * Vector3.SizeInBytes), bufferData.Vertex, BufferUsageHint.StaticDraw);
