@@ -7,11 +7,11 @@ using DisplayModel;
 
 namespace DisplayModel
 {
-    public class Tester
+    public class DisplayModel
     {
         public static void Main(string[] args)
         {
-            string source = "F:/Predator.obj"; ;
+            string source = "C:/Users/COS301/Documents/Objects/Susan.obj"; ;
 
             Model3D tebogo = Converter.fromOBJ(source, null);
             tebogo.Model3DWindow.Run(30, 30);

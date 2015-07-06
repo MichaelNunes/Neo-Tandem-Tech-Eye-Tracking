@@ -1,3 +1,5 @@
+#version 330
+
 /******** SAMPLER ********/
 uniform sampler2D uSampler;
 /******** SAMPLER ********/
@@ -26,5 +28,5 @@ void main()
 
 
     light = ambient + directional;*/
-	gl_FragColor = vec4( light * colour.rgb, colour.a);
+	gl_FragColor = colour;//vec4( light * colour.rgb, colour.a);
 }
