@@ -1,6 +1,0 @@
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\bin\Debug\ConsoleApplication.exe
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\bin\Debug\ConsoleApplication.pdb
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\bin\Debug\OpenTK.pdb
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\obj\x86\Debug\DisplayModel.csprojResolveAssemblyReference.cache
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\obj\x86\Debug\ConsoleApplication.exe
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\obj\x86\Debug\ConsoleApplication.pdb
