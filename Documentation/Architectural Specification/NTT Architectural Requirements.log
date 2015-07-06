@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  26 MAY 2015 19:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  5 JUL 2015 16:19
 entering extended mode
 **NTT*Architectural*Requirements.tex
 
@@ -309,36 +309,38 @@ chitectural Specification\NTT Architectural Requirements.toc")
 \tf@toc=\write5
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\QualityRequirements/QualityRequirements.tex" [2
+chitectural Specification\QualityRequirements/QualityRequirements.tex"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 
-])
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\AccessRequirements/AccessRequirements.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\ArchitecturalConstraints/ArchitectureConstraints.tex"
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
 (C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+ [2
+
+] [3] [4])
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\AccessRequirements/AccessRequirements.tex") [5]
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
+chitectural Specification\ArchitecturalConstraints/ArchitectureConstraints.tex"
 )
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalPatterns/ArchitecturalPatternsOrStyles.t
-ex")
+ex" [6])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalTactics/ArchitecturalTacticsOrStrategies
-.tex" [3])
+.tex" [7])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ReferenceArchitectures/UseOfReferenceArchitecturesAnd
 Frameworks.tex")
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\Technologies/Technologies.tex") [4]
+chitectural Specification\Technologies/Technologies.tex") [8]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 148.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-[5
+[9
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
@@ -353,22 +355,22 @@ changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 5269 strings out of 493921
- 82470 string characters out of 3144475
- 157226 words of memory out of 3000000
+ 5277 strings out of 493921
+ 82590 string characters out of 3144475
+ 159226 words of memory out of 3000000
  8462 multiletter control sequences out of 15000+200000
  9750 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,28p,262b,377s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,5n,28p,535b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Architectural Requirements.pdf" (6 pages, 159968 bytes).
-
+Output written on "NTT Architectural Requirements.pdf" (10 pages, 175338 bytes)
+.
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
+ 154 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
