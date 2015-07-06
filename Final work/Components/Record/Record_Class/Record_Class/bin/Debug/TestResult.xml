@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\Record_Class\bin\Debug\Record_Class.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-07-03" time="10:55:24">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\packages\NUnit.Runners.2.6.4\tools" machine-name="DURAN-LAPTOP" user="Duran" user-domain="DURAN-LAPTOP" />
+  <culture-info current-culture="en-ZA" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\Record_Class\bin\Debug\Record_Class.dll" executed="True" result="Success" success="True" time="1.674" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Record_Class" executed="True" result="Success" success="True" time="1.658" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="RecordingTesting" executed="True" result="Success" success="True" time="1.656" asserts="0">
+            <results>
+              <test-case name="Record_Class.RecordingTesting.TestRecording" executed="True" result="Success" success="True" time="1.642" asserts="2" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

@@ -1,11 +1,16 @@
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csprojResolveAssemblyReference.cache
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Form1.resources
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Main.resources
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Properties.Resources.resources
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csproj.GenerateResource.Cache
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.exe.config
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.exe
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.dll
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results.exe
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.xml
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results.pdb
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csprojResolveAssemblyReference.cache
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Form1.resources
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Properties.Resources.resources
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csproj.GenerateResource.Cache
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.exe
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.pdb

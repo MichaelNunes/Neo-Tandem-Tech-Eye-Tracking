@@ -1,9 +1,11 @@
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.csprojResolveAssemblyReference.cache
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\bin\Debug\Server Console.exe
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\bin\Debug\Server Console.pdb
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\bin\Debug\Server Class.dll
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\bin\Debug\TETCSharpClient.dll
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\bin\Debug\Newtonsoft.Json.dll
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\bin\Debug\Server Class.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.csprojResolveAssemblyReference.cache
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.exe
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Server\Server Console\Server Console\obj\Debug\Server Console.pdb
