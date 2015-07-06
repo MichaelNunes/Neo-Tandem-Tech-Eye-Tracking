@@ -14,7 +14,7 @@ namespace DisplayModel
         private ShaderData shaderData;
         private List<BufferData> objects;
 
-        public Model3DWindow()
+        public Model3DWindow() : base(720, 405)
         {
             shaderData = new ShaderData();
             objects = new List<BufferData>();
@@ -26,13 +26,27 @@ namespace DisplayModel
                 objects.Add( bufferData );
         }
 
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            base.OnKeyPress(e);
+
+            if(e.KeyChar == 'q')
+            {
+                Exit();
+            }
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
             shaderData.initProgram();
 
+
             Title = "Hello OpenTK!";
+
+            WindowBorder = WindowBorder.Hidden;
+            WindowState = WindowState.Fullscreen;
 
             GL.ClearColor(Color.CornflowerBlue);
             GL.Enable(EnableCap.DepthTest);
@@ -61,13 +75,12 @@ namespace DisplayModel
         {
             base.OnResize(e);
 
-            GL.Viewport(ClientRectangle.X, ClientRectangle.Y, ClientRectangle.Width, ClientRectangle.Height);
+            GL.Viewport(0, 0, Width, Height);
 
-            Matrix4 PMatrix = Matrix4.CreatePerspectiveFieldOfView((float)Math.PI / 4, Width / (float)Height, 1.0f, 1000.0f);
+            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 1.0f, 100.0f);
 
             GL.MatrixMode(MatrixMode.Projection);
-
-            GL.LoadMatrix(ref PMatrix);
+            GL.LoadMatrix(ref shaderData.ProjectionMatrix);
         }
 
         public int Length

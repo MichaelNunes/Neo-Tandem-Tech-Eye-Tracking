@@ -75,14 +75,12 @@
     <Compile Include="BufferData.cs" />
     <Compile Include="Model3DWindow.cs" />
     <Compile Include="Test Classes\Test Converter.cs" />
-    <Compile Include="Tester.cs" />
+    <Compile Include="DisplayModel.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Keyframe.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Model.cs" />
-    <Compile Include="Model2D.cs" />
     <Compile Include="Model3D.cs" />
-    <Compile Include="ModelVideo.cs" />
     <Compile Include="ShaderData.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
