@@ -62,6 +62,7 @@ namespace DisplayModel
         #region Buffers
         private int positionBuffer;
         private int colourBuffer;
+        private int normalBuffer;
         private int modelViewBuffer;
         private int projectionBuffer;
 
@@ -142,6 +143,7 @@ namespace DisplayModel
             //GENERATING BUFFERS
             GL.GenBuffers(1, out positionBuffer);
             GL.GenBuffers(1, out colourBuffer);
+            GL.GenBuffers(1, out normalBuffer);
             GL.GenBuffers(1, out modelViewBuffer);
             GL.GenBuffers(1, out projectionBuffer);
 
@@ -204,6 +206,11 @@ namespace DisplayModel
             GL.BindBuffer(BufferTarget.ArrayBuffer, colourBuffer);
             GL.BufferData<Vector4>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Colour.Length * Vector4.SizeInBytes), bufferData.Colour, BufferUsageHint.StaticDraw);
             GL.VertexAttribPointer(aVertexColour, 4, VertexAttribPointerType.Float, true, 0, 0);
+
+            //Normals
+            GL.BindBuffer(BufferTarget.ArrayBuffer, normalBuffer);
+            GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Normal.Length * Vector3.SizeInBytes), bufferData.Normal, BufferUsageHint.StaticDraw);
+            GL.VertexAttribPointer(aVertexNormal, 3, VertexAttribPointerType.Float, true, 0, 0);
 
             GL.UseProgram(ProgramId);
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
