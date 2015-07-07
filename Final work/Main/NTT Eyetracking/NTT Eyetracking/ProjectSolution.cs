@@ -54,5 +54,27 @@ namespace NTT_Eyetracking
             settingsProject.SaveSettings();
             settingsModel.SaveSettings();
         }
+
+        public void createSubDirectories()
+        {
+            try
+            {
+                string rec = System.IO.Path.Combine(directory, "Recordings");
+                System.IO.Directory.CreateDirectory(rec);
+
+                string sub = System.IO.Path.Combine(rec, "2DModel");
+                System.IO.Directory.CreateDirectory(sub);
+
+                sub = System.IO.Path.Combine(rec, "3DModel");
+                System.IO.Directory.CreateDirectory(sub);
+
+                sub = System.IO.Path.Combine(rec, "Video");
+                System.IO.Directory.CreateDirectory(sub);
+            }
+            catch(Exception exc)
+            {
+                throw exc;
+            }
+        }
     }
 }

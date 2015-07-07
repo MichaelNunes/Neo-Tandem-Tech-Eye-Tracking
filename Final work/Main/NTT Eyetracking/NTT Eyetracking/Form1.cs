@@ -25,7 +25,8 @@ namespace NTT_Eyetracking
         private void button4_Click(object sender, EventArgs e)
         {
             Results.Form1 m = new Results.Form1();
-            m.Show();    }
+            m.Show();    
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -74,23 +75,51 @@ namespace NTT_Eyetracking
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            string path = openFileDialog1.FileName;
-            MessageBox.Show(path);
-            string[] settings = File.ReadAllLines(path);
-            globals.m.ProjectName = settings[0];
-            string[] array = settings[1].Split('\\');
-            string dir = "";
-            for (int i = 0; i < array.Length - 1; i++)
+            try
             {
-                dir += array[i] + "\\";
+
+                openFileDialog1.Filter = "Eye Project (.eye)|*.eye";
+                openFileDialog1.ShowDialog();
+                string path = openFileDialog1.FileName;
+                MessageBox.Show(path);
+                string[] settings = File.ReadAllLines(path);
+                globals.m.ProjectName = settings[0];
+                string[] array = settings[1].Split('\\');
+                string dir = "";
+                for (int i = 0; i < array.Length - 1; i++)
+                {
+                    dir += array[i] + "\\";
+                }
+                globals.m.Directory = dir;
+                Settings_Class.ProjectSettings ps = new ProjectSettings(settings[0], settings[1]);
+                string[] settingsss = File.ReadAllLines(dir + "\\" + settings[3]);
+                Settings_Class.ModelSettings3D ms = new ModelSettings3D(settingsss[0], Convert.ToInt32(settingsss[1]), Convert.ToBoolean(settingsss[2]), Convert.ToBoolean(settingsss[3]));
+                globals.m.SettingsProject = ps;
+                globals.m.SettingsModel = ms;
+                Main show = new Main();
+                this.Hide();
+                show.ShowDialog();
             }
-            globals.m.Directory = dir;
-            Settings_Class.ProjectSettings ps = new ProjectSettings(settings[0], settings[1]);
-            string[] settingsss = File.ReadAllLines(dir +"\\"+ settings[3]);
-            Settings_Class.ModelSettings3D ms = new ModelSettings3D(settingsss[0],Convert.ToInt32( settingsss[1]),Convert.ToBoolean( settingsss[2]),Convert.ToBoolean( settingsss[3]));
-            globals.m.SettingsProject = ps;
-            globals.m.SettingsModel = ms;
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                globals.m.createSubDirectories();
+                this.Hide();
+                Main show = new Main();
+                show.ShowDialog();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
         }
     }
 }
