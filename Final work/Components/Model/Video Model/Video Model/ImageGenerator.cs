@@ -8,7 +8,7 @@ using Splicer.WindowsMedia;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Exception;
+
 
 
 namespace Video_Model
@@ -79,6 +79,15 @@ namespace Video_Model
             imageWidth = width;
             bitCount = _bitCount;
             ips = imagesPS;
+        }
+
+        public void deleteImages ()
+        {
+            DirectoryInfo deletionPath = new DirectoryInfo(destinationPath);
+            foreach (FileInfo file in deletionPath.GetFiles())
+            {
+                file.Delete();
+            }
         }
 
 
