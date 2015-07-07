@@ -8,11 +8,12 @@ using Splicer.WindowsMedia;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Exception;
 
 
 namespace Video_Model
 {
-    class ImageGenerator
+    public class ImageGenerator
     {
         string videoPath;
 
@@ -63,8 +64,7 @@ namespace Video_Model
 
         public ImageGenerator()
         {
-            videoPath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\videos\output.wmv";
-            destinationPath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\images\";
+            destinationPath = @"C:\Users\Public\Pictures\Sample Pictures";
             imageHeight = 246;
             imageWidth = 664;
             bitCount = 16;
@@ -84,6 +84,11 @@ namespace Video_Model
 
         public void createImages()
         {
+            if (videoPath == "" || videoPath == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             using (DefaultTimeline timeline = new DefaultTimeline()) 
             {
                 timeline.AddVideoGroup(bitCount, imageWidth, imageHeight).AddTrack(); // image bitcount & dimensions
