@@ -119,9 +119,12 @@ namespace DisplayModel
                     texels = line[i].Split('/');
 
                     v.Add(int.Parse(texels[0]));
+                    Console.WriteLine(v[v.Count-1]);
 
                     if (texels[1] != string.Empty)
+                    {
                         t.Add(int.Parse(texels[1]));
+                    }
 
                     n.Add(int.Parse(texels[2]));
                 }
@@ -131,8 +134,11 @@ namespace DisplayModel
                     texels = line[4].Split('/');
 
                     v.Add(v[v.Count - 3]);
+                    Console.WriteLine(v[v.Count - 1]);
                     v.Add(v[v.Count - 2]);
+                    Console.WriteLine(v[v.Count - 1]);
                     v.Add(int.Parse(texels[0]));
+                    Console.WriteLine(v[v.Count - 1]);
 
                     if (texels[1] != string.Empty)
                     {

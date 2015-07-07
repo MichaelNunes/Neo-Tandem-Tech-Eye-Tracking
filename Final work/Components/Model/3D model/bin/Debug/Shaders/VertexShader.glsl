@@ -16,10 +16,13 @@ uniform mat3 uNormalMatrix;
 
 out vec4 oVertexColour;
 out vec3 oVertexNormal;
+out vec4 mvPosition;
 
 void main( void )
 {
-	gl_Position = uProjectionMatrix * uModelViewMatrix * vec4( aVertexPosition, 1.0 );
+	mvPosition = uModelViewMatrix * vec4(aVertexPosition, 1.0);
+	gl_Position = uProjectionMatrix * mvPosition;
+	
 	oVertexColour = aVertexColour;
-	oVertexNormal = aVertexNormal;
+	oVertexNormal = normalize(uNormalMatrix * aVertexNormal);
 }

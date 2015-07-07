@@ -16,19 +16,21 @@ uniform float uPointLight_Shininess;
 
 in vec4 oVertexColour;
 in vec3 oVertexNormal;
+in vec4 mvPosition;
+
+out vec4 FragColor;
 
 void main()
 {
 	vec4 colour = oVertexColour;
 
-    vec3 ambient = vec3(0.5,0.5,0.5);
-	vec3 light = ambient;
-	float dirWeight = max( dot( oVertexNormal, vec3( 0.0, -1.0, 1.0 ) ), 0.0 );
-/*
-    
-    vec3 directional = uDirectionalLight_Colour * dirWeight;
-
-
-    light = ambient + directional;*/
-	gl_FragColor = vec4( (colour.rgb * ambient) * dirWeight, colour.a);
+    vec3 ambient = vec3(0.1,0.1,0.1);
+	
+	float dirWeight = max( dot( oVertexNormal, normalize( vec3( 1.0, 2.0, 1.0 ) - mvPosition.xyz ) ), 0.0 );
+	vec3 dirLightColor = vec3(0.3, 0.0, 0.3);
+	vec3 dirLight = dirLightColor * dirWeight;
+	
+	vec3 light = ambient + dirLight;
+	
+	FragColor = vec4( (colour.rgb * light), colour.a);
 }

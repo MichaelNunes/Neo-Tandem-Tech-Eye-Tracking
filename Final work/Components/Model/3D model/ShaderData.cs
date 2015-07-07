@@ -63,8 +63,7 @@ namespace DisplayModel
         private int positionBuffer;
         private int colourBuffer;
         private int normalBuffer;
-        private int modelViewBuffer;
-        private int projectionBuffer;
+        private int indexBuffer;
 
         #endregion
 
@@ -144,8 +143,7 @@ namespace DisplayModel
             GL.GenBuffers(1, out positionBuffer);
             GL.GenBuffers(1, out colourBuffer);
             GL.GenBuffers(1, out normalBuffer);
-            GL.GenBuffers(1, out modelViewBuffer);
-            GL.GenBuffers(1, out projectionBuffer);
+            GL.GenBuffers(1, out indexBuffer);
 
             AmbientLight_Colour = new Vector3(0, 0, 0);
             DirectionalLight_Colour = new Vector3(1, 1, 1);
@@ -190,9 +188,12 @@ namespace DisplayModel
             SetUniforms(ref bufferData);
 
             GL.DrawArrays(PrimitiveType.Triangles, 0, bufferData.Vertex.Length);
+            //GL.BindBuffer(BufferTarget.ElementArrayBuffer, indexBuffer);
+            //GL.DrawElements(PrimitiveType.Triangles, bufferData.Index.Length, DrawElementsType.UnsignedInt, IntPtr.Zero);
 
             GL.DisableVertexAttribArray(aVertexPosition);
             GL.DisableVertexAttribArray(aVertexColour);
+            GL.DisableVertexAttribArray(aVertexNormal);
             GL.Flush();
         }
         private void BindBuffers(ref BufferData bufferData)
@@ -212,11 +213,16 @@ namespace DisplayModel
             GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Normal.Length * Vector3.SizeInBytes), bufferData.Normal, BufferUsageHint.StaticDraw);
             GL.VertexAttribPointer(aVertexNormal, 3, VertexAttribPointerType.Float, true, 0, 0);
 
+            //Indices
+            /*GL.BindBuffer(BufferTarget.ElementArrayBuffer, indexBuffer);
+            GL.BufferData<int>(BufferTarget.ElementArrayBuffer, (IntPtr)(bufferData.Index.Length * sizeof(int)), bufferData.Index, BufferUsageHint.StaticDraw);*/
+
             GL.UseProgram(ProgramId);
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
 
             GL.EnableVertexAttribArray(aVertexPosition);
             GL.EnableVertexAttribArray(aVertexColour);
+            GL.EnableVertexAttribArray(aVertexNormal);
 
         }
 
@@ -227,13 +233,7 @@ namespace DisplayModel
             GL.Uniform3(uDirectionalLight_Color, DirectionalLight_Colour);
             GL.Uniform3(uDirectionalLight_Direction, DirectionalLight_Direction);
 
-            Matrix4 Temp = Matrix4.Invert(ModelViewMatrix);
-            NormalMatrix = new Matrix3
-            (
-                Temp.M11, Temp.M12,  Temp.M13,
-                Temp.M21, Temp.M22,  Temp.M23,
-                Temp.M31, Temp.M32,  Temp.M33
-            );
+            NormalMatrix = Matrix3.Transpose(new Matrix3(Matrix4.Invert(ModelViewMatrix)));
 
             //Set matrix uniforms
             GL.UniformMatrix3(uNormalMatrix, false, ref NormalMatrix);

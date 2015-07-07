@@ -38,6 +38,7 @@ namespace DisplayModel
         private Vector2[] texture;
         private Vector3[] normal;
         private Vector4[] colour;
+        private int[] index;
 
         private Matrix4 modelMatrix;
         private Matrix4 viewProjectionMatrix;
@@ -61,6 +62,7 @@ namespace DisplayModel
             colour = new Vector4[v.Length];
             texture = new Vector2[t.Length];
             normal = new Vector3[n.Length];
+            index = new int[v.Length];
 
             for(int i = 0; i < v.Length; i += 3)
                 vertex[ i ] = new Vector3(v[i], v[i + 1], v[i + 2]);
@@ -91,6 +93,7 @@ namespace DisplayModel
             colour = new Vector4[v.Count];
             texture = new Vector2[t.Count];
             normal = new Vector3[n.Count];
+            index = new int[v.Count];
 
             for (int i = 0; i < v.Count; i += 3)
                 vertex[i] = new Vector3(v[i], v[i + 1], v[i + 2]);
@@ -124,6 +127,7 @@ namespace DisplayModel
             colour = new Vector4[vi.Length];
             texture = new Vector2[ti.Length];
             normal = new Vector3[ni.Length];
+            index = new int[vi.Length];
 
             for(int i = 0; i < vi.Length; i += 3)
                 vertex[i] = new Vector3(vp[vi[i]], vp[vi[i + 1]], vp[vi[i + 2]]);
@@ -157,7 +161,51 @@ namespace DisplayModel
             colour = new Vector4[vi.Count];
             texture = new Vector2[ti.Count];
             normal = new Vector3[ni.Count];
+            index = new int[vi.Count];
             int count;
+
+            /*List<int> sorted = new List<int>();
+
+            for (int i = 0; i < vi.Count; i++)
+            {
+                index[i] = vi[i];
+            }
+
+            for (int i = 0; i < vp.Count; i++)
+            {
+                vertex[i] = vp[i];
+            }
+
+            for (int i = 0; i < ti.Count; i++)
+            {
+                texture[ti[i]-1] = tp[ti[i]-1];
+            }
+
+            for (int i = 0; i < ni.Count; i++)
+            {
+                normal[ni[i]-1] = np[ni[i]-1];
+            }
+
+            Console.WriteLine("VI = "+vi.Count);
+            Console.WriteLine("VP = "+vp.Count);
+            Console.WriteLine("Vertex = " + vertex.Length);
+            Console.WriteLine("Indices = " + index.Length);
+
+            for (int i = 0; i < index.Length; i++)
+            {
+                Console.Write(index[i]+", ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < vertex.Length; i++)
+            {
+                Console.Write(vertex[i] + ", ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < colour.Length; i++)
+                colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);*/
+
 
             count = 0;
             for (int i = 0; i < vi.Count; i++)
@@ -207,6 +255,14 @@ namespace DisplayModel
         public Vector4[] Colour
         {
             get { return colour; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int[] Index
+        {
+            get { return index; }
         }
 
         /// <summary>
