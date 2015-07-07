@@ -96,21 +96,6 @@ namespace Video_Model
                     clips[i] = videoTrack.AddImage(files[i], 0, 2);
                 }
 
-                double halfDuration = 0.5;
-
-                // effects
-                for (int i = 1; i < files.Length; i++)
-                {
-                    group.AddTransition(clips[i].Offset - halfDuration, halfDuration, StandardTransitions.CreateFade(), true);
-                    group.AddTransition(clips[i].Offset, halfDuration, StandardTransitions.CreateFade(), false);
-                }
-
-                // audio track
-                ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
-                IClip audio = audioTrack.AddAudio(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\audio\Kalimba.mp3", 0, videoTrack.Duration);
-
-                audioTrack.AddEffect(0, audio.Duration, StandardEffects.CreateAudioEnvelope(1.0, 1.0, 1.0, audio.Duration));
-
                 using (WindowsMediaRenderer renderer = new WindowsMediaRenderer(timeline, @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\videos\output.wmv", WindowsMediaProfiles.HighQualityVideo))
                 {
                     renderer.Render();

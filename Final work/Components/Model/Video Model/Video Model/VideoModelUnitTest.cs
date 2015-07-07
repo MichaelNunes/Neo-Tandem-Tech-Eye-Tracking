@@ -24,6 +24,7 @@ namespace Video_Model
             //vMaker.createVideo();
 
             iMaker = new ImageGenerator();
+            iMaker.VideoPath = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
             iMaker.createImages();
         }
 
@@ -41,10 +42,12 @@ namespace Video_Model
         [Test]
         public void createImage()
         {
-            Assert.AreEqual(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\videos\output.wmv", iMaker.VideoPath);
+            Assert.AreEqual(@"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv", iMaker.VideoPath);
+            Assert.AreEqual(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\images\", iMaker.DestinationPath);
             Assert.AreEqual(664, iMaker.ImageWidth);
             Assert.AreEqual(246, iMaker.ImageHeight);
             Assert.AreEqual(16, iMaker.BitCount);
+            Assert.AreEqual(30, iMaker.Ips);
         }
     }
 }

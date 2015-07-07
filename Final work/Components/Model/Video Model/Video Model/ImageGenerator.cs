@@ -53,6 +53,14 @@ namespace Video_Model
             set { bitCount = value; }
         }
 
+        private int ips;
+
+        public int Ips
+        {
+            get { return ips; }
+            set { ips = value; }
+        }
+
         public ImageGenerator()
         {
             videoPath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\videos\output.wmv";
@@ -60,15 +68,17 @@ namespace Video_Model
             imageHeight = 246;
             imageWidth = 664;
             bitCount = 16;
+            ips = 30;
         }
 
-        public ImageGenerator(string inPath, string outPath, int height, int width, short _bitCount)
+        public ImageGenerator(string inPath, string outPath, int height, int width, short _bitCount, int imagesPS)
         {
             videoPath = inPath;
             destinationPath = outPath;
             imageHeight = height;
             imageWidth = width;
             bitCount = _bitCount;
+            ips = imagesPS;
         }
 
 
@@ -79,12 +89,14 @@ namespace Video_Model
                 timeline.AddVideoGroup(bitCount, imageWidth, imageHeight).AddTrack(); // image bitcount & dimensions
                 timeline.AddVideo(videoPath); // input video
                 List<double> thresholds = new List<double>();
+
                 double j = 0;
-                for (double i = 0; i < 5000; i++) // set image per second (ips)
+                for (double i = 0; i < 10000; i++) // set image per second (ips)
                 {
+                    j += (1 / ips); // set ips
                     thresholds.Add(j);
-                    j += 0.1; //set ips to 10
                 } 
+
                 ImagesToDiskParticipant participant = new ImagesToDiskParticipant(bitCount, imageWidth, imageHeight, destinationPath, thresholds.ToArray()); 
                 using (NullRenderer render = new NullRenderer(timeline, null, new ICallbackParticipant[] { participant })) 
                 { 
