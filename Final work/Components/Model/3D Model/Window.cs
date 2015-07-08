@@ -9,21 +9,21 @@ using OpenTK.Graphics.OpenGL;
 
 namespace DisplayModel
 {
-    public class Model3DWindow : GameWindow
+    public class Window : GameWindow
     {
-        private ShaderData shaderData;
-        private List<BufferData> objects;
+        private Shader shaderData;
+        private List<GameObject> objects;
 
-        public Model3DWindow() : base(720, 405)
+        public Window() : base(720, 405)
         {
-            shaderData = new ShaderData();
-            objects = new List<BufferData>();
+            shaderData = new Shader();
+            objects = new List<GameObject>();
         }
 
-        public void add( BufferData bufferData )
+        public void Add(GameObject gameObject)
         {
-            if (!objects.Contains(bufferData))
-                objects.Add( bufferData );
+            if (!objects.Contains(gameObject))
+                objects.Add(gameObject);
         }
 
         protected override void OnKeyPress(KeyPressEventArgs e)
@@ -66,7 +66,7 @@ namespace DisplayModel
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             
             for (int i = 0; i < objects.Count; ++i )
-                shaderData.Draw(objects[i]);
+                shaderData.Draw(objects[i].BufferData);
             
             SwapBuffers();
         }
@@ -81,29 +81,6 @@ namespace DisplayModel
 
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
-        }
-
-        public int Length
-        {
-            get { return objects.Count; }
-        }
-
-        public BufferData this[int index]
-        {
-            get
-            {
-                if (index < 0 || index >= objects.Count)
-                    throw new IndexOutOfRangeException("You tried to access this object at index: " + index);
-
-                return objects[index];
-            }
-            set
-            {
-                if (index < 0 || index >= objects.Count)
-                    throw new IndexOutOfRangeException("You tried to access this object at index: " + index);
-
-                objects[index] = value;
-            }
         }
     }
 }

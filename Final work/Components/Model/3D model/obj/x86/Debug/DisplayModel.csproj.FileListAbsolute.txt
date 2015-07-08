@@ -4,4 +4,3 @@ C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Compone
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D Model\obj\x86\Debug\ConsoleApplication.pdb
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\bin\Debug\nunit.framework.dll
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\bin\Debug\nunit.framework.xml
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\obj\x86\Debug\DisplayModel.csprojResolveAssemblyReference.cache

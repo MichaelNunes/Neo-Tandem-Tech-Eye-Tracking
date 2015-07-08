@@ -11,10 +11,14 @@ namespace DisplayModel
     {
         public static void Main(string[] args)
         {
-            string source = "C:/Users/COS301/Documents/Objects/Susan.obj"; ;
+            Window window = new Window();
 
-            Model3D tebogo = Converter.fromOBJ(source, null);
-            tebogo.Model3DWindow.Run(30, 30);
+            string source = "Objects/Cube.obj";
+            string texture = "";
+            GameObject susan = Converter.fromOBJ(source, texture);
+
+            window.Add(susan);
+            window.Run(30, 30);
         }
     }
 }
