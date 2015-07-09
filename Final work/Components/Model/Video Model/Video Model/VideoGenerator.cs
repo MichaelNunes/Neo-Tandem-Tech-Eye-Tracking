@@ -52,10 +52,19 @@ namespace Video_Model
             set { fps = value; }
         }
 
+        string destinationPath;
+
+        public string DestinationPath
+        {
+            get { return destinationPath; }
+            set { destinationPath = value; }
+        }
+
         public VideoGenerator()
         {
             imagePath = "";
             modelName = "";
+            destinationPath = @"C:\Users\Public\Videos\Sample Videos\";
             frameWidth = 720;
             frameHeight = 480;
             fps = 25;
@@ -64,18 +73,24 @@ namespace Video_Model
         public VideoGenerator(string path)
         {
             imagePath = path;
+            modelName = "VideoModeli";
+            frameWidth = 720;
+            frameHeight = 480;
+            fps = 25;
         }
 
-        public VideoGenerator(string path, string name, int width, int height)
+        public VideoGenerator(string path, string name, int width, int height, int framesPS)
         {
             imagePath = path;
             modelName = name;
             frameWidth = width;
             frameHeight = height;
+            fps = framesPS;
         }
 
         public void createVideo()
         {
+            destinationPath += modelName + ".wmv";
             using (ITimeline timeline = new DefaultTimeline(fps))
             {
                 string[] files = Directory.GetFiles(imagePath);
@@ -91,22 +106,14 @@ namespace Video_Model
                     clips[i] = videoTrack.AddImage(files[i], 0, 2);
                 }
 
-                double halfDuration = 0.5;
-
-                // effects
-                for (int i = 1; i < files.Length; i++)
-                {
-                    group.AddTransition(clips[i].Offset - halfDuration, halfDuration, StandardTransitions.CreateFade(), true);
-                    group.AddTransition(clips[i].Offset, halfDuration, StandardTransitions.CreateFade(), false);
-                }
-
-                // audio track
                 ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
-                IClip audio = audioTrack.AddAudio(@"C:\Users\COS301\Documents\Visual Studio 2013\Projects\audio\Kalimba.mp3", 0, videoTrack.Duration);
+                IClip audio = audioTrack.AddAudio(@"C:\Users\Public\Music\Sample Music\Kalimba.mp3", 0, videoTrack.Duration);
+                
+                //output video profile
+                string profilePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\Splicer_Profile_1280x720.prx";
+                string profile = new StreamReader(profilePath).ReadToEnd();
 
-                audioTrack.AddEffect(0, audio.Duration, StandardEffects.CreateAudioEnvelope(1.0, 1.0, 1.0, audio.Duration));
-
-                using (WindowsMediaRenderer renderer = new WindowsMediaRenderer(timeline, @"C:\Users\COS301\Documents\Visual Studio 2013\Projects\images\output.wmv", WindowsMediaProfiles.HighQualityVideo))
+                using (WindowsMediaRenderer renderer = new WindowsMediaRenderer(timeline, destinationPath, profile))
                 {
                     renderer.Render();
                 }

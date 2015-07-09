@@ -20,5 +20,13 @@ namespace NTT_Eyetracking
         private void Main_Load(object sender, EventArgs e)
         {
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RecordingSetup m = new RecordingSetup();
+            this.Hide();
+            m.ShowDialog();
+            this.Show();
+        }
     }
 }
