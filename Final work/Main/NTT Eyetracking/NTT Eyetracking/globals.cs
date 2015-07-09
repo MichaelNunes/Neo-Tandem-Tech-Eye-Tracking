@@ -10,5 +10,7 @@ namespace NTT_Eyetracking
     public class globals
     {
         internal static ProjectSolution m = new ProjectSolution();
+        internal static string typeOfRecording = "";
+        internal static string currentRecordingpath = "";
     }
 }

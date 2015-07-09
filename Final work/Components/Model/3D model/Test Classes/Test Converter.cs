@@ -14,9 +14,9 @@ namespace DisplayModel.Test_Classes
     class Test_Converter
     {
         #region Fields
-        private Model3D Cube;
-        private Model3D Susan;
-        private Model3D Predator;
+        private GameObject Cube;
+        private GameObject Susan;
+        private GameObject Predator;
 
         private string CubeUrl = "Objects/Cube.obj";
         private string SusanUrl = "Objects/Susan.obj";
@@ -37,41 +37,11 @@ namespace DisplayModel.Test_Classes
         [Test]
         public void TestBufferCounts()
         {
-            Assert.AreEqual(1, Cube.Model3DWindow.Length);
-            Assert.AreEqual(1, Susan.Model3DWindow.Length);
-            Assert.AreEqual(1, Predator.Model3DWindow.Length);
-
-            Assert.AreEqual(36, Cube.Model3DWindow[0].Vertex.Length);
-            Assert.AreEqual(2904, Susan.Model3DWindow[0].Vertex.Length);
-            Assert.AreEqual(2960157, Predator.Model3DWindow[0].Vertex.Length);
-
-            Assert.AreEqual(36, Cube.Model3DWindow[0].Colour.Length);
-            Assert.AreEqual(2904, Susan.Model3DWindow[0].Colour.Length);
-            Assert.AreEqual(2960157, Predator.Model3DWindow[0].Colour.Length);
-
-            Assert.AreEqual(0, Cube.Model3DWindow[0].Texture.Length);
-            Assert.AreEqual(0, Susan.Model3DWindow[0].Texture.Length);
-            Assert.AreEqual(0, Predator.Model3DWindow[0].Texture.Length);
-
-            Assert.AreEqual(36, Cube.Model3DWindow[0].Normal.Length);
-            Assert.AreEqual(2904, Susan.Model3DWindow[0].Normal.Length);
-            Assert.AreEqual(2960157, Predator.Model3DWindow[0].Normal.Length);
         }
 
         [Test]
         public void TestDefaultMatrices()
         {
-            Assert.AreEqual(Matrix4.Identity, Cube.Model3DWindow[0].ModelMatrix);
-            Assert.AreEqual(Matrix4.Identity, Cube.Model3DWindow[0].ViewProjectionMatrix);
-            Assert.AreEqual(Matrix4.Identity, Cube.Model3DWindow[0].ModelViewProjectionMatrix);
-
-            Assert.AreEqual(Matrix4.Identity, Susan.Model3DWindow[0].ModelMatrix);
-            Assert.AreEqual(Matrix4.Identity, Susan.Model3DWindow[0].ViewProjectionMatrix);
-            Assert.AreEqual(Matrix4.Identity, Susan.Model3DWindow[0].ModelViewProjectionMatrix);
-
-            Assert.AreEqual(Matrix4.Identity, Predator.Model3DWindow[0].ModelMatrix);
-            Assert.AreEqual(Matrix4.Identity, Predator.Model3DWindow[0].ViewProjectionMatrix);
-            Assert.AreEqual(Matrix4.Identity, Predator.Model3DWindow[0].ModelViewProjectionMatrix);
         }
         #endregion
 
@@ -79,13 +49,6 @@ namespace DisplayModel.Test_Classes
         [Test]
         public void TestDefaultMaterial()
         {
-            Assert.AreEqual(Color4.LightGray, Cube.Material.Colour);
-            Assert.AreEqual(Color4.LightGray, Susan.Material.Colour);
-            Assert.AreEqual(Color4.LightGray, Predator.Material.Colour);
-
-            Assert.AreEqual("", Cube.Material.FilePath);
-            Assert.AreEqual("", Susan.Material.FilePath);
-            Assert.AreEqual("", Predator.Material.FilePath);
         }
         #endregion
 
