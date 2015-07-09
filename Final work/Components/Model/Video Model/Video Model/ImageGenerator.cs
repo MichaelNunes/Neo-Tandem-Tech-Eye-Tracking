@@ -8,7 +8,6 @@ using Splicer.WindowsMedia;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Exception;
 
 
 namespace Video_Model
