@@ -34,60 +34,36 @@ namespace DisplayModel
     /// <summary>
     /// Represents a 3D object model.
     /// </summary>
-    public class Model3D : Model, IDisposable
+    public class GameObject 
     {
         #region Fields
-        private uint framerate;
-        private List<Keyframe> keyframes;
-        private List<Vector3> changes;
-
         private Transform transform;
         private Material material;
-        private Model3DWindow gameWindow;
+        private BufferData bufferData;
         #endregion
 
         #region Constructors
-        public Model3D()
+        /// <summary>
+        /// 
+        /// </summary>
+        public GameObject()
         {
-            keyframes = new List<Keyframe>();
-
-            transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
-            material = new Material(Color4.LightGray);
-            gameWindow = new Model3DWindow();
-        }
-        #endregion
-
-        #region Model Superclass Methods
-        protected override void startRecording()
-        {
-            // IMPLEMENT
+            transform = new Transform();
+            material = new Material();
+            bufferData = new BufferData();
         }
 
-        protected override void stopRecording()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="m"></param>
+        /// <param name="bd"></param>
+        public GameObject(Transform t, Material m, BufferData bd)
         {
-            // IMPLEMENT
-        }
-
-        protected override void saveToFile()
-        {
-            // IMPLEMENT
-        }
-        #endregion
-
-        #region Model Specific Methods
-        public void addKeyframe()
-        {
-
-        }
-
-        public void removeKeyframe()
-        {
-
-        }
-
-        public void Update()
-        {
-
+            transform = t;
+            material = m;
+            bufferData = bd;
         }
         #endregion
 
@@ -113,20 +89,11 @@ namespace DisplayModel
         /// <summary>
         /// 
         /// </summary>
-        public Model3DWindow Model3DWindow
+        public BufferData BufferData
         {
-            get { return gameWindow; }
-            set { gameWindow = value; }
+            get { return bufferData; }
+            set { bufferData = value; }
         }
         #endregion
-
-        public override string ToString()
-        {
-            return "Hello";
-        }
-        void IDisposable.Dispose()
-        {
-            Console.WriteLine("Thrown");
-        }
     }
 }

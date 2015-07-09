@@ -21,42 +21,32 @@
  */
 #endregion
 
-using System;
-
 namespace DisplayModel
 {
-    /// <summary>
-    /// Represents an image model.
-    /// </summary>
-    public class Model2D : Model
+    public struct Attribute
     {
-        private uint width;
-        private uint height;
+        /// <summary>
+        /// Pointer to the vertex position attribute in the shader.
+        /// </summary>
+        public int VertexPosition
+        { get; set; }
 
-        #region Constructors
-        public Model2D()
-        {
-        }
-        #endregion
+        /// <summary>
+        /// Pointer to the vertex normal attribute in the shader.
+        /// </summary>
+        public int VertexNormal
+        { get; set; }
 
-        #region Model Superclass Methods
-        protected override void startRecording()
-        {
-            // IMPLEMENT
-        }
+        /// <summary>
+        /// Pointer to the vertex colour attribute in the shader.
+        /// </summary>
+        public int VertexColour
+        { get; set; }
 
-        protected override void stopRecording()
-        {
-            // IMPLEMENT
-        }
-
-        protected override void saveToFile()
-        {
-            // IMPLEMENT
-        }
-        #endregion
-
-        #region Model Specific Methods
-        #endregion
+        /// <summary>
+        /// Pointer to the vertex texture attribute in the shader.
+        /// </summary>
+        public int VertexTexture
+        { get; set; }
     }
 }

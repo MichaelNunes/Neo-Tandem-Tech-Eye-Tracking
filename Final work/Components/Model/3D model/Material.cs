@@ -23,6 +23,7 @@
 
 using System;
 using System.IO;
+using System.Drawing;
 
 using OpenTK;
 using OpenTK.Graphics;
@@ -39,7 +40,8 @@ namespace DisplayModel
 	{
 		#region Fields
 		private Color4 colour;
-		private string filepath;
+        private int textureId;
+        private Bitmap image;
 		#endregion
 
 		#region Constructors
@@ -50,17 +52,19 @@ namespace DisplayModel
 		public Material(Color4 _color)
 		{
             colour = _color;
-			filepath = "";
+            image = null;
+            textureId = -1;
 		}
 
 		/// <summary>
 		/// Creates a material with an image texture.
 		/// </summary>
 		/// <param name='_filepath'> The path to the texture of the object. </param>
-		public Material(string _filepath)
+		public Material(string filepath)
         {
             colour = Color4.LightGray;
-			filepath = _filepath;
+            image = new Bitmap(filepath);
+            textureId = -1;
 		}
 
 		/// <summary>
@@ -68,24 +72,36 @@ namespace DisplayModel
 		/// </summary>
 		/// <param name='_color'> The color of the material. </param>
 		/// <param name='_filepath'> The path to the texture of the object. </param>
-		public Material(Color4 _color, string _filepath)
+		public Material(Color4 _color, string filepath)
 		{
             colour = _color;
-			filepath = _filepath;
+            image = new Bitmap(filepath);
+            textureId = -1;
 		}
 		#endregion
+
+        #region Setup
+        /// <summary>
+        /// Sets up the texture for the current object containing this material.
+        /// </summary>
+        public void Setup()
+        {
+            if (image == null)
+                return;
+
+            // Do stuff;
+        }
+        #endregion
 
         #region Attributes
         public Color4 Colour
         {
             get { return colour; }
-            set { colour = value; }
         }
 
-        public string FilePath
+        public int getTextureId
         {
-            get { return filepath; }
-            set { filepath = value; }
+            get { return textureId; }
         }
         #endregion
     }
