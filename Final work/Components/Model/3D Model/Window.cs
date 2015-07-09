@@ -48,7 +48,7 @@ namespace DisplayModel
             WindowBorder = WindowBorder.Hidden;
             WindowState = WindowState.Fullscreen;
 
-            GL.ClearColor(Color.CornflowerBlue);
+            GL.ClearColor(Color.Black);
             GL.Enable(EnableCap.DepthTest);
 
             GL.PointSize(5f);

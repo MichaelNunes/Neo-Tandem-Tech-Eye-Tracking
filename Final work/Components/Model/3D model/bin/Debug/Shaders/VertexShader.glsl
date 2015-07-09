@@ -52,7 +52,7 @@ void main( void )
 
 
 	oPositionVec = uModelViewMatrix * vec4( aVertexPosition, 1.0 );
-	oNormalVec = uNormalMatrix * aVertexNormal;
+	oNormalVec = normalize(uNormalMatrix * aVertexNormal);
 	oEyeVec = vec3( -oNormalVec.xyz );
 
 	gl_Position = uProjectionMatrix * uModelViewMatrix * vec4( aVertexPosition, 1.0 );

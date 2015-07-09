@@ -91,6 +91,14 @@ namespace DisplayModel
             buffer.Colour = GL.GenBuffer();
             buffer.Texture = GL.GenBuffer();
             buffer.Index = GL.GenBuffer();
+
+            AmbientLight_Colour = new Vector3(0.0f, 0.0f, 0.0f);
+            DirectionalLight_Colour = new Vector3(1f, 1f, 1f);
+            DirectionalLight_Direction = new Vector3(0.0f, 0.0f, 0.0f);
+            PointLight_DiffuseColour = new Vector3(1.0f, 1.0f, 1.0f);
+            PointLight_SpecularColour = new Vector3(0.0f, 0.0f, 0.0f);
+            PointLight_Shininess = 250f;
+            PointLight_Position = new Vector3(0.0f, 0.0f, -5.0f);
         }
 
         /// <summary>
@@ -127,6 +135,7 @@ namespace DisplayModel
             float radians = OpenTK.MathHelper.DegreesToRadians(degrees++);
 
             ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(radians) * Matrix4.CreateTranslation(0.0f, 0.0f, -4.0f) ;
+
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref ModelViewMatrix);
 
@@ -140,6 +149,7 @@ namespace DisplayModel
             GL.DisableVertexAttribArray(attribute.VertexColour);
             GL.Flush();
         }
+
         private void BindBuffers(ref BufferData bufferData)
         {
             //Vertices
@@ -151,7 +161,7 @@ namespace DisplayModel
             //Normals
             GL.BindBuffer(BufferTarget.ArrayBuffer, buffer.Normal);
             GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Normal.Length * Vector3.SizeInBytes), bufferData.Normal, BufferUsageHint.StaticDraw);
-            GL.DisableVertexAttribArray(attribute.VertexNormal);
+            GL.EnableVertexAttribArray(attribute.VertexNormal);
             GL.VertexAttribPointer(attribute.VertexNormal, 3, VertexAttribPointerType.Float, true, 0, 0);
 
             //Colors
@@ -167,17 +177,24 @@ namespace DisplayModel
 
         private void SetUniforms(ref BufferData bufferData)
         {
-            GL.Uniform1(uniform.UseLighting, 0);/*
-            GL.Uniform3(uniform.AmbientLightColour, AmbientLight_Colour);
-            GL.Uniform3(uniform.DirectionalLightColour, DirectionalLight_Colour);
-            GL.Uniform3(uniform.DirectionalLightDirection, DirectionalLight_Direction);*/
+            GL.Uniform1(uniform.UseLighting, 1);
 
-            NormalMatrix = new Matrix3(Matrix4.Invert(ModelViewMatrix));
+            GL.Uniform3(uniform.AmbientLightColour, AmbientLight_Colour);
+
+            GL.Uniform3(uniform.DirectionalLightColour, DirectionalLight_Colour);
+            GL.Uniform3(uniform.DirectionalLightDirection, DirectionalLight_Direction);
+
+            GL.Uniform3(uniform.PointLightDiffuseColour, PointLight_DiffuseColour);
+            GL.Uniform3(uniform.PointLightSpecularColour, PointLight_SpecularColour);
+            GL.Uniform1(uniform.PointLightShininess, PointLight_Shininess);
+            GL.Uniform3(uniform.PointLightPosition, PointLight_Position);
+
+            NormalMatrix = Matrix3.Transpose(new Matrix3(Matrix4.Invert(ModelViewMatrix)));
 
             //Set matrix uniforms
-            GL.UniformMatrix4(uniform.ProjectionMatrix, false, ref ProjectionMatrix);
-            GL.UniformMatrix4(uniform.ModelViewMatrix, false, ref ModelViewMatrix);
             GL.UniformMatrix3(uniform.NormalMatrix, false, ref NormalMatrix);
+            GL.UniformMatrix4(uniform.ModelViewMatrix, false, ref ModelViewMatrix);
+            GL.UniformMatrix4(uniform.ProjectionMatrix, false, ref ProjectionMatrix);
 
         }
         #endregion
@@ -190,6 +207,18 @@ namespace DisplayModel
         { get; set; }
 
         public Vector3 DirectionalLight_Direction
+        { get; set; }
+
+        public Vector3 PointLight_DiffuseColour
+        { get; set; }
+
+        public Vector3 PointLight_SpecularColour
+        { get; set; }
+
+        public float PointLight_Shininess
+        { get; set; }
+
+        public Vector3 PointLight_Position
         { get; set; }
         #endregion
     }

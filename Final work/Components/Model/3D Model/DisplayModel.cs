@@ -13,7 +13,7 @@ namespace DisplayModel
         {
             Window window = new Window();
 
-            string source = "Objects/Cube.obj";
+            string source = "Objects/Susan_Smooth.obj";
             string texture = "";
             GameObject susan = Converter.fromOBJ(source, texture);
 

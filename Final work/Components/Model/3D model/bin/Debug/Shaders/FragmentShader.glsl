@@ -59,7 +59,7 @@ out vec4 fragColor;
 
 vec4 Colour()
 {
-	if(false /*uUseTexture*/)
+	if(false/*uUseTexture*/)
 		return texture2D(uSampler, vec2(oVertexTexture.s, oVertexTexture.t));
 	else
 		return oVertexColour;
@@ -67,24 +67,22 @@ vec4 Colour()
 
 vec3 Light()
 {
-	if(false /*uUseLighting*/)
+	if(uUseLighting)
 	{
 		vec3 ambient;
 		vec3 directional;
-		vec3 point = vec3(0, 0, 0);
+		vec3 point;
 	
 		ambient = uAmbientLight_Colour;
 		
-		float dirWeight = max(dot(oNormalVec, uDirectionalLight_Direction), 0.0);
-		directional = uDirectionalLight_Colour * dirWeight;
+		float dirWeight = max(dot(oNormalVec, normalize(uDirectionalLight_Direction - oPositionVec.xyz)), 0.0);
+		directional = uDirectionalLight_Colour * dirWeight;		
 		
-		/*
 		float diffWeight = max(dot(oNormalVec, normalize(uPointLight_Position - oPositionVec.xyz)), 0.0);
 		float specWeight = pow(max(dot(reflect(-normalize(uPointLight_Position - oPositionVec.xyz), oNormalVec), oEyeVec), 0.0), uPointLight_Shininess);
-		point = uPointLight_DiffuseColour * diffWeight + uPointLight_SpecularColour * specWeight;
-		*/
+		point = (uPointLight_DiffuseColour * diffWeight);// + (uPointLight_SpecularColour * specWeight);
 		
-		return (ambient + directional);
+		return (ambient + directional + point);
 	}
 	else
 		return vec3(1.0, 1.0, 1.0);
