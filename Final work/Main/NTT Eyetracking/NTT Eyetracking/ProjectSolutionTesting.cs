@@ -11,6 +11,7 @@ namespace NTT_Eyetracking
     [TestFixture]
     class ProjectSolutionTesting
     {
+        
         public static ProjectSolution test = new ProjectSolution("NewProject", Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory));
         Settings_Class.ProjectSettings testProject = test.SettingsProject;
             
@@ -27,6 +28,18 @@ namespace NTT_Eyetracking
             Assert.AreEqual(30,test.SettingsModel.FPS1);
             Assert.AreEqual(false, test.SettingsModel.Textures1);
             Assert.AreEqual(true, test.SettingsModel.Lighting1);
+        }
+        
+        [Test]
+        public void DirectoriesCreator()
+        {
+            test.createSubDirectories();
+        }
+        [Test]
+        public void calibrationsetter()
+        {
+            test.hasCalibrated();
+            Assert.AreEqual(true, test.Calibrated);
         }
 
     }

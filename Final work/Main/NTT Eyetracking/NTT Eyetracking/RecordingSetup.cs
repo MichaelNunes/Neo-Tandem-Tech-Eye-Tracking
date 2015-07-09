@@ -19,63 +19,72 @@ namespace NTT_Eyetracking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = "";
-            ProjectSolution t = globals.m;
-            if(textBox1.Text == "")
+            try
             {
-                DateTime time = DateTime.Today;
-                name = "Recording" + time.Day + "_" + time.Month + "_" + time.Year + "_" + time.Second + "_" + time.Minute + "_" + time.Hour;
-            }
-            else
-            {
-                name = textBox1.Text;
-            }
-            if (comboBox1.Text == "2DModel")
-            {
-                string rec = System.IO.Path.Combine(t.Directory, "Recordings");
-                System.IO.Directory.CreateDirectory(rec);
-                string sub = System.IO.Path.Combine(rec, "2DModel");
-                sub = System.IO.Path.Combine(sub, name);
-                System.IO.Directory.CreateDirectory(sub);
-                globals.currentRecordingpath = sub;
-                globals.typeOfRecording = "2DModel";
-                this.Hide();
-                _2DModelView view = new _2DModelView();
-                view.ShowDialog();
-                this.Show();
 
+
+                string name = "";
+                ProjectSolution t = globals.m;
+                if (textBox1.Text == "")
+                {
+                    DateTime time = DateTime.Today;
+                    name = "Recording" + time.Day + "_" + time.Month + "_" + time.Year + "_" + time.Second + "_" + time.Minute + "_" + time.Hour;
+                }
+                else
+                {
+                    name = textBox1.Text;
+                }
+                if (comboBox1.Text == "2DModel")
+                {
+                    string rec = System.IO.Path.Combine(t.Directory, "Recordings");
+                    System.IO.Directory.CreateDirectory(rec);
+                    string sub = System.IO.Path.Combine(rec, "2DModel");
+                    sub = System.IO.Path.Combine(sub, name);
+                    System.IO.Directory.CreateDirectory(sub);
+                    globals.currentRecordingpath = sub;
+                    globals.typeOfRecording = "2DModel";
+                    this.Hide();
+                    _2DModelView view = new _2DModelView();
+                    view.ShowDialog();
+                    this.Show();
+
+                }
+                else if (comboBox1.SelectedText.ToString() == "3DModel")
+                {
+                    string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
+                    System.IO.Directory.CreateDirectory(rec);
+                    string sub = System.IO.Path.Combine(rec, "3DModel");
+                    sub = System.IO.Path.Combine(sub, name);
+                    System.IO.Directory.CreateDirectory(sub);
+                    globals.currentRecordingpath = sub;
+                    globals.typeOfRecording = "3DModel";
+                    this.Hide();
+                    _3DModelView view = new _3DModelView();
+                    view.ShowDialog();
+                    this.Show();
+                }
+                else if (comboBox1.SelectedText.ToString() == "Video")
+                {
+                    string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
+                    System.IO.Directory.CreateDirectory(rec);
+                    string sub = System.IO.Path.Combine(rec, "Video");
+                    sub = System.IO.Path.Combine(sub, name);
+                    System.IO.Directory.CreateDirectory(sub);
+                    globals.currentRecordingpath = sub;
+                    globals.typeOfRecording = "Video";
+                    this.Hide();
+                    VideoView view = new VideoView();
+                    view.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect recording type chosen");
+                }
             }
-            else if (comboBox1.SelectedText.ToString() == "3DModel")
+            catch(Exception exc)
             {
-                string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
-                System.IO.Directory.CreateDirectory(rec);
-                string sub = System.IO.Path.Combine(rec, "3DModel");
-                sub = System.IO.Path.Combine(sub, name);
-                System.IO.Directory.CreateDirectory(sub);
-                globals.currentRecordingpath = sub;
-                globals.typeOfRecording = "3DModel";
-                this.Hide();
-                _3DModelView view = new _3DModelView();
-                view.ShowDialog();
-                this.Show();
-            }
-            else if (comboBox1.SelectedText.ToString() == "Video")
-            {
-                string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
-                System.IO.Directory.CreateDirectory(rec);
-                string sub = System.IO.Path.Combine(rec, "Video");
-                sub = System.IO.Path.Combine(sub, name);
-                System.IO.Directory.CreateDirectory(sub);
-                globals.currentRecordingpath = sub;
-                globals.typeOfRecording = "Video";
-                this.Hide();
-                VideoView view = new VideoView();
-                view.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Error Occured");
+                MessageBox.Show(exc.Message);
             }
         }
     }
