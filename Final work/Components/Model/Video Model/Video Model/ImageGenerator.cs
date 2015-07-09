@@ -108,5 +108,14 @@ namespace Video_Model
                 } 
            } 
        }
+
+        public void deleteImages()
+        {
+            DirectoryInfo deletionPath = new DirectoryInfo(destinationPath);
+            foreach (FileInfo file in deletionPath.GetFiles())
+            {
+                file.Delete();
+            }
+        }
     }
 }
