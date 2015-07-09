@@ -38,10 +38,7 @@ namespace DisplayModel
         private Vector2[] texture;
         private Vector3[] normal;
         private Vector4[] colour;
-
-        private Matrix4 modelMatrix;
-        private Matrix4 viewProjectionMatrix;
-        private Matrix4 modelViewProjectionMatrix;
+        private int[] index;
 		#endregion
 
 		#region Constructors
@@ -53,14 +50,11 @@ namespace DisplayModel
         /// <param name='n'> An array of normal points. </param>s
 		public BufferData(float[] v, float[] t, float[] n, Material mat)
 		{
-            modelMatrix = Matrix4.Identity;
-            viewProjectionMatrix = Matrix4.Identity;
-            modelViewProjectionMatrix = Matrix4.Identity;
-
             vertex = new Vector3[v.Length];
             colour = new Vector4[v.Length];
             texture = new Vector2[t.Length];
             normal = new Vector3[n.Length];
+            index = null;
 
             for(int i = 0; i < v.Length; i += 3)
                 vertex[ i ] = new Vector3(v[i], v[i + 1], v[i + 2]);
@@ -83,14 +77,11 @@ namespace DisplayModel
         /// <param name='n'> A list of normal points. </param>
         public BufferData(List<float> v, List<float> t, List<float> n, Material mat)
         {
-            modelMatrix = Matrix4.Identity;
-            viewProjectionMatrix = Matrix4.Identity;
-            modelViewProjectionMatrix = Matrix4.Identity;
-
             vertex = new Vector3[v.Count];
             colour = new Vector4[v.Count];
             texture = new Vector2[t.Count];
             normal = new Vector3[n.Count];
+            index = null;
 
             for (int i = 0; i < v.Count; i += 3)
                 vertex[i] = new Vector3(v[i], v[i + 1], v[i + 2]);
@@ -116,16 +107,13 @@ namespace DisplayModel
         /// <param name='ni'> An array of normal indices. </param>
         public BufferData(float[] vp, float[] tp, float[] np, int[] vi, int[] ti, int[] ni, Material mat)
         {
-            modelMatrix = Matrix4.Identity;
-            viewProjectionMatrix = Matrix4.Identity;
-            modelViewProjectionMatrix = Matrix4.Identity;
-
             vertex = new Vector3[vi.Length];
             colour = new Vector4[vi.Length];
             texture = new Vector2[ti.Length];
             normal = new Vector3[ni.Length];
+            index = null;
 
-            for(int i = 0; i < vi.Length; i += 3)
+            for (int i = 0; i < vi.Length; i += 3)
                 vertex[i] = new Vector3(vp[vi[i]], vp[vi[i + 1]], vp[vi[i + 2]]);
 
             for (int i = 0; i < colour.Length; ++i)
@@ -149,14 +137,11 @@ namespace DisplayModel
         /// <param name='ni'> A list of normal indices. </param>
         public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, List<int> vi, List<int> ti, List<int> ni, Material mat)
         {
-            modelMatrix = Matrix4.Identity;
-            viewProjectionMatrix = Matrix4.Identity;
-            modelViewProjectionMatrix = Matrix4.Identity;
-
             vertex = new Vector3[vi.Count];
             colour = new Vector4[vi.Count];
             texture = new Vector2[ti.Count];
             normal = new Vector3[ni.Count];
+            index = null;
             int count;
 
             count = 0;
@@ -176,8 +161,8 @@ namespace DisplayModel
 		}
 		#endregion
 
-		#region Attributes
-		/// <summary>
+        #region Attributes
+        /// <summary>
 		/// 
 		/// </summary>
         public Vector3[] Vertex
@@ -207,38 +192,6 @@ namespace DisplayModel
         public Vector4[] Colour
         {
             get { return colour; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Matrix4 ModelMatrix
-        {
-            get { return modelMatrix; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Matrix4 ViewProjectionMatrix
-        {
-            get { return viewProjectionMatrix; }
-        }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public Matrix4 ModelViewProjectionMatrix
-        {
-            get { return modelViewProjectionMatrix; }
-        }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool Valid
-        {
-            get { return !( (vertex != null) && (normal != null) ); }
         }
 		#endregion
 	}

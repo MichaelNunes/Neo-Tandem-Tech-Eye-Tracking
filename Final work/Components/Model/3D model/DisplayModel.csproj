@@ -72,18 +72,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmbientLight.cs" />
+    <Compile Include="Attribute.cs" />
+    <Compile Include="Buffer.cs" />
     <Compile Include="BufferData.cs" />
-    <Compile Include="Model3DWindow.cs" />
+    <Compile Include="DirectionalLight.cs" />
+    <Compile Include="Light.cs" />
+    <Compile Include="ID.cs" />
+    <Compile Include="PointLight.cs" />
+    <Compile Include="Uniform.cs" />
+    <Compile Include="Window.cs" />
     <Compile Include="Test Classes\Test Converter.cs" />
-    <Compile Include="Tester.cs" />
+    <Compile Include="DisplayModel.cs" />
     <Compile Include="Converter.cs" />
-    <Compile Include="Keyframe.cs" />
     <Compile Include="Material.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="Model2D.cs" />
-    <Compile Include="Model3D.cs" />
-    <Compile Include="ModelVideo.cs" />
-    <Compile Include="ShaderData.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Shader.cs" />
     <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -41,18 +41,60 @@ namespace NTT_Eyetracking
             set { settingsModel = value; }
         }
 
+        bool calibrated;
+
+        public bool Calibrated
+        {
+            get { return calibrated; }
+        }
+
         public ProjectSolution()
         {
 
         }
         public ProjectSolution(string name,string dir)
         {
-            projectName = name;
-            directory = dir;
-            settingsProject = new ProjectSettings(name,dir);
-            settingsModel = new ModelSettings3D(dir,30,false,true);
-            settingsProject.SaveSettings();
-            settingsModel.SaveSettings();
+            try
+            {
+                projectName = name;
+                directory = dir;
+                settingsProject = new ProjectSettings(name, dir);
+                settingsModel = new ModelSettings3D(dir, 30, false, true);
+                settingsProject.SaveSettings();
+                settingsModel.SaveSettings();
+                calibrated = false;
+            }
+            catch(Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        public void createSubDirectories()
+        {
+            try
+            {
+                string rec = System.IO.Path.Combine(directory, "Recordings");
+                System.IO.Directory.CreateDirectory(rec);
+
+                string sub = System.IO.Path.Combine(rec, "2DModel");
+                System.IO.Directory.CreateDirectory(sub);
+
+                sub = System.IO.Path.Combine(rec, "3DModel");
+                System.IO.Directory.CreateDirectory(sub);
+
+                sub = System.IO.Path.Combine(rec, "Video");
+                System.IO.Directory.CreateDirectory(sub);
+            }
+            catch(Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        public void hasCalibrated()
+        {
+            this.calibrated = true;
         }
     }
 }

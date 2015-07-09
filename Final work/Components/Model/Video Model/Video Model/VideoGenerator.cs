@@ -52,10 +52,19 @@ namespace Video_Model
             set { fps = value; }
         }
 
+        string destinationPath;
+
+        public string DestinationPath
+        {
+            get { return destinationPath; }
+            set { destinationPath = value; }
+        }
+
         public VideoGenerator()
         {
             imagePath = "";
             modelName = "";
+            destinationPath = @"C:\Users\Public\Videos\Sample Videos\";
             frameWidth = 720;
             frameHeight = 480;
             fps = 25;
@@ -81,6 +90,7 @@ namespace Video_Model
 
         public void createVideo()
         {
+            destinationPath += modelName + ".wmv";
             using (ITimeline timeline = new DefaultTimeline(fps))
             {
                 string[] files = Directory.GetFiles(imagePath);
@@ -104,7 +114,14 @@ namespace Video_Model
                     clips[i] = videoTrack.AddImage(files[i], 0, 2);
                 }
 
-                using (WindowsMediaRenderer renderer = new WindowsMediaRenderer(timeline, @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\videos\output.wmv", WindowsMediaProfiles.HighQualityVideo))
+                ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
+                IClip audio = audioTrack.AddAudio(@"C:\Users\Public\Music\Sample Music\Kalimba.mp3", 0, videoTrack.Duration);
+                
+                //output video profile
+                string profilePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\Splicer_Profile_1280x720.prx";
+                string profile = new StreamReader(profilePath).ReadToEnd();
+
+                using (WindowsMediaRenderer renderer = new WindowsMediaRenderer(timeline, destinationPath, profile))
                 {
                     renderer.Render();
                 }
