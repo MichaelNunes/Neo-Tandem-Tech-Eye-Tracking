@@ -13,6 +13,7 @@ namespace DisplayModel
     {
         private Shader shaderData;
         private List<GameObject> objects;
+        int viewNumber = 0;
 
         public Window() : base(720, 405)
         {
@@ -47,6 +48,7 @@ namespace DisplayModel
 
             WindowBorder = WindowBorder.Hidden;
             WindowState = WindowState.Fullscreen;
+            Visible = false;
 
             GL.ClearColor(Color.Black);
             GL.Enable(EnableCap.DepthTest);
@@ -57,6 +59,20 @@ namespace DisplayModel
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
+
+            if(viewNumber * 60 == 360)
+            {
+                Exit();
+            }
+            else
+            {
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    BufferData temp = objects[i].BufferData;
+                    temp.ModelViewMatrix *= Matrix4.CreateRotationY(MathHelper.DegreesToRadians(viewNumber * 60));
+                }
+                viewNumber++;
+            }
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
@@ -69,6 +85,7 @@ namespace DisplayModel
                 shaderData.Draw(objects[i].BufferData);
             
             SwapBuffers();
+            GrabScreenshot();
         }
 
         protected override void OnResize(EventArgs e)
@@ -81,6 +98,21 @@ namespace DisplayModel
 
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
+        }
+
+        public void GrabScreenshot()
+        {
+            if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
+                throw new OpenTK.Graphics.GraphicsContextMissingException();
+
+            Bitmap bmp = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+            System.Drawing.Imaging.BitmapData data =
+                bmp.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            GL.ReadPixels(0, 0, this.ClientSize.Width, this.ClientSize.Height, PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
+            bmp.UnlockBits(data);
+
+            bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            bmp.Save("Test" + viewNumber + ".Jpg");
         }
     }
 }

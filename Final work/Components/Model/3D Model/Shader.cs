@@ -134,7 +134,7 @@ namespace DisplayModel
             //print(bufferData);
             float radians = OpenTK.MathHelper.DegreesToRadians(degrees++);
 
-            ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(radians) * Matrix4.CreateTranslation(0.0f, 0.0f, -4.0f) ;
+            ModelViewMatrix = bufferData.ModelViewMatrix;
 
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref ModelViewMatrix);

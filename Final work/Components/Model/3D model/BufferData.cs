@@ -39,93 +39,10 @@ namespace DisplayModel
         private Vector3[] normal;
         private Vector4[] colour;
         private int[] index;
+        public Matrix4 ModelViewMatrix;
 		#endregion
 
-		#region Constructors
-		/// <summary>
-		/// Creates a buffer data object.
-		/// </summary>
-        /// <param name='v'> An array of vertex points. </param>
-        /// <param name='t'> An array of texture points. </param>
-        /// <param name='n'> An array of normal points. </param>s
-		public BufferData(float[] v, float[] t, float[] n, Material mat)
-		{
-            vertex = new Vector3[v.Length];
-            colour = new Vector4[v.Length];
-            texture = new Vector2[t.Length];
-            normal = new Vector3[n.Length];
-            index = null;
-
-            for(int i = 0; i < v.Length; i += 3)
-                vertex[ i ] = new Vector3(v[i], v[i + 1], v[i + 2]);
-
-            for (int i = 0; i < colour.Length; ++i)
-                colour[i] = new Vector4(mat.Colour.R,mat.Colour.G,mat.Colour.B, mat.Colour.A);
-
-            for(int i = 0; i < t.Length; i += 2)
-                texture[ i ] = new Vector2(t[i], t[i + 1]);
-
-            for(int i = 0; i < n.Length; i += 3)
-            	vertex[ i ] = new Vector3(n[i], n[i + 1], n[i + 2]);
-		}
-
-        /// <summary>
-        /// Creates a buffer data object from the values passed.
-        /// </summary>
-        /// <param name='v'> A list of vertex points. </param>
-        /// <param name='t'> A list of texture points. </param>
-        /// <param name='n'> A list of normal points. </param>
-        public BufferData(List<float> v, List<float> t, List<float> n, Material mat)
-        {
-            vertex = new Vector3[v.Count];
-            colour = new Vector4[v.Count];
-            texture = new Vector2[t.Count];
-            normal = new Vector3[n.Count];
-            index = null;
-
-            for (int i = 0; i < v.Count; i += 3)
-                vertex[i] = new Vector3(v[i], v[i + 1], v[i + 2]);
-
-            for (int i = 0; i < colour.Length; ++i)
-                colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);
-
-            for (int i = 0; i < t.Count; i += 2)
-                texture[i] = new Vector2(t[i], t[i + 1]);
-
-            for (int i = 0; i < n.Count; i += 3)
-                vertex[i] = new Vector3(n[i], n[i + 1], n[i + 2]);
-		}
-
-		/// <summary>
-		/// Create a buffer data object from the values passed and the indices provided.
-		/// </summary>
-        /// <param name='vp'> An array of vertex points. </param>
-        /// <param name='tp'> An array of texture points. </param>
-        /// <param name='np'> An array of normal points. </param>
-        /// <param name='vi'> An array of vertex indices. </param>
-        /// <param name='ti'> An array of texture indices. </param>
-        /// <param name='ni'> An array of normal indices. </param>
-        public BufferData(float[] vp, float[] tp, float[] np, int[] vi, int[] ti, int[] ni, Material mat)
-        {
-            vertex = new Vector3[vi.Length];
-            colour = new Vector4[vi.Length];
-            texture = new Vector2[ti.Length];
-            normal = new Vector3[ni.Length];
-            index = null;
-
-            for (int i = 0; i < vi.Length; i += 3)
-                vertex[i] = new Vector3(vp[vi[i]], vp[vi[i + 1]], vp[vi[i + 2]]);
-
-            for (int i = 0; i < colour.Length; ++i)
-                colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);
-
-            for(int i = 0; i < ti.Length; i += 2)
-                texture[ i ] = new Vector2(tp[ti[i]], tp[ti[i + 1]]);
-
-            for(int i = 0; i < ni.Length; i += 3)
-                normal[ i ] = new Vector3(np[ni[i]], np[ni[i + 1]], np[ni[i + 2]]);
-		}
-
+		#region Constructor
         /// <summary>
         /// Create a buffer data object from the values passed and the indices provided.
         /// </summary>
@@ -143,6 +60,7 @@ namespace DisplayModel
             normal = new Vector3[ni.Count];
             index = null;
             int count;
+            ModelViewMatrix = Matrix4.CreateTranslation(0f, 0f, -4f);
 
             count = 0;
             for (int i = 0; i < vi.Count; i++)
