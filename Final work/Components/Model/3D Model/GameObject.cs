@@ -39,7 +39,7 @@ namespace DisplayModel
         #region Fields
         private Transform transform;
         private Material material;
-        private BufferData bufferData;
+        public BufferData bufferData;
         #endregion
 
         #region Constructors

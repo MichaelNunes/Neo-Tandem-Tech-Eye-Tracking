@@ -14,11 +14,14 @@ namespace DisplayModel
         private Shader shaderData;
         private List<GameObject> objects;
         int viewNumber = 0;
+        int degrees = 45;
+        GLControl control;
 
         public Window() : base(720, 405)
         {
             shaderData = new Shader();
             objects = new List<GameObject>();
+            control = new GLControl();
         }
 
         public void Add(GameObject gameObject)
@@ -50,7 +53,7 @@ namespace DisplayModel
             WindowState = WindowState.Fullscreen;
             Visible = false;
 
-            GL.ClearColor(Color.Black);
+            GL.ClearColor(Color.Bisque);
             GL.Enable(EnableCap.DepthTest);
 
             GL.PointSize(5f);
@@ -59,20 +62,6 @@ namespace DisplayModel
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
-
-            if(viewNumber * 60 == 360)
-            {
-                Exit();
-            }
-            else
-            {
-                for (int i = 0; i < objects.Count; i++)
-                {
-                    BufferData temp = objects[i].BufferData;
-                    temp.ModelViewMatrix *= Matrix4.CreateRotationY(MathHelper.DegreesToRadians(viewNumber * 60));
-                }
-                viewNumber++;
-            }
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
@@ -85,6 +74,8 @@ namespace DisplayModel
                 shaderData.Draw(objects[i].BufferData);
             
             SwapBuffers();
+            control.PerformContextUpdate();
+            changeView();
             GrabScreenshot();
         }
 
@@ -100,6 +91,33 @@ namespace DisplayModel
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
         }
 
+        public void changeView()
+        {
+            if (viewNumber * degrees >= 360 + degrees)
+            {
+                if (viewNumber > (360/degrees) + 2)
+                {
+                    Exit();
+                }
+                else
+                {
+                    for (int i = 0; i < objects.Count; i++)
+                    {
+                        objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationX(MathHelper.DegreesToRadians(90)) * Matrix4.CreateTranslation(0f, 0f, -4f);
+                    }
+                }
+                viewNumber++;
+            }
+            else
+            {
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(MathHelper.DegreesToRadians(viewNumber * degrees)) * Matrix4.CreateTranslation(0f, 0f, -4f);
+                }
+                viewNumber++;
+            }
+        }
+
         public void GrabScreenshot()
         {
             if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
@@ -112,7 +130,7 @@ namespace DisplayModel
             bmp.UnlockBits(data);
 
             bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            bmp.Save("Test" + viewNumber + ".Jpg");
+            bmp.Save(@"TestImages\Test" + viewNumber + ".Jpg");
         }
     }
 }

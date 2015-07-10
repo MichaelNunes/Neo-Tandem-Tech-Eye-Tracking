@@ -60,7 +60,7 @@ namespace DisplayModel
             normal = new Vector3[ni.Count];
             index = null;
             int count;
-            ModelViewMatrix = Matrix4.CreateTranslation(0f, 0f, -4f);
+            ModelViewMatrix = Matrix4.Identity;
 
             count = 0;
             for (int i = 0; i < vi.Count; i++)
