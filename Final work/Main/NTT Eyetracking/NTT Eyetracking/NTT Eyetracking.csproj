@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="2D Model">
+      <HintPath>..\..\..\Components\Model\2D Model\2D Model\bin\Debug\2D Model.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -51,6 +54,9 @@
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Record_Class">
+      <HintPath>..\..\..\Components\Record\Record\Record\Record\bin\Debug\Record_Class.dll</HintPath>
+    </Reference>
     <Reference Include="Results">
       <HintPath>..\..\..\Components\Results\Results\Results\bin\Debug\Results.exe</HintPath>
     </Reference>
@@ -68,6 +74,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TETCSharpClient">
+      <HintPath>..\..\..\Components\External Packages\TETCSharpClient.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2DModelView.cs">
@@ -117,6 +126,9 @@
     <Compile Include="VideoView.Designer.cs">
       <DependentUpon>VideoView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="2DModelView.resx">
+      <DependentUpon>2DModelView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calibration.resx">
       <DependentUpon>Calibration.cs</DependentUpon>
     </EmbeddedResource>
