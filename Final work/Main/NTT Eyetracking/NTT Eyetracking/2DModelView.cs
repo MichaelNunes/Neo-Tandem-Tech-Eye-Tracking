@@ -57,16 +57,29 @@ namespace NTT_Eyetracking
             {
                 if (fullscreen == false)
                 {
-                    m._recording = false;
-                    m.close();
-                    this.WindowState = FormWindowState.Normal;
-                    this.FormBorderStyle = FormBorderStyle.Sizable;
-                    fullscreen = false;
+                   
 
                     
 
                 }
             }
+        }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                if (fullscreen == true)
+                {
+                    m._recording = false;
+                    m.close();
+                    this.WindowState = FormWindowState.Normal;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    //pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+                    pictureBox1.Dock = DockStyle.None;
+                    fullscreen = false;
+                }
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }
 }
