@@ -62,6 +62,9 @@ namespace Video_Model
             set { ips = value; }
         }
 
+        /// <summary>
+        /// Default Constructor, sets basic settings for image generation
+        /// </summary>
         public ImageGenerator()
         {
             destinationPath = @"C:\Users\Public\Pictures\Sample Pictures";
@@ -81,6 +84,9 @@ namespace Video_Model
             ips = imagesPS;
         }
 
+        /// <summary>
+        /// deleteImages: removes all files (images) in the directory 
+        /// </summary>
         public void deleteImages ()
         {
             DirectoryInfo deletionPath = new DirectoryInfo(destinationPath);
@@ -90,7 +96,10 @@ namespace Video_Model
             }
         }
 
-
+        /// <summary>
+        /// createImages: imports a video and exports a sequence of images. 
+        /// The amount of images exported depends on the ips (images per second) variable's value.
+        /// </summary>
         public void createImages()
         {
             if (videoPath == "" || videoPath == null)
