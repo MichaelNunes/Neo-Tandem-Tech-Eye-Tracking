@@ -39,16 +39,31 @@ namespace Results_Class
             hm.py.AddRange(y);
 
             //video
-            vm._fileLocation = @"C:\Users\Duran\Desktop\NTT tests\Video Test";
-            vm._modelName = "test.jpg";
+            vm._fileLocation = @"C:\Users\Duran\Desktop\NTT tests\Video Test\";
+            vm._modelName = "Test";
             vm._height = 1200;
             vm._width = 1920;
-            vm.px.AddRange(x);
-            vm.py.AddRange(y);
 
+            int arraySize1 = 120;
+            Random rv = new Random();
+
+            List<string> tester = new List<string>();
+            float[] xv = new float[arraySize1];
+            float[] yv = new float[arraySize1];
+
+            for (int i = 0; i < arraySize1; i++)
+            {
+                xv[i] = rv.Next(0, vm._width);
+                yv[i] = rv.Next(0, vm._height);
+
+                tester.Add(xv[i] + "," + yv[i]);
+            }
+            //System.IO.File.WriteAllLines(vm._fileLocation + "\\" + vm._modelName + " " + ".txt", tester);
+            vm.px.AddRange(xv);
+            vm.py.AddRange(yv);
             
             //3D           
-            m3d._fileLocation = @"C:\Users\Duran\Desktop\NTT tests\3D Test";
+            m3d._fileLocation = @"C:\Users\Duran\Desktop\NTT tests\3D Test\";
             m3d._modelName = "Test";
             m3d._height = 1080;
             m3d._width = 1920;
@@ -65,7 +80,7 @@ namespace Results_Class
                     x3[i] = r1.Next(0, m3d._width);
                     y3[i] = r1.Next(0, m3d._height);
                     
-                    test.Add(x3[i] + "," + y[i]);
+                    test.Add(x3[i] + "," + y3[i]);
                 }
                 System.IO.File.WriteAllLines(m3d._fileLocation + "\\" + m3d._modelName + " "+ f+".txt", test);
             }
@@ -87,17 +102,17 @@ namespace Results_Class
             hm.SaveHeatmapOntoModel2D();
         }
 
-        //[Test]
-        //public void TestHeatMapsVideo()
-        //{
+        [Test]
+        public void TestHeatMapsVideo()
+        {
+            vm.SaveHeatmapVideo();
+        }
 
-        //}
-
-        //[Test]
-        //public void TestHeatMapsOntoVideo()
-        //{
-
-        //}
+        [Test]
+        public void TestHeatMapsOntoVideo()
+        {
+            vm.SaveHeatmapOntoModelVideo();
+        }
 
         [Test]
         public void TestHeatMaps3D()

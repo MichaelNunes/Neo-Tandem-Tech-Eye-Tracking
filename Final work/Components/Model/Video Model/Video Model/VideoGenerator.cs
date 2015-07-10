@@ -94,12 +94,21 @@ namespace Video_Model
             using (ITimeline timeline = new DefaultTimeline(fps))
             {
                 string[] files = Directory.GetFiles(imagePath);
-
+                List<string> images = new List<string>();
+                List<string> dataFiles = new List<string>();
                 foreach(string str in files)
                 {
-                    if(!HasJpegExtension(str))
+                    if (Path.GetExtension(str).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) || Path.GetExtension(str).Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        throw new FileLoadException(str);
+                        images.Add(str);
+                    }
+                    else if (Path.GetExtension(str).Equals(".txt", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        dataFiles.Add(str);
+                    }
+                    else
+                    {
+
                     }
                 }
 
@@ -109,13 +118,13 @@ namespace Video_Model
 
                 // load images
                 IClip[] clips = new IClip[files.Length];
-                for (int i = 0; i < files.Length; i++)
+                for (int i = 0; i < images.Count(); i++)
                 {
-                    clips[i] = videoTrack.AddImage(files[i], 0, 2);
+                    clips[i] = videoTrack.AddImage(images.ElementAt(i), 0, 2);
                 }
 
                 ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
-                IClip audio = audioTrack.AddAudio(@"C:\Users\Public\Music\Sample Music\Kalimba.mp3", 0, videoTrack.Duration);
+                //IClip audio = audioTrack.AddAudio(@"C:\Users\Public\Music\Sample Music\Kalimba.mp3", 0, videoTrack.Duration);
                 
                 //output video profile
                 string profilePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\Splicer_Profile_1280x720.prx";
@@ -128,11 +137,6 @@ namespace Video_Model
             }
         }
 
-        static bool HasJpegExtension(string filename)
-        {
-            // add other possible extensions here
-            return Path.GetExtension(filename).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase)
-                || Path.GetExtension(filename).Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase);
-        }
+
     }
 }

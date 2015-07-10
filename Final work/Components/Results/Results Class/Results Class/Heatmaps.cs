@@ -211,20 +211,22 @@ namespace Results_Class
             Bitmap bitmap = new Bitmap(width, height);
             //bitmap.Save(FileLocation +"\\"+ ModelName + ".jpg");
 
-            for(int i = 0; i < px.Count; i++)
+            for(int i = 0; i < px.Count(); i++)
             {
                 x.Add(px.ElementAt(i));
                 y.Add(py.ElementAt(i));               
 
-                if (py.Count == 0 || px.Count == 0)
+                if (py.Count() == 0 || px.Count() == 0)
                 {
                     throw new ArgumentNullException();
                 }
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + " " + i +".Heatmap.Jpg", ImageFormat.Jpeg);   
+                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
+                canvas.Save(FileLocation + "\\" + ModelName + " " + i.ToString().PadLeft(px.Count().ToString().Length, '0') + ".Heatmap.Jpg", ImageFormat.Jpeg);   
             }
             //call create video
             vm.ImagePath = FileLocation;
+            vm.DestinationPath = FileLocation;
+            vm.ModelName = ModelName;
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
