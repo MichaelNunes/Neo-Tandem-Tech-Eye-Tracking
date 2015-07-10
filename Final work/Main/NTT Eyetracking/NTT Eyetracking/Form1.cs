@@ -32,6 +32,7 @@ namespace NTT_Eyetracking
         {
             try
             {
+
                 SaveFileDialog Saver = new SaveFileDialog();
                 if (textBox2.Text == "")
                 {
@@ -45,6 +46,7 @@ namespace NTT_Eyetracking
                 }
                 Saver.DefaultExt = ".eye";
                 Saver.Filter = "Eye Project (.eye)|*.eye";
+                Saver.CheckPathExists = true;
                 Saver.ShowDialog();
                 string FullDirectory = Saver.FileName;
                 textBox1.Text = FullDirectory;
@@ -64,7 +66,7 @@ namespace NTT_Eyetracking
             }
             catch(DirectoryNotFoundException m)
             {
-                MessageBox.Show(m.Message);
+                MessageBox.Show("The directory could not be found");
             }
             catch(Exception k)
             {
@@ -79,9 +81,11 @@ namespace NTT_Eyetracking
             {
 
                 openFileDialog1.Filter = "Eye Project (.eye)|*.eye";
+                openFileDialog1.FileName = "";
                 openFileDialog1.ShowDialog();
+                
                 string path = openFileDialog1.FileName;
-                MessageBox.Show(path);
+               // MessageBox.Show(path);
                 string[] settings = File.ReadAllLines(path);
                 globals.m.ProjectName = settings[0];
                 string[] array = settings[1].Split('\\');
@@ -96,6 +100,8 @@ namespace NTT_Eyetracking
                 Settings_Class.ModelSettings3D ms = new ModelSettings3D(settingsss[0], Convert.ToInt32(settingsss[1]), Convert.ToBoolean(settingsss[2]), Convert.ToBoolean(settingsss[3]));
                 globals.m.SettingsProject = ps;
                 globals.m.SettingsModel = ms;
+                //MessageBox.Show("The following is the contents of proj .set" + globals.m.SettingsProject.ProjectLocation1 + " " + globals.m.SettingsProject.ProjectName1);
+                //MessageBox.Show("The following is the contents of model .set" + globals.m.SettingsModel.FPS1 + " " + globals.m.SettingsModel.Lighting1+" " + globals.m.SettingsModel.ModelLocation1+" " + globals.m.SettingsModel.Textures1);
                 Main show = new Main();
                 this.Hide();
                 show.ShowDialog();
@@ -110,6 +116,11 @@ namespace NTT_Eyetracking
         {
             try
             {
+                if (textBox1.Text == "" || textBox2.Text == "")
+                {
+                    Exception m = new Exception("Text boxes are empty please fill them in");
+                    throw m;
+                }
                 globals.m.createSubDirectories();
                 this.Hide();
                 Main show = new Main();

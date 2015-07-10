@@ -212,6 +212,11 @@ namespace DisplayModel
 		{
 			return !left.Equals(right);
 		}
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 		#endregion
 	}
 }

@@ -26,6 +26,7 @@ using System.IO;
 using System.Collections.Generic;
 
 using OpenTK;
+using OpenTK.Graphics;
 using DisplayModel;
 
 namespace DisplayModel
@@ -40,7 +41,7 @@ namespace DisplayModel
 		/// </summary>
 		/// <param name='obj'> The filepath to the object file. </param>
 		/// <param name='tex'> The filepath to the object's texture file. </param>
-		public static Model3D fromOBJ(string obj, string tex)
+		public static GameObject fromOBJ(string obj, string tex)
 		{
             List<Vector3>
 				p_vertices = new List<Vector3>(),
@@ -67,7 +68,6 @@ namespace DisplayModel
                 return null;
             }
 
-            int line_number = 0;
 			while ((line = filereader.ReadLine()) != null)
 			{
 				sections = line.Split(' ');
@@ -98,10 +98,15 @@ namespace DisplayModel
 
             filereader.Close();
 
-            Model3D temp = new Model3D();
-            temp.Material = new Material(tex);
-            temp.Model3DWindow.add( new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material) );
+            GameObject temp = new GameObject();
 
+            if (tex != "")
+                temp.Material = new Material(tex);
+            else
+                temp.Material = new Material(Color4.Gray);
+
+            temp.BufferData = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material);
+            Console.WriteLine(temp);
             return temp;
 		}
 
@@ -162,7 +167,7 @@ namespace DisplayModel
 		/// Converts the object and material files into a Model object.
 		/// </summary>
 		/// <param name='obj'> The filepath to the object file. </param>
-		public static Model3D fromDAE(string obj)
+		public static GameObject fromDAE(string obj)
 		{
             return null;
 		}
@@ -171,7 +176,7 @@ namespace DisplayModel
 		/// Converts the object and material files into a Model object.
 		/// </summary>
 		/// <param name='obj'> The filepath to the object file. </param>
-		public static Model3D fromX3D(string obj)
+		public static GameObject fromX3D(string obj)
         {
             return null;
 		}

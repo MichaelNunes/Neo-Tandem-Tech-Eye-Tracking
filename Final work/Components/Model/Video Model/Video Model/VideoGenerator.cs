@@ -102,6 +102,14 @@ namespace Video_Model
             {
                 string[] files = Directory.GetFiles(imagePath);
 
+                foreach(string str in files)
+                {
+                    if(!HasJpegExtension(str))
+                    {
+                        throw new FileLoadException(str);
+                    }
+                }
+
                 IGroup group = timeline.AddVideoGroup(32, frameWidth, frameHeight);
 
                 ITrack videoTrack = group.AddTrack();
@@ -125,6 +133,13 @@ namespace Video_Model
                     renderer.Render();
                 }
             }
+        }
+
+        static bool HasJpegExtension(string filename)
+        {
+            // add other possible extensions here
+            return Path.GetExtension(filename).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase)
+                || Path.GetExtension(filename).Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }
