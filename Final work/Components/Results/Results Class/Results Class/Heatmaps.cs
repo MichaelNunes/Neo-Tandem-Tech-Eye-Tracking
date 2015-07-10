@@ -229,6 +229,7 @@ namespace Results_Class
             vm.ModelName = ModelName;
             vm.FrameWidth = width;
             vm.FrameHeight = height;
+            vm.Fps = 30;
             vm.createVideo();
         }
 

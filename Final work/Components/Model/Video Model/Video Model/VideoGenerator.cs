@@ -118,7 +118,7 @@ namespace Video_Model
 
                 // load images
                 double ips = (double)1/fps;
-                IClip[] clips = new IClip[files.Length];
+                IClip[] clips = new IClip[images.Count()];
                 for (int i = 0; i < images.Count(); i++)
                 {
                     clips[i] = videoTrack.AddImage(images.ElementAt(i), 0, ips);
