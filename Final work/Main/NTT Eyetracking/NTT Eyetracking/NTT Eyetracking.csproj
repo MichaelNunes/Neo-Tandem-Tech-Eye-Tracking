@@ -54,8 +54,9 @@
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Record_Class">
-      <HintPath>..\..\..\Components\Record\Record\Record\Record\bin\Debug\Record_Class.dll</HintPath>
+    <Reference Include="Record_Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Record\Record_Class\Record_Class\bin\Debug\Record_Class.dll</HintPath>
     </Reference>
     <Reference Include="Results">
       <HintPath>..\..\..\Components\Results\Results\Results\bin\Debug\Results.exe</HintPath>

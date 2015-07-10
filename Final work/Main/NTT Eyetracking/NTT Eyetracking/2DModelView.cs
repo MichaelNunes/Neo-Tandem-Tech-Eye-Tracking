@@ -43,13 +43,15 @@ namespace NTT_Eyetracking
         Record m = null;
         private void button2_Click(object sender, EventArgs e)
         {
+             
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Dock = DockStyle.Fill;
             fullscreen = true;
-            m = new Record(globals.m.Directory, name);
+            m = new Record(globals.currentRecordingpath, name);
             m._recording = true;
+            MessageBox.Show(m._recording.ToString());
         }
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -70,7 +72,6 @@ namespace NTT_Eyetracking
             {
                 if (fullscreen == true)
                 {
-                    m._recording = false;
                     m.close();
                     this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.Sizable;

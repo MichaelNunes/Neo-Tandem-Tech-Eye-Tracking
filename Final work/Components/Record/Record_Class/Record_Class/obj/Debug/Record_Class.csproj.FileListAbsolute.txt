@@ -18,4 +18,3 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Componen
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\Record_Class\bin\Debug\nunit.framework.xml
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\Record_Class\obj\Debug\Record_Class.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\Record_Class\obj\Debug\Record_Class.pdb
-C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Record\Record_Class\Record_Class\obj\Debug\Record_Class.csprojResolveAssemblyReference.cache
