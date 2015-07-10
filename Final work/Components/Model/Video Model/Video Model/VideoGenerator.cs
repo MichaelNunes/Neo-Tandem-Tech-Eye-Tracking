@@ -60,6 +60,9 @@ namespace Video_Model
             set { destinationPath = value; }
         }
 
+        /// <summary>
+        /// Default Constructor, sets basic settings for video generator
+        /// </summary>
         public VideoGenerator()
         {
             imagePath = "";
@@ -67,18 +70,31 @@ namespace Video_Model
             destinationPath = @"C:\Users\Public\Videos\Sample Videos\";
             frameWidth = 720;
             frameHeight = 480;
-            fps = 30;
+            fps = 23;
         }
 
+        /// <summary>
+        /// Constructor, sets the image path to import the images from. 
+        /// All other settings are set to default
+        /// </summary>
+        /// <param name="path"></param>
         public VideoGenerator(string path)
         {
             imagePath = path;
             modelName = "VideoModeli";
             frameWidth = 720;
             frameHeight = 480;
-            fps = 30;
+            fps = 23;
         }
 
+        /// <summary>
+        /// Constructor, sets all video generator settings based on parameter values
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="name"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="framesPS"></param>
         public VideoGenerator(string path, string name, int width, int height, int framesPS)
         {
             imagePath = path;
@@ -88,6 +104,10 @@ namespace Video_Model
             fps = framesPS;
         }
 
+        /// <summary>
+        /// generates a video from a sequence of images. 
+        /// Amount of frames per second in the generated video depends on the ips (images per second) variable 
+        /// </summary>
         public void createVideo()
         {
             destinationPath += modelName + ".wmv";
@@ -95,33 +115,33 @@ namespace Video_Model
             {
                 string[] files = Directory.GetFiles(imagePath);
                 List<string> images = new List<string>();
-                List<string> dataFiles = new List<string>();
                 foreach(string str in files)
                 {
                     if (Path.GetExtension(str).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) || Path.GetExtension(str).Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase))
                     {
                         images.Add(str);
                     }
-                    else if (Path.GetExtension(str).Equals(".txt", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        dataFiles.Add(str);
-                    }
-                    else
+                    else 
                     {
 
                     }
                 }
-
+                List<string> sortedImages = new List<string>();
+                for(int i = 0; i < images.Count(); i++)
+                {
+                    sortedImages.Add(images.ElementAt(images.BinarySearch(ImagePath + "\\"+ "frame" + i + ".jpg")));
+                }
+    
                 IGroup group = timeline.AddVideoGroup(32, frameWidth, frameHeight);
 
                 ITrack videoTrack = group.AddTrack();
 
                 // load images
                 double ips = (double)1/fps;
-                IClip[] clips = new IClip[files.Length];
-                for (int i = 0; i < images.Count(); i++)
+                IClip[] clips = new IClip[sortedImages.Count()];
+                for (int i = 0; i < sortedImages.Count(); i++)
                 {
-                    clips[i] = videoTrack.AddImage(images.ElementAt(i), 0, ips);
+                    clips[i] = videoTrack.AddImage(sortedImages.ElementAt(i), 0, ips);
                 }
 
                 ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
@@ -136,7 +156,5 @@ namespace Video_Model
                 }
             }
         }
-
-
     }
 }

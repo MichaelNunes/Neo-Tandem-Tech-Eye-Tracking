@@ -61,6 +61,9 @@ namespace Video_Model
             set { ips = value; }
         }
 
+        /// <summary>
+        /// Default Constructor, sets basic settings for image generator
+        /// </summary>
         public ImageGenerator()
         {
             destinationPath = @"C:\Users\Public\Pictures\Sample Pictures";
@@ -70,6 +73,15 @@ namespace Video_Model
             ips = 30;
         }
 
+        /// <summary>
+        /// Constructor, sets all image generator settings based on parameter values
+        /// </summary>
+        /// <param name="inPath"></param>
+        /// <param name="outPath"></param>
+        /// <param name="height"></param>
+        /// <param name="width"></param>
+        /// <param name="_bitCount"></param>
+        /// <param name="imagesPS"></param>
         public ImageGenerator(string inPath, string outPath, int height, int width, short _bitCount, int imagesPS)
         {
             videoPath = inPath;
@@ -80,7 +92,10 @@ namespace Video_Model
             ips = imagesPS;
         }
 
-
+        /// <summary>
+        /// generates a sequence of images from a video. 
+        /// Amount of images generated depends on the ips (images per second) variable 
+        /// </summary>
         public void createImages()
         {
             if (videoPath == "" || videoPath == null)
@@ -109,6 +124,9 @@ namespace Video_Model
            } 
        }
 
+        /// <summary>
+        /// removes all the files (images) in a directory, excluding subdirectories.
+        /// </summary>
         public void deleteImages()
         {
             DirectoryInfo deletionPath = new DirectoryInfo(destinationPath);
@@ -118,4 +136,6 @@ namespace Video_Model
             }
         }
     }
+
+    
 }

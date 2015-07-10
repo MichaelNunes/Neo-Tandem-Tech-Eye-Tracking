@@ -16,11 +16,11 @@ namespace Video_Model
         {
             vMaker = new VideoGenerator();
 
-            vMaker.ImagePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\images";
-            vMaker.ModelName = "TestVideoModel";
+            vMaker.ImagePath = @"C:\Users\Public\Pictures\Sample Pictures";
+            vMaker.ModelName = "Test";
             vMaker.FrameWidth = 720;
             vMaker.FrameHeight = 480;
-            vMaker.Fps = 4;
+            vMaker.Fps = 23;
 
             iMaker = new ImageGenerator();
             iMaker.VideoPath = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
@@ -30,11 +30,11 @@ namespace Video_Model
         public void createVideo()
         {
             vMaker.createVideo();
-            Assert.AreEqual(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\images", vMaker.ImagePath);
-            Assert.AreEqual("TestVideoModel", vMaker.ModelName);
+            Assert.AreEqual(@"C:\Users\Public\Pictures\Sample Pictures", vMaker.ImagePath);
+            Assert.AreEqual("Test", vMaker.ModelName);
             Assert.AreEqual(720, vMaker.FrameWidth);
             Assert.AreEqual(480, vMaker.FrameHeight);
-            Assert.AreEqual(4, vMaker.Fps);
+            Assert.AreEqual(23, vMaker.Fps);
             Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\" + vMaker.ModelName + ".wmv"));
         }
 
