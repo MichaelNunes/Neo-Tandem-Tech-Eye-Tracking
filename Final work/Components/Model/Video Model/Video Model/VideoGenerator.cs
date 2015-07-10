@@ -67,7 +67,7 @@ namespace Video_Model
             destinationPath = @"C:\Users\Public\Videos\Sample Videos\";
             frameWidth = 720;
             frameHeight = 480;
-            fps = 25;
+            fps = 30;
         }
 
         public VideoGenerator(string path)
@@ -76,7 +76,7 @@ namespace Video_Model
             modelName = "VideoModeli";
             frameWidth = 720;
             frameHeight = 480;
-            fps = 25;
+            fps = 30;
         }
 
         public VideoGenerator(string path, string name, int width, int height, int framesPS)
@@ -117,14 +117,14 @@ namespace Video_Model
                 ITrack videoTrack = group.AddTrack();
 
                 // load images
+                double ips = (double)1/fps;
                 IClip[] clips = new IClip[files.Length];
                 for (int i = 0; i < images.Count(); i++)
                 {
-                    clips[i] = videoTrack.AddImage(images.ElementAt(i), 0, 2);
+                    clips[i] = videoTrack.AddImage(images.ElementAt(i), 0, ips);
                 }
 
                 ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
-                //IClip audio = audioTrack.AddAudio(@"C:\Users\Public\Music\Sample Music\Kalimba.mp3", 0, videoTrack.Duration);
                 
                 //output video profile
                 string profilePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\Splicer_Profile_1280x720.prx";

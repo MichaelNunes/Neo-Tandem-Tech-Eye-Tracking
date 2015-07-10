@@ -20,7 +20,7 @@ namespace Video_Model
             vMaker.ModelName = "TestVideoModel";
             vMaker.FrameWidth = 720;
             vMaker.FrameHeight = 480;
-            vMaker.Fps = 27;
+            vMaker.Fps = 4;
 
             iMaker = new ImageGenerator();
             iMaker.VideoPath = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
@@ -34,7 +34,7 @@ namespace Video_Model
             Assert.AreEqual("TestVideoModel", vMaker.ModelName);
             Assert.AreEqual(720, vMaker.FrameWidth);
             Assert.AreEqual(480, vMaker.FrameHeight);
-            Assert.AreEqual(27, vMaker.Fps);
+            Assert.AreEqual(4, vMaker.Fps);
             Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\" + vMaker.ModelName + ".wmv"));
         }
 
