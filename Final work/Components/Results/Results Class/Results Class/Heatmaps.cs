@@ -229,7 +229,6 @@ namespace Results_Class
             vm.ModelName = ModelName;
             vm.FrameWidth = width;
             vm.FrameHeight = height;
-            vm.Fps = 30;
             vm.createVideo();
         }
 
@@ -311,6 +310,13 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModelVideo()
         {
+            ImageGenerator ig = new ImageGenerator();
+            ig.VideoPath = _fileLocation;
+            ig.ImageWidth = width;
+            ig.ImageHeight = height;
+            ig.DestinationPath = _fileLocation;
+            ig.createImages();
+
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -332,10 +338,12 @@ namespace Results_Class
             }
             //call create video
             vm.ImagePath = FileLocation;
+            vm.DestinationPath = FileLocation;
+            vm.ModelName = ModelName;
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
-
+            ig.deleteImages();
         }
 
         /// <summary>
