@@ -130,6 +130,9 @@
     <EmbeddedResource Include="2DModelView.resx">
       <DependentUpon>2DModelView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3DModelView.resx">
+      <DependentUpon>3DModelView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calibration.resx">
       <DependentUpon>Calibration.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +154,9 @@
     <EmbeddedResource Include="RecordingSetup.resx">
       <DependentUpon>RecordingSetup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VideoView.resx">
+      <DependentUpon>VideoView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,6 +173,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
