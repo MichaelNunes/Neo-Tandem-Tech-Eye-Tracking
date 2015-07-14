@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Splicer.Timeline;
-using Splicer.Renderer;
-using Splicer.WindowsMedia;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.FFMPEG;
 
 namespace Video_Model
 {
     public class VideoGenerator
     {
         string imagePath;
+        VideoFileWriter writer;
 
         public string ImagePath
         {
@@ -71,6 +70,8 @@ namespace Video_Model
             frameWidth = 720;
             frameHeight = 480;
             fps = 23;
+
+            writer = new VideoFileWriter();
         }
 
         /// <summary>
@@ -85,6 +86,9 @@ namespace Video_Model
             frameWidth = 720;
             frameHeight = 480;
             fps = 23;
+
+            writer = new VideoFileWriter();
+            writer.Open(modelName, frameWidth, frameHeight, fps, VideoCodec.WMV1 , 6000000);
         }
 
         /// <summary>
@@ -102,6 +106,9 @@ namespace Video_Model
             frameWidth = width;
             frameHeight = height;
             fps = framesPS;
+
+            writer = new VideoFileWriter();
+            writer.Open(modelName + ".wmv", frameWidth, frameHeight, fps, VideoCodec.WMV1, 6000000);
         }
 
         /// <summary>
@@ -110,7 +117,26 @@ namespace Video_Model
         /// </summary>
         public void createVideo()
         {
-            destinationPath += modelName + ".wmv";
+            if (writer.IsOpen == false)
+                throw new Exception("The video file is not open.");
+
+            int count = 0;
+
+            try
+            {
+                while (true)
+                {
+                    writer.WriteVideoFrame(new Bitmap(imagePath + "frame" + count++ + ".jpg"));
+                }
+            }
+            catch(AForge.Video.VideoException e)
+            {
+                writer.Close();
+            }
+
+            Console.ReadLine();
+
+            /*destinationPath += modelName + ".wmv";
             using (ITimeline timeline = new DefaultTimeline(fps))
             {
                 string[] files = Directory.GetFiles(imagePath);
@@ -161,7 +187,7 @@ namespace Video_Model
                 {
                     renderer.Render();
                 }
-            }
+            }*/
         }
     }
 }

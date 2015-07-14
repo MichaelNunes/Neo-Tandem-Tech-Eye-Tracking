@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Splicer.Timeline;
-using Splicer.Renderer;
-using Splicer.WindowsMedia;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.FFMPEG;
 
 
 namespace Video_Model
@@ -15,6 +14,7 @@ namespace Video_Model
     public class ImageGenerator
     {
         string videoPath;
+        VideoFileReader reader;
 
         public string VideoPath
         {
@@ -30,7 +30,7 @@ namespace Video_Model
             set { destinationPath = value; }
         }
 
-        int imageHeight;
+        /*int imageHeight;
 
         public int ImageHeight
         {
@@ -59,7 +59,7 @@ namespace Video_Model
         {
             get { return ips; }
             set { ips = value; }
-        }
+        }*/
 
         /// <summary>
         /// Default Constructor, sets basic settings for image generator
@@ -67,10 +67,12 @@ namespace Video_Model
         public ImageGenerator()
         {
             destinationPath = @"C:\Users\Public\Pictures\Sample Pictures";
-            imageHeight = 246;
-            imageWidth = 664;
-            bitCount = 16;
-            ips = 30;
+            //imageHeight = 246;
+            //imageWidth = 664;
+            //bitCount = 16;
+            //ips = 30;
+
+            reader = new VideoFileReader();
         }
 
         /// <summary>
@@ -82,23 +84,46 @@ namespace Video_Model
         /// <param name="width"></param>
         /// <param name="_bitCount"></param>
         /// <param name="imagesPS"></param>
-        public ImageGenerator(string inPath, string outPath, int height, int width, short _bitCount, int imagesPS)
+        public ImageGenerator(string inPath, string outPath)
         {
             videoPath = inPath;
             destinationPath = outPath;
-            imageHeight = height;
-            imageWidth = width;
-            bitCount = _bitCount;
-            ips = imagesPS;
+            //imageHeight = height;
+            //imageWidth = width;
+            //bitCount = _bitCount;
+            //ips = imagesPS;
+
+            reader = new VideoFileReader();
+            reader.Open(videoPath);
         }
 
         /// <summary>
         /// generates a sequence of images from a video. 
         /// Amount of images generated depends on the ips (images per second) variable 
         /// </summary>
-        public void createImages()
+        public int createImages()
         {
-            if (videoPath == "" || videoPath == null)
+            if (reader.IsOpen == false)
+                throw new Exception("Video file is not open.");
+
+            Image videoFrame;
+            int count = 0;
+
+            try
+            {
+                while (true)
+                {
+                    videoFrame = reader.ReadVideoFrame();
+                    videoFrame.Save(destinationPath + "frame" + count++ + ".jpg");
+                }
+            }
+            catch(AForge.Video.VideoException e)
+            {
+                reader.Close();
+                return count;
+            }
+
+            /*if (videoPath == "" || videoPath == null)
             {
                 throw new ArgumentNullException();
             }
@@ -121,8 +146,8 @@ namespace Video_Model
                 { 
                     render.Render(); 
                 } 
-           } 
-       }
+           } */
+        }
 
         /// <summary>
         /// removes all the files (images) in a directory, excluding subdirectories.
