@@ -24,8 +24,8 @@ namespace NTT_Eyetracking
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Results.Form1 m = new Results.Form1();
-            m.Show();    
+            //Results.Form1 m = new Results.Form1();
+            //m.Show();    
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@ namespace NTT_Eyetracking
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Dock = DockStyle.Fill;
             fullscreen = true;
-            m = new Record(globals.currentRecordingpath, name);
+            m = new Record(globals.currentRecordingpath+@"\", name);
             m._recording = true;
             
         }
@@ -72,15 +72,17 @@ namespace NTT_Eyetracking
             {
                 if (fullscreen == true)
                 {
+                    m._recording = false;
                     m.close();
                     this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.Sizable;
                     //pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
                     pictureBox1.Dock = DockStyle.None;
                     fullscreen = false;
-                    Results_Class.Heatmaps hm = new Heatmaps("Test",imagepath);
+                    Results_Class.Heatmaps hm = new Heatmaps(name,globals.currentRecordingpath,Screen.PrimaryScreen.Bounds.Width,Screen.PrimaryScreen.Bounds.Height,"gugiog");
+                    hm.OpenHeatmapData(globals.currentRecordingpath, name);
                     hm.SaveHeatmap2D();
-                    
+                    hm.SaveHeatmapOntoModel2D();
                 }
             }
             return base.ProcessDialogKey(keyData);

@@ -126,12 +126,12 @@ namespace Results_Class
             py = null;
             px = new List<float>();
             py = new List<float>();
-            string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\" + modelName + ".txt");
+            string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\"  +"RecordedData_"+ modelName + ".txt");
             foreach (string item in lines)
             {
-                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(","))));
+                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
 
-                int temp1 = item.IndexOf(",")+1;
+                int temp1 = item.IndexOf(":")+1;
                 int temp2 = item.Length-temp1;
                 py.Add((float)Convert.ToDouble(item.Substring(temp1,temp2)));
             }
