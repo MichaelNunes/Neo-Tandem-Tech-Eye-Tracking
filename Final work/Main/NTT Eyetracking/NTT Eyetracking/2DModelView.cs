@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Record_Class;
-using Results;
+using Results_Class;
 using _2D_Model;
 
 namespace NTT_Eyetracking
@@ -51,7 +51,7 @@ namespace NTT_Eyetracking
             fullscreen = true;
             m = new Record(globals.currentRecordingpath, name);
             m._recording = true;
-            MessageBox.Show(m._recording.ToString());
+            
         }
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -78,6 +78,9 @@ namespace NTT_Eyetracking
                     //pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
                     pictureBox1.Dock = DockStyle.None;
                     fullscreen = false;
+                    Results_Class.Heatmaps hm = new Heatmaps("Test",imagepath);
+                    hm.SaveHeatmap2D();
+                    
                 }
             }
             return base.ProcessDialogKey(keyData);

@@ -58,8 +58,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Components\Record\Record_Class\Record_Class\bin\Debug\Record_Class.dll</HintPath>
     </Reference>
-    <Reference Include="Results">
-      <HintPath>..\..\..\Components\Results\Results\Results\bin\Debug\Results.exe</HintPath>
+    <Reference Include="Results Class">
+      <HintPath>..\..\..\Components\Results\Results Class\Results Class\bin\Debug\Results Class.dll</HintPath>
     </Reference>
     <Reference Include="Settings Class">
       <HintPath>..\..\..\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.dll</HintPath>

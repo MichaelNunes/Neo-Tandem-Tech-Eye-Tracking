@@ -43,6 +43,7 @@ namespace NTT_Eyetracking
                     System.IO.Directory.CreateDirectory(sub);
                     globals.currentRecordingpath = sub;
                     globals.typeOfRecording = "2DModel";
+                    globals.name = name;
                     this.Hide();
                     _2DModelView view = new _2DModelView();
                     view.ShowDialog();
