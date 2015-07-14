@@ -44,7 +44,7 @@ namespace Results_Class
             vm._height = 1200;
             vm._width = 1920;
 
-            int arraySize1 = 120;
+            int arraySize1 = 40;
             Random rv = new Random();
 
             List<string> tester = new List<string>();

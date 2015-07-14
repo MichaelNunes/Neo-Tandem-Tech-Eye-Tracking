@@ -129,7 +129,14 @@ namespace Video_Model
                 List<string> sortedImages = new List<string>();
                 for(int i = 0; i < images.Count(); i++)
                 {
-                    sortedImages.Add(images.ElementAt(images.BinarySearch(ImagePath + "\\"+ "frame" + i + ".jpg")));
+                    try
+                    {
+                        sortedImages.Add(images.ElementAt(images.BinarySearch(ImagePath + "frame" + i + ".Jpg")));
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
                 }
     
                 IGroup group = timeline.AddVideoGroup(32, frameWidth, frameHeight);
@@ -138,13 +145,8 @@ namespace Video_Model
 
                 // load images
                 double ips = (double)1/fps;
-<<<<<<< HEAD
                 IClip[] clips = new IClip[sortedImages.Count()];
                 for (int i = 0; i < sortedImages.Count(); i++)
-=======
-                IClip[] clips = new IClip[images.Count()];
-                for (int i = 0; i < images.Count(); i++)
->>>>>>> origin/Testing-Heatmaps
                 {
                     clips[i] = videoTrack.AddImage(sortedImages.ElementAt(i), 0, ips);
                 }

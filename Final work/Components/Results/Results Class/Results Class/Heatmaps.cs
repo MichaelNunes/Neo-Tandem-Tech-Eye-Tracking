@@ -221,7 +221,7 @@ namespace Results_Class
                     throw new ArgumentNullException();
                 }
                 Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + " " + i.ToString().PadLeft(px.Count().ToString().Length, '0') + ".Heatmap.Jpg", ImageFormat.Jpeg);   
+                canvas.Save(FileLocation + "\\" + "frame"+ i +".Jpg", ImageFormat.Jpeg);   
             }
             //call create video
             vm.ImagePath = FileLocation;
@@ -229,6 +229,7 @@ namespace Results_Class
             vm.ModelName = ModelName;
             vm.FrameWidth = width;
             vm.FrameHeight = height;
+            vm.Fps = 10;
             vm.createVideo();
         }
 

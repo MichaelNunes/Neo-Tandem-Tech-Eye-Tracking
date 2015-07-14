@@ -69,7 +69,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Video Model">
+    <Reference Include="Video Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Model\Video Model\Video Model\bin\Debug\Video Model.dll</HintPath>
     </Reference>
   </ItemGroup>

@@ -16,11 +16,11 @@ namespace Video_Model
         {
             vMaker = new VideoGenerator();
 
-            vMaker.ImagePath = @"C:\Users\Public\Pictures\Sample Pictures";
+            vMaker.ImagePath = @"C:\Users\Duran\Desktop\NTT tests\Video Test";
             vMaker.ModelName = "Test";
             vMaker.FrameWidth = 720;
             vMaker.FrameHeight = 480;
-            vMaker.Fps = 23;
+            vMaker.Fps = 20;
 
             iMaker = new ImageGenerator();
             iMaker.VideoPath = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
@@ -30,12 +30,12 @@ namespace Video_Model
         public void createVideo()
         {
             vMaker.createVideo();
-            Assert.AreEqual(@"C:\Users\Public\Pictures\Sample Pictures", vMaker.ImagePath);
+            Assert.AreEqual(@"C:\Users\Duran\Desktop\NTT tests\Video Test", vMaker.ImagePath);
             Assert.AreEqual("Test", vMaker.ModelName);
             Assert.AreEqual(720, vMaker.FrameWidth);
             Assert.AreEqual(480, vMaker.FrameHeight);
-            Assert.AreEqual(23, vMaker.Fps);
-            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\" + vMaker.ModelName + ".wmv"));
+            Assert.AreEqual(20, vMaker.Fps);
+            Assert.IsTrue(File.Exists(@"C:\Users\Duran\Desktop\NTT tests\Video Test" + vMaker.ModelName + ".wmv"));
         }
 
         [Test]
