@@ -9,12 +9,12 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public void Run(string arg)
+        public void Run(string[] args)
         {
-            Window window = new Window();
-
-            string source = arg;
+            string source = args[0];
             string texture = "";
+
+            Window window = new Window(args[1]);
 
             try
             {
@@ -28,7 +28,7 @@ namespace DisplayModel
                 throw new Exception(e.Message);
             }
         }
-
+        /*
         //Here for testing purposes
         public static void Main(string[] args)
         {
@@ -52,6 +52,6 @@ namespace DisplayModel
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
             }
-        }
+        }*/
     }
 }

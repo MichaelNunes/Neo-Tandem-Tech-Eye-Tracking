@@ -46,7 +46,7 @@ namespace DisplayModel.Test_Classes
         [Test]
         public void CreateScreenshots()
         {
-            Cube.Run(CubeUrl);
+            //Cube.Run(CubeUrl);
             Assert.AreEqual(File.Exists(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\Test1.jpg"), true);
         }
         #endregion
