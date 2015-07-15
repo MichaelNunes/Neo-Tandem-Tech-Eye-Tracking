@@ -92,6 +92,7 @@ namespace DisplayModel
         #endregion
 
         #region Attributes
+        public Color4 Colour { get { return colour; } }
         /// <summary>
         /// The id of the material's texture.
         /// </summary>

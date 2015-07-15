@@ -30,9 +30,15 @@ namespace DisplayModel
 	/// Used to define a 3D model's atrtibutes: position, rotation, scale.
 	/// </summary>
 	public struct Transform : IEquatable<Transform>
-	{
-		#region Constructors
-		/// <summary>
+    {
+        #region Fields
+        private Vector3 position;
+        private Vector3 rotation;
+        private Vector3 scale;
+        #endregion
+
+        #region Constructors
+        /// <summary>
 		/// Initializes the transform to the vectors provided.
 		/// </summary>
 		/// <param name='p'> The position vector. </param>
@@ -40,9 +46,9 @@ namespace DisplayModel
 		/// <param name='s'> The scale vector. </param>
 		public Transform(Vector3 p, Vector3 r, Vector3 s)
 		{
-            Position = p;
-            Rotation = r;
-            Scale = s;
+            position = p;
+            rotation = r;
+            scale = s;
 		}
 
 		/// <summary>
@@ -53,9 +59,9 @@ namespace DisplayModel
 		/// <param name='s'> The scale array. </param>
 		public Transform(float[] p, float[] r, float[] s)
 		{
-			Position = new Vector3(p[0], p[1], p[2]);
-			Rotation = new Vector3(r[0], r[1], r[2]);
-			Scale = new Vector3(s[0], s[1], s[2]);
+			position = new Vector3(p[0], p[1], p[2]);
+			rotation = new Vector3(r[0], r[1], r[2]);
+			scale = new Vector3(s[0], s[1], s[2]);
 		}
 		#endregion
 
@@ -63,17 +69,17 @@ namespace DisplayModel
 		/// <summary>
 		/// The model's position in space.
 		/// </summary>
-        public Vector3 Position { get; set; }
+        public Vector3 Position { get { return position; } }
 
 		/// <summary>
 		/// The object's rotation in space.
 		/// </summary>
-        public Vector3 Rotation { get; set; }
+        public Vector3 Rotation { get { return rotation; } }
 
 		/// <summary>
 		/// The object's scale.
 		/// </summary>
-        public Vector3 Scale { get; set; }
+        public Vector3 Scale { get { return scale; } }
 		#endregion
 
 		#region Operators
