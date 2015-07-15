@@ -21,13 +21,11 @@
  */
 #endregion
 
+using OpenTK;
+using OpenTK.Graphics;
 using System;
 using System.IO;
 using System.Collections.Generic;
-
-using OpenTK;
-using OpenTK.Graphics;
-using DisplayModel;
 
 namespace DisplayModel
 {
@@ -102,9 +100,13 @@ namespace DisplayModel
             return temp;
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
+        /// <summary>
+        /// Adds faces from the file source. 
+        /// </summary>
+        /// <param name="v"> The vertex point list. </param>
+        /// <param name="t"> The texture point list. </param>
+        /// <param name="n"> The normal direction list. </param>
+        /// <param name="line"> An array of face index values. </param>
         private static void addFace(ref List<int> v, ref List<int> t, ref List<int> n, string[] line)
         {
 			string[] texels;
