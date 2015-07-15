@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DisplayModel;
 
 namespace NTT_Eyetracking
 {
@@ -19,12 +20,23 @@ namespace NTT_Eyetracking
         {
             InitializeComponent();
         }
-
+        string name = "";
         private void button1_Click(object sender, EventArgs e)
         {
-            folderBrowserDialog1.ShowDialog();
-            string folder = folderBrowserDialog1.SelectedPath;
-            //TO DO: add functionality to search folder for images and put them in img array
+
+            //folderBrowserDialog1.ShowDialog();
+           // string folder = folderBrowserDialog1.SelectedPath;
+            openFileDialog1.Filter = "Object (.obj)|*.obj";
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
+            name = openFileDialog1.SafeFileName;
+            string path = openFileDialog1.FileName;
+            DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
+            string[] arg = new string[2];
+            arg[0] = path;
+            arg[1] = globals.currentRecordingpath+@"\\";
+            dm.Run(arg);
+
 
         }
 

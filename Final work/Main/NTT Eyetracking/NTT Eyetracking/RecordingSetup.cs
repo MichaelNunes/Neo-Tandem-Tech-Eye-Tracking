@@ -50,7 +50,7 @@ namespace NTT_Eyetracking
                     this.Show();
 
                 }
-                else if (comboBox1.SelectedText.ToString() == "3DModel")
+                else if (comboBox1.Text == "3DModel")
                 {
                     string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
                     System.IO.Directory.CreateDirectory(rec);
@@ -64,7 +64,7 @@ namespace NTT_Eyetracking
                     view.ShowDialog();
                     this.Show();
                 }
-                else if (comboBox1.SelectedText.ToString() == "Video")
+                else if (comboBox1.Text == "Video")
                 {
                     string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
                     System.IO.Directory.CreateDirectory(rec);
