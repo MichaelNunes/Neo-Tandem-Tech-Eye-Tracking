@@ -105,9 +105,9 @@ namespace DisplayModel
 
         public void changeView()
         {
-            if (viewNumber * degrees >= 360 + degrees)
+            if (viewNumber * degrees >= 360)
             {
-                if (viewNumber > (360/degrees) + 2)
+                if (viewNumber > (360/degrees) + 1)
                 {
                     Exit();
                 }
