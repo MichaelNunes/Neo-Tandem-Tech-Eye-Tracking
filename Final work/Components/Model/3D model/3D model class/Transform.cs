@@ -31,12 +31,6 @@ namespace DisplayModel
 	/// </summary>
 	public struct Transform : IEquatable<Transform>
 	{
-		#region Fields
-		private Vector3 position;
-		private Vector3 rotation;
-		private Vector3 scale;
-		#endregion
-
 		#region Constructors
 		/// <summary>
 		/// Initializes the transform to the vectors provided.
@@ -46,9 +40,9 @@ namespace DisplayModel
 		/// <param name='s'> The scale vector. </param>
 		public Transform(Vector3 p, Vector3 r, Vector3 s)
 		{
-			position = new Vector3(p.X, p.Y, p.Z);
-			rotation = new Vector3(r.X, r.Y, r.Z);
-			scale = new Vector3(s.X, s.Y, s.Z);
+            Position = p;
+            Rotation = r;
+            Scale = s;
 		}
 
 		/// <summary>
@@ -59,108 +53,27 @@ namespace DisplayModel
 		/// <param name='s'> The scale array. </param>
 		public Transform(float[] p, float[] r, float[] s)
 		{
-			position = new Vector3(p[0], p[1], p[2]);
-			rotation = new Vector3(r[0], r[1], r[2]);
-			scale = new Vector3(s[0], s[1], s[2]);
-		}
-
-		/// <summary>
-		/// Initializes the transform to the arrays provided.
-		/// </summary>
-		/// <param name='p'> The position array. </param>
-		/// <param name='r'> The rotation array. </param>
-		/// <param name='s'> The scale array. </param>
-		public Transform(int[] p, int[] r, int[] s)
-		{
-			position = new Vector3((float) p[0], (float) p[1], (float) p[2]);
-			rotation = new Vector3((float) r[0], (float) r[1], (float) r[2]);
-			scale = new Vector3((float) s[0], (float) s[1], (float) s[2]);
-		}
-
-		/// <summary>
-		/// Initializes the transform to the values provided.
-		/// </summary>
-		/// <param name='px'> The x-value of the position. </param>
-		/// <param name='py'> The y-value of the position. </param>
-		/// <param name='pz'> The z-value of the position. </param>
-		/// <param name='rx'> The x-value of the rotation. </param>
-		/// <param name='ry'> The y-value of the rotation. </param>
-		/// <param name='rz'> The z-value of the rotation. </param>
-		/// <param name='sx'> The x-value of the scale. </param>
-		/// <param name='sy'> The y-value of the scale. </param>
-		/// <param name='sz'> The z-value of the scale. </param>
-		public Transform(float px, float py, float pz, float rx, float ry, float rz, float sx, float sy, float sz)
-		{
-			position = new Vector3(px, py, pz);
-			rotation = new Vector3(rx, ry, rz);
-			scale = new Vector3(sx, sy, sz);
-		}
-
-		/// <summary>
-		/// Initializes the transform to the values provided.
-		/// </summary>
-		/// <param name='px'> The x-value of the position. </param>
-		/// <param name='py'> The y-value of the position. </param>
-		/// <param name='pz'> The z-value of the position. </param>
-		/// <param name='rx'> The x-value of the rotation. </param>
-		/// <param name='ry'> The y-value of the rotation. </param>
-		/// <param name='rz'> The z-value of the rotation. </param>
-		/// <param name='sx'> The x-value of the scale. </param>
-		/// <param name='sy'> The y-value of the scale. </param>
-		/// <param name='sz'> The z-value of the scale. </param>
-		public Transform(int px, int py, int pz, int rx, int ry, int rz, int sx, int sy, int sz)
-		{
-			position = new Vector3((float) px, (float) py, (float) pz);
-			rotation = new Vector3((float) rx, (float) ry, (float) rz);
-			scale = new Vector3((float) sx, (float) sy, (float) sz);
+			Position = new Vector3(p[0], p[1], p[2]);
+			Rotation = new Vector3(r[0], r[1], r[2]);
+			Scale = new Vector3(s[0], s[1], s[2]);
 		}
 		#endregion
 
 		#region Attributes
 		/// <summary>
-		/// Get and sets the position.
+		/// The model's position in space.
 		/// </summary>
-		public Vector3 Position
-		{
-			get
-			{
-				return position;
-			}
-			set
-			{
-				position = value;
-			}
-		}
+        public Vector3 Position { get; set; }
 
 		/// <summary>
-		/// Get and sets the rotation.
+		/// The object's rotation in space.
 		/// </summary>
-		public Vector3 Rotation
-		{
-			get
-			{
-				return rotation;
-			}
-			set
-			{
-				rotation = value;
-			}
-		}
+        public Vector3 Rotation { get; set; }
 
 		/// <summary>
-		/// Get and sets the scale.
+		/// The object's scale.
 		/// </summary>
-		public Vector3 Scale
-		{
-			get
-			{
-				return scale;
-			}
-			set
-			{
-				scale = value;
-			}
-		}
+        public Vector3 Scale { get; set; }
 		#endregion
 
 		#region Operators
@@ -185,9 +98,9 @@ namespace DisplayModel
 		public bool Equals(Transform other)
 		{
 			return
-				(this.position == other.position) &&
-				(this.rotation == other.rotation) &&
-				(this.scale == other.scale);
+				(this.Position == other.Position) &&
+				(this.Rotation == other.Rotation) &&
+				(this.Scale == other.Scale);
 		}
 
 		/// <summary>

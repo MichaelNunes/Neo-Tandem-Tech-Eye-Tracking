@@ -21,13 +21,10 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-
 using OpenTK;
 using OpenTK.Graphics;
-
-using DisplayModel;
+using System;
+using System.Collections.Generic;
 
 namespace DisplayModel
 {
