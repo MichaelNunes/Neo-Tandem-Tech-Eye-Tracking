@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Results_Class;
+using Record_Class;
 
 namespace NTT_Eyetracking
 {
@@ -14,6 +16,7 @@ namespace NTT_Eyetracking
     {
         private bool fullscreen = false;
         bool side = false;
+        string name = "";
         public VideoView()
         {
             InitializeComponent();
@@ -23,15 +26,19 @@ namespace NTT_Eyetracking
         {
             openFileDialog1.ShowDialog();
             axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
+            name = openFileDialog1.SafeFileName;
             axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
-
+        Record m = null;
         private void button2_Click(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             fullscreen = true;
             axWindowsMediaPlayer1.Dock = DockStyle.Fill;
+            m = new Record(globals.currentRecordingpath + @"\", name);
+            m._recording = true ;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -50,6 +57,7 @@ namespace NTT_Eyetracking
             {
                 if (fullscreen == true)
                 {
+                    m._recording = false;
                     axWindowsMediaPlayer1.Dock = DockStyle.None;
                     axWindowsMediaPlayer1.Height = 200;
                     axWindowsMediaPlayer1.Width = 400;

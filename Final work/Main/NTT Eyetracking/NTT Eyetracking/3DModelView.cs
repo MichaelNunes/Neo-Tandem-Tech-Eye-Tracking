@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DisplayModel;
+using Record_Class;
+using Results_Class;
 
 namespace NTT_Eyetracking
 {
@@ -15,7 +17,7 @@ namespace NTT_Eyetracking
     {
         bool fullscreen = false;
         string[] imglocation = new string[9];
-        int counter;
+        int counters;
         public _3DModelView()
         {
             InitializeComponent();
@@ -36,13 +38,19 @@ namespace NTT_Eyetracking
             arg[0] = path;
             arg[1] = globals.currentRecordingpath+@"\\";
             dm.Run(arg);
+            int counter = 2;
+            for(int i = 0;i<9;i++)
+            {
+                imglocation[i] = globals.currentRecordingpath + @"\\"  + "view" + counter +".jpg";
+                counter++;
+            }
 
 
         }
-
+        Record m = null;
         private void button2_Click(object sender, EventArgs e)
         {
-            counter = 0;
+            counters = 0;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             fullscreen = true;
@@ -76,14 +84,21 @@ namespace NTT_Eyetracking
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (counter == imglocation.Length)
+            if (counters == imglocation.Length)
             {
                 timer1.Stop();
+                m._recording = false;
+                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, "gugiog");
+                hm.SaveHeatmap3D();
+                hm.SaveHeatmapOntoModel3D();
             }
             else
             {
-                pictureBox1.ImageLocation = imglocation[counter];
-                counter++;
+                m.close();
+                pictureBox1.ImageLocation = imglocation[counters];
+                m = new Record(globals.currentRecordingpath + @"\", "view" + counters);
+                m._recording = true;
+                counters++;
             }
         }
     }
