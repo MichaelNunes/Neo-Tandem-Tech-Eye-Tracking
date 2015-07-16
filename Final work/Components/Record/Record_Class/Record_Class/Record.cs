@@ -55,8 +55,8 @@ namespace Record_Class
             var screenX = (int)Math.Round(X, 0);
             var screenY = (int)Math.Round(Y, 0);
 
-            // return in case of 0,0 
-            if (screenX == 0 && screenY == 0) return;
+            //// return in case of 0,0 
+            //if (screenX == 0 && screenY == 0) return;
 
             // write data to a file 
             arrayData.Add((X + "," + Y).ToString());
