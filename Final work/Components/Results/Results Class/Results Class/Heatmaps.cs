@@ -185,7 +185,7 @@ namespace Results_Class
 
             for (int i = 0; i < dataFiles.Count; i++)
             {
-                OpenHeatmapData(FileLocation, (ModelName + " " + i));
+                OpenHeatmapData(FileLocation, (ModelName + "" + i));
                 Bitmap bitmap = new Bitmap(width, height);
                 if (py.Count == 0 || px.Count == 0)
                 {
@@ -193,7 +193,7 @@ namespace Results_Class
                 }
 
                 Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + " " + i + ".Heatmap.jpg", ImageFormat.Jpeg);
+                canvas.Save(FileLocation + "\\" + ModelName + "" + (i+2) + ".Heatmap.jpg", ImageFormat.Jpeg);
             }
         }
 
@@ -291,15 +291,15 @@ namespace Results_Class
 
             for (int i = 0; i < dataFiles.Count; i++)
             {
-                OpenHeatmapData(FileLocation, (ModelName + " " + i));
-                Bitmap bitmap = new Bitmap(FileLocation + "\\" + ModelName + " " + i + ".jpg");
+                OpenHeatmapData(FileLocation, (ModelName + "" + i));
+                Bitmap bitmap = new Bitmap(FileLocation + "\\" + ModelName + "" + (i+2) + ".jpg");
                 if (py.Count == 0 || px.Count == 0)
                 {
                     throw new ArgumentNullException();
                 }
 
                 Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + " " + i + ".Heated.jpg", ImageFormat.Jpeg);
+                canvas.Save(FileLocation + "\\" + ModelName + "" + (i+2) + ".Heated.jpg", ImageFormat.Jpeg);
             }
         }
 

@@ -58,6 +58,8 @@ namespace NTT_Eyetracking
             pictureBox1.Dock = DockStyle.Fill;
             timer1.Interval = 3000;
             timer1.Start();
+            m = new Record(globals.currentRecordingpath + @"\", "view" + counters);
+            m._recording = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,12 +90,14 @@ namespace NTT_Eyetracking
             {
                 timer1.Stop();
                 m._recording = false;
-                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, "gugiog");
+                m.close();
+                Heatmaps hm = new Heatmaps("view", globals.currentRecordingpath, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, "gugiog");
                 hm.SaveHeatmap3D();
                 hm.SaveHeatmapOntoModel3D();
             }
             else
             {
+                m._recording = false;
                 m.close();
                 pictureBox1.ImageLocation = imglocation[counters];
                 m = new Record(globals.currentRecordingpath + @"\", "view" + counters);
