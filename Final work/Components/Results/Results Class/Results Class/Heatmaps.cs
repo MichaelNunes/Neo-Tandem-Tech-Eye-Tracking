@@ -7,6 +7,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using Video_Model;
 using System.IO;
+using System.Windows.Media.Imaging;
+using AForge.Video;
+using AForge.Video.FFMPEG;
 
 namespace Results_Class
 {
@@ -211,6 +214,13 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapVideo()
         {
+            //get heights and widths of video
+            VideoFileReader vid = new VideoFileReader();
+            vid.Open(SourceLocation + ModelName + ".wmv");
+            height = vid.Height;
+            width = vid.Width;
+            vid.Close();
+
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -230,7 +240,7 @@ namespace Results_Class
                     throw new ArgumentNullException();
                 }
                 Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
-                canvas.Save(SourceLocation + "\\" + "frame"+ i +".Jpg", ImageFormat.Jpeg);   
+                canvas.Save(SourceLocation + "\\" + "frame"+ i +".jpg", ImageFormat.Jpeg);   
             }
             //call create video
             vm.ImagePath = SourceLocation;
@@ -320,36 +330,54 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModelVideo()
         {
+            //get heights and widths of video
+            VideoFileReader vid = new VideoFileReader();
+            vid.Open(SourceLocation+ModelName+".wmv");
+            height = vid.Height;
+            width = vid.Width;
+            vid.Close();
+
             ImageGenerator ig = new ImageGenerator();
-            ig.VideoPath = SourceLocation;
-            ig.ImageWidth = width;
-            ig.ImageHeight = height;
-            ig.DestinationPath = DestinationPath;
-            ig.createImages();
+            try
+            {
+                ig.VideoPath = SourceLocation + ModelName + ".wmv";
+                ig.DestinationPath = DestinationPath;
+                ig.ModelName =  ModelName; 
+                ig.createImages();
+            }
+            catch(Exception e)
+            {
+                throw new TypeLoadException();
+            }
+            
 
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
 
             //ImageGenerator im = new ImageGenerator();
-
+            x.Add(0);
+            y.Add(0);
             for (int i = 0; i < px.Count; i++)
             {
                 x.Add(px.ElementAt(i));
                 y.Add(py.ElementAt(i));
 
-                Image im = new Bitmap(SourceLocation + "\\" + "frame" + i);
+                Image im = new Bitmap(SourceLocation + "\\" + ModelName + "frame" + (i) + ".jpg");
+
                 if (py.Count == 0 || px.Count == 0)
                 {
                     throw new ArgumentNullException();
                 }
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, px.ToArray(), py.ToArray());
-                canvas.Save(SourceLocation + "\\" + ModelName + " " + i + ".Heated.jpg", ImageFormat.Jpeg);
+                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, x.ToArray(), y.ToArray());
+                //im.Dispose();
+                canvas.Save(SourceLocation + "\\" + ModelName + ".Heated" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
             }
+
             //call create video
             vm.ImagePath = SourceLocation;
             vm.DestinationPath = DestinationPath;
-            vm.ModelName = ModelName;
+            vm.ModelName = ModelName+".Heated";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();

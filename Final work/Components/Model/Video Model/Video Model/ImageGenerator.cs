@@ -31,28 +31,26 @@ namespace Video_Model
             set { destinationPath = value; }
         }
 
+        string modelName;
+
+        public string ModelName
+        {
+            get { return modelName; }
+            set { modelName = value; }
+        }
+
         /// <summary>
         /// Default Constructor, sets basic settings for image generator
         /// </summary>
         public ImageGenerator()
         {
-            destinationPath = @"C:\Users\Public\Pictures\Sample Pictures";
-            reader = new VideoFileReader();
+            destinationPath = @"C:\Users\Public\Pictures\Sample Pictures";            
         }
 
         public ImageGenerator(string inPath, string outPath)
         {
             videoPath = inPath;
             destinationPath = outPath;
-            reader = new VideoFileReader();
-            if (File.Exists(videoPath))
-            {
-                reader.Open(videoPath);
-            }
-            else
-            {
-                throw new Exception("Video does not exist"); 
-            }
         }
 
         /// <summary>
@@ -61,6 +59,17 @@ namespace Video_Model
         /// </summary>
         public int createImages()
         {
+
+            reader = new VideoFileReader();
+            if (File.Exists(videoPath))
+            {
+                reader.Open(videoPath);
+            }
+            else
+            {
+                throw new Exception("Video does not exist");
+            }
+
             if (reader.IsOpen == false)
                 throw new Exception("Video file is not open.");
 
@@ -72,7 +81,7 @@ namespace Video_Model
                 {
                     Bitmap videoFrame = reader.ReadVideoFrame();
 
-                    videoFrame.Save(destinationPath + "frame" + count++ + ".jpg", ImageFormat.Jpeg);
+                    videoFrame.Save(destinationPath + modelName + "frame" + count++ + ".jpg", ImageFormat.Jpeg);
 
                     videoFrame.Dispose();
                 }
@@ -93,7 +102,10 @@ namespace Video_Model
             DirectoryInfo deletionPath = new DirectoryInfo(destinationPath);
             foreach (FileInfo file in deletionPath.GetFiles())
             {
-                file.Delete();
+                if(file.Extension == ".jpg")
+                {
+                    file.Delete();
+                }                
             }
         }
     }

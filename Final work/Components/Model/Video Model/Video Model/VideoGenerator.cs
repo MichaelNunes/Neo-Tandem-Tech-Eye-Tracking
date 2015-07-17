@@ -73,6 +73,7 @@ namespace Video_Model
             fps = 30;
 
             writer = new VideoFileWriter();
+            
         }
 
         /// <summary>
@@ -89,7 +90,6 @@ namespace Video_Model
             fps = 30;
 
             writer = new VideoFileWriter();
-            writer.Open(modelName + ".wmv", frameWidth, frameHeight, fps, VideoCodec.WMV1, 6000000);
         }
 
         public VideoGenerator(string path, string name, int width, int height, int framesPS)
@@ -101,11 +101,11 @@ namespace Video_Model
             fps = framesPS;
 
             writer = new VideoFileWriter();
-            writer.Open(modelName + ".wmv", frameWidth, frameHeight, fps, VideoCodec.WMV1, 6000000);
         }
 
         public void createVideo()
         {
+            writer.Open(DestinationPath + modelName + ".wmv", frameWidth, frameHeight, fps, VideoCodec.WMV1, 6000000);
             if (writer.IsOpen == false)
                 throw new Exception("The video file is not open.");
 
@@ -115,7 +115,7 @@ namespace Video_Model
             {
                 while (true)
                 {
-                    Bitmap videoFrame = new Bitmap(imagePath + "frame" + count++ + ".jpg");
+                    Bitmap videoFrame = new Bitmap(imagePath + modelName + "frame" + count++ + ".jpg");
 
                     writer.WriteVideoFrame(videoFrame);
 
