@@ -9,17 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Settings_Class;
+using Ninject.Modules;
+
 
 namespace NTT_Eyetracking
 {
     
     public partial class Form1 : Form
     {
-        
+        //Ninject.IKernel kernal;
         public Form1()
         {
             
             InitializeComponent();
+            // kernal = new Ninject.StandardKernel();
+             //kernal.Bind<ProjectSolution>().ToSelf();
+            //System.Reflection.Assembly m = System.Reflection.Assembly.GetExecutingAssembly();
+            Bindings n = new Bindings();
+            //kernal.Load(AppDomain.CurrentDomain.GetAssemblies());
+             //kernal.Load((System.Collections.Generic.IEnumerable<Bindings>));
+            
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -62,7 +72,8 @@ namespace NTT_Eyetracking
                 save[2] = textBox2.Text + ".set";
                 save[3] = "3DModel.set";
                 File.WriteAllLines(Saver.FileName, save);
-                globals.m = new ProjectSolution(textBox2.Text,dir);
+                //globals.m = new ProjectSolution(textBox2.Text,dir);
+                //globals.m = kernal.Components.Get<Bindings>();
             }
             catch(DirectoryNotFoundException m)
             {

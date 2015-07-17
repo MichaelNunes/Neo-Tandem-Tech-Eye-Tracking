@@ -95,6 +95,7 @@
     <Compile Include="3DModelView.Designer.cs">
       <DependentUpon>3DModelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bindings.cs" />
     <Compile Include="Calibration.cs">
       <SubType>Form</SubType>
     </Compile>
