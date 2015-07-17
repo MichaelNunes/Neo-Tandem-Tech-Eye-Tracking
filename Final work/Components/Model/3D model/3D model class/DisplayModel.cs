@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 using DisplayModel;
 
@@ -28,14 +29,14 @@ namespace DisplayModel
                 throw new Exception(e.Message);
             }
         }
-        /*
+        
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            Window window = new Window();
+            Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
 #if DEBUG
-            string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
-            string texture = "";
+            string source = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.obj";
+            string texture = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
 #else
             string source = args[0];
             string texture = args[1];
@@ -44,14 +45,21 @@ namespace DisplayModel
             try
             {
                 GameObject susan = Converter.fromOBJ(source, texture);
+                Console.WriteLine(susan.Material.TextureId);
+                susan.Material.Setup();
+                Console.WriteLine(susan.Material.TextureId);
+                Console.WriteLine(susan.Material.textureId);
+                Console.ReadLine();
+
                 window.Add(susan);
                 window.Run(30, 30);
+
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
             }
-        }*/
+        }
     }
 }

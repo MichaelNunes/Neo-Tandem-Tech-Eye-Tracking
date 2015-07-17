@@ -34,7 +34,7 @@ namespace DisplayModel
 	/// can either be coloured by a Red,Green,Blue triple (rgb) or
 	/// an image texture.
 	/// </summary>
-	public struct Material
+	public class Material
 	{
 		#region Fields
 		private Color4 colour;
@@ -43,6 +43,12 @@ namespace DisplayModel
 		#endregion
 
 		#region Constructors
+        public Material()
+        {
+            colour = Color4.LightGray;
+            textureId = -1;
+            filepath = string.Empty;
+        }
 		/// <summary>
 		/// Creates a material with the color provided.
 		/// </summary>
@@ -87,7 +93,8 @@ namespace DisplayModel
             if (filepath == string.Empty)
                 return;
 
-            // Do stuff;
+            // Do stuff
+            textureId = 0;
         }
         #endregion
 

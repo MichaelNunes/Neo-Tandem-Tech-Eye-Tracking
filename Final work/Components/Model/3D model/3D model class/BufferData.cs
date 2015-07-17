@@ -71,6 +71,8 @@ namespace DisplayModel
             for (int i = 0; i < ti.Count; i++)
                 texture[count++] = tp[ti[i]-1];
 
+            Console.WriteLine(count);
+
             count = 0;
             for (int i = 0; i < ni.Count; i++)
                 normal[count++] = np[ni[i]-1];

@@ -93,7 +93,7 @@ namespace DisplayModel
             if (tex != "")
                 temp.Material = new Material(tex);
             else
-                temp.Material = new Material(Color4.Gray);
+                temp.Material = new Material(Color4.LightGray);
 
             temp.BufferData = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material);
             Console.WriteLine(temp);
