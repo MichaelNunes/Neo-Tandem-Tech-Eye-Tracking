@@ -43,13 +43,14 @@ namespace NTT_Eyetracking
                     System.IO.Directory.CreateDirectory(sub);
                     globals.currentRecordingpath = sub;
                     globals.typeOfRecording = "2DModel";
+                    globals.name = name;
                     this.Hide();
                     _2DModelView view = new _2DModelView();
                     view.ShowDialog();
                     this.Show();
 
                 }
-                else if (comboBox1.SelectedText.ToString() == "3DModel")
+                else if (comboBox1.Text == "3DModel")
                 {
                     string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
                     System.IO.Directory.CreateDirectory(rec);
@@ -63,7 +64,7 @@ namespace NTT_Eyetracking
                     view.ShowDialog();
                     this.Show();
                 }
-                else if (comboBox1.SelectedText.ToString() == "Video")
+                else if (comboBox1.Text == "Video")
                 {
                     string rec = System.IO.Path.Combine(globals.m.Directory, "Recordings");
                     System.IO.Directory.CreateDirectory(rec);

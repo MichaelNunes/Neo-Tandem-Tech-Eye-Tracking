@@ -28,5 +28,13 @@ namespace NTT_Eyetracking
             m.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Calibration m = new Calibration();
+            this.Hide();
+            m.ShowDialog();
+            this.Show();
+        }
     }
 }

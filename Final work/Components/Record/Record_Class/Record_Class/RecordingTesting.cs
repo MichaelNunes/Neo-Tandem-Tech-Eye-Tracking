@@ -15,13 +15,17 @@ namespace Record_Class
         public void TestRecording()
         {
             Record record1 = new Record(@"C:\Users\Public\", "ModelOne");
-            record1.saveToFile();
+            
 
             record1._recording = true;
             Assert.AreEqual(true, record1._recording);
 
+            System.Threading.Thread.Sleep(1000);
+
             record1._recording = false;
             Assert.AreEqual(false, record1._recording);
+            record1.saveToFile();
+            record1.close();
             
         }
 

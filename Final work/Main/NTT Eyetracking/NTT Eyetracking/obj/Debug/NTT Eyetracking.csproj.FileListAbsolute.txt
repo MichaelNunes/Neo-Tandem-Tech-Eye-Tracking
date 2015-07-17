@@ -6,13 +6,79 @@ C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.exe
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.dll
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results.exe
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.dll
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.xml
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.exe
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Calibration.resources
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.RecordingSetup.resources
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csprojResolveAssemblyReference.cache
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\TETCSharpClient.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Newtonsoft.Json.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking._2DModelView.resources
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\2D Model.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Record_Class.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\2D Model.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Record_Class.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\Interop.WMPLib.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csproj.ResolveComReference.cache
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking._3DModelView.resources
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.VideoView.resources
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results Class.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\OpenTK.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\OpenTK.GLControl.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\HeatMap.NET.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Video Model.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Splicer.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\DirectShowLib-2005.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\ConsoleApplication.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results Class.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\HeatMap.NET.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Video Model.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Interop.WMPLib.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.exe.config
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\NTT Eyetracking.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\2D Model.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Record_Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\TETCSharpClient.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\OpenTK.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\HeatMap.NET.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Video Model.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Splicer.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\DirectShowLib-2005.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\2D Model.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\ConsoleApplication.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.xml
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Record_Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\HeatMap.NET.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Video Model.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Interop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\Interop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csproj.ResolveComReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking._2DModelView.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking._3DModelView.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Calibration.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Form1.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Main.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.Properties.Resources.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.RecordingSetup.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT_Eyetracking.VideoView.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.csproj.GenerateResource.Cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\obj\Debug\NTT Eyetracking.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Ninject.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Ninject.xml

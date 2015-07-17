@@ -9,6 +9,7 @@ namespace NTT_Eyetracking
 {
     class ProjectSolution
     {
+        
         string projectName;
 
         public string ProjectName
