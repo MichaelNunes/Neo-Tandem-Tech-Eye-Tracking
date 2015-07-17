@@ -1,5 +1,0 @@
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\2D Model\2D Model\bin\Debug\2D Model.dll
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\2D Model\2D Model\bin\Debug\2D Model.pdb
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\2D Model\2D Model\obj\Debug\2D Model.csprojResolveAssemblyReference.cache
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\2D Model\2D Model\obj\Debug\2D Model.dll
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\2D Model\2D Model\obj\Debug\2D Model.pdb

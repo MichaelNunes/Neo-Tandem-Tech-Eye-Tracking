@@ -7,6 +7,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using Video_Model;
 using System.IO;
+using System.Windows.Media.Imaging;
+using AForge.Video;
+using AForge.Video.FFMPEG;
 
 namespace Results_Class
 {
@@ -16,13 +19,22 @@ namespace Results_Class
         /// <summary>
         /// Represents file(s) locations that will be used for the heatmapping processess.
         /// </summary>
-        string FileLocation;
-        public string _fileLocation
+        string SourceLocation;
+        public string _SourceLocation
         {
-            get { return FileLocation; }
-            set { FileLocation = value; }
+            get { return SourceLocation; }
+            set { SourceLocation = value; }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        string DestinationPath;
+        public string _DestinationPath
+        {
+            get { return DestinationPath; }
+            set { DestinationPath = value; }
+        }
 
         /// <summary>
         /// Represents the name of the model that results will be made for. 
@@ -103,14 +115,14 @@ namespace Results_Class
             width = Width;
             height = Height;
             ModelName = NameOfModel;
-            FileLocation = FilePath;
+            SourceLocation = FilePath;
             modelType = ModelType;
         }
 
         public Heatmaps(string NameOfModel, string FilePath)
         {
             ModelName = NameOfModel;
-            FileLocation = FilePath;
+            SourceLocation = FilePath;
         }
         #endregion
 
@@ -126,12 +138,12 @@ namespace Results_Class
             py = null;
             px = new List<float>();
             py = new List<float>();
-            string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\"  +"RecordedData_"+ modelName + ".txt");
+            string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\" + modelName + ".txt");
             foreach (string item in lines)
             {
-                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(","))));
 
-                int temp1 = item.IndexOf(":")+1;
+                int temp1 = item.IndexOf(",")+1;
                 int temp2 = item.Length-temp1;
                 py.Add((float)Convert.ToDouble(item.Substring(temp1,temp2)));
             }
@@ -162,7 +174,7 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmap3D()
         {
-            string[] files = Directory.GetFiles(FileLocation);
+            string[] files = Directory.GetFiles(SourceLocation);
             List<string> images = new List<string>();
             List<string> dataFiles = new List<string>();
 
@@ -185,7 +197,7 @@ namespace Results_Class
 
             for (int i = 0; i < dataFiles.Count; i++)
             {
-                OpenHeatmapData(FileLocation, (ModelName + "" + i));
+                OpenHeatmapData(SourceLocation, (ModelName + " " + i));
                 Bitmap bitmap = new Bitmap(width, height);
                 if (py.Count == 0 || px.Count == 0)
                 {
@@ -193,7 +205,7 @@ namespace Results_Class
                 }
 
                 Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + "" + (i+2) + ".Heatmap.jpg", ImageFormat.Jpeg);
+                canvas.Save(SourceLocation + "\\" + ModelName + " " + i + ".Heatmap.jpg", ImageFormat.Jpeg);
             }
         }
 
@@ -202,6 +214,13 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapVideo()
         {
+            //get heights and widths of video
+            VideoFileReader vid = new VideoFileReader();
+            vid.Open(SourceLocation + ModelName + ".wmv");
+            height = vid.Height;
+            width = vid.Width;
+            vid.Close();
+
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -211,22 +230,25 @@ namespace Results_Class
             Bitmap bitmap = new Bitmap(width, height);
             //bitmap.Save(FileLocation +"\\"+ ModelName + ".jpg");
 
-            for(int i = 0; i < px.Count; i++)
+            for(int i = 0; i < px.Count(); i++)
             {
                 x.Add(px.ElementAt(i));
                 y.Add(py.ElementAt(i));               
 
-                if (py.Count == 0 || px.Count == 0)
+                if (py.Count() == 0 || px.Count() == 0)
                 {
                     throw new ArgumentNullException();
                 }
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + " " + i +".Heatmap.Jpg", ImageFormat.Jpeg);   
+                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
+                canvas.Save(SourceLocation + "\\" + "frame"+ i +".jpg", ImageFormat.Jpeg);   
             }
             //call create video
-            vm.ImagePath = FileLocation;
+            vm.ImagePath = SourceLocation;
+            vm.DestinationPath = DestinationPath;
+            vm.ModelName = ModelName;
             vm.FrameWidth = width;
             vm.FrameHeight = height;
+            vm.Fps = 30;
             vm.createVideo();
         }
 
@@ -242,7 +264,7 @@ namespace Results_Class
             }
 
             Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-            canvas.Save(FileLocation + "\\" + ModelName + ".Heatmap.jpg", ImageFormat.Jpeg);   
+            canvas.Save(SourceLocation + "\\" + ModelName + ".Heatmap.jpg", ImageFormat.Jpeg);   
         }
 
         /// <summary>
@@ -269,7 +291,7 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModel3D()
         {
-            string[] files = Directory.GetFiles(FileLocation);
+            string[] files = Directory.GetFiles(SourceLocation);
             List<string> images = new List<string>();
             List<string> dataFiles = new List<string>();
             //check that all files are images
@@ -291,15 +313,15 @@ namespace Results_Class
 
             for (int i = 0; i < dataFiles.Count; i++)
             {
-                OpenHeatmapData(FileLocation, (ModelName + "" + i));
-                Bitmap bitmap = new Bitmap(FileLocation + "\\" + ModelName + "" + (i+2) + ".jpg");
+                OpenHeatmapData(SourceLocation, (ModelName + " " + i));
+                Bitmap bitmap = new Bitmap(SourceLocation + "\\" + ModelName + " " + i + ".jpg");
                 if (py.Count == 0 || px.Count == 0)
                 {
                     throw new ArgumentNullException();
                 }
 
                 Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + "" + (i+2) + ".Heated.jpg", ImageFormat.Jpeg);
+                canvas.Save(SourceLocation + "\\" + ModelName + " " + i + ".Heated.jpg", ImageFormat.Jpeg);
             }
         }
 
@@ -308,31 +330,58 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModelVideo()
         {
+            //get heights and widths of video
+            VideoFileReader vid = new VideoFileReader();
+            vid.Open(SourceLocation+ModelName+".wmv");
+            height = vid.Height;
+            width = vid.Width;
+            vid.Close();
+
+            ImageGenerator ig = new ImageGenerator();
+            try
+            {
+                ig.VideoPath = SourceLocation + ModelName + ".wmv";
+                ig.DestinationPath = DestinationPath;
+                ig.ModelName =  ModelName; 
+                ig.createImages();
+            }
+            catch(Exception e)
+            {
+                throw new TypeLoadException();
+            }
+            
+
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
 
             //ImageGenerator im = new ImageGenerator();
-
+            x.Add(0);
+            y.Add(0);
             for (int i = 0; i < px.Count; i++)
             {
                 x.Add(px.ElementAt(i));
                 y.Add(py.ElementAt(i));
 
-                Image im = new Bitmap(FileLocation + "\\" + "frame" + i);
+                Image im = new Bitmap(SourceLocation + "\\" + ModelName + "frame" + (i) + ".jpg");
+
                 if (py.Count == 0 || px.Count == 0)
                 {
                     throw new ArgumentNullException();
                 }
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, px.ToArray(), py.ToArray());
-                canvas.Save(FileLocation + "\\" + ModelName + " " + i + ".Heated.jpg", ImageFormat.Jpeg);
+                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, x.ToArray(), y.ToArray());
+                //im.Dispose();
+                canvas.Save(SourceLocation + "\\" + ModelName + ".Heated" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
             }
+
             //call create video
-            vm.ImagePath = FileLocation;
+            vm.ImagePath = SourceLocation;
+            vm.DestinationPath = DestinationPath;
+            vm.ModelName = ModelName+".Heated";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
-
+            ig.deleteImages();
         }
 
         /// <summary>
@@ -340,13 +389,13 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModel2D()
         {
-            Image im = new Bitmap(FileLocation + "\\" + ModelName);
+            Image im = new Bitmap(SourceLocation + "\\" + ModelName);
             if (py.Count == 0 || px.Count == 0)
             {
                 throw new ArgumentNullException();
             }
             Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, px.ToArray(), py.ToArray());
-            canvas.Save(FileLocation + "\\" + ModelName + ".Heated.Jpg", ImageFormat.Jpeg);
+            canvas.Save(SourceLocation + "\\" + ModelName + ".Heated.Jpg", ImageFormat.Jpeg);
         }
 
         static bool HasCorrectExtension(string filename)
