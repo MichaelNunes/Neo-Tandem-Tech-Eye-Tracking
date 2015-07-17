@@ -14,8 +14,9 @@ namespace Record_Class
         [Test]
         public void TestRecording()
         {
-            Record record1 = new Record(@"C:\Users\Public\", "ModelOne");
             
+            Record record1 = new Record(@"C:\Users\Public\", "ModelOne");
+            //throw new Exception("dsfdsddsdfd");
 
             record1._recording = true;
             Assert.AreEqual(true, record1._recording);

@@ -35,8 +35,8 @@
     <Reference Include="2D Model">
       <HintPath>..\..\..\Components\Model\2D Model\2D Model\bin\Debug\2D Model.dll</HintPath>
     </Reference>
-    <Reference Include="ConsoleApplication">
-      <HintPath>..\..\..\Components\Model\3D model\3D model class\bin\Debug\ConsoleApplication.dll</HintPath>
+    <Reference Include="DisplayModel">
+      <HintPath>..\..\..\Components\Model\3D model\3D model class\bin\Debug\DisplayModel.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
