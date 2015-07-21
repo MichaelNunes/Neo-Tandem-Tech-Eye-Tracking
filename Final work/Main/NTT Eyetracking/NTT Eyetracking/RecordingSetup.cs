@@ -73,6 +73,7 @@ namespace NTT_Eyetracking
                     System.IO.Directory.CreateDirectory(sub);
                     globals.currentRecordingpath = sub;
                     globals.typeOfRecording = "Video";
+                    globals.name = name;
                     this.Hide();
                     VideoView view = new VideoView();
                     view.ShowDialog();

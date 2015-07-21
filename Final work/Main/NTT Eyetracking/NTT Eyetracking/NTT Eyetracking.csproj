@@ -35,6 +35,10 @@
     <Reference Include="2D Model">
       <HintPath>..\..\..\Components\Model\2D Model\2D Model\bin\Debug\2D Model.dll</HintPath>
     </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
     <Reference Include="DisplayModel">
       <HintPath>..\..\..\Components\Model\3D model\3D model class\bin\Debug\DisplayModel.dll</HintPath>
     </Reference>

@@ -60,12 +60,22 @@ namespace NTT_Eyetracking
                 if (fullscreen == true)
                 {
                     m._recording = false;
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
                     axWindowsMediaPlayer1.Dock = DockStyle.None;
                     axWindowsMediaPlayer1.Height = 200;
                     axWindowsMediaPlayer1.Width = 400;
                     this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.Sizable;
                     fullscreen = false;
+                    Heatmaps hm = new Heatmaps();
+                    hm._SourceLocation = openFileDialog1.FileName;
+                    hm._DestinationPath = globals.currentRecordingpath;
+                    hm._height = Screen.PrimaryScreen.Bounds.Height;
+                    hm._width =Screen.PrimaryScreen.Bounds.Width;
+                    hm._modelName = "Test";
+                    hm.OpenHeatmapData(globals.currentRecordingpath + "\\", "Test.wmv");
+                    hm.SaveHeatmapVideo();
+                    hm.SaveHeatmapOntoModelVideo();
 
                 }
                 else if (side == true)
