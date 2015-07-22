@@ -31,11 +31,7 @@ namespace NTT_Eyetracking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TETCSharpClient.Data.CalibrationResult m = new TETCSharpClient.Data.CalibrationResult();
-            if (m.Result)
-            {
-                MessageBox.Show("Hello");
-            }
+            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\EyeTribe\Client\EyeTribeUIWin.exe");
         }
     }
 }

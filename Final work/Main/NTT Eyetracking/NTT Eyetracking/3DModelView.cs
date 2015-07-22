@@ -53,6 +53,9 @@ namespace NTT_Eyetracking
             counters = 0;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
+            button1.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
             fullscreen = true;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Dock = DockStyle.Fill;
@@ -65,6 +68,7 @@ namespace NTT_Eyetracking
         private void button3_Click(object sender, EventArgs e)
         {
             //TO DO:add functionality to open the folder with all the images in them
+
         }
 
         protected override bool ProcessDialogKey(Keys keyData)
@@ -73,6 +77,9 @@ namespace NTT_Eyetracking
             {
                 if (fullscreen == true)
                 {
+                    button1.Visible = true;
+                    button2.Visible = true;
+                    button3.Visible = true;
                     this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.Sizable;
                     fullscreen = false;

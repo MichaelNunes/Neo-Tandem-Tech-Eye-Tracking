@@ -48,6 +48,8 @@ namespace NTT_Eyetracking
             this.WindowState = FormWindowState.Maximized;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Dock = DockStyle.Fill;
+            button1.Visible = false;
+            button2.Visible = false;
             fullscreen = true;
             m = new Record(globals.currentRecordingpath+@"\", name);
             m._recording = true;
@@ -74,6 +76,8 @@ namespace NTT_Eyetracking
                 {
                     m._recording = false;
                     m.close();
+                    button1.Visible = true;
+                    button2.Visible = true;
                     this.WindowState = FormWindowState.Normal;
                     this.FormBorderStyle = FormBorderStyle.Sizable;
                     //pictureBox1.SizeMode = PictureBoxSizeMode.Normal;

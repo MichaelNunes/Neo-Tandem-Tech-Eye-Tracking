@@ -37,6 +37,11 @@ namespace NTT_Eyetracking
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             fullscreen = true;
+            button1.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
+            button4.Visible = false;
+            axWindowsMediaPlayer2.Visible = false;
             axWindowsMediaPlayer1.Dock = DockStyle.Fill;
             m = new Record(globals.currentRecordingpath + @"\", name);
             m._recording = true ;
@@ -60,6 +65,11 @@ namespace NTT_Eyetracking
                 if (fullscreen == true)
                 {
                     m._recording = false;
+                    button1.Visible = true;
+                    button2.Visible = true;
+                    button3.Visible = true;
+                    button4.Visible = true;
+                    axWindowsMediaPlayer2.Visible = true;
                     axWindowsMediaPlayer1.Ctlcontrols.stop();
                     axWindowsMediaPlayer1.Dock = DockStyle.None;
                     axWindowsMediaPlayer1.Height = 200;
@@ -94,6 +104,11 @@ namespace NTT_Eyetracking
                 }
             }
             return base.ProcessDialogKey(keyData);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
