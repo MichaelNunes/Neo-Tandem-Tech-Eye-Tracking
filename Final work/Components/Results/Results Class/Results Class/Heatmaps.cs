@@ -230,22 +230,29 @@ namespace Results_Class
 
             for(int i = 0; i < px.Count(); i++)
             {
-                Bitmap bitmap = new Bitmap(width, height);
-                x.Add(px.ElementAt(i));
-                y.Add(py.ElementAt(i));               
-
-                if (py.Count() == 0 || px.Count() == 0)
+                try
                 {
-                    throw new ArgumentNullException();
+                    Bitmap bitmap = new Bitmap(width, height);
+                    x.Add(px.ElementAt(i));
+                    y.Add(py.ElementAt(i));
+
+                    if (py.Count() == 0 || px.Count() == 0)
+                    {
+                        throw new ArgumentNullException();
+                    }
+                    Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
+                    canvas.Save(DestinationPath + "\\" + ModelName + ".Heatmap" + "frame" + i + ".jpg", ImageFormat.Jpeg);
+                    bitmap.Dispose();
                 }
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
-                canvas.Save(DestinationPath + "\\" + "frame"+ i +".jpg", ImageFormat.Jpeg);
-                bitmap.Dispose();
+                catch(Exception k)
+                {
+                    break;
+                }
             }
             //call create video
             vm.ImagePath = DestinationPath+"\\";
             vm.DestinationPath = DestinationPath+"\\";
-            vm.ModelName = "";
+            vm.ModelName = ModelName+".Heatmap";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.Fps = 30;
@@ -360,19 +367,26 @@ namespace Results_Class
             y.Add(0);
             for (int i = 0; i < px.Count; i++)
             {
-                x.Add(px.ElementAt(i));
-                y.Add(py.ElementAt(i));
-
-                Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
-
-                if (py.Count == 0 || px.Count == 0)
+                try
                 {
-                    throw new ArgumentNullException();
+                    x.Add(px.ElementAt(i));
+                    y.Add(py.ElementAt(i));
+
+                    Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
+
+                    if (py.Count == 0 || px.Count == 0)
+                    {
+                        throw new ArgumentNullException();
+                    }
+                    Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, x.ToArray(), y.ToArray());
+                    //im.Dispose();
+                    canvas.Save(DestinationPath + "\\" + ModelName + ".Heated" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
+                    im.Dispose();
                 }
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, x.ToArray(), y.ToArray());
-                //im.Dispose();
-                canvas.Save(DestinationPath + "\\" + ModelName + ".Heated" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
-                im.Dispose();
+               catch(Exception k)
+                {
+                    break;
+                }
             }
 
             //call create video

@@ -15,4 +15,3 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Componen
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Debug\Video Model.pdb
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Debug\Results Class.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Debug\Results Class.pdb
-C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Debug\Results Class.csprojResolveAssemblyReference.cache
