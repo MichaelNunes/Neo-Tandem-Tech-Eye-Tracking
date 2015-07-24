@@ -8,7 +8,7 @@
 
 \subsubsection{Scalability}
 \begin{flushleft}
-The requirements for scalability in the program are that the storage of all the data will forever expand with the more uses of the program.This means that the longer you have the system the more data it will take up,This then states that we nee to ensure that later on the space will not impact on the users performance.The program itself can also grow in terms of features.This means that a developer can extend system by adding a new feature.
+The requirements for scalability in the program are that the storage of all the data will forever expand with the more uses of the program.This means that the longer you have the system the more data it will take up,This then states that we need to ensure that later on the space will not impact on the users performance.The program itself can also grow in terms of features.This means that a developer can extend system by adding a new feature.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
@@ -16,7 +16,7 @@ The requirements for scalability in the program are that the storage of all the 
 \end{itemize}
 
 \item{Integration} :
-The integration of scalability in our system will allow the users to decide where the files that are written will be saved.This will enable them to save the files to hardrives as time with the system goes on.This allows the user to expand their storage capacity.
+The integration of scalability in our system will allow the users to decide where the files that are written will be saved.This will enable them to save the files to hard-drives as time with the system goes on.This allows the user to expand their storage capacity.
 The system is also created in a way that everything is a module/component.The program allows for new modules to be created and then added.This encourages the growth of the system from the start as new and better components can be added.
 \end{itemize}
 
@@ -28,19 +28,19 @@ Performance of the system is key as the system is constantly reading in data as 
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Thread pooling}:this will allow us to spread the work load across threads so that they can run concurrently and reduce bottlenecks.this also allows us to optimize how we can use the hardware so that we use it to its maximum potential.
+\item{Thread pooling}:this will allow us to spread the work load across threads so that they can run concurrently and reduce bottlenecks.this also allows us to optimize how we can use the hardware so that we use it to its maximum potential. The Eye Tribe SDK handles threading that is related to eye tracking by creating separate threads for gaze listeners.
 \end{itemize}
 
 \item{Integration} :
-The system will be able to run the server that will store the data to run concurrently with the eyetracking function.Each of these is run on a thread and this allows them to run at the same time so all the data is collected in real time and the performance is optimized.\\
+The system will be able to run the server that will get gaze data to run concurrently with the eye tracking function.Each of these is run on a thread and this allows them to run at the same time so all the data is collected in real time and the performance is optimized.\\
 The system is spread into components which means that each component is responsible for a task and this increases performance as there are not waiting processes.
 \end{itemize}
 
 \end{flushleft}
 		
-\subsubsection{Maintanability}
+\subsubsection{Maintainability}
 \begin{flushleft}
-The system will need to be maintained over time as new technologies are introduced.The system is component based wich makes maintainability easier as the components need to be maintained and not the entire system.Maintainability allows a program to be kept up-to-date.Changes in eye tracking is a common thing so we expect new changes to occur frequently.
+The system will need to be maintained over time as new technologies are introduced.The system is component based which makes maintainability easier as the components need to be maintained and not the entire system.Maintainability allows a program to be kept up-to-date.Changes in eye tracking is a common thing so we expect new changes to occur frequently.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
@@ -102,18 +102,18 @@ The contracts created are used to make the system in to components which allows 
 
 \end{flushleft}
 		
-\subsubsection{Testablity and Integrability}
+\subsubsection{Testability and Integrability}
 \begin{flushleft}
 The system is quite a large system and the testing would need to be done on every aspect of the system this would mean that the system would need to have testing done all over.The system also needs to be integrated with all the systems components and this would mean that the system would need a high level of integration.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Layering} :this will allow each component to be comprised of a layer and this leyer can then be changed or removed.This allows good integration in the components.
+\item{Layering} :This will allow each component to be comprised of a layer and this layer can then be changed or removed.This allows good integration in the components.
 
 \end{itemize}
 
 \item{Integration} :
-Each layer will have a set of components and these components can be changed and then integrated easily with the layers that are next to them.This allows the system to ave easy integration and allos changes to the system not effect the integration.The testing is made easy with each component allowed to be tested on individually so that the integration can be done seamlessly.
+Each layer will have a set of components and these components can be changed and then integrated easily with the layers that are next to them.This allows the system to ave easy integration and allows changes to the system not effect the integration.The testing is made easy with each component allowed to be tested on individually so that the integration can be done seamlessly.
 \end{itemize}
 
 \end{flushleft}
