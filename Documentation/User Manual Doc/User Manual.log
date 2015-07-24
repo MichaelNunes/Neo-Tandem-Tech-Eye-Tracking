@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  26 MAY 2015 19:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  24 JUL 2015 15:20
 entering extended mode
 **User*Manual.tex
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\User Manual.tex"
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\User Manual.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +15,9 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\report.cls
+(C:\Users\m\Documents\miktex\tex\latex\base\report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\size12.clo
+(C:\Users\m\Documents\miktex\tex\latex\base\size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -36,7 +36,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \@indexfile=\write3
 
 Writing index file User*Manual.idx
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\tools\longtable.sty
+(C:\Users\m\Documents\miktex\tex\latex\tools\longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip43
 \LTright=\skip44
@@ -54,31 +54,31 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count92
 \LT@p@ftn=\toks14
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\graphicx.sty
+(C:\Users\m\Documents\miktex\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\keyval.sty
+(C:\Users\m\Documents\miktex\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\graphics.sty
+(C:\Users\m\Documents\miktex\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\trig.sty
+(C:\Users\m\Documents\miktex\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\graphics.cfg
+(C:\Users\m\Documents\miktex\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\pdftex-def\pdftex.def
+(C:\Users\m\Documents\miktex\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\infwarerr.sty
+(C:\Users\m\Documents\miktex\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\ltxcmds.sty
+(C:\Users\m\Documents\miktex\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count93
@@ -86,17 +86,17 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\makeidx.sty
+(C:\Users\m\Documents\miktex\tex\latex\base\makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\hyperref.sty
+(C:\Users\m\Documents\miktex\tex\latex\hyperref\hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\hobsub-hyperref.sty
+(C:\Users\m\Documents\miktex\tex\generic\oberdiek\hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\hobsub-generic.sty
+(C:\Users\m\Documents\miktex\tex\generic\oberdiek\hobsub-generic.sty
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -137,25 +137,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\generic\ifxetex\ifxetex.sty
+(C:\Users\m\Documents\miktex\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\auxhook.sty
+(C:\Users\m\Documents\miktex\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\kvoptions.sty
+(C:\Users\m\Documents\miktex\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen106
 \Hy@linkcounter=\count94
 \Hy@pagecounter=\count95
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\pd1enc.def
+(C:\Users\m\Documents\miktex\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count96
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\hyperref.cfg
+(C:\Users\m\Documents\miktex\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -167,7 +167,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count97
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\url\url.sty
+(C:\Users\m\Documents\miktex\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -192,19 +192,19 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\hpdftex.def
+(C:\Users\m\Documents\miktex\tex\latex\hyperref\hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count102
 \c@bookmark@seq@number=\count103
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\rerunfilecheck.sty
+(C:\Users\m\Documents\miktex\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
 )
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\float\float.sty
+(C:\Users\m\Documents\miktex\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count104
 \float@exts=\toks16
@@ -214,8 +214,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\User Manual.aux")
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\User Manual.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
@@ -230,8 +230,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
-
-(C:\Users\Duran\Documents\MikTex2.9\tex\context\base\supp-pdf.mkii
+ (C:\Users\m\Documents\miktex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen110
@@ -246,20 +245,20 @@ LaTeX Font Info:    ... okay on input line 27.
 \everyMPtoPDFconversion=\toks19
 )
 \AtBeginShipoutBox=\box33
- (C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\color.sty
+ (C:\Users\m\Documents\miktex\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\color.cfg
+(C:\Users\m\Documents\miktex\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
 Package hyperref Info: Link coloring ON on input line 27.
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\nameref.sty
+(C:\Users\m\Documents\miktex\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\gettitlestring.sty
+(C:\Users\m\Documents\miktex\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count111
@@ -268,20 +267,20 @@ LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\User Manual.out")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\User Manual.out")
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\User Manual.out")
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\User Manual.out")
 \@outlinefile=\write4
 
-<../GeneralImages/up-logo.jpg, id=31, 287.1528pt x 78.7743pt>
+<../GeneralImages/up-logo.jpg, id=51, 287.1528pt x 78.7743pt>
 File: ../GeneralImages/up-logo.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/up-logo.jpg>
 Package pdftex.def Info: ../GeneralImages/up-logo.jpg used on input line 35.
 (pdftex.def)             Requested size: 287.15208pt x 78.77411pt.
 
-<../GeneralImages/NTT.jpg, id=32, 963.6pt x 722.7pt>
+<../GeneralImages/NTT.jpg, id=52, 963.6pt x 722.7pt>
 File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/NTT.jpg>
@@ -295,12 +294,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 54.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Duran/Documents/
-GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C
-:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Gener
-alImages/NTT.jpg>]
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\User Manual.toc")
+{C:/Users/m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/m/Desk
+top/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C:/U
+sers/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/NTT.jpg
+>]
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\User Manual.toc")
 \tf@toc=\write5
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -310,41 +309,57 @@ l.116 \newpage
                [1
 
 ] [2]
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\Introduction/Introduction.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\Processes/Processes.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\Appendicies/Appendices.tex")
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\Index/Index.tex")
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\Introduction/Introduction.tex"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
 
-("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
-er Manual Doc\User Manual.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
+(C:\Users\m\Documents\miktex\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+)
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\Configuration/Config.tex" [3])
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\GettingStarted/GettingStarted.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+[4])
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\Appendicies/Appendices.tex")
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\Index/Index.tex")
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\User Manual.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `User*Manual.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 5211 strings out of 493921
- 79401 string characters out of 3144475
- 156226 words of memory out of 3000000
- 8444 multiletter control sequences out of 15000+200000
+ 5248 strings out of 493921
+ 79474 string characters out of 3147294
+ 157226 words of memory out of 3000000
+ 8463 multiletter control sequences out of 15000+200000
  9449 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,28p,243b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "User Manual.pdf" (4 pages, 142145 bytes).
+ 29i,6n,28p,1040b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
+ers/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/m/D
+ocuments/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/m/Documents/
+miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m/Documents/miktex/f
+onts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "User Manual.pdf" (6 pages, 163133 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 122 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
