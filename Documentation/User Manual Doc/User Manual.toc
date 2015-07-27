@@ -10,7 +10,12 @@
 \contentsline {subsection}{\numberline {2.2}Installation }{4}{subsection.0.2.2}
 \contentsline {section}{\numberline {3}Getting Started}{4}{section.0.3}
 \contentsline {subsection}{\numberline {3.1}Basic use}{4}{subsection.0.3.1}
-\contentsline {section}{\numberline {4}Appendices}{5}{section.0.4}
-\contentsline {subsection}{\numberline {4.1}OGAMA}{5}{subsection.0.4.1}
-\contentsline {subsection}{\numberline {4.2}EyeTribe}{5}{subsection.0.4.2}
-\contentsline {section}{\numberline {5}Index}{5}{section.0.5}
+\contentsline {section}{\numberline {4}Using the System}{5}{section.0.4}
+\contentsline {subsection}{\numberline {4.1}Starting the program}{5}{subsection.0.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Start a new project}{5}{subsubsection.0.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Open existing project}{5}{subsubsection.0.4.1.2}
+\contentsline {section}{\numberline {5}Troubleshooting}{6}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Basic use}{6}{subsection.0.5.1}
+\contentsline {section}{\numberline {6}Appendices}{6}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}EyeTribe}{6}{subsection.0.6.1}
+\contentsline {section}{\numberline {7}Index}{6}{section.0.7}
