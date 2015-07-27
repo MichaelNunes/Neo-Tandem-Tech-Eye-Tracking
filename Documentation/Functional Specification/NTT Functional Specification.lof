@@ -1,30 +1,38 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Heat Map Use Case}}{6}{figure.0.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Create Heat Map Activity}}{6}{figure.0.2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Create Heat Map Activity}}{7}{figure.0.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Read Heat Map Activity}}{7}{figure.0.3}
 \contentsline {figure}{\numberline {4}{\ignorespaces Save Heat Map Activity}}{8}{figure.0.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Save Heat Map Use Case}}{9}{figure.0.5}
 \contentsline {figure}{\numberline {6}{\ignorespaces Save on 2D Model Activity}}{9}{figure.0.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces Save on Video Model Activity}}{10}{figure.0.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Save on 3D Model Activity}}{11}{figure.0.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Models Use Case}}{11}{figure.0.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces 3D Models Use Case}}{12}{figure.0.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Import 3D Model Activity}}{12}{figure.0.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces View 3D Model Activity}}{13}{figure.0.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Export 3D Model Activity}}{13}{figure.0.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces 2D Models Use Case}}{13}{figure.0.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Import 2D Model Activity}}{14}{figure.0.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces View 2D Model Activity}}{14}{figure.0.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Export 2D Model Activity}}{15}{figure.0.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Video Models Use Case}}{15}{figure.0.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Import Video Model Activity}}{16}{figure.0.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces View Video Model Activity}}{16}{figure.0.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Export 3D Model Activity}}{16}{figure.0.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Raw Information Use Case}}{17}{figure.0.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Save Raw Information Activity}}{17}{figure.0.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Read Raw Information Activity}}{18}{figure.0.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces Statistics Use Case}}{18}{figure.0.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Create Statistics Activity}}{19}{figure.0.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Save Statistics Activity}}{19}{figure.0.27}
-\contentsline {figure}{\numberline {28}{\ignorespaces Record Eye Use Case}}{20}{figure.0.28}
-\contentsline {figure}{\numberline {29}{\ignorespaces Record Eye Activity}}{21}{figure.0.29}
-\contentsline {figure}{\numberline {30}{\ignorespaces Domain Model}}{24}{figure.0.30}
+\contentsline {figure}{\numberline {9}{\ignorespaces Gaze Point Use Case}}{11}{figure.0.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Create Gaze Point Map Activity}}{12}{figure.0.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Read Gaze Point Map Activity}}{13}{figure.0.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Save Gaze Point Map Activity}}{13}{figure.0.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Save Gaze Point Map Use Case}}{14}{figure.0.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Save on 2D Model Activity}}{14}{figure.0.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Save on Video Model Activity}}{15}{figure.0.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Save on 3D Model Activity}}{16}{figure.0.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Models Use Case}}{16}{figure.0.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces 3D Models Use Case}}{17}{figure.0.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Import 3D Model Activity}}{17}{figure.0.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces View 3D Model Activity}}{18}{figure.0.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Create 3D Model Images Activity}}{18}{figure.0.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces 2D Models Use Case}}{19}{figure.0.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Import 2D Model Activity}}{19}{figure.0.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces View 2D Model Activity}}{19}{figure.0.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces Export 2D Model Activity}}{20}{figure.0.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Video Models Use Case}}{20}{figure.0.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Import Video Model Activity}}{21}{figure.0.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces View Video Model Activity}}{21}{figure.0.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces Export 3D Model Activity}}{22}{figure.0.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Raw Information Use Case}}{22}{figure.0.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Save Raw Information Activity}}{23}{figure.0.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Read Raw Information Activity}}{23}{figure.0.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Statistics Use Case}}{24}{figure.0.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Create Statistics Activity}}{24}{figure.0.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Save Statistics Activity}}{25}{figure.0.35}
+\contentsline {figure}{\numberline {36}{\ignorespaces Record Eye Use Case}}{25}{figure.0.36}
+\contentsline {figure}{\numberline {37}{\ignorespaces Record Eye Activity}}{26}{figure.0.37}
+\contentsline {figure}{\numberline {38}{\ignorespaces Domain Model}}{30}{figure.0.38}
