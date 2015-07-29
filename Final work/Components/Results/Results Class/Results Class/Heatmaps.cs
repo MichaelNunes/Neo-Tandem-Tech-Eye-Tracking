@@ -194,18 +194,24 @@ namespace Results_Class
 
                 }
             }
-
-            for (int i = 0; i < dataFiles.Count; i++)
+            try
             {
-                OpenHeatmapData(SourceLocation, (ModelName + "" + i));
-                Bitmap bitmap = new Bitmap(width, height);
-                if (py.Count == 0 || px.Count == 0)
+                for (int i = 0; i < dataFiles.Count; i++)
                 {
-                    throw new ArgumentNullException();
-                }
+                    OpenHeatmapData(SourceLocation, (ModelName + "" + i));
+                    Bitmap bitmap = new Bitmap(width, height);
+                    if (py.Count == 0 || px.Count == 0)
+                    {
+                        throw new ArgumentNullException();
+                    }
 
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(SourceLocation + "\\" + ModelName + "" + (i+2) + ".Heatmap.jpg", ImageFormat.Jpeg);
+                    Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
+                    canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".Heatmap.jpg", ImageFormat.Jpeg);
+                }
+            }
+            catch(Exception ef)
+            {
+                return;
             }
         }
 
@@ -317,18 +323,24 @@ namespace Results_Class
                     
                 }
             }
-
-            for (int i = 0; i < dataFiles.Count; i++)
+            try
             {
-                OpenHeatmapData(SourceLocation, (ModelName + "" + i));
-                Bitmap bitmap = new Bitmap(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".jpg");
-                if (py.Count == 0 || px.Count == 0)
+                for (int i = 0; i < dataFiles.Count; i++)
                 {
-                    throw new ArgumentNullException();
-                }
+                    OpenHeatmapData(SourceLocation, (ModelName + "" + i));
+                    Bitmap bitmap = new Bitmap(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".jpg");
+                    if (py.Count == 0 || px.Count == 0)
+                    {
+                        throw new ArgumentNullException();
+                    }
 
-                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
-                canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".Heated.jpg", ImageFormat.Jpeg);
+                    Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, px.ToArray(), py.ToArray());
+                    canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".Heated.jpg", ImageFormat.Jpeg);
+                }
+            }
+            catch(Exception er)
+            {
+                return;
             }
         }
 

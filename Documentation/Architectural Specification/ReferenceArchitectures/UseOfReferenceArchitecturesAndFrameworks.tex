@@ -1,25 +1,26 @@
-The application will be coded in C# and thus we will be using the relevant architectures and frameworks to create this application.
+The application will be coded in C\# and thus we will be using the relevant architectures and frameworks to create this application.
 
 \subsubsection{.Net Framework version 4}
 \begin{flushleft}
-	This framework was developed by Microsoft and is an integral part in C# development, as it forms the basis of the language and its capabilities.
+	This framework was developed by Microsoft and is an integral part in C\# development, as it forms the basis of the language and its capabilities. All our core functionality is written around functionality designed and provided by this framework.
 \end{flushleft}
 
 \subsubsection{NUnit}
 \begin{flushleft}
-This is a unit testing framework developed for all .Net languages, and in turn takes advantage of a lot of the languages capabilities.
-\end{flushleft}
-
-\subsubsection{NInject}
-\begin{flushleft}
+This is a unit testing framework developed for all .Net languages, and in turn takes advantage of a lot of the languages capabilities. This will allow us to create tests and run them on specific functions without having to run the full application to test functionality. This is beneficial in that we can test functions before finally integrating them in to the final system.
 \end{flushleft}
 
 \subsubsection{Eye Tribe SDK}
 \begin{flushleft}
-This forms the basis of our application as this provides the ability to record and interpret where the user is looking and feed real time information that can then be used to build heatmaps and statistics.
+This forms the basis of our application as this provides the ability to record and interpret where the user is looking and feed real time information that can then be used to build heat-maps and statistics.
 \end{flushleft}
 
 \subsubsection{HeatMap.NET}
 \begin{flushleft}
-This provides the functionality to build heatmaps based on information that is fed to the module.
+This provides the functionality to build heat-maps based on information that is fed to the module. Information provided to this heat-map module will be that of the recorded eye tracking data which will create the physical heat-maps for the users.
+\end{flushleft}
+
+\subsubsection{aForge.NET}
+\begin{flushleft}
+This library provides us with in depth media options especially with regards to the video media type, allowing us to be able to get almost all meta-data from an imported video as well as take the imported video and split it into a frame per second image library to which our heat-maps can be applied. It also provides the functionality to create videos out of these newly created images.
 \end{flushleft}

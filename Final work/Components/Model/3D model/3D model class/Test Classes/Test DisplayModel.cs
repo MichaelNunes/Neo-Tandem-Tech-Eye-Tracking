@@ -35,7 +35,7 @@ namespace DisplayModel.Test_Classes
     {
         #region Fields
         private DisplayModel Display;
-        private string[] args = { @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Susan.obj", @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\" };
+        private string[] args = { @"C:\Users\Duran\Desktop\NTT tests\Objects\Susan.obj", @"C:\Users\Duran\Desktop\NTT tests\Objects\TestImages\" };
         #endregion
 
         #region Setup
@@ -52,7 +52,7 @@ namespace DisplayModel.Test_Classes
         public void TestScreenshotSuccess()
         {
             for (int i = 1; i < 12; ++i)
-                Assert.True(File.Exists(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\view"+i+".jpg"));
+                Assert.True(File.Exists(@"C:\Users\Duran\Desktop\NTT tests\Objects\TestImages\view" + i + ".jpg"));
         }
         #endregion
     }

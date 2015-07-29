@@ -15,7 +15,7 @@ namespace Video_Model
         VideoGenerator vg;
 
         string imagesDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Images\";
-        string videosDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Videos\";
+        string videosDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Video\";
         string testVideo = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
 
         [SetUp]
@@ -29,9 +29,11 @@ namespace Video_Model
         [Test]
         public void createVideo()
         {
+            vg.DestinationPath = vg.ModelName;
+            vg.ModelName = "";
             vg.createVideo();
 
-            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Videos\UnitTestVideo.wmv"));
+            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Video\UnitTestVideo.wmv"));
          
         }
 

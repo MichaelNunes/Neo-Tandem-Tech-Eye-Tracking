@@ -36,3 +36,4 @@ C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Compone
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\obj\x86\Debug\DisplayModel.csprojResolveAssemblyReference.cache
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\obj\x86\Debug\DisplayModel.dll
 C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\obj\x86\Debug\DisplayModel.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\obj\x86\Debug\DisplayModel.csprojResolveAssemblyReference.cache
