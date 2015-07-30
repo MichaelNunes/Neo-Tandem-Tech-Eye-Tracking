@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  29 JUL 2015 14:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  30 JUL 2015 06:55
 entering extended mode
 **NTT*Architectural*Requirements.tex
 
@@ -274,14 +274,14 @@ chitectural Specification\NTT Architectural Requirements.out")
 chitectural Specification\NTT Architectural Requirements.out")
 \@outlinefile=\write4
 
-<../GeneralImages/up-logo.jpg, id=95, 287.1528pt x 78.7743pt>
+<../GeneralImages/up-logo.jpg, id=107, 287.1528pt x 78.7743pt>
 File: ../GeneralImages/up-logo.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/up-logo.jpg>
 Package pdftex.def Info: ../GeneralImages/up-logo.jpg used on input line 35.
 (pdftex.def)             Requested size: 287.15208pt x 78.77411pt.
 
-<../GeneralImages/NTT.jpg, id=96, 963.6pt x 722.7pt>
+<../GeneralImages/NTT.jpg, id=108, 963.6pt x 722.7pt>
 File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/NTT.jpg>
@@ -355,22 +355,25 @@ changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 5300 strings out of 493921
- 82979 string characters out of 3144475
- 159228 words of memory out of 3000000
- 8475 multiletter control sequences out of 15000+200000
+ 5303 strings out of 493921
+ 83033 string characters out of 3144475
+ 160228 words of memory out of 3000000
+ 8478 multiletter control sequences out of 15000+200000
  9750 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,28p,825b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Architectural Requirements.pdf" (13 pages, 192883 bytes)
+ 29i,6n,28p,875b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsection.0.2.4} has been referenced but does no
+t exist, replaced by a fixed one
+
+<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "NTT Architectural Requirements.pdf" (13 pages, 193859 bytes)
 .
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
+ 239 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 219 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -14,13 +14,12 @@
 \BOOKMARK [2][-]{subsection.0.2.1}{Singleton}{section.0.2}% 14
 \BOOKMARK [2][-]{subsection.0.2.2}{Extensibility pattern}{section.0.2}% 15
 \BOOKMARK [2][-]{subsection.0.2.3}{Flyweight}{section.0.2}% 16
-\BOOKMARK [2][-]{subsection.0.2.4}{Model-View-Controller}{section.0.2}% 17
-\BOOKMARK [1][-]{section.0.3}{Architectural tactics or strategies}{}% 18
-\BOOKMARK [2][-]{subsection.0.3.1}{Availability}{section.0.3}% 19
-\BOOKMARK [2][-]{subsection.0.3.2}{Scalability}{section.0.3}% 20
-\BOOKMARK [2][-]{subsection.0.3.3}{Performance}{section.0.3}% 21
-\BOOKMARK [2][-]{subsection.0.3.4}{Security}{section.0.3}% 22
-\BOOKMARK [2][-]{subsection.0.3.5}{Testability}{section.0.3}% 23
-\BOOKMARK [2][-]{subsection.0.3.6}{Usability}{section.0.3}% 24
-\BOOKMARK [1][-]{section.0.4}{Use of reference architectures and frameworks}{}% 25
-\BOOKMARK [1][-]{section.0.5}{Technologies}{}% 26
+\BOOKMARK [1][-]{section.0.3}{Architectural tactics or strategies}{}% 17
+\BOOKMARK [2][-]{subsection.0.3.1}{Availability}{section.0.3}% 18
+\BOOKMARK [2][-]{subsection.0.3.2}{Scalability}{section.0.3}% 19
+\BOOKMARK [2][-]{subsection.0.3.3}{Performance}{section.0.3}% 20
+\BOOKMARK [2][-]{subsection.0.3.4}{Security}{section.0.3}% 21
+\BOOKMARK [2][-]{subsection.0.3.5}{Testability}{section.0.3}% 22
+\BOOKMARK [2][-]{subsection.0.3.6}{Usability}{section.0.3}% 23
+\BOOKMARK [1][-]{section.0.4}{Use of reference architectures and frameworks}{}% 24
+\BOOKMARK [1][-]{section.0.5}{Technologies}{}% 25
