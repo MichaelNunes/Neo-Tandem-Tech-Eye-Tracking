@@ -75,6 +75,7 @@ namespace NTT_Eyetracking
                 if (fullscreen == true)
                 {
                     m._recording = false;
+                    m.saveToFile();
                     m.close();
                     button1.Visible = true;
                     button2.Visible = true;

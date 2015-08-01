@@ -104,7 +104,11 @@ namespace Video_Model
             {
                 if(file.Extension == ".jpg")
                 {
-                    file.Delete();
+                    try
+                    {
+                        file.Delete();
+                    }
+                    catch (Exception ef) { }
                 }                
             }
         }
