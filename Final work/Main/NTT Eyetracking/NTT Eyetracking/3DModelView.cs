@@ -97,7 +97,11 @@ namespace NTT_Eyetracking
             {
                 timer1.Stop();
                 m._recording = false;
+                m.saveToFile();
                 m.close();
+
+                ProcessDialogKey(Keys.Escape);
+
                 Heatmaps hm = new Heatmaps("view", globals.currentRecordingpath, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, "gugiog");
                 hm.SaveHeatmap3D();
                 hm.SaveHeatmapOntoModel3D();
@@ -105,6 +109,7 @@ namespace NTT_Eyetracking
             else
             {
                 m._recording = false;
+                m.saveToFile();
                 m.close();
                 pictureBox1.ImageLocation = imglocation[counters];
                 m = new Record(globals.currentRecordingpath + @"\", "view" + counters);

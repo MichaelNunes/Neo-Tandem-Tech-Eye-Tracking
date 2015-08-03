@@ -13,8 +13,7 @@ namespace Record_Class
     {
         [Test]
         public void TestRecording()
-        {
-            
+        {            
             Record record1 = new Record(@"C:\Users\Public\", "ModelOne");
             //throw new Exception("dsfdsddsdfd");
 
@@ -26,8 +25,7 @@ namespace Record_Class
             record1._recording = false;
             Assert.AreEqual(false, record1._recording);
             record1.saveToFile();
-            record1.close();
-            
+            record1.close();            
         }
 
         [Test]

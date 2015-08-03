@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  27 JUL 2015 21:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  31 JUL 2015 06:31
 entering extended mode
 **NTT*Functional*Specification.tex
 
@@ -976,13 +976,13 @@ nctional Specification\RequiredFunctionality/RequiredFunctionality.tex"
 [27]) [28] [29]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
 nctional Specification\DomainModel/DomainModel.tex"
-<Diagrams/Class_Diagram__DomainModel.png, id=387, 794.97pt x 591.20876pt>
+<Diagrams/Class_Diagram__DomainModel.png, id=387, 554.07pt x 466.74374pt>
 File: Diagrams/Class_Diagram__DomainModel.png Graphic file (type png)
 
 <use Diagrams/Class_Diagram__DomainModel.png>
 Package pdftex.def Info: Diagrams/Class_Diagram__DomainModel.png used on input 
 line 3.
-(pdftex.def)             Requested size: 397.48402pt x 295.60365pt.
+(pdftex.def)             Requested size: 277.03432pt x 233.37129pt.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
  [30pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
@@ -1018,7 +1018,7 @@ Here is how much of TeX's memory you used:
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Functional Specification.pdf" (31 pages, 808003 bytes).
+Output written on "NTT Functional Specification.pdf" (31 pages, 807697 bytes).
 PDF statistics:
  438 PDF objects out of 1000 (max. 8388607)
  125 named destinations out of 1000 (max. 500000)

@@ -44,11 +44,13 @@ namespace Record_Class
         }
 
         public void OnGazeUpdate(GazeData gazeData)
-        {
-             
-
-            
-            if (!recording) return;
+        {            
+            if (!recording)
+            {
+                saveToFile();
+                return;
+            }
+                
             //throw new Exception();
 
             // start or stop tracking lost animation
@@ -68,8 +70,7 @@ namespace Record_Class
 
             arrayData.Add((X + ":" + Y).ToString());
             float m = (float)X;
-            Console.WriteLine(m );
-            saveToFile();
+            Console.WriteLine(m);
         }
 
         public void saveToFile()

@@ -18,18 +18,19 @@
 \contentsline {subsection}{\numberline {1.10}Version Control Management}{7}{subsection.0.1.10}
 \contentsline {subsection}{\numberline {1.11}Development Environment}{7}{subsection.0.1.11}
 \contentsline {section}{\numberline {2}Architectural patterns or styles}{7}{section.0.2}
-\contentsline {subsection}{\numberline {2.1}Model-View-Controller}{7}{subsection.0.2.1}
-\contentsline {section}{\numberline {3}Architectural tactics or strategies}{7}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Availability}{7}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Modifiablity}{8}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Performance}{8}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Security}{8}{subsection.0.3.4}
-\contentsline {subsection}{\numberline {3.5}Testability}{8}{subsection.0.3.5}
-\contentsline {subsection}{\numberline {3.6}Usability}{8}{subsection.0.3.6}
-\contentsline {section}{\numberline {4}Use of reference architectures and frameworks}{9}{section.0.4}
-\contentsline {subsubsection}{\numberline {4.0.1}.Net Framework version 4}{9}{subsubsection.0.4.0.1}
-\contentsline {subsubsection}{\numberline {4.0.2}NUnit}{9}{subsubsection.0.4.0.2}
-\contentsline {subsubsection}{\numberline {4.0.3}Eye Tribe SDK}{9}{subsubsection.0.4.0.3}
-\contentsline {subsubsection}{\numberline {4.0.4}HeatMap.NET}{9}{subsubsection.0.4.0.4}
-\contentsline {subsubsection}{\numberline {4.0.5}aForge.NET}{9}{subsubsection.0.4.0.5}
-\contentsline {section}{\numberline {5}Technologies}{9}{section.0.5}
+\contentsline {subsection}{\numberline {2.1}Singleton}{7}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Flyweight}{7}{subsection.0.2.2}
+\contentsline {section}{\numberline {3}Architectural tactics or strategies}{8}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Availability}{8}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Scalability}{9}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Performance}{9}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Security}{9}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Testability}{9}{subsection.0.3.5}
+\contentsline {subsection}{\numberline {3.6}Usability}{9}{subsection.0.3.6}
+\contentsline {section}{\numberline {4}Use of reference architectures and frameworks}{10}{section.0.4}
+\contentsline {subsubsection}{\numberline {4.0.1}.Net Framework version 4}{10}{subsubsection.0.4.0.1}
+\contentsline {subsubsection}{\numberline {4.0.2}NUnit}{10}{subsubsection.0.4.0.2}
+\contentsline {subsubsection}{\numberline {4.0.3}Eye Tribe SDK}{10}{subsubsection.0.4.0.3}
+\contentsline {subsubsection}{\numberline {4.0.4}HeatMap.NET}{10}{subsubsection.0.4.0.4}
+\contentsline {subsubsection}{\numberline {4.0.5}aForge.NET}{10}{subsubsection.0.4.0.5}
+\contentsline {section}{\numberline {5}Technologies}{11}{section.0.5}
