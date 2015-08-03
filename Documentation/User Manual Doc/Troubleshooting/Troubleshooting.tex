@@ -1,27 +1,31 @@
-\iffalse
-\subsection{Eye tracking on 3D models and videos}
-The eye tracking is done with the eye-tribe camera.The camera tracks gaze and eye movements of the user looking at the medium.The tracking of the eye on 3D model and video is not the same as if it were on a static medium such as a image or a sideshow.The user will select the 3D model or video that they eye tracking must be performed on.The user will then begin the eye-tracking and then they application will record the information.
+This section of the user manual is dedicated to showing the errors that can occur on the system.This will also provide possible solutions to problems that you may encounter.Please note that the currently the program is not finished and the accompanying user manual is also not yet complete.This will be updated as the system is developed.\\
 
-\subsection{Creation of heat maps from eye-tracking}
-The creation of the heat map will use the data collected from the eye tracking and then generate a heat map based on the media type.This can easily be done by clicking the "generate heat map" or it can be set to automatically do so in the settings.
-\subsubsection{Converting raw information into heat map compatible information}
-The information collected from the eye tracker will need to be converted to the correct format so that the OGAMA module can then use to create the heat map.
-\subsubsection{Generation of heat map}
-The generation of the heat map is handled by the OGAMA module.The module will take in the converted information and then create a heat map.
-\subsection{Saving heat map on specific media}
-The heat map that is created will be able to be applied to the media that it was created for.This is done after the heat map is created.This feature will allow the user to save a copy of the heat map over the media of choice.The user needs to select the media object and click on the save with heat map overlay to save the item.
-\subsubsection{Duplicating the media}
-In order to apply the overlay the media needs to be duplicated as to not overwrite the file used in the eye tracking process.Thus the duplication of the media has to occur.
-\subsubsection{Applying heat map to media and Saving}
-Once the duplication of the media is complete the over lay needs to be applied to it and needs to be viewable when the media is viewed.The user will be prompted to save the newly created media object into the directory of their choosing.
-\subsection{Creating Statistics on information gathered}
-The user at any time can generate stats on the  media that was tracked.This action will produce a document that can be saved or printed and will allow the user to view stats suched as most view sections and also average time spent looking at sections of the media.
+The system is split into many subsections.This section will also be split to ensure you are able to file what you need.
 
-The program is made to run with as little configuration as possible.There are no authentication processes that are associated with the program.The user will be able to just run the application and use it if the minimum requirements have been met.
-
-\subsection{Basic use}
-Once the application is run the user will be presented with a screen which will allow them to select the option to start a new recording session or use a previously created session.A new form will pop up with options to navigate to different sections of the application.The calibration button will navigate to the calibration page will allow the setup of the EyeTribe eye camera.This form will allow you to calibrate the camera to ensure that the data recorded is correct.The calibration process will be discussed further in section ... .The recording button on the main page will open the recording set up.This page will allow the user to select the type of recording which will then take them to the appropriate pages to do the recording.The recording the page will allow for recording on the selected media.You would select the appropriate media and then start the recording.The data will then be saved and then used to make the heatmaps and all the associated files.\newline
-
-The application can be exited easily by just pressing the exit button(red cross) on the top right of the application.This will end the application and end all its accompanied processes.This will ensure that the application does not cause harm to the computer.
-\fi
-
+\subsection{Start screen}
+\subsubsection{String is not a path}
+This error occurs when starting a new recording project and the path in the path textbox does not follow path structure.The program will not continue if this error occurs.
+This can be fixed by ensuring that the text inside is a actual path such as: C:/User/MyPath.
+\subsubsection{The path does not exist}
+The following error occurs when the path that is selected no longer exists on the computer.This can be fixed by doing on of two things:\\
+\begin{enumerate}
+\item Ensuring that the path specified is correct.
+\item Creating the file path to match the selection. 
+\end{enumerate}
+Any one of these solutions can help fix the problem and allow the program to continue.
+\subsection{Calibration screen}
+\subsubsection{Could not find EyetribeWinUI.exe}
+The program requires that the Eye-tribe software be installed on the system.This error occures when the software is not found on the system.\\
+The solution is simply to install the software which can be found on the Eye-tribe website when you have purchased the camera.
+\subsection{Recording setup screen}
+\subsubsection{Name has invalid characters}
+This error occurs when the name for the recording contains invalid characters.These characters need to be alphanumeric and can not contain any symbols.//
+The solution is to simply use only alphanumeric numbers and not symbols.
+\subsection{General recording errors}
+\subsubsection{Could not find [insert path and name].txt}
+When a recording has been completed and this error is shown it means that the file that stores the data was never created so it can not create heatmaps for the specific media type.This error can occur due to multiple factors.\\
+\begin{itemize}
+\item The eye tracking camera was not connected or was not calibrated correctly.
+\item The eye tracking camera was connected to a USB 2 port.
+\end{itemize}
+The solution would simply be to check that the Eye-tribe is connected to the computer properly and also that it is connected to a USB 3 port.

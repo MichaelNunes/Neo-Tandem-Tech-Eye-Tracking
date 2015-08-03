@@ -43,9 +43,10 @@ namespace NTT_Eyetracking
             button4.Visible = false;
             axWindowsMediaPlayer2.Visible = false;
             axWindowsMediaPlayer1.Dock = DockStyle.Fill;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
             m = new Record(globals.currentRecordingpath + @"\", name);
             m._recording = true ;
-            axWindowsMediaPlayer1.Ctlcontrols.play();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
