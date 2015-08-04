@@ -8,16 +8,15 @@
 
 \subsubsection{Scalability}
 \begin{flushleft}
-The requirements for scalability in the program are that the storage of all the data will forever expand with the more uses of the program.This means that the longer you have the system the more data it will take up,This then states that we nee to ensure that later on the space will not impact on the users performance.The program itself can also grow in terms of features.This means that a developer can extend system by adding a new feature.
+The requirements for scalability in the program are that the storage of all the data will forever expand with the more uses of the program. This means that the longer you have the system the more data it will take up,This then states that we need to ensure that later on the space will not impact on the users performance.The program itself can also grow in terms of features.This means that a developer can extend system by adding a new feature.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Compression}:compression of the files will allow more files to be stored on a hard drive.This can lead to greater scalability and improve space management.
+\item{Compression}: Compression of the files will allow more files to be stored on a hard drive.This can lead to greater scalability and improve space management.
 \end{itemize}
 
-\item{Integration} :
-The integration of scalability in our system will allow the users to decide where the files that are written will be saved.This will enable them to save the files to hardrives as time with the system goes on.This allows the user to expand their storage capacity.
-The system is also created in a way that everything is a module/component.The program allows for new modules to be created and then added.This encourages the growth of the system from the start as new and better components can be added.
+\item{Integration}: The integration of scalability in our system will allow the users to decide where the files that are written will be saved. This will enable them to save the files to hard-drives as time with the system goes on.This allows the user to expand their storage capacity. \\
+The system is also created in a way that everything is a module/component. The program allows for new modules to be created and then added. This encourages the growth of the system from the start as new and better components can be added.
 \end{itemize}
 
 \end{flushleft}
@@ -26,42 +25,40 @@ The system is also created in a way that everything is a module/component.The pr
 \begin{flushleft}
 Performance of the system is key as the system is constantly reading in data as the eye is being tracked so the performance needs to be optimized so that the tracking of the eye does not stutter and then incorrectly track the eye.The system also needs to perform well and not cause issues when it is run.
 \begin{itemize}
-\item{Tactics and strategies}
+\item{Tactics and strategies}:
 \begin{itemize}
-\item{Thread pooling}:this will allow us to spread the work load across threads so that they can run concurrently and reduce bottlenecks.this also allows us to optimize how we can use the hardware so that we use it to its maximum potential.
+\item{Thread pooling}: this will allow us to spread the work load across threads so that they can run concurrently and reduce bottlenecks. This also allows us to optimize how we can use the hardware so that we use it to its maximum potential. The Eye Tribe SDK handles threading that is related to eye tracking by creating separate threads for gaze listeners.
 \end{itemize}
 
-\item{Integration} :
-The system will be able to run the server that will store the data to run concurrently with the eyetracking function.Each of these is run on a thread and this allows them to run at the same time so all the data is collected in real time and the performance is optimized.\\
+\item{Integration}: The system will be able to run the server that will get gaze data to run concurrently with the eye tracking function.Each of these is run on a thread and this allows them to run at the same time so all the data is collected in real time and the performance is optimized.\\
 The system is spread into components which means that each component is responsible for a task and this increases performance as there are not waiting processes.
 \end{itemize}
 
 \end{flushleft}
 		
-\subsubsection{Maintanability}
+\subsubsection{Maintainability}
 \begin{flushleft}
-The system will need to be maintained over time as new technologies are introduced.The system is component based wich makes maintainability easier as the components need to be maintained and not the entire system.Maintainability allows a program to be kept up-to-date.Changes in eye tracking is a common thing so we expect new changes to occur frequently.
+The system will need to be maintained over time as new technologies are introduced.The system is component based which makes maintainability easier as the components need to be maintained and not the entire system.Maintainability allows a program to be kept up-to-date.Changes in eye tracking is a common thing so we expect new changes to occur frequently.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Removal of Faulty Components} :This allows us to remove components that are no longer working in the system and then replace them with a newer version of them all and if needs be a whole new type of component.
-\item{Deadlock Detection} :The detection of deadlock is important and if a deadlock occurs could harm your system.This is important as detecting a deadlock can also then determine if the component is faulty.
+\item{Removal of Faulty Components}: This allows us to remove components that are no longer working in the system and then replace them with a newer version of them all and if needs be a whole new type of component.
+\item{Deadlock Detection}: The detection of deadlock is important and if a deadlock occurs could harm your system.This is important as detecting a deadlock can also then determine if the component is faulty.
 \end{itemize}
 
-\item{Integration} :
-The system is component based so removing and maintaining the system is made easier.If we know that a certain part of the system is causing a problem such as deadlock or is faulty in any other way we can then  decide to remove that component and fix it or add a new system.This way changes are made to a component and not the whole system.
+\item{Integration}: The system is component based so removing and maintaining the system is made easier.If we know that a certain part of the system is causing a problem such as deadlock or is faulty in any other way we can then  decide to remove that component and fix it or add a new system. This way changes are made to a component and not the whole system.
 \end{itemize}
 
 \end{flushleft}
 		
 \subsubsection{Reliability and Availability}	
 \begin{flushleft}
-Reliability and Availability are important in this system.The server which is used for capturing the data needs to constantly be available to the program so that data can be read.The program also needs to be reliable and gather the information correctly.The collection of incorrect data can cause mishaps with the system.The system as a whole needs to be running and not crash and fail.
+Reliability and Availability are important in this system.The server which is used for capturing the data needs to constantly be available to the program so that data can be read.The program also needs to be reliable and gather the information correctly. The collection of incorrect data can cause mishaps with the system.The system as a whole needs to be running and not crash and fail.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Load Balancing} :By balancing the work load we can ensure that a system can continuously run and not have a crash.This call also cause services to constantly be available such as the server.
-\item{Removal of Faulty Components} :The removing of faulty components allows us to increase the reliability of the system by removing the cause of the unreliability.
+\item{Load Balancing}: By balancing the work load we can ensure that a system can continuously run and not have a crash. This call also cause services to constantly be available such as the server.
+\item{Removal of Faulty Components}: The removing of faulty components allows us to increase the reliability of the system by removing the cause of the unreliability.
 \end{itemize}
 
 \item{Integration} :
@@ -72,48 +69,45 @@ The load balancing can be achieved by separating the specific tasks into differe
 		
 \subsubsection{Security}	
 \begin{flushleft}
-The system is connected to the server and this can lead to a security threat as the connection can be compromised and allow an attack on a user.This is a security concern as the system can be indirectly used to harm the user of the system.
+The system is connected to the server and this can lead to a security threat as the connection can be compromised and allow an attack on a user. This is a security concern as the system can be indirectly used to harm the user of the system.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Request/Connection Dropping} :Dropping the connection to the server can then reduce the risk of a users security to be compromised and thus increasing security.The system must also be secure as not to harm the hardware itself and to also not damage any accompanying hardware such as the eye tracker.The tracker can also be used by a malicious user to spy on the systems users.
+\item{Request/Connection Dropping}: Dropping the connection to the server can then reduce the risk of a users security to be compromised and thus increasing security. The system must also be secure as not to harm the hardware itself and to also not damage any accompanying hardware such as the eye tracker. The tracker can also be used by a malicious user to spy on the systems users.
 
 \end{itemize}
 
-\item{Integration} :
-When the system no longer needs to use the the server to get the data the system must cut the connection to the server and then restart the connection once the server will start connecting once more to the server.This reduces the risk of the channel being used by someone malicious and harming the users of the system.
+\item{Integration}: When the system no longer needs to use the the server to get the data the system must cut the connection to the server and then restart the connection once the server will start connecting once more to the server. This reduces the risk of the channel being used by someone malicious and harming the users of the system.
 \end{itemize}
 
 \end{flushleft}	
 
 \subsubsection{Usability}
 \begin{flushleft}
-When a user needs the system it will need to be usable,in other words the program should allow the user to explore all the features of the system and be able to use them all.
+When a user needs the system it will need to be usable, in other words the program should allow the user to explore all the features of the system and be able to use them all.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Contracts based decoupling} :The system is decoupled by dividing the system into a set of contracts that each have its specification and have its pre and post conditions.This allows the system to be easily decoupled.
+\item{Contracts based decoupling}: The system is decoupled by dividing the system into a set of contracts that each have its specification and have its pre- and post-conditions. This allows the system to be easily decoupled.
 
 \end{itemize}
 
-\item{Integration} :
-The contracts created are used to make the system in to components which allows new contracts to be created as the system develops and there is no tight coupling amongst all the components hence there is no reliance on them.
+\item{Integration}: The contracts created are used to make the system in to components which allows new contracts to be created as the system develops and there is no tight coupling amongst all the components hence there is no reliance on them.
 \end{itemize}
 
 \end{flushleft}
 		
-\subsubsection{Testablity and Integrability}
+\subsubsection{Testability and Integrability}
 \begin{flushleft}
-The system is quite a large system and the testing would need to be done on every aspect of the system this would mean that the system would need to have testing done all over.The system also needs to be integrated with all the systems components and this would mean that the system would need a high level of integration.
+The system is quite a large system and the testing would need to be done on every aspect of the system this would mean that the system would need to have testing done all over. The system also needs to be integrated with all the systems components and this would mean that the system would need a high level of integration.
 \begin{itemize}
 \item{Tactics and strategies}
 \begin{itemize}
-\item{Layering} :this will allow each component to be comprised of a layer and this leyer can then be changed or removed.This allows good integration in the components.
+\item{Layering}: This will allow each component to be comprised of a layer and this layer can then be changed or removed. This allows good integration in the components.
 
 \end{itemize}
 
-\item{Integration} :
-Each layer will have a set of components and these components can be changed and then integrated easily with the layers that are next to them.This allows the system to ave easy integration and allos changes to the system not effect the integration.The testing is made easy with each component allowed to be tested on individually so that the integration can be done seamlessly.
+\item{Integration}: Each layer will have a set of components and these components can be changed and then integrated easily with the layers that are next to them. This allows the system to ave easy integration and allows changes to the system not effect the integration.The testing is made easy with each component allowed to be tested on individually so that the integration can be done seamlessly.
 \end{itemize}
 
 \end{flushleft}

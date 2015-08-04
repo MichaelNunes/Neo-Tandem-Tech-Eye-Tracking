@@ -8,53 +8,49 @@ namespace Video_Model
     [TestFixture]
     public class Class1
     {
-        VideoGenerator vMaker;
-        ImageGenerator iMaker;
+        //VideoGenerator vMaker;
+        //ImageGenerator iMaker;
+
+        ImageGenerator ig;
+        VideoGenerator vg;
+
+        string imagesDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Images\";
+        string videosDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Video\";
+        string testVideo = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
 
         [SetUp]
         public void Init()
         {
-            vMaker = new VideoGenerator();
+            ig = new ImageGenerator(testVideo, imagesDir);
 
-            vMaker.ImagePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\images";
-            vMaker.ModelName = "TestVideoModel";
-            vMaker.FrameWidth = 720;
-            vMaker.FrameHeight = 480;
-            vMaker.Fps = 27;
-
-            iMaker = new ImageGenerator();
-            iMaker.VideoPath = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
+            vg = new VideoGenerator(imagesDir, videosDir + "UnitTestVideo", 1280, 720, 30);
         }
 
         [Test]
         public void createVideo()
         {
-            vMaker.createVideo();
-            Assert.AreEqual(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model Test\images", vMaker.ImagePath);
-            Assert.AreEqual("TestVideoModel", vMaker.ModelName);
-            Assert.AreEqual(720, vMaker.FrameWidth);
-            Assert.AreEqual(480, vMaker.FrameHeight);
-            Assert.AreEqual(27, vMaker.Fps);
-            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\" + vMaker.ModelName + ".wmv"));
+            vg.DestinationPath = vg.ModelName;
+            vg.ModelName = "";
+            vg.createVideo();
+
+            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Video\UnitTestVideo.wmv"));
+         
         }
 
         [Test]
         public void createImages()
         {
-            iMaker.createImages();
-            Assert.AreEqual(@"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv", iMaker.VideoPath);
-            Assert.AreEqual(@"C:\Users\Public\Pictures\Sample Pictures", iMaker.DestinationPath);
-            Assert.AreEqual(664, iMaker.ImageWidth);
-            Assert.AreEqual(246, iMaker.ImageHeight);
-            Assert.AreEqual(16, iMaker.BitCount);
-            Assert.AreEqual(30, iMaker.Ips);
+            int imageCount = ig.createImages();
+
+            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Images\frame0.jpg"));
         }
 
         [Test]
         public void deleteImages()
         {
-            iMaker.deleteImages();
-            Assert.IsTrue(!File.Exists(@"C:\Users\Public\Pictures\Sample Pictures\frame0.jpg"));
+            ig.deleteImages();
+
+            Assert.IsFalse(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Images\frame0.jpg"));
         }
 
     }

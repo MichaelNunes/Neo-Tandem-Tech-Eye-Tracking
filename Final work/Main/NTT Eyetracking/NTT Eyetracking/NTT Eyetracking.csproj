@@ -32,6 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="2D Model">
+      <HintPath>..\..\..\Components\Model\2D Model\2D Model\bin\Debug\2D Model.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="DisplayModel">
+      <HintPath>..\..\..\Components\Model\3D model\3D model class\bin\Debug\DisplayModel.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -51,8 +61,12 @@
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Results">
-      <HintPath>..\..\..\Components\Results\Results\Results\bin\Debug\Results.exe</HintPath>
+    <Reference Include="Record_Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Record\Record_Class\Record_Class\bin\Debug\Record_Class.dll</HintPath>
+    </Reference>
+    <Reference Include="Results Class">
+      <HintPath>..\..\..\Components\Results\Results Class\Results Class\bin\Debug\Results Class.dll</HintPath>
     </Reference>
     <Reference Include="Settings Class">
       <HintPath>..\..\..\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.dll</HintPath>
@@ -68,6 +82,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TETCSharpClient">
+      <HintPath>..\..\..\Components\External Packages\TETCSharpClient.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2DModelView.cs">
@@ -82,6 +99,7 @@
     <Compile Include="3DModelView.Designer.cs">
       <DependentUpon>3DModelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bindings.cs" />
     <Compile Include="Calibration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +135,12 @@
     <Compile Include="VideoView.Designer.cs">
       <DependentUpon>VideoView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="2DModelView.resx">
+      <DependentUpon>2DModelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3DModelView.resx">
+      <DependentUpon>3DModelView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calibration.resx">
       <DependentUpon>Calibration.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +162,9 @@
     <EmbeddedResource Include="RecordingSetup.resx">
       <DependentUpon>RecordingSetup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VideoView.resx">
+      <DependentUpon>VideoView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +181,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

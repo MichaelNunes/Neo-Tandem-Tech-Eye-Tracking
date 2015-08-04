@@ -5,7 +5,7 @@ Because of the way in which the system will work, all aspects of the systems wil
 
 Checkpoints will be saved in order to roll back in the event of errors.
 
-\subsection{Modifiablity}
+\subsection{Scalability}
 This refers to time and cost relating to development, changes, and testing of the system.
 
 The MVC pattern allows us to separate concerns of the system allowing for finer grain implementation and changes to its inner working. This will also allow for potential changes to be "plugged in" if required.
@@ -15,7 +15,7 @@ This is also means that testing will be easy as each section simply needs to tes
 \subsection{Performance}
 This refers to the speed of execution, the time between a request and a response between modules within the system.
 
-In order to simplify the subsystems, any optimised, pre-made algorithms that can help with their executions will be used. As few as possible intermediaries will be used.
+In order to simplify the subsystems, any optimised, pre-made algorithms that can help with their executions will be used. As few as possible intermediaries will be used. Concurrency will also be used in sections to ensure speed of generation when it comes to creating heat maps.
 
 \subsection{Security}
 This refers to the safety of the data that the system will be used.
@@ -30,4 +30,4 @@ During each build release, all test cases used in the subsystems unit tests, wil
 \subsection{Usability}
 This refers to the ease of use the user will have with regards to the system.
 
-Since the system will be doing most of the work, the user will only be provided with a very simple interface to interact with the basic functions i.e record screen, print to texture.
+Since the system will be doing most of the work, the user will only be provided with a very simple interface to interact with the basic functions i.e. record screen, print to texture.

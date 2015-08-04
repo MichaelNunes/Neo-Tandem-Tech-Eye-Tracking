@@ -4,18 +4,20 @@
 \BOOKMARK [1][-]{section.0.2}{Use Case/Service Contracts}{}% 4
 \BOOKMARK [2][-]{subsection.0.2.1}{Heat Maps}{section.0.2}% 5
 \BOOKMARK [2][-]{subsection.0.2.2}{Save Heat Maps}{section.0.2}% 6
-\BOOKMARK [2][-]{subsection.0.2.3}{Models}{section.0.2}% 7
-\BOOKMARK [2][-]{subsection.0.2.4}{Raw Information}{section.0.2}% 8
-\BOOKMARK [2][-]{subsection.0.2.5}{Statistics}{section.0.2}% 9
-\BOOKMARK [2][-]{subsection.0.2.6}{Record Eyes}{section.0.2}% 10
-\BOOKMARK [1][-]{section.0.3}{Required Functionality}{}% 11
-\BOOKMARK [2][-]{subsection.0.3.1}{Render 3D scene}{section.0.3}% 12
-\BOOKMARK [2][-]{subsection.0.3.2}{Eye-tracking on a 3D scene}{section.0.3}% 13
-\BOOKMARK [2][-]{subsection.0.3.3}{Create heat mapped texture}{section.0.3}% 14
-\BOOKMARK [2][-]{subsection.0.3.4}{Map heat mapped texture back onto scene}{section.0.3}% 15
-\BOOKMARK [2][-]{subsection.0.3.5}{Real-time heat mapping}{section.0.3}% 16
-\BOOKMARK [2][-]{subsection.0.3.6}{Interactive Maps}{section.0.3}% 17
-\BOOKMARK [2][-]{subsection.0.3.7}{In-Video Eye Tracking}{section.0.3}% 18
-\BOOKMARK [2][-]{subsection.0.3.8}{Post-video Eye Tracking}{section.0.3}% 19
-\BOOKMARK [2][-]{subsection.0.3.9}{Suitable Video Output Formats}{section.0.3}% 20
-\BOOKMARK [1][-]{section.0.4}{Domain Model}{}% 21
+\BOOKMARK [2][-]{subsection.0.2.3}{Gaze Point Maps}{section.0.2}% 7
+\BOOKMARK [2][-]{subsection.0.2.4}{Save Gaze Point Maps}{section.0.2}% 8
+\BOOKMARK [2][-]{subsection.0.2.5}{Models}{section.0.2}% 9
+\BOOKMARK [2][-]{subsection.0.2.6}{Raw Information}{section.0.2}% 10
+\BOOKMARK [2][-]{subsection.0.2.7}{Statistics}{section.0.2}% 11
+\BOOKMARK [2][-]{subsection.0.2.8}{Record Eyes}{section.0.2}% 12
+\BOOKMARK [1][-]{section.0.3}{Required Functionality}{}% 13
+\BOOKMARK [2][-]{subsection.0.3.1}{Render 3D scene}{section.0.3}% 14
+\BOOKMARK [2][-]{subsection.0.3.2}{Eye-tracking on a 3D scene}{section.0.3}% 15
+\BOOKMARK [2][-]{subsection.0.3.3}{Create heat mapped texture}{section.0.3}% 16
+\BOOKMARK [2][-]{subsection.0.3.4}{Map heat mapped texture back onto scene}{section.0.3}% 17
+\BOOKMARK [2][-]{subsection.0.3.5}{Real-time heat mapping}{section.0.3}% 18
+\BOOKMARK [2][-]{subsection.0.3.6}{Interactive Maps}{section.0.3}% 19
+\BOOKMARK [2][-]{subsection.0.3.7}{In-Video Eye Tracking}{section.0.3}% 20
+\BOOKMARK [2][-]{subsection.0.3.8}{Post-video Eye Tracking}{section.0.3}% 21
+\BOOKMARK [2][-]{subsection.0.3.9}{Suitable Video Output Formats}{section.0.3}% 22
+\BOOKMARK [1][-]{section.0.4}{Domain Model}{}% 23

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  5 JUL 2015 16:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  31 JUL 2015 15:02
 entering extended mode
 **NTT*Architectural*Requirements.tex
 
@@ -274,14 +274,14 @@ chitectural Specification\NTT Architectural Requirements.out")
 chitectural Specification\NTT Architectural Requirements.out")
 \@outlinefile=\write4
 
-<../GeneralImages/up-logo.jpg, id=43, 287.1528pt x 78.7743pt>
+<../GeneralImages/up-logo.jpg, id=99, 287.1528pt x 78.7743pt>
 File: ../GeneralImages/up-logo.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/up-logo.jpg>
 Package pdftex.def Info: ../GeneralImages/up-logo.jpg used on input line 35.
 (pdftex.def)             Requested size: 287.15208pt x 78.77411pt.
 
-<../GeneralImages/NTT.jpg, id=44, 963.6pt x 722.7pt>
+<../GeneralImages/NTT.jpg, id=100, 963.6pt x 722.7pt>
 File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/NTT.jpg>
@@ -309,7 +309,9 @@ chitectural Specification\NTT Architectural Requirements.toc")
 \tf@toc=\write5
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\QualityRequirements/QualityRequirements.tex"
+chitectural Specification\QualityRequirements/QualityRequirements.tex" [2
+
+]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 
 (C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
@@ -317,60 +319,88 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
- [2
-
-] [3] [4])
+ [3] [4] [5])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\AccessRequirements/AccessRequirements.tex") [5]
+chitectural Specification\AccessRequirements/AccessRequirements.tex")
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalConstraints/ArchitectureConstraints.tex"
-)
+[6])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalPatterns/ArchitecturalPatternsOrStyles.t
-ex" [6])
+ex" [7]
+<Diagrams/Class_Diagram__Singleton.png, id=171, 289.08pt x 288.07625pt>
+File: Diagrams/Class_Diagram__Singleton.png Graphic file (type png)
+
+<use Diagrams/Class_Diagram__Singleton.png>
+Package pdftex.def Info: Diagrams/Class_Diagram__Singleton.png used on input li
+ne 16.
+(pdftex.def)             Requested size: 144.53964pt x 144.03777pt.
+
+<Diagrams/Class_Diagram__Flyweight.png, id=172, 380.42125pt x 396.48125pt>
+File: Diagrams/Class_Diagram__Flyweight.png Graphic file (type png)
+
+<use Diagrams/Class_Diagram__Flyweight.png>
+Package pdftex.def Info: Diagrams/Class_Diagram__Flyweight.png used on input li
+ne 24.
+(pdftex.def)             Requested size: 190.21014pt x 198.24013pt.
+)
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalTactics/ArchitecturalTacticsOrStrategies
-.tex" [7])
+.tex" [8pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.0.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.11 T
+      he MVC pattern allows us to separate concerns of the system allowing f...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.11 T
+      he MVC pattern allows us to separate concerns of the system allowing f...
+ <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Ar
+chitectural Specification/Diagrams/Class_Diagram__Singleton.png (PNG copy)> <C:
+/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Archit
+ectural Specification/Diagrams/Class_Diagram__Flyweight.png (PNG copy)>])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ReferenceArchitectures/UseOfReferenceArchitecturesAnd
-Frameworks.tex")
+Frameworks.tex" [9])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\Technologies/Technologies.tex") [8]
-
-LaTeX Warning: Empty `thebibliography' environment on input line 148.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-[9
+chitectural Specification\Technologies/Technologies.tex" [10]) [11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 179.
+ [12
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 179.
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\NTT Architectural Requirements.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 179.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 179.
 Package rerunfilecheck Info: File `NTT*Architectural*Requirements.out' has not 
 changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 179.
  ) 
 Here is how much of TeX's memory you used:
- 5277 strings out of 493921
- 82590 string characters out of 3144475
- 159226 words of memory out of 3000000
- 8462 multiletter control sequences out of 15000+200000
- 9750 words of font info for 34 fonts, out of 3000000 for 9000
+ 5329 strings out of 493921
+ 83561 string characters out of 3144475
+ 159402 words of memory out of 3000000
+ 8494 multiletter control sequences out of 15000+200000
+ 10097 words of font info for 35 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,28p,535b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,7n,28p,875b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Architectural Requirements.pdf" (10 pages, 175338 bytes)
+Output written on "NTT Architectural Requirements.pdf" (13 pages, 231686 bytes)
 .
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

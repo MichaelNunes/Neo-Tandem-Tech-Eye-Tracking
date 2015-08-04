@@ -24,16 +24,18 @@ namespace Record_Class
             set { modelName = value; }
         }
 
-        bool recording = false;
+        bool recording;
         public bool _recording
         {
-            get; set;
+            get { return recording; }
+            set { recording = value; }
         }
 
         public List<string> arrayData = new List<string>();
 
         public Record(string FilePath, string ModelName)
         {
+            recording = false;
             path = FilePath;
             modelName = ModelName;
             GazeManager.Instance.Activate(GazeManager.ApiVersion.VERSION_1_0, GazeManager.ClientMode.Push);
@@ -42,8 +44,14 @@ namespace Record_Class
         }
 
         public void OnGazeUpdate(GazeData gazeData)
-        {
-            if (!recording) return;
+        {            
+            if (!recording)
+            {
+                saveToFile();
+                return;
+            }
+                
+            //throw new Exception();
 
             // start or stop tracking lost animation
             if ((gazeData.State & GazeData.STATE_TRACKING_GAZE) == 0 &&
@@ -55,28 +63,30 @@ namespace Record_Class
             var screenX = (int)Math.Round(X, 0);
             var screenY = (int)Math.Round(Y, 0);
 
-            // return in case of 0,0 
-            if (screenX == 0 && screenY == 0) return;
+            //// return in case of 0,0 
+            //if (screenX == 0 && screenY == 0) return;
 
             // write data to a file 
-            arrayData.Add((X + "," + Y).ToString());
-            saveToFile();
+
+            arrayData.Add((X + ":" + Y).ToString());
+            float m = (float)X;
+            Console.WriteLine(m);
         }
 
         public void saveToFile()
         {
             // tester path
             //path = @"C:\Users\Public\WriteLines.txt";
-            path = path + "RecordedData_" + modelName + ".txt";
+            string path2 = path +"RecordedData_" + modelName + ".txt";
             try
             {
-                if (!File.Exists(path))
+                if (!File.Exists(path2))
                 {
-                    File.WriteAllLines(path, arrayData);
+                    File.WriteAllLines(path2, arrayData);
                 }
                 else
                 {
-                    File.AppendAllLines(path, arrayData);
+                    File.AppendAllLines(path2, arrayData);
                 }
             }
             catch (Exception f)
