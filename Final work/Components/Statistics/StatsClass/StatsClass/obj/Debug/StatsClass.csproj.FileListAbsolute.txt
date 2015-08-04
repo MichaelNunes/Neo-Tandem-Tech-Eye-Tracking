@@ -1,0 +1,13 @@
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\StatsClass.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\StatsClass.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\nunit.framework.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\nunit.framework.xml
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\obj\Debug\StatsClass.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\obj\Debug\StatsClass.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\PdfSharp.Charting.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\PdfSharp.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\PdfSharp.xml
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\PdfSharp.Charting.xml
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\obj\Debug\StatsClass.csprojResolveAssemblyReference.cache
