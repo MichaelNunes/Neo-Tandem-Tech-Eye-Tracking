@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using AForge.Video;
 using AForge.Video.FFMPEG;
+using System.Threading;
 
 namespace Results_Class
 {
@@ -231,10 +232,17 @@ namespace Results_Class
             List<float> x = new List<float>();
             List<float> y = new List<float>();
 
+            if (py.Count() == 0 || px.Count() == 0)
+            {
+                throw new ArgumentNullException();
+            }
+
             //Image im = new Bitmap(FileLocation + "\\" + ModelName);            
             //bitmap.Save(FileLocation +"\\"+ ModelName + ".jpg");
 
-            for(int i = 0; i < px.Count(); i++)
+            List<Thread> tl = new List<Thread>();
+            //Implement Currently
+            for (int i = 0; i < px.Count(); i++)
             {
                 try
                 {
@@ -246,23 +254,35 @@ namespace Results_Class
                     {
                         throw new ArgumentNullException();
                     }
-                    Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
-                    canvas.Save(DestinationPath + "\\" + ModelName + ".Heatmap" + "frame" + i + ".jpg", ImageFormat.Jpeg);
-                    bitmap.Dispose();
+                    
+                    Thread t = new Thread(() => SaveHeatmapImage(bitmap, x, y, i)).Start();
+                    tl.Add(t);
                 }
-                catch(Exception k)
+                catch (Exception k)
                 {
                     break;
                 }
             }
+            foreach(Thread t in tl)
+            {
+                t.Join();
+            }
+
             //call create video
-            vm.ImagePath = DestinationPath+"\\";
-            vm.DestinationPath = DestinationPath+"\\";
-            vm.ModelName = ModelName+".Heatmap";
+            vm.ImagePath = DestinationPath + "\\";
+            vm.DestinationPath = DestinationPath + "\\";
+            vm.ModelName = ModelName + ".Heatmap";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.Fps = 30;
             vm.createVideo();
+        }
+ 
+        public void SaveHeatmapImage(Bitmap bitmap, List<float> x, List<float> y, int i)
+        {
+            Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
+            canvas.Save(DestinationPath + "\\" + ModelName + ".Heatmap" + "frame" + i + ".jpg", ImageFormat.Jpeg);
+            bitmap.Dispose();
         }
 
         /// <summary>
