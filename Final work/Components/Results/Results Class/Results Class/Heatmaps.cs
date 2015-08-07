@@ -249,24 +249,34 @@ namespace Results_Class
                     Bitmap bitmap = new Bitmap(width, height);
                     x.Add(px.ElementAt(i));
                     y.Add(py.ElementAt(i));
-
-                    if (py.Count() == 0 || px.Count() == 0)
-                    {
-                        throw new ArgumentNullException();
-                    }
-                    
-                    Thread t = new Thread(() => SaveHeatmapImage(bitmap, x, y, i)).Start();
+                                        
+                    Thread t = new Thread(() => SaveHeatmapImage(bitmap, x, y, i));
                     tl.Add(t);
+                    //2 Threads = 3:47
+                    //10 threads = 3:27
+                    //40 Threads = 3:30
+                    //100 Threads = 3:37
+                    //No join statement = to long
+                    if(tl.Count% px.Count == 0)
+                    {
+                        foreach (Thread thr in tl)
+                        {
+                            t.Start();
+                        }
+                        foreach (Thread thr in tl)
+                        {
+                            thr.Join();
+                        }
+                        tl = null;
+                        tl = new List<Thread>();
+                    }
                 }
                 catch (Exception k)
                 {
                     break;
                 }
             }
-            foreach(Thread t in tl)
-            {
-                t.Join();
-            }
+            
 
             //call create video
             vm.ImagePath = DestinationPath + "\\";
@@ -280,9 +290,16 @@ namespace Results_Class
  
         public void SaveHeatmapImage(Bitmap bitmap, List<float> x, List<float> y, int i)
         {
-            Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
-            canvas.Save(DestinationPath + "\\" + ModelName + ".Heatmap" + "frame" + i + ".jpg", ImageFormat.Jpeg);
-            bitmap.Dispose();
+            try
+            {
+                Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(bitmap, x.ToArray(), y.ToArray());
+                canvas.Save(DestinationPath + "\\" + ModelName + ".Heatmap" + "frame" + i + ".jpg", ImageFormat.Jpeg);
+                bitmap.Dispose();
+            }
+            catch(Exception e)
+            {
+                SaveHeatmapImage(bitmap, x, y, i);
+            }
         }
 
         /// <summary>
