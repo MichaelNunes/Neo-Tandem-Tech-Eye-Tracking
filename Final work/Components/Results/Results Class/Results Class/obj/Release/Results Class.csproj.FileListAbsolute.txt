@@ -7,6 +7,6 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Componen
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Release\Video Model.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Release\nunit.framework.xml
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Release\Video Model.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Release\Results Class.csprojResolveAssemblyReference.cache
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Release\Results Class.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Release\Results Class.pdb
-C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Release\Results Class.csprojResolveAssemblyReference.cache

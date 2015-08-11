@@ -247,11 +247,22 @@ namespace Results_Class
                 try
                 {
                     Bitmap bitmap = new Bitmap(width, height);
-                    x.Add(px.ElementAt(i));
-                    y.Add(py.ElementAt(i));
+                    if(x.Count > 150)
+                    {
+                        x.Add(px.ElementAt(i));
+                        y.Add(py.ElementAt(i));
+                        x.RemoveAt(0);
+                        y.RemoveAt(0);
+                    }
+                    else
+                    {
+                        x.Add(px.ElementAt(i));
+                        y.Add(py.ElementAt(i));
+                    }
+                    
                                         
-                    Thread t = new Thread(() => SaveHeatmapImage(bitmap, x, y, i));
-                    tl.Add(t);
+                    /*Thread t = new Thread(() =>*/ SaveHeatmapImage(bitmap, x, y, i);//);
+                    /*tl.Add(t);
                     //2 Threads = 3:47
                     //10 threads = 3:27
                     //40 Threads = 3:30
@@ -269,7 +280,7 @@ namespace Results_Class
                         }
                         tl = null;
                         tl = new List<Thread>();
-                    }
+                    }*/
                 }
                 catch (Exception k)
                 {
