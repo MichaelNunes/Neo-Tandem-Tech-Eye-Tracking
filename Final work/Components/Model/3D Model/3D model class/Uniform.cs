@@ -1,5 +1,8 @@
 ﻿namespace DisplayModel
 {
+    /// <summary>
+    /// Container for the shader uniforms.
+    /// </summary>
     public struct Uniform
     {
         /// <summary>

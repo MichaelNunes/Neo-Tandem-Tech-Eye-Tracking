@@ -13,15 +13,30 @@ namespace DisplayModel
     {
         private Shader shaderData;
         private List<GameObject> objects;
+        private string imagePath;
+
         int viewNumber = 0;
         int degrees = 45;
+
+        int rotater = 0;
+        
         GLControl control;
 
-        public Window() : base(720, 405)
+        public Window()
+            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 16))
         {
             shaderData = new Shader();
             objects = new List<GameObject>();
             control = new GLControl();
+        }
+
+        public Window(string _imagePath)
+            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 32))
+        {
+            shaderData = new Shader();
+            objects = new List<GameObject>();
+            control = new GLControl();
+            imagePath = _imagePath;
         }
 
         public void Add(GameObject gameObject)
@@ -93,9 +108,9 @@ namespace DisplayModel
 
         public void changeView()
         {
-            if (viewNumber * degrees >= 360 + degrees)
+            if (viewNumber * degrees >= 360)
             {
-                if (viewNumber > (360/degrees) + 2)
+                if (viewNumber > (360/degrees) + 1)
                 {
                     Exit();
                 }
@@ -130,7 +145,7 @@ namespace DisplayModel
             bmp.UnlockBits(data);
 
             bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            bmp.Save(@"TestImages\Test" + viewNumber + ".jpg");
+            bmp.Save(imagePath + @"view" + viewNumber + ".jpg");
         }
     }
 }
