@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-using PdfSharp;
-using PdfSharp.Drawing;
-using PdfSharp.Pdf;
-using PdfSharp.Pdf.IO;
+using sharpPDF;
+using sharpPDF.Enumerators;
+using sharpPDF.Exceptions;
 using System.Collections;
-using PdfSharp.Drawing.Layout;
 
 namespace StatsClass
 {
@@ -140,30 +138,77 @@ namespace StatsClass
             return this.width / 3;
         }
 
+        public pdfTable createTable(ArrayList aList, int rows, int cols)
+        {
+            /*Table's creation*/
+            pdfTable myTable = new pdfTable();
+            //Set table's border
+            myTable.borderSize = 1;
+            myTable.borderColor = predefinedColor.csDarkBlue;
+            /*Create table's header*/
+            for (int i = 0; i < cols; i++)
+            {
+                myTable.tableHeader.addColumn(new pdfTableColumn(aList[i].ToString(), predefinedAlignment.csCenter, 70));
+            }
+            /*Create table's rows*/
+            int counter = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                pdfTableRow myRow = myTable.createRow();
+                for (int j = 0; j < cols; j++)
+                {
+                    myRow[j].columnValue = aList[cols + counter + j].ToString();
+                }
+                myTable.addRow(myRow);
+                counter += cols;
+            }
+            /*Set Header's Style*/
+            myTable.tableHeaderStyle = new pdfTableRowStyle(predefinedFont.csCourierBoldOblique, 12, predefinedColor.csBlack, predefinedColor.csLightCyan);
+            /*Set Row's Style*/
+            myTable.rowStyle = new pdfTableRowStyle(predefinedFont.csCourier, 8, predefinedColor.csBlack, predefinedColor.csWhite);
+            /*Set Alternate Row's Style*/
+            myTable.alternateRowStyle = new pdfTableRowStyle(predefinedFont.csCourier, 8, predefinedColor.csBlack, predefinedColor.csLightYellow);
+            /*Set Cellpadding*/
+            myTable.cellpadding = 20;
+            return myTable;
+        }
+
         public void createPDF()
         {
-            PdfDocument document = new PdfDocument();
+            pdfDocument myDoc = new pdfDocument("Statistics Report", "Created with PDFsharp");
+            pdfPage CoverPage = myDoc.addPage();
+            CoverPage.addText("Statistical Report", 200, 450, predefinedFont.csTimesBold, 20);
 
-            document.Info.Title = "Created with PDFsharp";
-
-            PdfPage page = document.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-            XFont font = new XFont("TimesRoman", 30, XFontStyle.Bold);
-            gfx.DrawString("Statistical Report", font, XBrushes.Black,new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
-
-            page = document.AddPage();
-            gfx = XGraphics.FromPdfPage(page);
-            font = new XFont("TimesRoman", 20, XFontStyle.Bold);
-            XTextFormatter tf = new XTextFormatter(gfx);
+            pdfPage FirstPage = myDoc.addPage();
             ArrayList content = new ArrayList();
             content.Add("Model name: " + ModelName);
             content.Add("Model type: ");
             content.Add("Model location: " + datasource);
             string sContent = string.Join("\n", content.ToArray());
-            tf.DrawString(sContent, font, XBrushes.Black, new XRect(50, 50, page.Width, page.Height), XStringFormats.TopLeft);
+            FirstPage.addText(sContent, 200, 450, predefinedFont.csTimesBold, 20);
 
-            string filename = "Statistical Report_"+ModelName+".pdf";
-            document.Save(datasource+filename);
+            pdfPage SecondPage = myDoc.addPage();
+            ArrayList tableContents = new ArrayList();
+            tableContents.Add("Col 1");
+            tableContents.Add("Col 2");
+            tableContents.Add("Col 3");
+            tableContents.Add("1");
+            tableContents.Add("2");
+            tableContents.Add("3");
+            tableContents.Add("4");
+            tableContents.Add("5");
+            tableContents.Add("6");
+            pdfTable myTable = createTable(tableContents,2,3); // Its a 3x3 table, but the first row is the column headings
+            SecondPage.addTable(myTable, 100, 600);
+
+            string filename = "Statistical Report_" + ModelName + ".pdf";
+            myDoc.createPDF(datasource + filename);
+
+            CoverPage = null;
+            FirstPage = null;
+            myTable = null;
+            SecondPage = null;
+            myDoc = null; 
 
         }
 
