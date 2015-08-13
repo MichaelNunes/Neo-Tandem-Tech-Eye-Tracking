@@ -15,11 +15,41 @@ namespace StatsClass
     class Statistics
     {
         string datasource;
-
+        /// <summary>
+        /// Sets and gets the data source
+        /// </summary>
         public string Datasource
         {
             get { return datasource; }
             set { datasource = value; }
+        }
+
+        List<int> pointCounter;
+
+        public List<int> PointCounter
+        {
+            get { return pointCounter; }
+            set { pointCounter = value; }
+        }
+
+        int height;
+        /// <summary>
+        /// gets or sets the height
+        /// </summary>
+        public int Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
+
+        int width;
+        /// <summary>
+        /// gets and sets the width
+        /// </summary>
+        public int Width
+        {
+            get { return width; }
+            set { width = value; }
         }
 
         /// <summary>
@@ -42,6 +72,8 @@ namespace StatsClass
             set { px = value; }
         }
 
+
+
         /// <summary>
         /// List<float> containing all Y axis co-ordinates.
         /// </summary>
@@ -52,10 +84,13 @@ namespace StatsClass
             set { py = value; }
         }
 
-        public Statistics(string source, string model)
+        public Statistics(string source, string model,int w,int h)
         {
             datasource = source;
             ModelName = model;
+            height = h;
+            width = w;
+            pointCounter = null;
         }
 
         public void readFile()
@@ -89,9 +124,20 @@ namespace StatsClass
 
         }
 
-        public void getQuadrantpoints()
+        public void getgridsCount()
         {
+            this.readFile();
 
+        }
+
+        public int getGridHeight()
+        {
+            return this.height / 3;
+        }
+
+        public int getGridWidth()
+        {
+            return this.width / 3;
         }
 
         public void createPDF()
