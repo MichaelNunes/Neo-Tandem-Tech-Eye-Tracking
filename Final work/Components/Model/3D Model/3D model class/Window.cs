@@ -31,7 +31,7 @@ namespace DisplayModel
         }
 
         public Window(string _imagePath)
-            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 32))
+            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 16))
         {
             shaderData = new Shader();
             objects = new List<GameObject>();
@@ -92,6 +92,7 @@ namespace DisplayModel
             control.PerformContextUpdate();
             changeView();
             GrabScreenshot();
+            //defaultView();
         }
 
         protected override void OnResize(EventArgs e)
@@ -100,10 +101,20 @@ namespace DisplayModel
 
             GL.Viewport(0, 0, Width, Height);
 
-            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 1.0f, 100.0f);
+            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 0.1f, 100.0f);
 
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
+        }
+        /// <summary>
+        /// For debugging purposes.
+        /// </summary>
+        public void defaultView()
+        {
+            for (int i = 0; i < objects.Count; i++)
+            {
+                objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(MathHelper.DegreesToRadians(rotater++)) * Matrix4.CreateTranslation(0f, 0f, -4f);
+            }
         }
 
         public void changeView()
@@ -146,6 +157,7 @@ namespace DisplayModel
 
             bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
             bmp.Save(imagePath + @"view" + viewNumber + ".jpg");
+            bmp.Dispose();
         }
     }
 }

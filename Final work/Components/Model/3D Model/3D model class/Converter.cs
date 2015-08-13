@@ -97,8 +97,36 @@ namespace DisplayModel
 
             temp.BufferData = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material);
             Console.WriteLine(temp);
+            scaleObject(temp);
             return temp;
 		}
+
+        private static void scaleObject(GameObject obj)
+        {
+            float max = 0f;
+            for (int i = 0; i < obj.bufferData.Vertex.Length; i++)
+            {
+                if(Math.Abs(obj.bufferData.Vertex[i].X) > max)
+                {
+                    max = Math.Abs(obj.bufferData.Vertex[i].X);
+                }
+                if (Math.Abs(obj.bufferData.Vertex[i].Y) > max)
+                {
+                    max = Math.Abs(obj.bufferData.Vertex[i].Y);
+                }
+                if (Math.Abs(obj.bufferData.Vertex[i].Z) > max)
+                {
+                    max = Math.Abs(obj.bufferData.Vertex[i].Z);
+                }
+            }
+            Console.WriteLine("Largest vertex value: "+max);
+            for (int i = 0; i < obj.bufferData.Vertex.Length; i++)
+            {
+                obj.bufferData.Vertex[i].X /= max;
+                obj.bufferData.Vertex[i].Y /= max;
+                obj.bufferData.Vertex[i].Z /= max;
+            }
+        }
 
         /// <summary>
         /// Adds faces from the file source. 
