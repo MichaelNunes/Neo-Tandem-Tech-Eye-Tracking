@@ -34,13 +34,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Model\Video Model\Video Model\bin\Debug\AForge.Video.dll</HintPath>
     </Reference>
-    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="AForge.Video.FFMPEG">
       <HintPath>..\..\..\Model\Video Model\Video Model\bin\Debug\AForge.Video.FFMPEG.dll</HintPath>
     </Reference>
-    <Reference Include="HeatMap.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Desktop\heatmapdotnet-master\heatmapdotnet-master\HeatMap.NET\bin\Debug\HeatMap.NET.dll</HintPath>
+    <Reference Include="HeatMap.NET">
+      <HintPath>..\..\..\External Packages\HeatMap.NET.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
