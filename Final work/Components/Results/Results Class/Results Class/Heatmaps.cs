@@ -404,6 +404,7 @@ namespace Results_Class
             width = vid.Width;
             vid.Close();
 
+            List<Thread> tl = new List<Thread>();
             ImageGenerator ig = new ImageGenerator();
             try
             {
@@ -416,7 +417,11 @@ namespace Results_Class
             {
                 throw new TypeLoadException();
             }
-            
+
+            if (py.Count == 0 || px.Count == 0)
+            {
+                throw new ArgumentNullException();
+            }
 
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
@@ -427,17 +432,25 @@ namespace Results_Class
             y.Add(0);
             for (int i = 0; i < px.Count; i++)
             {
+
                 try
                 {
-                    x.Add(px.ElementAt(i));
-                    y.Add(py.ElementAt(i));
+                    Bitmap bitmap = new Bitmap(width, height);
+                    if (x.Count > 150)
+                    {
+                        x.Add(px.ElementAt(i));
+                        y.Add(py.ElementAt(i));
+                        x.RemoveAt(0);
+                        y.RemoveAt(0);
+                    }
+                    else
+                    {
+                        x.Add(px.ElementAt(i));
+                        y.Add(py.ElementAt(i));
+                    }
 
                     Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
 
-                    if (py.Count == 0 || px.Count == 0)
-                    {
-                        throw new ArgumentNullException();
-                    }
                     Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, x.ToArray(), y.ToArray());
                     //im.Dispose();
                     canvas.Save(DestinationPath + "\\" + ModelName + ".Heated" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
