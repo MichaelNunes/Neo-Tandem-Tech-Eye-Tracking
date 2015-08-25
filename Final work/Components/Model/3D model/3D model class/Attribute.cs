@@ -23,29 +23,30 @@
 
 namespace DisplayModel
 {
-    /// <summary>
-    /// Container for the shader attributes.
-    /// </summary>
     public struct Attribute
     {
         /// <summary>
         /// Pointer to the vertex position attribute in the shader.
         /// </summary>
-        public int VertexPosition { get; set; }
+        public int VertexPosition
+        { get; set; }
 
         /// <summary>
         /// Pointer to the vertex normal attribute in the shader.
         /// </summary>
-        public int VertexNormal { get; set; }
+        public int VertexNormal
+        { get; set; }
 
         /// <summary>
         /// Pointer to the vertex colour attribute in the shader.
         /// </summary>
-        public int VertexColour { get; set; }
+        public int VertexColour
+        { get; set; }
 
         /// <summary>
         /// Pointer to the vertex texture attribute in the shader.
         /// </summary>
-        public int VertexTexture { get; set; }
+        public int VertexTexture
+        { get; set; }
     }
 }
