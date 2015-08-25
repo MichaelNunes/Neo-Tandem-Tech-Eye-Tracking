@@ -35,7 +35,7 @@ namespace DisplayModel
         {
             Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
 #if DEBUG
-            string source = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.obj";
+            string source = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\city.obj";
             string texture = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
 #else
             string source = args[0];
@@ -48,7 +48,7 @@ namespace DisplayModel
                 Console.WriteLine(susan.Material.TextureId);
                 susan.Material.Setup();
                 Console.WriteLine(susan.Material.TextureId);
-                Console.ReadLine();
+                //Console.ReadLine();
 
                 window.Add(susan);
                 window.Run(30, 30);

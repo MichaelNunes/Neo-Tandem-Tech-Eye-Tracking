@@ -81,7 +81,7 @@ vec3 Light()
 		float diffWeight = max(dot(oNormalVec, normalize(uPointLight_Position - oPositionVec.xyz)), 0.0);
 		float specWeight = pow(max(dot(reflect(-normalize(uPointLight_Position - oPositionVec.xyz), oNormalVec), oEyeVec), 0.0), uPointLight_Shininess);
 		point = (uPointLight_DiffuseColour * diffWeight);// + (uPointLight_SpecularColour * specWeight);
-		
+
 		return (ambient + directional + point);
 	}
 	else
