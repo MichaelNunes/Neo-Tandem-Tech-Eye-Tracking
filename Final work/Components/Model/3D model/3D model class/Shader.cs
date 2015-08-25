@@ -129,20 +129,20 @@ namespace DisplayModel
         /// Draws a 3d model object to the screen.
         /// </summary>
         /// <param name="bufferData"> The buffer data of the object to be drawn. </param>
-        public void Draw(BufferData bufferData)
+        public void Draw(GameObject gameobject)
         {
             //print(bufferData);
             float radians = OpenTK.MathHelper.DegreesToRadians(degrees++);
 
-            ModelViewMatrix = bufferData.ModelViewMatrix;
+            ModelViewMatrix = gameobject.bufferData.ModelViewMatrix;
 
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref ModelViewMatrix);
 
-            BindBuffers(ref bufferData);
-            SetUniforms(ref bufferData);
+            BindBuffers(ref gameobject);
+            SetUniforms(ref gameobject.bufferData);
 
-            GL.DrawArrays(PrimitiveType.Triangles, 0, bufferData.Vertex.Length);
+            GL.DrawArrays(PrimitiveType.Triangles, 0, gameobject.bufferData.Vertex.Length);
 
             GL.DisableVertexAttribArray(attribute.VertexPosition);
             GL.DisableVertexAttribArray(attribute.VertexNormal);
@@ -150,8 +150,10 @@ namespace DisplayModel
             GL.Flush();
         }
 
-        private void BindBuffers(ref BufferData bufferData)
+        private void BindBuffers(ref GameObject gameobject)
         {
+            BufferData bufferData = gameobject.BufferData;
+
             //Vertices
             GL.BindBuffer(BufferTarget.ArrayBuffer, buffer.Position);
             GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Vertex.Length * Vector3.SizeInBytes), bufferData.Vertex, BufferUsageHint.StaticDraw);
@@ -170,6 +172,18 @@ namespace DisplayModel
             GL.EnableVertexAttribArray(attribute.VertexColour);
             GL.VertexAttribPointer(attribute.VertexColour, 4, VertexAttribPointerType.Float, true, 0, 0);
 
+            if (gameobject.Material.TextureId != -1)
+            {
+                //Texture
+                GL.BindBuffer(BufferTarget.ArrayBuffer, buffer.Texture);
+                GL.BufferData<Vector2>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Texture.Length * Vector2.SizeInBytes), bufferData.Texture, BufferUsageHint.StaticDraw);
+                GL.EnableVertexAttribArray(attribute.VertexTexture);
+                GL.VertexAttribPointer(attribute.VertexTexture, 2, VertexAttribPointerType.Float, true, 0, 0);
+
+                GL.ActiveTexture(TextureUnit.Texture0);
+
+            }
+
             GL.UseProgram(id.Program);
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
 
@@ -178,6 +192,8 @@ namespace DisplayModel
         private void SetUniforms(ref BufferData bufferData)
         {
             GL.Uniform1(uniform.UseLighting, 1);
+            GL.Uniform1(uniform.UseTexture, 1);
+            GL.Uniform1(uniform.Sampler, 0);
 
             GL.Uniform3(uniform.AmbientLightColour, AmbientLight_Colour);
 

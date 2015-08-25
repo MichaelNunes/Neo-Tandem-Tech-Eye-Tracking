@@ -35,8 +35,8 @@ namespace DisplayModel
         {
             Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
 #if DEBUG
-            string source = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\city.obj";
-            string texture = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
+            string source = @"C:\Users\COS301\Documents\cube.obj";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\city.obj";
+            string texture = @"C:\Users\COS301\Documents\cube.png";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
 #else
             string source = args[0];
             string texture = args[1];

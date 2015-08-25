@@ -59,7 +59,7 @@ out vec4 fragColor;
 
 vec4 Colour()
 {
-	if(false/*uUseTexture*/)
+	if(uUseTexture)
 		return texture2D(uSampler, vec2(oVertexTexture.s, oVertexTexture.t));
 	else
 		return oVertexColour;

@@ -163,7 +163,7 @@ namespace DisplayModel
 
                     if (texels[1] != string.Empty)
                     {
-                        t.Add(t[t.Count - 2]);
+                        t.Add(t[t.Count - 3]);
                         t.Add(t[t.Count - 2]);
                         t.Add(int.Parse(texels[1]));
                     }

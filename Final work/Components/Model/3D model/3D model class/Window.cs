@@ -66,7 +66,7 @@ namespace DisplayModel
 
             WindowBorder = WindowBorder.Hidden;
             WindowState = WindowState.Fullscreen;
-            Visible = false;
+            Visible = true;
 
             GL.ClearColor(Color.Bisque);
             GL.Enable(EnableCap.DepthTest);
@@ -86,13 +86,13 @@ namespace DisplayModel
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             
             for (int i = 0; i < objects.Count; ++i )
-                shaderData.Draw(objects[i].BufferData);
+                shaderData.Draw(objects[i]);
             
             SwapBuffers();
-            control.PerformContextUpdate();
-            changeView();
-            GrabScreenshot();
-            //defaultView();
+            //control.PerformContextUpdate();
+            //changeView();
+            //GrabScreenshot();
+            defaultView();
         }
 
         protected override void OnResize(EventArgs e)
