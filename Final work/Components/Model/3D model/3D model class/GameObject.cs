@@ -21,10 +21,13 @@
  */
 #endregion
 
-using OpenTK;
-using OpenTK.Graphics;
 using System;
 using System.Collections.Generic;
+
+using OpenTK;
+using OpenTK.Graphics;
+
+using DisplayModel;
 
 namespace DisplayModel
 {
@@ -45,7 +48,7 @@ namespace DisplayModel
         /// </summary>
         public GameObject()
         {
-            transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
+            transform = new Transform();
             material = new Material();
             bufferData = new BufferData();
         }

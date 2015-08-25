@@ -4,9 +4,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{778E2D46-8BBE-4065-BC45-008DBE40D9DB}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>DisplayModel</AssemblyName>
+    <AssemblyName>ConsoleApplication</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -81,7 +81,6 @@
     <Compile Include="Light.cs" />
     <Compile Include="ID.cs" />
     <Compile Include="PointLight.cs" />
-    <Compile Include="Test Classes\Test DisplayModel.cs" />
     <Compile Include="Uniform.cs" />
     <Compile Include="Window.cs" />
     <Compile Include="Test Classes\Test Converter.cs" />

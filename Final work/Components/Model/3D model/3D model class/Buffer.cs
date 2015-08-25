@@ -23,34 +23,36 @@
 
 namespace DisplayModel
 {
-    /// <summary>
-    /// Container for the shader buffers.
-    /// </summary>
     public struct Buffer
     {
         /// <summary>
         /// Buffer for the vertices of an object.
         /// </summary>
-        public int Position { get; set; }
+        public int Position
+        { get; set; }
 
         /// <summary>
         /// Buffer for the normals of an object.
         /// </summary>
-        public int Normal { get; set; }
+        public int Normal
+        { get; set; }
 
         /// <summary>
         /// Buffer for the colour of an object.
         /// </summary>
-        public int Colour { get; set; }
+        public int Colour
+        { get; set; }
 
         /// <summary>
         /// Buffer for the texture of an object.
         /// </summary>
-        public int Texture { get; set; }
+        public int Texture
+        { get; set; }
 
         /// <summary>
         /// Buffer for the indices of the vertices, normals, colour and, texture arrays.
         /// </summary>
-        public int Index { get; set; }
+        public int Index
+        { get; set; }
     }
 }

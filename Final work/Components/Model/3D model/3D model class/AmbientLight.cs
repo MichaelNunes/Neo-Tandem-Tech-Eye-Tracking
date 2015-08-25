@@ -1,69 +1,45 @@
-﻿#region Legal
-/*
- * Copyright (c) 2015 The University of Pretoria.
- *
- * The following was designed for the Centre of GeoInformation
- * Science (CGIS), University of Pretoria. All code is property
- * of the University of Pretoria and is available under the 
- * Creative Commons Attribution-ShareAlike (CC BY-SA) see:
- * "https://creativecommons.org/licenses/"
- *
- * Author: Duran Cole
- * Email: u13329414@tuks.co.za
- * Author: Michael Nunes
- * Email: u12104592@tuks.co.za
- * Author: Molefe Molefe
- * Email: u12260429@tuks.co.za
- * Author: Tebogo Christopher Seshibe
- * Email: u13181442@tuks.co.za
- * Author: Timothy Snayers
- * Email: u13397134@tuks.co.za
- */
-#endregion
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
 
 using OpenTK;
 using OpenTK.Graphics;
-using OpenTK.Graphics.OpenGL;
 
 namespace DisplayModel
 {
-    /// <summary>
-    /// Represents an object that light the scene evenly a certain colour.
-    /// </summary>
     class AmbientLight : Light
     {
         #region Constructors
         /// <summary>
-        /// Creates a default ambient light object.
-        /// The colour is set to white with full alpha value.
+        /// 
         /// </summary>
-        public AmbientLight()
+        public AmbientLight() : base(LightType.AMBIENT)
         {
-            Colour = Vector3.One;
         }
 
-        /// <summary>
-        /// Create an ambient light object with the colour privided.
-        /// </summary>
-        /// <param name="colour"></param>
-        public AmbientLight(Color4 colour)
+        public AmbientLight(Vector3 colour) : base(LightType.AMBIENT)
         {
-            Colour = new Vector3(colour.R * colour.A, colour.G * colour.A, colour.B * colour.A);
+            Colour = colour;
+        }
+
+        public AmbientLight(Color color) : base(LightType.AMBIENT)
+        {
+            Colour = new Vector3(color.R, color.G, color.B);
+        }
+
+        public AmbientLight(Color4 color) : base(LightType.AMBIENT)
+        {
+            Colour = new Vector3(color.R, color.G, color.B);
         }
         #endregion
-
-        #region Override
         public override void addLight()
         {
-            // IMPLEMENT
+            Console.WriteLine("I'm ambiently lighting things bro!");
         }
-        #endregion
 
-        #region Attributes
-        /// <summary>
-        /// The colour of the light.
-        /// </summary>
-        public Vector3 Colour { get; set; }
-        #endregion
+        public Vector3 Colour
+        { get; set; }
     }
 }

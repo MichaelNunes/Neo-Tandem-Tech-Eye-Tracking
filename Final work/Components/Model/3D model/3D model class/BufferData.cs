@@ -21,9 +21,10 @@
  */
 #endregion
 
-using OpenTK;
 using System;
 using System.Collections.Generic;
+
+using OpenTK;
 
 namespace DisplayModel
 {
@@ -58,20 +59,19 @@ namespace DisplayModel
             texture = new Vector2[ti.Count];
             normal = new Vector3[ni.Count];
             index = null;
+            int count;
             ModelViewMatrix = Matrix4.Identity;
 
-            int count = 0;
+            count = 0;
             for (int i = 0; i < vi.Count; i++)
                 vertex[count++] = vp[vi[i]-1];
-
+            Console.WriteLine(count);
             for (int i = 0; i < colour.Length; i++)
                 colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);
 
             count = 0;
             for (int i = 0; i < ti.Count; i++)
                 texture[count++] = tp[ti[i]-1];
-
-            Console.WriteLine(count);
 
             count = 0;
             for (int i = 0; i < ni.Count; i++)
@@ -81,24 +81,36 @@ namespace DisplayModel
 
         #region Attributes
         /// <summary>
-		/// The vertex position array of the object.
+		/// 
 		/// </summary>
-        public Vector3[] Vertex { get { return vertex; } }
+        public Vector3[] Vertex
+		{
+			get { return vertex; }
+		}
 
         /// <summary>
-        /// The texture co-ordinate array of the object.
+        /// 
         /// </summary>
-        public Vector2[] Texture { get { return texture; } }
+        public Vector2[] Texture
+        {
+            get { return texture; }
+        }
 
 		/// <summary>
-		/// The normal array of the object.
+		/// 
 		/// </summary>
-        public Vector3[] Normal { get { return normal; } }
+        public Vector3[] Normal
+		{
+			get { return normal; }
+		}
 
         /// <summary>
-        /// The colour array of the object.
+        /// 
         /// </summary>
-        public Vector4[] Colour { get { return colour; } }
+        public Vector4[] Colour
+        {
+            get { return colour; }
+        }
 		#endregion
 	}
 }

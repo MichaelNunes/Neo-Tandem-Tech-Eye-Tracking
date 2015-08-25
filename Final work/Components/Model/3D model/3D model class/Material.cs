@@ -21,11 +21,12 @@
  */
 #endregion
 
-using OpenTK;
-using OpenTK.Graphics;
 using System;
+using System.IO;
 using System.Drawing;
 
+using OpenTK;
+using OpenTK.Graphics;
 
 namespace DisplayModel
 {
@@ -34,21 +35,15 @@ namespace DisplayModel
 	/// can either be coloured by a Red,Green,Blue triple (rgb) or
 	/// an image texture.
 	/// </summary>
-	public class Material
+	public struct Material
 	{
 		#region Fields
 		private Color4 colour;
         private int textureId;
-        private string filepath;
+        private Bitmap image;
 		#endregion
 
 		#region Constructors
-        public Material()
-        {
-            colour = Color4.LightGray;
-            textureId = -1;
-            filepath = string.Empty;
-        }
 		/// <summary>
 		/// Creates a material with the color provided.
 		/// </summary>
@@ -56,7 +51,7 @@ namespace DisplayModel
 		public Material(Color4 _color)
 		{
             colour = _color;
-            filepath = string.Empty;
+            image = null;
             textureId = -1;
 		}
 
@@ -64,10 +59,10 @@ namespace DisplayModel
 		/// Creates a material with an image texture.
 		/// </summary>
 		/// <param name='_filepath'> The path to the texture of the object. </param>
-		public Material(string _filepath)
+		public Material(string filepath)
         {
             colour = Color4.LightGray;
-            filepath = _filepath;
+            image = new Bitmap(filepath);
             textureId = -1;
 		}
 
@@ -76,10 +71,10 @@ namespace DisplayModel
 		/// </summary>
 		/// <param name='_color'> The color of the material. </param>
 		/// <param name='_filepath'> The path to the texture of the object. </param>
-		public Material(Color4 _color, string _filepath)
+		public Material(Color4 _color, string filepath)
 		{
             colour = _color;
-            filepath = _filepath;
+            image = new Bitmap(filepath);
             textureId = -1;
 		}
 		#endregion
@@ -90,20 +85,23 @@ namespace DisplayModel
         /// </summary>
         public void Setup()
         {
-            if (filepath == string.Empty)
+            if (image == null)
                 return;
 
-            // Do stuff
-            textureId = 0;
+            // Do stuff;
         }
         #endregion
 
         #region Attributes
-        public Color4 Colour { get { return colour; } }
-        /// <summary>
-        /// The id of the material's texture.
-        /// </summary>
-        public int TextureId { get { return textureId; } }
+        public Color4 Colour
+        {
+            get { return colour; }
+        }
+
+        public int getTextureId
+        {
+            get { return textureId; }
+        }
         #endregion
     }
 }
