@@ -21,10 +21,10 @@
  */
 #endregion
 
-using System;
-using System.IO;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using System;
+using System.IO;
 
 namespace DisplayModel
 {
