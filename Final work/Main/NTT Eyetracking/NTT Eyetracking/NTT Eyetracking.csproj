@@ -71,6 +71,9 @@
     <Reference Include="Settings Class">
       <HintPath>..\..\..\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.dll</HintPath>
     </Reference>
+    <Reference Include="StatsClass">
+      <HintPath>..\..\..\Components\Statistics\StatsClass\StatsClass\bin\Debug\StatsClass.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />

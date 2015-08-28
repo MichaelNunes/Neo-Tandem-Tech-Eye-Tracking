@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace StatsClass
 {
-    class Statistics
+    public class Statistics
     {
         string datasource;
         /// <summary>
@@ -76,6 +76,14 @@ namespace StatsClass
             set { type = value; }
         }
 
+        string PName;
+
+        public string pName
+        {
+            get { return PName; }
+            set { PName = value; }
+        }
+
         /// <summary>
         /// List<float> containing all X axis co-ordinates.
         /// </summary>
@@ -98,7 +106,7 @@ namespace StatsClass
             set { py = value; }
         }
 
-        public Statistics(string source, string model,int w,int h,string t)
+        public Statistics(string source, string model,int w,int h,string t, string pname)
         {
             datasource = source;
             ModelName = model;
@@ -107,6 +115,7 @@ namespace StatsClass
             pointCounter = null;
             excludedpoints = 0;
             this.type = t;
+            pName = pname;
         }
 
         public void readFile()
@@ -115,7 +124,7 @@ namespace StatsClass
             py = null;
             px = new List<float>();
             py = new List<float>();
-            string[] lines = System.IO.File.ReadAllLines(this.datasource + "\\RecordedData_" + this.ModelName + ".txt");
+            string[] lines = System.IO.File.ReadAllLines(this.datasource + /*"\\" + pName +*/ "\\RecordedData_" + this.ModelName + ".txt");
             foreach (string item in lines)
             {
                 px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
@@ -247,7 +256,11 @@ namespace StatsClass
                 {
                     nine++;
                 }
-                else if(px.ElementAt<float>(i) <= 0 && py.ElementAt<float>(i) <= 0)
+                else if(px.ElementAt<float>(i) <= 0 && py.ElementAt<float>(i) <= 0 )
+                {
+                    this.excludedpoints++;
+                }
+                else if (px.ElementAt<float>(i) >= this.width && py.ElementAt<float>(i) >= this.height)
                 {
                     this.excludedpoints++;
                 }

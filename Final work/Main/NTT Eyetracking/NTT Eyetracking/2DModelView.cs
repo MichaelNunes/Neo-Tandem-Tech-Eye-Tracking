@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Record_Class;
 using Results_Class;
 using _2D_Model;
+using StatsClass;
 
 namespace NTT_Eyetracking
 {
@@ -84,13 +85,19 @@ namespace NTT_Eyetracking
                     //pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
                     pictureBox1.Dock = DockStyle.None;
                     fullscreen = false;
-                    Results_Class.Heatmaps hm = new Heatmaps(name,globals.currentRecordingpath,Screen.PrimaryScreen.Bounds.Width,Screen.PrimaryScreen.Bounds.Height,"gugiog");
+                    Results_Class.Heatmaps hm = new Heatmaps(name,globals.currentRecordingpath,Screen.PrimaryScreen.WorkingArea.Width,Screen.PrimaryScreen.Bounds.Height,"gugiog");
                     hm.OpenHeatmapData(globals.currentRecordingpath, name);
                     hm.SaveHeatmap2D();
                     hm.SaveHeatmapOntoModel2D();
                 }
             }
             return base.ProcessDialogKey(keyData);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            StatsClass.Statistics stats = new Statistics(globals.currentRecordingpath, name, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height,"2D","");
+            stats.createPDF();
         }
     }
 }

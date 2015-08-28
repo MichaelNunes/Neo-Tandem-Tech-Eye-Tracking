@@ -12,7 +12,7 @@ namespace StatsClass
         [Test]
         public void createPDF()
         {
-            Statistics stats = new Statistics(@"Libraries\Documents\","statsTest",1920,1080,"2D");
+            Statistics stats = new Statistics(@"Libraries\Documents\","statsTest",1920,1080,"2D","");
             stats.createPDF();
             
         }
@@ -20,7 +20,7 @@ namespace StatsClass
         [Test]
         public void testHeightandWidthCalculations()
         {
-            Statistics stats = new Statistics(@"Libraries\Documents\", "statsTest", 900, 1200, "2D");
+            Statistics stats = new Statistics(@"Libraries\Documents\", "statsTest", 900, 1200, "2D","");
             Assert.AreEqual(400,stats.getGridHeight());
             Assert.AreEqual(300, stats.getGridWidth());     
         }
@@ -28,13 +28,13 @@ namespace StatsClass
         [Test]
         public void testTestforGridpopulation()
         {
-            Statistics stats = new Statistics(@"Libraries\Documents\", "statsTest", 900, 1200, "2D");
+            Statistics stats = new Statistics(@"Libraries\Documents\", "statsTest", 900, 1200, "2D","");
 
         }
         [Test]
         public void testcount()
         {
-            Statistics stats = new Statistics(@"Libraries\Documents\", "statsTest", 900, 1200, "2D");
+            Statistics stats = new Statistics(@"Libraries\Documents\", "statsTest", 900, 1200, "2D","");
             stats.getgridsCount();
             int c = stats.px.Count;
             float x = stats.px.ElementAt<float>(15);
