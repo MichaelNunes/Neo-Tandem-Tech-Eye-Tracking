@@ -2,25 +2,25 @@
     \textbf{Priority: Critical}\newline
     Given a 3D scene, in a format such as a BLEND file or an OBJ file, the scene must be able to be rendered to a display. The rendered scene will be placed in a window for viewing so that the eye tracker can "see" the scene.\newline
     \textbf{Pre-condition: }
-    Open the 3D rendering software software with the 3D scene file.\newline
+    Open the 3D rendering software with the 3D scene file.\newline
     \textbf{Post-condition: }
-    Have a window open that has the scene loaded and rendered.
+    Have a window open that has the scene loaded and rendered. Images of this scene can then be taken for later viewing and recordings.
     
 \subsection{Eye-tracking on a 3D scene}
     \textbf{Priority: Critical}\newline
     The eye tracking software must be used or augmented in such a way that specific areas in the 3D scene can capture viewing information. This is will be done given information from the eye tracker itself.\newline
     \textbf{Pre-condition: }
-    Have OGAMA and eye tracking equipment setup and running.\newline
+    Have Neo Tandem Technology eye tracking software and eye tracking equipment set-up and running.\newline
     \textbf{Post-condition: }
-    Captured information into a file.
+    Captured information is written into a file.
     
 \subsection{Create heat mapped texture}
     \textbf{Priority: Critical}\newline
     From the eye tracking information a heat map in the form of a texture map must be produced. The format of the texture will depend on the 3D software used.\newline
     \textbf{Pre-condition: }
-    Have captured information from OGAMA and eye tracking equipment.\newline
+    Have captured information from Neo Tandem Technology eye tracking software and eye tracking equipment.\newline
     \textbf{Post-condition: }
-    Captured information made into a heat map image.
+    Captured information can be used to create a heat-map image.
     
 \subsection{Map heat mapped texture back onto scene}
     \textbf{Priority: Critical}\newline
@@ -32,32 +32,32 @@
     
 \subsection{Real-time heat mapping}
     \textbf{Priority: Nice-to-have}\newline
-    As the scene is being viewed it will also be coloured according to the eye trackers information.\newline
+    As the scene is being viewed it will also be coloured according to the information gathered by the eye tracking device during the recording.\newline
     \textbf{Pre-condition: }
-    Have OGAMA and eye tracking equipment setup and running.\newline
+    Have Neo Tandem Technology eye tracking software and eye tracking equipment set-up and running.\newline
     \textbf{Post-condition: }
     Captured information used to colour the scene.
     
 \subsection{Interactive Maps}
     \textbf{Priority: Important}\newline
-    This function involves overlaying a map with data captured by the Eye tribe eye tracking technology and stored using the OGAMA freeware. The data will be retrieved from a database which has already been integrated into the OGAMA freeware that will be used for this project. Through the use of the analytical features provided by OGAMA, its functionality will be extended into the visualization of the information it has stored. This includes the attention maps, scan paths and replay functions.\newline
+    This function involves overlaying a map with data captured by the Eye tribe eye tracking technology and stored using the Neo Tandem Technology eye tracking software. The data will be retrieved from a database which has already been integrated into the Neo Tandem Technology eye tracking software that will be used for this project. Through the use of the heat-map creation provided by the Heatmap.net library, its functionality will be extended into the visualization of the information it has stored. This includes the attention maps, scan paths and replay functions.\newline
     \textbf{Pre-condition: } Have the Eye tribe eye tracking technology running during the activity.\newline   
     \textbf{Post-condition: }Output a 2D representation on the interactive map with the necessary data overlaying it. 
     
 \subsection{In-Video Eye Tracking}
     \textbf{Priority: Nice-to-have}\newline
-    This function overlays video frames with eye tracking attention maps while watching a video. This is an especially tricky function due to the fact that OGAMA analytical feature is able to run in parallel with data being viewed, but not render the attention map or scan path at run time.\newline
-    \textbf{Pre-condition: }Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.\newline
+    This function overlays video frames with eye tracking attention maps while watching a video.\newline
+    \textbf{Pre-condition: } Have the Eye tribe eye tracking technology running during the activity.\newline
     \textbf{Post-condition: }Run time editing of video frames overlaid with attention maps and scan paths.
 
 \subsection{Post-video Eye Tracking}
     \textbf{Priority: Nice-to-have}\newline
-    This function involves rendering a video with an attention map and scan path overlaid after it has been watched. This function is more achievable than the In-video eye tracking because the OGAMA software is able to record eye gaze and movement on image slideshows thus it can be used on a slideshow of frames from the video to render a video coupled with this analyzed data overlaying it.\newline
-\textbf{Pre-condition: }Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.\newline   
+    This function involves rendering a video with an attention map and scan path overlaid after it has been watched. This function is more achievable than the In-video eye tracking because the Neo Tandem Technology eye tracking software is able to record eye gaze and movement on image slide shows thus it can be used on a slide show of frames from the video to render a video coupled with this analysed data overlaying it.\newline
+\textbf{Pre-condition: }Have the Eye tribe eye tracking technology running during the activity.\newline   
 \textbf{Post-condition: }Output a video with its frames overlaid with attention maps and scan paths.
 
 \subsection{Suitable Video Output Formats} 
     \textbf{Priority: Nice-to-have}\newline
-    This function aims allow the post-video eye tracking video to be outputted in more than one video format. The default video output provided by OGAMA is AVI, but through this function it would be possible to output videos in more popular formats such as MP4, WMV, MKV etc. This allows the product to be used by many more devices, some of which have limited memory or only support specific video formats.\newline
-    \textbf{Pre-condition: }Have OGAMA freeware integrated into video viewing software. Have the Eye tribe eye tracking technology running during the activity.\newline
+    This function aims allow the post-video eye tracking video to be outputted in more than one video format. The default video output provided by aForge.net is AVI, but it is possible to output videos in more popular formats such as MP4, WMV, MKV etc. This allows the product to be used by many more devices, some of which have limited memory or only support specific video formats.\newline
+    \textbf{Pre-condition: } Video should be created and ready for saving.\newline
     \textbf{Post-condition: }Output a video in the format that the user has selected.

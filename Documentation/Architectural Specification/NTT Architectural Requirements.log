@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  31 JUL 2015 15:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  28 AUG 2015 16:20
 entering extended mode
 **NTT*Architectural*Requirements.tex
 
@@ -387,7 +387,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 179.
 Here is how much of TeX's memory you used:
  5329 strings out of 493921
  83561 string characters out of 3144475
- 159402 words of memory out of 3000000
+ 160402 words of memory out of 3000000
  8494 multiletter control sequences out of 15000+200000
  10097 words of font info for 35 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -397,7 +397,7 @@ Here is how much of TeX's memory you used:
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Architectural Requirements.pdf" (13 pages, 231686 bytes)
+Output written on "NTT Architectural Requirements.pdf" (13 pages, 231684 bytes)
 .
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
