@@ -74,6 +74,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ETGraph Unit Tests.cs" />
+    <Compile Include="Eye_Tracking_Graph.cs" />
     <Compile Include="Heatmap Tests.cs" />
     <Compile Include="Heatmaps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

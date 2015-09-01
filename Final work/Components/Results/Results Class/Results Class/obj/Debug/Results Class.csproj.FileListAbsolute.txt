@@ -1,8 +1,3 @@
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Debug\Results Class.dll
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Debug\Results Class.pdb
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Debug\Results Class.csprojResolveAssemblyReference.cache
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Debug\Results Class.dll
-C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\Debug\Results Class.pdb
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Debug\Results Class.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Debug\Results Class.pdb
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\Debug\AForge.Video.dll
