@@ -30,7 +30,6 @@ C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\HeatMap.NET.dll
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Video Model.dll
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results Class.pdb
-C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\HeatMap.NET.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Video Model.pdb
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Interop.WMPLib.dll
 C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\AxInterop.WMPLib.dll
@@ -80,3 +79,6 @@ C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\StatsClass.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\sharpPDF.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\StatsClass.pdb
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\StatsClass.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\sharpPDF.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\StatsClass.pdb

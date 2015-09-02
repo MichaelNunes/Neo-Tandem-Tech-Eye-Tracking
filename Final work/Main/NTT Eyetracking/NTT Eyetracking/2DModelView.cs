@@ -85,13 +85,23 @@ namespace NTT_Eyetracking
                     //pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
                     pictureBox1.Dock = DockStyle.None;
                     fullscreen = false;
-                    Results_Class.Heatmaps hm = new Heatmaps(name,globals.currentRecordingpath,Screen.PrimaryScreen.WorkingArea.Width,Screen.PrimaryScreen.Bounds.Height,"gugiog");
+                    Size res = this.GetDpiSafeResolution();
+                    Results_Class.Heatmaps hm = new Heatmaps(name,globals.currentRecordingpath,res.Width,res.Height,"gugiog");
                     hm.OpenHeatmapData(globals.currentRecordingpath, name);
                     hm.SaveHeatmap2D();
                     hm.SaveHeatmapOntoModel2D();
                 }
             }
             return base.ProcessDialogKey(keyData);
+        }
+
+        private Size GetDpiSafeResolution()
+        {
+            using (Graphics graphics = this.CreateGraphics())
+            {
+                return new Size((Screen.PrimaryScreen.Bounds.Width * (int)graphics.DpiX) / 96
+                  , (Screen.PrimaryScreen.Bounds.Height * (int)graphics.DpiY) / 96);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
