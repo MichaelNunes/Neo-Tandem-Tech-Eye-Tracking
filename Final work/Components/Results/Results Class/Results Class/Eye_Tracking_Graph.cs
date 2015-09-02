@@ -124,19 +124,39 @@ namespace Results_Class
             SourceLocation = FilePath;
         }
 
-        Image createETGraph(Bitmap img, int X, int Y)
+        /// <summary>
+        /// traces a graph (points connected with lines) on the model
+        /// </summary>
+        /// <param name="img"></param> source image to graph onto
+        /// <param name="X"></param> x co-ordinate of point
+        /// <param name="Y"></param> y co-ordinate of point
+        /// <param name="currentPoint"></param> point currently selected/observed in model
+        /// <param name="pointHistory"></param> how many points to trace back to while graphing them. 
+        /// <returns></returns>
+        Image createETGraph(Image img, List<float> X, List<float> Y, int currentPoint, int pointHistory)
         {
-            Pen blackPen = new Pen(Color.Black, 3);
-
-            //test line
-            int x2 = X + 10;
-            int y2 = Y + 10;
-
-            // Draw line to screen.
             using (var graphics = Graphics.FromImage(img))
             {
-                graphics.DrawLine(blackPen, X, Y, x2, y2);
-            }
+                int startPoint = currentPoint - pointHistory;
+                if(startPoint < 0)
+                {
+                    startPoint = 0;
+                }
+                int endPoint = currentPoint;
+                for (int i = startPoint; i <= endPoint; i++)
+                {
+                    SolidBrush redBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+                    graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
+                    Font drawFont = new System.Drawing.Font("Arial", 16);
+                    SolidBrush greenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+                    Pen redPen = new Pen(Color.Red, 1);
+                    if (i > 0)
+                    {
+                        graphics.DrawLine(redPen, X[i], Y[i], X[i - 1], Y[i - 1]);
+                    }
+                    graphics.DrawString(i.ToString(), drawFont, greenBrush, X[i], Y[i]);
+                }
+             }
             return img;
         }
 
@@ -216,7 +236,7 @@ namespace Results_Class
                     {
                         throw new ArgumentNullException();
                     }
-                    Image canvas = createETGraph(bitmap, px.ToArray(), py.ToArray());
+                    Image canvas = createETGraph(bitmap, px, py, i, 10);
                     canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".ETGraph.jpg", ImageFormat.Jpeg);
                 }
             }
@@ -314,7 +334,7 @@ namespace Results_Class
         {
             try
             {
-                Image canvas = createETGraph(bitmap, x.ToArray(), y.ToArray());
+                Image canvas = createETGraph(bitmap, px, py, i, 10);
                 canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + i + ".jpg", ImageFormat.Jpeg);
                 bitmap.Dispose();
             }
@@ -335,7 +355,7 @@ namespace Results_Class
                 throw new ArgumentNullException();
             }
 
-            Image canvas = createETGraph(bitmap, px.ToArray(), py.ToArray());
+            Image canvas = createETGraph(bitmap, px, py, 0, 10);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.jpg", ImageFormat.Jpeg);
         }
 
@@ -393,7 +413,7 @@ namespace Results_Class
                         throw new ArgumentNullException();
                     }
 
-                    Image canvas = createETGraph(bitmap, px.ToArray(), py.ToArray());
+                    Image canvas = createETGraph(bitmap, px, py, i, 10);
                     canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".ETGraph.jpg", ImageFormat.Jpeg);
                 }
             }
@@ -462,7 +482,7 @@ namespace Results_Class
 
                     Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
 
-                    Image canvas = createETGraph(im, x.ToArray(), y.ToArray());
+                    Image canvas = createETGraph(im, px, py, i, 10);
                     //im.Dispose();
                     canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
                     im.Dispose();
@@ -493,7 +513,7 @@ namespace Results_Class
             {
                 throw new ArgumentNullException();
             }
-            Image canvas = createETGraph(im, px.ToArray(), py.ToArray());
+            Image canvas = createETGraph(im, px, py, 0, 10);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.Jpg", ImageFormat.Jpeg);
         }
 
