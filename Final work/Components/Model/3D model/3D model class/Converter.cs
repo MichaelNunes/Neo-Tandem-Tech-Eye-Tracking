@@ -187,23 +187,5 @@ namespace DisplayModel
                 }
             }
 		}
-
-		/// <summary>
-		/// Converts the object and material files into a Model object.
-		/// </summary>
-		/// <param name='obj'> The filepath to the object file. </param>
-		public static GameObject fromDAE(string obj)
-		{
-            return null;
-		}
-
-		/// <summary>
-		/// Converts the object and material files into a Model object.
-		/// </summary>
-		/// <param name='obj'> The filepath to the object file. </param>
-		public static GameObject fromX3D(string obj)
-        {
-            return null;
-		}
 	}
 }

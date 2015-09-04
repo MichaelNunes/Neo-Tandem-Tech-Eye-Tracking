@@ -37,6 +37,8 @@ namespace DisplayModel
         private Transform transform;
         private Material material;
         public BufferData bufferData;
+
+        private List<GameObject> children;
         #endregion
 
         #region Constructors
