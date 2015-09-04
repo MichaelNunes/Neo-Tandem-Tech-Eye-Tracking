@@ -83,20 +83,21 @@ namespace DisplayModel
 					case "f":
                         addFace(ref f_vertices, ref f_uvs, ref f_normals, sections);
 						break;
+
+                    case "mttlib":
+                        Console.WriteLine("Material file: {0}", sections[1]);
+                        break;
 				}
 			}
 
             filereader.Close();
 
-            GameObject temp = new GameObject();
+            Transform transform = new Transform();
+            Material material = (tex != "") ? new Material(tex) : new Material();
+            BufferData bufferdata = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, material.Colour);
+            GameObject temp = new GameObject(transform, material, bufferdata);
 
-            if (tex != "")
-                temp.Material = new Material(tex);
-            else
-                temp.Material = new Material(Color4.LightGray);
 
-            temp.BufferData = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material);
-            Console.WriteLine(temp);
             scaleObject(temp);
             return temp;
 		}

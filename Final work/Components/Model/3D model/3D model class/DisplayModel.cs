@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using OpenTK;
 
 using DisplayModel;
 
@@ -34,29 +35,36 @@ namespace DisplayModel
         public static void Main(string[] args)
         {
             Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
-#if DEBUG
-            string source = @"C:\Users\COS301\Documents\cube.obj";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\city.obj";
-            string texture = @"C:\Users\COS301\Documents\cube.png";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
-#else
-            string source = args[0];
-            string texture = args[1];
-#endif
+
 
             try
             {
-                GameObject susan = Converter.fromOBJ(source, texture);
-                Console.WriteLine(susan.Material.TextureId);
-                susan.Material.Setup();
-                Console.WriteLine(susan.Material.TextureId);
-                //Console.ReadLine();
+                
+                  List<Vector3> v = new List<Vector3> { new Vector3(1f, 0.5f, 0f), new Vector3(1f, -1.5f, 0f), new Vector3(-1f, -1.5f, 0f), new Vector3(-1f, 0.5f, 0f) };
+                  List<Vector2> t = new List<Vector2> { };
+                  List<Vector3> n = new List<Vector3> { new Vector3(0f, 0f, 1f) };
+                  
+                  List<int> a = new List<int> { 1, 2, 3, 1, 3, 4 };
+                  List<int> b = new List<int> { 1, 2, 3, 1, 3, 4 };
+                  List<int> c = new List<int> { 1, 2, 3, 1, 3, 4 };
 
-                window.Add(susan);
+                  GameObject test = new GameObject();
+                  test.Transform = new Transform();
+                  test.Material = new Material();
+                  test.BufferData = new BufferData(v, t, n, a, b, c, test.Material.Colour);
+
+                Console.WriteLine(test.BufferData);/*
+                test = Converter.fromOBJ(@"C:\Users\COS301\Documents\Monkey.obj", "");
+                Console.WriteLine(test.BufferData);*/
+                window.Add(test);
+                 
                 window.Run(30, 30);
 
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
                 Console.ReadLine();
             }
         }

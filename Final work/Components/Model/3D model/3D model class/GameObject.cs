@@ -23,6 +23,7 @@
 
 using OpenTK;
 using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
 
@@ -36,6 +37,7 @@ namespace DisplayModel
         #region Fields
         private Transform transform;
         private Material material;
+        private Buffer buffer;
         public BufferData bufferData;
 
         private List<GameObject> children;
@@ -50,6 +52,8 @@ namespace DisplayModel
             transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
             material = new Material();
             bufferData = new BufferData();
+
+            Initialize();
         }
 
         /// <summary>
@@ -63,8 +67,23 @@ namespace DisplayModel
             transform = t;
             material = m;
             bufferData = bd;
+
+            Initialize();
         }
         #endregion
+
+        public void Initialize()
+        {
+            // IMPLEMENT
+            // DOES THE SETUP OF THE BUFFERS, MATERIALS, AND SO FORTH
+
+            //GENERATING BUFFERS
+            buffer.Position = GL.GenBuffer();
+            buffer.Normal = GL.GenBuffer();
+            buffer.Colour = GL.GenBuffer();
+            buffer.Texture = GL.GenBuffer();
+            buffer.Index = GL.GenBuffer();
+        }
 
         #region Attributes
         /// <summary>
@@ -92,6 +111,14 @@ namespace DisplayModel
         {
             get { return bufferData; }
             set { bufferData = value; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Buffer Buffer
+        {
+            get { return buffer; }
         }
         #endregion
     }

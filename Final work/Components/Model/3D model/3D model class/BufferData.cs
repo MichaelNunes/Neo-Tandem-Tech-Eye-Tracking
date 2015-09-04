@@ -22,6 +22,7 @@
 #endregion
 
 using OpenTK;
+using OpenTK.Graphics;
 using System;
 using System.Collections.Generic;
 
@@ -37,7 +38,7 @@ namespace DisplayModel
         private Vector2[] texture;
         private Vector3[] normal;
         private Vector4[] colour;
-        private int[] index;
+        private uint[] index;
         public Matrix4 ModelViewMatrix;
 		#endregion
 
@@ -51,33 +52,65 @@ namespace DisplayModel
         /// <param name='vi'> A list of vertex indices. </param>
         /// <param name='ti'> A list of texture indices. </param>
         /// <param name='ni'> A list of normal indices. </param>
-        public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, List<int> vi, List<int> ti, List<int> ni, Material mat)
+        public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, List<int> vi, List<int> ti, List<int> ni, Color4 color)
         {
-            vertex = new Vector3[vi.Count];
-            colour = new Vector4[vi.Count];
-            texture = new Vector2[ti.Count];
-            normal = new Vector3[ni.Count];
-            index = null;
+            vertex = new Vector3[vp.Count];
+            colour = new Vector4[vp.Count];
+            texture = new Vector2[tp.Count];
+            normal = new Vector3[np.Count];
+            index = new uint[vi.Count];
             ModelViewMatrix = Matrix4.Identity;
 
-            int count = 0;
+            Console.WriteLine(vi.Count);
+            Console.WriteLine(ti.Count);
+            Console.WriteLine(ni.Count);
+
             for (int i = 0; i < vi.Count; i++)
-                vertex[count++] = vp[vi[i]-1];
+                index[i] = (uint)(vi[i] - 1);
+
+            for (int i = 0; i < vp.Count; i++)
+                vertex[i] = vp[i];
 
             for (int i = 0; i < colour.Length; i++)
-                colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);
+                colour[i] = new Vector4(color.R, color.G, color.B, color.A);
 
-            count = 0;
-            for (int i = 0; i < ti.Count; i++)
-                texture[count++] = tp[ti[i]-1];
+            for (int i = 0; i < tp.Count; i++)
+                texture[i] = tp[i];
 
-            Console.WriteLine(count);
+            for (int i = 0; i < np.Count; i++)
+                normal[i] = np[i];
 
-            count = 0;
-            for (int i = 0; i < ni.Count; i++)
-                normal[count++] = np[ni[i]-1];
+            Console.WriteLine(vertex.Length);
+            Console.WriteLine(texture.Length);
+            Console.WriteLine(normal.Length);
+            Console.WriteLine(index[0]);
 		}
 		#endregion
+
+        public override string ToString()
+        {
+            string v = "[";
+            foreach (Vector3 j in vertex)
+                v += j + ",";
+            v += "\b]";
+
+            string t = "[";
+            foreach (Vector2 j in texture)
+                t += j + ",";
+            t += "\b]";
+
+            string n = "[";
+            foreach (Vector3 j in normal)
+                n += j + ",";
+            n += "\b]";
+
+            string i = "[";
+            foreach (int j in index)
+                i += j + ",";
+            i += "\b]";
+
+            return v + "\n" + t + "\n" + n + "\n" + i;
+        }
 
         #region Attributes
         /// <summary>
@@ -99,6 +132,11 @@ namespace DisplayModel
         /// The colour array of the object.
         /// </summary>
         public Vector4[] Colour { get { return colour; } }
+
+        /// <summary>
+        /// The index array of the object.
+        /// </summary>
+        public uint[] Index { get { return index; } }
 		#endregion
 	}
 }
