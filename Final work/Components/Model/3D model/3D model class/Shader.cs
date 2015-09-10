@@ -192,7 +192,7 @@ namespace DisplayModel
         private void SetUniforms(ref BufferData bufferData)
         {
             GL.Uniform1(uniform.UseLighting, 1);
-            GL.Uniform1(uniform.UseTexture, 1);
+            GL.Uniform1(uniform.UseTexture, 0);
             GL.Uniform1(uniform.Sampler, 0);
 
             GL.Uniform3(uniform.AmbientLightColour, AmbientLight_Colour);
