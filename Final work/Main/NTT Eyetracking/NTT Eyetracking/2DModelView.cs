@@ -108,6 +108,7 @@ namespace NTT_Eyetracking
         {
             StatsClass.Statistics stats = new Statistics(globals.currentRecordingpath, name, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height,"2D","");
             stats.createPDF();
+            PDFViewer m = new PDFViewer(globals.currentRecordingpath);
         }
     }
 }
