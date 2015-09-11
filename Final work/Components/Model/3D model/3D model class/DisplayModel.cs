@@ -24,6 +24,7 @@ namespace DisplayModel
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
                 throw new Exception(e.Message);
             }
         }
@@ -31,7 +32,7 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
+            string source = @"C:\Users\COS301\Documents\Objects\Medieval_City2.obj";
             string texture = "";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
             string filePath = @"C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 

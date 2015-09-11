@@ -83,15 +83,7 @@ namespace DisplayModel
 
             WindowBorder = WindowBorder.Hidden;
             WindowState = WindowState.Fullscreen;
-            if(flyThrough ==true)
-            {
-                Visible = true;
-            }
-            else
-            {
-                Visible = false;
-            }
-            
+            Visible = true;
 
             GL.ClearColor(Color.Bisque);
             GL.Enable(EnableCap.DepthTest);
@@ -177,11 +169,11 @@ namespace DisplayModel
 
             if(state.IsKeyDown(OpenTK.Input.Key.ShiftLeft))
             {
-                camera.currentSpeed = Camera.runSpeed;
+                camera.currentSpeed = camera.runSpeed;
             }
             else
             {
-                camera.currentSpeed = Camera.walkSpeed;
+                camera.currentSpeed = camera.walkSpeed;
             }
 
             if (state.IsKeyDown(OpenTK.Input.Key.W))

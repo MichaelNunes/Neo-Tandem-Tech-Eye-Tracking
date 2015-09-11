@@ -54,17 +54,17 @@ namespace DisplayModel
         /// <param name='ni'> A list of normal indices. </param>
         public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, List<int> vi, List<int> ti, List<int> ni, Color4 color)
         {
-            vertex = new Vector3[vp.Count];
-            colour = new Vector4[vp.Count];
-            texture = new Vector2[tp.Count];
-            normal = new Vector3[np.Count];
+            vertex = new Vector3[vi.Count];
+            colour = new Vector4[vi.Count];
+            texture = new Vector2[ti.Count];
+            normal = new Vector3[ni.Count];
             index = new uint[vi.Count];
             ModelViewMatrix = Matrix4.Identity;
 
             Console.WriteLine("Begin");
-            Maximize(ref vp, ref tp, ref np, ref vi, ref ti, ref ni);
+            Maximize(ref vp, ref tp, ref np, ref vi, ref ti, ref ni, color);
             Console.WriteLine("Middle");
-            Minimize(ref vp, ref tp, ref np, ref vi, ref color);
+            //Minimize(ref vp, ref tp, ref np, ref vi, ref color);
             Console.WriteLine("End");
 
             float radians = OpenTK.MathHelper.DegreesToRadians(-15);
@@ -106,7 +106,7 @@ namespace DisplayModel
         /// <param name="vi"></param>
         /// <param name="ti"></param>
         /// <param name="ni"></param>
-        private void Maximize(ref List<Vector3> vp, ref List<Vector2> tp, ref List<Vector3> np, ref List<int> vi, ref List<int> ti, ref List<int> ni)
+        private void Maximize(ref List<Vector3> vp, ref List<Vector2> tp, ref List<Vector3> np, ref List<int> vi, ref List<int> ti, ref List<int> ni, Color4 color)
         {
             Vector3[] p_vertices = new Vector3[vp.Count];
             vp.CopyTo(p_vertices);
@@ -120,14 +120,17 @@ namespace DisplayModel
             np.CopyTo(n_vertices);
             np.Clear();
 
-            for (int i = 0; i < vi.Count; i++)
-                vp.Add(p_vertices[vi[i] - 1]);
+            for (int i = 0; i < vertex.Length; i++)
+                vertex[i] = p_vertices[vi[i] - 1];
 
-            for (int i = 0; i < ti.Count; i++)
-                tp.Add(t_vertices[ti[i] - 1]);
+            for (int i = 0; i < texture.Length; i++)
+                texture[i] = t_vertices[ti[i] - 1];
 
-            for (int i = 0; i < ni.Count; i++)
-                np.Add(n_vertices[ni[i] - 1]);
+            for (int i = 0; i < normal.Length; i++)
+                normal[i] = n_vertices[ni[i] - 1];
+
+            for (int i = 0; i < colour.Length; i++)
+                colour[i] = new Vector4(color.R, color.B, color.G, color.A);
 
             //vertex = new Vector3[vp.Count];
             //vp.CopyTo(vertex);

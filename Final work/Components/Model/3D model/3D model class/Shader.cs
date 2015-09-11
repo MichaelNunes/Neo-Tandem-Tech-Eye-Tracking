@@ -154,8 +154,8 @@ namespace DisplayModel
 
         private void Finish(ref GameObject gameobject)
         {
-            //GL.DrawArrays(PrimitiveType.Triangles, 0, gameobject.BufferData.Vertex.Length);
-            GL.DrawElements(PrimitiveType.Triangles, gameobject.BufferData.Index.Length, DrawElementsType.UnsignedInt, 0);
+            GL.DrawArrays(PrimitiveType.Triangles, 0, gameobject.BufferData.Vertex.Length);
+           // GL.DrawElements(PrimitiveType.Triangles, gameobject.BufferData.Index.Length, DrawElementsType.UnsignedInt, 0);
 
             GL.DisableVertexAttribArray(attribute.VertexPosition);
             GL.DisableVertexAttribArray(attribute.VertexNormal);
