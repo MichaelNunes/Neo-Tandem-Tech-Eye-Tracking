@@ -97,7 +97,9 @@ namespace DisplayModel
             BufferData bufferdata = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, material.Colour);
             GameObject temp = new GameObject(transform, material, bufferdata);
 
-
+            temp.BufferData = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material.Colour);
+            Console.WriteLine(temp);
+            //scaleObject(temp);
             scaleObject(temp);
             return temp;
 		}

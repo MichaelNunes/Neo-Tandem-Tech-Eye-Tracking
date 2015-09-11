@@ -11,13 +11,10 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public void Run(string[] args)
+        public void Run(string source, string texture, string filePath, bool flyThrough)
         {
-            string source = args[0];
-            string texture = "";
-
-            Window window = new Window(args[1]);
-
+            Window window = new Window(filePath, flyThrough);
+            
             try
             {
                 GameObject scene = Converter.fromOBJ(source, texture);
@@ -34,39 +31,12 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
+            string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
+            string texture = "";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
+            string filePath = @"C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
-
-            try
-            {
-                
-                  List<Vector3> v = new List<Vector3> { new Vector3(1f, 0.5f, 0f), new Vector3(1f, -1.5f, 0f), new Vector3(-1f, -1.5f, 0f), new Vector3(-1f, 0.5f, 0f) };
-                  List<Vector2> t = new List<Vector2> { };
-                  List<Vector3> n = new List<Vector3> { new Vector3(0f, 0f, 1f) };
-                  
-                  List<int> a = new List<int> { 1, 2, 3, 1, 3, 4 };
-                  List<int> b = new List<int> { 1, 2, 3, 1, 3, 4 };
-                  List<int> c = new List<int> { 1, 2, 3, 1, 3, 4 };
-
-                  GameObject test = new GameObject();
-                  test.Transform = new Transform();
-                  test.Material = new Material();
-                  test.BufferData = new BufferData(v, t, n, a, b, c, test.Material.Colour);
-
-                Console.WriteLine(test.BufferData);/*
-                test = Converter.fromOBJ(@"C:\Users\COS301\Documents\Monkey.obj", "");
-                Console.WriteLine(test.BufferData);*/
-                window.Add(test);
-                 
-                window.Run(30, 30);
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-                Console.ReadLine();
-            }
+            DisplayModel dm = new DisplayModel();
+            dm.Run(source, texture, filePath, true);
         }
     }
 }

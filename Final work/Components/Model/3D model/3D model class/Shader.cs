@@ -36,8 +36,6 @@ namespace DisplayModel
         private Uniform uniform;
         #endregion
 
-        private float degrees;
-
         #region Matrices
         private Matrix4 ModelViewMatrix;
         public Matrix4 ProjectionMatrix;
@@ -50,8 +48,6 @@ namespace DisplayModel
         /// </summary>
         public void initProgram()
         {
-            degrees = 0.0f;
-
             // PROGRAM
             id.Program = GL.CreateProgram();
 
@@ -72,6 +68,26 @@ namespace DisplayModel
             uniform.NormalMatrix        = GL.GetUniformLocation(id.Program, "uNormalMatrix");
 
             uniform.UseLighting = GL.GetUniformLocation(id.Program, "uUseLighting");
+            uniform.UseTexture = GL.GetUniformLocation(id.Program, "uUseTexture");
+
+            uniform.AmbientLightColour = GL.GetUniformLocation(id.Program, "uAmbientLight_Colour");
+            uniform.DirectionalLightColour = GL.GetUniformLocation(id.Program, "uDirectionalLight_Colour");
+            uniform.DirectionalLightDirection = GL.GetUniformLocation(id.Program, "uDirectionalLight_Direction");
+            uniform.PointLightDiffuseColour = GL.GetUniformLocation(id.Program, "uPointLight_DiffuseColour");
+            uniform.PointLightSpecularColour = GL.GetUniformLocation(id.Program, "uPointLight_SpecularColour");
+            uniform.PointLightPosition = GL.GetUniformLocation(id.Program, "uPointLight_Position");
+            uniform.PointLightShininess = GL.GetUniformLocation(id.Program, "uPointLight_Shininess");
+            uniform.Sampler = GL.GetUniformLocation(id.Program, "uSampler");
+
+
+
+            AmbientLight_Colour = new Vector3(0.0f, 0.0f, 0.0f);
+            DirectionalLight_Colour = new Vector3(1.0f, 1.0f, 1.0f);
+            DirectionalLight_Direction = new Vector3(0.0f, 0.0f, 0.0f);
+            PointLight_DiffuseColour = new Vector3(135/255, 206/255, 235/255);
+            PointLight_SpecularColour = new Vector3(0.5f, 0.5f, 0.5f);
+            PointLight_Shininess = 1000f;
+            PointLight_Position = new Vector3(0.0f, 0.0f, -5.0f);
             uniform.UseTexture  = GL.GetUniformLocation(id.Program, "uUseTexture");
 
             uniform.AmbientLightColour          = GL.GetUniformLocation(id.Program, "uAmbientLight_Colour");

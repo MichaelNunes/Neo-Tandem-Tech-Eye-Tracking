@@ -22,7 +22,9 @@ namespace DisplayModel
 
         //Camera feature(s)(make into class)
         Vector3 cameraPosition = new Vector3(0f, 0f, 0f);
-        float cameraSpeed = 1.0f;
+        const float walkSpeed = 1.0f;
+        const float runSpeed = 5.0f;
+        float cameraSpeed = 0.0f;
         float yaw = (float)MathHelper.DegreesToRadians(-90);
         float pitch = 0.0f;
 
@@ -30,20 +32,20 @@ namespace DisplayModel
         Bitmap videoImage;
         int frameNumber = 0;
         bool isRecording = false;
+        bool flyThrough;
 
-        public Window()
-            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 16))
-        {
-            shaderData = new Shader();
-            objects = new List<GameObject>();
-        }
+        //Misc
+        
 
-        public Window(string _imagePath)
-            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 16))
+        public Window(string _imagePath, bool _flyThrough)
+            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 8))
         {
             shaderData = new Shader();
             objects = new List<GameObject>();
             imagePath = _imagePath;
+            flyThrough = _flyThrough;
+
+
         }
 
         public void Add(GameObject gameObject)
@@ -157,7 +159,7 @@ namespace DisplayModel
         {
             for (int i = 0; i < objects.Count; i++)
             {
-                objects[i].bufferData.ModelViewMatrix = Matrix4.LookAt(cameraPosition, cameraPosition + new Vector3((float)Math.Cos(yaw), pitch, (float)Math.Sin(yaw)), new Vector3(0f, 1f, 0f)) * Matrix4.CreateTranslation(0f, -0.05f, -3f);
+                objects[i].bufferData.ModelViewMatrix = Matrix4.CreateTranslation(0f, 0f, 0f) * Matrix4.LookAt(cameraPosition, cameraPosition + new Vector3((float)Math.Cos(yaw), pitch, (float)Math.Sin(yaw)), new Vector3(0f, 1f, 0f));
             }
         }
 
@@ -167,6 +169,14 @@ namespace DisplayModel
         /// <param name="time">This is the time that the OnUpdateFrame() method takes to make an update so that camera movement can be made to move at a constant speed regardless of the number of updates a second.</param>
         public void UpdateCamera(double time)
         {
+            KeyboardUpdate(time);
+            JoystickUpdate(time);
+        }
+
+        void KeyboardUpdate(double time)
+        {
+            cameraSpeed = (Keyboard[OpenTK.Input.Key.ShiftLeft]) ? runSpeed : walkSpeed;
+
             if (Keyboard[OpenTK.Input.Key.W])
             {
                 cameraPosition.X += (float)Math.Cos(yaw) * cameraSpeed * (float)time;
@@ -211,6 +221,34 @@ namespace DisplayModel
             {
                 pitch -= 1.0f * (float)time;
             }
+        }
+
+        void JoystickUpdate(double time)
+        {
+            OpenTK.Input.JoystickState state = OpenTK.Input.Joystick.GetState(0);
+
+            if (state.GetButton(OpenTK.Input.JoystickButton.Button4) == OpenTK.Input.ButtonState.Pressed ||
+                state.GetButton(OpenTK.Input.JoystickButton.Button5) == OpenTK.Input.ButtonState.Pressed)
+                cameraPosition.Y += (float)(cameraSpeed * time);
+
+            if (state.GetButton(OpenTK.Input.JoystickButton.Button6) == OpenTK.Input.ButtonState.Pressed ||
+                state.GetButton(OpenTK.Input.JoystickButton.Button7) == OpenTK.Input.ButtonState.Pressed)
+                cameraPosition.Y -= (float)(cameraSpeed  * time);
+
+            double x1 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis0);
+            double x2 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis1);
+
+            double y1 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis2);
+            double y2 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis3);
+
+            cameraPosition.X += (float)(Math.Cos(yaw) * x2 * cameraSpeed * time);
+            cameraPosition.Z += (float)(Math.Sin(yaw) * x2 * cameraSpeed * time);
+
+            cameraPosition.X += (float)(Math.Cos(yaw + Math.PI / 2) * x1 * cameraSpeed * time);
+            cameraPosition.Z += (float)(Math.Sin(yaw + Math.PI / 2) * x1 * cameraSpeed * time);
+
+            yaw += (float)(y1 * time);
+            pitch += (float)(y2 * time);
         }
 
         protected override void OnMouseMove(OpenTK.Input.MouseMoveEventArgs e)
