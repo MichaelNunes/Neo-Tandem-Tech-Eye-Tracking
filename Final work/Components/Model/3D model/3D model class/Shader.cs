@@ -86,7 +86,7 @@ namespace DisplayModel
             AmbientLight_Colour         = new Vector3(0.0f, 0.0f, 0.0f);
             DirectionalLight_Colour     = new Vector3(1.0f, 1.0f, 1.0f);
             DirectionalLight_Direction  = new Vector3(0.0f, 0.0f, 0.0f);
-            PointLight_DiffuseColour    = new Vector3(1.0f, 1.0f, 1.0f);
+            PointLight_DiffuseColour    = new Vector3(0.0f, 0.0f, 0.0f);
             PointLight_SpecularColour   = new Vector3(0.0f, 0.0f, 0.0f);
             PointLight_Shininess        = 250.0f;
             PointLight_Position         = new Vector3(0.0f, 0.0f, -5.0f);
@@ -130,8 +130,6 @@ namespace DisplayModel
 
         private void Initailize(ref GameObject gameobject)
         {
-            float radians = OpenTK.MathHelper.DegreesToRadians(degrees++);
-
             ModelViewMatrix = gameobject.bufferData.ModelViewMatrix;
 
             GL.MatrixMode(MatrixMode.Modelview);
@@ -140,6 +138,7 @@ namespace DisplayModel
 
         private void Finish(ref GameObject gameobject)
         {
+            //GL.DrawArrays(PrimitiveType.Triangles, 0, gameobject.BufferData.Vertex.Length);
             GL.DrawElements(PrimitiveType.Triangles, gameobject.BufferData.Index.Length, DrawElementsType.UnsignedInt, 0);
 
             GL.DisableVertexAttribArray(attribute.VertexPosition);

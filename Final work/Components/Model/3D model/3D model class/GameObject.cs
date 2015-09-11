@@ -83,6 +83,8 @@ namespace DisplayModel
             buffer.Colour = GL.GenBuffer();
             buffer.Texture = GL.GenBuffer();
             buffer.Index = GL.GenBuffer();
+
+            Material.Setup();
         }
 
         #region Attributes

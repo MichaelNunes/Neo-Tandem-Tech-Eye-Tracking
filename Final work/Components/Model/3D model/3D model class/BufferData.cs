@@ -61,6 +61,15 @@ namespace DisplayModel
             index = new uint[vi.Count];
             ModelViewMatrix = Matrix4.Identity;
 
+            Console.WriteLine("Begin");
+            Maximize(ref vp, ref tp, ref np, ref vi, ref ti, ref ni);
+            Console.WriteLine("Middle");
+            Minimize(ref vp, ref tp, ref np, ref vi, ref color);
+            Console.WriteLine("End");
+
+            float radians = OpenTK.MathHelper.DegreesToRadians(-15);
+            ModelViewMatrix *= Matrix4.CreateRotationX(radians);
+            /*
             Console.WriteLine(vi.Count);
             Console.WriteLine(ti.Count);
             Console.WriteLine(ni.Count);
@@ -83,34 +92,91 @@ namespace DisplayModel
             Console.WriteLine(vertex.Length);
             Console.WriteLine(texture.Length);
             Console.WriteLine(normal.Length);
-            Console.WriteLine(index[0]);
+            Console.WriteLine(index[0]);*/
 		}
 		#endregion
 
-        public override string ToString()
+        #region Indexing Functions
+        /// <summary>
+        /// Copies the values out as it would have been in vertex mode
+        /// </summary>
+        /// <param name="vp"></param>
+        /// <param name="tp"></param>
+        /// <param name="np"></param>
+        /// <param name="vi"></param>
+        /// <param name="ti"></param>
+        /// <param name="ni"></param>
+        private void Maximize(ref List<Vector3> vp, ref List<Vector2> tp, ref List<Vector3> np, ref List<int> vi, ref List<int> ti, ref List<int> ni)
         {
-            string v = "[";
-            foreach (Vector3 j in vertex)
-                v += j + ",";
-            v += "\b]";
+            Vector3[] p_vertices = new Vector3[vp.Count];
+            vp.CopyTo(p_vertices);
+            vp.Clear();
+            
+            Vector2[] t_vertices = new Vector2[tp.Count];
+            tp.CopyTo(t_vertices);
+            tp.Clear();
 
-            string t = "[";
-            foreach (Vector2 j in texture)
-                t += j + ",";
-            t += "\b]";
+            Vector3[] n_vertices = new Vector3[np.Count];
+            np.CopyTo(n_vertices);
+            np.Clear();
 
-            string n = "[";
-            foreach (Vector3 j in normal)
-                n += j + ",";
-            n += "\b]";
+            for (int i = 0; i < vi.Count; i++)
+                vp.Add(p_vertices[vi[i] - 1]);
 
-            string i = "[";
-            foreach (int j in index)
-                i += j + ",";
-            i += "\b]";
+            for (int i = 0; i < ti.Count; i++)
+                tp.Add(t_vertices[ti[i] - 1]);
 
-            return v + "\n" + t + "\n" + n + "\n" + i;
+            for (int i = 0; i < ni.Count; i++)
+                np.Add(n_vertices[ni[i] - 1]);
+
+            //vertex = new Vector3[vp.Count];
+            //vp.CopyTo(vertex);
+            //texture = new Vector2[tp.Count];
+            //tp.CopyTo(texture);
+            //normal = new Vector3[np.Count];
+            //np.CopyTo(normal);
         }
+
+        /// <summary>
+        /// Converts the vertex defined values into index defined
+        /// </summary>
+        /// <param name="vp"></param>
+        /// <param name="tp"></param>
+        /// <param name="np"></param>
+        /// <param name="vi"></param>
+        /// <param name="ti"></param>
+        /// <param name="ni"></param>
+        private void Minimize(ref List<Vector3> vp, ref List<Vector2> tp, ref List<Vector3> np, ref List<int> vi, ref Color4 color)
+        {
+            int count = -1;
+            foreach (int i in vi)
+                if (i > count)
+                    count = i;
+
+            vertex = new Vector3[count];
+            texture = new Vector2[count];
+            normal = new Vector3[count];
+            colour = new Vector4[count];
+            index = new uint[vi.Count];
+
+            int myIndex = -1;
+            for (int i = 0; i < vp.Count; ++i)
+            {
+                if (Array.IndexOf(vertex, vp[i]) == -1)
+                {
+                    myIndex = vi[i] - 1;
+
+                    vertex[myIndex] = vp[i];
+                    if (tp.Count > 0)
+                        texture[myIndex] = tp[i];
+                    normal[myIndex] = np[i];
+                    colour[myIndex] = new Vector4(color.R, color.B, color.G, color.A);
+                }
+                 
+                index[i] = (uint)(vi[i] - 1);
+            }
+        }
+        #endregion
 
         #region Attributes
         /// <summary>
