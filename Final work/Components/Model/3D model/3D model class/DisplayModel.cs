@@ -13,13 +13,22 @@ namespace DisplayModel
     {
         public void Run(string source, string texture, string filePath, bool flyThrough)
         {
-            Window window = new Window(filePath, flyThrough);
-            
             try
             {
-                GameObject scene = Converter.fromOBJ(source, texture);
-                window.Add(scene);
-                window.Run(30, 30);
+                if(flyThrough == true)
+                {
+                    FlyThroughWindow window = new FlyThroughWindow(filePath);
+                    GameObject scene = Converter.fromOBJ(source, texture);
+                    window.Add(scene);
+                    window.Run(30, 30);
+                }
+                else
+                {
+                    PictureWindow window = new PictureWindow(filePath);
+                    GameObject scene = Converter.fromOBJ(source, texture);
+                    window.Add(scene);
+                    window.Run(30, 30);
+                }
             }
             catch (Exception e)
             {
@@ -32,7 +41,7 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            string source = @"C:\Users\COS301\Documents\Objects\Medieval_City2.obj";
+            string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
             string texture = "";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
             string filePath = @"C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 

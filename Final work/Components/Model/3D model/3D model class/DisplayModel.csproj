@@ -79,8 +79,10 @@
     <Compile Include="BufferData.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="DirectionalLight.cs" />
+    <Compile Include="FlyThroughWindow.cs" />
     <Compile Include="Light.cs" />
     <Compile Include="ID.cs" />
+    <Compile Include="PictureWindow.cs" />
     <Compile Include="PointLight.cs" />
     <Compile Include="Test Classes\Test DisplayModel.cs" />
     <Compile Include="Uniform.cs" />
