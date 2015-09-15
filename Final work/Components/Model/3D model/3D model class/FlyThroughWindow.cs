@@ -54,6 +54,18 @@ namespace DisplayModel
             GL.Enable(EnableCap.DepthTest);
 
             GL.PointSize(5f);
+
+            for (int i = 0; i < objects.Count; ++i)
+            {
+                GameObject current = objects[i];
+
+                for (int j = 0; j < current.Children.Count; ++j)
+                {
+                    GameObject child = current.Children[j];
+                    if (!objects.Contains(child))
+                        objects.Add(child);
+                }
+            }
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
