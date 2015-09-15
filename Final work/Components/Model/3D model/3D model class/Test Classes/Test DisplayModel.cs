@@ -43,7 +43,7 @@ namespace DisplayModel.Test_Classes
         public void init()
         {
             Display = new DisplayModel();
-            Display.Run(args);
+            //Display.Run(args, true);
         }
         #endregion
 
