@@ -22,7 +22,6 @@ namespace DisplayModel
         protected Bitmap videoImage;
         protected int frameNumber = 0;
         protected bool isRecording = false;
-        protected bool flyThrough;
 
         public FlyThroughWindow(string _imagePath)
             : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 8))
