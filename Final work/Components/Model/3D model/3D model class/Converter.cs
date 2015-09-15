@@ -48,8 +48,11 @@ namespace DisplayModel
                         f_uvs = new List<int>(),
                         f_normals = new List<int>();
 
+        public static   Dictionary<string, string>
+                        material_texture = new Dictionary<string,string>();
+
         public static   List<string>
-                        files = new List<string>();
+                        materials = new List<string>();
 
         public static   int current_index;
         #endregion
@@ -107,6 +110,7 @@ namespace DisplayModel
 
                     case "usemtl":
                         t_indices.Add(current_index);
+                        materials.Add(sections[1]);
                         break;
 				}
 			}
@@ -120,6 +124,7 @@ namespace DisplayModel
             StreamReader filereader;
             string line;
             string[] sections;
+            string next_material = "";
 
             int i = 0;
 
@@ -131,9 +136,14 @@ namespace DisplayModel
 
                 switch (sections[0])
                 {
+                    case "newmtl":
+                        next_material = sections[1];
+                        break;
+
                     case "map_Kd":
-                        i++;
-                        files.Add(tex + sections[1]);
+                        material_texture.Add(next_material, tex + sections[1]);
+                        Console.WriteLine(material_texture.Count);
+                        ++i;
                         break;
                 }
             }
@@ -161,7 +171,12 @@ namespace DisplayModel
                 f_uvs.CopyTo(start, ti, 0, range);
                 f_normals.CopyTo(start, ni, 0, range);
 
-                string filepath = (files.Count > 0 && child < files.Count) ? files[child] : string.Empty;
+                string h = materials[child];
+                string filepath;
+
+                try { filepath = material_texture[h]; }
+                catch (Exception e) { filepath = string.Empty; }
+
 
                 BufferData bd = new BufferData(p_vertices, p_uvs, p_normals, vi, ti, ni);
                 Material m = new Material(filepath);

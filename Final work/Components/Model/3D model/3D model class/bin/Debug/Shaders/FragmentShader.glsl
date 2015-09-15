@@ -93,6 +93,7 @@ void main()
 {
 	vec4 colour = Colour();
 	vec3 light = Light();
-
-	fragColor = vec4(colour.rgb * light, 1.0);
+	float alpha = 1.0;
+	
+	fragColor = vec4(colour.rgb * light, alpha);
 }
