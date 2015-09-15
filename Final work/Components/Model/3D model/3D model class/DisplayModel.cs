@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using OpenTK;
 
 using DisplayModel;
 
@@ -10,22 +11,29 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public void Run(string[] args)
+        public void Run(string source, string texture, string filePath, bool flyThrough)
         {
-            string source = args[0];
-            string texture = "";
-
-            Window window = new Window(args[1]);
-
             try
             {
-                GameObject scene = Converter.fromOBJ(source, texture);
-                window.Add(scene);
-                window.Run(30, 30);
+                if(flyThrough == true)
+                {
+                    FlyThroughWindow window = new FlyThroughWindow(filePath);
+                    GameObject scene = Converter.fromOBJ(source, texture);
+                    window.Add(scene);
+                    window.Run(30, 30);
+                }
+                else
+                {
+                    PictureWindow window = new PictureWindow(filePath);
+                    GameObject scene = Converter.fromOBJ(source, texture);
+                    window.Add(scene);
+                    window.Run(30, 30);
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
                 throw new Exception(e.Message);
             }
         }
@@ -33,32 +41,12 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
-#if DEBUG
-            string source = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.obj";
-            string texture = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
-#else
-            string source = args[0];
-            string texture = args[1];
-#endif
+            string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
+            string texture = "";
+            string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
-            try
-            {
-                GameObject susan = Converter.fromOBJ(source, texture);
-                Console.WriteLine(susan.Material.TextureId);
-                susan.Material.Setup();
-                Console.WriteLine(susan.Material.TextureId);
-                Console.ReadLine();
-
-                window.Add(susan);
-                window.Run(30, 30);
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadLine();
-            }
+            DisplayModel dm = new DisplayModel();
+            dm.Run(source, texture, filePath, false);
         }
     }
 }

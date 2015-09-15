@@ -83,22 +83,50 @@ namespace DisplayModel
 					case "f":
                         addFace(ref f_vertices, ref f_uvs, ref f_normals, sections);
 						break;
+
+                    case "mttlib":
+                        Console.WriteLine("Material file: {0}", sections[1]);
+                        break;
 				}
 			}
 
             filereader.Close();
 
-            GameObject temp = new GameObject();
-
-            if (tex != "")
-                temp.Material = new Material(tex);
-            else
-                temp.Material = new Material(Color4.LightGray);
-
-            temp.BufferData = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, temp.Material);
+            Transform transform = new Transform();
+            Material material = (tex != "") ? new Material(tex) : new Material();
+            BufferData bufferdata = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, material.Colour);
+            GameObject temp = new GameObject(transform, material, bufferdata);
             Console.WriteLine(temp);
+            //scaleObject(temp);
             return temp;
 		}
+
+        private static void scaleObject(GameObject obj)
+        {
+            float max = 0f;
+            for (int i = 0; i < obj.bufferData.Vertex.Length; i++)
+            {
+                if(Math.Abs(obj.bufferData.Vertex[i].X) > max)
+                {
+                    max = Math.Abs(obj.bufferData.Vertex[i].X);
+                }
+                if (Math.Abs(obj.bufferData.Vertex[i].Y) > max)
+                {
+                    max = Math.Abs(obj.bufferData.Vertex[i].Y);
+                }
+                if (Math.Abs(obj.bufferData.Vertex[i].Z) > max)
+                {
+                    max = Math.Abs(obj.bufferData.Vertex[i].Z);
+                }
+            }
+            Console.WriteLine("Largest vertex value: "+max);
+            for (int i = 0; i < obj.bufferData.Vertex.Length; i++)
+            {
+                obj.bufferData.Vertex[i].X /= max;
+                obj.bufferData.Vertex[i].Y /= max;
+                obj.bufferData.Vertex[i].Z /= max;
+            }
+        }
 
         /// <summary>
         /// Adds faces from the file source. 
@@ -135,7 +163,7 @@ namespace DisplayModel
 
                     if (texels[1] != string.Empty)
                     {
-                        t.Add(t[t.Count - 2]);
+                        t.Add(t[t.Count - 3]);
                         t.Add(t[t.Count - 2]);
                         t.Add(int.Parse(texels[1]));
                     }
@@ -158,24 +186,6 @@ namespace DisplayModel
                     v.Add(int.Parse(line[3]));
                 }
             }
-		}
-
-		/// <summary>
-		/// Converts the object and material files into a Model object.
-		/// </summary>
-		/// <param name='obj'> The filepath to the object file. </param>
-		public static GameObject fromDAE(string obj)
-		{
-            return null;
-		}
-
-		/// <summary>
-		/// Converts the object and material files into a Model object.
-		/// </summary>
-		/// <param name='obj'> The filepath to the object file. </param>
-		public static GameObject fromX3D(string obj)
-        {
-            return null;
 		}
 	}
 }
