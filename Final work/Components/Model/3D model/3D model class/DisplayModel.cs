@@ -42,11 +42,11 @@ namespace DisplayModel
         public static void Main(string[] args)
         {
             string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
-            string texture = "";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
+            string texture = "";
             string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
             DisplayModel dm = new DisplayModel();
-            dm.Run(source, texture, filePath, true);
+            dm.Run(source, texture, filePath, false);
         }
     }
 }
