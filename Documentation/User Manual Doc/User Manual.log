@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  1 SEP 2015 07:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  12 SEP 2015 19:52
 entering extended mode
 **User*Manual.tex
 
@@ -311,45 +311,48 @@ l.116 \newpage
 ] [2]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \Introduction/Introduction.tex"
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+Overfull \hbox (0.64542pt too wide) in paragraph at lines 4--5
+[]\OT1/cmr/m/n/12 Our client wanted us to de-velop this soft-ware so that it co
+uld help the Geo-Informatics
+ []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 (C:\Users\m\Documents\miktex\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
-)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+) [3]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Configuration/Config.tex" [3])
+\Configuration/Config.tex" [4])
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \GettingStarted/GettingStarted.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-[4])
+)
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \UsingSys/UsingSys.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-<./Images/Startpage.JPG, id=160, 624.83438pt x 295.1025pt>
+[5] <./Images/Startpage.JPG, id=164, 624.83438pt x 295.1025pt>
 File: ./Images/Startpage.JPG Graphic file (type jpg)
 
 <use ./Images/Startpage.JPG>
 Package pdftex.def Info: ./Images/Startpage.JPG used on input line 6.
 (pdftex.def)             Requested size: 401.51346pt x 200.75258pt.
- [5 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
+ [6 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
 Doc/Images/Startpage.JPG>]
-<./Images/Mainpage.JPG, id=165, 258.21469pt x 258.21469pt>
+<./Images/Mainpage.JPG, id=172, 258.21469pt x 258.21469pt>
 File: ./Images/Mainpage.JPG Graphic file (type jpg)
 
 <use ./Images/Mainpage.JPG>
 Package pdftex.def Info: ./Images/Mainpage.JPG used on input line 19.
 (pdftex.def)             Requested size: 401.54065pt x 200.75653pt.
- [6 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/Mainpage.JPG>]
+
 <./Images/CalibrationStarter.JPG, id=173, 246.1697pt x 255.20343pt>
 File: ./Images/CalibrationStarter.JPG Graphic file (type jpg)
 
@@ -357,21 +360,22 @@ File: ./Images/CalibrationStarter.JPG Graphic file (type jpg)
 Package pdftex.def Info: ./Images/CalibrationStarter.JPG used on input line 26.
 
 (pdftex.def)             Requested size: 401.51973pt x 200.75958pt.
-
-<./Images/Recordingsetup.JPG, id=174, 335.00156pt x 139.27031pt>
+ [7 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
+Doc/Images/Mainpage.JPG>]
+<./Images/Recordingsetup.JPG, id=178, 335.00156pt x 139.27031pt>
 File: ./Images/Recordingsetup.JPG Graphic file (type jpg)
 
 <use ./Images/Recordingsetup.JPG>
 Package pdftex.def Info: ./Images/Recordingsetup.JPG used on input line 33.
 (pdftex.def)             Requested size: 401.4989pt x 200.7552pt.
- [7 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/CalibrationStarter.JPG>] [8 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-
-Tracking/Documentation/User Manual Doc/Images/Recordingsetup.JPG>] [9])
+ [8 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
+Doc/Images/CalibrationStarter.JPG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Trac
+king/Documentation/User Manual Doc/Images/Recordingsetup.JPG>] [9])
 Underfull \hbox (badness 10000) in paragraph at lines 46--131
 
  []
 
-
+[10]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \Troubleshooting/Troubleshooting.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
@@ -383,14 +387,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-[10]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
 )
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Appendicies/Appendices.tex") [11]
+\Appendicies/Appendices.tex")
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \Index/Index.tex")
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
@@ -412,13 +416,13 @@ Here is how much of TeX's memory you used:
  8492 multiletter control sequences out of 15000+200000
  9449 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,6n,28p,2023b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,5n,28p,2023b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
 ers/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/m/D
 ocuments/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/m/Documents/
 miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m/Documents/miktex/f
 onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "User Manual.pdf" (13 pages, 272807 bytes).
+Output written on "User Manual.pdf" (13 pages, 274056 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  52 named destinations out of 1000 (max. 500000)
