@@ -43,7 +43,7 @@ namespace DisplayModel
         {
             string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
             string texture = "";//@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Cube.jpg";
-            string filePath = @"C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
+            string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
             DisplayModel dm = new DisplayModel();
             dm.Run(source, texture, filePath, true);

@@ -48,7 +48,7 @@ namespace DisplayModel
 
             WindowBorder = WindowBorder.Hidden;
             WindowState = WindowState.Fullscreen;
-            Visible = true;
+            Visible = false;
 
             GL.ClearColor(Color.Bisque);
             GL.Enable(EnableCap.DepthTest);
@@ -78,6 +78,8 @@ namespace DisplayModel
             for (int i = 0; i < objects.Count; ++i)
                 shaderData.Draw(objects[i]);
 
+            GrabScreenshot();
+
             SwapBuffers();
         }
 
@@ -105,10 +107,32 @@ namespace DisplayModel
 
         public void defaultView()
         {
-            for (int i = 0; i < objects.Count; i++)
-            {
-                objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(rotater++/5) * Matrix4.CreateTranslation(0f, 0f, -4);
-            }
+	        if (viewNumber * degrees >= 360)
+	        {
+                //Done all views
+		        if (viewNumber > (360/degrees))
+		        {
+			        Exit();
+		        }
+		        else
+		        {
+                    //Top view
+			        for (int i = 0; i < objects.Count; i++)
+			        {
+				        objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationX(MathHelper.DegreesToRadians(90)) * Matrix4.CreateTranslation(0f, 0f, -4f);
+			        }
+		        }
+		        viewNumber++;
+	        }
+	        else
+	        {
+                //Side views
+		        for (int i = 0; i < objects.Count; i++)
+		        {
+			        objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(MathHelper.DegreesToRadians(viewNumber * degrees)) * Matrix4.CreateTranslation(0f, 0f, -4f);
+		        }
+		        viewNumber++;
+	        }
         }
 
         public void GrabScreenshot()
@@ -123,7 +147,7 @@ namespace DisplayModel
             screenShot.UnlockBits(data);
 
             screenShot.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            screenShot.Save(imagePath + @"view" + viewNumber++ + ".bmp");
+            screenShot.Save(imagePath + @"view" + viewNumber + ".bmp");
             screenShot.Dispose();
         }
     }
