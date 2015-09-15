@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace StatsClass
 {
-    class Statistics
+    public class Statistics
     {
         string datasource;
         /// <summary>
@@ -21,6 +21,15 @@ namespace StatsClass
             get { return datasource; }
             set { datasource = value; }
         }
+
+        string output;
+
+        public string Outputlocation
+        {
+            get { return output; }
+            set { output = value; }
+        }
+
 
         List<int> pointCounter;
 
@@ -60,6 +69,30 @@ namespace StatsClass
             set { ModelName = value; }
         }
 
+        int excludedpoints;
+
+        public int Excludedpoints
+        {
+            get { return excludedpoints; }
+            set { excludedpoints = value; }
+        }
+
+        string type;
+
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        string PName;
+
+        public string pName
+        {
+            get { return PName; }
+            set { PName = value; }
+        }
+
         /// <summary>
         /// List<float> containing all X axis co-ordinates.
         /// </summary>
@@ -82,13 +115,17 @@ namespace StatsClass
             set { py = value; }
         }
 
-        public Statistics(string source, string model,int w,int h)
+        public Statistics(string source,string outter, string model,int w,int h,string t, string pname)
         {
             datasource = source;
+            output = outter;
             ModelName = model;
             height = h;
             width = w;
             pointCounter = null;
+            excludedpoints = 0;
+            this.type = t;
+            pName = pname;
         }
 
         public void readFile()
@@ -97,7 +134,7 @@ namespace StatsClass
             py = null;
             px = new List<float>();
             py = new List<float>();
-            string[] lines = System.IO.File.ReadAllLines(this.datasource + "\\RecordedData_" + this.ModelName + ".txt");
+            string[] lines = System.IO.File.ReadAllLines(this.datasource + /*"\\" + pName +*/ "\\RecordedData_" + this.ModelName + ".txt");
             foreach (string item in lines)
             {
                 px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
@@ -108,13 +145,14 @@ namespace StatsClass
             }
         }
 
-        public int getTimeofRecording()
+        public double getTimeofRecording()
         {
             if (py.Count > 0 || px.Count > 0)
             {
                 if (py.Count == px.Count)
                 {
-                    int count = py.Count / 30;
+                    
+                    double count = (double)py.Count / 30.000;
                     return count;
                 }
             }
@@ -148,7 +186,7 @@ namespace StatsClass
             /*Create table's header*/
             for (int i = 0; i < cols; i++)
             {
-                myTable.tableHeader.addColumn(new pdfTableColumn(aList[i].ToString(), predefinedAlignment.csCenter, 70));
+                myTable.tableHeader.addColumn(new pdfTableColumn(aList[i].ToString(), predefinedAlignment.csCenter, 150));
             }
             /*Create table's rows*/
             int counter = 0;
@@ -163,52 +201,281 @@ namespace StatsClass
                 counter += cols;
             }
             /*Set Header's Style*/
-            myTable.tableHeaderStyle = new pdfTableRowStyle(predefinedFont.csCourierBoldOblique, 12, predefinedColor.csBlack, predefinedColor.csLightCyan);
+            myTable.tableHeaderStyle = new pdfTableRowStyle(predefinedFont.csCourierBoldOblique, 8, predefinedColor.csBlack, predefinedColor.csWhite);
             /*Set Row's Style*/
-            myTable.rowStyle = new pdfTableRowStyle(predefinedFont.csCourier, 8, predefinedColor.csBlack, predefinedColor.csWhite);
+            myTable.rowStyle = new pdfTableRowStyle(predefinedFont.csCourierBoldOblique, 8, predefinedColor.csBlack, predefinedColor.csWhite);
             /*Set Alternate Row's Style*/
-            myTable.alternateRowStyle = new pdfTableRowStyle(predefinedFont.csCourier, 8, predefinedColor.csBlack, predefinedColor.csLightYellow);
+            myTable.alternateRowStyle = new pdfTableRowStyle(predefinedFont.csCourierBoldOblique, 8, predefinedColor.csBlack, predefinedColor.csWhite);
             /*Set Cellpadding*/
             myTable.cellpadding = 20;
             return myTable;
+        }
+
+        public List<int> getpoints()
+        {
+            List<int> points = new List<int>();
+            getgridsCount();
+            int count = px.Count;
+            int height = getGridHeight();
+            int width = getGridWidth();
+            int one = 0;
+            int two = 0;
+            int three = 0;
+            int four = 0;
+            int five = 0;
+            int six = 0;
+            int seven = 0;
+            int eight = 0;
+            int nine = 0;
+
+            for (int i = 0; i < count; i++)
+            {
+                if(px.ElementAt<float>(i) < width && py.ElementAt<float>(i) < height )
+                {
+                    one++;
+                }
+                else if (px.ElementAt<float>(i) < (2*width) && py.ElementAt<float>(i) < height)
+                {
+                    two++;
+                }
+                else if (px.ElementAt<float>(i) < (3 * width) && py.ElementAt<float>(i) < height)
+                {
+                    three++;
+                }
+                else if (px.ElementAt<float>(i) < width && py.ElementAt<float>(i) < (2*height))
+                {
+                    four++;
+                }
+                else if (px.ElementAt<float>(i) < (2 * width) && py.ElementAt<float>(i) < (2 * height))
+                {
+                    five++;
+                }
+                else if (px.ElementAt<float>(i) < (3 * width) && py.ElementAt<float>(i) < (2 * height))
+                {
+                    six++;
+                }
+                else if (px.ElementAt<float>(i) < width && py.ElementAt<float>(i) < (3 * height))
+                {
+                    seven++;
+                }
+                else if (px.ElementAt<float>(i) < (2 * width) && py.ElementAt<float>(i) < (3 * height))
+                {
+                    eight++;
+                }
+                else if (px.ElementAt<float>(i) < (3 * width) && py.ElementAt<float>(i) < (3 * height))
+                {
+                    nine++;
+                }
+                else if(px.ElementAt<float>(i) <= 0 && py.ElementAt<float>(i) <= 0 )
+                {
+                    this.excludedpoints++;
+                }
+                else if (px.ElementAt<float>(i) >= this.width && py.ElementAt<float>(i) >= this.height)
+                {
+                    this.excludedpoints++;
+                }
+
+            }
+
+            points.Add(one);
+            points.Add(two); 
+            points.Add(three);
+            points.Add(four);
+            points.Add(five);
+            points.Add(six);
+            points.Add(seven);
+            points.Add(eight);
+            points.Add(nine);
+
+                return points;
+        }
+
+        public string getFocusPoint(List<int> m)
+        {
+            int max = 1;
+            int num = -1;
+
+            for(int i =0;i<m.Count;i++)
+            {
+                if(m.ElementAt<int>(i) >= max)
+                {
+                    max = m.ElementAt<int>(i);
+
+                    num=i;
+                }
+            }
+
+            string outmsg = "";
+
+            
+            if(num == 0)
+            {
+                return outmsg += "Top left with " + m.ElementAt<int>(0) +" points";
+            }
+            else if (num == 1)
+            {
+                return outmsg += "Top center with " + m.ElementAt<int>(1) + " points";
+            }
+            else if (num == 2)
+            {
+                return outmsg += "Top right with " + m.ElementAt<int>(2) + " points";
+            }
+            else if (num == 3)
+            {
+                return outmsg += "Middle left with " + m.ElementAt<int>(3) + " points";
+            }
+            else if (num == 4)
+            {
+                return outmsg += "Middle center with " + m.ElementAt<int>(4) + " points";
+            }
+            else if (num == 5)
+            {
+                return outmsg += "Middle right with " + m.ElementAt<int>(5) + " points";
+            }
+            else if (num == 6)
+            {
+                return outmsg += "Bottom left with " + m.ElementAt<int>(6) + " points";
+            }
+            else if (num == 7)
+            {
+                return outmsg += "Bottom center with " + m.ElementAt<int>(7) + " points";
+            }
+            else if (num == 8)
+            {
+                return outmsg += "Bottom right with " + m.ElementAt<int>(8) + " points";
+            }
+            else
+            {
+                return "No focus point available";
+            }
         }
 
         public void createPDF()
         {
             pdfDocument myDoc = new pdfDocument("Statistics Report", "Created with PDFsharp");
             pdfPage CoverPage = myDoc.addPage();
-            CoverPage.addText("Statistical Report", 200, 450, predefinedFont.csTimesBold, 20);
-
+            CoverPage.addText("Statistical Report", 200, 650, predefinedFont.csTimesBold, 35);
+            CoverPage.addText("for", 230, 600, predefinedFont.csTimesBold, 35);
+            CoverPage.addText(ModelName, 220, 550, predefinedFont.csTimesBold, 35);
+            CoverPage.addText("created :" + DateTime.UtcNow, 200, 500, predefinedFont.csTimes, 20);
             pdfPage FirstPage = myDoc.addPage();
             ArrayList content = new ArrayList();
             content.Add("Model name: " + ModelName);
-            content.Add("Model type: ");
-            content.Add("Model location: " + datasource);
-            string sContent = string.Join("\n", content.ToArray());
-            FirstPage.addText(sContent, 200, 450, predefinedFont.csTimesBold, 20);
+            content.Add("Model type: " + type);
+            content.Add("Model location: " + datasource.Replace(@"\","/"));
+            content.Add("Model recorded  height: " + height);
+            content.Add("Model recorded width:" + width);
+            FirstPage.addText("Recorded media  Details", 150, 700, predefinedFont.csTimesBold, 30);
 
+            int c = 630;
+            foreach (string s in content)
+            {
+                FirstPage.addText(s, 50, c, predefinedFont.csTimes, 25);
+                c = c - 30;
+            }
             pdfPage SecondPage = myDoc.addPage();
             ArrayList tableContents = new ArrayList();
-            tableContents.Add("Col 1");
-            tableContents.Add("Col 2");
-            tableContents.Add("Col 3");
-            tableContents.Add("1");
-            tableContents.Add("2");
-            tableContents.Add("3");
-            tableContents.Add("4");
-            tableContents.Add("5");
-            tableContents.Add("6");
-            pdfTable myTable = createTable(tableContents,2,3); // Its a 3x3 table, but the first row is the column headings
-            SecondPage.addTable(myTable, 100, 600);
 
+
+            //111111111111111111111111111111111111111111111111111111111111111111
+            List<int> m = getpoints();
+
+            tableContents.Add(m.ElementAt(0));
+            tableContents.Add(m.ElementAt(1));
+            tableContents.Add(m.ElementAt(2));
+            
+            tableContents.Add(m.ElementAt(3));
+            tableContents.Add(m.ElementAt(4));
+            tableContents.Add(m.ElementAt(5));
+
+            tableContents.Add(m.ElementAt(6));
+            tableContents.Add(m.ElementAt(7));
+            tableContents.Add(m.ElementAt(8));
+            
+            pdfTable myTable = createTable(tableContents,2,3); // Its a 3x3 table, but the first row is the column headings
+
+            SecondPage.addText("Recorded Data Summary", 150, 700, predefinedFont.csTimesBold, 30);
+            SecondPage.addText("The following will show the data that is recorded.", 50, 600, predefinedFont.csTimes, 20);
+            SecondPage.addText("Total time of recording: " + this.getTimeofRecording().ToString("#.##") + " seconds", 50, 516, predefinedFont.csTimes, 20);
+            SecondPage.addText("Total points: " + this.px.Count, 50, 558, predefinedFont.csTimes, 20);
+            SecondPage.addText("Total invalid points: " + this.excludedpoints, 50, 537, predefinedFont.csTimes, 20);
+            SecondPage.addTable(myTable, 100, 470);
+            SecondPage.addText("Point of focus: " + this.getFocusPoint(m), 50, 300, predefinedFont.csTimes, 20);
+
+            
             string filename = "Statistical Report_" + ModelName + ".pdf";
-            myDoc.createPDF(datasource + filename);
+            myDoc.createPDF(this.output + filename);
 
             CoverPage = null;
             FirstPage = null;
             myTable = null;
             SecondPage = null;
             myDoc = null; 
+
+        }
+        //**************************************************************************
+        public void createPDF3d()
+        {
+            pdfDocument myDoc = new pdfDocument("Statistics Report", "Created with PDFsharp");
+            pdfPage CoverPage = myDoc.addPage();
+            CoverPage.addText("Statistical Report", 200, 650, predefinedFont.csTimesBold, 35);
+            CoverPage.addText("for", 230, 600, predefinedFont.csTimesBold, 35);
+            CoverPage.addText(ModelName, 220, 550, predefinedFont.csTimesBold, 35);
+            CoverPage.addText("created :" + DateTime.UtcNow, 200, 500, predefinedFont.csTimes, 20);
+            pdfPage FirstPage = myDoc.addPage();
+            ArrayList content = new ArrayList();
+            content.Add("Model name: " + ModelName);
+            content.Add("Model type: 3D");
+            content.Add("Model location: " + datasource.Replace(@"\", "/"));
+            content.Add("Model recorded  height: " + height);
+            content.Add("Model recorded width:" + width);
+            FirstPage.addText("Recorded media  Details", 150, 700, predefinedFont.csTimesBold, 30);
+
+            int c = 630;
+            foreach (string s in content)
+            {
+                FirstPage.addText(s, 50, c, predefinedFont.csTimes, 25);
+                c = c - 30;
+            }
+            string name = this.ModelName;
+            for (int i = 0; i < 9; i++)
+            {
+                pdfPage SecondPage = myDoc.addPage();
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                ArrayList tableContents = new ArrayList();
+                this.ModelName = "view" + i;
+                List<int> m = getpoints();
+
+                tableContents.Add(m.ElementAt(0));
+                tableContents.Add(m.ElementAt(1));
+                tableContents.Add(m.ElementAt(2));
+
+                tableContents.Add(m.ElementAt(3));
+                tableContents.Add(m.ElementAt(4));
+                tableContents.Add(m.ElementAt(5));
+
+                tableContents.Add(m.ElementAt(6));
+                tableContents.Add(m.ElementAt(7));
+                tableContents.Add(m.ElementAt(8));
+
+                pdfTable myTable = createTable(tableContents, 2, 3); // Its a 3x3 table, but the first row is the column headings
+
+                SecondPage.addText("Veiw type", 150, 700, predefinedFont.csTimesBold, 30);
+                SecondPage.addText("The following will show the data that is recorded.", 50, 600, predefinedFont.csTimes, 20);
+                SecondPage.addText("Total time of recording: " + this.getTimeofRecording().ToString("#.##") + " seconds", 50, 516, predefinedFont.csTimes, 20);
+                SecondPage.addText("Total points: " + this.px.Count, 50, 558, predefinedFont.csTimes, 20);
+                SecondPage.addText("Total invalid points: " + this.excludedpoints, 50, 537, predefinedFont.csTimes, 20);
+                SecondPage.addTable(myTable, 100, 470);
+                SecondPage.addText("Point of focus: " + this.getFocusPoint(m), 50, 300, predefinedFont.csTimes, 20);
+            }
+            this.ModelName = name;
+            //))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+            string filename = "Statistical Report_" + ModelName + ".pdf";
+            myDoc.createPDF(this.output + filename);
+
+            CoverPage = null;
+            FirstPage = null;
+            myDoc = null;
 
         }
 
