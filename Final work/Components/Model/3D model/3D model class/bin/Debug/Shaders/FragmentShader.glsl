@@ -27,6 +27,7 @@ precision mediump float;
 
 /******** SAMPLER ********/
 uniform sampler2D uSampler;
+uniform int uSamplerIndex;
 /******** SAMPLER ********/		
 
 /*********** BOOLEANS ***********/
@@ -79,8 +80,8 @@ vec3 Light()
 		directional = uDirectionalLight_Colour * dirWeight;		
 		
 		float diffWeight = max(dot(oNormalVec, normalize(uPointLight_Position - oPositionVec.xyz)), 0.0);
-		float specWeight = pow(max(dot(reflect(-normalize(uPointLight_Position - oPositionVec.xyz), oNormalVec), oEyeVec), 0.0), uPointLight_Shininess);
-		point = (uPointLight_DiffuseColour * diffWeight);// + (uPointLight_SpecularColour * specWeight);
+		float specWeight = pow(max(dot(-normalize(uPointLight_Position - oPositionVec.xyz), oEyeVec), 0.0), uPointLight_Shininess);
+		point = (uPointLight_DiffuseColour * diffWeight) + (uPointLight_SpecularColour * specWeight);
 
 		return (ambient + directional + point);
 	}

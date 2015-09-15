@@ -97,6 +97,19 @@ namespace DisplayModel
             GL.Enable(EnableCap.DepthTest);
 
             GL.PointSize(5f);
+
+            for (int i  = 0; i < objects.Count; ++i)
+            {
+                GameObject current = objects[i];
+
+                for (int j = 0; j < current.Children.Count; ++j)
+                {
+                    GameObject child = current.Children[j];
+                    
+                    if (!objects.Contains(child))
+                        objects.Add(child);
+                }
+            }
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -114,6 +127,7 @@ namespace DisplayModel
         {
             base.OnUpdateFrame(e);
 
+            GameObject.degrees++;
             UpdateCamera(e.Time);
         }
         
@@ -128,8 +142,9 @@ namespace DisplayModel
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             defaultView();
-            for (int i = 0; i < objects.Count; ++i )
-                shaderData.Draw(objects[i]);
+            for (int i = 0; i < objects.Count; ++i)
+                if (objects[i].BufferData.Vertex.Length > 0)
+                    shaderData.Draw(objects[i]);
 
             if(isRecording)
             {
@@ -157,7 +172,7 @@ namespace DisplayModel
         {
             for (int i = 0; i < objects.Count; i++)
             {
-                objects[i].bufferData.ModelViewMatrix = Matrix4.LookAt(cameraPosition, cameraPosition + new Vector3((float)Math.Cos(yaw), pitch, (float)Math.Sin(yaw)), new Vector3(0f, 1f, 0f)) * Matrix4.CreateTranslation(0f, -0.05f, -3f);
+                //objects[i].bufferData.ModelViewMatrix = Matrix4.LookAt(cameraPosition, cameraPosition + new Vector3((float)Math.Cos(yaw), pitch, (float)Math.Sin(yaw)), new Vector3(0f, 1f, 0f)) * Matrix4.CreateTranslation(0f, -0.05f, -3f);
             }
         }
 
@@ -166,7 +181,7 @@ namespace DisplayModel
         /// </summary>
         /// <param name="time">This is the time that the OnUpdateFrame() method takes to make an update so that camera movement can be made to move at a constant speed regardless of the number of updates a second.</param>
         public void UpdateCamera(double time)
-        {
+        {/*
             if (Keyboard[OpenTK.Input.Key.W])
             {
                 cameraPosition.X += (float)Math.Cos(yaw) * cameraSpeed * (float)time;
@@ -239,12 +254,12 @@ namespace DisplayModel
             {
                 System.Windows.Forms.Cursor.Position = new Point(e.X, Height);
                 return;
-            }*/
+            }
 
             //System.Windows.Forms.Cursor.Position = new Point(Width/2, Height/2);
             
             yaw += e.XDelta / 500.0f;
-            pitch -= e.YDelta / 500.0f;
+            pitch -= e.YDelta / 500.0f;*/
         }
 
         public void GrabScreenshot()

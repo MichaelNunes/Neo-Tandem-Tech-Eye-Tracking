@@ -114,7 +114,7 @@ namespace DisplayModel
             return address;
         }
         #endregion
-
+        
         #region Model Rendering
         /// <summary>
         /// Draws a 3d model object to the screen.
@@ -130,7 +130,8 @@ namespace DisplayModel
 
         private void Initailize(ref GameObject gameobject)
         {
-            ModelViewMatrix = gameobject.bufferData.ModelViewMatrix;
+            float radians = MathHelper.DegreesToRadians(GameObject.degrees);
+            ModelViewMatrix = gameobject.bufferData.ModelViewMatrix * Matrix4.CreateRotationY(radians) * Matrix4.CreateTranslation(0.0f, 0.0f, -4.0f);
 
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref ModelViewMatrix);
@@ -138,63 +139,59 @@ namespace DisplayModel
 
         private void Finish(ref GameObject gameobject)
         {
-            //GL.DrawArrays(PrimitiveType.Triangles, 0, gameobject.BufferData.Vertex.Length);
-            GL.DrawElements(PrimitiveType.Triangles, gameobject.BufferData.Index.Length, DrawElementsType.UnsignedInt, 0);
+            GL.DrawArrays(PrimitiveType.Triangles, 0, gameobject.BufferData.Vertex.Length);
+            //GL.DrawElements(PrimitiveType.Triangles, gameobject.BufferData.Index.Length, DrawElementsType.UnsignedInt, 0);
 
             GL.DisableVertexAttribArray(attribute.VertexPosition);
             GL.DisableVertexAttribArray(attribute.VertexNormal);
             GL.DisableVertexAttribArray(attribute.VertexColour);
-            GL.DisableVertexAttribArray(attribute.VertexTexture);
+            //GL.DisableVertexAttribArray(attribute.VertexTexture);
 
             GL.Flush();
         }
-
+        
         private void BindBuffers(ref GameObject gameobject)
         {
-            BufferData bufferData = gameobject.BufferData;
+            BufferData bufferdata = gameobject.BufferData;
 
             // Binding the vertices
             GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Position);
-            GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Vertex.Length * Vector3.SizeInBytes), bufferData.Vertex, BufferUsageHint.StaticDraw);
+            GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferdata.Vertex.Length * Vector3.SizeInBytes), bufferdata.Vertex, BufferUsageHint.StaticDraw);
             GL.EnableVertexAttribArray(attribute.VertexPosition);
             GL.VertexAttribPointer(attribute.VertexPosition, 3, VertexAttribPointerType.Float, false, 0, 0);
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
             // Binding the vertices
 
+            if (gameobject.Material.TextureID > -1)
+            {
+                //Binding the textures
+                GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Texture);
+                GL.BufferData<Vector2>(BufferTarget.ArrayBuffer, (IntPtr)(bufferdata.Texture.Length * Vector2.SizeInBytes), bufferdata.Texture, BufferUsageHint.StaticDraw);
+                GL.EnableVertexAttribArray(attribute.VertexTexture);
+                GL.VertexAttribPointer(attribute.VertexTexture, 2, VertexAttribPointerType.Float, true, 0, 0);
+
+                GL.ActiveTexture(TextureUnit.Texture0);
+                GL.BindTexture(TextureTarget.Texture2D, gameobject.Material.TextureID);
+
+                GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+                //Binding the textures
+            }
+            
             //Binding the normals
             GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Normal);
-            GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Normal.Length * Vector3.SizeInBytes), bufferData.Normal, BufferUsageHint.StaticDraw);
+            GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferdata.Normal.Length * Vector3.SizeInBytes), bufferdata.Normal, BufferUsageHint.StaticDraw);
             GL.EnableVertexAttribArray(attribute.VertexNormal);
             GL.VertexAttribPointer(attribute.VertexNormal, 3, VertexAttribPointerType.Float, true, 0, 0);
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
             //Binding the normals
 
-            //Binding the colors
+            //Binding the colours
             GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Colour);
-            GL.BufferData<Vector4>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Colour.Length * Vector4.SizeInBytes), bufferData.Colour, BufferUsageHint.StaticDraw);
+            GL.BufferData<Vector4>(BufferTarget.ArrayBuffer, (IntPtr)(bufferdata.Colour.Length * Vector4.SizeInBytes), bufferdata.Colour, BufferUsageHint.StaticDraw);
             GL.EnableVertexAttribArray(attribute.VertexColour);
             GL.VertexAttribPointer(attribute.VertexColour, 4, VertexAttribPointerType.Float, true, 0, 0);
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
-            //Binding the colors
-
-            if (gameobject.Material.TextureId != -1)
-            {
-                //Binding the textures
-                GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Texture);
-                GL.BufferData<Vector2>(BufferTarget.ArrayBuffer, (IntPtr)(bufferData.Texture.Length * Vector2.SizeInBytes), bufferData.Texture, BufferUsageHint.StaticDraw);
-                GL.EnableVertexAttribArray(attribute.VertexTexture);
-                GL.VertexAttribPointer(attribute.VertexTexture, 2, VertexAttribPointerType.Float, true, 0, 0);
-
-                GL.ActiveTexture(TextureUnit.Texture0);
-                GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
-                //Binding the textures
-            }
-            
-            //Binding the indices
-            GL.BindBuffer(BufferTarget.ElementArrayBuffer, gameobject.Buffer.Index);
-            GL.BufferData(BufferTarget.ElementArrayBuffer, (IntPtr)(bufferData.Index.Length * sizeof(int)), bufferData.Index, BufferUsageHint.StaticDraw);
-            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
-            //Binding the indices
+            //Binding the colours
 
             GL.UseProgram(id.Program);
         }
@@ -203,7 +200,7 @@ namespace DisplayModel
         {
             //The basic boolean uniforms
             GL.Uniform1(uniform.UseLighting, 1);
-            GL.Uniform1(uniform.UseTexture, 0);
+            GL.Uniform1(uniform.UseTexture, 1);
             GL.Uniform1(uniform.Sampler, 0);
             //The basic boolean uniforms
 

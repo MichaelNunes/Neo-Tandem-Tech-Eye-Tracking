@@ -34,8 +34,9 @@ namespace DisplayModel
     /// </summary>
     public class GameObject 
     {
+        public static int degrees = 0;
+
         #region Fields
-        private Transform transform;
         private Material material;
         private Buffer buffer;
         public BufferData bufferData;
@@ -49,9 +50,9 @@ namespace DisplayModel
         /// </summary>
         public GameObject()
         {
-            transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
             material = new Material();
             bufferData = new BufferData();
+            children = new List<GameObject>();
 
             Initialize();
         }
@@ -62,11 +63,11 @@ namespace DisplayModel
         /// <param name="t"></param>
         /// <param name="m"></param>
         /// <param name="bd"></param>
-        public GameObject(Transform t, Material m, BufferData bd)
+        public GameObject(Material m, BufferData bd)
         {
-            transform = t;
             material = m;
             bufferData = bd;
+            children = new List<GameObject>();
 
             Initialize();
         }
@@ -85,18 +86,16 @@ namespace DisplayModel
             buffer.Index = GL.GenBuffer();
 
             Material.Setup();
+            //BufferData.Minimize();
         }
 
-        #region Attributes
         /// <summary>
         /// 
         /// </summary>
-        public Transform Transform
-        {
-            get { return transform; }
-            set { transform = value; }
-        }
+        /// <param name="child"></param>
+        public void AddChild(GameObject child) { children.Add(child); }
 
+        #region Attributes
         /// <summary>
         /// 
         /// </summary>
@@ -118,10 +117,12 @@ namespace DisplayModel
         /// <summary>
         /// 
         /// </summary>
-        public Buffer Buffer
-        {
-            get { return buffer; }
-        }
+        public Buffer Buffer { get { return buffer; } }
+
+        /// <summary>
+        /// The sub-objects of the current object
+        /// </summary>
+        public List<GameObject> Children { get { return children;  } }
         #endregion
     }
 }

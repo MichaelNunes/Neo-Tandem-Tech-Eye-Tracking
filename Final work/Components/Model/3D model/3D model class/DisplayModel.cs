@@ -17,7 +17,7 @@ namespace DisplayModel
             string texture = "";
 
             Window window = new Window(args[1]);
-
+            /*
             try
             {
                 GameObject scene = Converter.fromOBJ(source, texture);
@@ -28,7 +28,7 @@ namespace DisplayModel
             {
                 Console.WriteLine(e.Message);
                 throw new Exception(e.Message);
-            }
+            }*/
         }
         
         //Here for testing purposes
@@ -36,28 +36,30 @@ namespace DisplayModel
         {
             Window window = new Window(@"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\");
 
-
             try
             {
+                //string obj = @"C:\Users\COS301\Desktop\Blender Testing\Cube.obj";
+                //string mtl = @"C:\Users\COS301\Desktop\Blender Testing\Cube.mtl";
+                //string tex = @"C:\Users\COS301\Desktop\Blender Testing\";
+
+                //string obj = @"C:\Users\COS301\Desktop\Blender Testing\Multi-textured plane.obj";
+                //string mtl = @"C:\Users\COS301\Desktop\Blender Testing\Multi-textured plane.mtl";
+                //string tex = @"C:\Users\COS301\Desktop\Blender Testing\";
+
+                //string obj = @"C:\Users\COS301\Desktop\Blender Testing\Multi-textured cube.obj";
+                //string mtl = @"C:\Users\COS301\Desktop\Blender Testing\Multi-textured cube.mtl";
+                //string tex = @"C:\Users\COS301\Desktop\Blender Testing\";
+
+                // string obj = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\International City_0_2.obj";
+                // string dir = string.Empty;
+
+                string obj = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.obj";
+                string mtl = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.mtl";
+                string tex = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\";
                 
-                  List<Vector3> v = new List<Vector3> { new Vector3(1f, 0.5f, 0f), new Vector3(1f, -1.5f, 0f), new Vector3(-1f, -1.5f, 0f), new Vector3(-1f, 0.5f, 0f) };
-                  List<Vector2> t = new List<Vector2> { };
-                  List<Vector3> n = new List<Vector3> { new Vector3(0f, 0f, 1f) };
-                  
-                  List<int> a = new List<int> { 1, 2, 3, 1, 3, 4 };
-                  List<int> b = new List<int> { 1, 2, 3, 1, 3, 4 };
-                  List<int> c = new List<int> { 1, 2, 3, 1, 3, 4 };
+                GameObject test = Converter.fromOBJ(obj, mtl, tex);
 
-                  GameObject test = new GameObject();
-                  test.Transform = new Transform();
-                  test.Material = new Material();
-                  test.BufferData = new BufferData(v, t, n, a, b, c, test.Material.Colour);
-
-                Console.WriteLine(test.BufferData);/*
-                test = Converter.fromOBJ(@"C:\Users\COS301\Documents\Monkey.obj", "");
-                Console.WriteLine(test.BufferData);*/
                 window.Add(test);
-                 
                 window.Run(30, 30);
 
             }
