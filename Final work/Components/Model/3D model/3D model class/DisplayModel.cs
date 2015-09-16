@@ -41,13 +41,13 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            string a = @"G:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.obj";
-            string b = @"G:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.mtl";
-            string c = @"G:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\";
+            //string a = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.obj";
+            //string b = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.mtl";
+            //string c = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\";
 
-            //string a = @"C:\Users\COS301\Desktop\Blender Testing\Multi-textured cube.obj";
-            //string b = @"C:\Users\COS301\Desktop\Blender Testing\Multi-textured cube.mtl";
-            //string c = @"C:\Users\COS301\Desktop\Blender Testing\";
+            string a = @"C:\Users\COS301\Desktop\Blender Testing\Cube.obj";
+            string b = @"C:\Users\COS301\Desktop\Blender Testing\Cube.mtl";
+            string c = @"C:\Users\COS301\Desktop\Blender Testing\";
 
             string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 

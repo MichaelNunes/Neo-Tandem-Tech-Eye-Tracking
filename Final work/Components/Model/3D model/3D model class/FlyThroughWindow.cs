@@ -153,9 +153,23 @@ namespace DisplayModel
             {
                 camera.currentSpeed = camera.runSpeed;
             }
+            else if (state.IsKeyDown(OpenTK.Input.Key.ControlLeft))
+            {
+                camera.currentSpeed = camera.flySpeed;
+            }
             else
             {
                 camera.currentSpeed = camera.walkSpeed;
+            }
+
+            if (state.IsKeyDown(OpenTK.Input.Key.Number1))
+            {
+                camera.position.Y += (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
+            }
+
+            if (state.IsKeyDown(OpenTK.Input.Key.Number3))
+            {
+                camera.position.Y -= (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
             }
 
             if (state.IsKeyDown(OpenTK.Input.Key.W))

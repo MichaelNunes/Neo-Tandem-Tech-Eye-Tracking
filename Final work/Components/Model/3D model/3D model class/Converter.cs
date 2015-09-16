@@ -164,11 +164,12 @@ namespace DisplayModel
                 int range = end - start;
 
                 int[] vi = new int[range],
-                      ti = new int[range],
+                      ti = new int[f_uvs.Count > 0 ? range : 0],
                       ni = new int[range];
 
                 f_vertices.CopyTo(start, vi, 0, range);
-                f_uvs.CopyTo(start, ti, 0, range);
+                if (ti.Length > 0)
+                    f_uvs.CopyTo(start, ti, 0, range);
                 f_normals.CopyTo(start, ni, 0, range);
 
                 string h = materials[child];
