@@ -11,21 +11,21 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public void Run(string source, string texture, string filePath, bool flyThrough)
+        public void Run(string source, string material, string textures, string filePath, bool flyThrough)
         {
             try
             {
                 if(flyThrough == true)
                 {
                     FlyThroughWindow window = new FlyThroughWindow(filePath);
-                    GameObject scene = Converter.fromOBJ(source, texture);
+                    GameObject scene = Converter.fromOBJ(source, material, textures);
                     window.Add(scene);
                     window.Run(30, 30);
                 }
                 else
                 {
                     PictureWindow window = new PictureWindow(filePath);
-                    GameObject scene = Converter.fromOBJ(source, texture);
+                    GameObject scene = Converter.fromOBJ(source, material, textures);
                     window.Add(scene);
                     window.Run(30, 30);
                 }
@@ -41,12 +41,18 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            string source = @"C:\Users\COS301\Documents\Objects\Susan.obj";
-            string texture = "";
+            //string a = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.obj";
+            //string b = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.mtl";
+            //string c = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\";
+
+            string a = @"C:\Users\COS301\Desktop\Blender Testing\Cube.obj";
+            string b = @"C:\Users\COS301\Desktop\Blender Testing\Cube.mtl";
+            string c = @"C:\Users\COS301\Desktop\Blender Testing\";
+
             string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
             DisplayModel dm = new DisplayModel();
-            dm.Run(source, texture, filePath, false);
+            dm.Run(a, b, c, filePath, true);
         }
     }
 }

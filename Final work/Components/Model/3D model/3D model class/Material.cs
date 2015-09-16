@@ -27,6 +27,7 @@ using OpenTK.Graphics.OpenGL;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Collections.Generic;
 
 namespace DisplayModel
 {
@@ -38,50 +39,31 @@ namespace DisplayModel
 	public class Material
 	{
 		#region Fields
-		private Color4 colour;
-        private int textureId;
-        private string filepath;
+        public const int MAX_TEXTURES = 32;
+        
+		private Color4 colour = Color4.LightGray;
+        private int textureid;
+        private string file;
 		#endregion
 
-		#region Constructors
+        #region Constructors
+        /// <summary>
+        /// Creates a empty material.
+        /// </summary>
         public Material()
         {
-            colour = Color4.LightGray;
-            textureId = -1;
-            filepath = string.Empty;
+            textureid = -1;
+            file = string.Empty;
         }
-		/// <summary>
-		/// Creates a material with the color provided.
-		/// </summary>
-		/// <param name='_color'> The color of the material. </param>
-		public Material(Color4 _color)
-		{
-            colour = _color;
-            filepath = string.Empty;
-            textureId = -1;
-		}
 
 		/// <summary>
-		/// Creates a material with an image texture.
+		/// Creates a material with an array of image textures.
 		/// </summary>
-		/// <param name='_filepath'> The path to the texture of the object. </param>
-		public Material(string _filepath)
+		/// <param name='_filepath'> List of paths to the textures of the object. </param>
+		public Material(string filepath)
         {
-            colour = Color4.LightGray;
-            filepath = _filepath;
-            textureId = -1;
-		}
-
-		/// <summary>
-		/// Creates a material with an image texture.
-		/// </summary>
-		/// <param name='_color'> The color of the material. </param>
-		/// <param name='_filepath'> The path to the texture of the object. </param>
-		public Material(Color4 _color, string _filepath)
-		{
-            colour = _color;
-            filepath = _filepath;
-            textureId = -1;
+            textureid = -1;
+            file = filepath;
 		}
 		#endregion
 
@@ -91,34 +73,45 @@ namespace DisplayModel
         /// </summary>
         public void Setup()
         {
-            if (filepath == string.Empty)
-                return;
+            textureid = (file != string.Empty) ? CreateTexture(file) : -1;
+        }
 
-            textureId = GL.GenTexture();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        private int CreateTexture(string filepath)
+        {
+            int textureId = GL.GenTexture();
             GL.BindTexture(TextureTarget.Texture2D, textureId);
 
-            // We will not upload mipmaps, so disable mipmapping (otherwise the texture will not appear).
-            // We can use GL.GenerateMipmaps() or GL.Ext.GenerateMipmaps() to create
-            // mipmaps automatically. In that case, use TextureMinFilter.LinearMipmapLinear to enable them.
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
 
             Bitmap bmp = new Bitmap(filepath);
+            bmp.RotateFlip(RotateFlipType.Rotate180FlipX);
             BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
             GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0,
                 OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bmp_data.Scan0);
 
             bmp.UnlockBits(bmp_data);
+
+            return textureId;
         }
         #endregion
 
         #region Attributes
-        public Color4 Colour { get { return colour; } }
         /// <summary>
-        /// The id of the material's texture.
+        /// The color of the material attached to the object.
         /// </summary>
-        public int TextureId { get { return textureId; } }
+        public Color4 Colour { get { return colour; } }
+
+        /// <summary>
+        /// An array of id's for each texture bound.
+        /// </summary>
+        public int TextureID { get { return textureid; } }
         #endregion
     }
 }

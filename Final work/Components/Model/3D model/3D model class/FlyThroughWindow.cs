@@ -54,6 +54,18 @@ namespace DisplayModel
             GL.Enable(EnableCap.DepthTest);
 
             GL.PointSize(5f);
+
+            for (int i = 0; i < objects.Count; ++i)
+            {
+                GameObject current = objects[i];
+
+                for (int j = 0; j < current.Children.Count; ++j)
+                {
+                    GameObject child = current.Children[j];
+                    if (!objects.Contains(child))
+                        objects.Add(child);
+                }
+            }
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -94,7 +106,7 @@ namespace DisplayModel
 
             GL.Viewport(0, 0, Width, Height);
 
-            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 0.1f, 100.0f);
+            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 0.1f, 10000.0f);
 
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
@@ -141,9 +153,23 @@ namespace DisplayModel
             {
                 camera.currentSpeed = camera.runSpeed;
             }
+            else if (state.IsKeyDown(OpenTK.Input.Key.ControlLeft))
+            {
+                camera.currentSpeed = camera.flySpeed;
+            }
             else
             {
                 camera.currentSpeed = camera.walkSpeed;
+            }
+
+            if (state.IsKeyDown(OpenTK.Input.Key.Number1))
+            {
+                camera.position.Y += (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
+            }
+
+            if (state.IsKeyDown(OpenTK.Input.Key.Number3))
+            {
+                camera.position.Y -= (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
             }
 
             if (state.IsKeyDown(OpenTK.Input.Key.W))

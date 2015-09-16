@@ -33,28 +33,53 @@ namespace DisplayModel
 	/// Used to convert the input object files into a Model3D object.
 	/// <summary>
 	public static class Converter
-	{
-		/// <summary>
+    {
+        #region List items
+        public static   List<Vector3>
+                        p_vertices = new List<Vector3>(),
+                        p_normals = new List<Vector3>();
+
+        public static   List<Vector2>
+                        p_uvs = new List<Vector2>();
+
+        public static   List<int>
+                        t_indices = new List<int>(),
+                        f_vertices = new List<int>(),
+                        f_uvs = new List<int>(),
+                        f_normals = new List<int>();
+
+        public static   Dictionary<string, string>
+                        material_texture = new Dictionary<string,string>();
+
+        public static   List<string>
+                        materials = new List<string>();
+
+        public static   int current_index;
+        #endregion
+
+        /// <summary>
 		/// Converts the object and material files into a Model object.
 		/// </summary>
 		/// <param name='obj'> The filepath to the object file. </param>
-		/// <param name='tex'> The filepath to the object's texture file. </param>
-		public static GameObject fromOBJ(string obj, string tex)
+		/// <param name='dir'> The filepath to the object's texture file. </param>
+		public static GameObject fromOBJ(string obj, string mtl, string tex)
 		{
-            List<Vector3>
-				p_vertices = new List<Vector3>(),
-                p_normals = new List<Vector3>();
-            List<Vector2>
-                p_uvs = new List<Vector2>();
+            GameObject root = new GameObject();
 
-			List<int>
-				f_vertices = new List<int>(),
-				f_uvs = new List<int>(),
-				f_normals = new List<int>();
-            
+            parseOBJ(obj);
+            //scaleObject(bd);
+            parseMTL(mtl, tex);
+            generateChildren(ref root);
+
+            return root;
+        }
+        
+        private static void parseOBJ(string obj)
+        {
             StreamReader filereader;
-            string line, name;
+            string line;
             string[] sections;
+            current_index = 0;
 
 		    filereader = new StreamReader(obj);
 
@@ -65,7 +90,6 @@ namespace DisplayModel
 				switch(sections[0])
 				{
 					case "o":
-						name = sections[1];
 						break;
 
 					case "v":
@@ -84,50 +108,119 @@ namespace DisplayModel
                         addFace(ref f_vertices, ref f_uvs, ref f_normals, sections);
 						break;
 
-                    case "mttlib":
-                        Console.WriteLine("Material file: {0}", sections[1]);
+                    case "usemtl":
+                        t_indices.Add(current_index);
+                        materials.Add(sections[1]);
                         break;
 				}
 			}
 
             filereader.Close();
-
-            Transform transform = new Transform();
-            Material material = (tex != "") ? new Material(tex) : new Material();
-            BufferData bufferdata = new BufferData(p_vertices, p_uvs, p_normals, f_vertices, f_uvs, f_normals, material.Colour);
-            GameObject temp = new GameObject(transform, material, bufferdata);
-            Console.WriteLine(temp);
-            //scaleObject(temp);
-            return temp;
+            t_indices.Add(current_index);
 		}
 
-        private static void scaleObject(GameObject obj)
+        private static void parseMTL(string mtl, string tex)
         {
-            float max = 0f;
-            for (int i = 0; i < obj.bufferData.Vertex.Length; i++)
+            StreamReader filereader;
+            string line;
+            string[] sections;
+            string next_material = "";
+
+            int i = 0;
+
+            filereader = new StreamReader(mtl);
+
+            while ((line = filereader.ReadLine()) != null)
             {
-                if(Math.Abs(obj.bufferData.Vertex[i].X) > max)
+                sections = line.Split(' ');
+
+                switch (sections[0])
                 {
-                    max = Math.Abs(obj.bufferData.Vertex[i].X);
-                }
-                if (Math.Abs(obj.bufferData.Vertex[i].Y) > max)
-                {
-                    max = Math.Abs(obj.bufferData.Vertex[i].Y);
-                }
-                if (Math.Abs(obj.bufferData.Vertex[i].Z) > max)
-                {
-                    max = Math.Abs(obj.bufferData.Vertex[i].Z);
+                    case "newmtl":
+                        next_material = sections[1];
+                        break;
+
+                    case "map_Kd":
+                        material_texture.Add(next_material, tex + sections[1]);
+                        Console.WriteLine(material_texture.Count);
+                        ++i;
+                        break;
                 }
             }
-            Console.WriteLine("Largest vertex value: "+max);
-            for (int i = 0; i < obj.bufferData.Vertex.Length; i++)
+
+            filereader.Close();
+
+            Console.WriteLine("Number of textures: " + i);
+        }
+
+        public static void generateChildren(ref GameObject root)
+        {
+            int children = t_indices.Count - 1;
+
+            for (int child = 0; child < children; ++child)
             {
-                obj.bufferData.Vertex[i].X /= max;
-                obj.bufferData.Vertex[i].Y /= max;
-                obj.bufferData.Vertex[i].Z /= max;
+                int start = t_indices[child];
+                int end = t_indices[child + 1];
+                int range = end - start;
+
+                int[] vi = new int[range],
+                      ti = new int[f_uvs.Count > 0 ? range : 0],
+                      ni = new int[range];
+
+                f_vertices.CopyTo(start, vi, 0, range);
+                if (ti.Length > 0)
+                    f_uvs.CopyTo(start, ti, 0, range);
+                f_normals.CopyTo(start, ni, 0, range);
+
+                string h = materials[child];
+                string filepath;
+
+                try { filepath = material_texture[h]; }
+                catch (Exception e) { filepath = string.Empty; }
+
+
+                BufferData bd = new BufferData(p_vertices, p_uvs, p_normals, vi, ti, ni);
+                Material m = new Material(filepath);
+                GameObject newChild = new GameObject(m, bd);
+
+                root.AddChild(newChild);
             }
         }
 
+        /*
+        private static void scaleObject(BufferData bufferData)
+        {
+            float max = 0f;
+            for (int i = 0; i < bufferData.Vertex.Length; i++)
+            {
+                for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
+                {
+                    if(Math.Abs(bufferData.Vertex[i][j].X) > max)
+                    {
+                        max = Math.Abs(bufferData.Vertex[i][j].X);
+                    }
+                    if (Math.Abs(bufferData.Vertex[i][j].Y) > max)
+                    {
+                        max = Math.Abs(bufferData.Vertex[i][j].Y);
+                    }
+                    if (Math.Abs(bufferData.Vertex[i][j].Z) > max)
+                    {
+                        max = Math.Abs(bufferData.Vertex[i][j].Z);
+                    }
+                }
+            }
+            Console.WriteLine("Largest vertex value: "+max);
+            for (int i = 0; i < bufferData.Vertex.Length; i++)
+            {
+                for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
+                {
+                    bufferData.Vertex[i][j].X /= max;
+                    bufferData.Vertex[i][j].Y /= max;
+                    bufferData.Vertex[i][j].Z /= max;
+                }
+            }
+        }
+        */
         /// <summary>
         /// Adds faces from the file source. 
         /// </summary>
@@ -151,6 +244,8 @@ namespace DisplayModel
                         t.Add(int.Parse(texels[1]));
 
                     n.Add(int.Parse(texels[2]));
+
+                    current_index++;
                 }
 
                 if (line.Length == 5)
@@ -171,6 +266,8 @@ namespace DisplayModel
                     n.Add(n[n.Count - 3]);
                     n.Add(n[n.Count - 2]);
                     n.Add(int.Parse(texels[2]));
+
+                    current_index += 3;
                 }
 
                 if (line.Length > 5)
