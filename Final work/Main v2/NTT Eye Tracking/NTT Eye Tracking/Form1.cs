@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WMPLib;
 using Record_Class;
 using Results_Class;
+using System.IO;
 
 namespace NTT_Eye_Tracking
 {
@@ -23,14 +24,24 @@ namespace NTT_Eye_Tracking
     {
         #region variables
         string name = "";
-        string imagepath = "";
+        string ModelPath = "";
+        string[] imglocation = new string[9];
+        int imgCounters = 0;
+        int imgIndex = 0;
         bool fullscreen = false;
         Record recording;
+
+        string obj;
+        string mtl;
+        string img;
+        bool flythrough;
         #endregion
 
         public NTT_EyeTracker()
         {
             InitializeComponent();
+            pic_model2DPreview.Visible = false;
+            wmp_VideoPreview.Visible = false;
         }
 
         private void NTT_EyeTracker_Load(object sender, EventArgs e)
@@ -44,7 +55,10 @@ namespace NTT_Eye_Tracking
            {
                    //in each case we must show the appropriate model previewer and hide the others
                case 0: //3D model
-                   {                       
+                   {
+                       pic_caro.Visible = true;
+                       pic_model2DPreview.Visible = false;
+                       wmp_VideoPreview.Visible = false;
                        break;
                    }
                case 1: //flythrough
@@ -53,11 +67,17 @@ namespace NTT_Eye_Tracking
                    }
                case 2: //2D models
                    {
-                       pic_model2DPreview.Show();
+                       pic_caro.Visible = false;
+                       pic_model2DPreview.Visible = true;
+                       wmp_VideoPreview.Visible = false;
                        break;
                    }
                case 3: //Video
                    {
+                       pic_caro.Visible = false;
+                       pic_model2DPreview.Visible = false;
+                       wmp_VideoPreview.Visible = true;
+                       wmp_VideoPreview.Dock = DockStyle.Fill;
                        break;
                    }
            }
@@ -98,13 +118,48 @@ namespace NTT_Eye_Tracking
             switch(globals.modelIndex)
             {
                 case 0: //3D model
-                    {
-                        break;
-                    }
+                {
+                    openFileDialog1.Title = "Please select an object file";
+                    openFileDialog1.Filter = "object (.obj)|*.obj";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    obj = openFileDialog1.FileName;
+
+                    openFileDialog1.Title = "Please select a material file file";
+                    openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    mtl = openFileDialog1.FileName;
+
+                    img = Path.GetDirectoryName(obj) + "\\";
+
+                    flythrough = false;
+                    break;
+                }
                 case 1: //flythrough
-                    {
-                        break;
-                    }
+                {
+                    openFileDialog1.Title = "Please select an object file";
+                    openFileDialog1.Filter = "object (.obj)|*.obj";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    obj = openFileDialog1.FileName;
+
+
+                    openFileDialog1.Title = "Please select a material file";
+                    openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    mtl = openFileDialog1.FileName;
+
+                    img = Path.GetDirectoryName(obj) + "\\";
+
+                    flythrough = true;
+                    break;
+                }
                 case 2: //2D
                 {
                     openFileDialog1.Filter = "Image (.jpg)|*.jpg";
@@ -112,18 +167,20 @@ namespace NTT_Eye_Tracking
                     openFileDialog1.ShowDialog();
                     name = openFileDialog1.SafeFileName;
                     string path = openFileDialog1.FileName;
-                    imagepath = globals.currentRecordingpath + "\\" + name;
-                    System.IO.File.Copy(path, imagepath, true);
-                    pic_model2DPreview.ImageLocation = imagepath;
+                    ModelPath = globals.currentRecordingpath + "\\" + name;
+                    System.IO.File.Copy(path, ModelPath, true);
+                    pic_model2DPreview.ImageLocation = ModelPath;
                     break;
                 }
 
                 case 3: //Video
                 {
-                    openFileDialog1.Filter = "Image (.jpg)|*.jpg";
+                    openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
                     openFileDialog1.FileName = "";
                     openFileDialog1.ShowDialog();
+                    ModelPath = openFileDialog1.FileName;
                     wmp_VideoPreview.URL = openFileDialog1.FileName;
+                    wmp_VideoPreview.Dock = DockStyle.Fill;
                     name = openFileDialog1.SafeFileName;
                     wmp_VideoPreview.Ctlcontrols.stop();
                     break;
@@ -140,44 +197,34 @@ namespace NTT_Eye_Tracking
             {
                 case 0: //3D model
                     {
+                        recording._recording = true;
+                        frmDisplay fd = new frmDisplay(0, null, imglocation);
+                        fd.Show();
+                        recording._recording = false;
                         break;
                     }
                 case 1: //flythrough
                     {
+                        recording._recording = true;
+                        DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
+                        dm.Run(obj, mtl, img, globals.currentRecordingpath + @"\" + name, flythrough);
+                        recording._recording = false;
                         break;
                     }
                 case 2: //2D models
                     {
-                        //this.FormBorderStyle = FormBorderStyle.None;
-                        //this.WindowState = FormWindowState.Maximized;
-                        //pic_model2DPreview.SizeMode = PictureBoxSizeMode.StretchImage;
-                        //pic_model2DPreview.Dock = DockStyle.Fill;
-                        //fullscreen = true;
                         recording._recording = true;
-
-                        //record for amount of seconds before stopping it
-                        System.Threading.Thread.Sleep(globals.recordTime);
-
-                        //stop recording an fix form
+                        frmDisplay fd = new frmDisplay(2, ModelPath, null);
+                        fd.Show();
                         recording._recording = false;
-                        //fixForm();
-                        //showMainButtons();
-
                         break;
                     }
                 case 3: //Video
                     {
-                        //fullscreen = true;
-                        //button1.Visible = false;
-                        //button2.Visible = false;
-                        //button3.Visible = false;
-                        //button4.Visible = false;
-                        //axWindowsMediaPlayer2.Visible = false;
-                        //axWindowsMediaPlayer1.Dock = DockStyle.Fill;
-                        //wmp_VideoPreview.Ctlcontrols.play();
                         recording._recording = true;
-
-                        //must stop recording on form exit.
+                        frmDisplay fd = new frmDisplay(3, ModelPath, null);
+                        fd.ShowDialog(this);
+                        recording._recording = false;
 
                         break;
                     }
@@ -255,7 +302,6 @@ namespace NTT_Eye_Tracking
                     }
                 case 2: //2D models
                     {
-                        pic_model2DPreview.Show();
                         break;
                     }
                 case 3: //Video
@@ -388,6 +434,35 @@ namespace NTT_Eye_Tracking
             }
             return base.ProcessDialogKey(keyData);
         }
+
+        private void btnImageForward_Click(object sender, EventArgs e)
+        {
+            if (imgIndex == imgCounters - 1)
+            {
+                imgIndex = 0;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+            else
+            {
+                imgIndex++;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+        }
+
+        private void btnImageBack_Click(object sender, EventArgs e)
+        {
+            if (imgIndex == 0)
+            {
+                imgIndex = imgCounters - 1;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+            else
+            {
+                imgIndex++;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+        }
+
         #endregion
     }
 }

@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NTT_EyeTracker));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_slideshowPreview = new System.Windows.Forms.Panel();
+            this.pic_caro = new System.Windows.Forms.PictureBox();
+            this.btnImageForward = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.btnImageBack = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.wmp_VideoPreview = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pic_model2DPreview = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnViewResults = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnReport = new Syncfusion.Windows.Forms.ButtonAdv();
@@ -41,25 +47,26 @@
             this.btnRecord = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnCal = new Syncfusion.Windows.Forms.ButtonAdv();
             this.tsMain = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.wmp_VideoPreview = new AxWMPLib.AxWindowsMediaPlayer();
-            this.pic_model2DPreview = new System.Windows.Forms.PictureBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.createNewProjectCtrlNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openProjectCtrlOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.tsMain.SuspendLayout();
+            this.pic_slideshowPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_caro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp_VideoPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.pic_slideshowPreview);
             this.panel1.Controls.Add(this.wmp_VideoPreview);
             this.panel1.Controls.Add(this.pic_model2DPreview);
             this.panel1.Controls.Add(this.panel3);
@@ -68,6 +75,80 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1090, 730);
             this.panel1.TabIndex = 19;
+            // 
+            // pic_slideshowPreview
+            // 
+            this.pic_slideshowPreview.Controls.Add(this.pic_caro);
+            this.pic_slideshowPreview.Controls.Add(this.btnImageForward);
+            this.pic_slideshowPreview.Controls.Add(this.btnImageBack);
+            this.pic_slideshowPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_slideshowPreview.Location = new System.Drawing.Point(0, 0);
+            this.pic_slideshowPreview.Name = "pic_slideshowPreview";
+            this.pic_slideshowPreview.Size = new System.Drawing.Size(890, 730);
+            this.pic_slideshowPreview.TabIndex = 4;
+            this.pic_slideshowPreview.Visible = false;
+            // 
+            // pic_caro
+            // 
+            this.pic_caro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pic_caro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_caro.Location = new System.Drawing.Point(34, 0);
+            this.pic_caro.Name = "pic_caro";
+            this.pic_caro.Size = new System.Drawing.Size(822, 730);
+            this.pic_caro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_caro.TabIndex = 21;
+            this.pic_caro.TabStop = false;
+            // 
+            // btnImageForward
+            // 
+            this.btnImageForward.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2007;
+            this.btnImageForward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.btnImageForward.BeforeTouchSize = new System.Drawing.Size(34, 730);
+            this.btnImageForward.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnImageForward.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImageForward.IsBackStageButton = false;
+            this.btnImageForward.Location = new System.Drawing.Point(856, 0);
+            this.btnImageForward.Name = "btnImageForward";
+            this.btnImageForward.Size = new System.Drawing.Size(34, 730);
+            this.btnImageForward.TabIndex = 23;
+            this.btnImageForward.Text = ">";
+            this.btnImageForward.UseVisualStyle = true;
+            this.btnImageForward.Click += new System.EventHandler(this.btnImageForward_Click);
+            // 
+            // btnImageBack
+            // 
+            this.btnImageBack.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2007;
+            this.btnImageBack.BeforeTouchSize = new System.Drawing.Size(34, 730);
+            this.btnImageBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnImageBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImageBack.IsBackStageButton = false;
+            this.btnImageBack.Location = new System.Drawing.Point(0, 0);
+            this.btnImageBack.Name = "btnImageBack";
+            this.btnImageBack.Size = new System.Drawing.Size(34, 730);
+            this.btnImageBack.TabIndex = 24;
+            this.btnImageBack.Text = "<";
+            this.btnImageBack.UseVisualStyle = true;
+            this.btnImageBack.Click += new System.EventHandler(this.btnImageBack_Click);
+            // 
+            // wmp_VideoPreview
+            // 
+            this.wmp_VideoPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wmp_VideoPreview.Enabled = true;
+            this.wmp_VideoPreview.Location = new System.Drawing.Point(0, 0);
+            this.wmp_VideoPreview.Name = "wmp_VideoPreview";
+            this.wmp_VideoPreview.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_VideoPreview.OcxState")));
+            this.wmp_VideoPreview.Size = new System.Drawing.Size(890, 730);
+            this.wmp_VideoPreview.TabIndex = 3;
+            this.wmp_VideoPreview.Visible = false;
+            // 
+            // pic_model2DPreview
+            // 
+            this.pic_model2DPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_model2DPreview.Location = new System.Drawing.Point(0, 0);
+            this.pic_model2DPreview.Name = "pic_model2DPreview";
+            this.pic_model2DPreview.Size = new System.Drawing.Size(890, 730);
+            this.pic_model2DPreview.TabIndex = 2;
+            this.pic_model2DPreview.TabStop = false;
             // 
             // panel3
             // 
@@ -188,29 +269,6 @@
             this.tsMain.Size = new System.Drawing.Size(1090, 25);
             this.tsMain.TabIndex = 21;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // wmp_VideoPreview
-            // 
-            this.wmp_VideoPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wmp_VideoPreview.Enabled = true;
-            this.wmp_VideoPreview.Location = new System.Drawing.Point(0, 0);
-            this.wmp_VideoPreview.Name = "wmp_VideoPreview";
-            this.wmp_VideoPreview.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_VideoPreview.OcxState")));
-            this.wmp_VideoPreview.Size = new System.Drawing.Size(890, 730);
-            this.wmp_VideoPreview.TabIndex = 3;
-            // 
-            // pic_model2DPreview
-            // 
-            this.pic_model2DPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_model2DPreview.Location = new System.Drawing.Point(0, 0);
-            this.pic_model2DPreview.Name = "pic_model2DPreview";
-            this.pic_model2DPreview.Size = new System.Drawing.Size(890, 730);
-            this.pic_model2DPreview.TabIndex = 2;
-            this.pic_model2DPreview.TabStop = false;
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -255,6 +313,10 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // NTT_EyeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,11 +333,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NTT_EyeTracker_Load);
             this.panel1.ResumeLayout(false);
+            this.pic_slideshowPreview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_caro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp_VideoPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wmp_VideoPreview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,6 +367,10 @@
         private System.Windows.Forms.PictureBox pic_model2DPreview;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private AxWMPLib.AxWindowsMediaPlayer wmp_VideoPreview;
+        private System.Windows.Forms.Panel pic_slideshowPreview;
+        private System.Windows.Forms.PictureBox pic_caro;
+        private Syncfusion.Windows.Forms.ButtonAdv btnImageForward;
+        private Syncfusion.Windows.Forms.ButtonAdv btnImageBack;
 
     }
 }

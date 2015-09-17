@@ -62,6 +62,11 @@ namespace NTT_Eye_Tracking
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            transitionForward(panelNewOldProject, panel_createNew);        
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 openFileDialog1.Filter = "Eye Project (.eye)|*.eye";
@@ -88,7 +93,7 @@ namespace NTT_Eye_Tracking
 
                 //MessageBox.Show("The following is the contents of proj .set" + globals.m.SettingsProject.ProjectLocation1 + " " + globals.m.SettingsProject.ProjectName1);
                 //MessageBox.Show("The following is the contents of model .set" + globals.m.SettingsModel.FPS1 + " " + globals.m.SettingsModel.Lighting1+" " + globals.m.SettingsModel.ModelLocation1+" " + globals.m.SettingsModel.Textures1);
-                
+
                 //newly commented ==========================================//
                 //Main show = new Main();
                 //this.Hide();
@@ -101,10 +106,6 @@ namespace NTT_Eye_Tracking
             {
                 MessageBox.Show(exc.Message);
             }
-        }
-
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
             transitionForward(panelNewOldProject, panel_createNew);
         }
 
