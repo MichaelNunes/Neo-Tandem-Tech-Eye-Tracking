@@ -34,22 +34,25 @@ namespace NTT_Eye_Tracking
                     }
                 case 2: //2D models
                     {
+                        globals.recording._recording = true;
                         wmp_Display.Visible = false;
                         picDisplay.Visible = true;
                         picDisplay.ImageLocation = filePath;
-                        myTimer.Interval = globals.recordTime;
-                        myTimer.Start();
-                        
+                        //myTimer.Interval = globals.recordTime;
+                        //myTimer.Start();
+                        //globals.recording._recording = false;
                         //this.Close();                        
                         break;
                     }
                 case 3: //Video
                     {
+                        globals.recording._recording = true;
                         wmp_Display.Visible = true;
                         picDisplay.Visible = false;
                         wmp_Display.URL = filePath;
-                        wmp_Display.Dock = DockStyle.Fill;                        
+                        wmp_Display.Dock = DockStyle.Fill;
                         wmp_Display.Ctlcontrols.play();
+                        //globals.recording._recording = false;
 
                         break;
                     }
@@ -60,6 +63,7 @@ namespace NTT_Eye_Tracking
         {
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
+                globals.recording._recording = false;
                 if(mtype == 3)
                 {
                     wmp_Display.Ctlcontrols.stop();

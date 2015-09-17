@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace Results_Class
 {
-    class Eye_Tracking_Graph
+    public class Eye_Tracking_Graph
     {
 
         /// <summary>
