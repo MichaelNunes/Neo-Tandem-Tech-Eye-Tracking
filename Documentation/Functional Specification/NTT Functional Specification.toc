@@ -10,35 +10,37 @@
 \contentsline {subsubsection}{\numberline {2.2.1}SaveHeatMapOntoModel2D}{8}{subsubsection.0.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}SaveHeatMapOntoModelVideo}{9}{subsubsection.0.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}SaveHeatMapOntoModel3D}{10}{subsubsection.0.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Gaze Point Maps}{10}{subsection.0.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}SaveHeatMapOntoModel3DFlythrough}{10}{subsubsection.0.2.2.4}
+\contentsline {subsection}{\numberline {2.3}Gaze Point Maps}{11}{subsection.0.2.3}
 \contentsline {subsubsection}{\numberline {2.3.1}CreateGazePointMap}{11}{subsubsection.0.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}ReadGazePointMap}{11}{subsubsection.0.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}SaveGazePointMap}{12}{subsubsection.0.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Save Gaze Point Maps}{13}{subsection.0.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}SaveGazeMapOntoModel2D}{13}{subsubsection.0.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}SaveGazeMapOntoModelVideo}{14}{subsubsection.0.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}SaveGazeMapOntoModel3D}{15}{subsubsection.0.2.4.3}
-\contentsline {subsection}{\numberline {2.5}Models}{16}{subsection.0.2.5}
+\contentsline {subsubsection}{\numberline {2.3.2}ReadGazePointMap}{12}{subsubsection.0.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}SaveGazePointMap}{13}{subsubsection.0.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Save Gaze Point Maps}{14}{subsection.0.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}SaveGazeMapOntoModel2D}{14}{subsubsection.0.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}SaveGazeMapOntoModelVideo}{15}{subsubsection.0.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}SaveGazeMapOntoModel3D}{16}{subsubsection.0.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Models}{17}{subsection.0.2.5}
 \contentsline {subsubsection}{\numberline {2.5.1}3D Models}{17}{subsubsection.0.2.5.1}
-\contentsline {subsubsection}{\numberline {2.5.2}2D Models}{19}{subsubsection.0.2.5.2}
-\contentsline {subsubsection}{\numberline {2.5.3}Video Models}{23}{subsubsection.0.2.5.3}
-\contentsline {subsection}{\numberline {2.6}Raw Information}{26}{subsection.0.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}SaveRawInformation}{27}{subsubsection.0.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}ReadRawInformation}{27}{subsubsection.0.2.6.2}
-\contentsline {subsubsection}{\numberline {2.6.3}CreateStatistics}{27}{subsubsection.0.2.6.3}
-\contentsline {subsection}{\numberline {2.7}Statistics}{28}{subsection.0.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}CreateStatistics}{28}{subsubsection.0.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}SaveStatistics}{29}{subsubsection.0.2.7.2}
-\contentsline {subsection}{\numberline {2.8}Record Eyes}{29}{subsection.0.2.8}
-\contentsline {subsubsection}{\numberline {2.8.1}RecordInformation}{30}{subsubsection.0.2.8.1}
-\contentsline {section}{\numberline {3}Required Functionality}{31}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Render 3D scene}{31}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Eye-tracking on a 3D scene}{31}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Create heat mapped texture}{31}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Map heat mapped texture back onto scene}{31}{subsection.0.3.4}
-\contentsline {subsection}{\numberline {3.5}Real-time heat mapping}{32}{subsection.0.3.5}
-\contentsline {subsection}{\numberline {3.6}Interactive Maps}{32}{subsection.0.3.6}
-\contentsline {subsection}{\numberline {3.7}In-Video Eye Tracking}{32}{subsection.0.3.7}
-\contentsline {subsection}{\numberline {3.8}Post-video Eye Tracking}{32}{subsection.0.3.8}
-\contentsline {subsection}{\numberline {3.9}Suitable Video Output Formats}{33}{subsection.0.3.9}
-\contentsline {section}{\numberline {4}Domain Model}{34}{section.0.4}
+\contentsline {subsubsection}{\numberline {2.5.2}3D Model Fly through}{20}{subsubsection.0.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}2D Models}{24}{subsubsection.0.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}Video Models}{26}{subsubsection.0.2.5.4}
+\contentsline {subsection}{\numberline {2.6}Raw Information}{28}{subsection.0.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}SaveRawInformation}{29}{subsubsection.0.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}ReadRawInformation}{29}{subsubsection.0.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}CreateStatistics}{30}{subsubsection.0.2.6.3}
+\contentsline {subsection}{\numberline {2.7}Statistics}{31}{subsection.0.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}CreateStatistics}{31}{subsubsection.0.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}SaveStatistics}{32}{subsubsection.0.2.7.2}
+\contentsline {subsection}{\numberline {2.8}Record Eyes}{32}{subsection.0.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}RecordInformation}{33}{subsubsection.0.2.8.1}
+\contentsline {section}{\numberline {3}Required Functionality}{34}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Render 3D scene}{34}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Eye-tracking on a 3D scene}{34}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Create heat mapped texture}{34}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Map heat mapped texture back onto scene}{34}{subsection.0.3.4}
+\contentsline {subsection}{\numberline {3.5}Real-time heat mapping}{35}{subsection.0.3.5}
+\contentsline {subsection}{\numberline {3.6}Interactive Maps}{35}{subsection.0.3.6}
+\contentsline {subsection}{\numberline {3.7}In-Video Eye Tracking}{35}{subsection.0.3.7}
+\contentsline {subsection}{\numberline {3.8}Post-video Eye Tracking}{35}{subsection.0.3.8}
+\contentsline {subsection}{\numberline {3.9}Suitable Video Output Formats}{36}{subsection.0.3.9}
+\contentsline {section}{\numberline {4}Domain Model}{37}{section.0.4}
