@@ -19,9 +19,9 @@ namespace Results_Class
             Random r = new Random(28);
 
             //Images   
-            etg._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\2D Test";
-            etg._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\2D Test";
-            etg._modelName = "test2.jpg";
+            etg._SourceLocation = @"C:\Users\Duran\Desktop\NTT tests\2D Test";
+            etg._DestinationPath = @"C:\Users\Duran\Desktop\NTT tests\2D Test";
+            etg._modelName = "test.jpg";
             etg._height = 1080;
             etg._width = 1920;
             int arraySize = 1000;
@@ -40,8 +40,8 @@ namespace Results_Class
             etg.py.AddRange(y);
 
             //video
-            vm._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\Test.wmv";
-            vm._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\Video Test\";
+            vm._SourceLocation = @"C:\Users\Duran\Desktop\NTT tests\Video Test\Test.wmv";
+            vm._DestinationPath = @"C:\Users\Duran\Desktop\NTT tests\Video Test";
             vm._modelName = "Test";
             vm._height = 720;
             vm._width = 1280;
@@ -65,8 +65,8 @@ namespace Results_Class
             vm.py.AddRange(yv);
 
             //3D           
-            etg3d._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\3D Test\";
-            etg3d._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\3D Test\";
+            etg3d._SourceLocation = @"C:\Users\Duran\Desktop\NTT tests\3D Test";
+            etg3d._DestinationPath = @"C:\Users\Duran\Desktop\NTT tests\3D Test";
             etg3d._modelName = "Test";
             etg3d._height = 1080;
             etg3d._width = 1920;

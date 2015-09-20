@@ -47,11 +47,12 @@ namespace NTT_Eye_Tracking
 
         private void NTT_EyeTracker_Load(object sender, EventArgs e)
         {
+            disableMainButtons();
             initializeGlobalStyles();
             this.BackColor = GlobalStyles.mainFormColours;
             NTT_MiniForm ntt_mini = new NTT_MiniForm();
             ntt_mini.ShowDialog(this);
-
+            btnCal.Enabled = true;
            switch(globals.modelIndex)
            {
                    //in each case we must show the appropriate model previewer and hide the others
@@ -112,6 +113,7 @@ namespace NTT_Eye_Tracking
         private void btnCal_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"C:\Program Files (x86)\EyeTribe\Client\EyeTribeUIWin.exe");
+            btnChooseModel.Enabled = true;
         }
 
         private void btnChooseModel_Click(object sender, EventArgs e)
@@ -187,6 +189,7 @@ namespace NTT_Eye_Tracking
                     break;
                 }
             }
+            btnRecord.Enabled = true;
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
@@ -243,6 +246,7 @@ namespace NTT_Eye_Tracking
             }
             globals.recording.saveToFile();
             globals.recording.close();
+            enableMainButtons();
         }
 
         private void btnOverlays_Click(object sender, EventArgs e)
@@ -460,6 +464,18 @@ namespace NTT_Eye_Tracking
             btnViewResults.Visible = false;
         }
 
+        private void disableMainButtons()
+        {
+            btnCal.Enabled = false;
+            btnChooseModel.Enabled = false;
+            btnGazepoint.Enabled = false;
+            btnHeatmaps.Enabled = false;
+            btnOverlays.Enabled = false;
+            btnRecord.Enabled = false;
+            btnReport.Enabled = false;
+            btnViewResults.Enabled = false;
+        }
+
         private void showMainButtons()
         {
             btnCal.Visible = true;
@@ -470,6 +486,18 @@ namespace NTT_Eye_Tracking
             btnRecord.Visible = true;
             btnReport.Visible = true;
             btnViewResults.Visible = true;
+        }
+
+        private void enableMainButtons()
+        {
+            btnCal.Enabled = true;
+            btnChooseModel.Enabled = true;
+            btnGazepoint.Enabled = true;
+            btnHeatmaps.Enabled = true;
+            btnOverlays.Enabled = true;
+            btnRecord.Enabled = true;
+            btnReport.Enabled = true;
+            btnViewResults.Enabled = true;
         }
 
         private void fixForm()
