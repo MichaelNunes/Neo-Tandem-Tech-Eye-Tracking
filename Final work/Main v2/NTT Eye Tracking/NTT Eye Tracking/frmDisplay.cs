@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 using Record_Class;
 
 namespace NTT_Eye_Tracking
@@ -16,7 +17,7 @@ namespace NTT_Eye_Tracking
         int mtype;
         public frmDisplay(int modelType, string filePath, string[] filePaths)
         {
-            System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
+            System.Timers.Timer myTimer = new System.Timers.Timer();
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -38,8 +39,20 @@ namespace NTT_Eye_Tracking
                         wmp_Display.Visible = false;
                         picDisplay.Visible = true;
                         picDisplay.ImageLocation = filePath;
-                        //myTimer.Interval = globals.recordTime;
+                        
+                        //myTimer = new System.Timers.Timer(globals.recordTime);
+                        
                         //myTimer.Start();
+                        
+                        //while(myTimer.Elapsed == globals.recordTime)
+                        //{
+                        //    if(myTimer.)
+                        //}
+                        //Thread.Sleep(5000);
+
+                        //if(myTimer.Elapsed += )
+
+                        //ProcessDialogKey(Keys.Escape);
                         //globals.recording._recording = false;
                         //this.Close();                        
                         break;
@@ -53,7 +66,6 @@ namespace NTT_Eye_Tracking
                         wmp_Display.Dock = DockStyle.Fill;
                         wmp_Display.Ctlcontrols.play();
                         //globals.recording._recording = false;
-
                         break;
                     }
             }
@@ -68,6 +80,8 @@ namespace NTT_Eye_Tracking
                 {
                     wmp_Display.Ctlcontrols.stop();
                 }
+                globals.recording.saveToFile();
+                globals.recording.close();
                 this.Close();
             }
             return base.ProcessDialogKey(keyData);
@@ -76,6 +90,11 @@ namespace NTT_Eye_Tracking
         private void picDisplay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void wmp_Display_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            //ProcessDialogKey(Keys.Escape);
         }
     }
 }

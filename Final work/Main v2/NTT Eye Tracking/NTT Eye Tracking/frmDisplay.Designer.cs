@@ -44,6 +44,7 @@
             this.wmp_Display.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_Display.OcxState")));
             this.wmp_Display.Size = new System.Drawing.Size(921, 590);
             this.wmp_Display.TabIndex = 0;
+            this.wmp_Display.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmp_Display_PlayStateChange);
             // 
             // picDisplay
             // 

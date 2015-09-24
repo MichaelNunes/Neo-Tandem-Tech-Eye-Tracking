@@ -66,6 +66,10 @@
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\External Packages\OpenTK.dll</HintPath>
+    </Reference>
     <Reference Include="Record_Class">
       <HintPath>..\..\..\Components\Record\Record_Class\Record_Class\bin\Debug\Record_Class.dll</HintPath>
     </Reference>
@@ -74,6 +78,9 @@
     </Reference>
     <Reference Include="Settings Class">
       <HintPath>..\..\..\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.dll</HintPath>
+    </Reference>
+    <Reference Include="StatsClass">
+      <HintPath>..\..\..\Components\Statistics\StatsClass\StatsClass\bin\Debug\StatsClass.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Grid.Base, Version=13.2450.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Windows, Version=13.2450.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -1848,6 +1855,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

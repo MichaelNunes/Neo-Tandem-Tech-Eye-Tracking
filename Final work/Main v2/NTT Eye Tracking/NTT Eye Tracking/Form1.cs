@@ -12,6 +12,8 @@ using Record_Class;
 using Results_Class;
 using System.IO;
 using Video_Model;
+using OpenTK.Graphics.OpenGL;
+using StatsClass;
 
 namespace NTT_Eye_Tracking
 {
@@ -36,6 +38,8 @@ namespace NTT_Eye_Tracking
         string mtl;
         string img;
         bool flythrough;
+
+        BackgroundWorker bw = new BackgroundWorker();
         #endregion
 
         public NTT_EyeTracker()
@@ -129,12 +133,12 @@ namespace NTT_Eye_Tracking
                     name = openFileDialog1.SafeFileName;
                     obj = openFileDialog1.FileName;
 
-                    openFileDialog1.Title = "Please select a material file file";
-                    openFileDialog1.Filter = "object (.mtl)|*.mtl";
-                    openFileDialog1.FileName = "";
-                    openFileDialog1.ShowDialog();
-                    name = openFileDialog1.SafeFileName;
-                    mtl = openFileDialog1.FileName;
+                    //openFileDialog1.Title = "Please select a material file file";
+                    //openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                    //openFileDialog1.FileName = "";
+                    //openFileDialog1.ShowDialog();
+                    //name = openFileDialog1.SafeFileName;
+                    //mtl = openFileDialog1.FileName;
 
                     img = Path.GetDirectoryName(obj) + "\\";
 
@@ -151,12 +155,12 @@ namespace NTT_Eye_Tracking
                     obj = openFileDialog1.FileName;
 
 
-                    openFileDialog1.Title = "Please select a material file";
-                    openFileDialog1.Filter = "object (.mtl)|*.mtl";
-                    openFileDialog1.FileName = "";
-                    openFileDialog1.ShowDialog();
-                    name = openFileDialog1.SafeFileName;
-                    mtl = openFileDialog1.FileName;
+                    //openFileDialog1.Title = "Please select a material file";
+                    //openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                    //openFileDialog1.FileName = "";
+                    //openFileDialog1.ShowDialog();
+                    //name = openFileDialog1.SafeFileName;
+                    //mtl = openFileDialog1.FileName;
 
                     img = Path.GetDirectoryName(obj) + "\\";
 
@@ -210,7 +214,7 @@ namespace NTT_Eye_Tracking
                     {
                         //globals.recording._recording = true;
                         DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
-                        dm.Run(obj, mtl, img, globals.currentRecordingpath + @"\" + name, flythrough);
+                        //dm.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
                         
                         //recording._recording = false;
 
@@ -244,184 +248,66 @@ namespace NTT_Eye_Tracking
                         break;
                     }
             }
-            globals.recording.saveToFile();
-            globals.recording.close();
             enableMainButtons();
         }
 
         private void btnOverlays_Click(object sender, EventArgs e)
         {
-            Size res = this.GetDpiSafeResolution();
-            switch (globals.modelIndex)
-            {
-                case 0: //3D model
-                    {
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+            bw.DoWork += new DoWorkEventHandler(bw_DoWorkOverlay);
+            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedOverlay);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedOverlay);       
 
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath,name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraph3D();
-
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmapVideo();
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath, name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraphVideo();
-
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmap2D();
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath, name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraph2D();
-
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name); 
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmap2D();
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath, name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraphVideo();
-
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmapVideo();
-                        break;
-                    }
-            }
+            bw.RunWorkerAsync(1000);
         }
 
         private void btnHeatmaps_Click(object sender, EventArgs e)
         {
-            Size res = this.GetDpiSafeResolution();
-            switch (globals.modelIndex)
-            {
-                case 0: //3D model
-                    {
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmapOntoModelVideo();
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmapOntoModelVideo();
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name); 
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmapOntoModel2D();
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                        hm._SourceLocation = ModelPath;
-                        hm._DestinationPath = globals.currentRecordingpath;
-                        hm.SaveHeatmapOntoModelVideo();
-                        break;
-                    }
-            }
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+            bw.DoWork += new DoWorkEventHandler(bw_DoWorkHeatmaps);
+            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedHeatmaps);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedHeatmaps);
+
+            bw.RunWorkerAsync(1000);
         }
 
         private void btnGazepoint_Click(object sender, EventArgs e)
         {
-            Size res = this.GetDpiSafeResolution();
-            switch (globals.modelIndex)
-            {
-                case 0: //3D model
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraphOntoModel3D();
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath, name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraphOntoModelVideo();
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath, name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraphOntoModel2D();
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                        etg.OpenETGraphData(globals.currentRecordingpath, name);
-                        etg._SourceLocation = ModelPath;
-                        etg._DestinationPath = globals.currentRecordingpath;
-                        etg.SaveETGraphOntoModelVideo();
-                        break;
-                    }
-            }
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+            bw.DoWork += new DoWorkEventHandler(bw_DoWorkGazePlot);
+            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedGazePlot);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedGazePlot);
+
+            bw.RunWorkerAsync(1000);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
-        {
+        {            
+            Size res = this.GetDpiSafeResolution();
+            Statistics stats = new Statistics(globals.currentRecordingpath, globals.currentRecordingpath, name,res.Width,res.Height,"","");
             switch (globals.modelIndex)
             {
                 case 0: //3D model
                     {
+                        stats.createPDF();
                         break;
                     }
                 case 1: //flythrough
                     {
+                        stats.createPDF3d();
                         break;
                     }
                 case 2: //2D models
                     {
-                        pic_model2DPreview.Show();
+                        stats.createPDF();
                         break;
                     }
                 case 3: //Video
                     {
+                        stats.createPDF();
                         break;
                     }
             }
@@ -578,7 +464,239 @@ namespace NTT_Eye_Tracking
                 pic_caro.ImageLocation = imglocation[imgIndex];
             }
         }
+        
+        private void bw_DoWorkOverlay(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
 
+            for (int i = 1; (i <= 1); i++)
+            {
+                if ((worker.CancellationPending == true))
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                   Size res = this.GetDpiSafeResolution();
+
+                   ImageGenerator ig = new ImageGenerator();
+                   ig.DestinationPath = globals.currentRecordingpath;
+                   
+                    switch (globals.modelIndex)
+                    {
+                        case 0: //3D model
+                            {
+
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath,name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraph3D();
+                                ig.deleteImages();
+
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmapVideo();
+                                ig.deleteImages();
+                                break;
+                            }
+                        case 1: //flythrough
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraphVideo();
+                                ig.deleteImages();
+
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmap2D();
+                                break;
+                            }
+                        case 2: //2D models
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraph2D();
+                                ig.deleteImages();
+
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name); 
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmap2D();
+                                break;
+                            }
+                        case 3: //Video
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraphVideo();
+                                ig.deleteImages();
+
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmapVideo();
+                                ig.deleteImages();
+                                break;
+                            }
+                    }
+                }
+            }
+        }
+
+        private void bw_RunWorkerCompletedOverlay(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("FINISHED :DDDDD");
+        }
+
+        private void bw_ProgressChangedOverlay(object sender, ProgressChangedEventArgs e)
+        {
+            //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
+        
+        private void bw_DoWorkHeatmaps(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            for (int i = 1; (i <= 1); i++)
+            {
+                if ((worker.CancellationPending == true))
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    Size res = this.GetDpiSafeResolution();
+                    switch (globals.modelIndex)
+                    {
+                        case 0: //3D model
+                            {
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmapOntoModelVideo();
+                                break;
+                            }
+                        case 1: //flythrough
+                            {
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmapOntoModelVideo();
+                                break;
+                            }
+                        case 2: //2D models
+                            {
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmapOntoModel2D();
+                                break;
+                            }
+                        case 3: //Video
+                            {
+                                Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm.SaveHeatmapOntoModelVideo();
+                                break;
+                            }
+                    }
+                }
+            }
+        }
+
+        private void bw_RunWorkerCompletedHeatmaps(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("FINISHED :DDDDD");
+        }
+
+        private void bw_ProgressChangedHeatmaps(object sender, ProgressChangedEventArgs e)
+        {
+            //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
+
+        private void bw_DoWorkGazePlot(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            for (int i = 1; (i <= 1); i++)
+            {
+                if ((worker.CancellationPending == true))
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    Size res = this.GetDpiSafeResolution();
+                    switch (globals.modelIndex)
+                    {
+                        case 0: //3D model
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraphOntoModel3D();
+                                break;
+                            }
+                        case 1: //flythrough
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraphOntoModelVideo();
+                                break;
+                            }
+                        case 2: //2D models
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraphOntoModel2D();
+                                break;
+                            }
+                        case 3: //Video
+                            {
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
+                                etg._SourceLocation = ModelPath;
+                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg.SaveETGraphOntoModelVideo();
+                                break;
+                            }
+                    }
+                }
+            }
+        }
+
+        private void bw_RunWorkerCompletedGazePlot(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("FINISHED :DDDDD");
+        }
+
+        private void bw_ProgressChangedGazePlot(object sender, ProgressChangedEventArgs e)
+        {
+            //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
         #endregion
     }
 }
