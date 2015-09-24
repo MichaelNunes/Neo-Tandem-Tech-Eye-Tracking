@@ -66,11 +66,20 @@ namespace DisplayModel
                         objects.Add(child);
                 }
             }
+
+            videoImage = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             base.OnClosing(e);
+
+            for (int i = 0; i < frameNumber; i++)
+            {
+                videoImage = new Bitmap(imagePath + @"frame" + (i) + ".bmp");
+                videoImage.RotateFlip(RotateFlipType.RotateNoneFlipY);
+                videoImage.Save(imagePath + @"frame" + (i) + ".bmp");
+            }
 
             System.Windows.Forms.Cursor.Show();
         }
@@ -92,10 +101,7 @@ namespace DisplayModel
             for (int i = 0; i < objects.Count; ++i)
                 shaderData.Draw(objects[i]);
 
-            if (isRecording)
-            {
-                RecordVideo();
-            }
+            RecordVideo();
 
             SwapBuffers();
         }
@@ -130,7 +136,7 @@ namespace DisplayModel
                 else
                 {
                     isRecording = true;
-                    videoImage = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+                    //videoImage = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
                 }
             }
         }
