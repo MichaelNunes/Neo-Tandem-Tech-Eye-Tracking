@@ -45,9 +45,9 @@ namespace DisplayModel
             //string b = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.mtl";
             //string c = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\";
 
-            string a = @"C:\Users\COS301\Desktop\Blender Testing\Cube.obj";
-            string b = @"C:\Users\COS301\Desktop\Blender Testing\Cube.mtl";
-            string c = @"C:\Users\COS301\Desktop\Blender Testing\";
+            string a = @"C:\Users\COS301\Documents\Objects\Cube.obj";
+            string b = @"C:\Users\COS301\Documents\Objects\Cube.mtl";
+            string c = @"C:\Users\COS301\Documents\Objects\textures";
 
             string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
