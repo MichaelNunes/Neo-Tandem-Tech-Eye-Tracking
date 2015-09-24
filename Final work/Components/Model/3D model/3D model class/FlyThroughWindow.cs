@@ -18,8 +18,12 @@ namespace DisplayModel
         //Camera feature(s)(make into class)
         protected Camera camera = new Camera();
 
+        //Screenshots
+        protected int viewNumber = 0;
+
         //Video recording field(s)
         protected Bitmap videoImage;
+        System.Drawing.Imaging.BitmapData data;
         protected int frameNumber = 0;
         protected bool isRecording = false;
 
@@ -74,14 +78,14 @@ namespace DisplayModel
         {
             base.OnClosing(e);
 
+            System.Windows.Forms.Cursor.Show();
+
             for (int i = 0; i < frameNumber; i++)
             {
                 videoImage = new Bitmap(imagePath + @"frame" + (i) + ".bmp");
                 videoImage.RotateFlip(RotateFlipType.RotateNoneFlipY);
                 videoImage.Save(imagePath + @"frame" + (i) + ".bmp");
             }
-
-            System.Windows.Forms.Cursor.Show();
         }
 
         protected override void OnUpdateFrame(FrameEventArgs e)
@@ -127,17 +131,9 @@ namespace DisplayModel
                 Exit();
             }
 
-            if (e.KeyChar == 'v')
+            if (e.KeyChar == 'g')
             {
-                if (isRecording)
-                {
-                    isRecording = false;
-                }
-                else
-                {
-                    isRecording = true;
-                    //videoImage = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
-                }
+                GrabScreenshot();
             }
         }
 
@@ -309,14 +305,28 @@ namespace DisplayModel
         {
             if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
                 throw new OpenTK.Graphics.GraphicsContextMissingException();
-
-            System.Drawing.Imaging.BitmapData data =
-                videoImage.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            
+            data = videoImage.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             GL.ReadPixels(0, 0, this.ClientSize.Width, this.ClientSize.Height, PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
             videoImage.UnlockBits(data);
 
-            //bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
             videoImage.Save(imagePath + @"frame" + (frameNumber++) + ".bmp");
+        }
+
+        public void GrabScreenshot()
+        {
+            if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
+                throw new OpenTK.Graphics.GraphicsContextMissingException();
+
+            Bitmap screenShot = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+            System.Drawing.Imaging.BitmapData data =
+                screenShot.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            GL.ReadPixels(0, 0, this.ClientSize.Width, this.ClientSize.Height, PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
+            screenShot.UnlockBits(data);
+
+            screenShot.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            screenShot.Save(imagePath + @"view" + (viewNumber++) + ".bmp");
+            screenShot.Dispose();
         }
     }
 }

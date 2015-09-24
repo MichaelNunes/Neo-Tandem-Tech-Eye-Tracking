@@ -86,7 +86,6 @@ namespace DisplayModel
             buffer.Index = GL.GenBuffer();
 
             Material.Setup();
-            //BufferData.Minimize();
         }
 
         /// <summary>

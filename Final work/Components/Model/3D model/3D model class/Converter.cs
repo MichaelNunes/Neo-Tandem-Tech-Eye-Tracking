@@ -55,6 +55,7 @@ namespace DisplayModel
                         materials = new List<string>();
 
         public static   int current_index;
+		public static 	float scale_factor;
         #endregion
 
         /// <summary>
@@ -62,14 +63,40 @@ namespace DisplayModel
 		/// </summary>
 		/// <param name='obj'> The filepath to the object file. </param>
 		/// <param name='dir'> The filepath to the object's texture file. </param>
-		public static GameObject fromOBJ(string obj, string mtl, string tex)
-		{
-            GameObject root = new GameObject();
+		public static GameObject fromOBJ(string obj, bool scaling)
+		{   
+			GameObject root = new GameObject();
+            scale_factor = 0.0f;
+
+            string mtl = obj.Substring(0, obj.Length - 3) + "mtl";
+            int index = 0;
+            for (int i = 0; i < obj.Length; ++i)
+                if (obj[i] == '\\')
+                    index = i;
+            string tex = obj.Substring(0, index+1);
 
             parseOBJ(obj);
-            //scaleObject(bd);
             parseMTL(mtl, tex);
             generateChildren(ref root);
+            
+            if (scaling)
+            {
+                List<GameObject> list = new List<GameObject>();
+                GameObject current = root;
+
+                for (int i = 0; i < current.Children.Count; ++i)
+                {
+                    current = current.Children[i];
+                    if (!list.Contains(current))
+                    {
+                        list.Add(current);
+                        findMax(current.bufferData);
+                    }
+                }
+
+                for (int i = 0; i < list.Count; ++i)
+                    scaleObject(list[i].bufferData);                
+            }
 
             return root;
         }
@@ -128,7 +155,8 @@ namespace DisplayModel
 
             int i = 0;
 
-            filereader = new StreamReader(mtl);
+            try { filereader = new StreamReader(mtl); }
+            catch (Exception e) { return; }
 
             while ((line = filereader.ReadLine()) != null)
             {
@@ -187,40 +215,41 @@ namespace DisplayModel
             }
         }
 
-        /*
-        private static void scaleObject(BufferData bufferData)
+		private static void findMax(BufferData bufferData)
         {
-            float max = 0f;
             for (int i = 0; i < bufferData.Vertex.Length; i++)
             {
                 for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
                 {
-                    if(Math.Abs(bufferData.Vertex[i][j].X) > max)
+                    if(Math.Abs(bufferData.Vertex[i].X) > scale_factor)
                     {
-                        max = Math.Abs(bufferData.Vertex[i][j].X);
+                        scale_factor = Math.Abs(bufferData.Vertex[i].X);
                     }
-                    if (Math.Abs(bufferData.Vertex[i][j].Y) > max)
+                    if (Math.Abs(bufferData.Vertex[i].Y) > scale_factor)
                     {
-                        max = Math.Abs(bufferData.Vertex[i][j].Y);
+                        scale_factor = Math.Abs(bufferData.Vertex[i].Y);
                     }
-                    if (Math.Abs(bufferData.Vertex[i][j].Z) > max)
+                    if (Math.Abs(bufferData.Vertex[i].Z) > scale_factor)
                     {
-                        max = Math.Abs(bufferData.Vertex[i][j].Z);
+                        scale_factor = Math.Abs(bufferData.Vertex[i].Z);
                     }
                 }
             }
-            Console.WriteLine("Largest vertex value: "+max);
+		}
+		
+        private static void scaleObject(BufferData bufferData)
+		{
             for (int i = 0; i < bufferData.Vertex.Length; i++)
             {
                 for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
                 {
-                    bufferData.Vertex[i][j].X /= max;
-                    bufferData.Vertex[i][j].Y /= max;
-                    bufferData.Vertex[i][j].Z /= max;
+                    bufferData.Vertex[i].X /= scale_factor;
+                    bufferData.Vertex[i].Y /= scale_factor;
+                    bufferData.Vertex[i].Z /= scale_factor;
                 }
             }
         }
-        */
+		
         /// <summary>
         /// Adds faces from the file source. 
         /// </summary>
