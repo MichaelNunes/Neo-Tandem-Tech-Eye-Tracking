@@ -75,12 +75,16 @@ namespace DisplayModel
                     index = i;
             string tex = obj.Substring(0, index+1);
 
+            Console.WriteLine("Parsing .obj file...");
             parseOBJ(obj);
+            Console.WriteLine("Parsing .mtl file...");
             parseMTL(mtl, tex);
+            Console.WriteLine("Generating children objects...");
             generateChildren(ref root);
             
             if (scaling)
             {
+                Console.WriteLine("Scaling objects...");
                 List<GameObject> list = new List<GameObject>();
                 GameObject current = root;
 
@@ -153,8 +157,6 @@ namespace DisplayModel
             string[] sections;
             string next_material = "";
 
-            int i = 0;
-
             try { filereader = new StreamReader(mtl); }
             catch (Exception e) { return; }
 
@@ -170,15 +172,11 @@ namespace DisplayModel
 
                     case "map_Kd":
                         material_texture.Add(next_material, tex + sections[1]);
-                        Console.WriteLine(material_texture.Count);
-                        ++i;
                         break;
                 }
             }
 
             filereader.Close();
-
-            Console.WriteLine("Number of textures: " + i);
         }
 
         public static void generateChildren(ref GameObject root)

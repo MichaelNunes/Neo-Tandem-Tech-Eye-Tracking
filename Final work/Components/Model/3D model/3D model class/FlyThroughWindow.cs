@@ -6,6 +6,7 @@ using System.Text;
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
+using System.Threading;
 
 namespace DisplayModel
 {
@@ -22,10 +23,14 @@ namespace DisplayModel
         protected int viewNumber = 0;
 
         //Video recording field(s)
-        protected Bitmap videoImage;
+        protected Bitmap videoFrame;
+        List<Bitmap> videoFrames = new List<Bitmap>();
         System.Drawing.Imaging.BitmapData data;
+
+        Thread oThread;
+        bool IsSavingFrames = false;
+
         protected int frameNumber = 0;
-        protected bool isRecording = false;
 
         public FlyThroughWindow(string _imagePath)
             : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 8))
@@ -70,8 +75,6 @@ namespace DisplayModel
                         objects.Add(child);
                 }
             }
-
-            videoImage = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -80,12 +83,8 @@ namespace DisplayModel
 
             System.Windows.Forms.Cursor.Show();
 
-            for (int i = 0; i < frameNumber; i++)
-            {
-                videoImage = new Bitmap(imagePath + @"frame" + (i) + ".bmp");
-                videoImage.RotateFlip(RotateFlipType.RotateNoneFlipY);
-                videoImage.Save(imagePath + @"frame" + (i) + ".bmp");
-            }
+            oThread.Join();
+            saveFrames();
         }
 
         protected override void OnUpdateFrame(FrameEventArgs e)
@@ -122,21 +121,6 @@ namespace DisplayModel
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
         }
 
-        protected override void OnKeyPress(KeyPressEventArgs e)
-        {
-            base.OnKeyPress(e);
-
-            if (e.KeyChar == 'q')
-            {
-                Exit();
-            }
-
-            if (e.KeyChar == 'g')
-            {
-                GrabScreenshot();
-            }
-        }
-
         /// <summary>
         /// This method facilitates the camera movements
         /// </summary>
@@ -150,6 +134,16 @@ namespace DisplayModel
         public void KeyboardUpdate(double time)
         {
             OpenTK.Input.KeyboardState state = OpenTK.Input.Keyboard.GetState();
+
+            if (state.IsKeyDown(OpenTK.Input.Key.Escape))
+            {
+                Exit();
+            }
+
+            if (state.IsKeyDown(OpenTK.Input.Key.G))
+            {
+                GrabScreenshot();
+            }
 
             if (state.IsKeyDown(OpenTK.Input.Key.ShiftLeft))
             {
@@ -305,12 +299,48 @@ namespace DisplayModel
         {
             if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
                 throw new OpenTK.Graphics.GraphicsContextMissingException();
-            
-            data = videoImage.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            GL.ReadPixels(0, 0, this.ClientSize.Width, this.ClientSize.Height, PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
-            videoImage.UnlockBits(data);
 
-            videoImage.Save(imagePath + @"frame" + (frameNumber++) + ".bmp");
+            videoFrame = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+
+            data = videoFrame.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            GL.ReadPixels(0, 0, this.ClientSize.Width, this.ClientSize.Height, PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
+            videoFrame.UnlockBits(data);
+
+            videoFrames.Add(videoFrame);
+            if(videoFrames.Count >= 100 && IsSavingFrames == false)
+            {
+                oThread = new Thread(this.saveFrames);
+                oThread.Priority = ThreadPriority.Lowest;
+
+                IsSavingFrames = true;
+                
+                oThread.Start();
+            }
+        }
+
+        public void saveFrames()
+        {
+            while(videoFrames.Count > 0)
+            {
+                videoFrames[0].RotateFlip(RotateFlipType.RotateNoneFlipY);
+                videoFrames[0].Save(imagePath + @"frame" + (frameNumber++) + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                videoFrames[0].Dispose();
+
+                videoFrames.RemoveAt(0);
+            }
+
+            IsSavingFrames = false;
+
+            /*for (int i = 0; i < temp; i++)
+            {
+                videoFrames[i].RotateFlip(RotateFlipType.RotateNoneFlipY);
+                videoFrames[i].Save(imagePath + @"frame" + (frameNumber++) + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                videoFrames[i].Dispose();
+            }
+            for (int i = 0; i < temp; i++)
+            {
+                videoFrames.RemoveAt(0);
+            }*/
         }
 
         public void GrabScreenshot()
