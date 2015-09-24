@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  17 SEP 2015 19:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  24 SEP 2015 12:56
 entering extended mode
 **NTT*Functional*Specification.tex
 
@@ -441,7 +441,7 @@ g used on input line 106.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.120 	\end{itemize}
+l.121 	\end{itemize}
                      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
 tion/Functional Specification/Diagrams/Use_Case_Diagram__SaveHeatMap.png (PNG c
 opy)>]
@@ -449,7 +449,7 @@ File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
 e png)
  <use Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
-g used on input line 123.
+g used on input line 124.
 (pdftex.def)             Requested size: 218.81696pt x 183.68579pt.
 
 <Diagrams/Use_Case_Diagram__CreateGazePointMap.png, id=273, 518.93875pt x 384.4
@@ -458,14 +458,14 @@ File: Diagrams/Use_Case_Diagram__CreateGazePointMap.png Graphic file (type png)
 
  <use Diagrams/Use_Case_Diagram__CreateGazePointMap.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__CreateGazePointMap.png used
- on input line 132.
+ on input line 133.
 (pdftex.def)             Requested size: 259.46873pt x 192.21765pt.
  [11pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.142 		\item P
+l.143 		\item P
                re-condition: Eye tracking data must be already recorded.]
 <Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png, id=279,
  713.66624pt x 130.4875pt>
@@ -474,7 +474,7 @@ phic file (type png)
 
 <use Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__CreateGazePointMap__CreateG
-azePointMap.png used on input line 149.
+azePointMap.png used on input line 150.
 (pdftex.def)             Requested size: 356.83224pt x 65.24358pt.
 
 [12pdfTeX warning (ext4): destination with the same identifier (name{figure.0.7
@@ -482,7 +482,7 @@ azePointMap.png used on input line 149.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.160 	\end{itemize}
+l.161 	\end{itemize}
                     ]
 <Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png, id=286, 366
 .36874pt x 320.19624pt>
@@ -491,7 +491,7 @@ File: Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png Graphic
 
 <use Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazeP
-ointMap.png used on input line 164.
+ointMap.png used on input line 165.
 (pdftex.def)             Requested size: 183.18391pt x 160.09772pt.
 
 <Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png, id=287, 423
@@ -501,10 +501,10 @@ File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
 
 <use Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazeP
-ointMap.png used on input line 179.
+ointMap.png used on input line 180.
 (pdftex.def)             Requested size: 211.79073pt x 184.68954pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
@@ -513,27 +513,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--186
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.186 
+l.187 
       ]
 File: Diagrams/Use_Case_Diagram__CreateGazePointMap.png Graphic file (type png)
 
  <use Diagrams/Use_Case_Diagram__CreateGazePointMap.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__CreateGazePointMap.png used
- on input line 189.
+ on input line 190.
 (pdftex.def)             Requested size: 259.46873pt x 192.21765pt.
  [14pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.200 		\item R
+l.201 		\item R
                eturn Data Structure: Gaze point map of the data is placed ov...
 ]
 File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
  file (type png)
  <use Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazeP
-ointMap.png used on input line 204.
+ointMap.png used on input line 205.
 (pdftex.def)             Requested size: 211.79073pt x 184.68954pt.
 
 [15pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1
@@ -541,14 +541,14 @@ ointMap.png used on input line 204.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.213 		\item R
+l.214 		\item R
                equest Data Structure: Video and raw information of recording.pd
 fTeX warning (ext4): destination with the same identifier (name{figure.0.11}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.213 		\item R
+l.214 		\item R
                equest Data Structure: Video and raw information of recording. <
 C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specif
 ication/Diagrams/Use_Case_Diagram__CreateGazePointMap.png (PNG copy)> <C:/Users
@@ -559,7 +559,7 @@ File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
  file (type png)
  <use Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazeP
-ointMap.png used on input line 218.
+ointMap.png used on input line 219.
 (pdftex.def)             Requested size: 211.79073pt x 184.68954pt.
 
 [16pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1
@@ -567,7 +567,7 @@ ointMap.png used on input line 218.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.229 	\end{itemize}
+l.230 	\end{itemize}
                      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
 tion/Functional Specification/Diagrams/Activity_Diagram__ReadGazePointMap__Read
 GazePointMap.png (PNG copy)>]
@@ -576,7 +576,7 @@ File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
 
 <use Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazeP
-ointMap.png used on input line 232.
+ointMap.png used on input line 233.
 (pdftex.def)             Requested size: 211.79073pt x 184.68954pt.
 
 <Diagrams/Use_Case_Diagram__Models.png, id=308, 400.49625pt x 217.81375pt>
@@ -584,7 +584,7 @@ File: Diagrams/Use_Case_Diagram__Models.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Models.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__Models.png used on input li
-ne 243.
+ne 244.
 (pdftex.def)             Requested size: 200.24763pt x 108.9066pt.
 
 <Diagrams/Use_Case_Diagram__3DModels.png, id=309, 920.43875pt x 393.47pt>
@@ -592,14 +592,14 @@ File: Diagrams/Use_Case_Diagram__3DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__3DModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__3DModels.png used on input 
-line 252.
+line 253.
 (pdftex.def)             Requested size: 460.21825pt x 196.73451pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.260 		\begin{itemize}
+l.261 		\begin{itemize}
                         <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Docume
 ntation/Functional Specification/Diagrams/Activity_Diagram__SaveGazePointMap__S
 aveGazePointMap.png (PNG copy)>]
@@ -609,7 +609,7 @@ File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
  <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
-g used on input line 269.
+g used on input line 270.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
 
 <Diagrams/Activity_Diagram__ViewModel__ViewModel.png, id=316, 373.395pt x 169.6
@@ -618,14 +618,14 @@ File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
 g)
  <use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
-ed on input line 283.
+ed on input line 284.
 (pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
  [18pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.289 		\begin{itemize}
+l.290 		\begin{itemize}
                        ]
 <Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png, id=324, 683.55376p
 t x 236.885pt>
@@ -634,26 +634,26 @@ type png)
 
 <use Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__CreateHeatMap__CreateImages
-.png used on input line 307.
+.png used on input line 308.
 (pdftex.def)             Requested size: 341.77605pt x 118.4422pt.
 File: Diagrams/Use_Case_Diagram__3DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__3DModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__3DModels.png used on input 
-line 319.
+line 321.
 (pdftex.def)             Requested size: 460.21825pt x 196.73451pt.
  [19pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.322 
+l.324 
       ] [20pdfTeX warning (ext4): destination with the same identifier (name{fi
 gure.0.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.332 		\end{itemize}
+l.334 		\end{itemize}
                      ]
 
 LaTeX Warning: Text page 21 contains only floats.
@@ -667,13 +667,13 @@ Overfull \vbox (2.42412pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.332 		\end{itemize}
+l.334 		\end{itemize}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{figure.0.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.332 		\end{itemize}
+l.334 		\end{itemize}
                       <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Document
 ation/Functional Specification/Diagrams/Use_Case_Diagram__Models.png (PNG copy)
 >]
@@ -681,26 +681,26 @@ File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
  <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
-g used on input line 336.
+g used on input line 338.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
  [22pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.338 		\end{figure}
+l.340 		\end{figure}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.0.20}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.338 		\end{figure}
+l.340 		\end{figure}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.0.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.338 		\end{figure}
+l.340 		\end{figure}
                      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
 tion/Functional Specification/Diagrams/Use_Case_Diagram__3DModels.png (PNG copy
 )> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Sp
@@ -712,21 +712,21 @@ ification/Diagrams/Activity_Diagram__ViewModel__ViewModel.png (PNG copy)>]
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.346 			\item R
+l.348 			\item R
                 eturn Data Structure: Viewable 3D model render.pdfTeX warning (
 ext4): destination with the same identifier (name{figure.0.23}) has been alread
 y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.346 			\item R
+l.348 			\item R
                 eturn Data Structure: Viewable 3D model render.pdfTeX warning (
 ext4): destination with the same identifier (name{figure.0.24}) has been alread
 y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.346 			\item R
+l.348 			\item R
                 eturn Data Structure: Viewable 3D model render. <C:/Users/m/Des
 ktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Diagra
 ms/Activity_Diagram__CreateHeatMap__CreateImages.png (PNG copy)>]
@@ -735,14 +735,14 @@ g)
 
 <use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
-ed on input line 350.
+ed on input line 352.
 (pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
 File: Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png Graphic file (
 type png)
 
 <use Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__CreateHeatMap__CreateImages
-.png used on input line 374.
+.png used on input line 376.
 (pdftex.def)             Requested size: 341.77605pt x 118.4422pt.
 
 <Diagrams/Use_Case_Diagram__2DModels.png, id=350, 407.5225pt x 147.55125pt>
@@ -750,42 +750,42 @@ File: Diagrams/Use_Case_Diagram__2DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__2DModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__2DModels.png used on input 
-line 384.
+line 386.
 (pdftex.def)             Requested size: 203.76074pt x 73.77544pt.
  [24pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 25}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.392 			\item P
+l.394 			\item P
                 re-condition: The 2D model must exist, a image preferable.]
 File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
 
 <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
-g used on input line 400.
+g used on input line 402.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
 File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
 g)
 
 <use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
-ed on input line 415.
+ed on input line 417.
 (pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
  [25pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 26}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.422 			\item P
+l.424 			\item P
                 re-condition: The eye data must have been recorded and model...
 pdfTeX warning (ext4): destination with the same identifier (name{figure.0.27})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.422 			\item P
+l.424 			\item P
                 re-condition: The eye data must have been recorded and model...
  <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Spec
 ification/Diagrams/Use_Case_Diagram__2DModels.png (PNG copy)>]
@@ -795,10 +795,10 @@ File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
 e png)
  <use Diagrams/Activity_Diagram__ExportModel__ExportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ExportModel__ExportModel.pn
-g used on input line 430.
+g used on input line 432.
 (pdftex.def)             Requested size: 256.95937pt x 91.84288pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--440
+Underfull \hbox (badness 10000) in paragraph at lines 440--442
 
  []
 
@@ -808,32 +808,32 @@ File: Diagrams/Use_Case_Diagram__VideoModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__VideoModels.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__VideoModels.png used on inp
-ut line 443.
+ut line 445.
 (pdftex.def)             Requested size: 319.69359pt x 235.88066pt.
  [26pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 28}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.451 			\begin{itemize}
+l.453 			\begin{itemize}
                         pdfTeX warning (ext4): destination with the same identi
 fier (name{figure.0.29}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.451 			\begin{itemize}
+l.453 			\begin{itemize}
                         ] [27pdfTeX warning (ext4): destination with the same i
 dentifier (name{figure.0.30}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.456 			\end{itemize}
+l.458 			\end{itemize}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{figure.0.31}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.456 			\end{itemize}
+l.458 			\end{itemize}
                        <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documen
 tation/Functional Specification/Diagrams/Activity_Diagram__ExportModel__ExportM
 odel.png (PNG copy)> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
@@ -843,24 +843,24 @@ File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
  <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
-g used on input line 460.
+g used on input line 462.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
 File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
 g)
 
 <use Diagrams/Activity_Diagram__ViewModel__ViewModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ViewModel__ViewModel.png us
-ed on input line 474.
+ed on input line 476.
 (pdftex.def)             Requested size: 186.69704pt x 84.81665pt.
 File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
 e png)
 
 <use Diagrams/Activity_Diagram__ExportModel__ExportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ExportModel__ExportModel.pn
-g used on input line 490.
+g used on input line 492.
 (pdftex.def)             Requested size: 256.95937pt x 91.84288pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--500
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
@@ -870,14 +870,14 @@ t>
 File: Diagrams/Use_Case_Diagram__RawInformation.png Graphic file (type png)
  <use Diagrams/Use_Case_Diagram__RawInformation.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__RawInformation.png used on 
-input line 503.
+input line 505.
 (pdftex.def)             Requested size: 348.3004pt x 239.39378pt.
  [28pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 32}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.511 \item P
+l.513 \item P
              ost-condition: Data is saved and can be used later.]
 <Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png, id=385,
  587.19376pt x 130.4875pt>
@@ -886,7 +886,7 @@ phic file (type png)
 
 <use Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveRawInformation__SaveRaw
-Information.png used on input line 518.
+Information.png used on input line 520.
 (pdftex.def)             Requested size: 293.59616pt x 65.24358pt.
 
 [29pdfTeX warning (ext4): destination with the same identifier (name{figure.0.3
@@ -894,14 +894,14 @@ Information.png used on input line 518.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 \item P
+l.527 \item P
              re-condition: Recorded data must have been saved in a text file.pd
 fTeX warning (ext4): destination with the same identifier (name{figure.0.34}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.525 \item P
+l.527 \item P
              re-condition: Recorded data must have been saved in a text file.]
 <Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png, id=392,
  810.02625pt x 227.85126pt>
@@ -910,7 +910,7 @@ phic file (type png)
 
 <use Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ReadRawInformation__ReadRaw
-Information.png used on input line 533.
+Information.png used on input line 535.
 (pdftex.def)             Requested size: 405.01213pt x 113.92534pt.
 
 <Diagrams/Use_Case_Diagram__Statistics.png, id=393, 415.5525pt x 252.945pt>
@@ -918,20 +918,20 @@ File: Diagrams/Use_Case_Diagram__Statistics.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Statistics.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__Statistics.png used on inpu
-t line 547.
+t line 549.
 (pdftex.def)             Requested size: 207.77574pt x 126.47218pt.
  [30pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 35}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.550 
+l.552 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 0.36}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.550 
+l.552 
        <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functiona
 l Specification/Diagrams/Use_Case_Diagram__RawInformation.png (PNG copy)> <C:/U
 sers/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specificat
@@ -941,14 +941,14 @@ gure.0.37}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.557 \item R
+l.559 \item R
              eturn Data Structure: Statistics will be created.pdfTeX warning (e
 xt4): destination with the same identifier (name{figure.0.38}) has been already
  used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.557 \item R
+l.559 \item R
              eturn Data Structure: Statistics will be created. <C:/Users/m/Desk
 top/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Diagram
 s/Activity_Diagram__ReadRawInformation__ReadRawInformation.png (PNG copy)> <C:/
@@ -961,7 +961,7 @@ File: Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png Graphic
 
 <use Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__CreateStatistics__CreateSta
-tistics.png used on input line 562.
+tistics.png used on input line 564.
 (pdftex.def)             Requested size: 252.94437pt x 76.78668pt.
 
 <Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png, id=406, 594.22p
@@ -971,10 +971,10 @@ e (type png)
 
 <use Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveStatistics__SaveStatist
-ics.png used on input line 577.
+ics.png used on input line 579.
 (pdftex.def)             Requested size: 297.10927pt x 72.77168pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 582--584
+Underfull \hbox (badness 10000) in paragraph at lines 584--586
 
  []
 
@@ -983,13 +983,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 582--584
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.584 
+l.586 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 0.40}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.584 
+l.586 
        <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functiona
 l Specification/Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.p
 ng (PNG copy)> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/F
@@ -1000,7 +1000,7 @@ File: Diagrams/Use_Case_Diagram__RecordEye.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__RecordEye.png>
 Package pdftex.def Info: Diagrams/Use_Case_Diagram__RecordEye.png used on input
- line 587.
+ line 589.
 (pdftex.def)             Requested size: 214.80197pt x 173.14644pt.
 
 <Diagrams/Activity_Diagram__RecordEye__RecordEye.png, id=414, 669.50125pt x 130
@@ -1009,7 +1009,7 @@ File: Diagrams/Activity_Diagram__RecordEye__RecordEye.png Graphic file (type pn
 g)
  <use Diagrams/Activity_Diagram__RecordEye__RecordEye.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__RecordEye__RecordEye.png us
-ed on input line 603.
+ed on input line 605.
 (pdftex.def)             Requested size: 334.7498pt x 65.24358pt.
 ) [33pdfTeX warning (ext4): destination with the same identifier (name{figure.0
 .41}) has been already used, duplicate ignored
