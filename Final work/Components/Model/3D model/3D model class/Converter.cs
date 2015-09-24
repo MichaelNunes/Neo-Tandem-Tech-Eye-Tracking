@@ -155,7 +155,8 @@ namespace DisplayModel
 
             int i = 0;
 
-            filereader = new StreamReader(mtl);
+            try { filereader = new StreamReader(mtl); }
+            catch (Exception e) { return; }
 
             while ((line = filereader.ReadLine()) != null)
             {
@@ -242,9 +243,9 @@ namespace DisplayModel
             {
                 for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
                 {
-                    bufferData.Vertex[i].X /= max;
-                    bufferData.Vertex[i].Y /= max;
-                    bufferData.Vertex[i].Z /= max;
+                    bufferData.Vertex[i].X /= scale_factor;
+                    bufferData.Vertex[i].Y /= scale_factor;
+                    bufferData.Vertex[i].Z /= scale_factor;
                 }
             }
         }

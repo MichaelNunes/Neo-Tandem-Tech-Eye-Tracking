@@ -11,7 +11,7 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public void Run(string source, string filePath, bool flyThrough)
+        public static void Run(string source, string filePath, bool flyThrough)
         {
             try
             {
@@ -41,16 +41,11 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            //string a = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.obj";
-            //string b = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\Medieval_City2.mtl";
-            //string c = @"E:\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\Objects\Medeiveal City\";
-
-            string objectpath = @"C:\Users\COS301\Desktop\Blender Testing\Cube.obj";
+            string objectpath = @"C:\Users\COS301\Desktop\Cube\Cube.obj";
 
             string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
-            DisplayModel dm = new DisplayModel();
-            dm.Run(objectpath, filePath, true);
+            Run(objectpath, filePath, true);
         }
     }
 }
