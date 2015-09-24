@@ -43,8 +43,8 @@ namespace Results_Class
             vm._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\Test.wmv";
             vm._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\Video Test\";
             vm._modelName = "Test";
-            vm._height = 720;
-            vm._width = 1280;
+            vm._height = 1080;
+            vm._width = 1920;
 
             int arraySize1 = 900;
             Random rv = new Random();
@@ -61,8 +61,9 @@ namespace Results_Class
                 tester.Add(xv[i] + ":" + yv[i]);
             }
             //System.IO.File.WriteAllLines(vm._fileLocation + "\\" + vm._modelName + " " + ".txt", tester);
-            vm.px.AddRange(xv);
-            vm.py.AddRange(yv);
+            //vm.px.AddRange(xv);
+            //vm.py.AddRange(yv);
+            vm.OpenETGraphData(@"C:\Users\COS301\Documents\ETG Tests\", "Test");
 
             //3D           
             etg3d._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\3D Test\";

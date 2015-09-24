@@ -138,23 +138,79 @@ namespace Results_Class
             using (var graphics = Graphics.FromImage(img))
             {
                 int startPoint = currentPoint - pointHistory;
+
                 if(startPoint < 0)
                 {
                     startPoint = 0;
                 }
+
                 int endPoint = currentPoint;
+                List<int> growingPoints = new List<int>();
+                List<int> growingPointsArea = new List<int>();
+                List<int> growingPointsClusterCount = new List<int>();
+
+                SolidBrush redBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+                Font drawFont = new System.Drawing.Font("Arial", 16);
+                SolidBrush greenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+                Pen redPen = new Pen(Color.Red, 1);
+
+                int pointNumber = 0;
                 for (int i = startPoint; i <= endPoint; i++)
                 {
-                    SolidBrush redBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
-                    graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
-                    Font drawFont = new System.Drawing.Font("Arial", 16);
-                    SolidBrush greenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
-                    Pen redPen = new Pen(Color.Red, 1);
-                    if (i > 0)
+                    if (growingPoints.Count == 0)
                     {
-                        graphics.DrawLine(redPen, X[i], Y[i], X[i - 1], Y[i - 1]);
+                        growingPoints.Add(i);
+                        growingPointsArea.Add(10);
+                        growingPointsClusterCount.Add(0);
+                        graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
+                        graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i] - 5, Y[i] - 5);
                     }
-                    graphics.DrawString(i.ToString(), drawFont, greenBrush, X[i], Y[i]);
+                    else
+                    {
+                        bool newGrowingPoint = false;
+                        for (int j = 0; j < growingPoints.Count; j++)
+                        {
+                            int gp = growingPoints.ElementAt(j);
+                            int gpa = growingPointsArea.ElementAt(j);
+                            int gpcc = growingPointsClusterCount.ElementAt(j);
+                            if ((X[i] > (X[gp] - gpa)) && (X[i] < (X[gp] + gpa)) &&
+                                (Y[i] > (Y[gp] - gpa)) && (Y[i] < (Y[gp] + gpa)))
+                            {
+                                gpa += 10;
+                                growingPointsArea.Insert(j,gpa);
+                                growingPointsClusterCount.Insert(j,gpcc+1);
+                                graphics.FillEllipse(redBrush, new Rectangle((int)X[gp] - (gpa / 2), (int)Y[gp] - (gpa / 2), gpa, gpa));
+                                graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[gp] - 5, Y[gp] - 5);
+                                newGrowingPoint = false;
+                            }
+                            else
+                            {
+                                if (gpa > 10)
+                                {
+                                    gpa -= 10;
+                                    growingPointsArea.Insert(j, gpa);
+                                    graphics.FillEllipse(redBrush, new Rectangle((int)X[gp] - (gpa / 2), (int)Y[gp] - (gpa / 2), gpa, gpa));
+                                }
+                                newGrowingPoint = true;
+
+                            }
+                        }
+                        if (newGrowingPoint)
+                        {
+                            graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
+                            if (i != startPoint)
+                            {
+                                graphics.DrawLine(redPen, X[i], Y[i], X[i - 1], Y[i - 1]);
+                                growingPoints.Add(i);
+                                growingPointsArea.Add(10);
+                                growingPointsClusterCount.Add(0);
+                            }
+                            pointNumber += 1;
+                            graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i] - 5, Y[i] - 5);
+                        }
+                            
+                        
+                    }
                 }
              }
             return img;
