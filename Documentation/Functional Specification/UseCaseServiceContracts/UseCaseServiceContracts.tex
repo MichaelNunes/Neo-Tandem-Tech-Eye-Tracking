@@ -3,7 +3,7 @@
 	\newline
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__HeatMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__HeatMap.png}
 		\caption{Heat Map Use Case}
 		\label{HeatMapUseCase}
 	\end{figure}
@@ -20,7 +20,7 @@ The create heat map use case deals with the creation of the heat map from the re
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png}
+		\includegraphics[scale=0.05,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png}
 		\caption{Create Heat Map Activity}
 	\end{figure}
 	
@@ -35,7 +35,7 @@ The create heat map use case deals with the creation of the heat map from the re
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png}
 		\caption{Read Heat Map Activity}
 	\end{figure}
 	
@@ -50,7 +50,7 @@ The create heat map use case deals with the creation of the heat map from the re
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}
 		\caption{Save Heat Map Activity}
 	\end{figure}
 	
@@ -60,13 +60,13 @@ The create heat map use case deals with the creation of the heat map from the re
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__SaveHeatMap.png}\newline
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__SaveHeatMap.png}\newline
 		\caption{Save Heat Map Use Case}
 	\end{figure}		
 		
 	
 	\subsubsection{SaveHeatMapOntoModel2D}
-The heat-map that is created for a 2D model media type will be saved and applied to the 2D model to see the heat-map on top of the model to indicate what has been viewed the most by the user(s) test participants.
+The heat-map that is created for a two dimensional (2D) model media type will be saved and applied to the original 2D model to see the heat-map on top of the model. This then gives an indication of what has been viewed the most by the user(s) test participants.
 	\begin{itemize}
 		\item Pre-condition: Eye tracking data must have already been recorded.
 		\item Post-condition: Heat map of the data is viewable on the 2D model as an overlay.
@@ -75,7 +75,7 @@ The heat-map that is created for a 2D model media type will be saved and applied
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering	
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
 		\caption{Save on 2D Model Activity}
 	\end{figure}
 
@@ -89,12 +89,12 @@ The heat-map that is created for a 2D model media type will be saved and applied
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering	
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
 		\caption{Save on Video Model Activity}
 	\end{figure}
 
 	\subsubsection{SaveHeatMapOntoModel3D}
-	The 3D model will have multiple images of it created from different angles Each created image can then have a heat-map placed over it.
+	The 3D model will have multiple images of it created from different angles. Each of the created image can then have a heat-map placed over it.
 	\begin{itemize}
 		\item Pre-condition: Eye tracking data must have already been recorded and 3D model must be available for the creation of images.
 		\item Post-condition: Heat-map of the data is viewable on the 3D model as an overlay.
@@ -103,18 +103,34 @@ The heat-map that is created for a 2D model media type will be saved and applied
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering	
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
 		\caption{Save on 3D Model Activity}
 	\end{figure}
 	
 	%============================================================================%
+	%new addition%
+	%add images for the model
+	%Michael
+	\subsubsection{SaveHeatMapOntoModel3DFlythrough}
+	The 3D model will be rendered and allow the user to explore the model as they wish.The recording of the  	model is done and a video of the user experience is created.The video will then have the heatmap 			applied to it. 
+	\begin{itemize}
+		\item Pre-condition: Eye tracking data must have already been recorded and 3D model must be available for the creation of the video.
+		\item Post-condition: Heat-map of the data is viewable on the 3D model as an overlay.
+		\item Request Data Structure: Recorded eye tracking information.
+		\item Return Data Structure: Heat-map of the data is placed over the video of the 3D model.
+	\end{itemize}
+	\begin{figure}[!ht]
+		\centering	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png}	
+		\caption{Save on 3D Model Activity}
+	\end{figure}
 	
 \subsection{Gaze Point Maps}
 	This section will cover all the aspects of the Gaze Point Map use case (Figure \ref{GazePointUseCase}). Gaze point maps track where the user is looking but specifies the order in which their respective gaze moves from one location to another. This use case forms an added extra to the user and can be used to further analyse information and data that has been recorded. The data that is recorded will be used to create the gaze point that can then later be used to analyse the data and be used for future uses.
 	\newline
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__CreateGazePointMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__CreateGazePointMap.png}
 		\caption{Gaze Point Use Case}
 		\label{GazePointUseCase}
 	\end{figure}
@@ -131,7 +147,7 @@ The create gaze point activity deals with the creation of the gaze point maps fr
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png}
 		\caption{Create Gaze Point Map Activity}
 	\end{figure}
 	
@@ -146,7 +162,7 @@ The create gaze point activity deals with the creation of the gaze point maps fr
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png}
 		\caption{Read Gaze Point Map Activity}
 	\end{figure}
 	
@@ -161,7 +177,7 @@ The create gaze point activity deals with the creation of the gaze point maps fr
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}
 		\caption{Save Gaze Point Map Activity}
 	\end{figure}
 	
@@ -171,7 +187,7 @@ The create gaze point activity deals with the creation of the gaze point maps fr
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__CreateGazePointMap.png}\newline
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__CreateGazePointMap.png}\newline
 		\caption{Save Gaze Point Map Use Case}
 	\end{figure}		
 		
@@ -186,7 +202,7 @@ The gaze point map that is created for a 2D model media type will be saved and a
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering	
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}	
 		\caption{Save on 2D Model Activity}
 	\end{figure}
 
@@ -200,7 +216,7 @@ The gaze point map that is created for a 2D model media type will be saved and a
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering	
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}	
 		\caption{Save on Video Model Activity}
 	\end{figure}
 
@@ -214,7 +230,7 @@ The gaze point map that is created for a 2D model media type will be saved and a
 	\end{itemize}
 	\begin{figure}[!ht]
 		\centering	
-		\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}	
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png}	
 		\caption{Save on 3D Model Activity}
 	\end{figure}	
 	
@@ -225,7 +241,7 @@ This section details all the different types of media or models that heat-maps c
 \newline
 \begin{figure}[!ht]
 	\centering	
-	\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__Models.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__Models.png}
 	\caption{Models Use Case}
 \end{figure}
 	
@@ -234,7 +250,7 @@ This section details all the different types of media or models that heat-maps c
 	\newline
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__3DModels.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__3DModels.png}
 		\caption{3D Models Use Case}
 	\end{figure}
 	
@@ -251,7 +267,7 @@ This section details all the different types of media or models that heat-maps c
 		
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ImportModel__ImportModel.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ImportModel__ImportModel.png}
 			\caption{Import 3D Model Activity}
 		\end{figure}
 	
@@ -265,7 +281,7 @@ This section details all the different types of media or models that heat-maps c
 		\end{itemize}
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
 		\caption{View 3D Model Activity}
 		\end{figure}
 		
@@ -289,7 +305,75 @@ This section details all the different types of media or models that heat-maps c
 		
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png}
+			\caption{Create 3D Model Images Activity}
+		\end{figure}
+	\end{enumerate}
+	
+	%newly added%
+	%add images%
+	%Michael
+	\subsubsection{3D Model Fly through}
+	3D Models will be opened and rendered by the system, and will then be made viewable to the user. The model will have a window opened for the user to explore the model. The heat-map can then be saved onto the models video as well as opened as the stand alone heat map in the form of a video.
+	\newline
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__3DModels.png}
+		\caption{3D Models Use Case}
+	\end{figure}
+	
+	\begin{enumerate}
+		\item{ImportModel}
+		\newline
+		This will allow for a 3D model media type to be imported into the system for further processing. The imported model can be used for recording data once the video has been created and creating a relevant heat-map based on it which can then be applied to it at a later stage.
+		\begin{itemize}
+			\item Pre-condition: 3D model must exist.
+			\item Post-condition: 3D model is rendered and is made interactive and recording can be done on the model.
+			\item Request Data Structure: The 3D model that user wishes to preform eye tracking on.
+			\item Return Data Structure: Video of model exploration will be created and returned.
+		\end{itemize}
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ImportModel__ImportModel.png}
+			\caption{Import 3D Model Activity}
+		\end{figure}
+	
+		\item{ViewModel}
+		Once the model is imported the model is rendered, this will be available for viewing and exploration and further processing decided by the user.
+		\begin{itemize}
+			\item Pre-condition: 3D model must have been imported and rendered.
+			\item Post-condition: The 3D model render is explorable and can be recorded on.
+			\item Request Data Structure: The 3D models render.
+			\item Return Data Structure: Viewable 3D model render.
+		\end{itemize}
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
+		\caption{View 3D Model Activity}
+		\end{figure}
+		
+		\item{ExportHeatMapModel}
+		The exported model will have the heat-map applied to it which can then be exported as a new videp of the 3D model exploration so that it can be viewed or used at a later date by the user. 
+		\begin{itemize}
+			\item Pre-condition: Heat-map must be created and Model Imported.
+			\item Post-condition: Exported model With heat-map on it to be viewed.
+			\item Request Data Structure: The eye tracking data must have been recorded and 3D model available
+			\item Return Data Structure: Model with heat-map applied.
+		\end{itemize}
+		
+		\item{Export3DModelFlythroughVideo}
+		The model will have a render created. These render can then be explored and used for recording.
+		\begin{itemize}
+			\item Pre-condition: Selected model must be available.
+			\item Post-condition: Render will be created of model.
+			\item Request Data Structure: The selected model.
+			\item Return Data Structure: Render of 3D model.
+		\end{itemize}
+		
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png}
 			\caption{Create 3D Model Images Activity}
 		\end{figure}
 	\end{enumerate}
@@ -299,7 +383,7 @@ This section details all the different types of media or models that heat-maps c
 	\newline
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__2DModels.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__2DModels.png}
 		\caption{2D Models Use Case}
 	\end{figure}
 	\begin{enumerate}
@@ -315,12 +399,12 @@ This section details all the different types of media or models that heat-maps c
 		
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ImportModel__ImportModel.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ImportModel__ImportModel.png}
 			\caption{Import 2D Model Activity}
 		\end{figure}
 	
 		\item{ViewModel}
-		Once the model is imported the users can view the model and eye tracking can then be applied on the model. The model can the be processed further as the user sees fit.
+		Once the model is imported the users can view the model and eye tracking can then be done on the model. The model can the be processed further as the user sees fit.
 		\begin{itemize}
 			\item Pre-condition: The 2D model (image) must have been imported.
 			\item Post-condition: Image is viewable and can be recorded on.
@@ -330,7 +414,7 @@ This section details all the different types of media or models that heat-maps c
 		
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
 			\caption{View 2D Model Activity}
 		\end{figure}
 	
@@ -345,7 +429,7 @@ This section details all the different types of media or models that heat-maps c
 		
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ExportModel__ExportModel.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ExportModel__ExportModel.png}
 			\caption{Export 2D Model Activity}
 		\end{figure}
 	
@@ -358,7 +442,7 @@ This section details all the different types of media or models that heat-maps c
 	
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__VideoModels.png}
+		\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__VideoModels.png}
 		\caption{Video Models Use Case}
 	\end{figure}
 	
@@ -389,7 +473,7 @@ Once the model is imported the users can view the model and eye tracking can the
 			\end{itemize}
 			\begin{figure}
 				\centering
-				\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
+				\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ViewModel__ViewModel.png}
 				\caption{View Video Model Activity}
 			\end{figure}
 			
@@ -405,7 +489,7 @@ Once the model is imported the users can view the model and eye tracking can the
 			\end{itemize}
 		\begin{figure}[!ht]
 			\centering
-			\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ExportModel__ExportModel.png}
+			\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ExportModel__ExportModel.png}
 			\caption{Export 3D Model Activity}
 		\end{figure}
 	
@@ -418,7 +502,7 @@ When recording happens on the system the raw information is saved. The raw infor
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__RawInformation.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__RawInformation.png}
 	\caption{Raw Information Use Case}
 \end{figure}
 	
@@ -433,7 +517,7 @@ When recording is done on the media the raw information will need to be saved so
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png}
 	\caption{Save Raw Information Activity}
 \end{figure}
 
@@ -448,7 +532,7 @@ Data can be read from a previously saved file. This will allow the user to impor
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png}
 	\caption{Read Raw Information Activity}
 \end{figure}
 	
@@ -462,7 +546,7 @@ Statistics on all the data will be collected and will then be used to make a sta
 \newline
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__Statistics.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__Statistics.png}
 	\caption{Statistics Use Case}
 	\end{figure}
 	
@@ -477,7 +561,7 @@ Using the recorded data we can create statistical data which can then be used fo
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png}
 	\caption{Create Statistics Activity}
 	\end{figure}
 	
@@ -492,7 +576,7 @@ The statistical data can be saved into a file so that they can be printed out an
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png}
 	\caption{Save Statistics Activity}
 	\end{figure}
 	
@@ -502,7 +586,7 @@ The recording of the eyes will be done using the Eye Tribe camera or any other (
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[scale=0.5]{Diagrams/Use_Case_Diagram__RecordEye.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Use_Case_Diagram__RecordEye.png}
 	\caption{Record Eye Use Case}
 	\label{RecordEye}
 	\end{figure}
@@ -518,7 +602,7 @@ The data will be recorded and saved into a text file which can be further proces
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.5]{Diagrams/Activity_Diagram__RecordEye__RecordEye.png}
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Activity_Diagram__RecordEye__RecordEye.png}
 	\caption{Record Eye Activity}
 	\end{figure}
 

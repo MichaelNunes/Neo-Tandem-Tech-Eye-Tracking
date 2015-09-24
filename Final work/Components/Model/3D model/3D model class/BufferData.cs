@@ -22,6 +22,7 @@
 #endregion
 
 using OpenTK;
+using OpenTK.Graphics;
 using System;
 using System.Collections.Generic;
 
@@ -30,18 +31,31 @@ namespace DisplayModel
 	/// <summary>
 	/// Contains the vertex, uv, and normal values of a 3D model.
 	/// </summary>
-	public struct BufferData
-	{
+	public class BufferData
+    {
 		#region Fields
-        private Vector3[] vertex;
-        private Vector2[] texture;
-        private Vector3[] normal;
-        private Vector4[] colour;
-        private int[] index;
+        public Vector3[] vertex;
+        public Vector2[] texture;
+        public Vector3[] normal;
+        public Vector4[] colour;
+
         public Matrix4 ModelViewMatrix;
 		#endregion
 
 		#region Constructor
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public BufferData()
+        {
+            vertex = new Vector3[0];
+            texture = new Vector2[0];
+            normal = new Vector3[0];
+            colour = new Vector4[0];
+            Color4 color = Color4.LightGray;
+            ModelViewMatrix = Matrix4.Identity;
+        }
+
         /// <summary>
         /// Create a buffer data object from the values passed and the indices provided.
         /// </summary>
@@ -51,52 +65,45 @@ namespace DisplayModel
         /// <param name='vi'> A list of vertex indices. </param>
         /// <param name='ti'> A list of texture indices. </param>
         /// <param name='ni'> A list of normal indices. </param>
-        public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, List<int> vi, List<int> ti, List<int> ni, Material mat)
+        /// <param name="tc"> A list of texture indices indices. </param>
+        public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, int[] vi, int[] ti, int[] ni)
         {
-            vertex = new Vector3[vi.Count];
-            colour = new Vector4[vi.Count];
-            texture = new Vector2[ti.Count];
-            normal = new Vector3[ni.Count];
-            index = null;
+            int size = ti.Length;
+            vertex = new Vector3[size];
+            texture = new Vector2[size];
+            normal = new Vector3[size];
+            colour = new Vector4[size];
+            Color4 color = Color4.LightGray;
             ModelViewMatrix = Matrix4.Identity;
 
-            int count = 0;
-            for (int i = 0; i < vi.Count; i++)
-                vertex[count++] = vp[vi[i]-1];
-
-            for (int i = 0; i < colour.Length; i++)
-                colour[i] = new Vector4(mat.Colour.R, mat.Colour.G, mat.Colour.B, mat.Colour.A);
-
-            count = 0;
-            for (int i = 0; i < ti.Count; i++)
-                texture[count++] = tp[ti[i]-1];
-
-            Console.WriteLine(count);
-
-            count = 0;
-            for (int i = 0; i < ni.Count; i++)
-                normal[count++] = np[ni[i]-1];
+            for (int i = 0; i < size; ++i)
+            {
+                vertex[i] = vp[vi[i] - 1];
+                if (ti.Length > 0) texture[i] = tp[ti[i] - 1];
+                normal[i] = np[ni[i] - 1];
+                colour[i] = new Vector4(color.R, color.G, color.B, color.A);
+            }
 		}
 		#endregion
 
         #region Attributes
         /// <summary>
-		/// The vertex position array of the object.
-		/// </summary>
+        /// Array or vertex posiitions
+        /// </summary>
         public Vector3[] Vertex { get { return vertex; } }
 
         /// <summary>
-        /// The texture co-ordinate array of the object.
+        /// Array or vertex texture co-ordinates
         /// </summary>
         public Vector2[] Texture { get { return texture; } }
 
-		/// <summary>
-		/// The normal array of the object.
-		/// </summary>
+        /// <summary>
+        /// Array or vertex normals
+        /// </summary>
         public Vector3[] Normal { get { return normal; } }
 
         /// <summary>
-        /// The colour array of the object.
+        /// Array or vertex colours
         /// </summary>
         public Vector4[] Colour { get { return colour; } }
 		#endregion

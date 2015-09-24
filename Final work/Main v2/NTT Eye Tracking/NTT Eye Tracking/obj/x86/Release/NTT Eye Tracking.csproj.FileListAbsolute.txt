@@ -1,0 +1,34 @@
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\NTT Eye Tracking.exe.config
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\Interop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\AxInterop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT Eye Tracking.csproj.ResolveComReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\NTT Eye Tracking.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\NTT Eye Tracking.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\AForge.Video.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\AForge.Video.FFMPEG.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\DisplayModel.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Record_Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Results Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Settings Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\TETCSharpClient.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Video Model.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\OpenTK.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\nunit.framework.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\HeatMap.NET.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Newtonsoft.Json.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\DisplayModel.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Record_Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Results Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Settings Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Video Model.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\nunit.framework.xml
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\Interop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Release\AxInterop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT Eye Tracking.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT_Eye_Tracking.NTT_EyeTracker.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT_Eye_Tracking.frmDisplay.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT_Eye_Tracking.NTT_MiniForm.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT_Eye_Tracking.Properties.Resources.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT Eye Tracking.csproj.GenerateResource.Cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT Eye Tracking.exe
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Release\NTT Eye Tracking.pdb

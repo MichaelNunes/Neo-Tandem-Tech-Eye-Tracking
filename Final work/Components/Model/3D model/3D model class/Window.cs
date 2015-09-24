@@ -11,28 +11,18 @@ namespace DisplayModel
 {
     public class Window : GameWindow
     {
-        private Shader shaderData;
-        private List<GameObject> objects;
-        private string imagePath;
+        protected Shader shaderData;
+        protected List<GameObject> objects;
+        protected string imagePath;
 
-        int viewNumber = 0;
-        int degrees = 45;
-        
-        GLControl control;
-
-        public Window() : base(720, 405)
-        {
-            shaderData = new Shader();
-            objects = new List<GameObject>();
-            control = new GLControl();
-        }
+        //Camera feature(s)(make into class)
+        protected Camera camera = new Camera();
 
         public Window(string _imagePath)
-            : base(720, 405)
+            : base(720, 405, new OpenTK.Graphics.GraphicsMode(32, 24, 0, 8))
         {
             shaderData = new Shader();
             objects = new List<GameObject>();
-            control = new GLControl();
             imagePath = _imagePath;
         }
 
@@ -42,28 +32,18 @@ namespace DisplayModel
                 objects.Add(gameObject);
         }
 
-        protected override void OnKeyPress(KeyPressEventArgs e)
-        {
-            base.OnKeyPress(e);
-
-            if(e.KeyChar == 'q')
-            {
-                Exit();
-            }
-        }
-
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
             shaderData.initProgram();
+            System.Windows.Forms.Cursor.Hide();
 
-
-            Title = "Hello OpenTK!";
+            Title = "3D model viewer";
 
             WindowBorder = WindowBorder.Hidden;
             WindowState = WindowState.Fullscreen;
-            Visible = false;
+            Visible = true;
 
             GL.ClearColor(Color.Bisque);
             GL.Enable(EnableCap.DepthTest);
@@ -71,25 +51,38 @@ namespace DisplayModel
             GL.PointSize(5f);
         }
 
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            System.Windows.Forms.Cursor.Show();
+        }
+
+        /// <summary>
+        /// Updates to data performed irrespective of rendered frame.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
         }
-
-        protected override void OnRenderFrame(FrameEventArgs e)
+        
+        /// <summary>
+        /// The current frame to be rendered.
+        /// </summary>
+        /// <param name="e"></param>
+        /*protected override void OnRenderFrame(FrameEventArgs e)
         {
             base.OnRenderFrame(e);
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            
-            for (int i = 0; i < objects.Count; ++i )
-                shaderData.Draw(objects[i].BufferData);
-            
+
+            defaultView();
+            for (int i = 0; i < objects.Count; ++i)
+                shaderData.Draw(objects[i]);
+
             SwapBuffers();
-            control.PerformContextUpdate();
-            changeView();
-            GrabScreenshot();
-        }
+        }*/
 
         protected override void OnResize(EventArgs e)
         {
@@ -97,52 +90,31 @@ namespace DisplayModel
 
             GL.Viewport(0, 0, Width, Height);
 
-            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 1.0f, 100.0f);
+            shaderData.ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView((float)MathHelper.PiOver4, Width / (float)Height, 0.1f, 100.0f);
 
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref shaderData.ProjectionMatrix);
         }
 
-        public void changeView()
+        protected override void OnKeyPress(KeyPressEventArgs e)
         {
-            if (viewNumber * degrees >= 360)
+            base.OnKeyPress(e);
+
+            if (e.KeyChar == 'q')
             {
-                if (viewNumber > (360/degrees) + 1)
-                {
-                    Exit();
-                }
-                else
-                {
-                    for (int i = 0; i < objects.Count; i++)
-                    {
-                        objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationX(MathHelper.DegreesToRadians(90)) * Matrix4.CreateTranslation(0f, 0f, -4f);
-                    }
-                }
-                viewNumber++;
-            }
-            else
-            {
-                for (int i = 0; i < objects.Count; i++)
-                {
-                    objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateRotationY(MathHelper.DegreesToRadians(viewNumber * degrees)) * Matrix4.CreateTranslation(0f, 0f, -4f);
-                }
-                viewNumber++;
+                Exit();
             }
         }
 
-        public void GrabScreenshot()
+        /// <summary>
+        /// This provides the default view with camera control enabled.
+        /// </summary>
+        public void defaultView()
         {
-            if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
-                throw new OpenTK.Graphics.GraphicsContextMissingException();
-
-            Bitmap bmp = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
-            System.Drawing.Imaging.BitmapData data =
-                bmp.LockBits(this.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            GL.ReadPixels(0, 0, this.ClientSize.Width, this.ClientSize.Height, PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
-            bmp.UnlockBits(data);
-
-            bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            bmp.Save(imagePath + @"view" + viewNumber + ".jpg");
+            for (int i = 0; i < objects.Count; i++)
+            {
+                objects[i].bufferData.ModelViewMatrix = Matrix4.Identity * Matrix4.CreateTranslation(0f, 0f, -4);
+            }
         }
     }
 }

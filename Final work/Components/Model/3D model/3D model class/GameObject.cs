@@ -23,6 +23,7 @@
 
 using OpenTK;
 using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
 
@@ -33,10 +34,14 @@ namespace DisplayModel
     /// </summary>
     public class GameObject 
     {
+        public static int degrees = 0;
+
         #region Fields
-        private Transform transform;
         private Material material;
+        private Buffer buffer;
         public BufferData bufferData;
+
+        private List<GameObject> children;
         #endregion
 
         #region Constructors
@@ -45,9 +50,11 @@ namespace DisplayModel
         /// </summary>
         public GameObject()
         {
-            transform = new Transform(Vector3.Zero, Vector3.Zero, Vector3.One);
             material = new Material();
             bufferData = new BufferData();
+            children = new List<GameObject>();
+
+            Initialize();
         }
 
         /// <summary>
@@ -56,24 +63,38 @@ namespace DisplayModel
         /// <param name="t"></param>
         /// <param name="m"></param>
         /// <param name="bd"></param>
-        public GameObject(Transform t, Material m, BufferData bd)
+        public GameObject(Material m, BufferData bd)
         {
-            transform = t;
             material = m;
             bufferData = bd;
+            children = new List<GameObject>();
+
+            Initialize();
         }
         #endregion
 
-        #region Attributes
+        public void Initialize()
+        {
+            // IMPLEMENT
+            // DOES THE SETUP OF THE BUFFERS, MATERIALS, AND SO FORTH
+
+            //GENERATING BUFFERS
+            buffer.Position = GL.GenBuffer();
+            buffer.Normal = GL.GenBuffer();
+            buffer.Colour = GL.GenBuffer();
+            buffer.Texture = GL.GenBuffer();
+            buffer.Index = GL.GenBuffer();
+
+            Material.Setup();
+        }
+
         /// <summary>
         /// 
         /// </summary>
-        public Transform Transform
-        {
-            get { return transform; }
-            set { transform = value; }
-        }
+        /// <param name="child"></param>
+        public void AddChild(GameObject child) { children.Add(child); }
 
+        #region Attributes
         /// <summary>
         /// 
         /// </summary>
@@ -91,6 +112,16 @@ namespace DisplayModel
             get { return bufferData; }
             set { bufferData = value; }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Buffer Buffer { get { return buffer; } }
+
+        /// <summary>
+        /// The sub-objects of the current object
+        /// </summary>
+        public List<GameObject> Children { get { return children;  } }
         #endregion
     }
 }
