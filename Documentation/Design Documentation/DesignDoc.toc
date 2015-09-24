@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Description of Document}{2}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Section Overview }{2}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}Data Design}{2}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Models class}{3}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Heat map}{3}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Statistics class}{3}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Recorder class}{3}{subsection.0.2.4}
+\contentsline {section}{\numberline {3}Interface Design}{3}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Evolution of the design design}{4}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Flow of design}{4}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Form element placement}{4}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Interaction with functionality}{4}{subsection.0.3.4}
+\contentsline {section}{\numberline {4}Procedural Design}{4}{section.0.4}
+\contentsline {subsection}{\numberline {4.1}Main Procedure:Eye tracking}{5}{subsection.0.4.1}
+\contentsline {subsection}{\numberline {4.2}Sub Procedure:Project Start}{5}{subsection.0.4.2}
+\contentsline {subsection}{\numberline {4.3}Sub Procedure:Recording Setup}{5}{subsection.0.4.3}
+\contentsline {subsection}{\numberline {4.4}Sub Procedure:Eye Tracking Recording}{5}{subsection.0.4.4}

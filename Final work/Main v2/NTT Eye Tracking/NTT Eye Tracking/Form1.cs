@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using WMPLib;
 using Record_Class;
 using Results_Class;
+using System.IO;
+using Video_Model;
 
 namespace NTT_Eye_Tracking
 {
@@ -23,28 +25,42 @@ namespace NTT_Eye_Tracking
     {
         #region variables
         string name = "";
-        string imagepath = "";
+        string ModelPath = "";
+        string[] imglocation = new string[9];
+        int imgCounters = 0;
+        int imgIndex = 0;
         bool fullscreen = false;
-        Record recording;
+        VideoGenerator vg = new VideoGenerator();
+
+        string obj;
+        string mtl;
+        string img;
+        bool flythrough;
         #endregion
 
         public NTT_EyeTracker()
         {
             InitializeComponent();
+            pic_model2DPreview.Visible = false;
+            wmp_VideoPreview.Visible = false;
         }
 
         private void NTT_EyeTracker_Load(object sender, EventArgs e)
         {
+            disableMainButtons();
             initializeGlobalStyles();
             this.BackColor = GlobalStyles.mainFormColours;
             NTT_MiniForm ntt_mini = new NTT_MiniForm();
             ntt_mini.ShowDialog(this);
-
+            btnCal.Enabled = true;
            switch(globals.modelIndex)
            {
                    //in each case we must show the appropriate model previewer and hide the others
                case 0: //3D model
-                   {                       
+                   {
+                       pic_caro.Visible = true;
+                       pic_model2DPreview.Visible = false;
+                       wmp_VideoPreview.Visible = false;
                        break;
                    }
                case 1: //flythrough
@@ -53,11 +69,17 @@ namespace NTT_Eye_Tracking
                    }
                case 2: //2D models
                    {
-                       pic_model2DPreview.Show();
+                       pic_caro.Visible = false;
+                       pic_model2DPreview.Visible = true;
+                       wmp_VideoPreview.Visible = false;
                        break;
                    }
                case 3: //Video
                    {
+                       pic_caro.Visible = false;
+                       pic_model2DPreview.Visible = false;
+                       wmp_VideoPreview.Visible = true;
+                       wmp_VideoPreview.Dock = DockStyle.Fill;
                        break;
                    }
            }
@@ -91,6 +113,7 @@ namespace NTT_Eye_Tracking
         private void btnCal_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"C:\Program Files (x86)\EyeTribe\Client\EyeTribeUIWin.exe");
+            btnChooseModel.Enabled = true;
         }
 
         private void btnChooseModel_Click(object sender, EventArgs e)
@@ -98,13 +121,48 @@ namespace NTT_Eye_Tracking
             switch(globals.modelIndex)
             {
                 case 0: //3D model
-                    {
-                        break;
-                    }
+                {
+                    openFileDialog1.Title = "Please select an object file";
+                    openFileDialog1.Filter = "object (.obj)|*.obj";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    obj = openFileDialog1.FileName;
+
+                    openFileDialog1.Title = "Please select a material file file";
+                    openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    mtl = openFileDialog1.FileName;
+
+                    img = Path.GetDirectoryName(obj) + "\\";
+
+                    flythrough = false;
+                    break;
+                }
                 case 1: //flythrough
-                    {
-                        break;
-                    }
+                {
+                    openFileDialog1.Title = "Please select an object file";
+                    openFileDialog1.Filter = "object (.obj)|*.obj";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    obj = openFileDialog1.FileName;
+
+
+                    openFileDialog1.Title = "Please select a material file";
+                    openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                    openFileDialog1.FileName = "";
+                    openFileDialog1.ShowDialog();
+                    name = openFileDialog1.SafeFileName;
+                    mtl = openFileDialog1.FileName;
+
+                    img = Path.GetDirectoryName(obj) + "\\";
+
+                    flythrough = true;
+                    break;
+                }
                 case 2: //2D
                 {
                     openFileDialog1.Filter = "Image (.jpg)|*.jpg";
@@ -112,103 +170,148 @@ namespace NTT_Eye_Tracking
                     openFileDialog1.ShowDialog();
                     name = openFileDialog1.SafeFileName;
                     string path = openFileDialog1.FileName;
-                    imagepath = globals.currentRecordingpath + "\\" + name;
-                    System.IO.File.Copy(path, imagepath, true);
-                    pic_model2DPreview.ImageLocation = imagepath;
+                    ModelPath = globals.currentRecordingpath + "\\" + name;
+                    System.IO.File.Copy(path, ModelPath, true);
+                    pic_model2DPreview.ImageLocation = ModelPath;
                     break;
                 }
 
                 case 3: //Video
                 {
-                    openFileDialog1.Filter = "Image (.jpg)|*.jpg";
+                    openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
                     openFileDialog1.FileName = "";
                     openFileDialog1.ShowDialog();
+                    ModelPath = openFileDialog1.FileName;
                     wmp_VideoPreview.URL = openFileDialog1.FileName;
+                    wmp_VideoPreview.Dock = DockStyle.Fill;
                     name = openFileDialog1.SafeFileName;
                     wmp_VideoPreview.Ctlcontrols.stop();
                     break;
                 }
             }
+            btnRecord.Enabled = true;
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
-            recording = new Record(globals.currentRecordingpath + @"\", name);
-            MessageBox.Show("Recording wil begin after this message is closed. The recording will end in "+ globals.recordTime/1000 +" seconds but you can press escape (Esc) to stop the recording at any time.");
-            hideMainButtons();
+            globals.recording = new Record(globals.currentRecordingpath + @"\", name);
+            //hideMainButtons();
             switch (globals.modelIndex)
             {
                 case 0: //3D model
                     {
+                        //recording._recording = true;
+                        frmDisplay fd = new frmDisplay(0, null, imglocation);
+                        fd.Show(this);
+                        //recording._recording = false;
                         break;
                     }
                 case 1: //flythrough
                     {
+                        //globals.recording._recording = true;
+                        DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
+                        dm.Run(obj, mtl, img, globals.currentRecordingpath + @"\" + name, flythrough);
+                        
+                        //recording._recording = false;
+
+                        vg.DestinationPath = globals.currentRecordingpath + @"\" + name;
+                        vg.ImagePath = globals.currentRecordingpath + @"\" + name;
+                        vg.ModelName = name;
+                        vg.Fps = 30;
+                        Size res = this.GetDpiSafeResolution();
+                        vg.FrameHeight = res.Height;
+                        vg.FrameWidth = res.Width;
+                        vg.createVideo();
                         break;
                     }
                 case 2: //2D models
                     {
-                        //this.FormBorderStyle = FormBorderStyle.None;
-                        //this.WindowState = FormWindowState.Maximized;
-                        //pic_model2DPreview.SizeMode = PictureBoxSizeMode.StretchImage;
-                        //pic_model2DPreview.Dock = DockStyle.Fill;
-                        //fullscreen = true;
-                        recording._recording = true;
-
-                        //record for amount of seconds before stopping it
-                        System.Threading.Thread.Sleep(globals.recordTime);
-
-                        //stop recording an fix form
-                        recording._recording = false;
-                        //fixForm();
-                        //showMainButtons();
-
+                        MessageBox.Show("Recording wil begin after this message is closed. The recording will end in " + globals.recordTime / 1000 + " seconds but you can press escape (Esc) to stop the recording at any time.");
+                        
+                        //recording._recording = true;
+                        frmDisplay fd = new frmDisplay(2, ModelPath, null);
+                        fd.Show(this);
+                        //recording._recording = false;
                         break;
                     }
                 case 3: //Video
                     {
-                        //fullscreen = true;
-                        //button1.Visible = false;
-                        //button2.Visible = false;
-                        //button3.Visible = false;
-                        //button4.Visible = false;
-                        //axWindowsMediaPlayer2.Visible = false;
-                        //axWindowsMediaPlayer1.Dock = DockStyle.Fill;
-                        //wmp_VideoPreview.Ctlcontrols.play();
-                        recording._recording = true;
-
-                        //must stop recording on form exit.
+                        //recording._recording = true;
+                        frmDisplay fd = new frmDisplay(3, ModelPath, null);
+                        fd.ShowDialog(this);
+                        //recording._recording = false;
 
                         break;
                     }
             }
-            recording.saveToFile();
-            recording.close();
+            globals.recording.saveToFile();
+            globals.recording.close();
+            enableMainButtons();
         }
 
         private void btnOverlays_Click(object sender, EventArgs e)
         {
+            Size res = this.GetDpiSafeResolution();
             switch (globals.modelIndex)
             {
                 case 0: //3D model
                     {
+
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath,name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraph3D();
+
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
+                        hm.SaveHeatmapVideo();
                         break;
                     }
                 case 1: //flythrough
                     {
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath, name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraphVideo();
+
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
+                        hm.SaveHeatmap2D();
                         break;
                     }
                 case 2: //2D models
                     {
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath, name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraph2D();
 
-                        Size res = this.GetDpiSafeResolution();
-                        Results_Class.Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "gugiog");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm.OpenHeatmapData(globals.currentRecordingpath, name); 
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
                         hm.SaveHeatmap2D();
                         break;
                     }
                 case 3: //Video
                     {
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath, name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraphVideo();
+
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
+                        hm.SaveHeatmapVideo();
                         break;
                     }
             }
@@ -216,26 +319,42 @@ namespace NTT_Eye_Tracking
 
         private void btnHeatmaps_Click(object sender, EventArgs e)
         {
+            Size res = this.GetDpiSafeResolution();
             switch (globals.modelIndex)
             {
                 case 0: //3D model
                     {
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
+                        hm.SaveHeatmapOntoModelVideo();
                         break;
                     }
                 case 1: //flythrough
                     {
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
+                        hm.SaveHeatmapOntoModelVideo();
                         break;
                     }
                 case 2: //2D models
                     {
-                        Size res = this.GetDpiSafeResolution();
-                        Results_Class.Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "gugiog");
-                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm.OpenHeatmapData(globals.currentRecordingpath, name); 
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
                         hm.SaveHeatmapOntoModel2D();
                         break;
                     }
                 case 3: //Video
                     {
+                        Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                        hm._SourceLocation = ModelPath;
+                        hm._DestinationPath = globals.currentRecordingpath;
+                        hm.SaveHeatmapOntoModelVideo();
                         break;
                     }
             }
@@ -243,23 +362,42 @@ namespace NTT_Eye_Tracking
 
         private void btnGazepoint_Click(object sender, EventArgs e)
         {
+            Size res = this.GetDpiSafeResolution();
             switch (globals.modelIndex)
             {
                 case 0: //3D model
                     {
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraphOntoModel3D();
                         break;
                     }
                 case 1: //flythrough
                     {
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath, name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraphOntoModelVideo();
                         break;
                     }
                 case 2: //2D models
                     {
-                        pic_model2DPreview.Show();
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath, name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraphOntoModel2D();
                         break;
                     }
                 case 3: //Video
                     {
+                        Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                        etg.OpenETGraphData(globals.currentRecordingpath, name);
+                        etg._SourceLocation = ModelPath;
+                        etg._DestinationPath = globals.currentRecordingpath;
+                        etg.SaveETGraphOntoModelVideo();
                         break;
                     }
             }
@@ -326,6 +464,18 @@ namespace NTT_Eye_Tracking
             btnViewResults.Visible = false;
         }
 
+        private void disableMainButtons()
+        {
+            btnCal.Enabled = false;
+            btnChooseModel.Enabled = false;
+            btnGazepoint.Enabled = false;
+            btnHeatmaps.Enabled = false;
+            btnOverlays.Enabled = false;
+            btnRecord.Enabled = false;
+            btnReport.Enabled = false;
+            btnViewResults.Enabled = false;
+        }
+
         private void showMainButtons()
         {
             btnCal.Visible = true;
@@ -336,6 +486,18 @@ namespace NTT_Eye_Tracking
             btnRecord.Visible = true;
             btnReport.Visible = true;
             btnViewResults.Visible = true;
+        }
+
+        private void enableMainButtons()
+        {
+            btnCal.Enabled = true;
+            btnChooseModel.Enabled = true;
+            btnGazepoint.Enabled = true;
+            btnHeatmaps.Enabled = true;
+            btnOverlays.Enabled = true;
+            btnRecord.Enabled = true;
+            btnReport.Enabled = true;
+            btnViewResults.Enabled = true;
         }
 
         private void fixForm()
@@ -379,15 +541,44 @@ namespace NTT_Eye_Tracking
             {
                 if (fullscreen == true)
                 {
-                    recording._recording = false;
-                    recording.saveToFile();
-                    recording.close();
+                    globals.recording._recording = false;
+                    globals.recording.saveToFile();
+                    globals.recording.close();
                     fixForm();
                     showMainButtons();
                 }
             }
             return base.ProcessDialogKey(keyData);
         }
+
+        private void btnImageForward_Click(object sender, EventArgs e)
+        {
+            if (imgIndex == imgCounters - 1)
+            {
+                imgIndex = 0;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+            else
+            {
+                imgIndex++;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+        }
+
+        private void btnImageBack_Click(object sender, EventArgs e)
+        {
+            if (imgIndex == 0)
+            {
+                imgIndex = imgCounters - 1;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+            else
+            {
+                imgIndex++;
+                pic_caro.ImageLocation = imglocation[imgIndex];
+            }
+        }
+
         #endregion
     }
 }

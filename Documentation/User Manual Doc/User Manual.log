@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  1 SEP 2015 07:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  19 SEP 2015 17:13
 entering extended mode
 **User*Manual.tex
 
@@ -215,7 +215,14 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.aux")
+\User Manual.aux"
+
+LaTeX Warning: Label `Unzip files' multiply defined.
+
+
+LaTeX Warning: Label `Unzip files' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
@@ -311,46 +318,141 @@ l.116 \newpage
 ] [2]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \Introduction/Introduction.tex"
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+Overfull \hbox (0.64542pt too wide) in paragraph at lines 4--5
+[]\OT1/cmr/m/n/12 Our client wanted us to de-velop this soft-ware so that it co
+uld help the Geo-Informatics
+ []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 (C:\Users\m\Documents\miktex\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+) [3]
+("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
+\Configuration/Config.tex"
+<./Images/default.png, id=152, 657.95813pt x 793.46437pt>
+File: ./Images/default.png Graphic file (type png)
+
+<use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 42.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+ [4]
+File: ./Images/default.png Graphic file (type png)
+ <use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 51.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+File: ./Images/default.png Graphic file (type png)
+
+<use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 59.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+File: ./Images/default.png Graphic file (type png)
+ <use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 66.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.73 
+      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manua
+l Doc/Images/default.png>]
+File: ./Images/default.png Graphic file (type png)
+ <use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 78.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.81 	\end{figure}
+                  ]
+File: ./Images/default.png Graphic file (type png)
+ <use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 87.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+
+Overfull \hbox (9.04256pt too wide) in paragraph at lines 92--93
+[]\OT1/cmr/m/n/12 3)Navigate to the fol-low-ing di-rec-tory: filename/Neo-Tande
+m-Tech-Eye-Tracking/Final
+ []
+
+File: ./Images/default.png Graphic file (type png)
+<use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 96.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
+File: ./Images/default.png Graphic file (type png)
+ <use ./Images/default.png>
+Package pdftex.def Info: ./Images/default.png used on input line 104.
+(pdftex.def)             Requested size: 328.97826pt x 396.73122pt.
 )
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Configuration/Config.tex" [3])
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\GettingStarted/GettingStarted.tex"
+\GettingStarted/GettingStarted.tex" [7pdfTeX warning (ext4): destination with t
+he same identifier (name{figure.0.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 
+     ]
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-[4])
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.0.4}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.31 
+     ] [9pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.0.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.31 
+     ]) [10pdfTeX warning (ext4): destination with the same identifier (name{fi
+gure.0.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.129 	\section
+               {Using the System}]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\UsingSys/UsingSys.tex"
+\UsingSys/UsingSys.tex" [11pdfTeX warning (ext4): destination with the same ide
+ntifier (name{figure.0.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2 
+    ]
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-<./Images/Startpage.JPG, id=160, 624.83438pt x 295.1025pt>
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.0.8
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.5 
+    ] <./Images/Startpage.JPG, id=205, 624.83438pt x 295.1025pt>
 File: ./Images/Startpage.JPG Graphic file (type jpg)
 
 <use ./Images/Startpage.JPG>
 Package pdftex.def Info: ./Images/Startpage.JPG used on input line 6.
 (pdftex.def)             Requested size: 401.51346pt x 200.75258pt.
- [5 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/Startpage.JPG>]
-<./Images/Mainpage.JPG, id=165, 258.21469pt x 258.21469pt>
-File: ./Images/Mainpage.JPG Graphic file (type jpg)
-
-<use ./Images/Mainpage.JPG>
-Package pdftex.def Info: ./Images/Mainpage.JPG used on input line 19.
-(pdftex.def)             Requested size: 401.54065pt x 200.75653pt.
- [6 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/Mainpage.JPG>]
-<./Images/CalibrationStarter.JPG, id=173, 246.1697pt x 255.20343pt>
+ [13 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual
+ Doc/Images/Startpage.JPG>]
+<./Images/CalibrationStarter.JPG, id=212, 246.1697pt x 255.20343pt>
 File: ./Images/CalibrationStarter.JPG Graphic file (type jpg)
 
 <use ./Images/CalibrationStarter.JPG>
@@ -358,20 +460,20 @@ Package pdftex.def Info: ./Images/CalibrationStarter.JPG used on input line 26.
 
 (pdftex.def)             Requested size: 401.51973pt x 200.75958pt.
 
-<./Images/Recordingsetup.JPG, id=174, 335.00156pt x 139.27031pt>
+<./Images/Recordingsetup.JPG, id=213, 335.00156pt x 139.27031pt>
 File: ./Images/Recordingsetup.JPG Graphic file (type jpg)
 
 <use ./Images/Recordingsetup.JPG>
 Package pdftex.def Info: ./Images/Recordingsetup.JPG used on input line 33.
 (pdftex.def)             Requested size: 401.4989pt x 200.7552pt.
- [7 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/CalibrationStarter.JPG>] [8 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-
-Tracking/Documentation/User Manual Doc/Images/Recordingsetup.JPG>] [9])
-Underfull \hbox (badness 10000) in paragraph at lines 46--131
+ [14 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual
+ Doc/Images/CalibrationStarter.JPG>] [15 <C:/Users/m/Desktop/Neo-Tandem-Tech-Ey
+e-Tracking/Documentation/User Manual Doc/Images/Recordingsetup.JPG>] [16])
+Underfull \hbox (badness 10000) in paragraph at lines 49--131
 
  []
 
-
+[17]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \Troubleshooting/Troubleshooting.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
@@ -383,18 +485,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-[10]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
 )
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Appendicies/Appendices.tex") [11]
+\Appendicies/Appendices.tex")
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
 \Index/Index.tex")
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
- [12]
+ [19]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
 
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
@@ -403,24 +505,28 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `User*Manual.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 5322 strings out of 493921
- 81311 string characters out of 3147294
- 159226 words of memory out of 3000000
- 8492 multiletter control sequences out of 15000+200000
+ 5348 strings out of 493921
+ 81633 string characters out of 3147294
+ 161485 words of memory out of 3000000
+ 8501 multiletter control sequences out of 15000+200000
  9449 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,6n,28p,2023b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,7n,28p,2023b,349s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
 ers/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/m/D
 ocuments/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/m/Documents/
 miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m/Documents/miktex/f
 onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "User Manual.pdf" (13 pages, 272807 bytes).
+Output written on "User Manual.pdf" (20 pages, 272225 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
  231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

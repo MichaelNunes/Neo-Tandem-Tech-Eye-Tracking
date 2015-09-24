@@ -162,12 +162,12 @@ namespace DisplayModel
                 camera.currentSpeed = camera.walkSpeed;
             }
 
-            if (state.IsKeyDown(OpenTK.Input.Key.Number1))
+            if (state.IsKeyDown(OpenTK.Input.Key.PageUp))
             {
                 camera.position.Y += (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
             }
 
-            if (state.IsKeyDown(OpenTK.Input.Key.Number3))
+            if (state.IsKeyDown(OpenTK.Input.Key.PageDown))
             {
                 camera.position.Y -= (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
             }
@@ -222,12 +222,23 @@ namespace DisplayModel
         {
             OpenTK.Input.JoystickState state = OpenTK.Input.Joystick.GetState(0);
 
-            if (state.GetButton(OpenTK.Input.JoystickButton.Button4) == OpenTK.Input.ButtonState.Pressed ||
-                state.GetButton(OpenTK.Input.JoystickButton.Button5) == OpenTK.Input.ButtonState.Pressed)
+            if (state.GetButton(OpenTK.Input.JoystickButton.Button4) == OpenTK.Input.ButtonState.Pressed)
+            {
+                camera.currentSpeed = camera.runSpeed;
+            }
+            else if (state.GetButton(OpenTK.Input.JoystickButton.Button6) == OpenTK.Input.ButtonState.Pressed)
+            {
+                camera.currentSpeed = camera.flySpeed;
+            }
+            else
+            {
+                camera.currentSpeed = camera.walkSpeed;
+            }
+
+            if (state.GetButton(OpenTK.Input.JoystickButton.Button5) == OpenTK.Input.ButtonState.Pressed)
                 camera.position.Y += (float)(camera.currentSpeed * time);
 
-            if (state.GetButton(OpenTK.Input.JoystickButton.Button6) == OpenTK.Input.ButtonState.Pressed ||
-                state.GetButton(OpenTK.Input.JoystickButton.Button7) == OpenTK.Input.ButtonState.Pressed)
+            if (state.GetButton(OpenTK.Input.JoystickButton.Button7) == OpenTK.Input.ButtonState.Pressed)
                 camera.position.Y -= (float)(camera.currentSpeed * time);
 
             double x1 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis0);
