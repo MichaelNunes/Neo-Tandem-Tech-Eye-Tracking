@@ -157,59 +157,44 @@ namespace Results_Class
                 int pointNumber = 0;
                 for (int i = startPoint; i <= endPoint; i++)
                 {
-                    if (growingPoints.Count == 0)
+                    bool newGrowingPoint = true;
+                    for (int j = 0; j < growingPoints.Count; j++)
                     {
+                        int gp = growingPoints.ElementAt(j);
+                        int gpa = growingPointsArea.ElementAt(j);
+                        int gpcc = growingPointsClusterCount.ElementAt(j);
+                        if ((X[i] > (X[gp] - gpa)) && (X[i] < (X[gp] + gpa)) &&
+                            (Y[i] > (Y[gp] - gpa)) && (Y[i] < (Y[gp] + gpa)))
+                        {
+                             gpa += 6;
+                             growingPointsArea[j] = gpa;
+                             growingPointsClusterCount[j] = gpcc+1;
+                             graphics.FillEllipse(redBrush, new Rectangle((int)X[gp] - (gpa/2), (int)Y[gp] - (gpa/2), gpa, gpa));
+                             graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[gp]-5, Y[gp]-5);
+                             newGrowingPoint = false;
+                        }
+                        else
+                        {
+                            if (gpa > 10)
+                            {
+                                gpa -= 6;
+                                growingPointsArea[j]  = gpa;
+                                graphics.FillEllipse(redBrush, new Rectangle((int)X[gp] - (gpa / 2), (int)Y[gp] - (gpa / 2), gpa, gpa));
+                            }
+                        }
+                    }
+                    if (newGrowingPoint && growingPoints.IndexOf(i) < 0)
+                    {
+                        graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
+                        if (i > 0) 
+                        { 
+                            graphics.DrawLine(redPen, X[i], Y[i], X[i-1], Y[i-1]); 
+                        }
                         growingPoints.Add(i);
                         growingPointsArea.Add(10);
                         growingPointsClusterCount.Add(0);
-                        graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
-                        graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i] - 5, Y[i] - 5);
-                    }
-                    else
-                    {
-                        bool newGrowingPoint = false;
-                        for (int j = 0; j < growingPoints.Count; j++)
-                        {
-                            int gp = growingPoints.ElementAt(j);
-                            int gpa = growingPointsArea.ElementAt(j);
-                            int gpcc = growingPointsClusterCount.ElementAt(j);
-                            if ((X[i] > (X[gp] - gpa)) && (X[i] < (X[gp] + gpa)) &&
-                                (Y[i] > (Y[gp] - gpa)) && (Y[i] < (Y[gp] + gpa)))
-                            {
-                                gpa += 10;
-                                growingPointsArea.Insert(j,gpa);
-                                growingPointsClusterCount.Insert(j,gpcc+1);
-                                graphics.FillEllipse(redBrush, new Rectangle((int)X[gp] - (gpa / 2), (int)Y[gp] - (gpa / 2), gpa, gpa));
-                                graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[gp] - 5, Y[gp] - 5);
-                                newGrowingPoint = false;
-                            }
-                            else
-                            {
-                                if (gpa > 10)
-                                {
-                                    gpa -= 10;
-                                    growingPointsArea.Insert(j, gpa);
-                                    graphics.FillEllipse(redBrush, new Rectangle((int)X[gp] - (gpa / 2), (int)Y[gp] - (gpa / 2), gpa, gpa));
-                                }
-                                newGrowingPoint = true;
-
-                            }
-                        }
-                        if (newGrowingPoint)
-                        {
-                            graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
-                            if (i != startPoint)
-                            {
-                                graphics.DrawLine(redPen, X[i], Y[i], X[i - 1], Y[i - 1]);
-                                growingPoints.Add(i);
-                                growingPointsArea.Add(10);
-                                growingPointsClusterCount.Add(0);
-                            }
-                            pointNumber += 1;
-                            graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i] - 5, Y[i] - 5);
-                        }
-                            
-                        
+                        graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i]-5, Y[i]-5);
+                        pointNumber += 1;
                     }
                 }
              }
@@ -310,8 +295,8 @@ namespace Results_Class
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
             vid.Open(SourceLocation/* + ModelName + ".wmv"*/);
-            height = vid.Height;
-            width = vid.Width;
+            //height = vid.Height;
+            //width = vid.Width;
             vid.Close();
 
             VideoGenerator vm = new VideoGenerator();
