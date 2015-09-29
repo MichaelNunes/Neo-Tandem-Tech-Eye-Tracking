@@ -10,7 +10,7 @@ namespace Results_Class
     class ETGraph_Unit_Tests
     {
         Eye_Tracking_Graph etg = new Eye_Tracking_Graph();
-        Eye_Tracking_Graph vm = new Eye_Tracking_Graph();
+        Eye_Tracking_Graph etgVM = new Eye_Tracking_Graph();
         Eye_Tracking_Graph etg3d = new Eye_Tracking_Graph();
 
         [SetUp]
@@ -40,11 +40,12 @@ namespace Results_Class
             etg.py.AddRange(y);
 
             //video
-            vm._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\Test.wmv";
-            vm._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\Video Test\";
-            vm._modelName = "Test";
-            vm._height = 1080;
-            vm._width = 1920;
+            etgVM._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\Test.wmv";
+            etgVM._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\Video Test\";
+            etgVM._modelName = "Test";
+            etgVM._height = 1080;
+            etgVM._width = 1920;
+            etgVM._TogglePointNumbers = false;
 
             int arraySize1 = 900;
             Random rv = new Random();
@@ -55,15 +56,15 @@ namespace Results_Class
 
             for (int i = 0; i < arraySize1; i++)
             {
-                xv[i] = rv.Next(0, vm._width);
-                yv[i] = rv.Next(0, vm._height);
+                xv[i] = rv.Next(0, etgVM._width);
+                yv[i] = rv.Next(0, etgVM._height);
 
                 tester.Add(xv[i] + ":" + yv[i]);
             }
             //System.IO.File.WriteAllLines(vm._fileLocation + "\\" + vm._modelName + " " + ".txt", tester);
             //vm.px.AddRange(xv);
             //vm.py.AddRange(yv);
-            vm.OpenETGraphData(@"C:\Users\COS301\Documents\ETG Tests\", "Test");
+            etgVM.OpenETGraphData(@"C:\Users\COS301\Documents\ETG Tests\", "Test");
 
             //3D           
             etg3d._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\3D Test\";
@@ -109,13 +110,13 @@ namespace Results_Class
         [Test]
         public void TestETGraphVideo()
         {
-            vm.SaveETGraphVideo();
+            etgVM.SaveETGraphVideo();
         }
 
         [Test]
         public void TestETGraphOntoVideo()
         {
-            vm.SaveETGraphOntoModelVideo();
+            etgVM.SaveETGraphOntoModelVideo();
         }
 
         [Test]
