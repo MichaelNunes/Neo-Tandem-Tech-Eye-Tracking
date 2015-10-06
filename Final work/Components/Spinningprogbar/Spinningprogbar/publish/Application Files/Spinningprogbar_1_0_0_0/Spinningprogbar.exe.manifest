@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Spinningprogbar.exe" version="1.0.0.0" publicKeyToken="52663e42be1d8d2a" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Spinningprogbar" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Spinningprogbar.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Spinningprogbar.exe" size="1330536">
+      <assemblyIdentity name="Spinningprogbar" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ldZQ+ddRMlrEZkju6cnAny2kiag=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=AMBER\m" issuerKeyHash="adddb6f799b004a55154997c7df59fd9670fb566" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>CV2bHG6LJ1+Bz99UFPsK12gsXSY=</DigestValue></Reference></SignedInfo><SignatureValue>NEMfKNEt6ZqpwrWZ4cjaaXniebPePwsXeooRqxHhhDkJXuwCG2Mt1xcdbvDYRExODEYvlmMM7PqxBbjs9QP2U3GhaEQw2pPRmsdVbS9cG82rdjIq241lO8fQ2CilyIl1lTCjmKpCH2emJxN38VdrGEQHRx9N9Y2+S7xfx0yWNuQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>vV73DJ87m7T4tsehuX7G+32iwo8/kdH6UKXUFbp7O9paEWd8jYxA+TSNoBUifWAyl7dDSSfHjoOdn5yHG6CzuYQ25wyXb3YSvKM4XzBHUdz1aCti3AAl4ZZqgx4pGT1SLP4RNm30og6f4xwNaAwjQnZ0KfCzZ1klgdyh+I9uh68=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="265d2c68d70afb1454dfcf815f278b6e1c9b5d09" Description="" Url=""><as:assemblyIdentity name="Spinningprogbar.exe" version="1.0.0.0" publicKeyToken="52663e42be1d8d2a" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=AMBER\m</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>M545S0R+DjQ18CBcJKN1gkNXL58=</DigestValue></Reference></SignedInfo><SignatureValue>pFLKluY2jsqMffkBTosenoOwom/k1zSOuJcb39xPdT6MUBITwxt6sM6WIiUe7llQbaUxNNHpfZL1OxUODIzc4YpDyDhgykFwekZE697f3f3flBhiDF0U3v0+O5lmfGkVWvfqSNAhvWX2gP7W0jQQFiRuW561jOQahgv7KxreSUo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>vV73DJ87m7T4tsehuX7G+32iwo8/kdH6UKXUFbp7O9paEWd8jYxA+TSNoBUifWAyl7dDSSfHjoOdn5yHG6CzuYQ25wyXb3YSvKM4XzBHUdz1aCti3AAl4ZZqgx4pGT1SLP4RNm30og6f4xwNaAwjQnZ0KfCzZ1klgdyh+I9uh68=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBtTCCAR6gAwIBAgIQNzBa/hdtjZhHJJvY2Wu3jDANBgkqhkiG9w0BAQUFADAZMRcwFQYDVQQDHg4AQQBNAEIARQBSAFwAbTAeFw0xNTEwMDUxNzAwNDVaFw0xNjEwMDQyMzAwNDVaMBkxFzAVBgNVBAMeDgBBAE0AQgBFAFIAXABtMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9XvcMnzubtPi2x6G5fsb7faLCjz+R0fpQpdQVuns72loRZ3yNjED5NI2gFSJ9YDKXt0NJJ8eOg52fnIcboLO5hDbnDJdvdhK8ozhfMEdR3PVoK2LcACXhlmqDHikZPVIs/hE2bfSiDp/jHA1oDCNCdnQp8LNnWSWB3KH4j26HrwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAFlewnZgKSw8ginqqPguVsCtPUMLC/xfXCPhuesKi4TSmB5dIQ+/oMF673MimDrS5G1qkMb0q0vZjBJZlg5bNrqTGTf2DWv68+61aGppeO3lpIfGxnQrBE1lG0D6vx3VfgrGeAp44J5dFRUFxkVGfiCBcvZutloj/NCBEQKTel7F</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

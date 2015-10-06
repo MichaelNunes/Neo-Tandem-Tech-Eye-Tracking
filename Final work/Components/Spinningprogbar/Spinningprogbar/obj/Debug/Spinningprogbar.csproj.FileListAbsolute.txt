@@ -1,0 +1,7 @@
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.Form1.resources
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.Properties.Resources.resources
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.csproj.GenerateResource.Cache
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.dll
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.pdb
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.dll
+C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.pdb
