@@ -16,6 +16,17 @@ namespace Results_Class
 {
     public class Eye_Tracking_Graph
     {
+        /// <summary>
+        /// Holds a list of points that have grown due to their close proximity to other points.
+        /// </summary>
+        List<List<int>> growingPoints = new List<List<int>>(); // [0] = point, [1] = pointSize, [2] = age
+
+        bool togglePointNumbers = true;
+        public bool _TogglePointNumbers
+        {
+            get { return togglePointNumbers; }
+            set { togglePointNumbers = value; }
+        }
 
         /// <summary>
         /// Represents file(s) locations that will be used for the ETGraph processess.
@@ -138,25 +149,85 @@ namespace Results_Class
             using (var graphics = Graphics.FromImage(img))
             {
                 int startPoint = currentPoint - pointHistory;
-                if(startPoint < 0)
+
+                if (startPoint < 0)
                 {
                     startPoint = 0;
                 }
+
                 int endPoint = currentPoint;
-                for (int i = startPoint; i <= endPoint; i++)
+                SolidBrush redBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+                Font drawFont = new System.Drawing.Font("Arial", 16);
+                SolidBrush greenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+                Pen redPen = new Pen(Color.Red, 1);
+                int pointNumber = 0, growth = 0 ,gpa, cpa; //gpa = growpingPointArea, cpa = currentPointArea
+                bool inGPList;
+                for (int i = startPoint; i < endPoint; i++)
                 {
-                    SolidBrush redBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
-                    graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - 5, (int)Y[i] - 5, 10, 10));
-                    Font drawFont = new System.Drawing.Font("Arial", 16);
-                    SolidBrush greenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
-                    Pen redPen = new Pen(Color.Red, 1);
-                    if (i > 0)
+                    gpa = 10;
+                    cpa = 10;
+                    inGPList = false;
+
+                    for (int j = 0; j < growingPoints.Count; j++) // checks if current point is in growingPoints list
+                    {                                             //if yes then get its current growth size.      
+                        if (growingPoints[j][0] == i)
+                        {
+                            cpa = growingPoints[j][1];
+                            inGPList = true;
+                            break;
+                        }
+                    }
+                    if (i > 0 && // checks if currentPoint is near previous point
+                        (X[i] > (X[i - 1] - cpa)) && (X[i] < (X[i - 1] + cpa)) &&
+                        (Y[i] > (Y[i - 1] - cpa)) && (Y[i] < (Y[i - 1] + cpa)))
+                    {
+                        if (growingPoints.Count < 1) //if growingPoints list is empty than use default growth size
+                        {
+                            growth = 4;
+                        }
+                        else
+                        {
+                            for (int j = 0; j < growingPoints.Count; j++) //else check if growingPoints list has previous Point
+                            {                                                      
+                                if (growingPoints[j][0] == (i - 1))
+                                {
+
+                                                                                                   //if not then add previous Point growth size into current point growth size 
+                                        growth = growingPoints[j][1] + 4;
+                                        if (growth > (10 + (10 * 4))) { growth = 10; }
+                                    
+                                    break;
+                                }
+                            }
+                            if (growth == 0) { growth = 4; } //if previous point is not in growingPoint list then default growth size
+                        }
+                        gpa += growth;
+                        if (!inGPList) //add new growthPoint to list if its not in list already
+                        {
+                            List<int> newGP = new List<int>();
+                            newGP.Add(i);
+                            newGP.Add(growth);
+                            newGP.Add(0);
+                            growingPoints.Add(newGP);
+                        }
+                    }
+                    graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - (gpa / 2), (int)Y[i] - (gpa / 2), gpa, gpa));
+                    if (togglePointNumbers) { graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i] - 5, Y[i] - 5); }
+                    if ((endPoint < 10 && i > 0) || (endPoint >= 10 && i > startPoint))
                     {
                         graphics.DrawLine(redPen, X[i], Y[i], X[i - 1], Y[i - 1]);
                     }
-                    graphics.DrawString(i.ToString(), drawFont, greenBrush, X[i], Y[i]);
+                    pointNumber++;
                 }
-             }
+                for (int j = 0; j < growingPoints.Count; j++)
+                {
+                    growingPoints[j][2]++;
+                    if (growingPoints[j][2] > 9)
+                    {
+                        growingPoints.RemoveAt(j);
+                    }
+                }
+            }
             return img;
         }
 
