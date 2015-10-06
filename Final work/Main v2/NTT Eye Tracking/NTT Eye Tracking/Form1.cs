@@ -35,7 +35,7 @@ namespace NTT_Eye_Tracking
         VideoGenerator vg = new VideoGenerator();
 
         string obj;
-        string mtl;
+        //string mtl;
         string img;
         bool flythrough;
 
@@ -62,7 +62,7 @@ namespace NTT_Eye_Tracking
                    //in each case we must show the appropriate model previewer and hide the others
                case 0: //3D model
                    {
-                       pic_caro.Visible = true;
+                       pic_slideshowPreview.Visible = true;
                        pic_model2DPreview.Visible = false;
                        wmp_VideoPreview.Visible = false;
                        break;
@@ -73,14 +73,14 @@ namespace NTT_Eye_Tracking
                    }
                case 2: //2D models
                    {
-                       pic_caro.Visible = false;
+                       pic_slideshowPreview.Visible = false;
                        pic_model2DPreview.Visible = true;
                        wmp_VideoPreview.Visible = false;
                        break;
                    }
                case 3: //Video
                    {
-                       pic_caro.Visible = false;
+                       pic_slideshowPreview.Visible = false;
                        pic_model2DPreview.Visible = false;
                        wmp_VideoPreview.Visible = true;
                        wmp_VideoPreview.Dock = DockStyle.Fill;

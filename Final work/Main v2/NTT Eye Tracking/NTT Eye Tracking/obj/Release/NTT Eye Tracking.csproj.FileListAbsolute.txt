@@ -1,0 +1,9 @@
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT Eye Tracking.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\Interop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\AxInterop.WMPLib.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT Eye Tracking.csproj.ResolveComReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT_Eye_Tracking.NTT_EyeTracker.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT_Eye_Tracking.frmDisplay.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT_Eye_Tracking.NTT_MiniForm.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT_Eye_Tracking.Properties.Resources.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\Release\NTT Eye Tracking.csproj.GenerateResource.Cache
