@@ -53,9 +53,11 @@ namespace DisplayModel
 
         public static   List<string>
                         materials = new List<string>();
+        public static   List<GameObject>
+                        list = new List<GameObject>();
 
         public static   int current_index;
-		public static 	float scale_factor;
+		public static 	float scale_factor = 1.0f;
         #endregion
 
         /// <summary>
@@ -66,7 +68,6 @@ namespace DisplayModel
 		public static GameObject fromOBJ(string obj, bool scaling)
 		{   
 			GameObject root = new GameObject();
-            scale_factor = 0.0f;
 
             string mtl = obj.Substring(0, obj.Length - 3) + "mtl";
             int index = 0;
@@ -84,24 +85,26 @@ namespace DisplayModel
             
             if (scaling)
             {
-                Console.WriteLine("Scaling objects...");
-                List<GameObject> list = new List<GameObject>();
-                GameObject current = root;
+                scale_factor /= 5;
 
-                for (int i = 0; i < current.Children.Count; ++i)
+                Console.WriteLine("Scaling objects...");
+                for (int i = 0; i < root.Children.Count; ++i)
                 {
-                    current = current.Children[i];
-                    if (!list.Contains(current))
+                    GameObject current = root.Children[i];
+                    for(int j = 0; j < current.BufferData.Vertex.Length; ++j)
                     {
-                        list.Add(current);
-                        findMax(current.bufferData);
+                        current.bufferData.vertex[j].X /= scale_factor;
+                        current.bufferData.vertex[j].Y /= scale_factor;
+                        current.bufferData.vertex[j].Z /= scale_factor;
                     }
                 }
-
-                for (int i = 0; i < list.Count; ++i)
-                    scaleObject(list[i].bufferData);                
             }
 
+
+            Console.WriteLine("Generating materials...");
+            root.Initialize();
+
+            Console.WriteLine("Returning object...");
             return root;
         }
         
@@ -124,7 +127,11 @@ namespace DisplayModel
 						break;
 
 					case "v":
-                        p_vertices.Add(new Vector3(float.Parse(sections[1]), float.Parse(sections[2]),float.Parse(sections[3])));
+                        Vector3 temp = new Vector3(float.Parse(sections[1]), float.Parse(sections[2]), float.Parse(sections[3]));
+                        if (Math.Abs(temp.X) > scale_factor) scale_factor = Math.Abs(temp.X);
+                        if (Math.Abs(temp.Y) > scale_factor) scale_factor = Math.Abs(temp.Y);
+                        if (Math.Abs(temp.Z) > scale_factor) scale_factor = Math.Abs(temp.Z);
+                        p_vertices.Add(temp);
 						break;
 
                     case "vt":
@@ -182,6 +189,7 @@ namespace DisplayModel
         public static void generateChildren(ref GameObject root)
         {
             int children = t_indices.Count - 1;
+            Console.WriteLine("Number of children: " + children);
 
             for (int child = 0; child < children; ++child)
             {
@@ -209,7 +217,7 @@ namespace DisplayModel
                 Material m = new Material(filepath);
                 GameObject newChild = new GameObject(m, bd);
 
-                root.AddChild(newChild);
+                root.Children.Add(newChild);
             }
         }
 
@@ -220,30 +228,25 @@ namespace DisplayModel
                 for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
                 {
                     if(Math.Abs(bufferData.Vertex[i].X) > scale_factor)
-                    {
                         scale_factor = Math.Abs(bufferData.Vertex[i].X);
-                    }
+
                     if (Math.Abs(bufferData.Vertex[i].Y) > scale_factor)
-                    {
                         scale_factor = Math.Abs(bufferData.Vertex[i].Y);
-                    }
+
                     if (Math.Abs(bufferData.Vertex[i].Z) > scale_factor)
-                    {
                         scale_factor = Math.Abs(bufferData.Vertex[i].Z);
-                    }
                 }
             }
 		}
 		
-        private static void scaleObject(BufferData bufferData)
+        private static void scaleObject(ref BufferData bufferData)
 		{
             for (int i = 0; i < bufferData.Vertex.Length; i++)
             {
                 for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
                 {
-                    bufferData.Vertex[i].X /= scale_factor;
-                    bufferData.Vertex[i].Y /= scale_factor;
-                    bufferData.Vertex[i].Z /= scale_factor;
+                    Console.WriteLine("Before: " + bufferData.vertex[i]);
+                    Console.WriteLine("After: " + bufferData.vertex[i]);
                 }
             }
         }
