@@ -16,10 +16,10 @@ namespace DisplayModel
         protected List<GameObject> objects;
         protected string imagePath;
 
-        //Camera feature(s)(make into class)
+        //Camera
         protected Camera camera = new Camera();
 
-        //Screenshots
+        //Screenshots counter
         protected int viewNumber = 0;
 
         //Video recording field(s)
@@ -27,6 +27,7 @@ namespace DisplayModel
         List<Bitmap> videoFrames = new List<Bitmap>();
         System.Drawing.Imaging.BitmapData data;
 
+        //Background image saving
         Thread oThread;
         bool IsSavingFrames = false;
 
@@ -40,12 +41,20 @@ namespace DisplayModel
             imagePath = _imagePath;
         }
 
+        /// <summary>
+        /// Add a gameObject to be rendered to the scene.
+        /// </summary>
+        /// <param name="gameObject"></param>
         public void Add(GameObject gameObject)
         {
             if (!objects.Contains(gameObject))
                 objects.Add(gameObject);
         }
 
+        /// <summary>
+        /// This holds all the initializations that need to take place.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -77,6 +86,12 @@ namespace DisplayModel
             }
         }
 
+        /// <summary>
+        /// Operations done once the fly-through is aborted.
+        /// The joining of the threads for saving images is
+        /// done here.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             base.OnClosing(e);
@@ -87,6 +102,10 @@ namespace DisplayModel
             saveFrames();
         }
 
+        /// <summary>
+        /// Actions taken to update a frame.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
@@ -94,6 +113,10 @@ namespace DisplayModel
             UpdateCamera(e.Time);
         }
 
+        /// <summary>
+        /// Actions taken to render a frame.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             base.OnRenderFrame(e);
@@ -109,6 +132,10 @@ namespace DisplayModel
             SwapBuffers();
         }
 
+        /// <summary>
+        /// Sets the perspective field of view when ever a frame is rendered.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -122,7 +149,7 @@ namespace DisplayModel
         }
 
         /// <summary>
-        /// This method facilitates the camera movements
+        /// This method facilitates the camera movements via input from various devices.
         /// </summary>
         /// <param name="time">This is the time that the OnUpdateFrame() method takes to make an update so that camera movement can be made to move at a constant speed regardless of the number of updates a second.</param>
         public void UpdateCamera(double time)
@@ -131,10 +158,14 @@ namespace DisplayModel
             JoystickUpdate(time);
         }
 
+        /// <summary>
+        /// Used to update the state of the camera via the state of the keyboard.
+        /// </summary>
+        /// <param name="time"></param>
         public void KeyboardUpdate(double time)
         {
             OpenTK.Input.KeyboardState state = OpenTK.Input.Keyboard.GetState();
-
+            
             if (state.IsKeyDown(OpenTK.Input.Key.Escape))
             {
                 Exit();
@@ -160,12 +191,12 @@ namespace DisplayModel
 
             if (state.IsKeyDown(OpenTK.Input.Key.PageUp))
             {
-                camera.position.Y += (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
+                camera.position.Y += camera.currentSpeed * (float)time;
             }
 
             if (state.IsKeyDown(OpenTK.Input.Key.PageDown))
             {
-                camera.position.Y -= (float)Math.Cos(camera.yaw) * camera.currentSpeed * (float)time;
+                camera.position.Y -= camera.currentSpeed * (float)time;
             }
 
             if (state.IsKeyDown(OpenTK.Input.Key.W))
@@ -192,7 +223,6 @@ namespace DisplayModel
                 camera.position.Z += (float)Math.Sin(camera.yaw + Math.PI / 2) * camera.currentSpeed * (float)time;
             }
 
-            //Replace yaw and pitch with mouseYaw and mousePitch
             if (state.IsKeyDown(OpenTK.Input.Key.Left))
             {
                 camera.yaw -= 1.0f * (float)time;
@@ -214,6 +244,10 @@ namespace DisplayModel
             }
         }
 
+        /// <summary>
+        /// Used to update the state of the camera via the state of the joystick.
+        /// </summary>
+        /// <param name="time"></param>
         public void JoystickUpdate(double time)
         {
             OpenTK.Input.JoystickState state = OpenTK.Input.Joystick.GetState(0);
@@ -232,10 +266,14 @@ namespace DisplayModel
             }
 
             if (state.GetButton(OpenTK.Input.JoystickButton.Button5) == OpenTK.Input.ButtonState.Pressed)
-                camera.position.Y += (float)(camera.currentSpeed * time);
+            {
+                camera.position.Y += camera.currentSpeed * (float)time;
+            }
 
             if (state.GetButton(OpenTK.Input.JoystickButton.Button7) == OpenTK.Input.ButtonState.Pressed)
-                camera.position.Y -= (float)(camera.currentSpeed * time);
+            {
+                camera.position.Y -= camera.currentSpeed * (float)time;
+            }
 
             double x1 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis0);
             double x2 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis1);
@@ -253,6 +291,10 @@ namespace DisplayModel
             camera.pitch += (float)(y2 * time);
         }
 
+        /// <summary>
+        /// Used to update the orientation of the camera via the movement of the mouse.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnMouseMove(OpenTK.Input.MouseMoveEventArgs e)
         {
             base.OnMouseMove(e);
@@ -287,6 +329,9 @@ namespace DisplayModel
             camera.pitch -= e.YDelta / 500.0f;
         }
 
+        /// <summary>
+        /// Default view of the camera at the statr of the fly-through.
+        /// </summary>
         public void defaultView()
         {
             for (int i = 0; i < objects.Count; i++)
@@ -295,6 +340,11 @@ namespace DisplayModel
             }
         }
 
+        /// <summary>
+        /// This is used to save each frame produced into an array of bitmaps.
+        /// Once a limit has been reached a worker thread is started to save
+        /// the images in the background with the lowest priority.
+        /// </summary>
         public void RecordVideo()
         {
             if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)
@@ -307,7 +357,7 @@ namespace DisplayModel
             videoFrame.UnlockBits(data);
 
             videoFrames.Add(videoFrame);
-            if(videoFrames.Count >= 100 && IsSavingFrames == false)
+            if(videoFrames.Count >= 50 && IsSavingFrames == false)
             {
                 oThread = new Thread(this.saveFrames);
                 oThread.Priority = ThreadPriority.Lowest;
@@ -318,6 +368,11 @@ namespace DisplayModel
             }
         }
 
+        /// <summary>
+        /// This is used to save the images for video recording on to disk either at the
+        /// end of the fly-through or during the fly-through once the maximum amount in memory
+        /// has been reached.
+        /// </summary>
         public void saveFrames()
         {
             while(videoFrames.Count > 0)
@@ -330,19 +385,11 @@ namespace DisplayModel
             }
 
             IsSavingFrames = false;
-
-            /*for (int i = 0; i < temp; i++)
-            {
-                videoFrames[i].RotateFlip(RotateFlipType.RotateNoneFlipY);
-                videoFrames[i].Save(imagePath + @"frame" + (frameNumber++) + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                videoFrames[i].Dispose();
-            }
-            for (int i = 0; i < temp; i++)
-            {
-                videoFrames.RemoveAt(0);
-            }*/
         }
 
+        /// <summary>
+        /// This is used to take a screenshot of the current rendered frame and to save it to disk.
+        /// </summary>
         public void GrabScreenshot()
         {
             if (OpenTK.Graphics.GraphicsContext.CurrentContext == null)

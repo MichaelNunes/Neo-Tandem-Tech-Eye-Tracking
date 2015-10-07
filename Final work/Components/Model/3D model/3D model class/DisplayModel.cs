@@ -37,7 +37,7 @@ namespace DisplayModel
                 throw new Exception(e.Message);
             }
         }
-        
+#if DEBUG
         //Here for testing purposes
         public static void Main(string[] args)
         {
@@ -47,5 +47,6 @@ namespace DisplayModel
 
             Run(objectpath, filePath, false);
         }
+#endif
     }
 }
