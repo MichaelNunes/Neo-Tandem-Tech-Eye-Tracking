@@ -83,7 +83,11 @@ namespace DisplayModel
 
             System.Windows.Forms.Cursor.Show();
 
-            oThread.Join();
+            if(oThread != null)
+            {
+                oThread.Join();
+            }
+            
             saveFrames();
         }
 
@@ -307,7 +311,7 @@ namespace DisplayModel
             videoFrame.UnlockBits(data);
 
             videoFrames.Add(videoFrame);
-            if(videoFrames.Count >= 100 && IsSavingFrames == false)
+            if(videoFrames.Count >= 50 && IsSavingFrames == false)
             {
                 oThread = new Thread(this.saveFrames);
                 oThread.Priority = ThreadPriority.Lowest;
@@ -320,7 +324,7 @@ namespace DisplayModel
 
         public void saveFrames()
         {
-            while(videoFrames.Count > 0)
+            while (videoFrames.Count > 0)
             {
                 videoFrames[0].RotateFlip(RotateFlipType.RotateNoneFlipY);
                 videoFrames[0].Save(imagePath + @"frame" + (frameNumber++) + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -328,6 +332,7 @@ namespace DisplayModel
 
                 videoFrames.RemoveAt(0);
             }
+            
 
             IsSavingFrames = false;
 

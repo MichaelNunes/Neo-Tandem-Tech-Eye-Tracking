@@ -169,6 +169,8 @@
             // btnViewResults
             // 
             this.btnViewResults.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnViewResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewResults.IsBackStageButton = false;
             this.btnViewResults.Location = new System.Drawing.Point(39, 527);
             this.btnViewResults.Name = "btnViewResults";
@@ -180,6 +182,8 @@
             // btnReport
             // 
             this.btnReport.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.IsBackStageButton = false;
             this.btnReport.Location = new System.Drawing.Point(39, 478);
             this.btnReport.Name = "btnReport";
@@ -191,6 +195,8 @@
             // btnGazepoint
             // 
             this.btnGazepoint.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnGazepoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGazepoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGazepoint.IsBackStageButton = false;
             this.btnGazepoint.Location = new System.Drawing.Point(39, 429);
             this.btnGazepoint.Name = "btnGazepoint";
@@ -202,6 +208,8 @@
             // btnOverlays
             // 
             this.btnOverlays.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnOverlays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOverlays.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOverlays.IsBackStageButton = false;
             this.btnOverlays.Location = new System.Drawing.Point(39, 331);
             this.btnOverlays.Name = "btnOverlays";
@@ -213,6 +221,8 @@
             // btnHeatmaps
             // 
             this.btnHeatmaps.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnHeatmaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHeatmaps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeatmaps.IsBackStageButton = false;
             this.btnHeatmaps.Location = new System.Drawing.Point(39, 380);
             this.btnHeatmaps.Name = "btnHeatmaps";
@@ -224,6 +234,8 @@
             // btnChooseModel
             // 
             this.btnChooseModel.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnChooseModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseModel.IsBackStageButton = false;
             this.btnChooseModel.Location = new System.Drawing.Point(39, 233);
             this.btnChooseModel.Name = "btnChooseModel";
@@ -235,6 +247,8 @@
             // btnRecord
             // 
             this.btnRecord.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecord.IsBackStageButton = false;
             this.btnRecord.Location = new System.Drawing.Point(39, 282);
             this.btnRecord.Name = "btnRecord";
@@ -246,6 +260,9 @@
             // btnCal
             // 
             this.btnCal.BeforeTouchSize = new System.Drawing.Size(122, 43);
+            this.btnCal.BorderStyleAdv = Syncfusion.Windows.Forms.ButtonAdvBorderStyle.None;
+            this.btnCal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCal.IsBackStageButton = false;
             this.btnCal.Location = new System.Drawing.Point(39, 184);
             this.btnCal.Name = "btnCal";
@@ -287,30 +304,34 @@
             // createNewProjectCtrlNToolStripMenuItem
             // 
             this.createNewProjectCtrlNToolStripMenuItem.Name = "createNewProjectCtrlNToolStripMenuItem";
-            this.createNewProjectCtrlNToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.createNewProjectCtrlNToolStripMenuItem.Text = "Create New Project (Ctrl + N)";
+            this.createNewProjectCtrlNToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.createNewProjectCtrlNToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.createNewProjectCtrlNToolStripMenuItem.Text = "Create New Project";
+            this.createNewProjectCtrlNToolStripMenuItem.Click += new System.EventHandler(this.createNewProjectCtrlNToolStripMenuItem_Click);
             // 
             // openProjectCtrlOToolStripMenuItem
             // 
             this.openProjectCtrlOToolStripMenuItem.Name = "openProjectCtrlOToolStripMenuItem";
-            this.openProjectCtrlOToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.openProjectCtrlOToolStripMenuItem.Text = "Open Project (Ctrl + O)";
+            this.openProjectCtrlOToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openProjectCtrlOToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.openProjectCtrlOToolStripMenuItem.Text = "Open Project";
+            this.openProjectCtrlOToolStripMenuItem.Click += new System.EventHandler(this.openProjectCtrlOToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(225, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(215, 6);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // openFileDialog1

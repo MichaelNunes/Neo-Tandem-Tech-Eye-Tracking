@@ -55,6 +55,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelNewOldProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +68,8 @@
             // 
             // panelNewOldProject
             // 
+            this.panelNewOldProject.Controls.Add(this.label7);
+            this.panelNewOldProject.Controls.Add(this.label6);
             this.panelNewOldProject.Controls.Add(this.pictureBox2);
             this.panelNewOldProject.Controls.Add(this.pictureBox1);
             this.panelNewOldProject.Location = new System.Drawing.Point(44, 33);
@@ -77,7 +81,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::NTT_Eye_Tracking.Properties.Resources.open211;
-            this.pictureBox2.Location = new System.Drawing.Point(329, 96);
+            this.pictureBox2.Location = new System.Drawing.Point(324, 128);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(175, 149);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -88,7 +92,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::NTT_Eye_Tracking.Properties.Resources.round69;
-            this.pictureBox1.Location = new System.Drawing.Point(128, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(123, 128);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,6 +169,8 @@
             // buttonAdv4
             // 
             this.buttonAdv4.BeforeTouchSize = new System.Drawing.Size(105, 37);
+            this.buttonAdv4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdv4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdv4.IsBackStageButton = false;
             this.buttonAdv4.Location = new System.Drawing.Point(22, 13);
             this.buttonAdv4.Name = "buttonAdv4";
@@ -176,9 +182,10 @@
             // 
             // btnCreateRecording
             // 
-            this.btnCreateRecording.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2007;
             this.btnCreateRecording.BackColor = System.Drawing.Color.White;
             this.btnCreateRecording.BeforeTouchSize = new System.Drawing.Size(160, 36);
+            this.btnCreateRecording.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateRecording.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateRecording.IsBackStageButton = false;
             this.btnCreateRecording.Location = new System.Drawing.Point(235, 349);
             this.btnCreateRecording.Name = "btnCreateRecording";
@@ -240,6 +247,8 @@
             // buttonAdv3
             // 
             this.buttonAdv3.BeforeTouchSize = new System.Drawing.Size(84, 35);
+            this.buttonAdv3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdv3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdv3.IsBackStageButton = false;
             this.buttonAdv3.Location = new System.Drawing.Point(527, 212);
             this.buttonAdv3.Name = "buttonAdv3";
@@ -250,11 +259,13 @@
             // 
             // buttonAdv2
             // 
-            this.buttonAdv2.BeforeTouchSize = new System.Drawing.Size(106, 30);
+            this.buttonAdv2.BeforeTouchSize = new System.Drawing.Size(106, 42);
+            this.buttonAdv2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdv2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdv2.IsBackStageButton = false;
-            this.buttonAdv2.Location = new System.Drawing.Point(262, 265);
+            this.buttonAdv2.Location = new System.Drawing.Point(261, 253);
             this.buttonAdv2.Name = "buttonAdv2";
-            this.buttonAdv2.Size = new System.Drawing.Size(106, 30);
+            this.buttonAdv2.Size = new System.Drawing.Size(106, 42);
             this.buttonAdv2.TabIndex = 14;
             this.buttonAdv2.Text = "Create Project";
             this.buttonAdv2.Click += new System.EventHandler(this.buttonAdv2_Click);
@@ -262,6 +273,8 @@
             // buttonAdv1
             // 
             this.buttonAdv1.BeforeTouchSize = new System.Drawing.Size(105, 37);
+            this.buttonAdv1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdv1.IsBackStageButton = false;
             this.buttonAdv1.Location = new System.Drawing.Point(22, 20);
             this.buttonAdv1.Name = "buttonAdv1";
@@ -274,10 +287,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(167, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(301, 25);
+            this.label5.Size = new System.Drawing.Size(334, 25);
             this.label5.TabIndex = 12;
             this.label5.Text = "Create a new eye tracking project";
             // 
@@ -321,6 +334,26 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(333, 279);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Open Existing Project";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(137, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 16);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Create  New Project";
+            // 
             // NTT_MiniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +365,7 @@
             this.Name = "NTT_MiniForm";
             this.Load += new System.EventHandler(this.NTT_MiniForm_Load);
             this.panelNewOldProject.ResumeLayout(false);
+            this.panelNewOldProject.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_modelSelect.ResumeLayout(false);
@@ -372,5 +406,7 @@
         private System.Windows.Forms.RichTextBox red_ModelDescription;
         private System.Windows.Forms.PictureBox caro_models;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

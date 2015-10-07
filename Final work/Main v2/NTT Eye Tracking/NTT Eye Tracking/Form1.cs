@@ -140,6 +140,13 @@ namespace NTT_Eye_Tracking
                     //name = openFileDialog1.SafeFileName;
                     //mtl = openFileDialog1.FileName;
 
+                    DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough); 
+                    int counter = 2;
+                    for (int i = 0; i < 9; i++)
+                    {
+                        imglocation[i] = globals.currentRecordingpath + @"\\" + "view" + counter + ".jpg";
+                        counter++;
+                    }
                     img = Path.GetDirectoryName(obj) + "\\";
 
                     flythrough = false;
@@ -199,56 +206,13 @@ namespace NTT_Eye_Tracking
         private void btnRecord_Click(object sender, EventArgs e)
         {
             globals.recording = new Record(globals.currentRecordingpath + @"\", name);
-            //hideMainButtons();
-            switch (globals.modelIndex)
-            {
-                case 0: //3D model
-                    {
-                        //recording._recording = true;
-                        frmDisplay fd = new frmDisplay(0, null, imglocation);
-                        fd.Show(this);
-                        //recording._recording = false;
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        //globals.recording._recording = true;
-                        DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
-                        //dm.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
-                        
-                        //recording._recording = false;
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+            bw.DoWork += new DoWorkEventHandler(bw_DoWorkRecord);
+            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecord);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecord);
 
-                        vg.DestinationPath = globals.currentRecordingpath + @"\" + name;
-                        vg.ImagePath = globals.currentRecordingpath + @"\" + name;
-                        vg.ModelName = name;
-                        vg.Fps = 30;
-                        Size res = this.GetDpiSafeResolution();
-                        vg.FrameHeight = res.Height;
-                        vg.FrameWidth = res.Width;
-                        vg.createVideo();
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        MessageBox.Show("Recording wil begin after this message is closed. The recording will end in " + globals.recordTime / 1000 + " seconds but you can press escape (Esc) to stop the recording at any time.");
-                        
-                        //recording._recording = true;
-                        frmDisplay fd = new frmDisplay(2, ModelPath, null);
-                        fd.Show(this);
-                        //recording._recording = false;
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        //recording._recording = true;
-                        frmDisplay fd = new frmDisplay(3, ModelPath, null);
-                        fd.ShowDialog(this);
-                        //recording._recording = false;
-
-                        break;
-                    }
-            }
-            enableMainButtons();
+            bw.RunWorkerAsync(1000);
         }
 
         private void btnOverlays_Click(object sender, EventArgs e)
@@ -292,12 +256,12 @@ namespace NTT_Eye_Tracking
             {
                 case 0: //3D model
                     {
-                        stats.createPDF();
+                        stats.createPDF3d();
                         break;
                     }
                 case 1: //flythrough
                     {
-                        stats.createPDF3d();
+                        stats.createPDF();
                         break;
                     }
                 case 2: //2D models
@@ -697,6 +661,100 @@ namespace NTT_Eye_Tracking
         {
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
+
+        private void bw_DoWorkRecord(object sender, DoWorkEventArgs e)
+        {
+            //hideMainButtons();
+            switch (globals.modelIndex)
+            {
+                case 0: //3D model
+                    {
+                        //recording._recording = true;
+                        frmDisplay fd = new frmDisplay(0, null, imglocation);
+                        fd.Show(this);
+                        //recording._recording = false;
+                        break;
+                    }
+                case 1: //flythrough
+                    {
+                        globals.recording._recording = true;
+                        //DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
+                        //dm.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
+                        DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
+
+                        break;
+                    }
+                case 2: //2D models
+                    {
+                        MessageBox.Show("Recording wil begin after this message is closed. The recording will end in " + globals.recordTime / 1000 + " seconds but you can press escape (Esc) to stop the recording at any time.");
+
+                        //recording._recording = true;
+                        frmDisplay fd = new frmDisplay(2, ModelPath, null);
+                        fd.Show(this);
+                        //recording._recording = false;
+                        break;
+                    }
+                case 3: //Video
+                    {
+                        //recording._recording = true;
+                        frmDisplay fd = new frmDisplay(3, ModelPath, null);
+                        fd.ShowDialog(this);
+                        //recording._recording = false;
+
+                        break;
+                    }
+            }
+            enableMainButtons();
+        }
+
+        private void bw_RunWorkerCompletedRecord(object sender, RunWorkerCompletedEventArgs e)
+        {
+            switch (globals.modelIndex)
+            {
+                case 0: //3D model
+                    {
+                        break;
+                    }
+                case 1: //flythrough
+                    {
+                        globals.recording._recording = false;
+                        vg.DestinationPath = globals.currentRecordingpath + @"\" + name;
+                        vg.ImagePath = globals.currentRecordingpath + @"\" + name;
+                        vg.ModelName = name;
+                        vg.Fps = 30;
+                        Size res = this.GetDpiSafeResolution();
+                        vg.FrameHeight = res.Height;
+                        vg.FrameWidth = res.Width;
+                        vg.createVideo();
+                        break;
+                    }
+                case 2: //2D models
+                    {
+                        break;
+                    }
+                case 3: //Video
+                    {
+                        break;
+                    }
+            }
+        }
+
+        private void bw_ProgressChangedRecord(object sender, ProgressChangedEventArgs e)
+        {
+            //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
         #endregion
+
+        private void createNewProjectCtrlNToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            NTT_MiniForm ntt_mini = new NTT_MiniForm();
+            ntt_mini.ShowDialog(this);
+        }
+
+        private void openProjectCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NTT_MiniForm ntt_mini = new NTT_MiniForm();
+            ntt_mini.ShowDialog(this);
+        }
     }
 }
