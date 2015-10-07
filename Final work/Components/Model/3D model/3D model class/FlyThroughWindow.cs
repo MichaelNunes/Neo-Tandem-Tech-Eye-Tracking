@@ -98,7 +98,11 @@ namespace DisplayModel
 
             System.Windows.Forms.Cursor.Show();
 
-            oThread.Join();
+            if(oThread != null)
+            {
+                oThread.Join();
+            }
+            
             saveFrames();
         }
 

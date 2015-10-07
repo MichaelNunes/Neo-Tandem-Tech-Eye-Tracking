@@ -239,18 +239,6 @@ namespace DisplayModel
             }
 		}
 		
-        private static void scaleObject(ref BufferData bufferData)
-		{
-            for (int i = 0; i < bufferData.Vertex.Length; i++)
-            {
-                for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
-                {
-                    Console.WriteLine("Before: " + bufferData.vertex[i]);
-                    Console.WriteLine("After: " + bufferData.vertex[i]);
-                }
-            }
-        }
-		
         /// <summary>
         /// Adds faces from the file source. 
         /// </summary>
