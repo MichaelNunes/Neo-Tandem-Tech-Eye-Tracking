@@ -33,8 +33,8 @@ namespace NTT_Eye_Tracking
             panelNewOldProject.Left = 0;
             panelNewOldProject.Top = 0;
 
-            this.BackColor = GlobalStyles.mainFormColours;
-            panelNewOldProject.BackColor = GlobalStyles.mainFormColours;
+            this.BackColor = GlobalStyles.ForegroundColours;
+            panelNewOldProject.BackColor = GlobalStyles.ForegroundColours;
             
             //get available model types
             /*foreach(modelType model in GlobalStyles.models)

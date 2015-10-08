@@ -9,9 +9,12 @@ namespace NTT_Eye_Tracking
 {
     public class GlobalStyles
     {
-        public static Color mainFormColours = Color.LightSkyBlue;
-        public static Color TaskBarColours = Color.LightSkyBlue;
+        public static Color ForegroundColours = Color.LightSkyBlue;
+        public static Color BackgroundColours = Color.LightSkyBlue;
+        public static Color LabelsColours = Color.LightSkyBlue;
         public static Color ButtonColours = Color.LightSkyBlue;
+        public static Color TextColours = Color.LightSkyBlue;
+
         public static List<modelType> models = new List<modelType>();        
     }
 

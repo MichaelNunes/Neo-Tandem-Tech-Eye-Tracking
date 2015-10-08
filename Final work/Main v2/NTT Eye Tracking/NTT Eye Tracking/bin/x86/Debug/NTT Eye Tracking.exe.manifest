@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2438080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2439616">
       <assemblyIdentity name="NTT Eye Tracking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5rYEwvLuNZsUEmLg4pmvZf5kyibjrwdCXnNLdziqxmw=</dsig:DigestValue>
+        <dsig:DigestValue>KDz/iIpCJkJYKseCqbozvINbfXoL7lF6/sIoaAyYSU8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

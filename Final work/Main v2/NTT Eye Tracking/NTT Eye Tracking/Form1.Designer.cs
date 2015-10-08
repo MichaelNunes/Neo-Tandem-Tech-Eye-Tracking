@@ -32,9 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NTT_EyeTracker));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pic_slideshowPreview = new System.Windows.Forms.Panel();
+            this.pic_caro = new System.Windows.Forms.PictureBox();
             this.btnImageForward = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnImageBack = new Syncfusion.Windows.Forms.ButtonAdv();
             this.wmp_VideoPreview = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pic_model2DPreview = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnViewResults = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnReport = new Syncfusion.Windows.Forms.ButtonAdv();
@@ -45,22 +47,21 @@
             this.btnRecord = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnCal = new Syncfusion.Windows.Forms.ButtonAdv();
             this.tsMain = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pic_caro = new System.Windows.Forms.PictureBox();
-            this.pic_model2DPreview = new System.Windows.Forms.PictureBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.createNewProjectCtrlNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openProjectCtrlOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.pic_slideshowPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_caro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp_VideoPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).BeginInit();
             this.panel3.SuspendLayout();
             this.tsMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_caro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +88,17 @@
             this.pic_slideshowPreview.Size = new System.Drawing.Size(856, 730);
             this.pic_slideshowPreview.TabIndex = 4;
             this.pic_slideshowPreview.Visible = false;
+            // 
+            // pic_caro
+            // 
+            this.pic_caro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pic_caro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_caro.Location = new System.Drawing.Point(34, 0);
+            this.pic_caro.Name = "pic_caro";
+            this.pic_caro.Size = new System.Drawing.Size(788, 730);
+            this.pic_caro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_caro.TabIndex = 21;
+            this.pic_caro.TabStop = false;
             // 
             // btnImageForward
             // 
@@ -129,6 +141,15 @@
             this.wmp_VideoPreview.Size = new System.Drawing.Size(856, 730);
             this.wmp_VideoPreview.TabIndex = 3;
             this.wmp_VideoPreview.Visible = false;
+            // 
+            // pic_model2DPreview
+            // 
+            this.pic_model2DPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_model2DPreview.Location = new System.Drawing.Point(0, 0);
+            this.pic_model2DPreview.Name = "pic_model2DPreview";
+            this.pic_model2DPreview.Size = new System.Drawing.Size(856, 730);
+            this.pic_model2DPreview.TabIndex = 2;
+            this.pic_model2DPreview.TabStop = false;
             // 
             // panel3
             // 
@@ -258,7 +279,8 @@
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Image = null;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
+            this.toolStripDropDownButton1,
+            this.toolStripButton1});
             this.tsMain.LauncherStyle = Syncfusion.Windows.Forms.Tools.LauncherStyle.Office12;
             this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
@@ -266,30 +288,6 @@
             this.tsMain.ShowLauncher = false;
             this.tsMain.Size = new System.Drawing.Size(1090, 25);
             this.tsMain.TabIndex = 21;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // pic_caro
-            // 
-            this.pic_caro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pic_caro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_caro.Location = new System.Drawing.Point(34, 0);
-            this.pic_caro.Name = "pic_caro";
-            this.pic_caro.Size = new System.Drawing.Size(788, 730);
-            this.pic_caro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_caro.TabIndex = 21;
-            this.pic_caro.TabStop = false;
-            // 
-            // pic_model2DPreview
-            // 
-            this.pic_model2DPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_model2DPreview.Location = new System.Drawing.Point(0, 0);
-            this.pic_model2DPreview.Name = "pic_model2DPreview";
-            this.pic_model2DPreview.Size = new System.Drawing.Size(856, 730);
-            this.pic_model2DPreview.TabIndex = 2;
-            this.pic_model2DPreview.TabStop = false;
             // 
             // toolStripDropDownButton1
             // 
@@ -340,6 +338,20 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // NTT_EyeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,12 +369,12 @@
             this.Load += new System.EventHandler(this.NTT_EyeTracker_Load);
             this.panel1.ResumeLayout(false);
             this.pic_slideshowPreview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_caro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmp_VideoPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_caro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_model2DPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,6 +406,7 @@
         private System.Windows.Forms.PictureBox pic_caro;
         private Syncfusion.Windows.Forms.ButtonAdv btnImageForward;
         private Syncfusion.Windows.Forms.ButtonAdv btnImageBack;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
 
     }
 }

@@ -15,7 +15,13 @@ namespace NTT_Eye_Tracking
 
         /// Index item list
         /// 
-        /// 0= Colour list THEME0- backgound, THEME1 - BUTTON, THEME 3- Text 
+        /// 0= Colour list 
+        ///     0-> Background
+        ///     1-> Foreground
+        ///     2-> Button
+        ///     3-> Label
+        ///     4-> Text
+        ///     THEME0- backgound, THEME1 - BUTTON, THEME 3- Text 
         /// 1= 3D slideshow time
         /// 2= show numbers on gaze plot points
         /// 3= GP point history
@@ -51,7 +57,13 @@ namespace NTT_Eye_Tracking
             settings[4] = checkBox2.Checked;
             settings[5] = checkBox3.Checked;
 
-            MessageBox.Show(settings[3].ToString() + settings[5].ToString());
+            GlobalStyles.ForegroundColours = theme[0];
+            GlobalStyles.BackgroundColours = theme[1];
+            GlobalStyles.LabelsColours = theme[2];
+            GlobalStyles.ButtonColours = theme[3];
+            GlobalStyles.TextColours = theme[4];
+
+            //MessageBox.Show(settings[3].ToString() + settings[5].ToString());
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -61,9 +73,11 @@ namespace NTT_Eye_Tracking
                 case "Light":
                     {
 
-                        theme[0] = Color.Azure;
-                        theme[1] = Color.WhiteSmoke;
-                        theme[2] = Color.Black;
+                        theme[0] = Color.FromArgb(255, 255, 255);
+                        theme[1] = Color.FromArgb(77, 80, 87);
+                        theme[2] = Color.FromArgb(255, 94, 44);
+                        theme[3] = Color.FromArgb(147, 130, 127);
+                        theme[4] = Color.FromArgb(0, 0, 0);
                         //MessageBox.Show(theme[1]);
 
                         textBox1.BackColor = theme[0];

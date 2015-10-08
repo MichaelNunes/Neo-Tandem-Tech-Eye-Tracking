@@ -53,7 +53,7 @@ namespace NTT_Eye_Tracking
         {
             disableMainButtons();
             initializeGlobalStyles();
-            this.BackColor = GlobalStyles.mainFormColours;
+            this.BackColor = GlobalStyles.ForegroundColours;
             NTT_MiniForm ntt_mini = new NTT_MiniForm();
             ntt_mini.ShowDialog(this);
             btnCal.Enabled = true;
@@ -106,7 +106,7 @@ namespace NTT_Eye_Tracking
             GlobalStyles.models.Add(modelVideo);
 
             //Form styles
-            GlobalStyles.mainFormColours = Color.White;//FromArgb(77,80,87);
+            GlobalStyles.ForegroundColours = Color.White;//FromArgb(77,80,87);
         }
 
         public void formInitialization()
@@ -784,6 +784,25 @@ namespace NTT_Eye_Tracking
         {
             NTT_Settings ntt_mini = new NTT_Settings();
             ntt_mini.ShowDialog(this);
+
+            editStyles();
+        }
+
+        public void editStyles()
+        {
+            //edit form
+            this.BackColor = GlobalStyles.BackgroundColours;
+            panel3.BackColor = GlobalStyles.ForegroundColours;
+            tsMain.BackColor = GlobalStyles.ForegroundColours;
+            //buttons
+            btnCal.BackColor = GlobalStyles.ButtonColours;
+            btnChooseModel.BackColor = GlobalStyles.ButtonColours;
+            btnGazepoint.BackColor = GlobalStyles.ButtonColours;
+            btnHeatmaps.BackColor = GlobalStyles.ButtonColours;
+            btnOverlays.BackColor = GlobalStyles.ButtonColours;
+            btnRecord.BackColor = GlobalStyles.ButtonColours;
+            btnReport.BackColor = GlobalStyles.ButtonColours;
+            btnViewResults.BackColor = GlobalStyles.ButtonColours;
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
