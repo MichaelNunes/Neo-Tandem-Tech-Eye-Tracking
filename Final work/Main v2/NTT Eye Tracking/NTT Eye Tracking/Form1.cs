@@ -106,7 +106,7 @@ namespace NTT_Eye_Tracking
             GlobalStyles.models.Add(modelVideo);
 
             //Form styles
-            GlobalStyles.mainFormColours = Color.LightBlue;
+            GlobalStyles.mainFormColours = Color.White;//FromArgb(77,80,87);
         }
 
         public void formInitialization()
@@ -487,7 +487,7 @@ namespace NTT_Eye_Tracking
                         case 0: //3D model
                             {
 
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -503,7 +503,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -519,23 +519,23 @@ namespace NTT_Eye_Tracking
                             }
                         case 2: //2D models
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraph2D();
                                 ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmap2D();
                                 break;
                             }
                         case 3: //Video
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -593,7 +593,7 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmapOntoModelVideo();
                                 break;
@@ -602,7 +602,7 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmapOntoModel2D();
                                 break;
@@ -649,7 +649,7 @@ namespace NTT_Eye_Tracking
                     {
                         case 0: //3D model
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraphOntoModel3D();
@@ -657,7 +657,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -666,16 +666,16 @@ namespace NTT_Eye_Tracking
                             }
                         case 2: //2D models
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraphOntoModel2D();
                                 break;
                             }
                         case 3: //Video
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -778,6 +778,17 @@ namespace NTT_Eye_Tracking
         {
             NTT_MiniForm ntt_mini = new NTT_MiniForm();
             ntt_mini.ShowDialog(this);
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NTT_Settings ntt_mini = new NTT_Settings();
+            ntt_mini.ShowDialog(this);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
