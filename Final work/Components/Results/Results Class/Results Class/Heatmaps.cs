@@ -17,6 +17,10 @@ namespace Results_Class
     public class Heatmaps
     {
         #region properties and getter/setters
+
+        int srcHeight, srcWidth;
+        float scaleFactorH, scaleFactorW;
+
         /// <summary>
         /// Represents file(s) locations that will be used for the heatmapping processess.
         /// </summary>
@@ -140,13 +144,28 @@ namespace Results_Class
             px = new List<float>();
             py = new List<float>();
             string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\RecordedData_" + modelName + ".txt");
+            int Count = 0;
             foreach (string item in lines)
             {
-                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                if (Count == 0)
+                {
+                    srcWidth = (int)Convert.ToInt32(item.Substring(0, item.IndexOf("x")));
+                    int temp1 = item.IndexOf("x") + 1;
+                    int temp2 = item.Length - temp1;
+                    srcHeight = (int)Convert.ToInt32(item.Substring(temp1, temp2));
+                    scaleFactorH = ((float)height / (float)srcHeight);
+                    scaleFactorW = ((float)width / (float)srcWidth);
+                    Count++;
+                    Console.WriteLine(scaleFactorH.ToString() + ":" + scaleFactorW.ToString());
+                }
+                else
+                {
 
-                int temp1 = item.IndexOf(":")+1;
-                int temp2 = item.Length-temp1;
-                py.Add((float)Convert.ToDouble(item.Substring(temp1,temp2)));
+                    px.Add(scaleFactorW * (float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                    int temp1 = item.IndexOf(":") + 1;
+                    int temp2 = item.Length - temp1;
+                    py.Add(scaleFactorH * (float)Convert.ToDouble(item.Substring(temp1, temp2)));
+                }
             }
         }
 
@@ -223,11 +242,11 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation/* + ModelName + ".wmv"*/);
+            vid.Open(SourceLocation + ModelName + ".wmv");
             height = vid.Height;
             width = vid.Width;
             vid.Close();
-
+            OpenHeatmapData(SourceLocation, ModelName);
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -237,11 +256,7 @@ namespace Results_Class
                 throw new ArgumentNullException();
             }
 
-            //Image im = new Bitmap(FileLocation + "\\" + ModelName);            
-            //bitmap.Save(FileLocation +"\\"+ ModelName + ".jpg");
-
             List<Thread> tl = new List<Thread>();
-            //Implement Currently
             for (int i = 0; i < px.Count(); i++)
             {
                 try
@@ -258,29 +273,8 @@ namespace Results_Class
                     {
                         x.Add(px.ElementAt(i));
                         y.Add(py.ElementAt(i));
-                    }
-                    
-                                        
-                    /*Thread t = new Thread(() =>*/ SaveHeatmapImage(bitmap, x, y, i);//);
-                    /*tl.Add(t);
-                    //2 Threads = 3:47
-                    //10 threads = 3:27
-                    //40 Threads = 3:30
-                    //100 Threads = 3:37
-                    //No join statement = to long
-                    if(tl.Count% px.Count == 0)
-                    {
-                        foreach (Thread thr in tl)
-                        {
-                            t.Start();
-                        }
-                        foreach (Thread thr in tl)
-                        {
-                            thr.Join();
-                        }
-                        tl = null;
-                        tl = new List<Thread>();
-                    }*/
+                    }                 
+                    SaveHeatmapImage(bitmap, x, y, i);
                 }
                 catch (Exception k)
                 {
@@ -288,7 +282,6 @@ namespace Results_Class
                 }
             }
             
-
             //call create video
             vm.ImagePath = DestinationPath + "\\";
             vm.DestinationPath = DestinationPath + "\\";
@@ -318,6 +311,7 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmap2D()
         {
+            OpenHeatmapData(SourceLocation, ModelName);
             Bitmap bitmap = new Bitmap(width, height);
             if (py.Count == 0 || px.Count == 0)
             {
@@ -399,18 +393,19 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation/*+ModelName+".wmv"*/);
+            vid.Open(SourceLocation+ModelName+".wmv");
             height = vid.Height;
             width = vid.Width;
             vid.Close();
+            OpenHeatmapData(SourceLocation, ModelName);
 
             List<Thread> tl = new List<Thread>();
             ImageGenerator ig = new ImageGenerator();
             try
             {
-                ig.VideoPath = SourceLocation;
-                ig.DestinationPath = DestinationPath+"\\";
-                ig.ModelName =  ModelName; 
+                ig.VideoPath = SourceLocation+ModelName+".wmv";
+                ig.DestinationPath = DestinationPath;
+                ig.ModelName = ModelName; 
                 ig.createImages();
             }
             catch(Exception e)
@@ -452,7 +447,6 @@ namespace Results_Class
                     Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
 
                     Image canvas = HeatMap.NET.HeatMap.GenerateHeatMap(im, x.ToArray(), y.ToArray());
-                    //im.Dispose();
                     canvas.Save(DestinationPath + "\\" + ModelName + ".Heated" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
                     im.Dispose();
                 }
@@ -477,7 +471,8 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModel2D()
         {
-            Image im = new Bitmap(SourceLocation + "\\" + ModelName);
+            OpenHeatmapData(SourceLocation, ModelName);
+            Image im = new Bitmap(SourceLocation + "\\" + ModelName + ".jpg");
             if (py.Count == 0 || px.Count == 0)
             {
                 throw new ArgumentNullException();

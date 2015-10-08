@@ -21,15 +21,11 @@ namespace Results_Class
         /// </summary>
         List<List<int>> growingPoints = new List<List<int>>(); // [0] = point, [1] = pointSize, [2] = age
 
+        int srcHeight, srcWidth;
+        float scaleFactorH, scaleFactorW;
         int pointHistory;
 
-        public int PointHistory
-        {
-            get { return pointHistory; }
-            set { pointHistory = value; }
-        }
-
-        bool togglePointNumbers = true;
+        bool togglePointNumbers;
         public bool _TogglePointNumbers
         {
             get { return togglePointNumbers; }
@@ -117,35 +113,25 @@ namespace Results_Class
             set { modelType = value; }
         }
 
-        public Eye_Tracking_Graph(bool pn, int pt)
+        public Eye_Tracking_Graph(int pntHistory, bool TogglePntNums)
         {
-            togglePointNumbers = pn;
-            pointHistory = pt;
+            pointHistory = pntHistory;
+            togglePointNumbers = TogglePntNums;
         }
 
-        public Eye_Tracking_Graph(bool pn, int pt,int Width, int Height)
+        public Eye_Tracking_Graph(int pntHistory, bool TogglePntNums, string NameOfModel, string FilePath, string ModelType)
         {
-            togglePointNumbers = pn;
-            pointHistory = pt; 
-            width = Width;
-            height = Height;
-        }
-
-        public Eye_Tracking_Graph(bool pn, int pt, string NameOfModel, string FilePath, int Width, int Height, string ModelType)
-        {
-            togglePointNumbers = pn;
-            pointHistory = pt; 
-            width = Width;
-            height = Height;
+            pointHistory = pntHistory;
+            togglePointNumbers = TogglePntNums;
             ModelName = NameOfModel;
             SourceLocation = FilePath;
             modelType = ModelType;
         }
 
-        public Eye_Tracking_Graph(bool pn, int pt, string NameOfModel, string FilePath)
+        public Eye_Tracking_Graph(int pntHistory, bool TogglePntNums, string NameOfModel, string FilePath)
         {
-            togglePointNumbers = pn;
-            pointHistory = pt; 
+            pointHistory = pntHistory;
+            togglePointNumbers = TogglePntNums;
             ModelName = NameOfModel;
             SourceLocation = FilePath;
         }
@@ -175,7 +161,7 @@ namespace Results_Class
                 Font drawFont = new System.Drawing.Font("Arial", 16);
                 SolidBrush greenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
                 Pen redPen = new Pen(Color.Red, 1);
-                int pointNumber = 0, growth = 0 ,gpa, cpa; //gpa = growpingPointArea, cpa = currentPointArea
+                int pointNumber = 0, growth = 0, gpa, cpa; //gpa = growpingPointArea, cpa = currentPointArea
                 bool inGPList;
                 for (int i = startPoint; i < endPoint; i++)
                 {
@@ -203,14 +189,14 @@ namespace Results_Class
                         else
                         {
                             for (int j = 0; j < growingPoints.Count; j++) //else check if growingPoints list has previous Point
-                            {                                                      
+                            {
                                 if (growingPoints[j][0] == (i - 1))
                                 {
 
-                                                                                                   //if not then add previous Point growth size into current point growth size 
-                                        growth = growingPoints[j][1] + 4;
-                                        if (growth > (10 + (10 * 4))) { growth = 10; }
-                                    
+                                    //if not then add previous Point growth size into current point growth size 
+                                    growth = growingPoints[j][1] + 4;
+                                    if (growth > (10 + (10 * 4))) { growth = 10; }
+
                                     break;
                                 }
                             }
@@ -258,13 +244,28 @@ namespace Results_Class
             px = new List<float>();
             py = new List<float>();
             string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\RecordedData_" + modelName + ".txt");
+            int Count = 0;
             foreach (string item in lines)
             {
-                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                if (Count == 0)
+                {
+                    srcWidth = (int)Convert.ToInt32(item.Substring(0, item.IndexOf("x")));
+                    int temp1 = item.IndexOf("x") + 1;
+                    int temp2 = item.Length - temp1;
+                    srcHeight = (int)Convert.ToInt32(item.Substring(temp1, temp2));
+                    scaleFactorH = ((float)height / (float)srcHeight);
+                    scaleFactorW = ((float)width / (float)srcWidth);
+                    Count++;
+                    Console.WriteLine(scaleFactorH.ToString() + ":" + scaleFactorW.ToString());
+                }
+                else
+                {
 
-                int temp1 = item.IndexOf(":") + 1;
-                int temp2 = item.Length - temp1;
-                py.Add((float)Convert.ToDouble(item.Substring(temp1, temp2)));
+                    px.Add(scaleFactorW * (float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                    int temp1 = item.IndexOf(":") + 1;
+                    int temp2 = item.Length - temp1;
+                    py.Add(scaleFactorH * (float)Convert.ToDouble(item.Substring(temp1, temp2)));
+                }
             }
         }
 
@@ -339,11 +340,11 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation/* + ModelName + ".wmv"*/);
+            vid.Open(SourceLocation + ModelName + ".wmv");
             height = vid.Height;
             width = vid.Width;
             vid.Close();
-
+            OpenETGraphData(SourceLocation, ModelName);
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -353,11 +354,7 @@ namespace Results_Class
                 throw new ArgumentNullException();
             }
 
-            //Image im = new Bitmap(FileLocation + "\\" + ModelName);            
-            //bitmap.Save(FileLocation +"\\"+ ModelName + ".jpg");
-
             List<Thread> tl = new List<Thread>();
-            //Implement Currently
             for (int i = 0; i < px.Count(); i++)
             {
                 try
@@ -375,29 +372,7 @@ namespace Results_Class
                         x.Add(px.ElementAt(i));
                         y.Add(py.ElementAt(i));
                     }
-
-
-                    /*Thread t = new Thread(() =>*/
-                    SaveETGraphImage(bitmap, x, y, i);//);
-                    /*tl.Add(t);
-                    //2 Threads = 3:47
-                    //10 threads = 3:27
-                    //40 Threads = 3:30
-                    //100 Threads = 3:37
-                    //No join statement = to long
-                    if(tl.Count% px.Count == 0)
-                    {
-                        foreach (Thread thr in tl)
-                        {
-                            t.Start();
-                        }
-                        foreach (Thread thr in tl)
-                        {
-                            thr.Join();
-                        }
-                        tl = null;
-                        tl = new List<Thread>();
-                    }*/
+                    SaveETGraphImage(bitmap, x, y, i);
                 }
                 catch (Exception k)
                 {
@@ -435,13 +410,14 @@ namespace Results_Class
         /// </summary>
         public void SaveETGraph2D()
         {
+            OpenETGraphData(SourceLocation, ModelName);
             Bitmap bitmap = new Bitmap(width, height);
             if (py.Count == 0 || px.Count == 0)
             {
                 throw new ArgumentNullException();
             }
-
-            Image canvas = createETGraph(bitmap, px, py, 0);
+            pointHistory = px.Count;
+            Image canvas = createETGraph(bitmap, px, py, px.Count);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.jpg", ImageFormat.Jpeg);
         }
 
@@ -516,17 +492,18 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation/*+ModelName+".wmv"*/);
+            vid.Open(SourceLocation + ModelName + ".wmv");
             height = vid.Height;
             width = vid.Width;
             vid.Close();
+            OpenETGraphData(SourceLocation, ModelName);
 
             List<Thread> tl = new List<Thread>();
             ImageGenerator ig = new ImageGenerator();
             try
             {
-                ig.VideoPath = SourceLocation;
-                ig.DestinationPath = DestinationPath + "\\";
+                ig.VideoPath = SourceLocation + ModelName + ".wmv";
+                ig.DestinationPath = DestinationPath;
                 ig.ModelName = ModelName;
                 ig.createImages();
             }
@@ -594,12 +571,14 @@ namespace Results_Class
         /// </summary>
         public void SaveETGraphOntoModel2D()
         {
-            Image im = new Bitmap(SourceLocation + "\\" + ModelName);
+            OpenETGraphData(SourceLocation, ModelName);
+            Image im = new Bitmap(SourceLocation + "\\" + ModelName+".jpg");
             if (py.Count == 0 || px.Count == 0)
             {
                 throw new ArgumentNullException();
             }
-            Image canvas = createETGraph(im, px, py, 0);
+            pointHistory = px.Count;
+            Image canvas = createETGraph(im, px, py, px.Count);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.Jpg", ImageFormat.Jpeg);
         }
 
