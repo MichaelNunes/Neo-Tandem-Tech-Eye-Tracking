@@ -124,7 +124,7 @@ namespace DisplayModel
         {
             Initailize(ref gameobject);
             BindBuffers(ref gameobject);
-            SetUniforms(ref gameobject.bufferData);
+            SetUniforms(ref gameobject);
             Finish(ref gameobject);
         }
 
@@ -196,11 +196,11 @@ namespace DisplayModel
             GL.UseProgram(id.Program);
         }
 
-        private void SetUniforms(ref BufferData bufferData)
+        private void SetUniforms(ref GameObject gameobject)
         {
             //The basic boolean uniforms
             GL.Uniform1(uniform.UseLighting, 1);
-            GL.Uniform1(uniform.UseTexture, (bufferData.Texture.Length > 0 ? 1 : 0));
+            GL.Uniform1(uniform.UseTexture, (gameobject.Material.TextureID > -1 ? 1 : 0));
             GL.Uniform1(uniform.Sampler, 0);
             //The basic boolean uniforms
 
