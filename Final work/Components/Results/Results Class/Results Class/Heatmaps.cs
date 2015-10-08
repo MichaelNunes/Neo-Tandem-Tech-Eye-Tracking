@@ -17,6 +17,10 @@ namespace Results_Class
     public class Heatmaps
     {
         #region properties and getter/setters
+
+        int srcHeight, srcWidth;
+        float scaleFactorH, scaleFactorW;
+
         /// <summary>
         /// Represents file(s) locations that will be used for the heatmapping processess.
         /// </summary>
@@ -140,13 +144,28 @@ namespace Results_Class
             px = new List<float>();
             py = new List<float>();
             string[] lines = System.IO.File.ReadAllLines(fileLocation + "\\RecordedData_" + modelName + ".txt");
+            int Count = 0;
             foreach (string item in lines)
             {
-                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                if (Count == 0)
+                {
+                    srcWidth = (int)Convert.ToInt32(item.Substring(0, item.IndexOf("x")));
+                    int temp1 = item.IndexOf("x") + 1;
+                    int temp2 = item.Length - temp1;
+                    srcHeight = (int)Convert.ToInt32(item.Substring(temp1, temp2));
+                    scaleFactorH = ((float)height / (float)srcHeight);
+                    scaleFactorW = ((float)width / (float)srcWidth);
+                    Count++;
+                    Console.WriteLine(scaleFactorH.ToString() + ":" + scaleFactorW.ToString());
+                }
+                else
+                {
 
-                int temp1 = item.IndexOf(":")+1;
-                int temp2 = item.Length-temp1;
-                py.Add((float)Convert.ToDouble(item.Substring(temp1,temp2)));
+                    px.Add(scaleFactorW * (float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                    int temp1 = item.IndexOf(":") + 1;
+                    int temp2 = item.Length - temp1;
+                    py.Add(scaleFactorH * (float)Convert.ToDouble(item.Substring(temp1, temp2)));
+                }
             }
         }
 
@@ -223,11 +242,11 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation/* + ModelName + ".wmv"*/);
+            vid.Open(SourceLocation + ModelName + ".wmv");
             height = vid.Height;
             width = vid.Width;
             vid.Close();
-
+            OpenHeatmapData(SourceLocation, ModelName);
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -399,17 +418,18 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation/*+ModelName+".wmv"*/);
+            vid.Open(SourceLocation+ModelName+".wmv");
             height = vid.Height;
             width = vid.Width;
             vid.Close();
+            OpenHeatmapData(SourceLocation, ModelName);
 
             List<Thread> tl = new List<Thread>();
             ImageGenerator ig = new ImageGenerator();
             try
             {
-                ig.VideoPath = SourceLocation;
-                ig.DestinationPath = DestinationPath+"\\";
+                ig.VideoPath = SourceLocation+ModelName+".wmv";
+                ig.DestinationPath = DestinationPath;
                 ig.ModelName =  ModelName; 
                 ig.createImages();
             }
