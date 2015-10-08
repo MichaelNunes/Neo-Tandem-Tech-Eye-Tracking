@@ -21,6 +21,14 @@ namespace Results_Class
         /// </summary>
         List<List<int>> growingPoints = new List<List<int>>(); // [0] = point, [1] = pointSize, [2] = age
 
+        int pointHistory;
+
+        public int PointHistory
+        {
+            get { return pointHistory; }
+            set { pointHistory = value; }
+        }
+
         bool togglePointNumbers = true;
         public bool _TogglePointNumbers
         {
@@ -109,19 +117,24 @@ namespace Results_Class
             set { modelType = value; }
         }
 
-        public Eye_Tracking_Graph()
+        public Eye_Tracking_Graph(bool pn, int pt)
         {
-
+            togglePointNumbers = pn;
+            pointHistory = pt;
         }
 
-        public Eye_Tracking_Graph(int Width, int Height)
+        public Eye_Tracking_Graph(bool pn, int pt,int Width, int Height)
         {
+            togglePointNumbers = pn;
+            pointHistory = pt; 
             width = Width;
             height = Height;
         }
 
-        public Eye_Tracking_Graph(string NameOfModel, string FilePath, int Width, int Height, string ModelType)
+        public Eye_Tracking_Graph(bool pn, int pt, string NameOfModel, string FilePath, int Width, int Height, string ModelType)
         {
+            togglePointNumbers = pn;
+            pointHistory = pt; 
             width = Width;
             height = Height;
             ModelName = NameOfModel;
@@ -129,8 +142,10 @@ namespace Results_Class
             modelType = ModelType;
         }
 
-        public Eye_Tracking_Graph(string NameOfModel, string FilePath)
+        public Eye_Tracking_Graph(bool pn, int pt, string NameOfModel, string FilePath)
         {
+            togglePointNumbers = pn;
+            pointHistory = pt; 
             ModelName = NameOfModel;
             SourceLocation = FilePath;
         }
@@ -144,7 +159,7 @@ namespace Results_Class
         /// <param name="currentPoint"></param> point currently selected/observed in model
         /// <param name="pointHistory"></param> how many points to trace back to while graphing them. 
         /// <returns></returns>
-        Image createETGraph(Image img, List<float> X, List<float> Y, int currentPoint, int pointHistory)
+        Image createETGraph(Image img, List<float> X, List<float> Y, int currentPoint)
         {
             using (var graphics = Graphics.FromImage(img))
             {
@@ -307,7 +322,7 @@ namespace Results_Class
                     {
                         throw new ArgumentNullException();
                     }
-                    Image canvas = createETGraph(bitmap, px, py, i, 10);
+                    Image canvas = createETGraph(bitmap, px, py, i);
                     canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".ETGraph.jpg", ImageFormat.Jpeg);
                 }
             }
@@ -405,7 +420,7 @@ namespace Results_Class
         {
             try
             {
-                Image canvas = createETGraph(bitmap, px, py, i, 10);
+                Image canvas = createETGraph(bitmap, px, py, i);
                 canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + i + ".jpg", ImageFormat.Jpeg);
                 bitmap.Dispose();
             }
@@ -426,7 +441,7 @@ namespace Results_Class
                 throw new ArgumentNullException();
             }
 
-            Image canvas = createETGraph(bitmap, px, py, 0, 10);
+            Image canvas = createETGraph(bitmap, px, py, 0);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.jpg", ImageFormat.Jpeg);
         }
 
@@ -484,7 +499,7 @@ namespace Results_Class
                         throw new ArgumentNullException();
                     }
 
-                    Image canvas = createETGraph(bitmap, px, py, i, 10);
+                    Image canvas = createETGraph(bitmap, px, py, i);
                     canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".ETGraph.jpg", ImageFormat.Jpeg);
                 }
             }
@@ -553,7 +568,7 @@ namespace Results_Class
 
                     Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
 
-                    Image canvas = createETGraph(im, px, py, i, 10);
+                    Image canvas = createETGraph(im, px, py, i);
                     //im.Dispose();
                     canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
                     im.Dispose();
@@ -584,7 +599,7 @@ namespace Results_Class
             {
                 throw new ArgumentNullException();
             }
-            Image canvas = createETGraph(im, px, py, 0, 10);
+            Image canvas = createETGraph(im, px, py, 0);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.Jpg", ImageFormat.Jpeg);
         }
 

@@ -6,3 +6,11 @@ C:\Users\COS301\Desktop\settingsform\settingsform\obj\Debug\settingsform.Propert
 C:\Users\COS301\Desktop\settingsform\settingsform\obj\Debug\settingsform.csproj.GenerateResource.Cache
 C:\Users\COS301\Desktop\settingsform\settingsform\obj\Debug\settingsform.exe
 C:\Users\COS301\Desktop\settingsform\settingsform\obj\Debug\settingsform.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\obj\Debug\settingsform.exe
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\obj\Debug\settingsform.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\bin\Debug\settingsform.exe
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\bin\Debug\settingsform.pdb
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\obj\Debug\settingsform.csprojResolveAssemblyReference.cache
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\obj\Debug\settingsform.Form1.resources
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\obj\Debug\settingsform.Properties.Resources.resources
+C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\settingsform\settingsform\obj\Debug\settingsform.csproj.GenerateResource.Cache
