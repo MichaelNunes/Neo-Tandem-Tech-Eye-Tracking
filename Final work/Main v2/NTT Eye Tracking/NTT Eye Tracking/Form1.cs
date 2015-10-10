@@ -205,8 +205,9 @@ namespace NTT_Eye_Tracking
 
         private void btnRecord_Click(object sender, EventArgs e)
         {//hideMainButtons();
-
-            globals.recording = new Record(globals.currentRecordingpath + @"\", name);
+            
+                    Size res = this.GetDpiSafeResolution();
+            globals.recording = new Record(globals.currentRecordingpath + @"\", name,res.Width,res.Height);
             switch (globals.modelIndex)
             {
                 case 0: //3D model
@@ -487,7 +488,7 @@ namespace NTT_Eye_Tracking
                         case 0: //3D model
                             {
 
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30,true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -503,7 +504,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -519,10 +520,12 @@ namespace NTT_Eye_Tracking
                             }
                         case 2: //2D models
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
+                                etg._height = res.Height;
+                                etg._width = res.Width;
                                 etg.SaveETGraph2D();
                                 ig.deleteImages();
 
@@ -535,7 +538,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 3: //Video
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -649,7 +652,7 @@ namespace NTT_Eye_Tracking
                     {
                         case 0: //3D model
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraphOntoModel3D();
@@ -657,7 +660,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath,  "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -666,16 +669,18 @@ namespace NTT_Eye_Tracking
                             }
                         case 2: //2D models
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
+                                etg._width = res.Width;
+                                etg._height = res.Height;
                                 etg.SaveETGraphOntoModel2D();
                                 break;
                             }
                         case 3: //Video
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(true, 30, name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;

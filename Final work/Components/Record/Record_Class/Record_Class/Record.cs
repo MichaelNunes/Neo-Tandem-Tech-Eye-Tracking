@@ -90,7 +90,7 @@ namespace Record_Class
             {
                 if (!File.Exists(path2))
                 {
-                    File.WriteAllText(path2, screenW.ToString()+"x"+screenH.ToString());
+                    File.WriteAllText(path2, screenW.ToString()+"x"+screenH.ToString()+"\n");
                     File.AppendAllLines(path2, arrayData);
                 }
                 else

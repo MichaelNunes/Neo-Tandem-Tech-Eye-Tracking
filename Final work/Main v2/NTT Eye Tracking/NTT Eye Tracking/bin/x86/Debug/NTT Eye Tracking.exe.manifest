@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NKTYGUc7fuH1//cw6szbPLDXrKLzai/cRUjZkdKx1ds=</dsig:DigestValue>
+        <dsig:DigestValue>aNNHeQv55ERYE5KRorFV162DwReDqFPqVfpaUFP7DFU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -145,7 +145,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/tYVMVLhSpJxYhVYq0IVpNj/UN3n/5MGvpBy2V3RkuE=</dsig:DigestValue>
+        <dsig:DigestValue>FUV+RQTE4uo5iDwx8f4idbOGk5AzzxyNurq0eEMUfJI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -169,7 +169,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KDz/iIpCJkJYKseCqbozvINbfXoL7lF6/sIoaAyYSU8=</dsig:DigestValue>
+        <dsig:DigestValue>gX4LXbqWPlFUWMRhzlkkFH77QhULTBW/zZqu7Nf4ESQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -205,19 +205,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KGp8fsks51tkH0if/4wNHoUWsEM16/UEg22iIkoHWMg=</dsig:DigestValue>
+        <dsig:DigestValue>gGCH6tfPiQS4YsVc5O08uRsNJ9uKd3BcOAaygWJKQy0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Results Class.dll" size="22016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Results Class.dll" size="20992">
       <assemblyIdentity name="Results Class" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PLQrFvpvI7aMlL+vdg8lBPx+Wk8R6pGk32srxs7wsvI=</dsig:DigestValue>
+        <dsig:DigestValue>glPw0kYED5wgGn3ij0Hc8t6MdfKOamzeHUmWm0Vw9v8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

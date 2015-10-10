@@ -340,11 +340,11 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation + ModelName + ".wmv");
+            vid.Open(SourceLocation);
             height = vid.Height;
             width = vid.Width;
             vid.Close();
-            OpenETGraphData(SourceLocation, ModelName);
+            OpenETGraphData(DestinationPath, ModelName);
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -495,8 +495,9 @@ namespace Results_Class
             vid.Open(SourceLocation + ModelName + ".wmv");
             height = vid.Height;
             width = vid.Width;
+            Console.WriteLine(height+"<--height,width-->"+width);
             vid.Close();
-            OpenETGraphData(SourceLocation, ModelName);
+            OpenETGraphData(DestinationPath, ModelName);
 
             List<Thread> tl = new List<Thread>();
             ImageGenerator ig = new ImageGenerator();
@@ -572,7 +573,7 @@ namespace Results_Class
         public void SaveETGraphOntoModel2D()
         {
             OpenETGraphData(SourceLocation, ModelName);
-            Image im = new Bitmap(SourceLocation + "\\" + ModelName+".jpg");
+            Image im = new Bitmap(SourceLocation + "\\" + ModelName);
             if (py.Count == 0 || px.Count == 0)
             {
                 throw new ArgumentNullException();

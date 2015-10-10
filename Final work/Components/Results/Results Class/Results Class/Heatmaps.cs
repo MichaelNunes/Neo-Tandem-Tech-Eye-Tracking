@@ -242,11 +242,11 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation + ModelName + ".wmv");
+            vid.Open(SourceLocation);
             height = vid.Height;
             width = vid.Width;
             vid.Close();
-            OpenHeatmapData(SourceLocation, ModelName);
+            OpenHeatmapData(DestinationPath, ModelName);
             VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
@@ -393,11 +393,11 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation+ModelName+".wmv");
+            vid.Open(SourceLocation);
             height = vid.Height;
             width = vid.Width;
             vid.Close();
-            OpenHeatmapData(SourceLocation, ModelName);
+            OpenHeatmapData(DestinationPath, ModelName);
 
             List<Thread> tl = new List<Thread>();
             ImageGenerator ig = new ImageGenerator();
@@ -472,7 +472,7 @@ namespace Results_Class
         public void SaveHeatmapOntoModel2D()
         {
             OpenHeatmapData(SourceLocation, ModelName);
-            Image im = new Bitmap(SourceLocation + "\\" + ModelName + ".jpg");
+            Image im = new Bitmap(SourceLocation + "\\" + ModelName);
             if (py.Count == 0 || px.Count == 0)
             {
                 throw new ArgumentNullException();
