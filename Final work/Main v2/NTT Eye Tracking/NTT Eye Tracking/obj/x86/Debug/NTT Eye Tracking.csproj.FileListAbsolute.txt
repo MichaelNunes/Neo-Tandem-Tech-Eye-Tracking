@@ -37,3 +37,9 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.exe
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.pdb
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.csprojResolveAssemblyReference.cache
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\NTT Eye Tracking.exe.config
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.csproj.ResolveComReference.cache
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.exe
+C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.pdb

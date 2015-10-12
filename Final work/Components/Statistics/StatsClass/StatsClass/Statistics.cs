@@ -352,11 +352,19 @@ namespace StatsClass
 
         public void createPDF()
         {
+            int lengthstr = ModelName.Length;
+            int fontsize = 35;
+            if (lengthstr >= 35)
+            {
+                fontsize = 30;
+            }
+
             pdfDocument myDoc = new pdfDocument("Statistics Report", "Created with PDFsharp");
             pdfPage CoverPage = myDoc.addPage();
+            int distance = (CoverPage.width / 2) - lengthstr * 8 + 20;
             CoverPage.addText("Statistical Report", 200, 650, predefinedFont.csTimesBold, 35);
-            CoverPage.addText("for", 230, 600, predefinedFont.csTimesBold, 35);
-            CoverPage.addText(ModelName, 220, 550, predefinedFont.csTimesBold, 35);
+            CoverPage.addText("for", 300, 600, predefinedFont.csTimesBold, 35);
+            CoverPage.addText(ModelName, distance, 550, predefinedFont.csTimesBold, fontsize);
             CoverPage.addText("created :" + DateTime.UtcNow, 200, 500, predefinedFont.csTimes, 20);
             pdfPage FirstPage = myDoc.addPage();
             ArrayList content = new ArrayList();
@@ -368,9 +376,17 @@ namespace StatsClass
             FirstPage.addText("Recorded media  Details", 150, 700, predefinedFont.csTimesBold, 30);
 
             int c = 630;
+            int counter = 1;
             foreach (string s in content)
             {
-                FirstPage.addText(s, 50, c, predefinedFont.csTimes, 25);
+                if (counter == 1)
+                {
+                    FirstPage.addText(s, 50, c, predefinedFont.csTimes, fontsize - 10);
+                }
+                else
+                {
+                    FirstPage.addText(s, 50, c, predefinedFont.csTimes, 25);
+                }
                 c = c - 30;
             }
             pdfPage SecondPage = myDoc.addPage();
@@ -416,11 +432,19 @@ namespace StatsClass
         //**************************************************************************
         public void createPDF3d()
         {
+            int lengthstr = ModelName.Length;
+            int fontsize = 35;
+            if(lengthstr >= 35)
+            {
+                fontsize = 30;
+            }
+           
             pdfDocument myDoc = new pdfDocument("Statistics Report", "Created with PDFsharp");
             pdfPage CoverPage = myDoc.addPage();
+            int distance = (CoverPage.width / 2) - lengthstr*8+20;
             CoverPage.addText("Statistical Report", 200, 650, predefinedFont.csTimesBold, 35);
-            CoverPage.addText("for", 230, 600, predefinedFont.csTimesBold, 35);
-            CoverPage.addText(ModelName, 220, 550, predefinedFont.csTimesBold, 35);
+            CoverPage.addText("for", 300, 600, predefinedFont.csTimesBold, 35);
+            CoverPage.addText(ModelName, distance, 550, predefinedFont.csTimesBold, fontsize);
             CoverPage.addText("created :" + DateTime.UtcNow, 200, 500, predefinedFont.csTimes, 20);
             pdfPage FirstPage = myDoc.addPage();
             ArrayList content = new ArrayList();
@@ -432,12 +456,30 @@ namespace StatsClass
             FirstPage.addText("Recorded media  Details", 150, 700, predefinedFont.csTimesBold, 30);
 
             int c = 630;
+            int counter = 1;
             foreach (string s in content)
             {
-                FirstPage.addText(s, 50, c, predefinedFont.csTimes, 25);
+                if (counter == 1)
+                {
+                    FirstPage.addText(s, 50, c, predefinedFont.csTimes, fontsize-10);
+                }
+                else
+                {
+                    FirstPage.addText(s, 50, c, predefinedFont.csTimes, 25);
+                }
                 c = c - 30;
             }
             string name = this.ModelName;
+            List<string> views = new List<string>(9);
+            views.Add("Front");
+            views.Add("Front left");
+            views.Add("Left-side");
+            views.Add("Back left");
+            views.Add("Back");
+            views.Add("Back right");
+            views.Add("Right-side");
+            views.Add("Front right");
+            views.Add("Top");
             for (int i = 0; i < 9; i++)
             {
                 pdfPage SecondPage = myDoc.addPage();
@@ -460,7 +502,7 @@ namespace StatsClass
 
                 pdfTable myTable = createTable(tableContents, 2, 3); // Its a 3x3 table, but the first row is the column headings
 
-                SecondPage.addText("Veiw type", 150, 700, predefinedFont.csTimesBold, 30);
+                SecondPage.addText("Veiw type: "+ views[i], 150, 700, predefinedFont.csTimesBold, 30);
                 SecondPage.addText("The following will show the data that is recorded.", 50, 600, predefinedFont.csTimes, 20);
                 SecondPage.addText("Total time of recording: " + this.getTimeofRecording().ToString("#.##") + " seconds", 50, 516, predefinedFont.csTimes, 20);
                 SecondPage.addText("Total points: " + this.px.Count, 50, 558, predefinedFont.csTimes, 20);
@@ -469,6 +511,7 @@ namespace StatsClass
                 SecondPage.addText("Point of focus: " + this.getFocusPoint(m), 50, 300, predefinedFont.csTimes, 20);
             }
             this.ModelName = name;
+            ModelName = ModelName.Replace(" ", "_");
             //))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
             string filename = "Statistical Report_" + ModelName + ".pdf";
             myDoc.createPDF(this.output + filename);
