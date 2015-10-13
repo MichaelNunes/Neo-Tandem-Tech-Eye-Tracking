@@ -53,44 +53,44 @@ namespace NTT_Eye_Tracking
         {
             disableMainButtons();
             initializeGlobalStyles();
-            this.BackColor = GlobalStyles.mainFormColours;
+            this.BackColor = GlobalStyles.ForegroundColours;
             NTT_MiniForm ntt_mini = new NTT_MiniForm();
             ntt_mini.ShowDialog(this);
             btnCal.Enabled = true;
-           switch(globals.modelIndex)
-           {
-                   //in each case we must show the appropriate model previewer and hide the others
-               case 0: //3D model
-                   {
-                       pic_slideshowPreview.Visible = true;
-                       pic_model2DPreview.Visible = false;
-                       wmp_VideoPreview.Visible = false;
-                       break;
-                   }
-               case 1: //flythrough
-                   {
-                       break;
-                   }
-               case 2: //2D models
-                   {
-                       pic_slideshowPreview.Visible = false;
-                       pic_model2DPreview.Visible = true;
-                       wmp_VideoPreview.Visible = false;
-                       break;
-                   }
-               case 3: //Video
-                   {
-                       pic_slideshowPreview.Visible = false;
-                       pic_model2DPreview.Visible = false;
-                       wmp_VideoPreview.Visible = true;
-                       wmp_VideoPreview.Dock = DockStyle.Fill;
-                       break;
-                   }
-           }
+            switch (globals.modelIndex)
+            {
+                //in each case we must show the appropriate model previewer and hide the others
+                case 0: //3D model
+                    {
+                        pic_slideshowPreview.Visible = true;
+                        pic_model2DPreview.Visible = false;
+                        wmp_VideoPreview.Visible = false;
+                        break;
+                    }
+                case 1: //flythrough
+                    {
+                        break;
+                    }
+                case 2: //2D models
+                    {
+                        pic_slideshowPreview.Visible = false;
+                        pic_model2DPreview.Visible = true;
+                        wmp_VideoPreview.Visible = false;
+                        break;
+                    }
+                case 3: //Video
+                    {
+                        pic_slideshowPreview.Visible = false;
+                        pic_model2DPreview.Visible = false;
+                        wmp_VideoPreview.Visible = true;
+                        wmp_VideoPreview.Dock = DockStyle.Fill;
+                        break;
+                    }
+            }
         }
 
         public void initializeGlobalStyles()
-        {            
+        {
             //field initialization
             GlobalStyles.models = new List<modelType>();
 
@@ -106,7 +106,7 @@ namespace NTT_Eye_Tracking
             GlobalStyles.models.Add(modelVideo);
 
             //Form styles
-            GlobalStyles.mainFormColours = Color.LightBlue;
+            GlobalStyles.ForegroundColours = Color.White;//FromArgb(77,80,87);
         }
 
         public void formInitialization()
@@ -122,84 +122,92 @@ namespace NTT_Eye_Tracking
 
         private void btnChooseModel_Click(object sender, EventArgs e)
         {
-            switch(globals.modelIndex)
+            switch (globals.modelIndex)
             {
                 case 0: //3D model
-                {
-                    openFileDialog1.Title = "Please select an object file";
-                    openFileDialog1.Filter = "object (.obj)|*.obj";
-                    openFileDialog1.FileName = "";
-                    openFileDialog1.ShowDialog();
-                    name = openFileDialog1.SafeFileName;
-                    obj = openFileDialog1.FileName;
+                    {
+                        openFileDialog1.Title = "Please select an object file";
+                        openFileDialog1.Filter = "object (.obj)|*.obj";
+                        openFileDialog1.FileName = "";
+                        openFileDialog1.ShowDialog();
+                        name = openFileDialog1.SafeFileName;
+                        obj = openFileDialog1.FileName;
 
-                    //openFileDialog1.Title = "Please select a material file file";
-                    //openFileDialog1.Filter = "object (.mtl)|*.mtl";
-                    //openFileDialog1.FileName = "";
-                    //openFileDialog1.ShowDialog();
-                    //name = openFileDialog1.SafeFileName;
-                    //mtl = openFileDialog1.FileName;
+                        //openFileDialog1.Title = "Please select a material file file";
+                        //openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                        //openFileDialog1.FileName = "";
+                        //openFileDialog1.ShowDialog();
+                        //name = openFileDialog1.SafeFileName;
+                        //mtl = openFileDialog1.FileName;
 
-                    img = Path.GetDirectoryName(obj) + "\\";
+                        DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
+                        int counter = 2;
+                        for (int i = 0; i < 9; i++)
+                        {
+                            imglocation[i] = globals.currentRecordingpath + @"\\" + "view" + counter + ".jpg";
+                            counter++;
+                        }
+                        img = Path.GetDirectoryName(obj) + "\\";
 
-                    flythrough = false;
-                    break;
-                }
+                        flythrough = false;
+                        break;
+                    }
                 case 1: //flythrough
-                {
-                    openFileDialog1.Title = "Please select an object file";
-                    openFileDialog1.Filter = "object (.obj)|*.obj";
-                    openFileDialog1.FileName = "";
-                    openFileDialog1.ShowDialog();
-                    name = openFileDialog1.SafeFileName;
-                    obj = openFileDialog1.FileName;
+                    {
+                        openFileDialog1.Title = "Please select an object file";
+                        openFileDialog1.Filter = "object (.obj)|*.obj";
+                        openFileDialog1.FileName = "";
+                        openFileDialog1.ShowDialog();
+                        name = openFileDialog1.SafeFileName;
+                        obj = openFileDialog1.FileName;
 
 
-                    //openFileDialog1.Title = "Please select a material file";
-                    //openFileDialog1.Filter = "object (.mtl)|*.mtl";
-                    //openFileDialog1.FileName = "";
-                    //openFileDialog1.ShowDialog();
-                    //name = openFileDialog1.SafeFileName;
-                    //mtl = openFileDialog1.FileName;
+                        //openFileDialog1.Title = "Please select a material file";
+                        //openFileDialog1.Filter = "object (.mtl)|*.mtl";
+                        //openFileDialog1.FileName = "";
+                        //openFileDialog1.ShowDialog();
+                        //name = openFileDialog1.SafeFileName;
+                        //mtl = openFileDialog1.FileName;
 
-                    img = Path.GetDirectoryName(obj) + "\\";
+                        img = Path.GetDirectoryName(obj) + "\\";
 
-                    flythrough = true;
-                    break;
-                }
+                        flythrough = true;
+                        break;
+                    }
                 case 2: //2D
-                {
-                    openFileDialog1.Filter = "Image (.jpg)|*.jpg";
-                    openFileDialog1.FileName = "";
-                    openFileDialog1.ShowDialog();
-                    name = openFileDialog1.SafeFileName;
-                    string path = openFileDialog1.FileName;
-                    ModelPath = globals.currentRecordingpath + "\\" + name;
-                    System.IO.File.Copy(path, ModelPath, true);
-                    pic_model2DPreview.ImageLocation = ModelPath;
-                    break;
-                }
+                    {
+                        openFileDialog1.Filter = "Image (.jpg)|*.jpg";
+                        openFileDialog1.FileName = "";
+                        openFileDialog1.ShowDialog();
+                        name = openFileDialog1.SafeFileName;
+                        string path = openFileDialog1.FileName;
+                        ModelPath = globals.currentRecordingpath + "\\" + name;
+                        System.IO.File.Copy(path, ModelPath, true);
+                        pic_model2DPreview.ImageLocation = ModelPath;
+                        break;
+                    }
 
                 case 3: //Video
-                {
-                    openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
-                    openFileDialog1.FileName = "";
-                    openFileDialog1.ShowDialog();
-                    ModelPath = openFileDialog1.FileName;
-                    wmp_VideoPreview.URL = openFileDialog1.FileName;
-                    wmp_VideoPreview.Dock = DockStyle.Fill;
-                    name = openFileDialog1.SafeFileName;
-                    wmp_VideoPreview.Ctlcontrols.stop();
-                    break;
-                }
+                    {
+                        openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
+                        openFileDialog1.FileName = "";
+                        openFileDialog1.ShowDialog();
+                        ModelPath = openFileDialog1.FileName;
+                        wmp_VideoPreview.URL = openFileDialog1.FileName;
+                        wmp_VideoPreview.Dock = DockStyle.Fill;
+                        name = openFileDialog1.SafeFileName;
+                        wmp_VideoPreview.Ctlcontrols.stop();
+                        break;
+                    }
             }
             btnRecord.Enabled = true;
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
-        {
-            globals.recording = new Record(globals.currentRecordingpath + @"\", name);
-            //hideMainButtons();
+        {//hideMainButtons();
+            
+                    Size res = this.GetDpiSafeResolution();
+            globals.recording = new Record(globals.currentRecordingpath + @"\", name,res.Width,res.Height);
             switch (globals.modelIndex)
             {
                 case 0: //3D model
@@ -212,26 +220,18 @@ namespace NTT_Eye_Tracking
                     }
                 case 1: //flythrough
                     {
-                        //globals.recording._recording = true;
-                        DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
-                        //dm.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
-                        
-                        //recording._recording = false;
-
-                        vg.DestinationPath = globals.currentRecordingpath + @"\" + name;
-                        vg.ImagePath = globals.currentRecordingpath + @"\" + name;
-                        vg.ModelName = name;
-                        vg.Fps = 30;
-                        Size res = this.GetDpiSafeResolution();
-                        vg.FrameHeight = res.Height;
-                        vg.FrameWidth = res.Width;
-                        vg.createVideo();
+                        bw.WorkerReportsProgress = true;
+                        bw.WorkerSupportsCancellation = true;
+                        bw.DoWork += new DoWorkEventHandler(bw_DoWorkRecord);
+                        bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecord);
+                        bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecord);
+                        bw.RunWorkerAsync();
                         break;
                     }
                 case 2: //2D models
                     {
                         MessageBox.Show("Recording wil begin after this message is closed. The recording will end in " + globals.recordTime / 1000 + " seconds but you can press escape (Esc) to stop the recording at any time.");
-                        
+
                         //recording._recording = true;
                         frmDisplay fd = new frmDisplay(2, ModelPath, null);
                         fd.Show(this);
@@ -257,7 +257,7 @@ namespace NTT_Eye_Tracking
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += new DoWorkEventHandler(bw_DoWorkOverlay);
             bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedOverlay);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedOverlay);       
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedOverlay);
 
             bw.RunWorkerAsync(1000);
         }
@@ -285,19 +285,19 @@ namespace NTT_Eye_Tracking
         }
 
         private void btnReport_Click(object sender, EventArgs e)
-        {            
+        {
             Size res = this.GetDpiSafeResolution();
-            Statistics stats = new Statistics(globals.currentRecordingpath, globals.currentRecordingpath, name,res.Width,res.Height,"","");
+            Statistics stats = new Statistics(globals.currentRecordingpath, globals.currentRecordingpath, name, res.Width, res.Height, "", "");
             switch (globals.modelIndex)
             {
                 case 0: //3D model
                     {
-                        stats.createPDF();
+                        stats.createPDF3d();
                         break;
                     }
                 case 1: //flythrough
                     {
-                        stats.createPDF3d();
+                        stats.createPDF();
                         break;
                     }
                 case 2: //2D models
@@ -316,7 +316,7 @@ namespace NTT_Eye_Tracking
         private void btnViewResults_Click(object sender, EventArgs e)
         {
             switch (globals.modelIndex)
-            {                
+            {
                 case 0: //3D model
                     {
                         break;
@@ -464,7 +464,7 @@ namespace NTT_Eye_Tracking
                 pic_caro.ImageLocation = imglocation[imgIndex];
             }
         }
-        
+
         private void bw_DoWorkOverlay(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -478,18 +478,18 @@ namespace NTT_Eye_Tracking
                 }
                 else
                 {
-                   Size res = this.GetDpiSafeResolution();
+                    Size res = this.GetDpiSafeResolution();
 
-                   ImageGenerator ig = new ImageGenerator();
-                   ig.DestinationPath = globals.currentRecordingpath;
-                   
+                    ImageGenerator ig = new ImageGenerator();
+                    ig.DestinationPath = globals.currentRecordingpath;
+
                     switch (globals.modelIndex)
                     {
                         case 0: //3D model
                             {
 
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                                etg.OpenETGraphData(globals.currentRecordingpath,name);
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30,true, name, globals.currentRecordingpath, "");
+                                etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraph3D();
@@ -504,7 +504,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -520,23 +520,25 @@ namespace NTT_Eye_Tracking
                             }
                         case 2: //2D models
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
+                                etg._height = res.Height;
+                                etg._width = res.Width;
                                 etg.SaveETGraph2D();
                                 ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                                hm.OpenHeatmapData(globals.currentRecordingpath, name); 
-                                hm._SourceLocation = ModelPath;
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmap2D();
                                 break;
                             }
                         case 3: //Video
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -565,7 +567,7 @@ namespace NTT_Eye_Tracking
         {
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
-        
+
         private void bw_DoWorkHeatmaps(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -594,7 +596,7 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmapOntoModelVideo();
                                 break;
@@ -603,7 +605,7 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmapOntoModel2D();
                                 break;
@@ -650,7 +652,7 @@ namespace NTT_Eye_Tracking
                     {
                         case 0: //3D model
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraphOntoModel3D();
@@ -658,7 +660,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath,  "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -667,16 +669,18 @@ namespace NTT_Eye_Tracking
                             }
                         case 2: //2D models
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
+                                etg._width = res.Width;
+                                etg._height = res.Height;
                                 etg.SaveETGraphOntoModel2D();
                                 break;
                             }
                         case 3: //Video
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(name, globals.currentRecordingpath, res.Width, res.Height, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
@@ -697,6 +701,118 @@ namespace NTT_Eye_Tracking
         {
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
+
+        private void bw_DoWorkRecord(object sender, DoWorkEventArgs e)
+        {
+
+            //DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
+            //dm.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
+            BackgroundWorker bw1 = new BackgroundWorker();
+            bw1.WorkerReportsProgress = true;
+            bw1.WorkerSupportsCancellation = true;
+            bw1.DoWork += new DoWorkEventHandler(bw_DoWorkRecording);
+            bw1.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecording);
+            bw1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecording);
+            bw1.RunWorkerAsync();
+            DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
+
+
+        }
+
+        private void bw_RunWorkerCompletedRecord(object sender, RunWorkerCompletedEventArgs e)
+        {
+            switch (globals.modelIndex)
+            {
+                case 0: //3D model
+                    {
+                        break;
+                    }
+                case 1: //flythrough
+                    {
+                        globals.recording._recording = false;
+                        vg.DestinationPath = globals.currentRecordingpath + @"\" + name;
+                        vg.ImagePath = globals.currentRecordingpath + @"\" + name;
+                        vg.ModelName = name;
+                        vg.Fps = 30;
+                        Size res = this.GetDpiSafeResolution();
+                        vg.FrameHeight = res.Height;
+                        vg.FrameWidth = res.Width;
+                        vg.createVideo();
+                        break;
+                    }
+                case 2: //2D models
+                    {
+                        break;
+                    }
+                case 3: //Video
+                    {
+                        break;
+                    }
+            }
+        }
+
+        private void bw_ProgressChangedRecord(object sender, ProgressChangedEventArgs e)
+        {
+            MessageBox.Show("HEHEHEHEHEHE");
+            //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
+
+        private void bw_DoWorkRecording(object sender, DoWorkEventArgs e)
+        {
+            globals.recording._recording = true;
+        }
+
+        private void bw_RunWorkerCompletedRecording(object sender, RunWorkerCompletedEventArgs e)
+        { }
+
+        private void bw_ProgressChangedRecording(object sender, ProgressChangedEventArgs e)
+        {
+            if (globals.recording._recording == false) return;
+
+            //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
         #endregion
+
+        private void createNewProjectCtrlNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NTT_MiniForm ntt_mini = new NTT_MiniForm();
+            ntt_mini.ShowDialog(this);
+        }
+
+        private void openProjectCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NTT_MiniForm ntt_mini = new NTT_MiniForm();
+            ntt_mini.ShowDialog(this);
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NTT_Settings ntt_mini = new NTT_Settings();
+            ntt_mini.ShowDialog(this);
+
+            editStyles();
+        }
+
+        public void editStyles()
+        {
+            //edit form
+            this.BackColor = GlobalStyles.BackgroundColours;
+            panel3.BackColor = GlobalStyles.ForegroundColours;
+            tsMain.BackColor = GlobalStyles.ForegroundColours;
+            //buttons
+            btnCal.BackColor = GlobalStyles.ButtonColours;
+            btnChooseModel.BackColor = GlobalStyles.ButtonColours;
+            btnGazepoint.BackColor = GlobalStyles.ButtonColours;
+            btnHeatmaps.BackColor = GlobalStyles.ButtonColours;
+            btnOverlays.BackColor = GlobalStyles.ButtonColours;
+            btnRecord.BackColor = GlobalStyles.ButtonColours;
+            btnReport.BackColor = GlobalStyles.ButtonColours;
+            btnViewResults.BackColor = GlobalStyles.ButtonColours;
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

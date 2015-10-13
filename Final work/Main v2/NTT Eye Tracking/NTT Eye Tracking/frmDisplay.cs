@@ -39,6 +39,7 @@ namespace NTT_Eye_Tracking
                         wmp_Display.Visible = false;
                         picDisplay.Visible = true;
                         picDisplay.ImageLocation = filePath;
+
                         
                         //myTimer = new System.Timers.Timer(globals.recordTime);
                         
@@ -65,6 +66,7 @@ namespace NTT_Eye_Tracking
                         wmp_Display.URL = filePath;
                         wmp_Display.Dock = DockStyle.Fill;
                         wmp_Display.Ctlcontrols.play();
+                        wmp_Display.stretchToFit = true;
                         //globals.recording._recording = false;
                         break;
                     }

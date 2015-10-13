@@ -14,7 +14,7 @@ namespace Record_Class
         [Test]
         public void TestRecording()
         {            
-            Record record1 = new Record(@"C:\Users\Public\", "ModelOne");
+            Record record1 = new Record(@"C:\Users\Public\", "ModelOne",1920,1080);
             //throw new Exception("dsfdsddsdfd");
 
             record1._recording = true;
@@ -31,7 +31,7 @@ namespace Record_Class
         [Test]
         public void TestFileForNoZeroes()
         {
-            Record record1 = new Record(@"C:\Users\Public\", "ModelOne");
+            Record record1 = new Record(@"C:\Users\Public\", "ModelOne",1920,1080);
             record1.saveToFile();
 
             foreach(string e in record1.arrayData)

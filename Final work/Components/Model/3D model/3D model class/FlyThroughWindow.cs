@@ -98,7 +98,11 @@ namespace DisplayModel
 
             System.Windows.Forms.Cursor.Show();
 
-            oThread.Join();
+            if(oThread != null)
+            {
+                oThread.Join();
+            }
+            
             saveFrames();
         }
 
@@ -375,7 +379,7 @@ namespace DisplayModel
         /// </summary>
         public void saveFrames()
         {
-            while(videoFrames.Count > 0)
+            while (videoFrames.Count > 0)
             {
                 videoFrames[0].RotateFlip(RotateFlipType.RotateNoneFlipY);
                 videoFrames[0].Save(imagePath + @"frame" + (frameNumber++) + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -383,6 +387,7 @@ namespace DisplayModel
 
                 videoFrames.RemoveAt(0);
             }
+            
 
             IsSavingFrames = false;
         }
