@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDisplay));
             this.wmp_Display = new AxWMPLib.AxWindowsMediaPlayer();
             this.picDisplay = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.wmp_Display)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             this.SuspendLayout();
@@ -76,5 +78,6 @@
 
         private AxWMPLib.AxWindowsMediaPlayer wmp_Display;
         private System.Windows.Forms.PictureBox picDisplay;
+        private System.Windows.Forms.Timer timer1;
     }
 }

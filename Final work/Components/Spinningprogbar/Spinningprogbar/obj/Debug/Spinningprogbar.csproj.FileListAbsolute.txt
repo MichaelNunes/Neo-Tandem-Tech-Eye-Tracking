@@ -5,3 +5,11 @@ C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.dll
 C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.pdb
 C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.dll
 C:\Users\m\Desktop\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.csprojResolveAssemblyReference.cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.Form1.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.Properties.Resources.resources
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.csproj.GenerateResource.Cache
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Spinningprogbar\Spinningprogbar\obj\Debug\Spinningprogbar.pdb

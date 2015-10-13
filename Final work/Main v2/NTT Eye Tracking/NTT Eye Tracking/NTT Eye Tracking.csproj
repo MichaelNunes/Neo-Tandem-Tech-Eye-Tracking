@@ -110,7 +110,11 @@
     <Reference Include="Settings Class">
       <HintPath>..\..\..\Components\Settings\Settings Class\Settings Class\bin\Debug\Settings Class.dll</HintPath>
     </Reference>
-    <Reference Include="StatsClass">
+    <Reference Include="Spinningprogbar">
+      <HintPath>..\..\..\Components\Spinningprogbar\Spinningprogbar\bin\Debug\Spinningprogbar.dll</HintPath>
+    </Reference>
+    <Reference Include="StatsClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Components\Statistics\StatsClass\StatsClass\bin\Debug\StatsClass.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Grid.Base, Version=13.2450.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />

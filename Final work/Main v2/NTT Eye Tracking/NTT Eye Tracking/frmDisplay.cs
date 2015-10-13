@@ -15,9 +15,10 @@ namespace NTT_Eye_Tracking
     public partial class frmDisplay : Form
     {
         int mtype;
+        string[] imgLocations = new string[9];
         public frmDisplay(int modelType, string filePath, string[] filePaths)
         {
-            System.Timers.Timer myTimer = new System.Timers.Timer();
+            //System.Timers.Timer timer1 = new System.Timers.Timer();
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -27,6 +28,15 @@ namespace NTT_Eye_Tracking
                 //in each case we must show the appropriate model previewer and hide the others
                 case 0: //3D model
                     {
+                        for (int i = 0; i < imgLocations.Length; i++)
+                        {
+                            imgLocations[i] = filePaths[i];
+                        }
+                        wmp_Display.Visible = false;
+                        picDisplay.Visible = true;
+                        picDisplay.ImageLocation = filePaths[0];
+                        timer1.Interval = 3000;
+                        timer1.Start();
                         break;
                     }
                 case 1: //flythrough
@@ -97,6 +107,36 @@ namespace NTT_Eye_Tracking
         private void wmp_Display_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             //ProcessDialogKey(Keys.Escape);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int counters = 0;
+            if (counters == imgLocations.Length)
+            {
+                timer1.Stop();
+                ProcessDialogKey(Keys.Escape);
+            }
+            else
+            {
+                globals.recording._recording = false;
+                globals.recording.saveToFile();
+                globals.recording.close();
+                picDisplay.ImageLocation = imgLocations[counters];
+                counters++;
+                Size res = this.GetDpiSafeResolution();
+                globals.recording = new Record(globals.currentRecordingpath + @"\",  "view" + counters, res.Width, res.Height);
+                globals.recording._recording = true;
+            }
+        }
+
+        private Size GetDpiSafeResolution()
+        {
+            using (Graphics graphics = this.CreateGraphics())
+            {
+                return new Size((Screen.PrimaryScreen.Bounds.Width * (int)graphics.DpiX) / 96
+                  , (Screen.PrimaryScreen.Bounds.Height * (int)graphics.DpiY) / 96);
+            }
         }
     }
 }

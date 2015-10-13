@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iIxZlEj4EDiVxm1UINbZ+pVHVnIKRu1GDe+oyDBatBw=</dsig:DigestValue>
+        <dsig:DigestValue>rYI9SMwCTzZwGYK8YYQUavrHSloDf4qaSCkOQlyY2AI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2439616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2440128">
       <assemblyIdentity name="NTT Eye Tracking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gX4LXbqWPlFUWMRhzlkkFH77QhULTBW/zZqu7Nf4ESQ=</dsig:DigestValue>
+        <dsig:DigestValue>qgJhwzQbIk1V2tW+0Ve0beCtEk2xxrIADOjzhcHK8NE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -242,6 +242,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>q3I8jKIOlgsA4H3kqR/8HXYDH/Hr/KrKZLahvFtlRt0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Spinningprogbar.dll" size="1329664">
+      <assemblyIdentity name="Spinningprogbar" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>KZU/rz3pQENQJTxibz6thzqh5Yz5f2z4pnNcfu73V20=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

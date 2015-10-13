@@ -14,6 +14,7 @@ using System.IO;
 using Video_Model;
 using OpenTK.Graphics.OpenGL;
 using StatsClass;
+using Spinningprogbar;
 
 namespace NTT_Eye_Tracking
 {
@@ -40,6 +41,8 @@ namespace NTT_Eye_Tracking
         bool flythrough;
 
         BackgroundWorker bw = new BackgroundWorker();
+
+        Spinningprogbar.Form1 spinner = new Spinningprogbar.Form1();
         #endregion
 
         public NTT_EyeTracker()
@@ -144,11 +147,11 @@ namespace NTT_Eye_Tracking
                         int counter = 2;
                         for (int i = 0; i < 9; i++)
                         {
-                            imglocation[i] = globals.currentRecordingpath + @"\\" + "view" + counter + ".jpg";
+                            imglocation[i] = globals.currentRecordingpath + @"\" + name + "view" + counter + ".bmp";
                             counter++;
                         }
                         img = Path.GetDirectoryName(obj) + "\\";
-
+                        pic_caro.ImageLocation = imglocation[0];
                         flythrough = false;
                         break;
                     }
@@ -439,7 +442,7 @@ namespace NTT_Eye_Tracking
 
         private void btnImageForward_Click(object sender, EventArgs e)
         {
-            if (imgIndex == imgCounters - 1)
+            if (imgCounters == imgIndex - 1)
             {
                 imgIndex = 0;
                 pic_caro.ImageLocation = imglocation[imgIndex];
@@ -478,6 +481,9 @@ namespace NTT_Eye_Tracking
                 }
                 else
                 {
+
+
+                    spinner.ShowDialog();
                     Size res = this.GetDpiSafeResolution();
 
                     ImageGenerator ig = new ImageGenerator();
@@ -493,7 +499,7 @@ namespace NTT_Eye_Tracking
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraph3D();
-                                ig.deleteImages();
+                                //ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm._SourceLocation = ModelPath;
@@ -527,7 +533,7 @@ namespace NTT_Eye_Tracking
                                 etg._height = res.Height;
                                 etg._width = res.Width;
                                 etg.SaveETGraph2D();
-                                ig.deleteImages();
+                                //ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
@@ -560,11 +566,23 @@ namespace NTT_Eye_Tracking
 
         private void bw_RunWorkerCompletedOverlay(object sender, RunWorkerCompletedEventArgs e)
         {
+            //spin = false;
+            spinner.Close();
             MessageBox.Show("FINISHED :DDDDD");
         }
 
+        bool spin = false;
         private void bw_ProgressChangedOverlay(object sender, ProgressChangedEventArgs e)
         {
+            
+            //Spinningprogbar.Form1 spinner = new Spinningprogbar.Form1();
+
+            //if(spin == false)
+            //{
+            //    spinner.Show(this);
+            //    spin = true;
+            //}
+            
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
 
@@ -730,15 +748,16 @@ namespace NTT_Eye_Tracking
                 case 1: //flythrough
                     {
                         globals.recording._recording = false;
-                        vg.DestinationPath = globals.currentRecordingpath + @"\" + name;
-                        vg.ImagePath = globals.currentRecordingpath + @"\" + name;
-                        vg.ModelName = name;
+                        vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
+                        vg.ImagePath = globals.currentRecordingpath + @"\";// +name;
+                        vg.ModelName = "";//name;
                         vg.Fps = 30;
                         Size res = this.GetDpiSafeResolution();
                         vg.FrameHeight = res.Height;
                         vg.FrameWidth = res.Width;
                         vg.createVideo();
-                        break;
+                        System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
+                        return;
                     }
                 case 2: //2D models
                     {
