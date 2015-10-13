@@ -49,8 +49,11 @@ namespace StatsClass
         [Test]
         public void test3D()
         {
-            Statistics stats = new Statistics(@"Libraries\Documents\", @"Libraries\Documents\", "statsTest", 900, 1200, "3d", "");
+            
+            Statistics stats = new Statistics(@"Libraries\Documents\", @"Libraries\Documents\", "Test one", 900, 1200, "3d", "");
+            Statistics stats2 = new Statistics(@"Libraries\Documents\", @"Libraries\Documents\", "This_is_a_long_string_to_use_as_an_examp", 900, 1200, "3d", "");
             stats.createPDF3d();
+            stats2.createPDF3d();
           //  int c = stats.px.Count;
             //float x = stats.px.ElementAt<float>(0);
           //  float y = stats.py.IndexOf(70);
