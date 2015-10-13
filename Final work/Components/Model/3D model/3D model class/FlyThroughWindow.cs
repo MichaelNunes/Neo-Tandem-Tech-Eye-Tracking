@@ -159,7 +159,15 @@ namespace DisplayModel
         public void UpdateCamera(double time)
         {
             KeyboardUpdate(time);
-            JoystickUpdate(time);
+
+            if (OpenTK.Input.GamePad.GetState(0).IsConnected)
+            {
+                ControllerUpdate(time);
+            }
+            else if (OpenTK.Input.Joystick.GetState(0).IsConnected)
+            {
+                JoystickUpdate(time);
+            }
         }
 
         /// <summary>
@@ -284,6 +292,49 @@ namespace DisplayModel
 
             double y1 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis2);
             double y2 = state.GetAxis(OpenTK.Input.JoystickAxis.Axis3);
+
+            camera.position.X += (float)(Math.Cos(camera.yaw) * x2 * camera.currentSpeed * time);
+            camera.position.Z += (float)(Math.Sin(camera.yaw) * x2 * camera.currentSpeed * time);
+
+            camera.position.X += (float)(Math.Cos(camera.yaw + Math.PI / 2) * x1 * camera.currentSpeed * time);
+            camera.position.Z += (float)(Math.Sin(camera.yaw + Math.PI / 2) * x1 * camera.currentSpeed * time);
+
+            camera.yaw += (float)(y1 * time);
+            camera.pitch += (float)(y2 * time);
+        }
+
+        public void ControllerUpdate(double time)
+        {
+            OpenTK.Input.GamePadState state = OpenTK.Input.GamePad.GetState(0);
+
+            if (state.Buttons.LeftShoulder == OpenTK.Input.ButtonState.Pressed)
+            {
+                camera.currentSpeed = camera.runSpeed;
+            }
+            else if (state.Triggers.Left > 0f)
+            {
+                camera.currentSpeed = camera.flySpeed;
+            }
+            else
+            {
+                camera.currentSpeed = camera.walkSpeed;
+            }
+
+            if (state.Buttons.RightShoulder == OpenTK.Input.ButtonState.Pressed)
+            {
+                camera.position.Y += camera.currentSpeed * (float)time;
+            }
+
+            if (state.Triggers.Right > 0f)
+            {
+                camera.position.Y -= camera.currentSpeed * (float)time;
+            }
+
+            float x1 = state.ThumbSticks.Left.X;
+            float x2 = state.ThumbSticks.Left.Y;
+
+            float y1 = state.ThumbSticks.Right.X;
+            float y2 = state.ThumbSticks.Right.Y;
 
             camera.position.X += (float)(Math.Cos(camera.yaw) * x2 * camera.currentSpeed * time);
             camera.position.Z += (float)(Math.Sin(camera.yaw) * x2 * camera.currentSpeed * time);
