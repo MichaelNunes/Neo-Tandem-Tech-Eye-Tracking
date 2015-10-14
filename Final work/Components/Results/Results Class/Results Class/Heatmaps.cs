@@ -311,6 +311,11 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmap2D()
         {
+            Bitmap temp = new Bitmap(SourceLocation + "\\" + ModelName);
+            width = temp.Width;
+            height = temp.Height;
+            temp.Dispose();
+
             OpenHeatmapData(SourceLocation, ModelName);
             Bitmap bitmap = new Bitmap(width, height);
             if (py.Count == 0 || px.Count == 0)
@@ -471,6 +476,12 @@ namespace Results_Class
         /// </summary>
         public void SaveHeatmapOntoModel2D()
         {
+
+            Bitmap temp = new Bitmap(SourceLocation + "\\" + ModelName);
+            width = temp.Width;
+            height = temp.Height;
+            temp.Dispose();
+
             OpenHeatmapData(SourceLocation, ModelName);
             Image im = new Bitmap(SourceLocation + "\\" + ModelName);
             if (py.Count == 0 || px.Count == 0)
