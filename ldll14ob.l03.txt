@@ -1,0 +1,23 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 6 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	modified:   bin/Debug/DisplayModel.dll
+#
+# Changes not staged for commit:
+#	modified:   DisplayModel.csproj
+#	deleted:    bin/Debug/DisplayModel.exe
+#	modified:   bin/Debug/DisplayModel.pdb
+#	modified:   obj/x86/Debug/DisplayModel.csproj.FileListAbsolute.txt
+#	deleted:    obj/x86/Debug/DisplayModel.exe
+#	modified:   obj/x86/Debug/DisplayModel.pdb
+#
+# Untracked files:
+#	obj/x86/Debug/DisplayModel.dll
+#
+
