@@ -409,6 +409,11 @@ namespace Results_Class
         /// </summary>
         public void SaveETGraph2D()
         {
+            Bitmap temp = new Bitmap(SourceLocation  + "\\" + ModelName);
+            width = temp.Width;
+            height = temp.Height;
+            temp.Dispose();
+
             OpenETGraphData(SourceLocation, ModelName);
             Bitmap bitmap = new Bitmap(width, height);
             if (py.Count == 0 || px.Count == 0)
@@ -571,6 +576,12 @@ namespace Results_Class
         /// </summary>
         public void SaveETGraphOntoModel2D()
         {
+
+            Bitmap temp = new Bitmap(SourceLocation + "\\" + ModelName);
+            width = temp.Width;
+            height = temp.Height;
+            temp.Dispose();
+
             OpenETGraphData(SourceLocation, ModelName);
             Image im = new Bitmap(SourceLocation + "\\" + ModelName);
             if (py.Count == 0 || px.Count == 0)
@@ -579,7 +590,7 @@ namespace Results_Class
             }
             pointHistory = px.Count;
             Image canvas = createETGraph(im, px, py, px.Count);
-            canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.Jpg", ImageFormat.Jpeg);
+            canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraphOver.Jpg", ImageFormat.Jpeg);
         }
 
         static bool HasCorrectExtension(string filename)

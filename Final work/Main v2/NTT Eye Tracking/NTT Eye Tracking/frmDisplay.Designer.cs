@@ -50,10 +50,12 @@
             // 
             // picDisplay
             // 
+            this.picDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picDisplay.Location = new System.Drawing.Point(0, 0);
             this.picDisplay.Name = "picDisplay";
             this.picDisplay.Size = new System.Drawing.Size(921, 590);
+            this.picDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDisplay.TabIndex = 1;
             this.picDisplay.TabStop = false;
             this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
@@ -63,8 +65,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 590);
-            this.Controls.Add(this.wmp_Display);
             this.Controls.Add(this.picDisplay);
+            this.Controls.Add(this.wmp_Display);
             this.Name = "frmDisplay";
             this.Text = "Display";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

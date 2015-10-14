@@ -226,12 +226,26 @@ namespace NTT_Eye_Tracking
                     }
                 case 1: //flythrough
                     {
+                        bw = new BackgroundWorker();
                         bw.WorkerReportsProgress = true;
                         bw.WorkerSupportsCancellation = true;
                         bw.DoWork += new DoWorkEventHandler(bw_DoWorkRecord);
                         bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecord);
                         bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecord);
                         bw.RunWorkerAsync();
+
+                        DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
+                        globals.recording._recording = false;
+                        vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
+                        // = globals.currentRecordingpath + @"\"
+                        vg.ImagePath = globals.currentRecordingpath + @"\";// +name;
+                        vg.ModelName = "";//name;
+                        vg.Fps = 30;
+                        res = this.GetDpiSafeResolution();
+                        vg.FrameHeight = res.Height;
+                        vg.FrameWidth = res.Width;
+                        vg.createVideo();
+                        System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
                         break;
                     }
                 case 2: //2D models
@@ -259,6 +273,7 @@ namespace NTT_Eye_Tracking
 
         private void btnOverlays_Click(object sender, EventArgs e)
         {
+            bw = new BackgroundWorker();
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += new DoWorkEventHandler(bw_DoWorkOverlay);
@@ -270,6 +285,7 @@ namespace NTT_Eye_Tracking
 
         private void btnHeatmaps_Click(object sender, EventArgs e)
         {
+            bw = new BackgroundWorker();
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += new DoWorkEventHandler(bw_DoWorkHeatmaps);
@@ -281,6 +297,7 @@ namespace NTT_Eye_Tracking
 
         private void btnGazepoint_Click(object sender, EventArgs e)
         {
+            bw = new BackgroundWorker();
             bw.WorkerReportsProgress = true;
             bw.WorkerSupportsCancellation = true;
             bw.DoWork += new DoWorkEventHandler(bw_DoWorkGazePlot);
@@ -486,7 +503,7 @@ namespace NTT_Eye_Tracking
                 {
 
 
-                    spinner.ShowDialog();
+                    //spinner.ShowDialog();
                     Size res = this.GetDpiSafeResolution();
 
                     ImageGenerator ig = new ImageGenerator();
@@ -522,9 +539,9 @@ namespace NTT_Eye_Tracking
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath + @"\" + name + ".wmv";
                                 hm._DestinationPath = globals.currentRecordingpath;
-                                hm.SaveHeatmap2D();
+                                hm.SaveHeatmapOntoModelVideo();
                                 break;
                             }
                         case 2: //2D models
@@ -570,11 +587,11 @@ namespace NTT_Eye_Tracking
         private void bw_RunWorkerCompletedOverlay(object sender, RunWorkerCompletedEventArgs e)
         {
             //spin = false;
-            spinner.Close();
+            //spinner.Close();
             MessageBox.Show("FINISHED :DDDDD");
         }
 
-        bool spin = false;
+       // bool spin = false;
         private void bw_ProgressChangedOverlay(object sender, ProgressChangedEventArgs e)
         {
             
@@ -617,7 +634,7 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath + @"\" + name + ".wmv";
                                 hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModelVideo();
                                 break;
@@ -625,8 +642,8 @@ namespace NTT_Eye_Tracking
                         case 2: //2D models
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
+                                hm.OpenHeatmapData(globals.currentRecordingpath , name);
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModel2D();
                                 break;
@@ -735,7 +752,6 @@ namespace NTT_Eye_Tracking
             bw1.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecording);
             bw1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecording);
             bw1.RunWorkerAsync();
-            DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
 
 
         }
@@ -749,7 +765,7 @@ namespace NTT_Eye_Tracking
                         break;
                     }
                 case 1: //flythrough
-                    {
+                    {/*
                         globals.recording._recording = false;
                         vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
                         vg.ImagePath = globals.currentRecordingpath + @"\";// +name;
@@ -759,7 +775,7 @@ namespace NTT_Eye_Tracking
                         vg.FrameHeight = res.Height;
                         vg.FrameWidth = res.Width;
                         vg.createVideo();
-                        System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
+                        System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");*/
                         return;
                     }
                 case 2: //2D models
