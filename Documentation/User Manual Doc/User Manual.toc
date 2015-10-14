@@ -24,27 +24,22 @@
 \contentsline {subsection}{\numberline {4.8}Recording Video}{15}{subsection.0.4.8}
 \contentsline {subsection}{\numberline {4.9}Report summary creation}{16}{subsection.0.4.9}
 \contentsline {subsection}{\numberline {4.10}Gaze Plot Maps}{16}{subsection.0.4.10}
-\contentsline {subsection}{\numberline {4.11}Settings}{17}{subsection.0.4.11}
-\contentsline {subsubsection}{\numberline {4.11.1}Themes}{17}{subsubsection.0.4.11.1}
-\contentsline {subsubsection}{\numberline {4.11.2}3D recording settings}{17}{subsubsection.0.4.11.2}
-\contentsline {subsubsection}{\numberline {4.11.3}Gaze Plot settings}{17}{subsubsection.0.4.11.3}
-\contentsline {subsubsection}{\numberline {4.11.4}Recording settings}{17}{subsubsection.0.4.11.4}
-\contentsline {section}{\numberline {5}Troubleshooting}{18}{section.0.5}
-\contentsline {subsection}{\numberline {5.1}Starting the program}{18}{subsection.0.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}String is not a path}{18}{subsubsection.0.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}The path does not exist}{18}{subsubsection.0.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Calibration}{18}{subsection.0.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Could not find EyetribeWinUI.exe}{18}{subsubsection.0.5.2.1}
-\contentsline {subsection}{\numberline {5.3}Naming}{19}{subsection.0.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Name has invalid characters or too many}{19}{subsubsection.0.5.3.1}
-\contentsline {subsection}{\numberline {5.4}General recording errors}{19}{subsection.0.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Could not find [insert path and name].txt}{19}{subsubsection.0.5.4.1}
-\contentsline {subsection}{\numberline {5.5}Heatmap}{19}{subsection.0.5.5}
-\contentsline {subsubsection}{\numberline {5.5.1}Heatmap could not be created}{19}{subsubsection.0.5.5.1}
-\contentsline {subsubsection}{\numberline {5.5.2}Video could not be created}{19}{subsubsection.0.5.5.2}
-\contentsline {subsection}{\numberline {5.6}Statistics}{20}{subsection.0.5.6}
-\contentsline {subsubsection}{\numberline {5.6.1}Could not create statistical report}{20}{subsubsection.0.5.6.1}
-\contentsline {subsubsection}{\numberline {5.6.2}Report could not be saved}{20}{subsubsection.0.5.6.2}
-\contentsline {section}{\numberline {6}Appendices}{20}{section.0.6}
-\contentsline {subsection}{\numberline {6.1}EyeTribe}{20}{subsection.0.6.1}
-\contentsline {section}{\numberline {7}Index}{20}{section.0.7}
+\contentsline {section}{\numberline {5}Troubleshooting}{17}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Starting the program}{17}{subsection.0.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}String is not a path}{17}{subsubsection.0.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}The path does not exist}{17}{subsubsection.0.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Calibration}{17}{subsection.0.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Could not find EyetribeWinUI.exe}{17}{subsubsection.0.5.2.1}
+\contentsline {subsection}{\numberline {5.3}Naming}{18}{subsection.0.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Name has invalid characters or too many}{18}{subsubsection.0.5.3.1}
+\contentsline {subsection}{\numberline {5.4}General recording errors}{18}{subsection.0.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Could not find [insert path and name].txt}{18}{subsubsection.0.5.4.1}
+\contentsline {subsection}{\numberline {5.5}Heatmap}{18}{subsection.0.5.5}
+\contentsline {subsubsection}{\numberline {5.5.1}Heatmap could not be created}{18}{subsubsection.0.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.2}Video could not be created}{18}{subsubsection.0.5.5.2}
+\contentsline {subsection}{\numberline {5.6}Statistics}{19}{subsection.0.5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}Could not create statistical report}{19}{subsubsection.0.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}Report could not be saved}{19}{subsubsection.0.5.6.2}
+\contentsline {section}{\numberline {6}Appendices}{19}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}EyeTribe}{19}{subsection.0.6.1}
+\contentsline {section}{\numberline {7}Index}{19}{section.0.7}
