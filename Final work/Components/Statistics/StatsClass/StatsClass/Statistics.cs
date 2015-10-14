@@ -134,14 +134,22 @@ namespace StatsClass
             py = null;
             px = new List<float>();
             py = new List<float>();
+            int count = 1;
             string[] lines = System.IO.File.ReadAllLines(this.datasource + /*"\\" + pName +*/ "\\RecordedData_" + this.ModelName + ".txt");
             foreach (string item in lines)
             {
-                px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
-
-                int temp1 = item.IndexOf(":") + 1;
-                int temp2 = item.Length - temp1;
-                py.Add((float)Convert.ToDouble(item.Substring(temp1, temp2)));
+                if (count == 1)
+                {
+                   // float b = (float)Convert.ToDouble(item.Substring(0, item.IndexOf("x")));
+                    count++;
+                }
+                else
+                {
+                    px.Add((float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
+                    int temp1 = item.IndexOf(":") + 1;
+                    int temp2 = item.Length - temp1;
+                    py.Add((float)Convert.ToDouble(item.Substring(temp1, temp2)));
+                }
             }
         }
 
