@@ -1,38 +1,44 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.0.1}
-\contentsline {subsection}{\numberline {1.1}Scope and Purpose}{3}{subsection.0.1.1}
-\contentsline {subsection}{\numberline {1.2}Process Overview }{3}{subsection.0.1.2}
-\contentsline {section}{\numberline {2}Configuration}{4}{section.0.2}
-\contentsline {subsection}{\numberline {2.1}System Configuration}{4}{subsection.0.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Minimum Hardware requirements}{4}{subsubsection.0.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Recommended Hardware requirements}{4}{subsubsection.0.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Recommended Software requirements}{4}{subsubsection.0.2.1.3}
-\contentsline {subsubsection}{\numberline {2.1.4}Recommended External Devices}{4}{subsubsection.0.2.1.4}
-\contentsline {subsubsection}{\numberline {2.1.5}Connecting the camera to the computer}{5}{subsubsection.0.2.1.5}
-\contentsline {subsection}{\numberline {2.2}Installation}{5}{subsection.0.2.2}
-\contentsline {section}{\numberline {3}Getting Started}{7}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Basic use}{7}{subsection.0.3.1}
-\contentsline {section}{\numberline {4}Using the System}{7}{section.0.4}
-\contentsline {subsection}{\numberline {4.1}Starting the program}{8}{subsection.0.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Start a new project}{8}{subsubsection.0.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Open existing project}{9}{subsubsection.0.4.1.2}
-\contentsline {subsection}{\numberline {4.2}Calibration Screen}{9}{subsection.0.4.2}
-\contentsline {subsection}{\numberline {4.3}Recording Set-up Screen}{11}{subsection.0.4.3}
-\contentsline {subsection}{\numberline {4.4}Choosing model}{12}{subsection.0.4.4}
-\contentsline {subsection}{\numberline {4.5}Recording 2D model}{12}{subsection.0.4.5}
-\contentsline {subsection}{\numberline {4.6}Recording 3D model}{13}{subsection.0.4.6}
-\contentsline {subsection}{\numberline {4.7}Recording 3D model flythrough}{14}{subsection.0.4.7}
-\contentsline {subsection}{\numberline {4.8}Recording Video}{14}{subsection.0.4.8}
-\contentsline {subsection}{\numberline {4.9}Report summary creation}{15}{subsection.0.4.9}
-\contentsline {section}{\numberline {5}Troubleshooting}{15}{section.0.5}
-\contentsline {subsection}{\numberline {5.1}Start screen}{16}{subsection.0.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}String is not a path}{16}{subsubsection.0.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}The path does not exist}{16}{subsubsection.0.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Calibration screen}{16}{subsection.0.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Could not find EyetribeWinUI.exe}{16}{subsubsection.0.5.2.1}
-\contentsline {subsection}{\numberline {5.3}Recording set-up screen}{16}{subsection.0.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Name has invalid characters}{16}{subsubsection.0.5.3.1}
-\contentsline {subsection}{\numberline {5.4}General recording errors}{17}{subsection.0.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Could not find [insert path and name].txt}{17}{subsubsection.0.5.4.1}
-\contentsline {section}{\numberline {6}Appendices}{17}{section.0.6}
-\contentsline {subsection}{\numberline {6.1}EyeTribe}{17}{subsection.0.6.1}
-\contentsline {section}{\numberline {7}Index}{17}{section.0.7}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Scope and Purpose}{4}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Process Overview }{4}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}Configuration}{5}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}System Configuration}{5}{subsection.0.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Minimum Hardware requirements}{5}{subsubsection.0.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Recommended Hardware requirements}{5}{subsubsection.0.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Recommended Software requirements}{5}{subsubsection.0.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Recommended External Devices}{5}{subsubsection.0.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.5}Connecting the camera to the computer}{6}{subsubsection.0.2.1.5}
+\contentsline {subsection}{\numberline {2.2}Installation}{6}{subsection.0.2.2}
+\contentsline {section}{\numberline {3}Getting Started}{8}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Basic use}{8}{subsection.0.3.1}
+\contentsline {section}{\numberline {4}Using the System}{8}{section.0.4}
+\contentsline {subsection}{\numberline {4.1}Starting the program}{9}{subsection.0.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Start a new project}{9}{subsubsection.0.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Open existing project}{10}{subsubsection.0.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Calibration Screen}{10}{subsection.0.4.2}
+\contentsline {subsection}{\numberline {4.3}Recording Set-up Screen}{12}{subsection.0.4.3}
+\contentsline {subsection}{\numberline {4.4}Choosing model}{13}{subsection.0.4.4}
+\contentsline {subsection}{\numberline {4.5}Recording 2D model}{13}{subsection.0.4.5}
+\contentsline {subsection}{\numberline {4.6}Recording 3D model}{14}{subsection.0.4.6}
+\contentsline {subsection}{\numberline {4.7}Recording 3D model flythrough}{15}{subsection.0.4.7}
+\contentsline {subsection}{\numberline {4.8}Recording Video}{15}{subsection.0.4.8}
+\contentsline {subsection}{\numberline {4.9}Report summary creation}{16}{subsection.0.4.9}
+\contentsline {subsection}{\numberline {4.10}Gaze Plot Maps}{16}{subsection.0.4.10}
+\contentsline {subsection}{\numberline {4.11}Settings}{17}{subsection.0.4.11}
+\contentsline {subsubsection}{\numberline {4.11.1}Themes}{17}{subsubsection.0.4.11.1}
+\contentsline {subsubsection}{\numberline {4.11.2}3D recording settings}{17}{subsubsection.0.4.11.2}
+\contentsline {subsubsection}{\numberline {4.11.3}Gaze Plot settings}{17}{subsubsection.0.4.11.3}
+\contentsline {subsubsection}{\numberline {4.11.4}Recording settings}{17}{subsubsection.0.4.11.4}
+\contentsline {section}{\numberline {5}Troubleshooting}{18}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Start screen}{18}{subsection.0.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}String is not a path}{18}{subsubsection.0.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}The path does not exist}{18}{subsubsection.0.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Calibration screen}{18}{subsection.0.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Could not find EyetribeWinUI.exe}{18}{subsubsection.0.5.2.1}
+\contentsline {subsection}{\numberline {5.3}Recording set-up screen}{19}{subsection.0.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Name has invalid characters}{19}{subsubsection.0.5.3.1}
+\contentsline {subsection}{\numberline {5.4}General recording errors}{19}{subsection.0.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Could not find [insert path and name].txt}{19}{subsubsection.0.5.4.1}
+\contentsline {section}{\numberline {6}Appendices}{19}{section.0.6}
+\contentsline {subsection}{\numberline {6.1}EyeTribe}{19}{subsection.0.6.1}
+\contentsline {section}{\numberline {7}Index}{19}{section.0.7}
