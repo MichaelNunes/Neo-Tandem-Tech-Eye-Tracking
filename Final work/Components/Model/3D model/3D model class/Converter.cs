@@ -32,123 +32,136 @@ namespace DisplayModel
 	/// <summary>
 	/// Used to convert the input object files into a Model3D object.
 	/// <summary>
-	public static class Converter
+    public static class Converter
     {
         #region List items
-        public static   List<Vector3>
+        public static List<Vector3>
                         p_vertices = new List<Vector3>(),
                         p_normals = new List<Vector3>();
 
-        public static   List<Vector2>
+        public static List<Vector2>
                         p_uvs = new List<Vector2>();
 
-        public static   List<int>
+        public static List<int>
                         t_indices = new List<int>(),
                         f_vertices = new List<int>(),
                         f_uvs = new List<int>(),
                         f_normals = new List<int>();
 
-        public static   Dictionary<string, string>
-                        material_texture = new Dictionary<string,string>();
+        public static Dictionary<string, string>
+                        material_texture = new Dictionary<string, string>();
 
-        public static   List<string>
+        public static List<string>
                         materials = new List<string>();
+        public static List<GameObject>
+                        list = new List<GameObject>();
 
-        public static   int current_index;
-		public static 	float scale_factor;
+        public static int current_index;
+        public static float scale_factor = 1.0f;
         #endregion
 
         /// <summary>
-		/// Converts the object and material files into a Model object.
-		/// </summary>
-		/// <param name='obj'> The filepath to the object file. </param>
-		/// <param name='dir'> The filepath to the object's texture file. </param>
-		public static GameObject fromOBJ(string obj, bool scaling)
-		{   
-			GameObject root = new GameObject();
-            scale_factor = 0.0f;
+        /// Converts the object and material files into a Model object.
+        /// </summary>
+        /// <param name='obj'> The filepath to the object file. </param>
+        /// <param name='dir'> The filepath to the object's texture file. </param>
+        public static GameObject fromOBJ(string obj, bool scaling)
+        {
+            GameObject root = new GameObject();
 
-            string mtl = obj.Substring(0, obj.Length - 3) + "mtl";
             int index = 0;
             for (int i = 0; i < obj.Length; ++i)
                 if (obj[i] == '\\')
                     index = i;
-            string tex = obj.Substring(0, index+1);
+            string mtl = obj.Substring(0, index);
+            string tex = obj.Substring(0, index) + '\\';
 
-            Console.WriteLine("Parsing .obj file...");
-            parseOBJ(obj);
-            Console.WriteLine("Parsing .mtl file...");
+            parseOBJ(obj, ref mtl);
             parseMTL(mtl, tex);
-            Console.WriteLine("Generating children objects...");
             generateChildren(ref root);
-            
+
             if (scaling)
             {
-                Console.WriteLine("Scaling objects...");
-                List<GameObject> list = new List<GameObject>();
-                GameObject current = root;
-
-                for (int i = 0; i < current.Children.Count; ++i)
-                {
-                    current = current.Children[i];
-                    if (!list.Contains(current))
-                    {
-                        list.Add(current);
-                        findMax(current.bufferData);
-                    }
-                }
-
-                for (int i = 0; i < list.Count; ++i)
-                    scaleObject(list[i].bufferData);                
+                scale_factor /= 2.5f;
+                scaleObject(ref root);
             }
 
+
+            Console.WriteLine("Generating materials...");
+            root.Initialize();
+
+            Console.WriteLine("Returning object...");
             return root;
         }
-        
-        private static void parseOBJ(string obj)
+
+        private static void scaleObject(ref GameObject root)
+        {
+            Console.WriteLine("Scaling objects...");
+            for (int i = 0; i < root.Children.Count; ++i)
+            {
+                GameObject current = root.Children[i];
+                for (int j = 0; j < current.BufferData.Vertex.Length; ++j)
+                {
+                    current.bufferData.vertex[j].X /= scale_factor;
+                    current.bufferData.vertex[j].Y /= scale_factor;
+                    current.bufferData.vertex[j].Z /= scale_factor;
+                }
+            }
+        }
+
+        private static void parseOBJ(string obj, ref string mtl)
         {
             StreamReader filereader;
             string line;
             string[] sections;
             current_index = 0;
 
-		    filereader = new StreamReader(obj);
+            filereader = new StreamReader(obj);
 
-			while ((line = filereader.ReadLine()) != null)
-			{
-				sections = line.Split(' ');
-				
-				switch(sections[0])
-				{
-					case "o":
-						break;
+            Console.WriteLine("Parsing .obj file...");
+            while ((line = filereader.ReadLine()) != null)
+            {
+                sections = line.Split(' ');
 
-					case "v":
-                        p_vertices.Add(new Vector3(float.Parse(sections[1]), float.Parse(sections[2]),float.Parse(sections[3])));
-						break;
+                switch (sections[0])
+                {
+                    case "o":
+                        break;
+
+                    case "mtllib":
+                        mtl = mtl + '\\' + sections[1];
+                        break;
+
+                    case "v":
+                        Vector3 temp = new Vector3(float.Parse(sections[1]), float.Parse(sections[2]), float.Parse(sections[3]));
+                        if (Math.Abs(temp.X) > scale_factor) scale_factor = Math.Abs(temp.X);
+                        if (Math.Abs(temp.Y) > scale_factor) scale_factor = Math.Abs(temp.Y);
+                        if (Math.Abs(temp.Z) > scale_factor) scale_factor = Math.Abs(temp.Z);
+                        p_vertices.Add(temp);
+                        break;
 
                     case "vt":
                         p_uvs.Add(new Vector2(float.Parse(sections[1]), float.Parse(sections[2])));
-						break;
+                        break;
 
                     case "vn":
                         p_normals.Add(new Vector3(float.Parse(sections[1]), float.Parse(sections[2]), float.Parse(sections[3])));
-						break;
+                        break;
 
-					case "f":
+                    case "f":
                         addFace(ref f_vertices, ref f_uvs, ref f_normals, sections);
-						break;
+                        break;
 
                     case "usemtl":
                         t_indices.Add(current_index);
                         materials.Add(sections[1]);
                         break;
-				}
-			}
+                }
+            }
 
             filereader.Close();
             t_indices.Add(current_index);
-		}
+        }
 
         private static void parseMTL(string mtl, string tex)
         {
@@ -160,9 +173,10 @@ namespace DisplayModel
             try { filereader = new StreamReader(mtl); }
             catch (Exception e) { return; }
 
+            Console.WriteLine("Parsing .mtl file...");
             while ((line = filereader.ReadLine()) != null)
             {
-                sections = line.Split(' ');
+                sections = line.Trim().Split(' ');
 
                 switch (sections[0])
                 {
@@ -181,6 +195,7 @@ namespace DisplayModel
 
         public static void generateChildren(ref GameObject root)
         {
+            Console.WriteLine("Generating children objects...");
             int children = t_indices.Count - 1;
 
             for (int child = 0; child < children; ++child)
@@ -209,45 +224,30 @@ namespace DisplayModel
                 Material m = new Material(filepath);
                 GameObject newChild = new GameObject(m, bd);
 
-                root.AddChild(newChild);
+                root.Children.Add(newChild);
             }
+
+            Console.WriteLine("Number of children: " + children);
         }
 
-		private static void findMax(BufferData bufferData)
+        private static void findMax(BufferData bufferData)
         {
             for (int i = 0; i < bufferData.Vertex.Length; i++)
             {
                 for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
                 {
-                    if(Math.Abs(bufferData.Vertex[i].X) > scale_factor)
-                    {
+                    if (Math.Abs(bufferData.Vertex[i].X) > scale_factor)
                         scale_factor = Math.Abs(bufferData.Vertex[i].X);
-                    }
+
                     if (Math.Abs(bufferData.Vertex[i].Y) > scale_factor)
-                    {
                         scale_factor = Math.Abs(bufferData.Vertex[i].Y);
-                    }
+
                     if (Math.Abs(bufferData.Vertex[i].Z) > scale_factor)
-                    {
                         scale_factor = Math.Abs(bufferData.Vertex[i].Z);
-                    }
-                }
-            }
-		}
-		
-        private static void scaleObject(BufferData bufferData)
-		{
-            for (int i = 0; i < bufferData.Vertex.Length; i++)
-            {
-                for (int j = 0; j < bufferData.Vertex[i].Length; ++j)
-                {
-                    bufferData.Vertex[i].X /= scale_factor;
-                    bufferData.Vertex[i].Y /= scale_factor;
-                    bufferData.Vertex[i].Z /= scale_factor;
                 }
             }
         }
-		
+
         /// <summary>
         /// Adds faces from the file source. 
         /// </summary>
@@ -257,59 +257,43 @@ namespace DisplayModel
         /// <param name="line"> An array of face index values. </param>
         private static void addFace(ref List<int> v, ref List<int> t, ref List<int> n, string[] line)
         {
-			string[] texels;
+            string[] first, second;
+            int start = v.Count;
 
-            if (line[1].Contains("/"))
+            // Initial Point
+            first = line[1].Split('/');
+
+            int start_v = int.Parse(first[0]);
+            int start_t = -1;
+            if (first[1] != string.Empty)
+                start_t = int.Parse(first[1]);
+            int start_n = int.Parse(first[2]);
+            // Initial Point
+
+            // Fanning loop
+            for (int i = 3; i < line.Length; i += 1)
             {
-                for (int i = 1; i < 4; ++i)
+                first = line[i - 1].Split('/');
+                second = line[i].Split('/');
+
+                v.Add(start_v);
+                v.Add(int.Parse(first[0]));
+                v.Add(int.Parse(second[0]));
+
+                if (start_t != -1)
                 {
-                    texels = line[i].Split('/');
-
-                    v.Add(int.Parse(texels[0]));
-
-                    if (texels[1] != string.Empty)
-                        t.Add(int.Parse(texels[1]));
-
-                    n.Add(int.Parse(texels[2]));
-
-                    current_index++;
+                    t.Add(start_t);
+                    t.Add(int.Parse(first[1]));
+                    t.Add(int.Parse(second[1]));
                 }
 
-                if (line.Length == 5)
-                {
-                    texels = line[4].Split('/');
+                n.Add(start_n);
+                n.Add(int.Parse(first[2]));
+                n.Add(int.Parse(second[2]));
 
-                    v.Add(v[v.Count - 3]);
-                    v.Add(v[v.Count - 2]);
-                    v.Add(int.Parse(texels[0]));
-
-                    if (texels[1] != string.Empty)
-                    {
-                        t.Add(t[t.Count - 3]);
-                        t.Add(t[t.Count - 2]);
-                        t.Add(int.Parse(texels[1]));
-                    }
-
-                    n.Add(n[n.Count - 3]);
-                    n.Add(n[n.Count - 2]);
-                    n.Add(int.Parse(texels[2]));
-
-                    current_index += 3;
-                }
-
-                if (line.Length > 5)
-                    throw new Exception("More than 4 vertices per face.");
+                current_index+=3;
             }
-
-            else
-            {
-                if (line.Length == 3)
-                {
-                    v.Add(int.Parse(line[1]));
-                    v.Add(int.Parse(line[2]));
-                    v.Add(int.Parse(line[3]));
-                }
-            }
-		}
-	}
+            // Fanning Loop
+        }
+    }
 }

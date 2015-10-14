@@ -68,8 +68,6 @@ namespace DisplayModel
             material = m;
             bufferData = bd;
             children = new List<GameObject>();
-
-            Initialize();
         }
         #endregion
 
@@ -86,6 +84,9 @@ namespace DisplayModel
             buffer.Index = GL.GenBuffer();
 
             Material.Setup();
+
+            foreach (GameObject child in children)
+                child.Initialize();
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace DisplayModel
         /// <summary>
         /// The sub-objects of the current object
         /// </summary>
-        public List<GameObject> Children { get { return children;  } }
+        public List<GameObject> Children { get { return children; } set { children = value; } }
         #endregion
     }
 }

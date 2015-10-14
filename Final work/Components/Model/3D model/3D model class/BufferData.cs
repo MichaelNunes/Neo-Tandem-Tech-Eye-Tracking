@@ -68,11 +68,11 @@ namespace DisplayModel
         /// <param name="tc"> A list of texture indices indices. </param>
         public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, int[] vi, int[] ti, int[] ni)
         {
-            int size = ti.Length;
-            vertex = new Vector3[size];
-            texture = new Vector2[size];
-            normal = new Vector3[size];
-            colour = new Vector4[size];
+            int size = vi.Length;
+            vertex = new Vector3[vi.Length];
+            texture = new Vector2[ti.Length];
+            normal = new Vector3[ni.Length];
+            colour = new Vector4[vi.Length];
             Color4 color = Color4.LightGray;
             ModelViewMatrix = Matrix4.Identity;
 
