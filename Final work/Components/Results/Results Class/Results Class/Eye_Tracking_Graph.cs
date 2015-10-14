@@ -259,8 +259,7 @@ namespace Results_Class
                     Console.WriteLine(scaleFactorH.ToString() + ":" + scaleFactorW.ToString());
                 }
                 else
-                {
-
+                { 
                     px.Add(scaleFactorW * (float)Convert.ToDouble(item.Substring(0, item.IndexOf(":"))));
                     int temp1 = item.IndexOf(":") + 1;
                     int temp2 = item.Length - temp1;
@@ -492,7 +491,7 @@ namespace Results_Class
         {
             //get heights and widths of video
             VideoFileReader vid = new VideoFileReader();
-            vid.Open(SourceLocation + ModelName + ".wmv");
+            vid.Open(SourceLocation);
             height = vid.Height;
             width = vid.Width;
             Console.WriteLine(height+"<--height,width-->"+width);
@@ -503,7 +502,7 @@ namespace Results_Class
             ImageGenerator ig = new ImageGenerator();
             try
             {
-                ig.VideoPath = SourceLocation + ModelName + ".wmv";
+                ig.VideoPath = SourceLocation;// +ModelName + ".wmv";
                 ig.DestinationPath = DestinationPath;
                 ig.ModelName = ModelName;
                 ig.createImages();
