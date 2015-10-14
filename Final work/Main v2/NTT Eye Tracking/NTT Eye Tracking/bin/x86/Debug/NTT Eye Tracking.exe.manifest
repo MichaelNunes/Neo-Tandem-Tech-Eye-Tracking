@@ -145,7 +145,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FUV+RQTE4uo5iDwx8f4idbOGk5AzzxyNurq0eEMUfJI=</dsig:DigestValue>
+        <dsig:DigestValue>LS1WHldlzdDFpAgbNIais6hO4IUP9R0yNGu14OFaSBo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2440128">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2440640">
       <assemblyIdentity name="NTT Eye Tracking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qgJhwzQbIk1V2tW+0Ve0beCtEk2xxrIADOjzhcHK8NE=</dsig:DigestValue>
+        <dsig:DigestValue>vD06b8igF/bCrfTpJFvVnO6yEENEKGCyJnA8HTBwUKQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -217,7 +217,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>glPw0kYED5wgGn3ij0Hc8t6MdfKOamzeHUmWm0Vw9v8=</dsig:DigestValue>
+        <dsig:DigestValue>Cz+u96dZR/6TYL6yFhEoOhhWGMtQFz29O+fXi+Sfuo4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -258,14 +258,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="StatsClass.dll" size="14336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="StatsClass.dll" size="15360">
       <assemblyIdentity name="StatsClass" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6VixKpVWcm9K0ZQDbdcmWSciVr0K/4z5E8+r31FandY=</dsig:DigestValue>
+        <dsig:DigestValue>UoG1vd13X9i8uf7VUKwKWrV/pkVNre73uo4mV6vuVeo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

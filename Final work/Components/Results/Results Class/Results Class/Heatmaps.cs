@@ -403,7 +403,7 @@ namespace Results_Class
             ImageGenerator ig = new ImageGenerator();
             try
             {
-                ig.VideoPath = SourceLocation+ModelName+".wmv";
+                ig.VideoPath = SourceLocation;// +ModelName + ".wmv";
                 ig.DestinationPath = DestinationPath;
                 ig.ModelName = ModelName; 
                 ig.createImages();

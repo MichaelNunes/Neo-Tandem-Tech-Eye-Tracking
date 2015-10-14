@@ -83,6 +83,9 @@ namespace NTT_Eye_Tracking
                     }
                 case 3: //Video
                     {
+
+                        wmp_VideoPreview.Dock = DockStyle.Fill;
+                        wmp_VideoPreview.stretchToFit = true;
                         pic_slideshowPreview.Visible = false;
                         pic_model2DPreview.Visible = false;
                         wmp_VideoPreview.Visible = true;
@@ -546,15 +549,15 @@ namespace NTT_Eye_Tracking
                             {
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
-                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg._SourceLocation = globals.currentRecordingpath;
+                                etg._DestinationPath = globals.currentRecordingpath + "\\";
                                 etg.SaveETGraphVideo();
                                 ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = ModelPath;
-                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm._SourceLocation = globals.currentRecordingpath ;
+                                hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapVideo();
                                 ig.deleteImages();
                                 break;
@@ -606,7 +609,7 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm._SourceLocation = ModelPath;
-                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModelVideo();
                                 break;
                             }
@@ -614,8 +617,8 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = globals.currentRecordingpath;
-                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModelVideo();
                                 break;
                             }
@@ -623,8 +626,8 @@ namespace NTT_Eye_Tracking
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = globals.currentRecordingpath;
-                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm._SourceLocation = ModelPath;
+                                hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModel2D();
                                 break;
                             }
@@ -633,7 +636,7 @@ namespace NTT_Eye_Tracking
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
                                 hm._SourceLocation = ModelPath;
-                                hm._DestinationPath = globals.currentRecordingpath;
+                                hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModelVideo();
                                 break;
                             }
@@ -827,6 +830,18 @@ namespace NTT_Eye_Tracking
             btnRecord.BackColor = GlobalStyles.ButtonColours;
             btnReport.BackColor = GlobalStyles.ButtonColours;
             btnViewResults.BackColor = GlobalStyles.ButtonColours;
+
+            //text colors
+            /*btnCal.ForeColor = GlobalStyles.TextColours;
+            btnChooseModel.ForeColor = GlobalStyles.TextColours;
+            btnGazepoint.ForeColor = GlobalStyles.TextColours;
+            btnHeatmaps.ForeColor = GlobalStyles.TextColours;
+            btnOverlays.ForeColor = GlobalStyles.TextColours;
+            btnRecord.ForeColor = GlobalStyles.TextColours;
+            btnReport.ForeColor = GlobalStyles.TextColours;
+            btnViewResults.ForeColor = GlobalStyles.TextColours;*/
+
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
