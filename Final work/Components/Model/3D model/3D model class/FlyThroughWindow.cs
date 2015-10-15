@@ -160,7 +160,9 @@ namespace DisplayModel
         {
             KeyboardUpdate(time);
             JoystickUpdate(time);
-            shaderData.Point.Position = camera.position;
+            shaderData.Point.Position.X = camera.position.X;
+            shaderData.Point.Position.Y = camera.position.Y;
+            shaderData.Point.Position.Z = camera.position.Z - 4.0f;
         }
 
         /// <summary>

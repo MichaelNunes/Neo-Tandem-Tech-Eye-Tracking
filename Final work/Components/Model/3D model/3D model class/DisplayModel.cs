@@ -36,8 +36,7 @@ namespace DisplayModel
         //Here for testing purposes
         public static void Main(string[] args)
         {
-            string objectpath = @"C:\Users\COS301\Desktop\Blender Testing\Car\Car.obj";
-
+            string objectpath = @"C:\Users\COS301\Desktop\Blender Testing\Paris\Paris.obj";
             string filePath = @"C:\Users\COS301\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
             Run(objectpath, filePath, true);
