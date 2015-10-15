@@ -1,7 +1,7 @@
-The data structures used throughout this program are C sharp classes and a external reference such as Aforge.Net and openTK will be used to process data and use them in our program.The data structures all interact with each other and there is no solitary class that is standalone. Communication between the Data Objects is crucial in this program as raw and process data is dealt throughout the program and Objects communication is important to start processes.The data from the models that are being tracked are handled by the c sharp classes we have created and this will then be shown to the user in a desirable format.
+The data structures used throughout this program are C Sharp classes and a external reference such as Aforge.Net and openTK will be used to process data and use them in our program.The data structures all interact with each other and there is no solitary class that is standalone. Communication between the Data Objects is crucial in this program as raw and process data is dealt throughout the program and Objects communication is important to start processes.The data from the models that are being tracked are handled by the c sharp classes we have created and this will then be shown to the user in a desirable format.
 
 \subsection{Models class}
-The models classes store all the information about the media that is being used and analysed.The models interact with the heat map class and the recording class.The models will initiate the recording.The data gathered from this will then be sent to the relevant heat map class so that it can create a heat map and then apply it to the media.The Model classes are separated into four child classes
+The models classes store all the information about the media that is being used and analysed.The models interact with the heat map class and the recording class.The models will initiate the recording.The data gathered from this will then be sent to the relevant heat map class so that it can create a heat map and then apply it to the media.The Model classes are separated into four child classes:
 \begin{itemize}
 \item 3D Model
 \item 3D Model Fly Through
@@ -9,7 +9,7 @@ The models classes store all the information about the media that is being used 
 \item Video Model
 \end{itemize}
 \subsection{Heat map}
-The heat map object allows the creation of a heat map for a specific media type.The heat map uses the information collected from the eye tracking and then generates a heat map that is based on the media type that it is linked to.The heat map can be in two forms:heat map and heat map overly.The difference between the two is the placement of the heat map.Heat map overlay is placed over the media showing exactly where the data is from the recording process relative to the media.
+The heat map object allows the creation of a heat map for a specific media type.The heat map uses the information collected from the eye tracking and then generates a heat map that is based on the media type that it is linked to.The heat map can be in two forms:heat map and heat map overlay.The difference between the two is the placement of the heat map.Heat map overlay is placed over the media showing exactly where the data is from the recording process relative to the media.
 \subsection{Statistics class}
 The statistics class uses the heat map data to create a statistical analysis on the heat map and gives the user the statistics that they need.This class also contains a reference to a specific heat map object so that it can directly access all the data that it needs.The transfer of data from raw to summarized changes the data structure so that it is easier to view by the user.
 \subsection{Recorder class}

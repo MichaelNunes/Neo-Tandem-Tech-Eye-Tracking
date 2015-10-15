@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  15 OCT 2015 12:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  15 OCT 2015 22:04
 entering extended mode
 **NTT*Architectural*Requirements.tex
 
@@ -288,11 +288,11 @@ File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 Package pdftex.def Info: ../GeneralImages/NTT.jpg used on input line 42.
 (pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 53.
+(Font)              <12> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 53.
+(Font)              <8> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 53.
+(Font)              <6> on input line 54.
  [1
 
 {C:/Users/m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/m/Desk
@@ -302,7 +302,7 @@ sers/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/NTT.jpg
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.127 \tableofcontents
+l.128 \tableofcontents
                       {} [1]
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Architectural S
 pecification\NTT Architectural Requirements.toc")
@@ -367,25 +367,25 @@ pecification\ReferenceArchitectures/UseOfReferenceArchitecturesAndFrameworks.te
 x" [9])
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Architectural S
 pecification\Technologies/Technologies.tex" [10]) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
  [12
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
 
 ("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Architectural S
 pecification\NTT Architectural Requirements.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
 Package rerunfilecheck Info: File `NTT*Architectural*Requirements.out' has not 
 changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
  5318 strings out of 493921
  82466 string characters out of 3147294
- 158402 words of memory out of 3000000
+ 159402 words of memory out of 3000000
  8485 multiletter control sequences out of 15000+200000
  10097 words of font info for 35 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -395,7 +395,7 @@ ers/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/m/D
 ocuments/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/m/Documents/
 miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m/Documents/miktex/f
 onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Architectural Requirements.pdf" (13 pages, 226416 bytes)
+Output written on "NTT Architectural Requirements.pdf" (13 pages, 226457 bytes)
 .
 PDF statistics:
  203 PDF objects out of 1000 (max. 8388607)
