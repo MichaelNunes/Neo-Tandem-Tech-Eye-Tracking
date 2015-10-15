@@ -30,8 +30,25 @@ namespace DisplayModel
     /// <summary>
     /// Represents a light object that adds light from a point in space.
     /// </summary>
-    class PointLight : Light
+    public class PointLight : Light
     {
+        #region Fields
+        /// <summary>
+        /// The base colour of the light.
+        /// </summary>
+        public Vector3 Colour;
+
+        /// <summary>
+        /// The amount of shine the specular colour produces.
+        /// </summary>
+        public float Shininess;
+
+        /// <summary>
+        /// The position of the light in 3d space.
+        /// </summary>
+        public Vector3 Position;
+        #endregion
+
         #region Constructors
         /// <summary>
         /// Create a default point light object.
@@ -42,8 +59,7 @@ namespace DisplayModel
         /// </summary>
         public PointLight()
         {
-            DiffuseColour = new Vector3(0.5f);
-            SpecularColour = Vector3.One;
+            Colour = new Vector3(0.5f);
             Shininess = 10;
             Position = Vector3.Zero;
         }
@@ -52,45 +68,23 @@ namespace DisplayModel
         /// Creates a point light object with the value providede.
         /// </summary>
         /// <param name="diffuse"> The base colour of the light. </param>
-        /// <param name="specular"> The colour of the reflection. </param>
         /// <param name="shininess"> The amount of reflection the specular light provides. </param>
         /// <param name="position"> The position of the light in 3d space. </param>
-        public PointLight(Color4 diffuse, Color4 specular, float shininess, Vector3 position)
+        public PointLight(Color4 diffuse, float shininess, Vector3 position)
         {
-            DiffuseColour = new Vector3(diffuse.R * diffuse.A, diffuse.G * diffuse.A, diffuse.B * diffuse.A);
-            SpecularColour = new Vector3(specular.R * specular.A, specular.G * specular.A, specular.B * specular.A);
+            Colour = new Vector3(diffuse.R * diffuse.A, diffuse.G * diffuse.A, diffuse.B * diffuse.A);
             Shininess = shininess;
             Position = position;
         }
         #endregion
 
         #region Override
-        public override void addLight()
+        public void addLight(int colour, int shininess, int position)
         {
-            // IMPLEMENT
+            GL.Uniform3(colour, Colour);
+            GL.Uniform1(shininess, Shininess);
+            GL.Uniform3(position, Position);
         }
-        #endregion
-
-        #region Attributes
-        /// <summary>
-        /// The base colour of the light.
-        /// </summary>
-        public Vector3 DiffuseColour { get; set; }
-        
-        /// <summary>
-        /// The reflective colour of the light.
-        /// </summary>
-        public Vector3 SpecularColour { get; set; }
-        
-        /// <summary>
-        /// The amount of shine the specular colour produces.
-        /// </summary>
-        public float Shininess { get; set; }
-        
-        /// <summary>
-        /// The position of the light in 3d space.
-        /// </summary>
-        public Vector3 Position { get; set; }
         #endregion
     }
 }

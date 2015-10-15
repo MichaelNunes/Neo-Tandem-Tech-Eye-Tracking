@@ -22,6 +22,7 @@
 #endregion
 
 using OpenTK;
+using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.IO;
@@ -36,22 +37,24 @@ namespace DisplayModel
         private Uniform uniform;
         #endregion
 
-        private float degrees;
-
         #region Matrices
         private Matrix4 ModelViewMatrix;
         public Matrix4 ProjectionMatrix;
         private Matrix3 NormalMatrix;
         #endregion
-        
+
+        #region Lights
+        public AmbientLight Ambient;
+        public DirectionalLight Directional;
+        public PointLight Point;
+        #endregion
+
         #region Setup
         /// <summary>
         /// Initializes the Shader Program by collecting all ids of the both the vertex and fragment shaders.
         /// </summary>
         public void initProgram()
         {
-            degrees = 0.0f;
-
             // PROGRAM
             id.Program = GL.CreateProgram();
 
@@ -83,13 +86,11 @@ namespace DisplayModel
             uniform.PointLightShininess         = GL.GetUniformLocation(id.Program, "uPointLight_Shininess");
             uniform.Sampler                     = GL.GetUniformLocation(id.Program, "uSampler");
 
-            AmbientLight_Colour         = new Vector3(0.0f, 0.0f, 0.0f);
-            DirectionalLight_Colour     = new Vector3(1.0f, 1.0f, 1.0f);
-            DirectionalLight_Direction  = new Vector3(0.0f, 0.0f, 0.0f);
-            PointLight_DiffuseColour    = new Vector3(0.0f, 0.0f, 0.0f);
-            PointLight_SpecularColour   = new Vector3(0.0f, 0.0f, 0.0f);
-            PointLight_Shininess        = 250.0f;
-            PointLight_Position         = new Vector3(0.0f, 0.0f, -5.0f);
+            Color4 White = Color4.White;
+            White.A = 0.3f;
+            Ambient = new AmbientLight(White);
+            Directional = new DirectionalLight(White, Vector3.Zero);
+            Point = new PointLight(White, 100.0f, Vector3.Zero);
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace DisplayModel
             GL.DisableVertexAttribArray(attribute.VertexPosition);
             GL.DisableVertexAttribArray(attribute.VertexNormal);
             GL.DisableVertexAttribArray(attribute.VertexColour);
-            //GL.DisableVertexAttribArray(attribute.VertexTexture);
+            GL.DisableVertexAttribArray(attribute.VertexTexture);
 
             GL.Flush();
         }
@@ -162,7 +163,7 @@ namespace DisplayModel
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
             // Binding the vertices
 
-            if (gameobject.Material.TextureID > -1)
+            if (gameobject.BufferData.Texture.Length > 0)
             {
                 //Binding the textures
                 GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Texture);
@@ -176,14 +177,17 @@ namespace DisplayModel
                 GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
                 //Binding the textures
             }
-            
-            //Binding the normals
-            GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Normal);
-            GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferdata.Normal.Length * Vector3.SizeInBytes), bufferdata.Normal, BufferUsageHint.StaticDraw);
-            GL.EnableVertexAttribArray(attribute.VertexNormal);
-            GL.VertexAttribPointer(attribute.VertexNormal, 3, VertexAttribPointerType.Float, true, 0, 0);
-            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
-            //Binding the normals
+
+            if (gameobject.BufferData.Normal.Length > 0)
+            {
+                //Binding the normals
+                GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Normal);
+                GL.BufferData<Vector3>(BufferTarget.ArrayBuffer, (IntPtr)(bufferdata.Normal.Length * Vector3.SizeInBytes), bufferdata.Normal, BufferUsageHint.StaticDraw);
+                GL.EnableVertexAttribArray(attribute.VertexNormal);
+                GL.VertexAttribPointer(attribute.VertexNormal, 3, VertexAttribPointerType.Float, true, 0, 0);
+                GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+                //Binding the normals
+            }
 
             //Binding the colours
             GL.BindBuffer(BufferTarget.ArrayBuffer, gameobject.Buffer.Colour);
@@ -205,15 +209,12 @@ namespace DisplayModel
             //The basic boolean uniforms
 
             //The lighting uniforms
-            GL.Uniform3(uniform.AmbientLightColour, AmbientLight_Colour);
+            Ambient.addLight(uniform.AmbientLightColour);
+            Directional.addLight(uniform.DirectionalLightColour, uniform.DirectionalLightDirection);
+            Point.addLight(uniform.PointLightDiffuseColour, uniform.PointLightShininess, uniform.PointLightPosition);
 
-            GL.Uniform3(uniform.DirectionalLightColour, DirectionalLight_Colour);
-            GL.Uniform3(uniform.DirectionalLightDirection, DirectionalLight_Direction);
+            GL.Uniform3(uniform.PointLightSpecularColour, gameobject.Material.Specular);
 
-            GL.Uniform3(uniform.PointLightDiffuseColour, PointLight_DiffuseColour);
-            GL.Uniform3(uniform.PointLightSpecularColour, PointLight_SpecularColour);
-            GL.Uniform1(uniform.PointLightShininess, PointLight_Shininess);
-            GL.Uniform3(uniform.PointLightPosition, PointLight_Position);
             //The lighting uniforms
 
 
@@ -225,29 +226,6 @@ namespace DisplayModel
             GL.UniformMatrix4(uniform.ProjectionMatrix, false, ref ProjectionMatrix);
             //The matrix uniforms
         }
-        #endregion
-
-        #region Lighting Attributes
-        public Vector3 AmbientLight_Colour
-        { get; set; }
-
-        public Vector3 DirectionalLight_Colour
-        { get; set; }
-
-        public Vector3 DirectionalLight_Direction
-        { get; set; }
-
-        public Vector3 PointLight_DiffuseColour
-        { get; set; }
-
-        public Vector3 PointLight_SpecularColour
-        { get; set; }
-
-        public float PointLight_Shininess
-        { get; set; }
-
-        public Vector3 PointLight_Position
-        { get; set; }
         #endregion
     }
 }

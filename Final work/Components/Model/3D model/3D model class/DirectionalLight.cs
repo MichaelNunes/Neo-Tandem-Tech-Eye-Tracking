@@ -31,8 +31,20 @@ namespace DisplayModel
     /// Represents an object that adds light to a scene
     /// in a certain direction.
     /// </summary>
-    class DirectionalLight : Light
+    public class DirectionalLight : Light
     {
+        #region Fields
+        /// <summary>
+        /// The colour of the light.
+        /// </summary>
+        public Vector3 Colour;
+
+        /// <summary>
+        /// The direction in which the light is lighting a scene.
+        /// </summary>
+        public Vector3 Direction;
+        #endregion
+
         #region Constructors
         /// <summary>
         /// 
@@ -56,22 +68,11 @@ namespace DisplayModel
         #endregion
 
         #region Override
-        public override void addLight()
+        public void addLight(int colour, int direction)
         {
-            // IMPLEMENT
+            GL.Uniform3(colour, Colour);
+            GL.Uniform3(direction, Direction);
         }
-        #endregion
-
-        #region Attributes
-        /// <summary>
-        /// The colour of the light.
-        /// </summary>
-        public Vector3 Colour { get; set; }
-
-        /// <summary>
-        /// The direction in which the light is lighting a scene.
-        /// </summary>
-        public Vector3 Direction { get; set; }
         #endregion
     }
 }

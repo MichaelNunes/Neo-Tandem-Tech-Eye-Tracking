@@ -28,9 +28,6 @@ namespace DisplayModel
     /// </summary>
     public abstract class Light
     {
-        /// <summary>
-        /// Adds light into the scene within the game window.
-        /// </summary>
-        public abstract void addLight();
+
     }
 }
