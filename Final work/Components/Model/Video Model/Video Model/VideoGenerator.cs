@@ -124,6 +124,8 @@ namespace Video_Model
             }
             catch(Exception e)
             {
+                Console.WriteLine("EXCEPTION VIDEO: Count=" + count + e);
+                Console.ReadLine();
                 writer.Dispose();
                 writer.Close();
             }

@@ -17,23 +17,23 @@ namespace Results_Class
         public void Init()
         {
             //Images   
-            etg._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\2D Test\";
-            etg._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\2D Test\";
-            etg._modelName = "test";
+            etg._SourceLocation = @"C:\Users\Duran\Desktop\ETGraphTests\2D Test\";
+            etg._DestinationPath = @"C:\Users\Duran\Desktop\ETGraphTests\2D Test\";
+            etg._modelName = "2dTest";
             etg._height = 1080;
             etg._width = 1920;
 
             //video
-            vm._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\Video Test\";
-            vm._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\Video Test\";
-            vm._modelName = "Test";
+            vm._SourceLocation = @"C:\Users\Duran\Desktop\ETGraphTests\Video Test\videoTest.wmv";
+            vm._DestinationPath = @"C:\Users\Duran\Desktop\ETGraphTests\Video Test\";
+            vm._modelName = "videoTest";
             vm._height = 720;
             vm._width = 1280;
 
             //3D           
-            etg3d._SourceLocation = @"C:\Users\COS301\Documents\ETG Tests\3D Test\";
-            etg3d._DestinationPath = @"C:\Users\COS301\Documents\ETG Tests\3D Test\";
-            etg3d._modelName = "Test0";
+            etg3d._SourceLocation = @"C:\Users\Duran\Desktop\ETGraphTests\3D Test\";
+            etg3d._DestinationPath = @"C:\Users\Duran\Desktop\ETGraphTests\3D Test\";
+            etg3d._modelName = "3dTest";
             etg3d._height = 1080;
             etg3d._width = 1920;
         }

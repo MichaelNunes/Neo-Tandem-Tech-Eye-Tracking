@@ -472,7 +472,7 @@ namespace Results_Class
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
-            //ig.deleteImages();
+            ig.deleteImages();
         }
 
         /// <summary>

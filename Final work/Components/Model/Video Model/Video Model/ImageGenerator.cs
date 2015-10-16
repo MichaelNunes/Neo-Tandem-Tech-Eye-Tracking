@@ -88,6 +88,8 @@ namespace Video_Model
             }
             catch(Exception e)
             {
+                Console.WriteLine("EXCEPTION IMAGE:" + e);
+                Console.ReadLine();
                 reader.Dispose();
                 reader.Close();
                 return count;

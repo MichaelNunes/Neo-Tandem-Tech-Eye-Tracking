@@ -14,23 +14,23 @@ namespace Video_Model
         ImageGenerator ig;
         VideoGenerator vg;
 
-        string imagesDir = @"C:\Users\Duran\Desktop\NTT tests\Recordings\Video\sanFran\";
-        string videosDir = @"C:\Users\Duran\Desktop\NTT tests\Recordings\Video\sanFran\";
-        string testVideo = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
+        string imagesDir = @"C:\Users\Duran\Desktop\videoTracking\test\";
+        string videosDir = @"C:\Users\Duran\Desktop\videoTracking\test\";
+        string testVideo = @"C:\Users\Duran\Desktop\videoTracking\test\Wildlife.wmv";
 
         [SetUp]
         public void Init()
         {
             ig = new ImageGenerator(testVideo, imagesDir);
 
-            vg = new VideoGenerator(imagesDir, videosDir + "SanFransico_v1.wmv", 1920, 888, 30);
+            vg = new VideoGenerator(imagesDir, videosDir + "Wildlife.wmv", 1280, 720, 30);
         }
 
         [Test]
         public void createVideo()
         {
             vg.DestinationPath = vg.ModelName;
-            vg.ModelName = "SanFransico_v1.wmv";
+            vg.ModelName = "";
             vg.createVideo();
 
             Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Video\UnitTestVideo.wmv"));
@@ -42,7 +42,7 @@ namespace Video_Model
         {
             int imageCount = ig.createImages();
 
-            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Images\frame0.jpg"));
+            Assert.IsTrue(File.Exists(@"C:\Users\Duran\Desktop\videoTracking\test\frame0.jpg"));
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Video_Model
         {
             ig.deleteImages();
 
-            Assert.IsFalse(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Images\frame0.jpg"));
+            Assert.IsFalse(File.Exists(@"C:\Users\Duran\Desktop\videoTracking\test\frame0.jpg"));
         }
 
     }

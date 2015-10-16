@@ -383,7 +383,6 @@ namespace Results_Class
                 }
             }
 
-
             //call create video
             vm.ImagePath = DestinationPath + "\\";
             vm.DestinationPath = DestinationPath + "\\";
@@ -402,7 +401,7 @@ namespace Results_Class
                 canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + i + ".jpg", ImageFormat.Jpeg);
                 bitmap.Dispose();
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 SaveETGraphImage(bitmap, x, y, i);
             }
@@ -413,7 +412,7 @@ namespace Results_Class
         /// </summary>
         public void SaveETGraph2D()
         {
-            Bitmap temp = new Bitmap(SourceLocation  + "\\" + ModelName);
+            Bitmap temp = new Bitmap(SourceLocation + "\\" + ModelName);
             width = temp.Width;
             height = temp.Height;
             temp.Dispose();
@@ -505,7 +504,6 @@ namespace Results_Class
             vid.Open(SourceLocation);
             height = vid.Height;
             width = vid.Width;
-            Console.WriteLine(height+"<--height,width-->"+width);
             vid.Close();
             OpenETGraphData(DestinationPath, ModelName);
 
@@ -575,7 +573,7 @@ namespace Results_Class
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
-            //ig.deleteImages();
+            ig.deleteImages();
         }
 
         /// <summary>

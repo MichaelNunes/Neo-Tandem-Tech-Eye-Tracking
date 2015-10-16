@@ -13,6 +13,5 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Componen
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\x86\Debug\AForge.Video.FFMPEG.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\x86\Debug\nunit.framework.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\bin\x86\Debug\nunit.framework.xml
-C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\obj\x86\Debug\Video Model.csprojResolveAssemblyReference.cache
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\obj\x86\Debug\Video Model.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\Video Model\Video Model\obj\x86\Debug\Video Model.pdb
