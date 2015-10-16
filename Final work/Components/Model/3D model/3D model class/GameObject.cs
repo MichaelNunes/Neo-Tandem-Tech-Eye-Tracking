@@ -53,8 +53,6 @@ namespace DisplayModel
             material = new Material();
             bufferData = new BufferData();
             children = new List<GameObject>();
-
-            Initialize();
         }
 
         /// <summary>
@@ -84,6 +82,7 @@ namespace DisplayModel
             buffer.Index = GL.GenBuffer();
 
             Material.Setup();
+            BufferData.SetColour(Material.Colour);
 
             foreach (GameObject child in children)
                 child.Initialize();

@@ -30,8 +30,15 @@ namespace DisplayModel
     /// <summary>
     /// Represents an object that light the scene evenly a certain colour.
     /// </summary>
-    class AmbientLight : Light
+    public class AmbientLight : Light
     {
+        #region Fields
+        /// <summary>
+        /// The colour of the light.
+        /// </summary>
+        public Vector3 Colour;
+        #endregion
+
         #region Constructors
         /// <summary>
         /// Creates a default ambient light object.
@@ -53,17 +60,10 @@ namespace DisplayModel
         #endregion
 
         #region Override
-        public override void addLight()
+        public void addLight(int uniform)
         {
-            // IMPLEMENT
+            GL.Uniform3(uniform, Colour);
         }
-        #endregion
-
-        #region Attributes
-        /// <summary>
-        /// The colour of the light.
-        /// </summary>
-        public Vector3 Colour { get; set; }
         #endregion
     }
 }

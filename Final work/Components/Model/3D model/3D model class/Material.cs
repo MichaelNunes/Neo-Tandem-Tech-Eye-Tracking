@@ -41,7 +41,8 @@ namespace DisplayModel
 		#region Fields
         public const int MAX_TEXTURES = 32;
         
-		private Color4 colour = Color4.LightGray;
+		private Color4 diffuse = Color4.LightGray;
+        private Color4 specular = Color4.Black;
         private int textureid;
         private string file;
 		#endregion
@@ -63,7 +64,22 @@ namespace DisplayModel
 		public Material(string filepath)
         {
             textureid = -1;
-            file = filepath;
+            if (filepath != string.Empty && filepath[0] == 'T')
+                file = filepath.Substring(1);
+
+            else if (filepath != string.Empty && filepath[0] == 'C')
+            {
+                string[] color = filepath.Substring(1).Split(' ');
+                diffuse = new Color4(float.Parse(color[0]), float.Parse(color[1]), float.Parse(color[2]), 1.0f);
+
+                if (color.Length > 3)
+                    specular = new Color4(float.Parse(color[3]), float.Parse(color[4]), float.Parse(color[5]), 1.0f);
+
+                file = string.Empty;
+            }
+
+            else
+                file = string.Empty;
 		}
 		#endregion
 
@@ -106,7 +122,12 @@ namespace DisplayModel
         /// <summary>
         /// The color of the material attached to the object.
         /// </summary>
-        public Color4 Colour { get { return colour; } }
+        public Color4 Colour { get { return diffuse; } }
+
+        /// <summary>
+        /// The color of the material attached to the object.
+        /// </summary>
+        public Vector3 Specular { get { return new Vector3(diffuse.R, diffuse.G, diffuse.B); } }
 
         /// <summary>
         /// An array of id's for each texture bound.

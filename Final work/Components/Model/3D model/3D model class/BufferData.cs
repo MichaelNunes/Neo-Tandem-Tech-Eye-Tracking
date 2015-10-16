@@ -66,24 +66,30 @@ namespace DisplayModel
         /// <param name='ti'> A list of texture indices. </param>
         /// <param name='ni'> A list of normal indices. </param>
         /// <param name="tc"> A list of texture indices indices. </param>
-        public BufferData(List<Vector3> vp, List<Vector2> tp, List<Vector3> np, int[] vi, int[] ti, int[] ni)
+        public BufferData(ref List<Vector3> vp, ref List<Vector2> tp, ref List<Vector3> np, int[] vi, int[] ti, int[] ni)
         {
             int size = vi.Length;
-            vertex = new Vector3[vi.Length];
-            texture = new Vector2[ti.Length];
-            normal = new Vector3[ni.Length];
-            colour = new Vector4[vi.Length];
+            vertex = new Vector3[size];
+            texture = new Vector2[ti != null ? size : 0];
+            normal = new Vector3[ni != null ? size : 0];
+            colour = new Vector4[size];
             Color4 color = Color4.LightGray;
             ModelViewMatrix = Matrix4.Identity;
 
             for (int i = 0; i < size; ++i)
             {
                 vertex[i] = vp[vi[i] - 1];
-                if (ti.Length > 0) texture[i] = tp[ti[i] - 1];
-                normal[i] = np[ni[i] - 1];
+                if (ti != null) texture[i] = tp[ti[i] - 1];
+                if (ni != null) normal[i] = np[ni[i] - 1];
                 colour[i] = new Vector4(color.R, color.G, color.B, color.A);
             }
 		}
+
+        public void SetColour(Color4 newColour)
+        {
+            for (int i = 0; i < colour.Length; ++i)
+                colour[i] = new Vector4(newColour.R, newColour.G, newColour.B, newColour.A);
+        }
 		#endregion
 
         #region Attributes
