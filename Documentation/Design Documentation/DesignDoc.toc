@@ -25,7 +25,7 @@
 \contentsline {subsubsection}{\numberline {5.3.3}Layout of the forms}{6}{subsubsection.0.5.3.3}
 \contentsline {subsubsection}{\numberline {5.3.4}Guided nature of the process}{6}{subsubsection.0.5.3.4}
 \contentsline {subsubsection}{\numberline {5.3.5}Preview window}{6}{subsubsection.0.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.6}Size and style of font}{6}{subsubsection.0.5.3.6}
+\contentsline {subsubsection}{\numberline {5.3.6}Size and style of font}{7}{subsubsection.0.5.3.6}
 \contentsline {subsubsection}{\numberline {5.3.7}Size and style of buttons}{7}{subsubsection.0.5.3.7}
 \contentsline {subsubsection}{\numberline {5.3.8}Loading times}{7}{subsubsection.0.5.3.8}
-\contentsline {subsubsection}{\numberline {5.3.9}Way forward}{7}{subsubsection.0.5.3.9}
+\contentsline {subsubsection}{\numberline {5.3.9}The changes made}{7}{subsubsection.0.5.3.9}
