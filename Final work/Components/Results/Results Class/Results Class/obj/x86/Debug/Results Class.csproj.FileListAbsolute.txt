@@ -1,0 +1,12 @@
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\Results Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\Results Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\AForge.Video.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\AForge.Video.FFMPEG.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\HeatMap.NET.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\nunit.framework.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\Video Model.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\nunit.framework.xml
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\bin\x86\Debug\Video Model.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\x86\Debug\Results Class.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\x86\Debug\Results Class.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Results\Results Class\Results Class\obj\x86\Debug\Results Class.csprojResolveAssemblyReference.cache

@@ -74,39 +74,37 @@ namespace NTT_Eye_Tracking
                 openFileDialog1.ShowDialog();
 
                 string path = openFileDialog1.FileName;
-                // MessageBox.Show(path);
-                string[] settings = File.ReadAllLines(path);
-                globals.m.ProjectName = settings[0];
-                string[] array = settings[1].Split('\\');
-                string dir = "";
-                for (int i = 0; i < array.Length - 1; i++)
+
+                if (path == "")
                 {
-                    dir += array[i] + "\\";
+
                 }
-                globals.m.Directory = dir;
-                Settings_Class.ProjectSettings ps = new ProjectSettings(settings[0], settings[1]);
-                string[] settingsss = File.ReadAllLines(dir + "\\" + settings[3]);
-                Settings_Class.ModelSettings3D ms = new ModelSettings3D(settingsss[0], Convert.ToInt32(settingsss[1]), Convert.ToBoolean(settingsss[2]), Convert.ToBoolean(settingsss[3]));
-                globals.m.SettingsProject = ps;
-                globals.m.SettingsModel = ms;
+                else
+                {
+                    // MessageBox.Show(path);
+                    string[] settings = File.ReadAllLines(path);
+                    globals.m.ProjectName = settings[0];
+                    string[] array = settings[1].Split('\\');
+                    string dir = "";
+                    for (int i = 0; i < array.Length - 1; i++)
+                    {
+                        dir += array[i] + "\\";
+                    }
+                    globals.m.Directory = dir;
+                    Settings_Class.ProjectSettings ps = new ProjectSettings(settings[0], settings[1]);
+                    string[] settingsss = File.ReadAllLines(dir + "\\" + settings[3]);
+                    Settings_Class.ModelSettings3D ms = new ModelSettings3D(settingsss[0], Convert.ToInt32(settingsss[1]), Convert.ToBoolean(settingsss[2]), Convert.ToBoolean(settingsss[3]));
+                    globals.m.SettingsProject = ps;
+                    globals.m.SettingsModel = ms;
 
-
-                //MessageBox.Show("The following is the contents of proj .set" + globals.m.SettingsProject.ProjectLocation1 + " " + globals.m.SettingsProject.ProjectName1);
-                //MessageBox.Show("The following is the contents of model .set" + globals.m.SettingsModel.FPS1 + " " + globals.m.SettingsModel.Lighting1+" " + globals.m.SettingsModel.ModelLocation1+" " + globals.m.SettingsModel.Textures1);
-
-                //newly commented ==========================================//
-                //Main show = new Main();
-                //this.Hide();
-                //show.ShowDialog();
-                //==========================================================//
-
-                transitionForward(panelNewOldProject, panel_modelSelect);
+                    transitionForward(panelNewOldProject, panel_modelSelect);
+                }
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }
-            transitionForward(panelNewOldProject, panel_createNew);
+            //transitionForward(panelNewOldProject, panel_createNew);
         }
 
         private void buttonAdv3_Click(object sender, EventArgs e)

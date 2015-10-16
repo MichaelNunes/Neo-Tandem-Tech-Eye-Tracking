@@ -20,3 +20,4 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Componen
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\bin\Debug\nunit.framework.xml
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\obj\Debug\StatsClass.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\obj\Debug\StatsClass.pdb
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Statistics\StatsClass\StatsClass\obj\Debug\StatsClass.csprojResolveAssemblyReference.cache

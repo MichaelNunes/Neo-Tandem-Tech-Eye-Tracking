@@ -493,7 +493,7 @@ namespace StatsClass
                 pdfPage SecondPage = myDoc.addPage();
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 ArrayList tableContents = new ArrayList();
-                this.ModelName = "view" + i;
+                this.ModelName = "view" + (i+1);
                 List<int> m = getpoints();
 
                 tableContents.Add(m.ElementAt(0));

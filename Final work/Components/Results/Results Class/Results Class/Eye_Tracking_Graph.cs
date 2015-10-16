@@ -299,7 +299,7 @@ namespace Results_Class
             //check that all files are images
             foreach (string str in files)
             {
-                if (Path.GetExtension(str).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) || Path.GetExtension(str).Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase))
+                if (Path.GetExtension(str).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) || Path.GetExtension(str).Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
                 {
                     images.Add(str);
                 }
@@ -316,14 +316,18 @@ namespace Results_Class
             {
                 for (int i = 0; i < dataFiles.Count; i++)
                 {
-                    OpenETGraphData(SourceLocation, (ModelName + "" + i));
-                    Bitmap bitmap = new Bitmap(width, height);
+                    Bitmap temp = new Bitmap(SourceLocation + "\\" + ModelName + "view" + (i + 1) + ".bmp");
+                    width = temp.Width;
+                    height = temp.Height;
+                    temp.Dispose();
+                    OpenETGraphData(SourceLocation, "view" + (i + 1));
+                    Bitmap bitmap = new Bitmap(width, height);//SourceLocation + "\\" + ModelName + "view" + (i + 1) + ".bmp");
                     if (py.Count == 0 || px.Count == 0)
                     {
                         throw new ArgumentNullException();
                     }
                     Image canvas = createETGraph(bitmap, px, py, i);
-                    canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".ETGraph.jpg", ImageFormat.Jpeg);
+                    canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 1) + ".ETGraph.jpg", ImageFormat.Jpeg);
                 }
             }
             catch (Exception ef)
@@ -455,7 +459,7 @@ namespace Results_Class
             //check that all files are images
             foreach (string str in files)
             {
-                if (Path.GetExtension(str).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) || Path.GetExtension(str).Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase))
+                if (Path.GetExtension(str).Equals(".jpg", StringComparison.InvariantCultureIgnoreCase) || Path.GetExtension(str).Equals(".bmp", StringComparison.InvariantCultureIgnoreCase))
                 {
                     images.Add(str);
                 }
@@ -472,8 +476,10 @@ namespace Results_Class
             {
                 for (int i = 0; i < dataFiles.Count; i++)
                 {
-                    OpenETGraphData(SourceLocation, (ModelName + "" + i));
-                    Bitmap bitmap = new Bitmap(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".jpg");
+                    Bitmap bitmap = new Bitmap(SourceLocation + "\\" + ModelName + "view" + (i + 1) + ".bmp");
+                    height = bitmap.Height;
+                    width = bitmap.Width;
+                    OpenETGraphData(SourceLocation, "view" + (i + 1));
                     if (py.Count == 0 || px.Count == 0)
                     {
                         throw new ArgumentNullException();
@@ -546,6 +552,7 @@ namespace Results_Class
                     {
                         x.Add(px.ElementAt(i));
                         y.Add(py.ElementAt(i));
+
                     }
 
                     Image im = new Bitmap(DestinationPath + "\\" + ModelName + "frame" + (i) + ".jpg");
@@ -562,13 +569,13 @@ namespace Results_Class
             }
 
             //call create video
-            vm.ImagePath = DestinationPath + "\\";
-            vm.DestinationPath = DestinationPath + "\\";
+            vm.ImagePath = DestinationPath;
+            vm.DestinationPath = DestinationPath;
             vm.ModelName = ModelName + ".ETGraph";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
-            ig.deleteImages();
+            //ig.deleteImages();
         }
 
         /// <summary>

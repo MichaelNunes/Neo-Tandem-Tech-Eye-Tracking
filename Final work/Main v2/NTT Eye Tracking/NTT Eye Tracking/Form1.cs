@@ -54,65 +54,79 @@ namespace NTT_Eye_Tracking
 
         private void NTT_EyeTracker_Load(object sender, EventArgs e)
         {
-            disableMainButtons();
-            initializeGlobalStyles();
-            this.BackColor = GlobalStyles.ForegroundColours;
-            NTT_MiniForm ntt_mini = new NTT_MiniForm();
-            ntt_mini.ShowDialog(this);
-            btnCal.Enabled = true;
-            switch (globals.modelIndex)
+            try
             {
-                //in each case we must show the appropriate model previewer and hide the others
-                case 0: //3D model
-                    {
-                        pic_slideshowPreview.Visible = true;
-                        pic_model2DPreview.Visible = false;
-                        wmp_VideoPreview.Visible = false;
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        pic_slideshowPreview.Visible = false;
-                        pic_model2DPreview.Visible = true;
-                        wmp_VideoPreview.Visible = false;
-                        break;
-                    }
-                case 3: //Video
-                    {
+                disableMainButtons();
+                initializeGlobalStyles();
+                this.BackColor = GlobalStyles.ForegroundColours;
+                NTT_MiniForm ntt_mini = new NTT_MiniForm();
+                ntt_mini.ShowDialog(this);
+                btnCal.Enabled = true;
+                switch (globals.modelIndex)
+                {
+                    //in each case we must show the appropriate model previewer and hide the others
+                    case 0: //3D model
+                        {
+                            pic_slideshowPreview.Visible = true;
+                            pic_model2DPreview.Visible = false;
+                            wmp_VideoPreview.Visible = false;
+                            break;
+                        }
+                    case 1: //flythrough
+                        {
+                            break;
+                        }
+                    case 2: //2D models
+                        {
+                            pic_slideshowPreview.Visible = false;
+                            pic_model2DPreview.Visible = true;
+                            wmp_VideoPreview.Visible = false;
+                            break;
+                        }
+                    case 3: //Video
+                        {
 
-                        wmp_VideoPreview.Dock = DockStyle.Fill;
-                        wmp_VideoPreview.stretchToFit = true;
-                        pic_slideshowPreview.Visible = false;
-                        pic_model2DPreview.Visible = false;
-                        wmp_VideoPreview.Visible = true;
-                        wmp_VideoPreview.Dock = DockStyle.Fill;
-                        break;
-                    }
+                            wmp_VideoPreview.Dock = DockStyle.Fill;
+                            wmp_VideoPreview.stretchToFit = true;
+                            pic_slideshowPreview.Visible = false;
+                            pic_model2DPreview.Visible = false;
+                            wmp_VideoPreview.Visible = true;
+                            wmp_VideoPreview.Dock = DockStyle.Fill;
+                            break;
+                        }
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to open the application, please try again. If your problem persists pleas consider reinstalling this software. Please also ensure that all system requirements have been met to ensure that NTT runs optimally.");
             }
         }
 
         public void initializeGlobalStyles()
         {
-            //field initialization
-            GlobalStyles.models = new List<modelType>();
+            try
+            {
+                //field initialization
+                GlobalStyles.models = new List<modelType>();
 
-            //Model Types
-            modelType model3DImage = new modelType("3D Image", global::NTT_Eye_Tracking.Properties.Resources.blank35);
-            //model3DImage.modelImage.Size = new Size(35, 35);
-            GlobalStyles.models.Add(model3DImage);
-            modelType model3DFlythrough = new modelType("3D Flythrough", global::NTT_Eye_Tracking.Properties.Resources.paper135);
-            GlobalStyles.models.Add(model3DFlythrough);
-            modelType model2DImage = new modelType("2D Image", global::NTT_Eye_Tracking.Properties.Resources.landscape11);
-            GlobalStyles.models.Add(model2DImage);
-            modelType modelVideo = new modelType("Video", global::NTT_Eye_Tracking.Properties.Resources.movie42);
-            GlobalStyles.models.Add(modelVideo);
+                //Model Types
+                modelType model3DImage = new modelType("3D Image", global::NTT_Eye_Tracking.Properties.Resources.blank35);
+                //model3DImage.modelImage.Size = new Size(35, 35);
+                GlobalStyles.models.Add(model3DImage);
+                modelType model3DFlythrough = new modelType("3D Flythrough", global::NTT_Eye_Tracking.Properties.Resources.paper135);
+                GlobalStyles.models.Add(model3DFlythrough);
+                modelType model2DImage = new modelType("2D Image", global::NTT_Eye_Tracking.Properties.Resources.landscape11);
+                GlobalStyles.models.Add(model2DImage);
+                modelType modelVideo = new modelType("Video", global::NTT_Eye_Tracking.Properties.Resources.movie42);
+                GlobalStyles.models.Add(modelVideo);
 
-            //Form styles
-            GlobalStyles.ForegroundColours = Color.White;//FromArgb(77,80,87);
+                //Form styles
+                GlobalStyles.ForegroundColours = Color.White;//FromArgb(77,80,87);
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to load application styles. Please try restarting the program or by resetting the styles by mmaking use of the settings menu.");
+            }
         }
 
         public void formInitialization()
@@ -122,217 +136,276 @@ namespace NTT_Eye_Tracking
 
         private void btnCal_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\EyeTribe\Client\EyeTribeUIWin.exe");
-            btnChooseModel.Enabled = true;
+            try
+            {
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\EyeTribe\Client\EyeTribeUIWin.exe");
+                btnChooseModel.Enabled = true;
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to open \"The Eye Tribe calibration software and server. Please ensure that you have the application installed correctly and try again.");
+            }
+
         }
 
         private void btnChooseModel_Click(object sender, EventArgs e)
         {
-            switch (globals.modelIndex)
+            try
             {
-                case 0: //3D model
-                    {
-                        openFileDialog1.Title = "Please select an object file";
-                        openFileDialog1.Filter = "object (.obj)|*.obj";
-                        openFileDialog1.FileName = "";
-                        openFileDialog1.ShowDialog();
-                        name = openFileDialog1.SafeFileName;
-                        obj = openFileDialog1.FileName;
-
-                        //openFileDialog1.Title = "Please select a material file file";
-                        //openFileDialog1.Filter = "object (.mtl)|*.mtl";
-                        //openFileDialog1.FileName = "";
-                        //openFileDialog1.ShowDialog();
-                        //name = openFileDialog1.SafeFileName;
-                        //mtl = openFileDialog1.FileName;
-
-                        DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
-                        int counter = 2;
-                        for (int i = 0; i < 9; i++)
+                switch (globals.modelIndex)
+                {
+                    case 0: //3D model
                         {
-                            imglocation[i] = globals.currentRecordingpath + @"\" + name + "view" + counter + ".bmp";
-                            counter++;
+                            openFileDialog1.Title = "Please select an object file";
+                            openFileDialog1.Filter = "object (.obj)|*.obj";
+                            openFileDialog1.FileName = "";
+                            openFileDialog1.ShowDialog();
+                            name = openFileDialog1.SafeFileName;
+                            obj = openFileDialog1.FileName;
+
+                            if (name != "" || obj != "")
+                            {
+                                DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
+                                int counter = 1;
+                                for (int i = 0; i < 9; i++)
+                                {
+                                    imglocation[i] = globals.currentRecordingpath + @"\" + name + "view" + counter + ".bmp";
+                                    counter++;
+                                }
+                                img = Path.GetDirectoryName(obj) + "\\";
+                                pic_caro.ImageLocation = imglocation[0];
+                                flythrough = false;
+                                btnRecord.Enabled = true;
+                            }
+
+
+                            break;
                         }
-                        img = Path.GetDirectoryName(obj) + "\\";
-                        pic_caro.ImageLocation = imglocation[0];
-                        flythrough = false;
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        openFileDialog1.Title = "Please select an object file";
-                        openFileDialog1.Filter = "object (.obj)|*.obj";
-                        openFileDialog1.FileName = "";
-                        openFileDialog1.ShowDialog();
-                        name = openFileDialog1.SafeFileName;
-                        obj = openFileDialog1.FileName;
+                    case 1: //flythrough
+                        {
+                            openFileDialog1.Title = "Please select an object file";
+                            openFileDialog1.Filter = "object (.obj)|*.obj";
+                            openFileDialog1.FileName = "";
+                            openFileDialog1.ShowDialog();
+                            name = openFileDialog1.SafeFileName;
+                            obj = openFileDialog1.FileName;
 
+                            if (name != "" || obj != "")
+                            {
+                                img = Path.GetDirectoryName(obj) + "\\";
+                                flythrough = true;
+                                btnRecord.Enabled = true;
+                            }
+                            break;
+                        }
+                    case 2: //2D
+                        {
+                            openFileDialog1.Filter = "Image (.jpg)|*.jpg";
+                            openFileDialog1.FileName = "";
+                            openFileDialog1.ShowDialog();
+                            name = openFileDialog1.SafeFileName;
+                            string path = openFileDialog1.FileName;
 
-                        //openFileDialog1.Title = "Please select a material file";
-                        //openFileDialog1.Filter = "object (.mtl)|*.mtl";
-                        //openFileDialog1.FileName = "";
-                        //openFileDialog1.ShowDialog();
-                        //name = openFileDialog1.SafeFileName;
-                        //mtl = openFileDialog1.FileName;
+                            if (name != "" || path != "")
+                            {
+                                ModelPath = globals.currentRecordingpath + "\\" + name;
+                                System.IO.File.Copy(path, ModelPath, true);
+                                pic_model2DPreview.ImageLocation = ModelPath;
+                                btnRecord.Enabled = true;
+                            }
+                            break;
+                        }
 
-                        img = Path.GetDirectoryName(obj) + "\\";
+                    case 3: //Video
+                        {
+                            openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
+                            openFileDialog1.FileName = "";
+                            openFileDialog1.ShowDialog();
+                            ModelPath = openFileDialog1.FileName;
+                            if (ModelPath != "")
+                            {
+                                wmp_VideoPreview.URL = openFileDialog1.FileName;
+                                wmp_VideoPreview.Dock = DockStyle.Fill;
+                                name = openFileDialog1.SafeFileName;
+                                wmp_VideoPreview.Ctlcontrols.stop();
+                                btnRecord.Enabled = true;
+                            }
+                            break;
+                        }
+                }
 
-                        flythrough = true;
-                        break;
-                    }
-                case 2: //2D
-                    {
-                        openFileDialog1.Filter = "Image (.jpg)|*.jpg";
-                        openFileDialog1.FileName = "";
-                        openFileDialog1.ShowDialog();
-                        name = openFileDialog1.SafeFileName;
-                        string path = openFileDialog1.FileName;
-                        ModelPath = globals.currentRecordingpath + "\\" + name;
-                        System.IO.File.Copy(path, ModelPath, true);
-                        pic_model2DPreview.ImageLocation = ModelPath;
-                        break;
-                    }
-
-                case 3: //Video
-                    {
-                        openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
-                        openFileDialog1.FileName = "";
-                        openFileDialog1.ShowDialog();
-                        ModelPath = openFileDialog1.FileName;
-                        wmp_VideoPreview.URL = openFileDialog1.FileName;
-                        wmp_VideoPreview.Dock = DockStyle.Fill;
-                        name = openFileDialog1.SafeFileName;
-                        wmp_VideoPreview.Ctlcontrols.stop();
-                        break;
-                    }
             }
-            btnRecord.Enabled = true;
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to open the chosen model. \n\n Please check the following is correct:\n 1. That a valid model has been chosen. \n");
+            }
+
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
         {//hideMainButtons();
-            
-                    Size res = this.GetDpiSafeResolution();
-            globals.recording = new Record(globals.currentRecordingpath + @"\", name,res.Width,res.Height);
-            switch (globals.modelIndex)
+            try
             {
-                case 0: //3D model
-                    {
-                        //recording._recording = true;
-                        frmDisplay fd = new frmDisplay(0, null, imglocation);
-                        fd.Show(this);
-                        //recording._recording = false;
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        bw = new BackgroundWorker();
-                        bw.WorkerReportsProgress = true;
-                        bw.WorkerSupportsCancellation = true;
-                        bw.DoWork += new DoWorkEventHandler(bw_DoWorkRecord);
-                        bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecord);
-                        bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecord);
-                        bw.RunWorkerAsync();
+                Size res = this.GetDpiSafeResolution();
+                globals.recording = new Record(globals.currentRecordingpath + @"\", name, res.Width, res.Height);
+                switch (globals.modelIndex)
+                {
+                    case 0: //3D model
+                        {
+                            //recording._recording = true;
+                            frmDisplay fd = new frmDisplay(0, null, imglocation);
+                            fd.Show(this);
+                            //recording._recording = false;
+                            break;
+                        }
+                    case 1: //flythrough
+                        {
+                            bw = new BackgroundWorker();
+                            bw.WorkerReportsProgress = true;
+                            bw.WorkerSupportsCancellation = true;
+                            bw.DoWork += new DoWorkEventHandler(bw_DoWorkRecord);
+                            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecord);
+                            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecord);
+                            bw.RunWorkerAsync();
 
-                        DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
-                        globals.recording._recording = false;
-                        vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
-                        // = globals.currentRecordingpath + @"\"
-                        vg.ImagePath = globals.currentRecordingpath + @"\";// +name;
-                        vg.ModelName = "";//name;
-                        vg.Fps = 30;
-                        res = this.GetDpiSafeResolution();
-                        vg.FrameHeight = res.Height;
-                        vg.FrameWidth = res.Width;
-                        vg.createVideo();
-                        System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        MessageBox.Show("Recording wil begin after this message is closed. The recording will end in " + globals.recordTime / 1000 + " seconds but you can press escape (Esc) to stop the recording at any time.");
+                            bool temp = DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
+                            bw.CancelAsync();
 
-                        //recording._recording = true;
-                        frmDisplay fd = new frmDisplay(2, ModelPath, null);
-                        fd.Show(this);
-                        //recording._recording = false;
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        //recording._recording = true;
-                        frmDisplay fd = new frmDisplay(3, ModelPath, null);
-                        fd.ShowDialog(this);
-                        //recording._recording = false;
+                            globals.recording._recording = false;
+                            globals.recording.saveToFile();
+                            globals.recording.close();
+                            vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
+                            // = globals.currentRecordingpath + @"\"
+                            vg.ImagePath = globals.currentRecordingpath + @"\";// +name;
+                            vg.ModelName = "";//name;
+                            vg.Fps = 30;
+                            res = this.GetDpiSafeResolution();
+                            vg.FrameHeight = res.Height;
+                            vg.FrameWidth = res.Width;
+                            vg.createVideo();
+                            System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
+                            break;
+                        }
+                    case 2: //2D models
+                        {
+                            MessageBox.Show("Recording wil begin after this message is closed. The recording will end in " + globals.recordTime / 1000 + " seconds but you can press escape (Esc) to stop the recording at any time.");
 
-                        break;
-                    }
+                            //recording._recording = true;
+                            frmDisplay fd = new frmDisplay(2, ModelPath, null);
+                            fd.Show(this);
+                            //recording._recording = false;
+                            break;
+                        }
+                    case 3: //Video
+                        {
+                            //recording._recording = true;
+                            frmDisplay fd = new frmDisplay(3, ModelPath, null);
+                            fd.ShowDialog(this);
+                            //recording._recording = false;
+
+                            break;
+                        }
+                }
+                enableMainButtons();
+
             }
-            enableMainButtons();
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to record on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much. \n");
+            }
         }
 
         private void btnOverlays_Click(object sender, EventArgs e)
         {
-            bw = new BackgroundWorker();
-            bw.WorkerReportsProgress = true;
-            bw.WorkerSupportsCancellation = true;
-            bw.DoWork += new DoWorkEventHandler(bw_DoWorkOverlay);
-            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedOverlay);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedOverlay);
+            try
+            {
+                bw = new BackgroundWorker();
+                bw.WorkerReportsProgress = true;
+                bw.WorkerSupportsCancellation = true;
+                bw.DoWork += new DoWorkEventHandler(bw_DoWorkOverlay);
+                bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedOverlay);
+                bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedOverlay);
 
-            bw.RunWorkerAsync(1000);
+                bw.RunWorkerAsync(1000);
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to create the overlays on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
+            }
         }
 
         private void btnHeatmaps_Click(object sender, EventArgs e)
         {
-            bw = new BackgroundWorker();
-            bw.WorkerReportsProgress = true;
-            bw.WorkerSupportsCancellation = true;
-            bw.DoWork += new DoWorkEventHandler(bw_DoWorkHeatmaps);
-            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedHeatmaps);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedHeatmaps);
+            try
+            {
 
-            bw.RunWorkerAsync(1000);
+                bw = new BackgroundWorker();
+                bw.WorkerReportsProgress = true;
+                bw.WorkerSupportsCancellation = true;
+                bw.DoWork += new DoWorkEventHandler(bw_DoWorkHeatmaps);
+                bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedHeatmaps);
+                bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedHeatmaps);
+
+                bw.RunWorkerAsync(1000);
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to create the Heatmaps on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
+            }
         }
 
         private void btnGazepoint_Click(object sender, EventArgs e)
         {
-            bw = new BackgroundWorker();
-            bw.WorkerReportsProgress = true;
-            bw.WorkerSupportsCancellation = true;
-            bw.DoWork += new DoWorkEventHandler(bw_DoWorkGazePlot);
-            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedGazePlot);
-            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedGazePlot);
+            try
+            {
+                bw = new BackgroundWorker();
+                bw.WorkerReportsProgress = true;
+                bw.WorkerSupportsCancellation = true;
+                bw.DoWork += new DoWorkEventHandler(bw_DoWorkGazePlot);
+                bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedGazePlot);
+                bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedGazePlot);
 
-            bw.RunWorkerAsync(1000);
+                bw.RunWorkerAsync(1000);
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to create the Heatmaps on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
+            }
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            Size res = this.GetDpiSafeResolution();
-            Statistics stats = new Statistics(globals.currentRecordingpath, globals.currentRecordingpath, name, res.Width, res.Height, "", "");
-            switch (globals.modelIndex)
+            try
             {
-                case 0: //3D model
-                    {
-                        stats.createPDF3d();
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        stats.createPDF();
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        stats.createPDF();
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        stats.createPDF();
-                        break;
-                    }
+                Size res = this.GetDpiSafeResolution();
+                Statistics stats = new Statistics(globals.currentRecordingpath, globals.currentRecordingpath, name, res.Width, res.Height, "", "");
+                switch (globals.modelIndex)
+                {
+                    case 0: //3D model
+                        {
+                            stats.createPDF3d();
+                            break;
+                        }
+                    case 1: //flythrough
+                        {
+                            stats.createPDF();
+                            break;
+                        }
+                    case 2: //2D models
+                        {
+                            stats.createPDF();
+                            break;
+                        }
+                    case 3: //Video
+                        {
+                            stats.createPDF();
+                            break;
+                        }
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("An error has occured when trying to create the Heatmaps on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
             }
         }
 
@@ -448,6 +521,12 @@ namespace NTT_Eye_Tracking
         {
             if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
             {
+                if (globals.recording._recording == true)
+                {
+                    globals.recording._recording = false;
+                    globals.recording.saveToFile();
+                    globals.recording.close();
+                }
                 if (fullscreen == true)
                 {
                     globals.recording._recording = false;
@@ -514,34 +593,35 @@ namespace NTT_Eye_Tracking
                         case 0: //3D model
                             {
 
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30,true, name, globals.currentRecordingpath, "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraph3D();
                                 //ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
-                                hm.SaveHeatmapVideo();
-                                ig.deleteImages();
+                                hm.SaveHeatmap3D();
+                                //ig.deleteImages();
                                 break;
                             }
                         case 1: //flythrough
                             {
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath + @"\" + name + ".wmv";
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraphVideo();
-                                ig.deleteImages();
+                                //ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
                                 hm._SourceLocation = globals.currentRecordingpath + @"\" + name + ".wmv";
                                 hm._DestinationPath = globals.currentRecordingpath;
-                                hm.SaveHeatmapOntoModelVideo();
+                                hm.SaveHeatmapVideo();
+                                //ig.deleteImages();
                                 break;
                             }
                         case 2: //2D models
@@ -566,17 +646,17 @@ namespace NTT_Eye_Tracking
                             {
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = globals.currentRecordingpath;
+                                etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath + "\\";
                                 etg.SaveETGraphVideo();
-                                ig.deleteImages();
+                                //ig.deleteImages();
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
-                                hm._SourceLocation = globals.currentRecordingpath ;
+                                hm._SourceLocation = ModelPath;
                                 hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapVideo();
-                                ig.deleteImages();
+                                //ig.deleteImages();
                                 break;
                             }
                     }
@@ -588,13 +668,17 @@ namespace NTT_Eye_Tracking
         {
             //spin = false;
             //spinner.Close();
-            MessageBox.Show("FINISHED :DDDDD");
+
+            //ImageGenerator ig = new ImageGenerator();
+            //ig.DestinationPath = globals.currentRecordingpath;
+            //ig.deleteImages();
+            MessageBox.Show("Overlays Created.");
         }
 
-       // bool spin = false;
+        // bool spin = false;
         private void bw_ProgressChangedOverlay(object sender, ProgressChangedEventArgs e)
         {
-            
+
             //Spinningprogbar.Form1 spinner = new Spinningprogbar.Form1();
 
             //if(spin == false)
@@ -602,7 +686,7 @@ namespace NTT_Eye_Tracking
             //    spinner.Show(this);
             //    spin = true;
             //}
-            
+
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
 
@@ -625,9 +709,9 @@ namespace NTT_Eye_Tracking
                         case 0: //3D model
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                                hm._SourceLocation = ModelPath;
+                                hm._SourceLocation = globals.currentRecordingpath + "\\";
                                 hm._DestinationPath = globals.currentRecordingpath + "\\";
-                                hm.SaveHeatmapOntoModelVideo();
+                                hm.SaveHeatmapOntoModel3D();
                                 break;
                             }
                         case 1: //flythrough
@@ -642,7 +726,7 @@ namespace NTT_Eye_Tracking
                         case 2: //2D models
                             {
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
-                                hm.OpenHeatmapData(globals.currentRecordingpath , name);
+                                hm.OpenHeatmapData(globals.currentRecordingpath, name);
                                 hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath + "\\";
                                 hm.SaveHeatmapOntoModel2D();
@@ -664,7 +748,11 @@ namespace NTT_Eye_Tracking
 
         private void bw_RunWorkerCompletedHeatmaps(object sender, RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("FINISHED :DDDDD");
+
+            //ImageGenerator ig = new ImageGenerator();
+            //ig.DestinationPath = globals.currentRecordingpath;
+            //ig.deleteImages();
+            MessageBox.Show("Heat map created.");
         }
 
         private void bw_ProgressChangedHeatmaps(object sender, ProgressChangedEventArgs e)
@@ -691,17 +779,17 @@ namespace NTT_Eye_Tracking
                         case 0: //3D model
                             {
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
-                                etg._SourceLocation = ModelPath;
+                                etg._SourceLocation = globals.currentRecordingpath;
                                 etg._DestinationPath = globals.currentRecordingpath;
                                 etg.SaveETGraphOntoModel3D();
                                 break;
                             }
                         case 1: //flythrough
                             {
-                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath,  "");
+                                Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
-                                etg._SourceLocation = ModelPath;
-                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg._SourceLocation = globals.currentRecordingpath + @"\" + name + ".wmv";
+                                etg._DestinationPath = globals.currentRecordingpath + "\\";
                                 etg.SaveETGraphOntoModelVideo();
                                 break;
                             }
@@ -721,7 +809,7 @@ namespace NTT_Eye_Tracking
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, true, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
-                                etg._DestinationPath = globals.currentRecordingpath;
+                                etg._DestinationPath = globals.currentRecordingpath + "\\";
                                 etg.SaveETGraphOntoModelVideo();
                                 break;
                             }
@@ -732,12 +820,16 @@ namespace NTT_Eye_Tracking
 
         private void bw_RunWorkerCompletedGazePlot(object sender, RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("FINISHED :DDDDD");
+            //ImageGenerator ig = new ImageGenerator();
+            //ig.DestinationPath = globals.currentRecordingpath;
+            //ig.deleteImages();
+            MessageBox.Show("Gaze-plot created.");
         }
 
         private void bw_ProgressChangedGazePlot(object sender, ProgressChangedEventArgs e)
         {
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
+
         }
 
         private void bw_DoWorkRecord(object sender, DoWorkEventArgs e)
@@ -745,15 +837,21 @@ namespace NTT_Eye_Tracking
 
             //DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
             //dm.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
-            BackgroundWorker bw1 = new BackgroundWorker();
-            bw1.WorkerReportsProgress = true;
-            bw1.WorkerSupportsCancellation = true;
-            bw1.DoWork += new DoWorkEventHandler(bw_DoWorkRecording);
-            bw1.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecording);
-            bw1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecording);
-            bw1.RunWorkerAsync();
 
+            //BackgroundWorker bw1 = new BackgroundWorker();
+            //bw1.WorkerReportsProgress = true;
+            //bw1.WorkerSupportsCancellation = true;
+            //bw1.DoWork += new DoWorkEventHandler(bw_DoWorkRecording);
+            //bw1.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChangedRecording);
+            //bw1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecording);
+            //bw1.RunWorkerAsync();
 
+            globals.recording._recording = true;
+            if (this.bw.CancellationPending)
+            {
+                e.Cancel = true;
+                return;
+            }
         }
 
         private void bw_RunWorkerCompletedRecord(object sender, RunWorkerCompletedEventArgs e)
@@ -791,13 +889,13 @@ namespace NTT_Eye_Tracking
 
         private void bw_ProgressChangedRecord(object sender, ProgressChangedEventArgs e)
         {
+            if (globals.recording._recording == false) return;
             MessageBox.Show("HEHEHEHEHEHE");
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
 
         private void bw_DoWorkRecording(object sender, DoWorkEventArgs e)
         {
-            globals.recording._recording = true;
         }
 
         private void bw_RunWorkerCompletedRecording(object sender, RunWorkerCompletedEventArgs e)
@@ -805,7 +903,6 @@ namespace NTT_Eye_Tracking
 
         private void bw_ProgressChangedRecording(object sender, ProgressChangedEventArgs e)
         {
-            if (globals.recording._recording == false) return;
 
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }

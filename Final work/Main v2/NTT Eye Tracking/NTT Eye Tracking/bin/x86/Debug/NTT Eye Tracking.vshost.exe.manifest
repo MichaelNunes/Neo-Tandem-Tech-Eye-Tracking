@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aNNHeQv55ERYE5KRorFV162DwReDqFPqVfpaUFP7DFU=</dsig:DigestValue>
+        <dsig:DigestValue>LatfQ0I8luQMipYH9UNJouXYtIWS8fAblJfZO60pD80=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yIKpxGDW6tul5w0KbuF1DcS3yPxG9U9y2JjL1Aaa7YM=</dsig:DigestValue>
+        <dsig:DigestValue>77Pdahh+kP9cK3c0Mysfa5BSud6I1M7qORo7VIyO0zQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -145,7 +145,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LS1WHldlzdDFpAgbNIais6hO4IUP9R0yNGu14OFaSBo=</dsig:DigestValue>
+        <dsig:DigestValue>uax9kwtjFZG2cowfyXUu+7Sjr8FnKQoF5vfGSS9Lves=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2440640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NTT Eye Tracking.exe" size="2444736">
       <assemblyIdentity name="NTT Eye Tracking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UdkrVlpDTJpC6bNkJGMbLv45b9VQVl8Tr2bMR4m2epE=</dsig:DigestValue>
+        <dsig:DigestValue>hIF6jpkvE1LCd8HCXh59HvtH3jPR2Nl036J1M1yQDYs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -211,13 +211,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Results Class.dll" size="21504">
-      <assemblyIdentity name="Results Class" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Results Class" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iXgzF5k1np+7qP0fSU4ncpeijWC8whFeMlH/eijPdCQ=</dsig:DigestValue>
+        <dsig:DigestValue>8egqMngZouGvtgqxxM+iJDZuhSQ7FjSfs3l4hy3N044=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -265,7 +265,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UoG1vd13X9i8uf7VUKwKWrV/pkVNre73uo4mV6vuVeo=</dsig:DigestValue>
+        <dsig:DigestValue>76OM0sR8J7IaG4wbg86NrFNRaFk74zGLjGHYoL28aWU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5iHKVsdJu4+QGD5PwHN8B6rsx3FY0nXVQzw2iF39VYc=</dsig:DigestValue>
+        <dsig:DigestValue>cBIBsKHzhlS4Wtcm85ZWxnmo4aK3/LL/OC7nD8wRT+8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

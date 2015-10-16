@@ -30,23 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDisplay));
-            this.wmp_Display = new AxWMPLib.AxWindowsMediaPlayer();
             this.picDisplay = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.wmp_Display)).BeginInit();
+            this.wmp_Display = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp_Display)).BeginInit();
             this.SuspendLayout();
-            // 
-            // wmp_Display
-            // 
-            this.wmp_Display.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wmp_Display.Enabled = true;
-            this.wmp_Display.Location = new System.Drawing.Point(0, 0);
-            this.wmp_Display.Name = "wmp_Display";
-            this.wmp_Display.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_Display.OcxState")));
-            this.wmp_Display.Size = new System.Drawing.Size(921, 590);
-            this.wmp_Display.TabIndex = 0;
-            this.wmp_Display.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmp_Display_PlayStateChange);
             // 
             // picDisplay
             // 
@@ -60,6 +49,21 @@
             this.picDisplay.TabStop = false;
             this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // wmp_Display
+            // 
+            this.wmp_Display.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wmp_Display.Enabled = true;
+            this.wmp_Display.Location = new System.Drawing.Point(0, 0);
+            this.wmp_Display.Name = "wmp_Display";
+            this.wmp_Display.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmp_Display.OcxState")));
+            this.wmp_Display.Size = new System.Drawing.Size(921, 590);
+            this.wmp_Display.TabIndex = 0;
+            this.wmp_Display.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.wmp_Display_PlayStateChange);
+            // 
             // frmDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -70,8 +74,8 @@
             this.Name = "frmDisplay";
             this.Text = "Display";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.wmp_Display)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmp_Display)).EndInit();
             this.ResumeLayout(false);
 
         }

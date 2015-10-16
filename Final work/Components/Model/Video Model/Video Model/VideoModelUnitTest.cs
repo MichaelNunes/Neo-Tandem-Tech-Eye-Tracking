@@ -14,8 +14,8 @@ namespace Video_Model
         ImageGenerator ig;
         VideoGenerator vg;
 
-        string imagesDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Images\";
-        string videosDir = @"C:\Users\Public\Videos\Sample Videos\TestData\Video\";
+        string imagesDir = @"C:\Users\Duran\Desktop\NTT tests\Recordings\Video\sanFran\";
+        string videosDir = @"C:\Users\Duran\Desktop\NTT tests\Recordings\Video\sanFran\";
         string testVideo = @"C:\Users\Public\Videos\Sample Videos\Wildlife.wmv";
 
         [SetUp]
@@ -23,14 +23,14 @@ namespace Video_Model
         {
             ig = new ImageGenerator(testVideo, imagesDir);
 
-            vg = new VideoGenerator(imagesDir, videosDir + "UnitTestVideo", 1280, 720, 30);
+            vg = new VideoGenerator(imagesDir, videosDir + "SanFransico_v1.wmv", 1920, 888, 30);
         }
 
         [Test]
         public void createVideo()
         {
             vg.DestinationPath = vg.ModelName;
-            vg.ModelName = "";
+            vg.ModelName = "SanFransico_v1.wmv";
             vg.createVideo();
 
             Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Video\UnitTestVideo.wmv"));

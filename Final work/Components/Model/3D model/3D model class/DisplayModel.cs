@@ -11,11 +11,11 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public static void Run(string source, string filePath, bool flyThrough)
+        public static bool Run(string source, string filePath, bool flyThrough)
         {
             try
             {
-                if(flyThrough == true)
+                if (flyThrough == true)
                 {
                     FlyThroughWindow window = new FlyThroughWindow(filePath);
                     GameObject scene = Converter.fromOBJ(source, false);
@@ -30,12 +30,9 @@ namespace DisplayModel
                     window.Run(30, 30);
                 }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-                throw new Exception(e.Message);
-            }
+            catch (Exception e) { }
+
+            return true;
         }
 #if DEBUG
         //Here for testing purposes
