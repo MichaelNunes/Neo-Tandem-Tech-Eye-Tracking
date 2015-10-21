@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  15 OCT 2015 12:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  21 OCT 2015 08:14
 entering extended mode
 **NTT*Functional*Specification.tex
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.tex"
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +15,9 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\m\Documents\miktex\tex\latex\base\report.cls
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(C:\Users\m\Documents\miktex\tex\latex\base\size12.clo
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -36,7 +36,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \@indexfile=\write3
 
 Writing index file NTT*Functional*Specification.idx
-(C:\Users\m\Documents\miktex\tex\latex\tools\longtable.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\tools\longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip43
 \LTright=\skip44
@@ -54,31 +54,31 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count92
 \LT@p@ftn=\toks14
 )
-(C:\Users\m\Documents\miktex\tex\latex\graphics\graphicx.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\m\Documents\miktex\tex\latex\graphics\keyval.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(C:\Users\m\Documents\miktex\tex\latex\graphics\graphics.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\m\Documents\miktex\tex\latex\graphics\trig.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\Users\m\Documents\miktex\tex\latex\00miktex\graphics.cfg
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(C:\Users\m\Documents\miktex\tex\latex\pdftex-def\pdftex.def
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\infwarerr.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\ltxcmds.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count93
@@ -86,17 +86,17 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(C:\Users\m\Documents\miktex\tex\latex\base\makeidx.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\hyperref.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\hobsub-hyperref.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\hobsub-generic.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\hobsub-generic.sty
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -137,25 +137,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\m\Documents\miktex\tex\generic\ifxetex\ifxetex.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\Users\m\Documents\miktex\tex\latex\oberdiek\auxhook.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(C:\Users\m\Documents\miktex\tex\latex\oberdiek\kvoptions.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen106
 \Hy@linkcounter=\count94
 \Hy@pagecounter=\count95
 
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\pd1enc.def
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count96
 
-(C:\Users\m\Documents\miktex\tex\latex\00miktex\hyperref.cfg
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -167,7 +167,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count97
 
-(C:\Users\m\Documents\miktex\tex\latex\url\url.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -192,19 +192,19 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\hpdftex.def
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count102
 \c@bookmark@seq@number=\count103
 
-(C:\Users\m\Documents\miktex\tex\latex\oberdiek\rerunfilecheck.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
 )
-(C:\Users\m\Documents\miktex\tex\latex\float\float.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count104
 \float@exts=\toks16
@@ -214,8 +214,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.aux")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
@@ -231,7 +231,7 @@ LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 
-(C:\Users\m\Documents\miktex\tex\context\base\supp-pdf.mkii
+(C:\Users\Duran\Documents\MikTex2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen110
@@ -246,20 +246,20 @@ LaTeX Font Info:    ... okay on input line 27.
 \everyMPtoPDFconversion=\toks19
 )
 \AtBeginShipoutBox=\box33
- (C:\Users\m\Documents\miktex\tex\latex\graphics\color.sty
+ (C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\Users\m\Documents\miktex\tex\latex\00miktex\color.cfg
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
 Package hyperref Info: Link coloring ON on input line 27.
 
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\nameref.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\gettitlestring.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count111
@@ -268,10 +268,10 @@ LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.out")
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.out")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.out")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.out")
 \@outlinefile=\write4
 
 <../GeneralImages/up-logo.jpg, id=95, 287.1528pt x 78.7743pt>
@@ -288,44 +288,44 @@ File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 Package pdftex.def Info: ../GeneralImages/NTT.jpg used on input line 42.
 (pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 53.
+(Font)              <12> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 53.
+(Font)              <8> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 53.
+(Font)              <6> on input line 54.
  [1
 
-{C:/Users/m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/m/Desk
-top/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C:/U
-sers/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/NTT.jpg
->]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
-s been already used, duplicate ignored
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Duran/Documents/
+GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C
+:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Gener
+alImages/NTT.jpg>]pdfTeX warning (ext4): destination with the same identifier (
+name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.127 \tableofcontents
+l.128 \tableofcontents
                       {} [1]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.toc")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.toc")
 \tf@toc=\write5
  [2
 
 ]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.lof" [3
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.lof" [3
 
 ])
 \tf@lof=\write6
  [4]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\Introduction/Introduction.tex"
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\Introduction/Introduction.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 2--6
 
  []
 
 ) [5]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\UseCaseServiceContracts/UseCaseServiceContracts.tex"
-<Diagrams/Use_Case_Diagram__HeatMap.png, id=238, 1156.32pt x 764.8575pt>
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\UseCaseServiceContracts/UseCaseServiceContracts.tex"
+<Diagrams/Use_Case_Diagram__HeatMap.png, id=237, 1156.32pt x 764.8575pt>
 File: Diagrams/Use_Case_Diagram__HeatMap.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__HeatMap.png>
@@ -334,13 +334,13 @@ ine 6.
 (pdftex.def)             Requested size: 578.15858pt x 382.42781pt.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
 
-(C:\Users\m\Documents\miktex\tex\latex\base\omscmr.fd
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
 
-<Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png, id=239, 738.76pt 
+<Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png, id=238, 738.76pt 
 x 169.63374pt>
 File: Diagrams/Activity_Diagram__CreateHeatMap__CreateHeatMap.png Graphic file 
 (type png)
@@ -355,10 +355,10 @@ p.png used on input line 23.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.30 		\item P
-              re-condition: Heat-map must have been created. <C:/Users/m/Deskto
-p/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Diagrams/
-Use_Case_Diagram__HeatMap.png (PNG copy)>]
-<Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png, id=247, 320.19624pt x
+              re-condition: Heat-map must have been created. <C:/Users/Duran/Do
+cuments/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specificat
+ion/Diagrams/Use_Case_Diagram__HeatMap.png (PNG copy)>]
+<Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png, id=246, 320.19624pt x
  327.2225pt>
 File: Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.png Graphic file (typ
 e png)
@@ -367,7 +367,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ReadHeatMap__ReadHeatMap.pn
 g used on input line 38.
 (pdftex.def)             Requested size: 160.09772pt x 163.61084pt.
 
-<Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png, id=248, 437.635pt x 3
+<Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png, id=247, 437.635pt x 3
 67.3725pt>
 File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
 e png)
@@ -381,7 +381,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
  []
 
 
-<Diagrams/Use_Case_Diagram__SaveHeatMap.png, id=249, 956.57375pt x 531.9875pt>
+<Diagrams/Use_Case_Diagram__SaveHeatMap.png, id=248, 956.57375pt x 531.9875pt>
 File: Diagrams/Use_Case_Diagram__SaveHeatMap.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__SaveHeatMap.png>
@@ -394,9 +394,9 @@ ut line 63.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.70 	\begin{itemize}
-                      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Document
-ation/Functional Specification/Diagrams/Activity_Diagram__CreateHeatMap__Create
-HeatMap.png (PNG copy)>]
+                      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Trac
+king/Documentation/Functional Specification/Diagrams/Activity_Diagram__CreateHe
+atMap__CreateHeatMap.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
 e png)
 
@@ -410,9 +410,9 @@ g used on input line 78.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.84 	\begin{itemize}
-                      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Document
-ation/Functional Specification/Diagrams/Activity_Diagram__ReadHeatMap__ReadHeat
-Map.png (PNG copy)>]
+                      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Trac
+king/Documentation/Functional Specification/Diagrams/Activity_Diagram__ReadHeat
+Map__ReadHeatMap.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
 e png)
 
@@ -427,32 +427,34 @@ g used on input line 92.
                                                   \fi \fi 
 l.99 		\item P
               re-condition: Eye tracking data must have already been recorde...
- <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Spec
-ification/Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png (PNG copy)>]
+ <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Fu
+nctional Specification/Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png 
+(PNG copy)>]
+File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
+e png)
+ <use Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png>
+Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
+g used on input line 106.
+(pdftex.def)             Requested size: 218.81696pt x 183.68579pt.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.0.5
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 	\end{itemize}
+                     <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Track
+ing/Documentation/Functional Specification/Diagrams/Use_Case_Diagram__SaveHeatM
+ap.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
 e png)
 
 <use Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
-g used on input line 106.
-(pdftex.def)             Requested size: 218.81696pt x 183.68579pt.
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
-5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.121 	\end{itemize}
-                     <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
-tion/Functional Specification/Diagrams/Use_Case_Diagram__SaveHeatMap.png (PNG c
-opy)>]
-File: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png Graphic file (typ
-e png)
- <use Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.png>
-Package pdftex.def Info: Diagrams/Activity_Diagram__SaveHeatMap__SaveHeatMap.pn
 g used on input line 124.
 (pdftex.def)             Requested size: 218.81696pt x 183.68579pt.
 
-<Diagrams/Use_Case_Diagram__CreateGazePointMap.png, id=273, 518.93875pt x 384.4
+<Diagrams/Use_Case_Diagram__CreateGazePointMap.png, id=272, 518.93875pt x 384.4
 3625pt>
 File: Diagrams/Use_Case_Diagram__CreateGazePointMap.png Graphic file (type png)
 
@@ -467,7 +469,7 @@ Package pdftex.def Info: Diagrams/Use_Case_Diagram__CreateGazePointMap.png used
                                                   \fi \fi 
 l.143 		\item P
                re-condition: Eye tracking data must be already recorded.]
-<Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png, id=279,
+<Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png, id=278,
  713.66624pt x 130.4875pt>
 File: Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png Gra
 phic file (type png)
@@ -484,7 +486,7 @@ azePointMap.png used on input line 150.
                                                   \fi \fi 
 l.161 	\end{itemize}
                     ]
-<Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png, id=286, 366
+<Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png, id=285, 366
 .36874pt x 320.19624pt>
 File: Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazePointMap.png Graphic
  file (type png)
@@ -494,7 +496,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ReadGazePointMap__ReadGazeP
 ointMap.png used on input line 165.
 (pdftex.def)             Requested size: 183.18391pt x 160.09772pt.
 
-<Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png, id=287, 423
+<Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png, id=286, 423
 .5825pt x 369.38pt>
 File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
  file (type png)
@@ -550,14 +552,15 @@ as been already used, duplicate ignored
                                                   \fi \fi 
 l.214 		\item R
                equest Data Structure: Video and raw information of recording. <
-C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specif
-ication/Diagrams/Use_Case_Diagram__CreateGazePointMap.png (PNG copy)> <C:/Users
-/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/
-Diagrams/Activity_Diagram__CreateGazePointMap__CreateGazePointMap.png (PNG copy
-)>]
+C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Func
+tional Specification/Diagrams/Use_Case_Diagram__CreateGazePointMap.png (PNG cop
+y)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/Functional Specification/Diagrams/Activity_Diagram__CreateGazePointMap__Create
+GazePointMap.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
  file (type png)
- <use Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png>
+
+<use Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazeP
 ointMap.png used on input line 219.
 (pdftex.def)             Requested size: 211.79073pt x 184.68954pt.
@@ -568,9 +571,9 @@ ointMap.png used on input line 219.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.230 	\end{itemize}
-                     <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
-tion/Functional Specification/Diagrams/Activity_Diagram__ReadGazePointMap__Read
-GazePointMap.png (PNG copy)>]
+                     <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Track
+ing/Documentation/Functional Specification/Diagrams/Activity_Diagram__ReadGazeP
+ointMap__ReadGazePointMap.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazePointMap.png Graphic
  file (type png)
 
@@ -579,7 +582,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__SaveGazePointMap__SaveGazeP
 ointMap.png used on input line 233.
 (pdftex.def)             Requested size: 211.79073pt x 184.68954pt.
 
-<Diagrams/Use_Case_Diagram__Models.png, id=308, 400.49625pt x 217.81375pt>
+<Diagrams/Use_Case_Diagram__Models.png, id=307, 400.49625pt x 217.81375pt>
 File: Diagrams/Use_Case_Diagram__Models.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Models.png>
@@ -587,7 +590,7 @@ Package pdftex.def Info: Diagrams/Use_Case_Diagram__Models.png used on input li
 ne 244.
 (pdftex.def)             Requested size: 200.24763pt x 108.9066pt.
 
-<Diagrams/Use_Case_Diagram__3DModels.png, id=309, 920.43875pt x 393.47pt>
+<Diagrams/Use_Case_Diagram__3DModels.png, id=308, 920.43875pt x 393.47pt>
 File: Diagrams/Use_Case_Diagram__3DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__3DModels.png>
@@ -600,10 +603,10 @@ line 253.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.261 		\begin{itemize}
-                        <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Docume
-ntation/Functional Specification/Diagrams/Activity_Diagram__SaveGazePointMap__S
-aveGazePointMap.png (PNG copy)>]
-<Diagrams/Activity_Diagram__ImportModel__ImportModel.png, id=315, 542.025pt x 2
+                        <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tr
+acking/Documentation/Functional Specification/Diagrams/Activity_Diagram__SaveGa
+zePointMap__SaveGazePointMap.png (PNG copy)>]
+<Diagrams/Activity_Diagram__ImportModel__ImportModel.png, id=314, 542.025pt x 2
 04.765pt>
 File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
@@ -612,7 +615,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
 g used on input line 270.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
 
-<Diagrams/Activity_Diagram__ViewModel__ViewModel.png, id=316, 373.395pt x 169.6
+<Diagrams/Activity_Diagram__ViewModel__ViewModel.png, id=315, 373.395pt x 169.6
 3374pt>
 File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
 g)
@@ -627,7 +630,7 @@ ed on input line 284.
                                                   \fi \fi 
 l.290 		\begin{itemize}
                        ]
-<Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png, id=324, 683.55376p
+<Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png, id=323, 683.55376p
 t x 236.885pt>
 File: Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png Graphic file (
 type png)
@@ -674,17 +677,18 @@ r (name{figure.0.18}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.334 		\end{itemize}
-                      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Document
-ation/Functional Specification/Diagrams/Use_Case_Diagram__Models.png (PNG copy)
->]
+                      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Trac
+king/Documentation/Functional Specification/Diagrams/Use_Case_Diagram__Models.p
+ng (PNG copy)>]
 File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
  <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
 g used on input line 338.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
- [22pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
-19}) has been already used, duplicate ignored
+
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1
+9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -701,14 +705,15 @@ l.340 		\end{figure}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.340 		\end{figure}
-                     <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
-tion/Functional Specification/Diagrams/Use_Case_Diagram__3DModels.png (PNG copy
-)> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Sp
-ecification/Diagrams/Activity_Diagram__ImportModel__ImportModel.png (PNG copy)>
- <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Spec
-ification/Diagrams/Activity_Diagram__ViewModel__ViewModel.png (PNG copy)>]
-[23pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2
-2}) has been already used, duplicate ignored
+                     <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Track
+ing/Documentation/Functional Specification/Diagrams/Use_Case_Diagram__3DModels.
+png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/D
+ocumentation/Functional Specification/Diagrams/Activity_Diagram__ImportModel__I
+mportModel.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye
+-Tracking/Documentation/Functional Specification/Diagrams/Activity_Diagram__Vie
+wModel__ViewModel.png (PNG copy)>] [23pdfTeX warning (ext4): destination with t
+he same identifier (name{figure.0.22}) has been already used, duplicate ignored
+
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -727,9 +732,9 @@ y used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.348 			\item R
-                eturn Data Structure: Viewable 3D model render. <C:/Users/m/Des
-ktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Diagra
-ms/Activity_Diagram__CreateHeatMap__CreateImages.png (PNG copy)>]
+                eturn Data Structure: Viewable 3D model render. <C:/Users/Duran
+/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specifi
+cation/Diagrams/Activity_Diagram__CreateHeatMap__CreateImages.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__ViewModel__ViewModel.png Graphic file (type pn
 g)
 
@@ -745,7 +750,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__CreateHeatMap__CreateImages
 .png used on input line 376.
 (pdftex.def)             Requested size: 341.77605pt x 118.4422pt.
 
-<Diagrams/Use_Case_Diagram__2DModels.png, id=350, 407.5225pt x 147.55125pt>
+<Diagrams/Use_Case_Diagram__2DModels.png, id=349, 407.5225pt x 147.55125pt>
 File: Diagrams/Use_Case_Diagram__2DModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__2DModels.png>
@@ -787,9 +792,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.0.27})
                                                   \fi \fi 
 l.424 			\item P
                 re-condition: The eye data must have been recorded and model...
- <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Spec
-ification/Diagrams/Use_Case_Diagram__2DModels.png (PNG copy)>]
-<Diagrams/Activity_Diagram__ExportModel__ExportModel.png, id=365, 513.92pt x 18
+ <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Fu
+nctional Specification/Diagrams/Use_Case_Diagram__2DModels.png (PNG copy)>]
+<Diagrams/Activity_Diagram__ExportModel__ExportModel.png, id=364, 513.92pt x 18
 3.68625pt>
 File: Diagrams/Activity_Diagram__ExportModel__ExportModel.png Graphic file (typ
 e png)
@@ -803,7 +808,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 440--442
  []
 
 
-<Diagrams/Use_Case_Diagram__VideoModels.png, id=366, 639.38875pt x 471.7625pt>
+<Diagrams/Use_Case_Diagram__VideoModels.png, id=365, 639.38875pt x 471.7625pt>
 File: Diagrams/Use_Case_Diagram__VideoModels.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__VideoModels.png>
@@ -834,14 +839,15 @@ er (name{figure.0.31}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.458 			\end{itemize}
-                       <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documen
-tation/Functional Specification/Diagrams/Activity_Diagram__ExportModel__ExportM
-odel.png (PNG copy)> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
-tion/Functional Specification/Diagrams/Use_Case_Diagram__VideoModels.png (PNG c
-opy)>]
+                       <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tra
+cking/Documentation/Functional Specification/Diagrams/Activity_Diagram__ExportM
+odel__ExportModel.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-T
+ech-Eye-Tracking/Documentation/Functional Specification/Diagrams/Use_Case_Diagr
+am__VideoModels.png (PNG copy)>]
 File: Diagrams/Activity_Diagram__ImportModel__ImportModel.png Graphic file (typ
 e png)
- <use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
+
+<use Diagrams/Activity_Diagram__ImportModel__ImportModel.png>
 Package pdftex.def Info: Diagrams/Activity_Diagram__ImportModel__ImportModel.pn
 g used on input line 462.
 (pdftex.def)             Requested size: 271.01183pt x 102.38223pt.
@@ -865,7 +871,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 500--502
  []
 
 
-<Diagrams/Use_Case_Diagram__RawInformation.png, id=378, 696.6025pt x 478.78876p
+<Diagrams/Use_Case_Diagram__RawInformation.png, id=377, 696.6025pt x 478.78876p
 t>
 File: Diagrams/Use_Case_Diagram__RawInformation.png Graphic file (type png)
  <use Diagrams/Use_Case_Diagram__RawInformation.png>
@@ -879,7 +885,7 @@ input line 505.
                                                   \fi \fi 
 l.513 \item P
              ost-condition: Data is saved and can be used later.]
-<Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png, id=385,
+<Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png, id=384,
  587.19376pt x 130.4875pt>
 File: Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png Gra
 phic file (type png)
@@ -903,7 +909,7 @@ as been already used, duplicate ignored
                                                   \fi \fi 
 l.527 \item P
              re-condition: Recorded data must have been saved in a text file.]
-<Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png, id=392,
+<Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png, id=391,
  810.02625pt x 227.85126pt>
 File: Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png Gra
 phic file (type png)
@@ -913,7 +919,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__ReadRawInformation__ReadRaw
 Information.png used on input line 535.
 (pdftex.def)             Requested size: 405.01213pt x 113.92534pt.
 
-<Diagrams/Use_Case_Diagram__Statistics.png, id=393, 415.5525pt x 252.945pt>
+<Diagrams/Use_Case_Diagram__Statistics.png, id=392, 415.5525pt x 252.945pt>
 File: Diagrams/Use_Case_Diagram__Statistics.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__Statistics.png>
@@ -932,12 +938,12 @@ l.552
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.552 
-       <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functiona
-l Specification/Diagrams/Use_Case_Diagram__RawInformation.png (PNG copy)> <C:/U
-sers/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specificat
-ion/Diagrams/Activity_Diagram__SaveRawInformation__SaveRawInformation.png (PNG 
-copy)>] [31pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.0.37}) has been already used, duplicate ignored
+       <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentat
+ion/Functional Specification/Diagrams/Use_Case_Diagram__RawInformation.png (PNG
+ copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documenta
+tion/Functional Specification/Diagrams/Activity_Diagram__SaveRawInformation__Sa
+veRawInformation.png (PNG copy)>] [31pdfTeX warning (ext4): destination with th
+e same identifier (name{figure.0.37}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -949,12 +955,13 @@ xt4): destination with the same identifier (name{figure.0.38}) has been already
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.559 \item R
-             eturn Data Structure: Statistics will be created. <C:/Users/m/Desk
-top/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specification/Diagram
-s/Activity_Diagram__ReadRawInformation__ReadRawInformation.png (PNG copy)> <C:/
-Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specifica
-tion/Diagrams/Use_Case_Diagram__Statistics.png (PNG copy)>]
-<Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png, id=405, 505
+             eturn Data Structure: Statistics will be created. <C:/Users/Duran/
+Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional Specific
+ation/Diagrams/Activity_Diagram__ReadRawInformation__ReadRawInformation.png (PN
+G copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Document
+ation/Functional Specification/Diagrams/Use_Case_Diagram__Statistics.png (PNG c
+opy)>]
+<Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png, id=404, 505
 .89pt x 153.57375pt>
 File: Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.png Graphic
  file (type png)
@@ -964,7 +971,7 @@ Package pdftex.def Info: Diagrams/Activity_Diagram__CreateStatistics__CreateSta
 tistics.png used on input line 564.
 (pdftex.def)             Requested size: 252.94437pt x 76.78668pt.
 
-<Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png, id=406, 594.22p
+<Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png, id=405, 594.22p
 t x 145.54375pt>
 File: Diagrams/Activity_Diagram__SaveStatistics__SaveStatistics.png Graphic fil
 e (type png)
@@ -990,12 +997,12 @@ l.586
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.586 
-       <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functiona
-l Specification/Diagrams/Activity_Diagram__CreateStatistics__CreateStatistics.p
-ng (PNG copy)> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/F
-unctional Specification/Diagrams/Activity_Diagram__SaveStatistics__SaveStatisti
-cs.png (PNG copy)>]
-<Diagrams/Use_Case_Diagram__RecordEye.png, id=413, 429.605pt x 346.29375pt>
+       <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentat
+ion/Functional Specification/Diagrams/Activity_Diagram__CreateStatistics__Creat
+eStatistics.png (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Ey
+e-Tracking/Documentation/Functional Specification/Diagrams/Activity_Diagram__Sa
+veStatistics__SaveStatistics.png (PNG copy)>]
+<Diagrams/Use_Case_Diagram__RecordEye.png, id=412, 429.605pt x 346.29375pt>
 File: Diagrams/Use_Case_Diagram__RecordEye.png Graphic file (type png)
 
 <use Diagrams/Use_Case_Diagram__RecordEye.png>
@@ -1003,7 +1010,7 @@ Package pdftex.def Info: Diagrams/Use_Case_Diagram__RecordEye.png used on input
  line 589.
 (pdftex.def)             Requested size: 214.80197pt x 173.14644pt.
 
-<Diagrams/Activity_Diagram__RecordEye__RecordEye.png, id=414, 669.50125pt x 130
+<Diagrams/Activity_Diagram__RecordEye__RecordEye.png, id=413, 669.50125pt x 130
 .4875pt>
 File: Diagrams/Activity_Diagram__RecordEye__RecordEye.png Graphic file (type pn
 g)
@@ -1016,23 +1023,24 @@ ed on input line 605.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.135 	\newpage
-                <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/
-Functional Specification/Diagrams/Use_Case_Diagram__RecordEye.png (PNG copy)>]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\RequiredFunctionality/RequiredFunctionality.tex" [34pdfTeX warning (e
-xt4): destination with the same identifier (name{figure.0.42}) has been already
- used, duplicate ignored
+l.136 	\newpage
+                <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/D
+ocumentation/Functional Specification/Diagrams/Use_Case_Diagram__RecordEye.png 
+(PNG copy)>]
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\RequiredFunctionality/RequiredFunctionality.tex"
+[34pdfTeX warning (ext4): destination with the same identifier (name{figure.0.4
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.32 
-      <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/Functional
- Specification/Diagrams/Activity_Diagram__RecordEye__RecordEye.png (PNG copy)>]
-[35]) [36]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\DomainModel/DomainModel.tex"
-<Diagrams/Class_Diagram__DomainModel.png, id=433, 554.07pt x 466.74374pt>
+      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentati
+on/Functional Specification/Diagrams/Activity_Diagram__RecordEye__RecordEye.png
+ (PNG copy)>] [35]) [36]
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\DomainModel/DomainModel.tex"
+<Diagrams/Class_Diagram__DomainModel.png, id=432, 554.07pt x 466.74374pt>
 File: Diagrams/Class_Diagram__DomainModel.png Graphic file (type png)
 
 <use Diagrams/Class_Diagram__DomainModel.png>
@@ -1040,43 +1048,43 @@ Package pdftex.def Info: Diagrams/Class_Diagram__DomainModel.png used on input
 line 3.
 (pdftex.def)             Requested size: 277.03432pt x 233.37129pt.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
  [37pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
 43}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.141 \end{document}
-                     <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documenta
-tion/Functional Specification/Diagrams/Class_Diagram__DomainModel.png (PNG copy
-)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+l.142 \end{document}
+                     <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Track
+ing/Documentation/Functional Specification/Diagrams/Class_Diagram__DomainModel.
+png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\Functional Spec
-ification\NTT Functional Specification.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Fu
+nctional Specification\NTT Functional Specification.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
 Package rerunfilecheck Info: File `NTT*Functional*Specification.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
  ) 
 Here is how much of TeX's memory you used:
  5517 strings out of 493921
- 88788 string characters out of 3147294
+ 89629 string characters out of 3144475
  160400 words of memory out of 3000000
  8586 multiletter control sequences out of 15000+200000
  9750 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  29i,7n,28p,673b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
-ers/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/m/D
-ocuments/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/m/Documents/
-miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m/Documents/miktex/f
-onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Functional Specification.pdf" (38 pages, 819205 bytes).
+<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "NTT Functional Specification.pdf" (38 pages, 819029 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
+ 487 PDF objects out of 1000 (max. 8388607)
  143 named destinations out of 1000 (max. 500000)
  325 words of extra memory for PDF output out of 10000 (max. 10000000)
 
