@@ -73,6 +73,7 @@ namespace DisplayModel
             base.OnClosing(e);
 
             System.Windows.Forms.Cursor.Show();
+            objects.Clear();
         }
 
         protected override void OnUpdateFrame(FrameEventArgs e)

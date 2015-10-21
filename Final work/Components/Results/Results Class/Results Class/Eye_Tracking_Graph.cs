@@ -212,6 +212,7 @@ namespace Results_Class
                             newGP.Add(0);
                             growingPoints.Add(newGP);
                         }
+                        System.GC.Collect();
                     }
                     graphics.FillEllipse(redBrush, new Rectangle((int)X[i] - (gpa / 2), (int)Y[i] - (gpa / 2), gpa, gpa));
                     if (togglePointNumbers) { graphics.DrawString(pointNumber.ToString(), drawFont, greenBrush, X[i] - 5, Y[i] - 5); }
@@ -229,6 +230,11 @@ namespace Results_Class
                         growingPoints.RemoveAt(j);
                     }
                 }
+                redBrush.Dispose();
+                redPen.Dispose();
+                greenBrush.Dispose();
+                drawFont.Dispose();
+                graphics.Dispose();
             }
             return img;
         }

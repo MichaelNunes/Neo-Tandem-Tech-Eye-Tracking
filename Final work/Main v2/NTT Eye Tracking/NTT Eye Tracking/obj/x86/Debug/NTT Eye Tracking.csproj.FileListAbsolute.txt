@@ -13,6 +13,7 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\Spinningprogbar.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\StatsClass.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\TETCSharpClient.dll
+C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\Video Model.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\nunit.framework.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\HeatMap.NET.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\sharpPDF.dll
@@ -41,4 +42,3 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.application
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.exe
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\obj\x86\Debug\NTT Eye Tracking.pdb
-C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main v2\NTT Eye Tracking\NTT Eye Tracking\bin\x86\Debug\Video Model.dll

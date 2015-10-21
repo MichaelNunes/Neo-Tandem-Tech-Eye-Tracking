@@ -1,0 +1,4 @@
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Video_Model.VideoGenerator.Main(String[] args) C:\Users\Duran\Desktop\NTTtests\Recordings\3DModel\iuyuytyu" Medieval_City2.obj 1920 1080 30 System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Video_Model.VideoGenerator.Main(String[] args) C:\Users\Duran\Desktop\NTTtests\Recordings\3DModel\jbkjbnmvgh" Susan.obj 1920 1080 30 System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Video_Model.VideoGenerator.Main(String[] args) C:\Users\Duran\Desktop\NTTtests\Recordings\3DModel\lijoio" Susan.obj 1920 1080 30 

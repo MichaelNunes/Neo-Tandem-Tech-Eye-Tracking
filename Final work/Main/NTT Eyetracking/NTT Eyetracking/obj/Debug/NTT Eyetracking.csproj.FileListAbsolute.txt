@@ -39,7 +39,6 @@ C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\DisplayModel.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\nunit.framework.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Record_Class.dll
-C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Results Class.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\Settings Class.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\TETCSharpClient.dll
 C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Main\NTT Eyetracking\NTT Eyetracking\bin\Debug\OpenTK.dll

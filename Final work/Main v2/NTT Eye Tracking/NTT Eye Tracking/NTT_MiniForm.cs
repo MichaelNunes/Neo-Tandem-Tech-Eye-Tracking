@@ -107,11 +107,25 @@ namespace NTT_Eye_Tracking
             //transitionForward(panelNewOldProject, panel_createNew);
         }
 
+        string tempPath = "";
         private void buttonAdv3_Click(object sender, EventArgs e)
         {
             try
             {
-                SaveFileDialog Saver = new SaveFileDialog();
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.ShowDialog();
+                tempPath = fbd.SelectedPath;
+                if(tempPath == "")
+                {
+                    //MessageBox.Show("");
+                    buttonAdv2.Enabled = false;
+                }
+                else
+                {
+                    buttonAdv2.Enabled = true;
+                }
+                textBox1.Text = fbd.SelectedPath;
+                /*SaveFileDialog Saver = new SaveFileDialog();
                 if (textBox2.Text == "")
                 {
                     Saver.FileName = "Project";
@@ -139,7 +153,7 @@ namespace NTT_Eye_Tracking
                 save[1] = dir;
                 save[2] = textBox2.Text + ".set";
                 save[3] = "3DModel.set";
-                File.WriteAllLines(Saver.FileName, save);
+                File.WriteAllLines(Saver.FileName, save);*/
             }
             catch (DirectoryNotFoundException m)
             {
@@ -188,6 +202,8 @@ namespace NTT_Eye_Tracking
                     Exception m = new Exception("Text boxes are empty please fill them in");
                     throw m;
                 }
+                globals.m.ProjectName = textBox2.Text;
+                globals.m.Directory = textBox1.Text;
                 globals.m.createSubDirectories();
                 //this.Hide();
                 //Main show = new Main();

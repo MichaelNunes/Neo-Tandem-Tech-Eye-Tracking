@@ -104,6 +104,7 @@ namespace DisplayModel
             }
             
             saveFrames();
+            objects.Clear();
         }
 
         /// <summary>
@@ -438,7 +439,8 @@ namespace DisplayModel
 
                 videoFrames.RemoveAt(0);
             }
-            
+
+            if (frameNumber >= 900) Exit();
 
             IsSavingFrames = false;
         }

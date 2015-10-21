@@ -11,7 +11,7 @@ namespace DisplayModel
 {
     public class DisplayModel
     {
-        public static bool Run(string source, string filePath, bool flyThrough)
+        public bool Run(string source, string filePath, bool flyThrough)
         {
             try
             {
@@ -42,7 +42,9 @@ namespace DisplayModel
 
             string filePath = @"C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Final work\Components\Model\3D model\3D model class\bin\Debug\TestImages\";
 
-            Run(objectpath, filePath, true);
+            DisplayModel dm = new DisplayModel();
+
+            dm.Run(objectpath, filePath, true);
         }
 #endif
     }

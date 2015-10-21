@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using AForge.Video;
 using AForge.Video.FFMPEG;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Results_Class
 {
@@ -287,13 +288,23 @@ namespace Results_Class
             }
             
             //call create video
-            vm.ImagePath = DestinationPath + "\\";
+            /*vm.ImagePath = DestinationPath + "\\";
             vm.DestinationPath = DestinationPath + "\\";
             vm.ModelName = ModelName + ".Heatmap";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.Fps = 30;
-            vm.createVideo();
+            vm.createVideo();*/
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.Arguments = ("\"" + DestinationPath + "\\" + "\"") + " " + ("\"" + ModelName + ".Heatmap" + "\"") + " " + width + " " + height + " " + 30;
+            start.FileName = @"Video Model.exe";
+            start.WindowStyle = ProcessWindowStyle.Hidden;
+            start.CreateNoWindow = true;
+
+            using (Process proc = Process.Start(start))
+            {
+                proc.WaitForExit();
+            }
         }
  
         public void SaveHeatmapImage(Bitmap bitmap, List<float> x, List<float> y, int i)
@@ -466,12 +477,24 @@ namespace Results_Class
             }
 
             //call create video
-            vm.ImagePath = DestinationPath;
+            /*vm.ImagePath = DestinationPath;
             vm.DestinationPath = DestinationPath;
             vm.ModelName = ModelName+".Heated";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
-            vm.createVideo();
+            vm.createVideo();*/
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.Arguments = ("\"" + DestinationPath + "\\" + "\"") + " " + ("\"" + ModelName + ".Heated" + "\"") + " " + width + " " + height + " " + 30;
+            start.FileName = @"Video Model.exe";
+            start.WindowStyle = ProcessWindowStyle.Hidden;
+            start.CreateNoWindow = true;
+
+            using (Process proc = Process.Start(start))
+            {
+                proc.WaitForExit();
+            }
+
             ig.deleteImages();
         }
 

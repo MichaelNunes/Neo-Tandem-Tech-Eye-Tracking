@@ -14,6 +14,7 @@ using System.IO;
 using Video_Model;
 using OpenTK.Graphics.OpenGL;
 using StatsClass;
+using System.Diagnostics;
 using Spinningprogbar;
 
 namespace NTT_Eye_Tracking
@@ -165,7 +166,6 @@ namespace NTT_Eye_Tracking
 
                             if (name != "" || obj != "")
                             {
-                                DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
                                 int counter = 1;
                                 for (int i = 0; i < 9; i++)
                                 {
@@ -255,6 +255,7 @@ namespace NTT_Eye_Tracking
                             //recording._recording = true;
                             frmDisplay fd = new frmDisplay(0, null, imglocation);
                             fd.Show(this);
+                            new DisplayModel.DisplayModel().Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
                             //recording._recording = false;
                             break;
                         }
@@ -268,13 +269,15 @@ namespace NTT_Eye_Tracking
                             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedRecord);
                             bw.RunWorkerAsync();
 
-                            bool temp = DisplayModel.DisplayModel.Run(obj, globals.currentRecordingpath + @"\", flythrough);
+                            //DisplayModel.DisplayModel dm = new DisplayModel.DisplayModel();
+                            new DisplayModel.DisplayModel().Run(obj, globals.currentRecordingpath + @"\" + name, flythrough);
                             bw.CancelAsync();
 
                             globals.recording._recording = false;
                             globals.recording.saveToFile();
                             globals.recording.close();
-                            vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
+                            
+                            /*vg.DestinationPath = globals.currentRecordingpath + @"\";// +name;
                             // = globals.currentRecordingpath + @"\"
                             vg.ImagePath = globals.currentRecordingpath + @"\";// +name;
                             vg.ModelName = "";//name;
@@ -282,8 +285,20 @@ namespace NTT_Eye_Tracking
                             res = this.GetDpiSafeResolution();
                             vg.FrameHeight = res.Height;
                             vg.FrameWidth = res.Width;
-                            vg.createVideo();
-                            System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
+                            vg.createVideo();*/
+
+                            ProcessStartInfo start = new ProcessStartInfo();
+                            start.Arguments = ("\"" + globals.currentRecordingpath + @"\\" + "\"") + " " + ("\"" + name + "\"") + " " + res.Width + " " + res.Height + " " + 30;
+                            start.FileName = @"Video Model.exe";
+                            start.WindowStyle = ProcessWindowStyle.Hidden;
+                            start.CreateNoWindow = true;
+
+                            using (Process proc = Process.Start(start))
+                            {
+                                proc.WaitForExit();
+                            }
+
+                            //System.IO.File.Move(globals.currentRecordingpath + @"\" + ".wmv", globals.currentRecordingpath + @"\" + name + ".wmv");
                             break;
                         }
                     case 2: //2D models
@@ -411,26 +426,9 @@ namespace NTT_Eye_Tracking
 
         private void btnViewResults_Click(object sender, EventArgs e)
         {
-            switch (globals.modelIndex)
-            {
-                case 0: //3D model
-                    {
-                        break;
-                    }
-                case 1: //flythrough
-                    {
-                        break;
-                    }
-                case 2: //2D models
-                    {
-                        pic_model2DPreview.Show();
-                        break;
-                    }
-                case 3: //Video
-                    {
-                        break;
-                    }
-            }
+           
+                Process.Start(globals.currentRecordingpath);
+           
         }
 
         #region helper functions
