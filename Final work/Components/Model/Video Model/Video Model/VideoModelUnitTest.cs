@@ -14,9 +14,9 @@ namespace Video_Model
         ImageGenerator ig;
         VideoGenerator vg;
 
-        string imagesDir = @"C:\Users\Duran\Desktop\videoTracking\test\";
-        string videosDir = @"C:\Users\Duran\Desktop\videoTracking\test\";
-        string testVideo = @"C:\Users\Duran\Desktop\videoTracking\test\Wildlife.wmv";
+        string imagesDir = @"C:\Users\Duran\Desktop\NTT Testing models\test\";
+        string videosDir = @"C:\Users\Duran\Desktop\NTT Testing models\test\";
+        string testVideo = @"C:\Users\Duran\Desktop\NTT Testing models\test\Wildlife.wmv";
 
         [SetUp]
         public void Init()
@@ -29,11 +29,13 @@ namespace Video_Model
         [Test]
         public void createVideo()
         {
-            vg.DestinationPath = vg.ModelName;
-            vg.ModelName = "";
-            vg.createVideo();
+            //vg.DestinationPath = vg.ModelName;
+            //vg.ModelName = "";
+            //vg.createVideo();
 
-            Assert.IsTrue(File.Exists(@"C:\Users\Public\Videos\Sample Videos\TestData\Video\UnitTestVideo.wmv"));
+            //System.Diagnostics.
+
+            Assert.IsTrue(File.Exists(@"C:\Users\Duran\Desktop\NTT Testing models\test\Wildlife.wmv.wmv"));
          
         }
 
@@ -42,7 +44,7 @@ namespace Video_Model
         {
             int imageCount = ig.createImages();
 
-            Assert.IsTrue(File.Exists(@"C:\Users\Duran\Desktop\videoTracking\test\frame0.jpg"));
+            Assert.IsTrue(File.Exists(@"C:\Users\Duran\Desktop\NTT Testing models\test\frame0.jpg"));
         }
 
         [Test]
@@ -50,7 +52,7 @@ namespace Video_Model
         {
             ig.deleteImages();
 
-            Assert.IsFalse(File.Exists(@"C:\Users\Duran\Desktop\videoTracking\test\frame0.jpg"));
+            Assert.IsFalse(File.Exists(@"C:\Users\Duran\Desktop\NTT Testing models\test\frame0.jpg"));
         }
 
     }

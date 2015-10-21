@@ -94,6 +94,34 @@
     <Reference Include="DisplayModel">
       <HintPath>..\..\..\Components\Model\3D model\3D model class\bin\Debug\DisplayModel.dll</HintPath>
     </Reference>
+    <Reference Include="DotImaging.BitmapInterop, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.BitmapInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="DotImaging.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotImaging.Drawing, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DotImaging.GenericImage, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.GenericImage.dll</HintPath>
+    </Reference>
+    <Reference Include="DotImaging.IO, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="DotImaging.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="DotImaging.Primitives2D, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Components\Model\Video Model\Video Model\bin\x86\Debug\DotImaging.Primitives2D.dll</HintPath>
+    </Reference>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>

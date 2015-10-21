@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using AForge.Video;
 using AForge.Video.FFMPEG;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Results_Class
 {
@@ -320,6 +321,7 @@ namespace Results_Class
                     width = temp.Width;
                     height = temp.Height;
                     temp.Dispose();
+
                     OpenETGraphData(SourceLocation, "view" + (i + 1));
                     Bitmap bitmap = new Bitmap(width, height);//SourceLocation + "\\" + ModelName + "view" + (i + 1) + ".bmp");
                     if (py.Count == 0 || px.Count == 0)
@@ -328,6 +330,9 @@ namespace Results_Class
                     }
                     Image canvas = createETGraph(bitmap, px, py, i);
                     canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 1) + ".ETGraph.jpg", ImageFormat.Jpeg);
+
+                    bitmap.Dispose();
+                    canvas.Dispose();
                 }
             }
             catch (Exception ef)
@@ -348,7 +353,7 @@ namespace Results_Class
             width = vid.Width;
             vid.Close();
             OpenETGraphData(DestinationPath, ModelName);
-            VideoGenerator vm = new VideoGenerator();
+            //VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
 
@@ -376,6 +381,8 @@ namespace Results_Class
                         y.Add(py.ElementAt(i));
                     }
                     SaveETGraphImage(bitmap, x, y, i);
+
+                    bitmap.Dispose();
                 }
                 catch (Exception k)
                 {
@@ -384,13 +391,23 @@ namespace Results_Class
             }
 
             //call create video
-            vm.ImagePath = DestinationPath + "\\";
+            /*vm.ImagePath = DestinationPath + "\\";
             vm.DestinationPath = DestinationPath + "\\";
             vm.ModelName = ModelName + ".ETGraph";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.Fps = 30;
-            vm.createVideo();
+            vm.createVideo();*/
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.Arguments = ("\"" + DestinationPath + "\\" + "\"") + " " + ("\"" + ModelName + ".ETGraph" + "\"") + " " + width + " " + height + " " + 30;
+            start.FileName = @"Video Model.exe";
+            start.WindowStyle = ProcessWindowStyle.Hidden;
+            start.CreateNoWindow = true;
+
+            using (Process proc = Process.Start(start))
+            {
+                proc.WaitForExit();
+            }
         }
 
         public void SaveETGraphImage(Bitmap bitmap, List<float> x, List<float> y, int i)
@@ -399,7 +416,9 @@ namespace Results_Class
             {
                 Image canvas = createETGraph(bitmap, px, py, i);
                 canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + i + ".jpg", ImageFormat.Jpeg);
-                bitmap.Dispose();
+                
+                //bitmap.Dispose();
+                canvas.Dispose();
             }
             catch(Exception e)
             {
@@ -426,6 +445,9 @@ namespace Results_Class
             pointHistory = px.Count;
             Image canvas = createETGraph(bitmap, px, py, px.Count);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraph.jpg", ImageFormat.Jpeg);
+
+            canvas.Dispose();
+            bitmap.Dispose();
         }
 
         /// <summary>
@@ -486,6 +508,9 @@ namespace Results_Class
 
                     Image canvas = createETGraph(bitmap, px, py, i);
                     canvas.Save(SourceLocation + "\\" + ModelName + "" + (i + 2) + ".ETGraph.jpg", ImageFormat.Jpeg);
+
+                    bitmap.Dispose();
+                    canvas.Dispose();
                 }
             }
             catch (Exception er)
@@ -526,7 +551,7 @@ namespace Results_Class
                 throw new ArgumentNullException();
             }
 
-            VideoGenerator vm = new VideoGenerator();
+            //VideoGenerator vm = new VideoGenerator();
             List<float> x = new List<float>();
             List<float> y = new List<float>();
 
@@ -558,7 +583,9 @@ namespace Results_Class
                     Image canvas = createETGraph(im, px, py, i);
                     //im.Dispose();
                     canvas.Save(DestinationPath + "\\" + ModelName + ".ETGraph" + "frame" + (i) + ".jpg", ImageFormat.Jpeg);
+
                     im.Dispose();
+                    canvas.Dispose();
                 }
                 catch (Exception k)
                 {
@@ -567,13 +594,25 @@ namespace Results_Class
             }
 
             //call create video
-            vm.ImagePath = DestinationPath;
+            /*vm.ImagePath = DestinationPath;
             vm.DestinationPath = DestinationPath;
             vm.ModelName = ModelName + ".ETGraph";
             vm.FrameWidth = width;
             vm.FrameHeight = height;
             vm.createVideo();
-            ig.deleteImages();
+            ig.deleteImages();*/
+
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.Arguments = ("\"" + DestinationPath + "\\" + "\"") + " " + ("\"" + ModelName + ".ETGraph" + "\"") + " " + width + " " + height + " " + 30;
+            start.FileName = @"Video Model.exe";
+            start.WindowStyle = ProcessWindowStyle.Hidden;
+            start.CreateNoWindow = true;
+
+            using (Process proc = Process.Start(start))
+            {
+                proc.WaitForExit();
+            }
+            
         }
 
         /// <summary>
@@ -596,6 +635,8 @@ namespace Results_Class
             pointHistory = px.Count;
             Image canvas = createETGraph(im, px, py, px.Count);
             canvas.Save(SourceLocation + "\\" + ModelName + ".ETGraphOver.Jpg", ImageFormat.Jpeg);
+
+            canvas.Dispose();
         }
 
         static bool HasCorrectExtension(string filename)

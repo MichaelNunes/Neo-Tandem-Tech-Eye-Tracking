@@ -15,7 +15,7 @@ namespace Video_Model
     public class ImageGenerator
     {
         string videoPath;
-        VideoFileReader reader;
+       VideoFileReader reader;
 
         public string VideoPath
         {
@@ -88,8 +88,7 @@ namespace Video_Model
             }
             catch(Exception e)
             {
-                Console.WriteLine("EXCEPTION IMAGE:" + e);
-                Console.ReadLine();
+                Console.WriteLine("Image creation done with image count {0}.", count);
                 reader.Dispose();
                 reader.Close();
                 return count;

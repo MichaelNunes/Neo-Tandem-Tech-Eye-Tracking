@@ -5,7 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTT Eye Tracking", "NTT Eye Tracking\NTT Eye Tracking.csproj", "{06FA2C9C-9D08-4675-B127-411F57F882FD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NTT EyeTracking Installer", "NTT EyeTracking Installer\NTT EyeTracking Installer.vdproj", "{E6AC8662-23CD-4557-9942-99A5B4F6E909}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D27E812-3A37-40E4-9B03-AB73BC4FB9AA}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +26,11 @@ Global
 		{06FA2C9C-9D08-4675-B127-411F57F882FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06FA2C9C-9D08-4675-B127-411F57F882FD}.Release|x86.ActiveCfg = Release|x86
 		{06FA2C9C-9D08-4675-B127-411F57F882FD}.Release|x86.Build.0 = Release|x86
-		{E6AC8662-23CD-4557-9942-99A5B4F6E909}.Debug|Any CPU.ActiveCfg = Debug
-		{E6AC8662-23CD-4557-9942-99A5B4F6E909}.Debug|x86.ActiveCfg = Debug
-		{E6AC8662-23CD-4557-9942-99A5B4F6E909}.Release|Any CPU.ActiveCfg = Release
-		{E6AC8662-23CD-4557-9942-99A5B4F6E909}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

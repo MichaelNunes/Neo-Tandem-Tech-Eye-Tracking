@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="NTT Eye Tracking.exe.manifest" size="17244">
+    <dependentAssembly dependencyType="install" codebase="NTT Eye Tracking.exe.manifest" size="21832">
       <assemblyIdentity name="NTT Eye Tracking.exe" version="1.2.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gaY3SLy0lJjpsjTE6y3RL4yk4xd1kBX63Xh0pa0O0Bg=</dsig:DigestValue>
+        <dsig:DigestValue>wuCKYZ6/9MXUgIJLdZrDy9Xp+JYIRqNDYeqx8ncz3iw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

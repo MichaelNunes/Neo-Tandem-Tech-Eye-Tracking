@@ -7,12 +7,38 @@ using System.IO;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.FFMPEG;
+//using DotImaging;
 
 namespace Video_Model
 {
     public class VideoGenerator
     {
-        VideoFileWriter writer;
+        
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Compiling video...");
+            try
+            {
+                new VideoGenerator(args[0], args[1], Convert.ToInt32(args[2]), Convert.ToInt32(args[3]), Convert.ToInt32(args[4])).createVideo();
+
+
+            }
+            catch(Exception e)
+            {
+                
+                Console.WriteLine(e.Message);
+                File.AppendAllText("info.txt", e + " ");
+                foreach (var x in args)
+                {
+                    File.AppendAllText("info.txt", x + " ");
+                }
+            }
+            //new VideoGenerator(@"C:\Users\Duran\Desktop\NTT Testing models\test\", "Wildlife.wmv", 1280, 720, 30).createVideo();
+            Console.WriteLine("Finished compiling video.");
+        }
+
+        static VideoFileWriter writer;
+        static Bitmap videoFrame;
 
         string imagePath;
 
@@ -95,6 +121,7 @@ namespace Video_Model
         public VideoGenerator(string path, string name, int width, int height, int framesPS)
         {
             imagePath = path;
+            destinationPath = path;
             modelName = name;
             frameWidth = width;
             frameHeight = height;
@@ -107,7 +134,17 @@ namespace Video_Model
         {
             writer.Open(DestinationPath + modelName + ".wmv", frameWidth, frameHeight, fps, VideoCodec.WMV1, 6000000);
             if (writer.IsOpen == false)
-                throw new Exception("The video file is not open.");
+            throw new Exception("The video file is not open.");
+
+            //DotImaging.Image<DotImaging.Rgb> frame;// = new DotImaging.IImage(DestinationPath + modelName + ".wmv");
+            
+            
+            //ImageStreamWriter writer = new VideoWriter(DestinationPath + modelName + ".wmv", new DotImaging.Primitives2D.Size(5, 5));
+            //Emgu.CV.VideoWriter writer = new Emgu.CV.VideoWriter(DestinationPath + modelName + ".wmv", 30, frameWidth, frameHeight, true);
+            //DotImaging.Bgr<byte> frame = new DotImaging.Bgr<byte>(new Bitmap(""));
+            //writer = new VideoWriter(DestinationPath + modelName, new DotImaging.Primitives2D.Size(frameWidth, frameHeight),20f);
+
+            //writer.Open();
 
             int count = 0;
 
@@ -115,19 +152,42 @@ namespace Video_Model
             {
                 while (true)
                 {
-                    Bitmap videoFrame = new Bitmap(imagePath + modelName + "frame" + count++ + ".jpg");
+                    videoFrame = new Bitmap(imagePath + modelName + "frame" + count++ + ".jpg");
 
                     writer.WriteVideoFrame(videoFrame);
 
                     videoFrame.Dispose();
                 }
+                /*while(true)
+                {
+                    ImageStreamReader reader = new FileCapture(imagePath + modelName + "frame" + count++ + ".jpg");
+                    foreach (var x in reader)
+                    {
+                        writer.Write(x);
+                        count++;
+                        x.Dispose();
+                    }
+                    reader.Dispose();
+                }*/
+            }
+            catch(System.AccessViolationException e)
+            {
+                Console.WriteLine("VIOLATION");
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine("VIOLATION");
+                //createVideo();
             }
             catch(Exception e)
             {
-                Console.WriteLine("EXCEPTION VIDEO: Count=" + count + e);
-                Console.ReadLine();
-                writer.Dispose();
+                Console.WriteLine("Video creation done with image count {0}.", count);
+                //Console.WriteLine("EXCEPTION VIDEO: Count=" + count + e);
+                //Console.ReadLine();
+                //writer.Dispose();
+            }
+            finally
+            {
                 writer.Close();
+                writer.Dispose();
             }
         }
     }
