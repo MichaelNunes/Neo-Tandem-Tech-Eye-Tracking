@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  15 OCT 2015 15:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  21 OCT 2015 22:37
 entering extended mode
 **User*Manual.tex
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.tex"
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\User Manual.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +15,9 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(C:\Users\m\Documents\miktex\tex\latex\base\report.cls
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(C:\Users\m\Documents\miktex\tex\latex\base\size12.clo
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -36,7 +36,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \@indexfile=\write3
 
 Writing index file User*Manual.idx
-(C:\Users\m\Documents\miktex\tex\latex\tools\longtable.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\tools\longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip43
 \LTright=\skip44
@@ -54,31 +54,31 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count92
 \LT@p@ftn=\toks14
 )
-(C:\Users\m\Documents\miktex\tex\latex\graphics\graphicx.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\m\Documents\miktex\tex\latex\graphics\keyval.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(C:\Users\m\Documents\miktex\tex\latex\graphics\graphics.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\m\Documents\miktex\tex\latex\graphics\trig.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\Users\m\Documents\miktex\tex\latex\00miktex\graphics.cfg
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(C:\Users\m\Documents\miktex\tex\latex\pdftex-def\pdftex.def
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\infwarerr.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\ltxcmds.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count93
@@ -86,17 +86,17 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(C:\Users\m\Documents\miktex\tex\latex\base\makeidx.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\hyperref.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\hobsub-hyperref.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\hobsub-generic.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\hobsub-generic.sty
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -137,25 +137,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\m\Documents\miktex\tex\generic\ifxetex\ifxetex.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\Users\m\Documents\miktex\tex\latex\oberdiek\auxhook.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(C:\Users\m\Documents\miktex\tex\latex\oberdiek\kvoptions.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen106
 \Hy@linkcounter=\count94
 \Hy@pagecounter=\count95
 
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\pd1enc.def
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count96
 
-(C:\Users\m\Documents\miktex\tex\latex\00miktex\hyperref.cfg
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -167,7 +167,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count97
 
-(C:\Users\m\Documents\miktex\tex\latex\url\url.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -192,19 +192,19 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\hpdftex.def
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count102
 \c@bookmark@seq@number=\count103
 
-(C:\Users\m\Documents\miktex\tex\latex\oberdiek\rerunfilecheck.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\oberdiek\rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
 )
-(C:\Users\m\Documents\miktex\tex\latex\float\float.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count104
 \float@exts=\toks16
@@ -214,8 +214,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.aux"
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\User Manual.aux"
 
 LaTeX Warning: Label `Camera' multiply defined.
 
@@ -234,7 +234,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
- (C:\Users\m\Documents\miktex\tex\context\base\supp-pdf.mkii
+ (C:\Users\Duran\Documents\MikTex2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen110
@@ -249,20 +249,20 @@ LaTeX Font Info:    ... okay on input line 27.
 \everyMPtoPDFconversion=\toks19
 )
 \AtBeginShipoutBox=\box33
- (C:\Users\m\Documents\miktex\tex\latex\graphics\color.sty
+ (C:\Users\Duran\Documents\MikTex2.9\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\Users\m\Documents\miktex\tex\latex\00miktex\color.cfg
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
 Package hyperref Info: Link coloring ON on input line 27.
 
-(C:\Users\m\Documents\miktex\tex\latex\hyperref\nameref.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(C:\Users\m\Documents\miktex\tex\generic\oberdiek\gettitlestring.sty
+(C:\Users\Duran\Documents\MikTex2.9\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count111
@@ -271,20 +271,20 @@ LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.out")
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.out")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\User Manual.out")
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\User Manual.out")
 \@outlinefile=\write4
 
-<../GeneralImages/up-logo.jpg, id=115, 287.1528pt x 78.7743pt>
+<../GeneralImages/up-logo.jpg, id=119, 287.1528pt x 78.7743pt>
 File: ../GeneralImages/up-logo.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/up-logo.jpg>
 Package pdftex.def Info: ../GeneralImages/up-logo.jpg used on input line 35.
 (pdftex.def)             Requested size: 287.15208pt x 78.77411pt.
 
-<../GeneralImages/NTT.jpg, id=116, 963.6pt x 722.7pt>
+<../GeneralImages/NTT.jpg, id=120, 963.6pt x 722.7pt>
 File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/NTT.jpg>
@@ -298,45 +298,46 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 54.
  [1
 
-{C:/Users/m/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/m/Desk
-top/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C:/U
-sers/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/NTT.jpg
->]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.toc")
-\tf@toc=\write5
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Duran/Documents/
+GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/GeneralImages/up-logo.jpg> <C
+:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Gener
+alImages/NTT.jpg>]
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\User Manual.toc"pdfTeX warning (ext4): destination with the same 
+identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 \newpage
-               [1
+l.46 ...rline {6.1}EyeTribe}{20}{subsection.0.6.1}
+                                                   [1
 
-] [2] [3]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Introduction/Introduction.tex"
-Overfull \hbox (0.64542pt too wide) in paragraph at lines 4--5
-[]\OT1/cmr/m/n/12 Our client wanted us to de-velop this soft-ware so that it co
-uld help the Geo-Informatics
+])
+\tf@toc=\write5
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 129--136
+
  []
 
+[3]
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\Introduction/Introduction.tex"
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
-(C:\Users\m\Documents\miktex\tex\latex\base\omscmr.fd
+
+(C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
-) [4]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Configuration/Config.tex" [5]
-<./Images/eyetribepicture.jpg, id=179, 1943.26pt x 1300.86pt>
+ [4])
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\Configuration/Config.tex" [5]
+<./Images/eyetribepicture.jpg, id=183, 1943.26pt x 1300.86pt>
 File: ./Images/eyetribepicture.jpg Graphic file (type jpg)
 
 <use ./Images/eyetribepicture.jpg>
 Package pdftex.def Info: ./Images/eyetribepicture.jpg used on input line 45.
 (pdftex.def)             Requested size: 971.62764pt x 650.42842pt.
 
-<./Images/connection.jpg, id=180, 1284.8pt x 722.7pt>
+<./Images/connection.jpg, id=184, 1284.8pt x 722.7pt>
 File: ./Images/connection.jpg Graphic file (type jpg)
 
 <use ./Images/connection.jpg>
@@ -347,36 +348,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-
-Overfull \hbox (10.63559pt too wide) in paragraph at lines 64--65
-[]\OT1/cmr/m/n/12 1)Navigate to [][]https://github.com/MichaelNunes/Neo-Tandem-
-Tech-Eye-Tracking[][] and
- []
-
-<./Images/UM1.JPG, id=182, 1028.34187pt x 548.0475pt>
-File: ./Images/UM1.JPG Graphic file (type jpg)
- <use ./Images/UM1.JPG>
-Package pdftex.def Info: ./Images/UM1.JPG used on input line 67.
-(pdftex.def)             Requested size: 205.66473pt x 109.60754pt.
-
 [6pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.70 2
-      )Unzip the archive using software of your choice to a folder of your c...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2}) 
-has been already used, duplicate ignored
+l.63 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.0
+.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.70 2
-      )Unzip the archive using software of your choice to a folder of your c...
- <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual Doc
-/Images/eyetribepicture.jpg> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/D
-ocumentation/User Manual Doc/Images/connection.jpg>]
-<./Images/UM2.JPG, id=192, 176.91093pt x 72.27pt>
+l.63 
+      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentati
+on/User Manual Doc/Images/eyetribepicture.jpg> <C:/Users/Duran/Documents/GitHub
+/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/connection.j
+pg>]
+Overfull \hbox (10.63559pt too wide) in paragraph at lines 64--65
+[]\OT1/cmr/m/n/12 1)Navigate to [][]https://github.com/MichaelNunes/Neo-Tandem-
+Tech-Eye-Tracking[][] and
+ []
+
+<./Images/UM1.JPG, id=196, 1028.34187pt x 548.0475pt>
+File: ./Images/UM1.JPG Graphic file (type jpg)
+ <use ./Images/UM1.JPG>
+Package pdftex.def Info: ./Images/UM1.JPG used on input line 67.
+(pdftex.def)             Requested size: 205.66473pt x 109.60754pt.
+
+<./Images/UM2.JPG, id=197, 176.91093pt x 72.27pt>
 File: ./Images/UM2.JPG Graphic file (type jpg)
  <use ./Images/UM2.JPG>
 Package pdftex.def Info: ./Images/UM2.JPG used on input line 73.
@@ -387,233 +386,214 @@ Overfull \hbox (9.04256pt too wide) in paragraph at lines 76--77
 m-Tech-Eye-Tracking/Final
  []
 
-<./Images/UM3.JPG, id=193, 428.35031pt x 494.59781pt>
+<./Images/UM3.JPG, id=198, 428.35031pt x 494.59781pt>
 File: ./Images/UM3.JPG Graphic file (type jpg)
  <use ./Images/UM3.JPG>
 Package pdftex.def Info: ./Images/UM3.JPG used on input line 78.
 (pdftex.def)             Requested size: 214.17462pt x 247.2983pt.
 
-<./Images/UM4.JPG, id=194, 773.89125pt x 496.10344pt>
+[7 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/
+User Manual Doc/Images/UM1.JPG> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tec
+h-Eye-Tracking/Documentation/User Manual Doc/Images/UM2.JPG>]
+<./Images/UM4.JPG, id=203, 773.89125pt x 496.10344pt>
 File: ./Images/UM4.JPG Graphic file (type jpg)
  <use ./Images/UM4.JPG>
 Package pdftex.def Info: ./Images/UM4.JPG used on input line 83.
 (pdftex.def)             Requested size: 386.94467pt x 248.0511pt.
 )
-[7 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual D
-oc/Images/UM1.JPG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentati
-on/User Manual Doc/Images/UM2.JPG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Trac
-king/Documentation/User Manual Doc/Images/UM3.JPG>]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\GettingStarted/GettingStarted.tex"
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\GettingStarted/GettingStarted.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-)
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\UsingSys/UsingSys.tex" [8 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Doc
-umentation/User Manual Doc/Images/UM4.JPG>]
+[8 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/
+User Manual Doc/Images/UM3.JPG> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tec
+h-Eye-Tracking/Documentation/User Manual Doc/Images/UM4.JPG>])
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\UsingSys/UsingSys.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-<./Images/StartupPage.PNG, id=203, 1445.4pt x 790.45313pt>
+<./Images/StartupPage.PNG, id=208, 1445.4pt x 790.45313pt>
 File: ./Images/StartupPage.PNG Graphic file (type png)
 
 <use ./Images/StartupPage.PNG>
 Package pdftex.def Info: ./Images/StartupPage.PNG used on input line 6.
 (pdftex.def)             Requested size: 401.48921pt x 200.74873pt.
-
-<./Images/NewProject.PNG, id=205, 1445.4pt x 791.95876pt>
+ [9 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/User Manual Doc/Images/StartupPage.PNG>]
+<./Images/NewProject.PNG, id=215, 1445.4pt x 791.95876pt>
 File: ./Images/NewProject.PNG Graphic file (type png)
 
 <use ./Images/NewProject.PNG>
 Package pdftex.def Info: ./Images/NewProject.PNG used on input line 13.
 (pdftex.def)             Requested size: 289.07487pt x 158.38895pt.
- [9 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/StartupPage.PNG>]
-<./Images/OpenProject.PNG, id=212, 1445.4pt x 791.95876pt>
+
+<./Images/OpenProject.PNG, id=216, 1445.4pt x 791.95876pt>
 File: ./Images/OpenProject.PNG Graphic file (type png)
 
 <use ./Images/OpenProject.PNG>
 Package pdftex.def Info: ./Images/OpenProject.PNG used on input line 17.
 (pdftex.def)             Requested size: 289.07487pt x 158.38895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--26
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
-<./Images/EyeCalibration.PNG, id=213, 1445.4pt x 790.45313pt>
-File: ./Images/EyeCalibration.PNG Graphic file (type png)
-
-<use ./Images/EyeCalibration.PNG>
-Package pdftex.def Info: ./Images/EyeCalibration.PNG used on input line 29.
-(pdftex.def)             Requested size: 401.48921pt x 200.74873pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-[10 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/NewProject.PNG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Doc
-umentation/User Manual Doc/Images/OpenProject.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-<./Images/NoCameraCalibration.PNG, id=221, 1443.89438pt x 791.20593pt>
-File: ./Images/NoCameraCalibration.PNG Graphic file (type png)
-
-<use ./Images/NoCameraCalibration.PNG>
-Package pdftex.def Info: ./Images/NoCameraCalibration.PNG used on input line 34
-.
-(pdftex.def)             Requested size: 401.48961pt x 200.74677pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
-<./Images/NoEyeCalibration.PNG, id=222, 1445.4pt x 791.20593pt>
-File: ./Images/NoEyeCalibration.PNG Graphic file (type png)
-
-<use ./Images/NoEyeCalibration.PNG>
-Package pdftex.def Info: ./Images/NoEyeCalibration.PNG used on input line 39.
-(pdftex.def)             Requested size: 401.48921pt x 200.74677pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
-
- []
-
-[11 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/EyeCalibration.PNG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking
-/Documentation/User Manual Doc/Images/NoCameraCalibration.PNG>]
-<./Images/ModelSelect.PNG, id=229, 1445.4pt x 788.9475pt>
+[10 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/User Manual Doc/Images/NewProject.PNG> <C:/Users/Duran/Documents/GitHub/Neo-Ta
+ndem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/OpenProject.PNG>]
+<./Images/ModelSelect.PNG, id=225, 1445.4pt x 788.9475pt>
 File: ./Images/ModelSelect.PNG Graphic file (type png)
 
 <use ./Images/ModelSelect.PNG>
-Package pdftex.def Info: ./Images/ModelSelect.PNG used on input line 49.
+Package pdftex.def Info: ./Images/ModelSelect.PNG used on input line 31.
 (pdftex.def)             Requested size: 401.48921pt x 200.75159pt.
- [12 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual
- Doc/Images/NoEyeCalibration.PNG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Track
-ing/Documentation/User Manual Doc/Images/ModelSelect.PNG>] <./Images/ChooseMode
-l.PNG, id=237, 1445.4pt x 791.20593pt>
+
+<./Images/EyeCalibration.PNG, id=226, 1445.4pt x 790.45313pt>
+File: ./Images/EyeCalibration.PNG Graphic file (type png)
+
+<use ./Images/EyeCalibration.PNG>
+Package pdftex.def Info: ./Images/EyeCalibration.PNG used on input line 40.
+(pdftex.def)             Requested size: 401.48921pt x 200.74873pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--41
+
+ []
+
+[11 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/User Manual Doc/Images/ModelSelect.PNG>]
+<./Images/NoCameraCalibration.PNG, id=232, 1443.89438pt x 791.20593pt>
+File: ./Images/NoCameraCalibration.PNG Graphic file (type png)
+
+<use ./Images/NoCameraCalibration.PNG>
+Package pdftex.def Info: ./Images/NoCameraCalibration.PNG used on input line 43
+.
+(pdftex.def)             Requested size: 401.48961pt x 200.74677pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+<./Images/NoEyeCalibration.PNG, id=233, 1445.4pt x 791.20593pt>
+File: ./Images/NoEyeCalibration.PNG Graphic file (type png)
+
+<use ./Images/NoEyeCalibration.PNG>
+Package pdftex.def Info: ./Images/NoEyeCalibration.PNG used on input line 46.
+(pdftex.def)             Requested size: 401.48921pt x 200.74677pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+[12 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/User Manual Doc/Images/EyeCalibration.PNG> <C:/Users/Duran/Documents/GitHub/Ne
+o-Tandem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/NoCameraCalibra
+tion.PNG>] <./Images/ChooseModel.PNG, id=241, 1445.4pt x 791.20593pt>
 File: ./Images/ChooseModel.PNG Graphic file (type png)
 
 <use ./Images/ChooseModel.PNG>
-Package pdftex.def Info: ./Images/ChooseModel.PNG used on input line 56.
+Package pdftex.def Info: ./Images/ChooseModel.PNG used on input line 51.
 (pdftex.def)             Requested size: 401.48921pt x 200.74677pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
-[13 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/ChooseModel.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
-
- []
-
-<./Images/ModelPreview.PNG, id=243, 1445.4pt x 792.71156pt>
+[13 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/User Manual Doc/Images/NoEyeCalibration.PNG> <C:/Users/Duran/Documents/GitHub/
+Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/ChooseModel.P
+NG>] <./Images/ModelPreview.PNG, id=248, 1445.4pt x 792.71156pt>
 File: ./Images/ModelPreview.PNG Graphic file (type png)
 
 <use ./Images/ModelPreview.PNG>
-Package pdftex.def Info: ./Images/ModelPreview.PNG used on input line 63.
+Package pdftex.def Info: ./Images/ModelPreview.PNG used on input line 57.
 (pdftex.def)             Requested size: 401.48921pt x 200.7417pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
-<./Images/ModelDisplay.PNG, id=244, 1445.4pt x 790.45313pt>
+<./Images/ModelDisplay.PNG, id=249, 1445.4pt x 790.45313pt>
 File: ./Images/ModelDisplay.PNG Graphic file (type png)
 
 <use ./Images/ModelDisplay.PNG>
-Package pdftex.def Info: ./Images/ModelDisplay.PNG used on input line 67.
+Package pdftex.def Info: ./Images/ModelDisplay.PNG used on input line 60.
 (pdftex.def)             Requested size: 401.48921pt x 200.74873pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
-[14 <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual 
-Doc/Images/ModelPreview.PNG> <C:/Users/m/Desktop/Neo-Tandem-Tech-Eye-Tracking/D
-ocumentation/User Manual Doc/Images/ModelDisplay.PNG>] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 79--84
+[14 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation
+/User Manual Doc/Images/ModelPreview.PNG> <C:/Users/Duran/Documents/GitHub/Neo-
+Tandem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/ModelDisplay.PNG>
+] [15] <./Images/reporting.PNG, id=260, 648.17157pt x 549.55313pt>
+File: ./Images/reporting.PNG Graphic file (type png)
 
- []
-
-) [16]
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Troubleshooting/Troubleshooting.tex"
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
-
+<use ./Images/reporting.PNG>
+Package pdftex.def Info: ./Images/reporting.PNG used on input line 75.
+(pdftex.def)             Requested size: 401.50616pt x 200.74873pt.
+ [16]
+<./Images/hm.JPG, id=265, 2055.68pt x 1365.1pt>
+File: ./Images/hm.JPG Graphic file (type jpg)
+ <use ./Images/hm.JPG>
+Package pdftex.def Info: ./Images/hm.JPG used on input line 80.
+(pdftex.def)             Requested size: 401.49902pt x 200.73602pt.
+ [17 <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentatio
+n/User Manual Doc/Images/reporting.PNG> <C:/Users/Duran/Documents/GitHub/Neo-Ta
+ndem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/hm.JPG>]
+<./Images/ET.JPG, id=271, 1592.7505pt x 1187.637pt>
+File: ./Images/ET.JPG Graphic file (type jpg)
+ <use ./Images/ET.JPG>
+Package pdftex.def Info: ./Images/ET.JPG used on input line 84.
+(pdftex.def)             Requested size: 401.49191pt x 200.73581pt.
 )
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\Appendicies/Appendices.tex")
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\Troubleshooting/Troubleshooting.tex" [18 <C:/Users/Duran/Document
+s/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/User Manual Doc/Images/ET.J
+PG>] [19])
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\Appendicies/Appendices.tex")
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
 
-("C:\Users\m\Desktop\Neo-Tandem-Tech-Eye-Tracking\Documentation\User Manual Doc
-\User Manual.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
+("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Us
+er Manual Doc\User Manual.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `User*Manual.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 5403 strings out of 493921
- 82858 string characters out of 3147294
+ 5424 strings out of 493921
+ 84106 string characters out of 3144475
  159295 words of memory out of 3000000
- 8547 multiletter control sequences out of 15000+200000
+ 8560 multiletter control sequences out of 15000+200000
  9449 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,6n,28p,2024b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
-ers/m/Documents/miktex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/m/D
-ocuments/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/m/Documents/
-miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m/Documents/miktex/f
-onts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "User Manual.pdf" (20 pages, 4593793 bytes).
+ 29i,6n,28p,1650b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "User Manual.pdf" (21 pages, 6105471 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 315 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 
