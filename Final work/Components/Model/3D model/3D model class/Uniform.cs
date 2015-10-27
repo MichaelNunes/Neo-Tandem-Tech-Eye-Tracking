@@ -1,73 +1,52 @@
-﻿namespace DisplayModel
+﻿#region Legal
+/*
+ * Copyright (c) 2015 The University of Pretoria.
+ *
+ * The following was designed for the Centre of GeoInformation
+ * Science (CGIS), University of Pretoria. All code is property
+ * of the University of Pretoria and is available under the 
+ * Creative Commons Attribution-ShareAlike (CC BY-SA) see:
+ * "https://creativecommons.org/licenses/"
+ *
+ * Author: Duran Cole
+ * Email: u13329414@tuks.co.za
+ * Author: Michael Nunes
+ * Email: u12104592@tuks.co.za
+ * Author: Molefe Molefe
+ * Email: u12260429@tuks.co.za
+ * Author: Tebogo Christopher Seshibe
+ * Email: u13181442@tuks.co.za
+ * Author: Timothy Snayers
+ * Email: u13397134@tuks.co.za
+ */
+#endregion
+
+namespace DisplayModel
 {
     /// <summary>
     /// Container for the shader uniforms.
     /// </summary>
     public struct Uniform
     {
-        /// <summary>
-        /// Pointer to the model view matrix uniform attribute in the shader.
-        /// </summary>
-        public int ModelViewMatrix { get; set; }
+        #region Fields
+        public int Sampler;
 
-        /// <summary>
-        /// Pointer to the projection matrix uniform attribute in the shader.
-        /// </summary>
-        public int ProjectionMatrix { get; set; }
+        public int ModelViewMatrix;
+        public int ProjectionMatrix;
+        public int NormalMatrix;
 
-        /// <summary>
-        /// Pointer to the normal matrix uniform attribute in the shader.
-        /// </summary>
-        public int NormalMatrix { get; set; }
+        public int UseTexture;
+        public int UseLighting;
 
-        /// <summary>
-        /// Pointer to the use texture uniform attribute in the shader.
-        /// </summary>
-        public int UseTexture { get; set; }
+        public int AmbientLightColour;
+        public int DirectionalLightColour;
+        public int DirectionalLightDirection;
+        public int PointLightDiffuseColour;
+        public int PointLightSpecularColour;
+        public int PointLightShininess;
+        public int PointLightPosition;
 
-        /// <summary>
-        /// Pointer to the use lighting uniform attribute in the shader.
-        /// </summary>
-        public int UseLighting { get; set; }
-
-        /// <summary>
-        /// Pointer to the ambient light colour uniform attribute in the shader.
-        /// </summary>
-        public int AmbientLightColour { get; set; }
-
-        /// <summary>
-        /// Pointer to the ambient light colour uniform attribute in the shader.
-        /// </summary>
-        public int DirectionalLightColour { get; set; }
-
-        /// <summary>
-        /// Pointer to the directional light direction uniform attribute in the shader.
-        /// </summary>
-        public int DirectionalLightDirection { get; set; }
-
-        /// <summary>
-        /// Pointer to the point light diffuse colour uniform attribute in the shader.
-        /// </summary>
-        public int PointLightDiffuseColour { get; set; }
-
-        /// <summary>
-        /// Pointer to the point light specular colour uniform attribute in the shader.
-        /// </summary>
-        public int PointLightSpecularColour { get; set; }
-
-        /// <summary>
-        /// Pointer to the point light shininess uniform attribute in the shader.
-        /// </summary>
-        public int PointLightShininess { get; set; }
-
-        /// <summary>
-        /// Pointer to the point light position uniform attribute in the shader.
-        /// </summary>
-        public int PointLightPosition { get; set; }
-
-        /// <summary>
-        /// Pointer to the texture sampler uniform attribute in the shader.
-        /// </summary>
-        public int Sampler { get; set; }
+        public int Alpha;
+        #endregion
     }
 }

@@ -21,9 +21,11 @@
  */
 #endregion
 
+#region Using Clauses
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
+#endregion
 
 namespace DisplayModel
 {
@@ -33,9 +35,6 @@ namespace DisplayModel
     public class AmbientLight : Light
     {
         #region Fields
-        /// <summary>
-        /// The colour of the light.
-        /// </summary>
         public Vector3 Colour;
         #endregion
 
@@ -59,10 +58,14 @@ namespace DisplayModel
         }
         #endregion
 
-        #region Override
-        public void addLight(int uniform)
+        #region Lighting
+        /// <summary>
+        /// Adds ambient (environmental) light to the scene.
+        /// </summary>
+        /// <param name="uniform"> Uniform id for the colour of the light. </param>
+        public override void AddLight(params int[] uniforms)
         {
-            GL.Uniform3(uniform, Colour);
+            GL.Uniform3(uniforms[0], Colour);
         }
         #endregion
     }

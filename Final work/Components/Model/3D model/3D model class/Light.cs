@@ -28,6 +28,14 @@ namespace DisplayModel
     /// </summary>
     public abstract class Light
     {
-
+        #region Lighting
+        /// <summary>
+        /// Adds light to the 3d scene by assigning the appropriate
+        /// type-specific attribute to the corresponding shader
+        /// uniforms.
+        /// </summary>
+        /// <param name="uniforms"> An array of uniform identifiers. </param>
+        public abstract void AddLight(params int[] uniforms);
+        #endregion
     }
 }

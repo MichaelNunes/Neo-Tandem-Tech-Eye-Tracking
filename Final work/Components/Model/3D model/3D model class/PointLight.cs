@@ -21,9 +21,11 @@
  */
 #endregion
 
+#region Using Clauses
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
+#endregion
 
 namespace DisplayModel
 {
@@ -33,20 +35,10 @@ namespace DisplayModel
     public class PointLight : Light
     {
         #region Fields
-        /// <summary>
-        /// The base colour of the light.
-        /// </summary>
-        public Vector3 Colour;
-
-        /// <summary>
-        /// The amount of shine the specular colour produces.
-        /// </summary>
-        public float Shininess;
-
-        /// <summary>
-        /// The position of the light in 3d space.
-        /// </summary>
+        public Vector3 Diffuse;
+        public Vector3 Specular;
         public Vector3 Position;
+        public float Shininess;
         #endregion
 
         #region Constructors
@@ -59,9 +51,10 @@ namespace DisplayModel
         /// </summary>
         public PointLight()
         {
-            Colour = new Vector3(0.5f);
+            Diffuse = new Vector3(0.5f);
+            Specular = new Vector3(1.0f);
+            Position = new Vector3(0.0f);
             Shininess = 10;
-            Position = Vector3.Zero;
         }
 
         /// <summary>
@@ -70,20 +63,28 @@ namespace DisplayModel
         /// <param name="diffuse"> The base colour of the light. </param>
         /// <param name="shininess"> The amount of reflection the specular light provides. </param>
         /// <param name="position"> The position of the light in 3d space. </param>
-        public PointLight(Color4 diffuse, float shininess, Vector3 position)
+        public PointLight(Color4 diffuse, Color4 specular, Vector3 position, float shininess)
         {
-            Colour = new Vector3(diffuse.R * diffuse.A, diffuse.G * diffuse.A, diffuse.B * diffuse.A);
+            Diffuse = new Vector3(diffuse.R * diffuse.A, diffuse.G * diffuse.A, diffuse.B * diffuse.A);
+            Specular = new Vector3(specular.R * specular.A, specular.G * specular.A, specular.B * specular.A);
             Shininess = shininess;
             Position = position;
         }
         #endregion
 
-        #region Override
-        public void addLight(int colour, int shininess, int position)
+        #region Lighting
+        /// <summary>
+        /// Adds a point light colour to the scene.
+        /// </summary>
+        /// <param name="colour"> Uniform id for the colour of the light.</param>
+        /// <param name="shininess"> Uniform id for the shinines of the light. </param>
+        /// <param name="position"> Uniform id for the position for the light. </param>
+        public override void AddLight(params int[] uniforms)
         {
-            GL.Uniform3(colour, Colour);
-            GL.Uniform1(shininess, Shininess);
-            GL.Uniform3(position, Position);
+            GL.Uniform3(uniforms[0], Diffuse);
+            GL.Uniform3(uniforms[1], Specular);
+            GL.Uniform3(uniforms[2], Position);
+            GL.Uniform1(uniforms[3], Shininess);
         }
         #endregion
     }

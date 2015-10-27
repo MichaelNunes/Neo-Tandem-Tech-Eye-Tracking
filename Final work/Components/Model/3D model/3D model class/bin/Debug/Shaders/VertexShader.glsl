@@ -45,15 +45,14 @@ out vec3 oNormalVec;
 out vec3 oEyeVec;
 // OUTPUT
 
-void main( void )
+void main(void)
 {
 	oVertexColour = aVertexColour;
 	oVertexTexture = aVertexTexture;
 
-
-	oPositionVec = uModelViewMatrix * vec4( aVertexPosition, 1.0 );
+	oPositionVec = uModelViewMatrix * vec4(aVertexPosition, 1.0);
 	oNormalVec = normalize(uNormalMatrix * aVertexNormal);
-	oEyeVec = vec3( -oNormalVec.xyz );
+	oEyeVec = vec3(-oNormalVec.xyz);
 
-	gl_Position = uProjectionMatrix * uModelViewMatrix * vec4( aVertexPosition, 1.0 );
+	gl_Position = uProjectionMatrix * oPositionVec;
 }

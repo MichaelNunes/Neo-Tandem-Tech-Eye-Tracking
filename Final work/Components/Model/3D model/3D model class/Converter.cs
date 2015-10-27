@@ -21,11 +21,13 @@
  */
 #endregion
 
+#region Using Cluases
 using OpenTK;
 using OpenTK.Graphics;
 using System;
 using System.IO;
 using System.Collections.Generic;
+#endregion
 
 namespace DisplayModel
 {
@@ -34,78 +36,78 @@ namespace DisplayModel
 	/// <summary>
     public static class Converter
     {
-        #region List items
-        public static List<Vector3>                 p_vertices, p_normals;
-        public static List<Vector2>                 p_uvs;
-        public static List<List<int>>               t_indices;
-        public static List<int>                     f_vertices, f_uvs, f_normals;
-        public static Dictionary<string, string>    material_texture;
-        public static List<string>                  materials;
-        public static List<GameObject>              list;
+        #region List Items
+        private static List<Vector3> VertexPoint, VertexNormal;
+        private static List<Vector2> VertexUV;
+        private static List<List<int>> TextureIndices;
+        private static List<int> FacePoint, FaceUV, FaceNormal;
+        private static Dictionary<string, string> MaterialTexture;
+        private static List<string> MaterialName;
 
-        public static int                           material_index;
-        public static float                         scale_factor = 1.0f;
+        private static int MaterialIndex;
+        private static float ScaleFactor = 1.0f;
+        private const float ScaleFactorBase = 2.0f;
+        private const float VerticalOffset = 0.5f;
         #endregion
 
+        #region Root Parsing
         /// <summary>
         /// Converts the object and material files into a Model object.
         /// </summary>
         /// <param name='obj'> The filepath to the object file. </param>
-        /// <param name='dir'> The filepath to the object's texture file. </param>
+        /// <param name='scaling'> Whether we scale the objects or not. </param>
         public static GameObject fromOBJ(string obj, bool scaling)
         {
-            Init();
-
             GameObject root = new GameObject();
 
+            // Getting path to material file and textures
             int index = 0;
             for (int i = 0; i < obj.Length; ++i)
                 if (obj[i] == '\\')
                     index = i;
+
             string mtl = obj.Substring(0, index);
             string tex = obj.Substring(0, index) + '\\';
+            // Getting path to material file and textures
 
-            parseOBJ(obj, ref mtl);
-            parseMTL(mtl, tex);
-            generateChildren(ref root);
-
-            if (scaling)
-            {
-                scale_factor /= 2.5f;
-                scaleObject(ref root);
-            }
+            Init();
+            ParseOBJ(obj, ref mtl);
+            ParseMTL(mtl, tex);
+            GenerateChildren(ref root);
+            if (scaling) ScaleObject(ref root);
+            Clear();
 
 
             Console.WriteLine("Generating materials...");
             root.Initialize();
-            Clear();
 
             Console.WriteLine("Returning object...");
             return root;
         }
+        #endregion
 
+        #region Setup
         /// <summary>
-        /// Intialises the lists use to parse the files
+        /// Intialises the lists use to parse the files.
         /// </summary>
         private static void Init()
         {
-            p_vertices = new List<Vector3>();
-            p_normals = new List<Vector3>();
+            VertexPoint = new List<Vector3>();
+            VertexNormal = new List<Vector3>();
 
-            p_uvs = new List<Vector2>();
+            VertexUV = new List<Vector2>();
 
-            t_indices = new List<List<int>>();
-            f_vertices = new List<int>();
-            f_uvs = new List<int>();
-            f_normals = new List<int>();
+            TextureIndices = new List<List<int>>();
+            FacePoint = new List<int>();
+            FaceUV = new List<int>();
+            FaceNormal = new List<int>();
 
-            material_texture = new Dictionary<string, string>();
+            MaterialTexture = new Dictionary<string, string>();
 
-            materials = new List<string>();
-            list = new List<GameObject>();
+            MaterialName = new List<string>();
 
-            material_index = 0;
-            scale_factor = 1.0f;
+            MaterialIndex = 0;
+            ScaleFactor = 1.0f;
         }
 
         /// <summary>
@@ -113,62 +115,48 @@ namespace DisplayModel
         /// </summary>
         private static void Clear()
         {
-            p_vertices.Clear();
-            p_normals.Clear();
+            VertexPoint.Clear();
+            VertexPoint = null;
+            VertexNormal.Clear();
+            VertexNormal = null;
+            VertexUV.Clear();
+            VertexUV = null;
 
-            p_uvs.Clear();
+            TextureIndices.Clear();
+            TextureIndices = null;
+            FacePoint.Clear();
+            FacePoint = null;
+            FaceUV.Clear();
+            FaceUV = null;
+            FaceNormal.Clear();
+            FaceNormal = null;
 
-            t_indices.Clear();
-            f_vertices.Clear();
-            f_uvs.Clear();
-            f_normals.Clear();
+            MaterialTexture.Clear();
+            MaterialTexture = null;
 
-            material_texture.Clear();
+            MaterialName.Clear();
+            MaterialName = null;
 
-            materials.Clear();
-            list.Clear();
-
-            material_index = 0;
-            scale_factor = 1.0f;
+            MaterialIndex = 0;
+            ScaleFactor = 1.0f;
         }
+        #endregion
 
+        #region OBJ Helper Methods
         /// <summary>
-        /// Scales down the vertices of the parsed model to fit within the
-        /// screen.
+        /// Reads through the obj file to get the vertex points, 
+        /// face indices, material name and, the path to the material file.
         /// </summary>
-        /// <param name="root"> The root model object. </param>
-        private static void scaleObject(ref GameObject root)
-        {
-            Console.WriteLine("Scaling objects...");
-            for (int i = 0; i < root.Children.Count; ++i)
-            {
-                GameObject current = root.Children[i];
-                for (int j = 0; j < current.Children.Count; ++j)
-                {
-                    GameObject child = current.Children[j];
-                    for (int k = 0; k < current.BufferData.Vertex.Length; ++k)
-                    {
-                        child.bufferData.vertex[k].X /= scale_factor;
-                        child.bufferData.vertex[k].Y /= scale_factor;
-                        child.bufferData.vertex[k].Z /= scale_factor;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="obj"> Path to the obj file. </param>
-        /// <param name="mtl"> Path to the material file, determined from the obj file. </param>
-        private static void parseOBJ(string obj, ref string mtl)
+        /// <param name="obj"> Path to the object file. </param>
+        /// <param name="mtl"> Path to the material file. </param>
+        private static void ParseOBJ(string obj, ref string mtl)
         {
             StreamReader filereader;
-            string line, type, section;
-            string[] sections;
+            string line, type, type_value;
+            string[] line_segment;
             
             try { filereader = new StreamReader(obj); }
-            catch (Exception e) { throw new Exception("Exception: .obj file not found."); }
+            catch (Exception e) { return; }
 
             Console.WriteLine("Parsing .obj file...");
             while ((line = filereader.ReadLine()) != null)
@@ -177,70 +165,83 @@ namespace DisplayModel
                 if (0 < space && space < line.Length)
                 {
                     type = line.Substring(0, space);
-                    section = line.Substring(space, line.Length - space).Trim();
-                    sections = line.Split(' ');
+                    type_value = line.Substring(space, line.Length - space).Trim();
+                    line_segment = line.Split(' ');
 
                     switch (type)
                     {
+                        // Object
                         case "o":
-                            if (t_indices.Count > 0)
-                                t_indices[t_indices.Count - 1].Add(material_index);
+                            if (TextureIndices.Count > 0)
+                                TextureIndices[TextureIndices.Count - 1].Add(MaterialIndex);
 
-                            t_indices.Add(new List<int>());
+                            TextureIndices.Add(new List<int>());
                             break;
 
+                        // Material file path
                         case "mtllib":
-                            mtl = mtl + '\\' + section;
+                            mtl = mtl + '\\' + type_value;
                             break;
 
+                        // Vertex point
                         case "v":
-                            Vector3 temp = new Vector3(float.Parse(sections[1]), float.Parse(sections[2]), float.Parse(sections[3]));
-                            if (Math.Abs(temp.X) > scale_factor) scale_factor = Math.Abs(temp.X);
-                            if (Math.Abs(temp.Y) > scale_factor) scale_factor = Math.Abs(temp.Y);
-                            if (Math.Abs(temp.Z) > scale_factor) scale_factor = Math.Abs(temp.Z);
-                            p_vertices.Add(temp);
+                            Vector3 temp = new Vector3(float.Parse(line_segment[1]), float.Parse(line_segment[2]), float.Parse(line_segment[3]));
+                            
+                            if (Math.Abs(temp.X) > ScaleFactor) ScaleFactor = Math.Abs(temp.X);
+                            if (Math.Abs(temp.Y) > ScaleFactor) ScaleFactor = Math.Abs(temp.Y);
+                            if (Math.Abs(temp.Z) > ScaleFactor) ScaleFactor = Math.Abs(temp.Z);
+                            
+                            VertexPoint.Add(temp);
                             break;
 
+                        // Vertex Texture Co-ordinate
                         case "vt":
-                            p_uvs.Add(new Vector2(float.Parse(sections[1]), float.Parse(sections[2])));
+                            VertexUV.Add(new Vector2(float.Parse(line_segment[1]), float.Parse(line_segment[2])));
                             break;
 
+                        // Vertex Normal
                         case "vn":
-                            p_normals.Add(new Vector3(float.Parse(sections[1]), float.Parse(sections[2]), float.Parse(sections[3])));
+                            VertexNormal.Add(new Vector3(float.Parse(line_segment[1]), float.Parse(line_segment[2]), float.Parse(line_segment[3])));
                             break;
 
+                        // Face indices
                         case "f":
-                            addFace(sections);
+                            AddFace(line_segment);
                             break;
 
+                        // Material
                         case "usemtl":
-                            if (t_indices.Count == 0)
-                                t_indices.Add(new List<int>());
+                            if (TextureIndices.Count == 0)
+                                TextureIndices.Add(new List<int>());
 
-                            t_indices[t_indices.Count - 1].Add(material_index);
-                            materials.Add(section);
+                            TextureIndices[TextureIndices.Count - 1].Add(MaterialIndex);
+                            MaterialName.Add(type_value);
+                            break;
+
+                        default:
                             break;
                     }
                 }
             }
 
             filereader.Close();
-            t_indices[t_indices.Count - 1].Add(material_index);
+            TextureIndices[TextureIndices.Count - 1].Add(MaterialIndex);
         }
 
         /// <summary>
-        /// 
+        /// Reads throught the mtl file to get the diffuse colour, specular colour and,
+        /// file path to the textue of the object.
         /// </summary>
-        /// <param name="mtl"></param>
-        /// <param name="tex"></param>
-        private static void parseMTL(string mtl, string tex)
+        /// <param name="mtl"> Path to the material file. </param>
+        /// <param name="tex"> Directory where the textures are contained. </param>
+        private static void ParseMTL(string mtl, string tex)
         {
             StreamReader filereader;
-            string line, type, sections, image_path = "";
+            string line, type, type_value, image_path = "", colour = "";
             string next_material = "";
 
             try { filereader = new StreamReader(mtl); }
-            catch (Exception e) { Console.WriteLine(".mtl file not found."); return; }
+            catch (Exception e) { return; }
 
             Console.WriteLine("Parsing .mtl file...");
             while ((line = filereader.ReadLine()) != null)
@@ -249,30 +250,48 @@ namespace DisplayModel
                 if (0 < space && space < line.Length)
                 {
                     type = line.Substring(0, space);
-                    sections = line.Substring(space, line.Length - space).Trim();
+                    type_value = line.Substring(space, line.Length - space).Trim();
 
                     switch (type)
                     {
+                        // Material Name
                         case "newmtl":
-                            next_material = sections;
+                            next_material = type_value;
                             break;
 
+                        // Ambient Colour
+                        case "Ka":
+                            colour = "false " + type_value;
+                            break;
+
+                        // Diffuse Colour
                         case "Kd":
-                            image_path = "C" + sections;
-                            material_texture.Add(next_material, image_path);
+                            colour += " " + type_value;
                             break;
 
+                        // Specular Colour
                         case "Ks":
-                            image_path += " " + sections;
+                            colour += " " + type_value;
                             break;
 
-                        case "map_Kd":
-                            image_path = "T" + (sections.Contains(":\\") ? sections : tex + sections);
-                            
-                            if (material_texture.ContainsKey(next_material))
-                                material_texture.Remove(next_material);
+                        // Opacity
+                        case "d":
+                            colour += " " + type_value;
+                            MaterialTexture.Add(next_material, colour);
+                            break;
 
-                            material_texture.Add(next_material, image_path);
+                        // Image Path
+                        case "map_Kd":
+                            colour = colour.Substring(6);
+                            image_path = "true " + (type_value.Contains(":\\") ? type_value : tex + type_value) + "\n" + colour;
+                            
+                            if (MaterialTexture.ContainsKey(next_material))
+                                MaterialTexture.Remove(next_material);
+
+                            MaterialTexture.Add(next_material, image_path);
+                            break;
+
+                        default:
                             break;
                     }
                 }
@@ -281,16 +300,13 @@ namespace DisplayModel
         }
 
         /// <summary>
-        /// Adds faces from the file source. 
+        /// Adds faces from the file source in a clockwise fanning direction.
         /// </summary>
-        /// <param name="v"> The vertex point list. </param>
-        /// <param name="t"> The texture point list. </param>
-        /// <param name="n"> The normal direction list. </param>
         /// <param name="line"> An array of face index values. </param>
-        private static void addFace(string[] line)
+        private static void AddFace(string[] line)
         {
             string[] first, second;
-            int start = f_vertices.Count;
+            int start = FacePoint.Count;
 
             // Initial Point
             first = line[1].Split('/');
@@ -314,53 +330,55 @@ namespace DisplayModel
             // Initial Point
 
             // Fanning loop
-            for (int i = 3; i < line.Length; i += 1)
+            for (int i = 3; i < line.Length; i++)
             {
                 first = line[i - 1].Split('/');
                 second = line[i].Split('/');
 
 
-                f_vertices.Add(start_v);
-                f_vertices.Add(int.Parse(first[0]));
-                f_vertices.Add(int.Parse(second[0]));
+                FacePoint.Add(start_v);
+                FacePoint.Add(int.Parse(first[0]));
+                FacePoint.Add(int.Parse(second[0]));
 
                 if (first.Length == 3 && start_t != -1)
                 {
-                    f_uvs.Add(start_t);
-                    f_uvs.Add(int.Parse(first[1]));
-                    f_uvs.Add(int.Parse(second[1]));
+                    FaceUV.Add(start_t);
+                    FaceUV.Add(int.Parse(first[1]));
+                    FaceUV.Add(int.Parse(second[1]));
                 }
 
                 if (start_n != -1)
                 {
-                    f_normals.Add(start_n);
-                    f_normals.Add(int.Parse(first[first.Length == 2 ? 1 : 2]));
-                    f_normals.Add(int.Parse(second[first.Length == 2 ? 1 : 2]));
+                    FaceNormal.Add(start_n);
+                    FaceNormal.Add(int.Parse(first[first.Length == 2 ? 1 : 2]));
+                    FaceNormal.Add(int.Parse(second[first.Length == 2 ? 1 : 2]));
                 }
-                material_index += 3;
+
+                MaterialIndex += 3;
             }
             // Fanning Loop
         }
 
         /// <summary>
-        /// 
+        /// Creates the subobject in the root object.
+        /// Each subobject contains more objects with their own material.
         /// </summary>
         /// <param name="root"></param>
-        public static void generateChildren(ref GameObject root)
+        public static void GenerateChildren(ref GameObject root)
         {
             Console.WriteLine("Generating children objects...");
-            int children = t_indices.Count;
-            int count = 0;
+            int children = TextureIndices.Count;
+            int current_material = 0;
 
             for (int child = 0; child < children; ++child)
             {
-                int allmaterials = t_indices[child].Count - 1;
+                int total_materials = TextureIndices[child].Count - 1;
                 GameObject newChild = new GameObject();
 
-                for (int material = 0; material < allmaterials; ++material)
+                for (int material = 0; material < total_materials; ++material)
                 {
-                    int start = t_indices[child][material];
-                    int end = t_indices[child][material + 1];
+                    int start = TextureIndices[child][material];
+                    int end = TextureIndices[child][material + 1];
                     int range = end - start;
 
                     int[]   vi = null,
@@ -368,32 +386,61 @@ namespace DisplayModel
                             ni = null;
 
                     vi = new int[range];
-                    if (start + range <= f_uvs.Count)
+                    if (start + range <= FaceUV.Count)
                         ti = new int[range];
-                    if (start + range <= f_normals.Count)
+                    if (start + range <= FaceNormal.Count)
                         ni = new int[range];
 
-                    f_vertices.CopyTo(start, vi, 0, range);
-                    if (ti != null) f_uvs.CopyTo(start, ti, 0, range);
-                    if (ni != null) f_normals.CopyTo(start, ni, 0, range);
+                    FacePoint.CopyTo(start, vi, 0, range);
+                    if (ti != null) FaceUV.CopyTo(start, ti, 0, range);
+                    if (ni != null) FaceNormal.CopyTo(start, ni, 0, range);
 
-                    string h = materials[count];
+                    string h = MaterialName[current_material];
                     string filepath;
 
-                    try { filepath = material_texture[h]; }
+                    try { filepath = MaterialTexture[h]; }
                     catch (Exception e) { filepath = string.Empty; }
 
 
-                    BufferData bd = new BufferData(ref p_vertices, ref p_uvs, ref p_normals, vi, ti, ni);
+                    BufferData bd = new BufferData(ref VertexPoint, ref VertexUV, ref VertexNormal, vi, ti, ni);
                     Material m = new Material(filepath);
                     GameObject newSubChild = new GameObject(m, bd);
 
-                    newChild.AddChild(newSubChild);
-                    ++count;
+                    newChild.Children.Add(newSubChild);
+                    ++current_material;
                 }
 
-                root.AddChild(newChild);
+                root.Children.Add(newChild);
             }
         }
+
+        /// <summary>
+        /// Scales down the vertices of the parsed model to fit within the
+        /// viewport.
+        /// </summary>
+        /// <param name="root"> The root model object. </param>
+        private static void ScaleObject(ref GameObject root)
+        {
+            ScaleFactor /= ScaleFactorBase;
+
+            Console.WriteLine("Scaling objects...");
+            for (int i = 0; i < root.Children.Count; ++i)
+            {
+                GameObject current = root.Children[i];
+                for (int j = 0; j < current.Children.Count; ++j)
+                {
+
+                    GameObject child = current.Children[j];
+                    for (int k = 0; k < child.BufferData.Vertex.Length; ++k)
+                    {
+                        child.BufferData.Vertex[k].X /= ScaleFactor;
+                        child.BufferData.Vertex[k].Y /= ScaleFactor;
+                        child.BufferData.Vertex[k].Y -= VerticalOffset;
+                        child.BufferData.Vertex[k].Z /= ScaleFactor;
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }

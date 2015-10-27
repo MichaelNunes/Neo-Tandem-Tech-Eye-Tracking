@@ -86,14 +86,12 @@
     <Compile Include="PointLight.cs" />
     <Compile Include="Test Classes\Test DisplayModel.cs" />
     <Compile Include="Uniform.cs" />
-    <Compile Include="Window.cs" />
     <Compile Include="Test Classes\Test Converter.cs" />
     <Compile Include="DisplayModel.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Shader.cs" />
-    <Compile Include="Transform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

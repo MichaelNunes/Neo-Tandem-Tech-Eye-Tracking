@@ -21,13 +21,14 @@
  */
 #endregion
 
+#region Using Clauses
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Collections.Generic;
+#endregion
 
 namespace DisplayModel
 {
@@ -39,12 +40,13 @@ namespace DisplayModel
 	public class Material
 	{
 		#region Fields
-        public const int MAX_TEXTURES = 32;
-        
-		private Color4 diffuse = Color4.LightGray;
-        private Color4 specular = Color4.Black;
-        private int textureid;
-        private string file;
+        public Vector3 Ambient;
+        public Vector3 Diffuse;
+        public Vector3 Specular;
+
+        public float Alpha;
+        public string File;
+        public int TextureID;
 		#endregion
 
         #region Constructors
@@ -53,86 +55,90 @@ namespace DisplayModel
         /// </summary>
         public Material()
         {
-            textureid = -1;
-            file = string.Empty;
+            Ambient = new Vector3(0.0f);
+		    Diffuse = new Vector3(0.5f);
+            Specular = new Vector3(1.0f);
+            File = null;
+            TextureID = -1;
         }
 
 		/// <summary>
 		/// Creates a material with an array of image textures.
 		/// </summary>
-		/// <param name='_filepath'> List of paths to the textures of the object. </param>
-		public Material(string filepath)
+        /// <param name='info'> List of paths to the textures of the object and colour. </param>
+		public Material(string info)
         {
-            textureid = -1;
-            if (filepath != string.Empty && filepath[0] == 'T')
-                file = filepath.Substring(1);
+            TextureID = -1;
+            Ambient = new Vector3(0.0f);
+            Diffuse = new Vector3(0.5f);
+            Specular = new Vector3(1.0f);
 
-            else if (filepath != string.Empty && filepath[0] == 'C')
+            if (info != string.Empty)
             {
-                string[] color = filepath.Substring(1).Split(' ');
-                diffuse = new Color4(float.Parse(color[0]), float.Parse(color[1]), float.Parse(color[2]), 1.0f);
+                string[] colour = null;
+                string has_image = info.Split(' ')[0];
 
-                if (color.Length > 3)
-                    specular = new Color4(float.Parse(color[3]), float.Parse(color[4]), float.Parse(color[5]), 1.0f);
+                switch (has_image)
+                {
+                    case "true":
+                        File = info.Substring(5).Split('\n')[0];
+                        colour = info.Substring(5).Split('\n')[1].Split(' ');
+                        break;
 
-                file = string.Empty;
+                    case "false":
+                        File = null;
+                        colour = info.Substring(6).Split(' ');
+                        break;
+                }
+
+                Ambient = new Vector3(float.Parse(colour[0]), float.Parse(colour[1]), float.Parse(colour[2]));
+                Diffuse = new Vector3(float.Parse(colour[3]), float.Parse(colour[4]), float.Parse(colour[5]));
+                Specular = new Vector3(float.Parse(colour[6]), float.Parse(colour[7]), float.Parse(colour[8]));
+                Alpha = float.Parse(colour[9]);
             }
-
-            else
-                file = string.Empty;
 		}
 		#endregion
 
-        #region Setup
+        #region Texture Creation Methods
         /// <summary>
         /// Sets up the texture for the current object containing this material.
         /// </summary>
         public void Setup()
         {
-            textureid = (file != string.Empty) ? CreateTexture(file) : -1;
+            if (File != null)
+            {
+                CreateTexture();
+                File = null;
+            }
         }
 
         /// <summary>
-        /// 
+        /// Reads the image and generates a texture and attaches it to
+        /// the material.
         /// </summary>
-        /// <param name="filepath"></param>
-        /// <returns></returns>
-        private int CreateTexture(string filepath)
+        private void CreateTexture()
         {
-            int textureId = GL.GenTexture();
-            GL.BindTexture(TextureTarget.Texture2D, textureId);
+            TextureID = GL.GenTexture();
+            GL.BindTexture(TextureTarget.Texture2D, TextureID);
 
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
 
-            Bitmap bmp = new Bitmap(filepath);
-            bmp.RotateFlip(RotateFlipType.Rotate180FlipX);
-            BitmapData bmp_data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Bitmap texture = new Bitmap(File);
+            texture.RotateFlip(RotateFlipType.Rotate180FlipX);
 
-            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, bmp_data.Width, bmp_data.Height, 0,
-                OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bmp_data.Scan0);
+            BitmapData texture_data = texture.LockBits(new Rectangle(0, 0, texture.Width, texture.Height),
+                                                    ImageLockMode.ReadOnly,
+                                                    System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
-            bmp.UnlockBits(bmp_data);
+            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba,
+                            texture_data.Width, texture_data.Height, 0,
+                            OpenTK.Graphics.OpenGL.PixelFormat.Bgra,
+                            PixelType.UnsignedByte, texture_data.Scan0);
 
-            return textureId;
+            texture.UnlockBits(texture_data);
+            texture.Dispose();
         }
-        #endregion
-
-        #region Attributes
-        /// <summary>
-        /// The color of the material attached to the object.
-        /// </summary>
-        public Color4 Colour { get { return diffuse; } }
-
-        /// <summary>
-        /// The color of the material attached to the object.
-        /// </summary>
-        public Vector3 Specular { get { return new Vector3(diffuse.R, diffuse.G, diffuse.B); } }
-
-        /// <summary>
-        /// An array of id's for each texture bound.
-        /// </summary>
-        public int TextureID { get { return textureid; } }
         #endregion
     }
 }

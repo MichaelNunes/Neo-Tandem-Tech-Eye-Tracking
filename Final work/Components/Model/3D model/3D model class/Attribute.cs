@@ -28,24 +28,11 @@ namespace DisplayModel
     /// </summary>
     public struct Attribute
     {
-        /// <summary>
-        /// Pointer to the vertex position attribute in the shader.
-        /// </summary>
-        public int VertexPosition { get; set; }
-
-        /// <summary>
-        /// Pointer to the vertex normal attribute in the shader.
-        /// </summary>
-        public int VertexNormal { get; set; }
-
-        /// <summary>
-        /// Pointer to the vertex colour attribute in the shader.
-        /// </summary>
-        public int VertexColour { get; set; }
-
-        /// <summary>
-        /// Pointer to the vertex texture attribute in the shader.
-        /// </summary>
-        public int VertexTexture { get; set; }
+        #region Fields
+        public int VertexPosition;
+        public int VertexNormal;
+        public int VertexColour;
+        public int VertexTexture;
+        #endregion
     }
 }

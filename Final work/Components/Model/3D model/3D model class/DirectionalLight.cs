@@ -21,9 +21,11 @@
  */
 #endregion
 
+#region Using Clauses
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
+#endregion
 
 namespace DisplayModel
 {
@@ -34,14 +36,7 @@ namespace DisplayModel
     public class DirectionalLight : Light
     {
         #region Fields
-        /// <summary>
-        /// The colour of the light.
-        /// </summary>
         public Vector3 Colour;
-
-        /// <summary>
-        /// The direction in which the light is lighting a scene.
-        /// </summary>
         public Vector3 Direction;
         #endregion
 
@@ -67,11 +62,16 @@ namespace DisplayModel
         }
         #endregion
 
-        #region Override
-        public void addLight(int colour, int direction)
+        #region Lighting
+        /// <summary>
+        /// Adds direction light to the scene.
+        /// </summary>
+        /// <param name="colour"> Uniform id for the colour of the light. </param>
+        /// <param name="direction"> Uniform id for the direction of the light. </param>
+        public override void AddLight(params int[] uniforms)
         {
-            GL.Uniform3(colour, Colour);
-            GL.Uniform3(direction, Direction);
+            GL.Uniform3(uniforms[0], Colour);
+            GL.Uniform3(uniforms[1], Direction);
         }
         #endregion
     }

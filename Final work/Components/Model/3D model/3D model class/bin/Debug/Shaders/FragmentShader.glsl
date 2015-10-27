@@ -27,7 +27,6 @@ precision mediump float;
 
 /******** SAMPLER ********/
 uniform sampler2D uSampler;
-uniform int uSamplerIndex;
 /******** SAMPLER ********/		
 
 /*********** BOOLEANS ***********/
@@ -56,12 +55,13 @@ in vec3 oNormalVec;
 in vec3 oEyeVec;
 /******** VARYING ********/
 
+uniform float uAlpha;
 out vec4 fragColor;
 
 vec4 Colour()
 {
 	if(uUseTexture)
-		return texture2D(uSampler, vec2(oVertexTexture.s, oVertexTexture.t));
+		return texture2D(uSampler, oVertexTexture);
 	else
 		return oVertexColour;
 }
@@ -72,16 +72,26 @@ vec3 Light()
 	{
 		vec3 ambient;
 		vec3 directional;
-		vec3 point;
-	
+		vec3 point;	
+
+		// Ambient Light
 		ambient = uAmbientLight_Colour;
+		// Ambient Light
 		
-		float dirWeight = max(dot(oNormalVec, normalize(uDirectionalLight_Direction - oPositionVec.xyz)), 0.0);
-		directional = uDirectionalLight_Colour * dirWeight;		
+		// Directoinal Light
+		vec3 dirLightVec = normalize(uDirectionalLight_Direction - oPositionVec.xyz);
+		float dirWeight = max(dot(oNormalVec, dirLightVec), 0.0);
+
+		directional = uDirectionalLight_Colour * dirWeight;
+		// Directoinal Light
 		
-		float diffWeight = max(dot(oNormalVec, normalize(uPointLight_Position - oPositionVec.xyz)), 0.0);
-		float specWeight = pow(max(dot(-normalize(uPointLight_Position - oPositionVec.xyz), oEyeVec), 0.0), uPointLight_Shininess);
+		// Point Light
+		vec3 poiLightVec = -normalize(uPointLight_Position - oPositionVec.xyz);
+		float diffWeight = max(dot(oNormalVec, poiLightVec), 0.0);		
+		float specWeight = pow(max(dot(poiLightVec, oEyeVec), 0.0), uPointLight_Shininess);
+		
 		point = (uPointLight_DiffuseColour * diffWeight) + (uPointLight_SpecularColour * specWeight);
+		// Point Light
 
 		return (ambient + directional + point);
 	}
@@ -93,7 +103,6 @@ void main()
 {
 	vec4 colour = Colour();
 	vec3 light = Light();
-	float alpha = 1.0;
 	
-	fragColor = vec4(colour.rgb * light, alpha);
+	fragColor = vec4(colour.rgb * light, 1.0);
 }

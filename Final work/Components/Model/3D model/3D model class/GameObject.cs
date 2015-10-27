@@ -21,11 +21,13 @@
  */
 #endregion
 
+#region Using Clauses
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
+#endregion
 
 namespace DisplayModel
 {
@@ -34,94 +36,70 @@ namespace DisplayModel
     /// </summary>
     public class GameObject 
     {
-        public static int degrees = 0;
-
         #region Fields
-        private Material material;
-        private Buffer buffer;
-        public BufferData bufferData;
-
-        private List<GameObject> children;
+        public Buffer Buffer;
+        public Material Material;
+        public BufferData BufferData;
+        public List<GameObject> Children;
         #endregion
 
         #region Constructors
         /// <summary>
-        /// 
+        /// Creates an empty game object.
         /// </summary>
         public GameObject()
         {
-            material = new Material();
-            bufferData = new BufferData();
-            children = new List<GameObject>();
+            Buffer = new Buffer();
+            Material = new Material();
+            BufferData = new BufferData();
+            Children = new List<GameObject>();
         }
 
         /// <summary>
-        /// 
+        /// Generates a new game object with a material and buffer data.
         /// </summary>
-        /// <param name="t"></param>
-        /// <param name="m"></param>
-        /// <param name="bd"></param>
-        public GameObject(Material m, BufferData bd)
+        /// <param name="material"> Material containing colour/image information of the model. </param>
+        /// <param name="bufferData"> Object containing the vertices, normals, and texture co-ordinates of the model. </param>
+        public GameObject(Material material, BufferData bufferData)
         {
-            material = m;
-            bufferData = bd;
-            children = new List<GameObject>();
+            Buffer = new Buffer();
+            Material = material;
+            BufferData = bufferData;
+            Children = new List<GameObject>();
         }
         #endregion
 
+        #region Methods
+        /// <summary>
+        /// Generates the buffer id for the objects,
+        /// generates the textures, and assigns the base colour,
+        /// for the object.
+        /// </summary>
         public void Initialize()
         {
-            // IMPLEMENT
-            // DOES THE SETUP OF THE BUFFERS, MATERIALS, AND SO FORTH
-
-            //GENERATING BUFFERS
-            buffer.Position = GL.GenBuffer();
-            buffer.Normal = GL.GenBuffer();
-            buffer.Colour = GL.GenBuffer();
-            buffer.Texture = GL.GenBuffer();
-            buffer.Index = GL.GenBuffer();
+            Buffer.Position = GL.GenBuffer();
+            Buffer.Normal = GL.GenBuffer();
+            Buffer.Colour = GL.GenBuffer();
+            Buffer.Texture = GL.GenBuffer();
+            Buffer.Index = GL.GenBuffer();
 
             Material.Setup();
-            BufferData.SetColour(Material.Colour);
+            BufferData.SetColour(Material.Diffuse, Material.Alpha);
 
-            foreach (GameObject child in children)
+            foreach (GameObject child in Children)
                 child.Initialize();
         }
 
         /// <summary>
-        /// 
+        /// Empties out the list of children objects.
         /// </summary>
-        /// <param name="child"></param>
-        public void AddChild(GameObject child) { children.Add(child); }
-
-        #region Attributes
-        /// <summary>
-        /// 
-        /// </summary>
-        public Material Material
+        public void Clear()
         {
-            get { return material; }
-            set { material = value; }
+            foreach (GameObject child in Children)
+                child.Clear();
+
+            Children.Clear();
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BufferData BufferData
-        {
-            get { return bufferData; }
-            set { bufferData = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Buffer Buffer { get { return buffer; } }
-
-        /// <summary>
-        /// The sub-objects of the current object
-        /// </summary>
-        public List<GameObject> Children { get { return children; } set { children = value; } }
         #endregion
     }
 }

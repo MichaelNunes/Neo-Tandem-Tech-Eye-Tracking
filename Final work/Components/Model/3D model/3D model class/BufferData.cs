@@ -21,97 +21,82 @@
  */
 #endregion
 
+#region Using Clauses
 using OpenTK;
 using OpenTK.Graphics;
 using System;
 using System.Collections.Generic;
+#endregion
 
 namespace DisplayModel
 {
 	/// <summary>
-	/// Contains the vertex, uv, and normal values of a 3D model.
+	/// A simpe container for the: vertex position, uv co-ordrinate,
+    /// and vertex normal values of a 3D model.
 	/// </summary>
 	public class BufferData
     {
 		#region Fields
-        public Vector3[] vertex;
-        public Vector2[] texture;
-        public Vector3[] normal;
-        public Vector4[] colour;
-
+        public Vector3[] Vertex;
+        public Vector2[] Texture;
+        public Vector3[] Normal;
+        public Vector4[] Colour;
         public Matrix4 ModelViewMatrix;
 		#endregion
 
-		#region Constructor
+		#region Constructors
         /// <summary>
         /// Default constructor.
         /// </summary>
         public BufferData()
         {
-            vertex = new Vector3[0];
-            texture = new Vector2[0];
-            normal = new Vector3[0];
-            colour = new Vector4[0];
-            Color4 color = Color4.LightGray;
+            Vertex = new Vector3[0];
+            Texture = new Vector2[0];
+            Normal = new Vector3[0];
+            Colour = new Vector4[0];
             ModelViewMatrix = Matrix4.Identity;
         }
 
         /// <summary>
         /// Create a buffer data object from the values passed and the indices provided.
         /// </summary>
-        /// <param name='vp'> A list of vertex points. </param>
-        /// <param name='tp'> A list of texture points. </param>
-        /// <param name='np'> A list of normal points. </param>
-        /// <param name='vi'> A list of vertex indices. </param>
-        /// <param name='ti'> A list of texture indices. </param>
-        /// <param name='ni'> A list of normal indices. </param>
+        /// <param name='vertexPoint'> A list of vertex points. </param>
+        /// <param name='texturePoint'> A list of texture points. </param>
+        /// <param name='normalPoint'> A list of normal points. </param>
+        /// <param name='vertexIndex'> A list of vertex indices. </param>
+        /// <param name='textureIndex'> A list of texture indices. </param>
+        /// <param name='normalIndex'> A list of normal indices. </param>
         /// <param name="tc"> A list of texture indices indices. </param>
-        public BufferData(ref List<Vector3> vp, ref List<Vector2> tp, ref List<Vector3> np, int[] vi, int[] ti, int[] ni)
+        public BufferData(ref List<Vector3> vertexPoint, ref List<Vector2> texturePoint, ref List<Vector3> normalPoint, int[] vertexIndex, int[] textureIndex, int[] normalIndex)
         {
-            int size = vi.Length;
-            vertex = new Vector3[size];
-            texture = new Vector2[ti != null ? size : 0];
-            normal = new Vector3[ni != null ? size : 0];
-            colour = new Vector4[size];
-            Color4 color = Color4.LightGray;
+            int size = vertexIndex.Length;
+            Vertex = new Vector3[size];
+            Texture = new Vector2[textureIndex != null ? size : 0];
+            Normal = new Vector3[normalIndex != null ? size : 0];
+            Colour = new Vector4[size];
+            Color4 colour = Color4.LightGray;
             ModelViewMatrix = Matrix4.Identity;
 
             for (int i = 0; i < size; ++i)
             {
-                vertex[i] = vp[vi[i] - 1];
-                if (ti != null) texture[i] = tp[ti[i] - 1];
-                if (ni != null) normal[i] = np[ni[i] - 1];
-                colour[i] = new Vector4(color.R, color.G, color.B, color.A);
+                Vertex[i] = vertexPoint[vertexIndex[i] - 1];
+                if (textureIndex != null) Texture[i] = texturePoint[textureIndex[i] - 1];
+                if (normalIndex != null) Normal[i] = normalPoint[normalIndex[i] - 1];
+                Colour[i] = new Vector4(colour.R, colour.G, colour.B, colour.A);
             }
 		}
+        #endregion
 
-        public void SetColour(Color4 newColour)
+        #region Colour Assignment
+        /// <summary>
+        /// Updates the models base colour by assigning the values in the colour array.
+        /// </summary>
+        /// <param name="newColour"> RGBA values of the new colour. </param>
+        public void SetColour(Vector3 newColour, float alpha)
         {
-            for (int i = 0; i < colour.Length; ++i)
-                colour[i] = new Vector4(newColour.R, newColour.G, newColour.B, newColour.A);
+            for (int i = 0; i < Colour.Length; ++i)
+                Colour[i] = new Vector4(newColour, alpha);
         }
-		#endregion
-
-        #region Attributes
-        /// <summary>
-        /// Array or vertex posiitions
-        /// </summary>
-        public Vector3[] Vertex { get { return vertex; } }
-
-        /// <summary>
-        /// Array or vertex texture co-ordinates
-        /// </summary>
-        public Vector2[] Texture { get { return texture; } }
-
-        /// <summary>
-        /// Array or vertex normals
-        /// </summary>
-        public Vector3[] Normal { get { return normal; } }
-
-        /// <summary>
-        /// Array or vertex colours
-        /// </summary>
-        public Vector4[] Colour { get { return colour; } }
 		#endregion
 	}
 }
