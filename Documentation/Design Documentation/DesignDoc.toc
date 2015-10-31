@@ -1,31 +1,40 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.0.1}
-\contentsline {subsection}{\numberline {1.1}Description of Document}{2}{subsection.0.1.1}
-\contentsline {subsection}{\numberline {1.2}Section Overview }{2}{subsection.0.1.2}
-\contentsline {section}{\numberline {2}Data Design}{2}{section.0.2}
-\contentsline {subsection}{\numberline {2.1}Models class}{3}{subsection.0.2.1}
-\contentsline {subsection}{\numberline {2.2}Heat map}{3}{subsection.0.2.2}
-\contentsline {subsection}{\numberline {2.3}Statistics class}{3}{subsection.0.2.3}
-\contentsline {subsection}{\numberline {2.4}Recorder class}{3}{subsection.0.2.4}
-\contentsline {section}{\numberline {3}Interface Design}{3}{section.0.3}
-\contentsline {subsection}{\numberline {3.1}Evolution of the design design}{4}{subsection.0.3.1}
-\contentsline {subsection}{\numberline {3.2}Flow of design}{4}{subsection.0.3.2}
-\contentsline {subsection}{\numberline {3.3}Form element placement}{4}{subsection.0.3.3}
-\contentsline {subsection}{\numberline {3.4}Interaction with functionality}{4}{subsection.0.3.4}
-\contentsline {section}{\numberline {4}Procedural Design}{4}{section.0.4}
-\contentsline {subsection}{\numberline {4.1}Main Procedure:Eye tracking}{5}{subsection.0.4.1}
-\contentsline {subsection}{\numberline {4.2}Sub Procedure:Project Start}{5}{subsection.0.4.2}
-\contentsline {subsection}{\numberline {4.3}Sub Procedure:Recording Setup}{5}{subsection.0.4.3}
-\contentsline {subsection}{\numberline {4.4}Sub Procedure:Eye Tracking Recording}{5}{subsection.0.4.4}
-\contentsline {section}{\numberline {5}Usability testing}{5}{section.0.5}
-\contentsline {subsection}{\numberline {5.1}Date of testing}{5}{subsection.0.5.1}
-\contentsline {subsection}{\numberline {5.2}The participants}{6}{subsection.0.5.2}
-\contentsline {subsection}{\numberline {5.3}The feedback}{6}{subsection.0.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Calibration}{6}{subsubsection.0.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Accuracy of recordings}{6}{subsubsection.0.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Layout of the forms}{6}{subsubsection.0.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.4}Guided nature of the process}{6}{subsubsection.0.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.5}Preview window}{6}{subsubsection.0.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.6}Size and style of font}{7}{subsubsection.0.5.3.6}
-\contentsline {subsubsection}{\numberline {5.3.7}Size and style of buttons}{7}{subsubsection.0.5.3.7}
-\contentsline {subsubsection}{\numberline {5.3.8}Loading times}{7}{subsubsection.0.5.3.8}
-\contentsline {subsubsection}{\numberline {5.3.9}The changes made}{7}{subsubsection.0.5.3.9}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Description of Document}{3}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Section Overview }{3}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}Data Design}{3}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Models class}{4}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Heat map class}{4}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Gaze Plot class}{4}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Statistics class}{4}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.5}Record class}{4}{subsection.0.2.5}
+\contentsline {section}{\numberline {3}Interface Design}{5}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Evolution of the design design}{5}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Flow of design}{5}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Form element placement}{5}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Interaction with functionality}{6}{subsection.0.3.4}
+\contentsline {section}{\numberline {4}Procedural Design}{6}{section.0.4}
+\contentsline {subsection}{\numberline {4.1}Main Procedure: NTT Eye-tracking application}{6}{subsection.0.4.1}
+\contentsline {subsection}{\numberline {4.2}Sub-procedure: Project Start}{6}{subsection.0.4.2}
+\contentsline {subsection}{\numberline {4.3}Sub-procedure: Recording Set-up}{6}{subsection.0.4.3}
+\contentsline {subsection}{\numberline {4.4}Sub-procedure: Main work-space}{6}{subsection.0.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Sub-procedure: Camera Calibration}{7}{subsubsection.0.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Sub-procedure: Model Selection}{7}{subsubsection.0.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Sub-procedure: Record}{7}{subsubsection.0.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Sub-procedure: Printing overlays}{7}{subsubsection.0.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}Sub-procedure: Printing Heat-map}{7}{subsubsection.0.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}Sub-procedure: Printing Gaze Plot}{7}{subsubsection.0.4.4.6}
+\contentsline {subsubsection}{\numberline {4.4.7}Sub-procedure: Printing Reports}{8}{subsubsection.0.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}Sub-procedure: View Results}{8}{subsubsection.0.4.4.8}
+\contentsline {section}{\numberline {5}Usability testing}{8}{section.0.5}
+\contentsline {subsection}{\numberline {5.1}Date of testing}{8}{subsection.0.5.1}
+\contentsline {section}{\numberline {6}The participants}{8}{section.0.6}
+\contentsline {section}{\numberline {7}The feedback}{8}{section.0.7}
+\contentsline {subsubsection}{\numberline {7.0.1}Calibration}{8}{subsubsection.0.7.0.1}
+\contentsline {subsubsection}{\numberline {7.0.2}Accuracy of recordings}{9}{subsubsection.0.7.0.2}
+\contentsline {subsubsection}{\numberline {7.0.3}Layout of the forms}{9}{subsubsection.0.7.0.3}
+\contentsline {subsubsection}{\numberline {7.0.4}Guided nature of the process}{9}{subsubsection.0.7.0.4}
+\contentsline {subsubsection}{\numberline {7.0.5}Preview window}{9}{subsubsection.0.7.0.5}
+\contentsline {subsubsection}{\numberline {7.0.6}Size and style of font}{9}{subsubsection.0.7.0.6}
+\contentsline {subsubsection}{\numberline {7.0.7}Size and style of buttons}{9}{subsubsection.0.7.0.7}
+\contentsline {subsubsection}{\numberline {7.0.8}Loading times}{9}{subsubsection.0.7.0.8}
+\contentsline {subsubsection}{\numberline {7.0.9}The changes made}{10}{subsubsection.0.7.0.9}

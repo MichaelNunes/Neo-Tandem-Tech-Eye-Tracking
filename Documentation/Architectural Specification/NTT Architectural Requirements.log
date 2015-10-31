@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  21 OCT 2015 09:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.26)  28 OCT 2015 14:07
 entering extended mode
 **NTT*Architectural*Requirements.tex
 
@@ -274,19 +274,19 @@ chitectural Specification\NTT Architectural Requirements.out")
 chitectural Specification\NTT Architectural Requirements.out")
 \@outlinefile=\write4
 
-<../GeneralImages/up-logo.jpg, id=63, 287.1528pt x 78.7743pt>
+<../GeneralImages/up-logo.jpg, id=83, 287.1528pt x 78.7743pt>
 File: ../GeneralImages/up-logo.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/up-logo.jpg>
 Package pdftex.def Info: ../GeneralImages/up-logo.jpg used on input line 35.
 (pdftex.def)             Requested size: 287.15208pt x 78.77411pt.
 
-<../GeneralImages/NTT.jpg, id=64, 963.6pt x 722.7pt>
+<../GeneralImages/NTT.jpg, id=84, 846.91406pt x 846.91406pt>
 File: ../GeneralImages/NTT.jpg Graphic file (type jpg)
 
 <use ../GeneralImages/NTT.jpg>
 Package pdftex.def Info: ../GeneralImages/NTT.jpg used on input line 42.
-(pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
+(pdftex.def)             Requested size: 169.3798pt x 169.3798pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -309,7 +309,9 @@ chitectural Specification\NTT Architectural Requirements.toc")
 \tf@toc=\write5
 
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\QualityRequirements/QualityRequirements.tex"
+chitectural Specification\QualityRequirements/QualityRequirements.tex" [2
+
+]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 
 (C:\Users\Duran\Documents\MikTex2.9\tex\latex\base\omscmr.fd
@@ -317,61 +319,124 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
- [2
-
-] [3] [4])
+ [3] [4])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\AccessRequirements/AccessRequirements.tex")
+chitectural Specification\AccessRequirements/AccessRequirements.tex" [5])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalConstraints/ArchitectureConstraints.tex"
-[5])
+) [6]
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalPatterns/ArchitecturalPatternsOrStyles.t
-ex" [6]
-<Diagrams/Class_Diagram__Singleton.png, id=129, 289.08pt x 288.07625pt>
+ex" <Diagrams/Class_Diagram__Singleton.png, id=154, 289.08pt x 288.07625pt>
 File: Diagrams/Class_Diagram__Singleton.png Graphic file (type png)
 
 <use Diagrams/Class_Diagram__Singleton.png>
 Package pdftex.def Info: Diagrams/Class_Diagram__Singleton.png used on input li
-ne 16.
+ne 6.
 (pdftex.def)             Requested size: 144.53964pt x 144.03777pt.
 
-<Diagrams/Class_Diagram__Flyweight.png, id=130, 380.42125pt x 396.48125pt>
+<Diagrams/Class_Diagram__Flyweight.png, id=155, 380.42125pt x 396.48125pt>
 File: Diagrams/Class_Diagram__Flyweight.png Graphic file (type png)
 
 <use Diagrams/Class_Diagram__Flyweight.png>
 Package pdftex.def Info: Diagrams/Class_Diagram__Flyweight.png used on input li
-ne 24.
+ne 20.
 (pdftex.def)             Requested size: 190.21014pt x 198.24013pt.
+ [7pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.35 
+      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentati
+on/Architectural Specification/Diagrams/Class_Diagram__Singleton.png (PNG copy)
+>] <Diagrams/Slide4.jpg, id=161, 722.7pt x 542.025pt>
+File: Diagrams/Slide4.jpg Graphic file (type jpg)
+
+<use Diagrams/Slide4.jpg>
+Package pdftex.def Info: Diagrams/Slide4.jpg used on input line 38.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ <Diagrams/Slide5.jpg, id=162, 722.7pt x 542.025pt>
+File: Diagrams/Slide5.jpg Graphic file (type jpg)
+
+<use Diagrams/Slide5.jpg>
+Package pdftex.def Info: Diagrams/Slide5.jpg used on input line 48.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.50 \end{figure}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{figure.0.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.50 \end{figure}
+                  <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking
+/Documentation/Architectural Specification/Diagrams/Class_Diagram__Flyweight.pn
+g (PNG copy)> <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Doc
+umentation/Architectural Specification/Diagrams/Slide4.jpg>]
+<Diagrams/Slide6.jpg, id=169, 722.7pt x 542.025pt>
+File: Diagrams/Slide6.jpg Graphic file (type jpg)
+ <use Diagrams/Slide6.jpg>
+Package pdftex.def Info: Diagrams/Slide6.jpg used on input line 57.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+
+<Diagrams/Slide8.jpg, id=170, 722.7pt x 542.025pt>
+File: Diagrams/Slide8.jpg Graphic file (type jpg)
+ <use Diagrams/Slide8.jpg>
+Package pdftex.def Info: Diagrams/Slide8.jpg used on input line 66.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.0.4}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.72 
+      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentati
+on/Architectural Specification/Diagrams/Slide5.jpg>] [10pdfTeX warning (ext4): 
+destination with the same identifier (name{figure.0.5}) has been already used, 
+duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.72 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.0
+.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.72 
+      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentati
+on/Architectural Specification/Diagrams/Slide6.jpg> <C:/Users/Duran/Documents/G
+itHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Architectural Specification/Di
+agrams/Slide8.jpg>] <Diagrams/Slide9.jpg, id=182, 722.7pt x 542.025pt>
+File: Diagrams/Slide9.jpg Graphic file (type jpg)
+
+<use Diagrams/Slide9.jpg>
+Package pdftex.def Info: Diagrams/Slide9.jpg used on input line 75.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 )
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ArchitecturalTactics/ArchitecturalTacticsOrStrategies
-.tex" [7pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.0.1}) has been already used, duplicate ignored
+.tex" [11pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.0.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4 B
-     ecause of the way in which the system will work, all aspects of the sys...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.4 B
-     ecause of the way in which the system will work, all aspects of the sys...
- <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Ar
-chitectural Specification/Diagrams/Class_Diagram__Singleton.png (PNG copy)> <C:
-/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentation/Archit
-ectural Specification/Diagrams/Class_Diagram__Flyweight.png (PNG copy)>])
-[8]
+l.12 
+      <C:/Users/Duran/Documents/GitHub/Neo-Tandem-Tech-Eye-Tracking/Documentati
+on/Architectural Specification/Diagrams/Slide9.jpg>])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
 chitectural Specification\ReferenceArchitectures/UseOfReferenceArchitecturesAnd
-Frameworks.tex" [9])
+Frameworks.tex" [12])
 ("C:\Users\Duran\Documents\GitHub\Neo-Tandem-Tech-Eye-Tracking\Documentation\Ar
-chitectural Specification\Technologies/Technologies.tex" [10]) [11]
+chitectural Specification\Technologies/Technologies.tex" [13]) [14]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
- [12
+ [15
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
@@ -386,22 +451,22 @@ changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 5318 strings out of 493921
- 83398 string characters out of 3144475
+ 5361 strings out of 493921
+ 84164 string characters out of 3144475
  159405 words of memory out of 3000000
- 8485 multiletter control sequences out of 15000+200000
+ 8510 multiletter control sequences out of 15000+200000
  10097 words of font info for 35 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,7n,28p,876b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,7n,28p,876b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ><C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 C:/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Duran/Documents/MikTex2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "NTT Architectural Requirements.pdf" (13 pages, 226397 bytes)
+Output written on "NTT Architectural Requirements.pdf" (16 pages, 670795 bytes)
 .
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

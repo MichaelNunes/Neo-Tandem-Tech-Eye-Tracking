@@ -28,6 +28,8 @@ namespace NTT_Eye_Tracking
     public partial class NTT_EyeTracker : Form
     {
         #region variables
+        AlertForm alf;
+
         string name = "";
         string ModelPath = "";
         string[] imglocation = new string[9];
@@ -59,7 +61,9 @@ namespace NTT_Eye_Tracking
             {
                 disableMainButtons();
                 initializeGlobalStyles();
+                
                 this.BackColor = GlobalStyles.ForegroundColours;
+                globals.modelIndex = 999;
                 NTT_MiniForm ntt_mini = new NTT_MiniForm();
                 ntt_mini.ShowDialog(this);
                 btnCal.Enabled = true;
@@ -93,6 +97,14 @@ namespace NTT_Eye_Tracking
                             pic_model2DPreview.Visible = false;
                             wmp_VideoPreview.Visible = true;
                             wmp_VideoPreview.Dock = DockStyle.Fill;
+
+                            wmp_VideoPreview.stretchToFit = true;
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("A model type must be selected to continue process. Please create a recording to continue. Please do so by selecting \"Open Project\" from the task bar above.");
+                            disableMainButtons();                            
                             break;
                         }
                 }
@@ -218,7 +230,7 @@ namespace NTT_Eye_Tracking
 
                     case 3: //Video
                         {
-                            openFileDialog1.Filter = "all files(*.*)|*.*| video (.mp4)|*.mp4| video (.wmv)|*.wmv";
+                            openFileDialog1.Filter = "Video (.mp4)|*.mp4| Video (.wmv)|*.wmv";
                             openFileDialog1.FileName = "";
                             openFileDialog1.ShowDialog();
                             ModelPath = openFileDialog1.FileName;
@@ -229,7 +241,10 @@ namespace NTT_Eye_Tracking
                                 name = openFileDialog1.SafeFileName;
                                 wmp_VideoPreview.Ctlcontrols.stop();
                                 btnRecord.Enabled = true;
+                                wmp_VideoPreview.Dock = DockStyle.Fill;
+                                wmp_VideoPreview.stretchToFit = true;
                             }
+
                             break;
                         }
                 }
@@ -334,6 +349,10 @@ namespace NTT_Eye_Tracking
         {
             try
             {
+                disableMainButtons();
+                //alf = new AlertForm();
+                //alf.ShowDialog(this);
+
                 bw = new BackgroundWorker();
                 bw.WorkerReportsProgress = true;
                 bw.WorkerSupportsCancellation = true;
@@ -347,6 +366,7 @@ namespace NTT_Eye_Tracking
             {
                 MessageBox.Show("An error has occured when trying to create the overlays on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
             }
+           // enableMainButtons();
         }
 
         private void btnHeatmaps_Click(object sender, EventArgs e)
@@ -354,6 +374,7 @@ namespace NTT_Eye_Tracking
             try
             {
 
+                disableMainButtons();
                 bw = new BackgroundWorker();
                 bw.WorkerReportsProgress = true;
                 bw.WorkerSupportsCancellation = true;
@@ -367,12 +388,14 @@ namespace NTT_Eye_Tracking
             {
                 MessageBox.Show("An error has occured when trying to create the Heatmaps on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
             }
+           // enableMainButtons();
         }
 
         private void btnGazepoint_Click(object sender, EventArgs e)
         {
             try
             {
+                disableMainButtons();
                 bw = new BackgroundWorker();
                 bw.WorkerReportsProgress = true;
                 bw.WorkerSupportsCancellation = true;
@@ -386,10 +409,13 @@ namespace NTT_Eye_Tracking
             {
                 MessageBox.Show("An error has occured when trying to create the Heatmaps on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
             }
+            //enableMainButtons();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+
+            disableMainButtons();
             try
             {
                 Size res = this.GetDpiSafeResolution();
@@ -398,21 +424,25 @@ namespace NTT_Eye_Tracking
                 {
                     case 0: //3D model
                         {
+                            stats.Type = "3D Images";
                             stats.createPDF3d();
                             break;
                         }
                     case 1: //flythrough
                         {
+                            stats.Type = "3D Fly through";
                             stats.createPDF();
                             break;
                         }
                     case 2: //2D models
                         {
+                            stats.Type = "2D";
                             stats.createPDF();
                             break;
                         }
                     case 3: //Video
                         {
+                            stats.Type = "Video";
                             stats.createPDF();
                             break;
                         }
@@ -422,6 +452,7 @@ namespace NTT_Eye_Tracking
             {
                 MessageBox.Show("An error has occured when trying to create the Heatmaps on the desired model.\n\n Please ensure that the following is correct: \n 1. The camera is connected correctly.\n 2. Camera has been correctly calibrated.\n 3. The subject (or user) is positioned correctly and is not moving to much.\n\n If problems persist then please contact system administrator or developers.");
             }
+            enableMainButtons();
         }
 
         private void btnViewResults_Click(object sender, EventArgs e)
@@ -607,6 +638,7 @@ namespace NTT_Eye_Tracking
                             }
                         case 1: //flythrough
                             {
+
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, false, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = globals.currentRecordingpath + @"\" + name + ".wmv";
@@ -638,24 +670,36 @@ namespace NTT_Eye_Tracking
                                 hm._SourceLocation = globals.currentRecordingpath;
                                 hm._DestinationPath = globals.currentRecordingpath;
                                 hm.SaveHeatmap2D();
-                                ig.deleteImages();
                                 break;
                             }
                         case 3: //Video
                             {
+
                                 Eye_Tracking_Graph etg = new Eye_Tracking_Graph(30, false, name, globals.currentRecordingpath, "");
                                 etg.OpenETGraphData(globals.currentRecordingpath, name);
                                 etg._SourceLocation = ModelPath;
                                 etg._DestinationPath = globals.currentRecordingpath + "\\";
+
+                                globals.progressCount = 15;
+
                                 etg.SaveETGraphVideo();
-                                //ig.deleteImages();
+
+                                globals.progressCount = 40;
 
                                 Heatmaps hm = new Heatmaps(name, globals.currentRecordingpath, res.Width, res.Height, "");
                                 hm.OpenHeatmapData(globals.currentRecordingpath, name);
                                 hm._SourceLocation = ModelPath;
                                 hm._DestinationPath = globals.currentRecordingpath + "\\";
+
+                                globals.progressCount = 55;
+
                                 hm.SaveHeatmapVideo();
+
+
+                                globals.progressCount = 70;
                                 ig.deleteImages();
+
+                                globals.progressCount = 100;
                                 break;
                             }
                     }
@@ -671,13 +715,14 @@ namespace NTT_Eye_Tracking
             //ImageGenerator ig = new ImageGenerator();
             //ig.DestinationPath = globals.currentRecordingpath;
             //ig.deleteImages();
+            enableMainButtons();
             MessageBox.Show("Overlays Created.");
         }
 
         // bool spin = false;
         private void bw_ProgressChangedOverlay(object sender, ProgressChangedEventArgs e)
         {
-
+            
             //Spinningprogbar.Form1 spinner = new Spinningprogbar.Form1();
 
             //if(spin == false)
@@ -752,6 +797,7 @@ namespace NTT_Eye_Tracking
             //ig.DestinationPath = globals.currentRecordingpath;
             //ig.deleteImages();
             MessageBox.Show("Heat map created.");
+            enableMainButtons();
         }
 
         private void bw_ProgressChangedHeatmaps(object sender, ProgressChangedEventArgs e)
@@ -824,6 +870,7 @@ namespace NTT_Eye_Tracking
             //ig.DestinationPath = globals.currentRecordingpath;
             //ig.deleteImages();
             MessageBox.Show("Gaze-plot created.");
+            enableMainButtons();
         }
 
         private void bw_ProgressChangedGazePlot(object sender, ProgressChangedEventArgs e)
@@ -885,12 +932,12 @@ namespace NTT_Eye_Tracking
                         break;
                     }
             }
+            enableMainButtons();
         }
 
         private void bw_ProgressChangedRecord(object sender, ProgressChangedEventArgs e)
         {
             if (globals.recording._recording == false) return;
-            MessageBox.Show("HEHEHEHEHEHE");
             //this.tbProgress.Text = (e.ProgressPercentage.ToString() + "%");
         }
 
@@ -899,7 +946,9 @@ namespace NTT_Eye_Tracking
         }
 
         private void bw_RunWorkerCompletedRecording(object sender, RunWorkerCompletedEventArgs e)
-        { }
+        {
+            enableMainButtons();
+        }
 
         private void bw_ProgressChangedRecording(object sender, ProgressChangedEventArgs e)
         {
@@ -910,14 +959,110 @@ namespace NTT_Eye_Tracking
 
         private void createNewProjectCtrlNToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NTT_MiniForm ntt_mini = new NTT_MiniForm();
-            ntt_mini.ShowDialog(this);
+            try
+            {
+                NTT_MiniForm ntt_mini = new NTT_MiniForm();
+                ntt_mini.ShowDialog(this); btnCal.Enabled = true;
+                switch (globals.modelIndex)
+                {
+                    //in each case we must show the appropriate model previewer and hide the others
+                    case 0: //3D model
+                        {
+                            pic_slideshowPreview.Visible = true;
+                            pic_model2DPreview.Visible = false;
+                            wmp_VideoPreview.Visible = false;
+                            break;
+                        }
+                    case 1: //flythrough
+                        {
+                            break;
+                        }
+                    case 2: //2D models
+                        {
+                            pic_slideshowPreview.Visible = false;
+                            pic_model2DPreview.Visible = true;
+                            wmp_VideoPreview.Visible = false;
+                            break;
+                        }
+                    case 3: //Video
+                        {
+
+                            wmp_VideoPreview.Dock = DockStyle.Fill;
+                            wmp_VideoPreview.stretchToFit = true;
+                            pic_slideshowPreview.Visible = false;
+                            pic_model2DPreview.Visible = false;
+                            wmp_VideoPreview.Visible = true;
+                            wmp_VideoPreview.Dock = DockStyle.Fill;
+
+                            wmp_VideoPreview.stretchToFit = true;
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("A model type must be selected to continue process. Please create a recording to continue. Please do so by selecting \"Open Project\" from the task bar above.");
+                            disableMainButtons();
+                            break;
+                        }
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
         }
 
         private void openProjectCtrlOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NTT_MiniForm ntt_mini = new NTT_MiniForm();
-            ntt_mini.ShowDialog(this);
+            try
+            {
+                NTT_MiniForm ntt_mini = new NTT_MiniForm();
+                ntt_mini.ShowDialog(this); btnCal.Enabled = true;
+                switch (globals.modelIndex)
+                {
+                    //in each case we must show the appropriate model previewer and hide the others
+                    case 0: //3D model
+                        {
+                            pic_slideshowPreview.Visible = true;
+                            pic_model2DPreview.Visible = false;
+                            wmp_VideoPreview.Visible = false;
+                            break;
+                        }
+                    case 1: //flythrough
+                        {
+                            break;
+                        }
+                    case 2: //2D models
+                        {
+                            pic_slideshowPreview.Visible = false;
+                            pic_model2DPreview.Visible = true;
+                            wmp_VideoPreview.Visible = false;
+                            break;
+                        }
+                    case 3: //Video
+                        {
+
+                            wmp_VideoPreview.Dock = DockStyle.Fill;
+                            wmp_VideoPreview.stretchToFit = true;
+                            pic_slideshowPreview.Visible = false;
+                            pic_model2DPreview.Visible = false;
+                            wmp_VideoPreview.Visible = true;
+                            wmp_VideoPreview.Dock = DockStyle.Fill;
+
+                            wmp_VideoPreview.stretchToFit = true;
+                            break;
+                        }
+                    default:
+                        {
+                            MessageBox.Show("A model type must be selected to continue process. Please create a recording to continue. Please do so by selecting \"Open Project\" from the task bar above.");
+                            disableMainButtons();
+                            break;
+                        }
+                }
+            }
+            catch(Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

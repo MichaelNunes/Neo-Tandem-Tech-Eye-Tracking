@@ -17,5 +17,8 @@ namespace NTT_Eye_Tracking
         internal static int modelIndex = 0;
         internal static int recordTime = 5000;
         internal static Record recording;
+
+        internal static int progressCount = 0;
+        internal static bool progressCheck = true;
     }
 }

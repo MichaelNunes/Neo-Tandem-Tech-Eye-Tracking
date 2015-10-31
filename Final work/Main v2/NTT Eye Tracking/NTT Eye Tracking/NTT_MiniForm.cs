@@ -21,7 +21,6 @@ namespace NTT_Eye_Tracking
             InitializeComponent();
         }
 
-
         //internal int globals.modelIndex = 0;
 
         private void NTT_MiniForm_Load(object sender, EventArgs e)
@@ -35,23 +34,12 @@ namespace NTT_Eye_Tracking
 
             this.BackColor = GlobalStyles.ForegroundColours;
             panelNewOldProject.BackColor = GlobalStyles.ForegroundColours;
-            
-            //get available model types
-            /*foreach(modelType model in GlobalStyles.models)
-            {
-                Syncfusion.Windows.Forms.Tools.CarouselImage caro_model = new Syncfusion.Windows.Forms.Tools.CarouselImage();
-                caro_model.ItemImage = model.modelImage;
-                
-
-
-                //carousel_ModelType.ImageListCollection.Add(caro_model);
-            }*/
-            //carousel_ModelType.ImageSlides = true;
-            //carousel_ModelType.Perspective = 1;
-            //carousel_ModelType.CarouselPath = CarouselPath.Default;
-            //carousel_ModelType.ShowImageShadow = false;
+            globals.modelIndex = 0;
             caro_models.Image = GlobalStyles.models.ElementAt(0).modelImage;
             red_ModelDescription.Text = GlobalStyles.models.ElementAt(0).modelName;
+            this.CenterToScreen();
+
+            modSel = false;
 
         }
 
@@ -125,35 +113,6 @@ namespace NTT_Eye_Tracking
                     buttonAdv2.Enabled = true;
                 }
                 textBox1.Text = fbd.SelectedPath;
-                /*SaveFileDialog Saver = new SaveFileDialog();
-                if (textBox2.Text == "")
-                {
-                    Saver.FileName = "Project";
-                    textBox2.Text = "Project";
-                }
-                else
-                {
-                    Saver.FileName = textBox2.Text;
-
-                }
-                Saver.DefaultExt = ".eye";
-                Saver.Filter = "Eye Project (.eye)|*.eye";
-                Saver.CheckPathExists = true;
-                Saver.ShowDialog();
-                string FullDirectory = Saver.FileName;
-                textBox1.Text = FullDirectory;
-                string[] array = FullDirectory.Split('\\');
-                string dir = "";
-                for (int i = 0; i < array.Length - 1; i++)
-                {
-                    dir += array[i] + "\\";
-                }
-                string[] save = new string[4];
-                save[0] = textBox2.Text;
-                save[1] = dir;
-                save[2] = textBox2.Text + ".set";
-                save[3] = "3DModel.set";
-                File.WriteAllLines(Saver.FileName, save);*/
             }
             catch (DirectoryNotFoundException m)
             {
@@ -205,9 +164,6 @@ namespace NTT_Eye_Tracking
                 globals.m.ProjectName = textBox2.Text;
                 globals.m.Directory = textBox1.Text;
                 globals.m.createSubDirectories();
-                //this.Hide();
-                //Main show = new Main();
-                //show.ShowDialog();
 
                 transitionForward(panel_createNew, panel_modelSelect);
             }
@@ -224,10 +180,11 @@ namespace NTT_Eye_Tracking
             transitionBack(panel_modelSelect, panelNewOldProject);
         }
 
+        bool modSel = false;
         private void btnCreateRecording_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(globals.modelIndex.ToString());
-            
+            modSel = true;
             try
             {
                 string name = "";
@@ -287,6 +244,7 @@ namespace NTT_Eye_Tracking
                 MessageBox.Show(exc.Message);
             }
 
+
         }
 
         private void buttonAdv5_Click(object sender, EventArgs e)
@@ -323,6 +281,15 @@ namespace NTT_Eye_Tracking
                 caro_models.Image = GlobalStyles.models.ElementAt(globals.modelIndex).modelImage;
                 red_ModelDescription.Text = GlobalStyles.models.ElementAt(globals.modelIndex).modelName;
             }
+        }
+
+        private void NTT_MiniForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!modSel)
+            {
+                globals.modelIndex = 999;
+            }
+            else return;
         }
 
         

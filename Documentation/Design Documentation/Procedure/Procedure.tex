@@ -1,9 +1,40 @@
-The program has a main procedure which outlines the entire process involved in using the program an this procedure can be subdivided into many sub-procedures
-\subsection{Main Procedure:Eye tracking}
-This will start from the moment the program is initiated.The first subsection is the selection of the method to start the entire process.This sub-procedures is called project state.The following sub-procedures is the setting up of the the recording project.This sub-procedures is called recording setup.The final sub-procedures called eye tracking recording is where the recording can be performed and then can be navigated to the setup sub-procedures to start the process from that point.
-\subsection{Sub Procedure:Project Start}
-This procedure is comprised of an option to start a new recording session from the beginning or choosing to continue from a previous session.Both these options will navigate to the next sub-procedures.The difference between the options is that creating a new session will create files and continuing a session will read from previously created files. 
-\subsection{Sub Procedure:Recording Setup}
-The recording setup procedure allows the user to select the type of recording they wish to make and then also to choose a name for the recording.This sub procedure is the start point for the loop of activity when a recording has been completed.
-\subsection{Sub Procedure:Eye Tracking Recording}
-This procedure starts with the calibration of the camera to the user.Then the user will start the recording and then data will then be analysed.After the recording has taken place the user can then choose to create the heatmaps,create statistical analysis or to then start a new recording.When starting a new recording then the recording setup procedure will be executed until the user exits the recording. 
+The program has a main procedure which outlines the entire process involved in using the program which can be subdivided into multiple sub-procedures that are used in completing functionality.
+
+\subsection{Main Procedure: NTT Eye-tracking application}
+This will start from the moment the program is initiated. The first subsection is the selection of the method to start the entire process. The user will be greeted with a screen requesting if they would like to open a new or existing project. This then starts the relevant project start process.
+
+\subsection{Sub-procedure: Project Start}
+This sub-procedure executes based on whether a new or existing projected is selected. For the case of a new project, the application will create a file structure to organize all recordings for the project. If an existing project is chosen then the user would be prompted to select the ".eye" file that created with the project. This then loads all project specific details into the system for initialization. From this point the user would be asked to further set-up a recording for the current project.
+
+\subsection{Sub-procedure: Recording Set-up}
+The recording set-up procedure allows the user to select the type of recording they wish to use (2D, 3D or Video) and allows the user to give it a unique name. This procedure is the last step before the user is given the chance to use the main work-space where recordings can be done and results printed.  
+
+\subsection{Sub-procedure: Main work-space}
+The main work-space is where the user will preform all tasks needed when using the system. The user will have access to the task bar located on the top of the screen where they can for example start a new project or recording but when it comes to recording specific tasks the user will be granted with multiple buttons on the left of the form. These buttons are enabled as specific functionality becomes available to the user, thus minimizing mistakes and errors. The first button the user will be prompted to use is the calibration button, which will open up the calibration system. Once this is done the user can now choose a model relevant to the specific recording type. The selected model will then be displayed in the left portion of the screen as a preview and the user can begin a recording. After the recording has taken place multiple new options will become available that allows users to retrieve results from the system. The above mentioned sub-systems will now be further described below.
+
+
+\subsubsection{Sub-procedure: Camera Calibration}
+This opens the existing The Eye Tribe calibration software that is provided with the eye-tracking camera. We recommend all users preform a calibration step before progressing further in the system as this will ensure the most accurate results for recordings.
+
+\subsubsection{Sub-procedure: Model Selection}
+Users will have the option to pick a model once the calibration step has been completed. They can then select a new model based on the recording type chosen in the recording set-up.
+
+\subsubsection{Sub-procedure: Record}
+With calibration and model selection complete users can now begin the recording. When pressed the selected model will be made full screen and the camera will begin recording data. The user can press the escape key ("Esc") at any time to stop the recording. When this task is complete the user will be able perform any result based tasks.
+
+
+\subsubsection{Sub-procedure: Printing overlays}
+This provides the user with two relevant outputs, one that is the heat-map and the other that is the gaze-plot diagrams, both are given on blank base images. The results can be found in the relevant recording folder.
+
+
+\subsubsection{Sub-procedure: Printing Heat-map}
+This provides the user with a new version of the selected model with the heat-map placed on top of it. This outputted result will be in the format of the original model. The results can be found in the relevant recording folder.
+
+\subsubsection{Sub-procedure: Printing Gaze Plot}
+This provides the user with a new version of the selected model with the gaze-plot placed on top of it. This outputted result will be in the format of the original model. The results can be found in the relevant recording folder.
+
+\subsubsection{Sub-procedure: Printing Reports}
+The printing of reports takes the existing recorded data and uses it to provide relevant feedback to the user. Some of the data that will appear in the reports are the selected models meta-data and a grid point analysis. The results can be found in the relevant recording folder.
+
+\subsubsection{Sub-procedure: View Results}
+This option opens the directory of all results and recorded information so that it can be viewed and used as seen fit.

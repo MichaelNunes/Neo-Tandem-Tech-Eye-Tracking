@@ -606,3 +606,17 @@ The data will be recorded and saved into a text file which can be further proces
 	\caption{Record Eye Activity}
 	\end{figure}
 
+\subsubsection{3D models and graphics}
+Our system required a three dimensional conversion and rendering module to be created. We created this module by making use of OpenTK software and libraries. We use the created modules to take in an "OBJ" file (".obj") and parse it into a structure we can use to begin rendering the model. As multiple different three dimensional objects models can be imported all with different structures and objects, we make use of the builder design pattern (described further in the architectural specification) to separate the construction of each game-object so that each object can be built dynamically based on its requirements. A three dimensional object consists of a buffer, vertex buffer objects, materials and a list of children objects. When parsing the parsing the ".obj" file all objects are created, followed by the parsing of the ".mtl" file where all materials are created and attached to the objects. The root object and its tree structure is then generated and returned.
+\begin{itemize}
+\item Pre-condition: 3D Model file format must be that of an OBJ (".obj").
+\item Post-condition: model can be converted and rendered.
+\item Request Data Structure: Object file.
+\item Return Data Structure: Model images with be created or model will be rendered.
+\end{itemize}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.5,width=15cm,keepaspectratio]{Diagrams/Slide2.jpg}
+	\caption{Record Eye Activity}
+	\end{figure}

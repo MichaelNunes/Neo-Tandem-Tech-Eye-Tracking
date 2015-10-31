@@ -1,16 +1,22 @@
-The data structures used throughout this program are C Sharp classes and a external reference such as Aforge.Net and openTK will be used to process data and use them in our program.The data structures all interact with each other and there is no solitary class that is standalone. Communication between the Data Objects is crucial in this program as raw and process data is dealt throughout the program and Objects communication is important to start processes.The data from the models that are being tracked are handled by the c sharp classes we have created and this will then be shown to the user in a desirable format.
+The data structures used through out the application take the form of C\# (C-Sharp) classes and external references such as aForge.Net and OpenTK that will be used to process data and return relevant results. The data structures all interact with each other and there is no solitary class that is stand alone but each feature is modularized so that we can easily add or remove features as we see fit. Information is passed through to the desired functionality where further processing can take place.
 
 \subsection{Models class}
-The models classes store all the information about the media that is being used and analysed.The models interact with the heat map class and the recording class.The models will initiate the recording.The data gathered from this will then be sent to the relevant heat map class so that it can create a heat map and then apply it to the media.The Model classes are separated into four child classes:
+The models classes store all the information about the media that is being used and analysed. The models classes allows developers to add new types of models which can then be used to collect information as recordings and thus apply this information to the relevant models. Currently four different types of models are available to the user.
 \begin{itemize}
 \item 3D Model
 \item 3D Model Fly Through
 \item 2D Model
 \item Video Model
 \end{itemize}
-\subsection{Heat map}
-The heat map object allows the creation of a heat map for a specific media type.The heat map uses the information collected from the eye tracking and then generates a heat map that is based on the media type that it is linked to.The heat map can be in two forms:heat map and heat map overlay.The difference between the two is the placement of the heat map.Heat map overlay is placed over the media showing exactly where the data is from the recording process relative to the media.
+
+\subsection{Heat map class}
+The heat-map object allows the creation of a heat-map for a specific media model type. The heat-map uses the raw information collected from the eye tracking recording and then generates a heat-map that can be applied. The heat-map can appear in two forms: a heat-map overlay and a heat-map that can be directly applied to the desired model. A heat-map overlay shows the raw information on a blank base image unlike if it were applied to the relevant model base image.
+
+\subsection{Gaze Plot class}
+The gaze-plot object allows the creation of a gaze-plot for a specific media model type. The gaze-plot uses the raw information collected from the eye tracking recording and then generates a gaze-plot that can be applied. The gaze-plot can appear in two forms: a gaze-plot overlay and a gaze-plot that can be directly applied to the desired model. A gaze-plot overlay shows the raw information on a blank base image unlike if it were applied to the relevant model base image.
+
 \subsection{Statistics class}
-The statistics class uses the heat map data to create a statistical analysis on the heat map and gives the user the statistics that they need.This class also contains a reference to a specific heat map object so that it can directly access all the data that it needs.The transfer of data from raw to summarized changes the data structure so that it is easier to view by the user.
-\subsection{Recorder class}
-This class initiates the recording.This class is called in the Models classed and thus is part of it.This will open up the media to full screen to ensure there are no distractions.Then the data will be transferred from the camera to the program and then it can be used.
+The statistics class uses the the raw recording data to create a statistical analysis on the model and gives the user statistics that can aid them in further analysis and forming decisions. The transfer of data from raw to summarized changes the data structure so that it is easier to view by the user.
+
+\subsection{Record class}
+This class initiates the recording process which begins to track the users eye movements. When a record is used it begins to pull coordinates from the existing Eye-Tribe server which are then saved into a file for later processing.
